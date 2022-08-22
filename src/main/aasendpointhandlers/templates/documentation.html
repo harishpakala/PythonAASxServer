@@ -1,0 +1,242 @@
+{% extends "homelayout.html" %} {% block homecontent %}
+<div style = "width: 100%;">
+<div class = "container">
+<div class= "row" style = "height : 1.5vh">
+			<div class = "col-2 d-flex justify-content-left align-items-left" style = "margin-left : 1vw">
+				<span style = "color : rgb(0,52,215,0.9);font-weight: bold; ">DOCUMENTATION</span>
+			</div>
+			<div class = "col-9"></div>
+</div>	
+<div class= "row" style = "min-height : 2.5vh">
+</div>
+<ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
+{% for key,documentListPair in stdSubmodelData.items() %}
+  <li class="nav-item" role="presentation">
+    <a class="nav-link {{documentListPair.active}}" id="pills-{{key}}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{key}}" type="button" role="tab" aria-controls="pills-{{key}}" aria-selected="{{documentListPair.status}}">{{key}}</a>
+  </li>
+ {% endfor %}
+</ul>
+<div class= "row" style = "height : 2.5vh">
+</div>			
+<div class="tab-content" id="pills-tabContent">
+{% for key,documentListPair in stdSubmodelData.items() %}
+  <div class="tab-pane fade {{documentListPair.showActive}}" id="pills-{{key}}" role="tabpanel" aria-labelledby="pills-{{key}}-tab">
+  {% for documentDataList in documentListPair.data %}
+    <div class = "row" >
+    <div  class = "row">
+      	{% set parent_loop = loop %}
+		{% for documentData1 in documentDataList %} 
+		{% if loop.index == 1 %}
+
+		   <div class="col-5">
+					<div class = "row" style = "border-style : solid; border-color:rgb(0,52,215,0.9)">
+						<div class = "col-6 d-flex justify-content-center  align-items-center" style = "background-color:rgb(0,52,215,0.9); ">
+							<p class = "justify" style = "color :white">{{documentData1.documentIdShort}}</p>
+						</div>
+						<div class = "col-6 ">
+							<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgb(0,52,215,0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+								<div class = "col-8" style = "padding-left:0">
+									<p >{{documentData1.DocumentVersion.Title[key]}}</p>
+								</div>
+								<div class = "col-4 d-flex justify-content-end">
+											<div class="imagecontainer">
+													<input type="image" style="height: 2.5vh"
+														data-bs-toggle="modal" data-bs-target="#documentModal"
+														data-whatever="@mdo" src="{{exDomain}}static/images/document.svg"
+														name="submit" onclick=ShowDocumentData({{loop.index}},{{parent_loop.index}},'{{key}}');>
+												<div class="overlay">
+													<input type="image" style="height: 2.5vh"
+														data-bs-toggle="modal" data-bs-target="#documentModal"
+														data-whatever="@mdo" src="{{exDomain}}static/images/document.svg"
+														onclick=ShowDocumentData({{loop.index}},{{parent_loop.index}},'{{key}}');
+														name="submit" >
+												</div>
+											</div>					
+								</div>
+							</div>
+
+						</div>
+					</div>				
+	    	</div>	
+	    	<div class="col-1">
+	    	</div>
+   		 {% else %}
+		 <div class="col-5" >
+			<div class = "row" style = "border-style : solid; border-color:rgb(0,52,215,0.9)">
+						<div class = "col-4 d-flex justify-content-center  align-items-center" style = "background-color:rgb(0,52,215,0.9); ">
+							<p style= "color: white;font-size: larger;" >{{documentData1.documentIdShort}}</p>
+						</div>
+						<div class = "col-8 ">
+							<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgb(0,52,215,0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+								<div class = "col-6" style = "padding-left:0">
+									<p >{{documentData1.DocumentVersion.Title[key]}}</p>	
+								</div>
+								<div class = "col-6 d-flex justify-content-end">
+											<div class="imagecontainer">
+													<input type="image" style="height: 2.5vh"
+														data-bs-toggle="modal" data-bs-target="#documentModal"
+														data-whatever="@mdo" src="{{exDomain}}static/images/document.svg"
+														name="submit" onclick=ShowDocumentData({{loop.index}},{{parent_loop.index}},'{{key}}');>
+												<div class="overlay">
+													<input type="image" style="height: 2.5vh"
+														data-bs-toggle="modal" data-bs-target="#documentModal"
+														data-whatever="@mdo" src="{{exDomain}}static/images/document.svg"
+														onclick=ShowDocumentData({{loop.index}},{{parent_loop.index}},'{{key}}');
+														name="submit" >
+												</div>
+											</div>					
+								</div>
+							</div>
+
+						</div>
+			</div>			
+		</div>	
+    	
+    	{% endif %}   
+
+    	{% endfor %}
+    </div>
+    </div>
+    <div class="row" style="height : 2.5vh;">
+	</div>
+	{% endfor %}
+  </div>
+ {% endfor %}
+</div>
+
+</div>
+</div>
+
+
+
+<script>
+ 	var documentList = {{ stdSubmodelData | tojson }};
+</script>
+
+<div class="modal fade" id="documentModal" tabindex="-1" aria-labelledby="documentModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<p5 class="modal-title" name="submodel" id="documentModalHeader"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<input id="submodelNameInnerText" name="submodelName" type="hidden" value="">
+				<input id="submodelPropertyInnerText" name="submodelProperty" type="hidden" value="">
+				<div class="modal-body">
+					<div class="container">
+						<div class = "row">
+							<div class = "col-1">
+							</div>
+							<div class = "col-10" id = "DocumentPart">
+								<div id = "DocumentIdDomains">								
+								</div>
+								<div class = "row" id = "DocumentClassification"  style = "margin-top:5vh">
+									
+								</div>
+								<div class = "row" id = "DocumentVersion"   style = "margin-top:5vh">
+									<div class = "row" style = "border-bottom-width: 1px;border-bottom-color: rgb(0,52,215,0.9);border-bottom-style: solid;">
+										Document Version
+									</div>	
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											Language :
+										</div>
+										<div class = "col-6">
+											<p id = "Language"> </p>
+										</div>			
+									</div>
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											DocumentVersionId :
+										</div>
+										<div class = "col-6">
+											<p id = "DocumentVersionId"> </p>
+										</div>			
+									</div>
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											SetDate :
+										</div>
+										<div class = "col-6">
+											<p id = "SetDate"> </p>
+										</div>			
+									</div>	
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											StatusValue :
+										</div>
+										<div class = "col-6">
+											<p id = "StatusValue"> </p>
+										</div>			
+									</div>	
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											OrganizationName :
+										</div>
+										<div class = "col-6">
+											<p id = "OrganizationName"> </p>
+										</div>			
+									</div>
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											OrganizationOfficialName :
+										</div>
+										<div class = "col-6">
+											<p id = "OrganizationOfficialName"> </p>
+										</div>			
+									</div>
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											Title :
+										</div>
+										<div class = "col-6">
+											<p id = "Title"> </p>
+										</div>			
+									</div>		
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											SubTitle :
+										</div>
+										<div class = "col-6">
+											<p id = "SubTitle"> </p>
+										</div>			
+									</div>
+							     	<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											Summary :
+										</div>
+										<div class = "col-6">
+											<p id = "Summary"> </p>
+										</div>			
+									</div>
+									<div class= "row" style = "margin-top : 2.5vh;">
+										<div class = "col-6">
+											DigitalFile : 
+										</div>
+										<div class = "col-6" style = " word-break: break-all; word-wrap: break-word;">
+											<p id = "DigitalFile" style = " word-break: break-all; word-wrap: break-word;"></p>
+										</div>			
+									</div>
+									<div class= "row d-flex align-items-center justify-content-center" style = "margin-top : 1.5vh;">
+										<div class = "col-12 d-flex align-items-center justify-content-center">
+											<a href="" id = "documentDownload"><img src="{{exDomain}}static/images/download.svg" class = "imagedocument" alt="Home"></a>
+										</div>			
+									</div>
+									
+								</div>
+							</div>
+							<div class = "col-1">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+						
+				</div>
+			</div>
+		</div>
+</div>
+
+
+{% endblock %}

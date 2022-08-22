@@ -1,0 +1,30 @@
+{% extends "homelayout.html" %}
+{% block homecontent %}
+<div>
+		<div class= "row" style = "height : 1.5vh">
+			<div class = "col-2 d-flex justify-content-left align-items-left" style = "margin-left : 1vw">
+				<span style = "color : rgb(0,52,215,0.9);font-weight: bold; ">LOGS / {{skillName}}</span>
+			</div>
+			<div class = "col-9"></div>
+		</div>	
+		<div class= "row" style = "min-height : 2.5vh">
+		</div>
+		<div class="row">
+		  <div class="col-1">
+		  </div>
+		  <div class="col-8">
+		  	<div>
+		  		<button type="button" class="btn btn-primary" onclick= "getLog('{{skillName}}','{{aasIndex}}')">Get Log</button>
+		  	</div>
+		  	<div style = "min-height : 2.5vh;"></div>
+		  	<div>
+		  		<div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" id = "log-div" style="width : 50vw; height: 50vh;">
+			       <p id="logParagraph"></p>
+			    </div>
+		  	</div>
+		 	
+		 </div>
+		</div>
+
+</div>
+{% endblock %}

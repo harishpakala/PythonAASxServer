@@ -1,0 +1,138 @@
+{% extends "homelayout.html" %} {% block homecontent %}
+<div style = "width: 100%;">
+		<div class= "row" style = "height : 1.5vh">
+			<div class = "col-2 d-flex justify-content-left align-items-left" style = "margin-left : 1vw">
+				<span style = "color : rgb(0,52,215,0.9);font-weight: bold; ">REAL TIME DATA</span>
+			</div>
+			<div class = "col-9"></div>
+		</div>	
+<div class= "row" style = "min-height : 2.5vh">
+</div>
+
+{% for rtDataPair in tdProperties %}
+    <div  class = "row">
+      	{% set parent_loop = loop %}
+		{% for rtProperty in rtDataPair %} 
+		{% if loop.index == 1 %}
+		   <div class="col-5">
+				<canvas id="{{rtProperty['propertyName']}}"></canvas>
+	    	</div>	
+	    	<div class="col-1">
+	    	</div>
+   		 {% else %}
+		 <div class="col-5" >
+		 	<canvas id="{{rtProperty['propertyName']}}"></canvas>
+		</div>	
+		    <div class="row" style="height : 1.5vh;">
+			</div>
+    	{% endif %}   
+
+    	{% endfor %}
+    </div>
+    <div class="row" style="height : 2.5vh;">
+	</div>
+	{% endfor %}
+
+</div>
+
+
+<script>
+    function getCOnfig(xLabel,yLabel)
+    {
+    	return {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: xLabel +" "+ yLabel+" Plot",
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [],
+                    fill: false,
+                }],
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Projecting real time data AASx package'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: xLabel
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: yLabel
+                        }
+                    }]
+                }
+            }
+        }
+    }
+    {% for rtDataPair in tdProperties %}
+    {% for rtProperty in rtDataPair %}
+    const config_{{rtProperty['propertyName']}} = getCOnfig('{{rtProperty['propertyName']}}','Time')
+    const context_{{rtProperty['propertyName']}} = document.getElementById('{{rtProperty['propertyName']}}').getContext('2d');
+    const linechart_{{rtProperty['propertyName']}} = new Chart(context_{{rtProperty['propertyName']}},config_{{rtProperty['propertyName']}} );
+    {% endfor %}
+    {% endfor %}
+    
+    function updateCHartData(config,data)
+    {
+    	while(config.data.labels.length > 0) {
+        	config.data.labels.pop();
+        }
+        while( config.data.datasets[0].data.length > 0) {
+        	 config.data.datasets[0].data.pop();
+        }
+        config.data.labels.push(...data['label']);
+        config.data.datasets[0].data.push(...data['value']);
+    }
+
+    
+
+    setInterval(function() {
+    	var req = new XMLHttpRequest();
+        req.open('POST', '', true);
+        req.onreadystatechange = function(e) {
+            if(req.readyState !== 4) {
+                return;
+            }
+            if ([200, 304].indexOf(req.status) === -1) {
+                console.warn('Error! XHR failed.');
+            }
+            else {
+            	const data = JSON.parse(e.target.responseText);
+                {% for rtDataPair in tdProperties %}
+                {% for rtProperty in rtDataPair %}
+                updateCHartData(config_{{rtProperty['propertyName']}},data['{{rtProperty['propertyName']}}'])
+                linechart_{{rtProperty['propertyName']}}.update();
+                {% endfor %}
+                {% endfor %}
+            }
+        };
+        req.send();
+    }, 10000);  
+    
+$(document).ready(function () {
+	setInterval(0);
+});
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>PYAAS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <link rel="stylesheet" href="{{exDomain}}static/css/login.css">
+	</head>
+	<body>
+	<div class='loginFrame'>
+              <div class="logo">
+                  <div class = "logoImg" >
+                    <img src="{{exDomain}}static/images/idta1.svg" style = "width:5vw; height:10vh" alt="logo" />
+                  </div>
+                  <div class = "logoText">
+                      <span> Authentication </span>
+                  </div>
+                  <div class = "loginData">
+					  <form action="login" method="post">
+							<input type='text' placeholder='user name' name = "user" class='input-line' required></input>
+							<br />
+							<input type='password' placeholder='password' name = "password" class='input-line' required></input>
+							<div class="SignIn">
+							  <button class = "SignInButton">SignIn</button>
+							</div>
+					  </form>
+                  </div>
+              </div>
+           </div>
+	</body>
+</html>		   

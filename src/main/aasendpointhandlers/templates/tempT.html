@@ -1,0 +1,397 @@
+{% extends "homelayout.html" %} {% block homecontent %}
+<div style = "width: 100%;">
+<div class = "container">
+<div class= "row" style = "height : 1.5vh">
+			<div class = "col-2 d-flex justify-content-left align-items-left" style = "margin-left : 1vw">
+				<span style = "color : rgb(0,52,215,0.9);font-weight: bold; ">TECHNICAL DATA</span>
+			</div>
+			<div class = "col-9"></div>
+</div>
+<div class= "row" style = "min-height : 2.5vh">
+</div>	
+		<div class = "row" style = "border-style : solid; border-color:#00b0f0">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgba(0, 52, 215, 0.9); ">
+				<h style= "color: white;font-size: larger;">GeneralInformation</h>
+			</div>
+			<div class = "col-10 ">
+				<div class = "row" style= "color: black; font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h >Manufacturer Name</h>
+					</div>
+					<div class = "col-4">
+						<h id = "ManufacturerName">{{stdSubmodelData.GeneralInformation.ManufacturerName}}</h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid; margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h >ManufacturerProductDesignation</h>
+					</div>
+					<div class = "col-4">
+						<h id = "ManufacturerProductDesignation">{{stdSubmodelData.GeneralInformation.ManufacturerProductDesignation}}</h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid; margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h >Manufacturer Part Number</h>
+					</div>
+					<div class = "col-4">
+						<h id = "ManufacturerPartNumber">{{stdSubmodelData.GeneralInformation.ManufacturerPartNumber}}</h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>				
+				</div>
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid; margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h >Manufacturer Order Code</h>
+					</div>
+					<div class = "col-4">
+								<h id = "ManufacturerOrderCode">{{stdSubmodelData.GeneralInformation.ManufacturerPartNumber}}</h>													
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+				<div class= "row"  style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid; margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4">
+						<div class   = "row d-flex justify-content-center  align-items-center">
+							<img id = "marking1" style="height: 20vh; width: 10vw; margin-top: 2vh; margin-right : 8vw;display: block;margin-right: auto;margin-left: auto;" src="{{stdSubmodelData.GeneralInformation.ManufacturerLogo}}">
+						</div>
+						<div class  = "row d-flex justify-content-center  align-items-center" style = "margin-top : 1vh;" id = "{{ManufacturerLogo}}">
+							Manufacturer Logo 
+						</div>
+					</div>					
+				</div>				
+			</div>
+		</div>
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+		<div class = "row" style = "border-style : solid; border-color:#00b0f0">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgba(0, 52, 215, 0.9); ">
+				<h style= "color: white;font-size: larger;">Product Images</h>
+			</div>
+			<div class = "col-10 ">
+				{% for key,value in stdSubmodelData.GeneralInformation.ProductImages.items() %}
+				<div class= "row"  style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid; margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4">
+						<div class   = "row d-flex justify-content-center  align-items-center">
+							<img id = "marking1" style="height: 20vh; width: 10vw; margin-top: 2vh; margin-right : 8vw;display: block;margin-right: auto;margin-left: auto;" src="{{value}}">
+						</div>
+						<div class  = "row d-flex justify-content-center  align-items-center" style = "margin-top : 1vh;" id = "marking1Text">
+							{{key}} 
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+			
+		<div class = "row" style = "border-style : solid; border-color:#00b0f0">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgba(0, 52, 215, 0.9); ">
+				<h style= "color: white;font-size: larger;">Further Information</h>
+			</div>
+			<div class = "col-10 ">
+
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid; margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h></h>
+					</div>
+					<div class = "col-4">
+						<h id = ""></h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid; margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h>Valid Date</h>
+					</div>
+					<div class = "col-4">
+						<h id = "ValidDate">12345</h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+		<div class = "row  " style = "height : 4.5vh;border-style : solid; border-color:rgba(0, 52, 215, 0.9); background-color:#00b0f0">
+			<div class = "col-12 d-flex justify-content-center  align-items-center" style = "background-color:rgba(0, 52, 215, 0.9);" >
+				<h style= "color: white;font-size: larger;">Product Classifications</h>
+			</div>
+			
+		</div>
+		
+			{% for key,value in stdSubmodelData.ProductClassifications.items() %}
+
+		<div class = "row" style = "height : 4.5vh">
+		</div>		
+		<div class = "row" style = "border-style : solid; border-color:#00b0f0">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgba(0, 52, 215, 0.9); ">
+				<h style= "color: white;font-size: larger;">{{key}}</h>
+			</div>
+			<div class = "col-10 ">
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h >ProductClassificationSystem</h>
+					</div>
+					<div class = "col-4">
+						<h id = "ProductClassificationSystem">{{value.ProductClassificationSystem}}</h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h >Classification System Version</h>
+					</div>
+					<div class = "col-4">
+						<h id = "ClassificationSystemVersion">{{value.ClassificationSystemVersion}}</h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>	
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h >Product Class Id</h>
+					</div>
+					<div class = "col-4">
+						<h id = "ProductClassId">{{value.ProductClassId}}</h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>				
+			
+			</div>
+		</div>
+				{% endfor %}
+	
+
+		
+		
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+
+		<div class = "row  " style = "height : 4.5vh;border-style : solid; border-color:rgba(0, 52, 215, 0.9); background-color:#00b0f0">
+			<div class = "col-12 d-flex justify-content-center  align-items-center" style = "background-color:rgba(0, 52, 215, 0.9);" >
+				<h style= "color: white;font-size: larger;">TechnicalProperties</h>
+			</div>
+			
+		</div>
+		
+		{% for key,value in stdSubmodelData.TechnicalProperties.items() %}
+
+		<div class = "row" style = "height : 4.5vh">
+		</div>		
+		<div class = "row" style = "border-style : solid; border-color:#00b0f0">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgba(0, 52, 215, 0.9); ">
+				<h style= "color: white;font-size: larger;">{{key}}</h>
+			</div>
+			<div class = "col-10 ">
+				{% for tpKey,tpValue in value.items() %}
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color: rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<h >{{tpKey}}</h>
+					</div>
+					<div class = "col-4">
+						<h id = "{{tpKey}}">{{tpValue}}</h>
+					</div>
+					<div class = "col-4 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('Nameplate','ManufacturerName')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+					{% endfor %}
+								
+			
+			</div>
+		</div>
+		
+		{% endfor %}
+	
+		<div class = "row" style = "height : 4.5vh">
+		</div>		
+</div>
+</div>
+
+<div class="modal fade" id="propertyUpdate" tabindex="-1" aria-labelledby="propertyUpdate" aria-hidden="true">
+	<form action="submodels/property" method="post">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" name="submodel" id="submodelPropertyHeader"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<input id="submodelNameInnerText" name="submodelName" type="hidden" value="">
+				<input id="submodelPropertyInnerText" name="submodelProperty" type="hidden" value="">
+				<div class="modal-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-3">
+								<label for="newValue_Text" class="form-label">New Value</label>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-7">
+								<input type="text" name="newValue" class="form-control"
+									id="newValue_Text" required>
+							</div>
+							<div class="col-1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" type="submit">Update</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+{% endblock %}
