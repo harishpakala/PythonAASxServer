@@ -1,0 +1,165 @@
+{% extends "homelayout.html" %} {% block homecontent %}
+
+		<div class= "row" style = "height : 1.5vh">
+			<div class = "col-2 d-flex justify-content-left align-items-left" style = "margin-left : 1vw">
+				<span style = "color : rgb(0,52,215,0.9);font-weight: bold; ">PRODUCTION MANAGER</span>
+			</div>
+			<div class = "col-9"></div>
+		</div>
+<div class= "row" style = "min-height : 2.5vh">
+</div>
+	<div class = "row" style = "height : 60vh">
+		<div class = "col-4">
+			<div class ="container">
+				<div class= "row" style = "border-radius: 3px; box-shadow:0 17px 50px 0 rgba(0,0,0,.19),0 12px 15px 0 rgba(0,0,0,.24);">
+					<div class="container" id = "productionElement">
+						<div class = "row" style = "height : 6.5vh; border-bottom:solid;border-color: black; background-color:rgb(0,52,215,0.9);  ">
+						</div>
+						<div class = "row" style = "height : 10vh">
+						</div>											
+						<div class = "row" style = "height : 20vh;">
+							<div class = "d-flex justify-content-center align-items-center">
+								<div class="imagecontainer">
+										<img style = "height : 18vh" id = "productionStep_Add" data-bs-toggle="modal" data-bs-target="#stepCreation" data-whatever="@mdo" src="{{exDomain}}static/images/plus.svg">
+									<div class="overlay">
+										<img  style = "height : 18vh" id = "productionStep_Add1" data-bs-toggle="modal" data-bs-target="#stepCreation" data-whatever="@mdo" src="{{exDomain}}static/images/plus1.svg">
+									</div>
+								</div>
+							</div>											
+						</div>
+						<div class = "row" style = "height : 4vh;">
+						</div>												
+						<div class = "row d-flex justify-content-center align-items-center" style = "height : 5vh; font-size : 75%">
+									ADD
+						</div>
+							<div class = "d-flex justify-content-center align-items-center" style = "height : 5vh; font-size : 75%">
+																			
+											New Production Step
+
+							</div>
+
+						<div class = "row" style = "height : 10vh;">
+						</div>											
+					</div>										
+				</div>							
+			</div>
+		</div>	
+
+		<div class = "col-4">
+			<div class ="container">
+				<div class= "row" style = "border-radius: 3px; box-shadow:0 17px 50px 0 rgba(0,0,0,.19),0 12px 15px 0 rgba(0,0,0,.24);">
+					<div class="container" id = "productionElement">
+						<div class = "row" style = "height : 6.5vh; border-bottom:solid;border-color: black; background-color:rgb(0,52,215,0.9);  ">
+							<form action="/{{aasIndex}}/productionmanager" method="post">
+								<input type="hidden" name="operationType" value="home" id="p1" />							
+									<div class="imagecontainer" style = "padding-top : 1.1vh;">
+											<input type="image"  style = "height : 4.5vh; float : right;" onclick="this.form.submit()" src="{{exDomain}}static/images/refresh.svg" name="submit">
+										<div class="overlay"  style = "padding-top : 1.1vh;">
+											<input type="image"  style = "height : 4.5vh; float : right;" onclick="this.form.submit()" src="{{exDomain}}static/images/refresh1.svg" name="submit" >
+										</div>
+									</div>
+							</form>						
+						</div>
+						<div class="row">
+							<div style = "overflow-x: auto; height :40vh">
+								<div class=" d-flex flex-column bd-highlight mb-3">
+									{% for productionStep in productionSequenceList %}
+										<div class="d-flex justify-content-center align-items-center"><div class="col-12"><canvas id="{{productionStep}}"  height="50%"></canvas></div></div>
+									{% endfor %}
+								</div>
+					   		 </div>
+					   	</div>	 
+						<div class="row"  style="height:5vh;">
+							<div class="col-12" ></div>
+						</div>
+						<div class="row"  style="height:8.5vh;">
+							<div class="col-6">
+								<div class = "d-flex justify-content-center align-items-center">
+									<form action="/{{aasIndex}}/productionmanager" method="post">
+										<input type="hidden" name="operationType" value="delete" id="p1" />
+										<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style = "height : 5vh; width : 10vw; padding-top: 0px">Delete Steps</button>
+									</form>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class = "d-flex justify-content-center align-items-center">
+									<form action="/{{aasIndex}}/productionmanager" method="post">
+										<input type="hidden" name="operationType" value="start" id="p2" />
+										<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style = "height : 5vh; width : 10vw; padding-top: 0px">Start Process</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						
+															
+					</div>										
+				</div>							
+			</div>
+		</div>
+
+		<div class = "col-4">
+		<div class ="container">
+				<div class= "row" style = "border-radius: 3px; box-shadow:0 17px 50px 0 rgba(0,0,0,.19),0 12px 15px 0 rgba(0,0,0,.24);">
+					<div class="container" id = "productionElement">
+						<div class = "row" style = "height : 6.5vh; border-bottom:solid;border-color: black; background-color:rgb(0,52,215,0.9);  ">				
+						</div>
+						<div class="row" style = "height : 43vh;">
+							<table class = "table">
+							{% for conversationId in conversationIdList %}
+							 <tr><td>
+							         <form id="{{conversationId}}" method="post" action="/{{aasIndex}}/search">
+							          	<input id="searchQuery" name="searchQuery" type="hidden" value="{{conversationId}}">
+            							<a href="javascript:{}" onclick="document.getElementById('{{conversationId}}').submit();">{{conversationId}}</a>
+        							</form>
+							{% endfor %}							
+							</table>
+						</div>
+						<div class="row" style = "height : 10.5vh;">
+						</div>							
+					</div>										
+				</div>							
+			</div>			
+		</div>
+
+	</div>
+
+<div class="modal fade" id="stepCreation" tabindex="-1" aria-labelledby="propertyLabelff" aria-hidden="true">
+  <form action="{{aasId}}" method="post">
+  <input type="hidden" name="operationType" value="create" id="p3" />
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title">New Production Step Sequence</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+		</button>
+	  </div>
+	  <div class="modal-body">
+	  	<div class="container">
+	  		<div class="row">
+	  			<div class="col-sm-4">
+	  				<label for="IdShort_Text">Production Step</label>
+	  			</div>
+	  			<div  class="col-sm-1">
+	  			</div>
+				<div class="col-sm-6">
+					 <select class="form-select" id = "productionStep" name = "productionStep">
+						{% for productionStep in productionStepList %}
+							<option value="{{productionStep}}">{{productionStep}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div  class="col-sm-1">
+
+	  			</div>
+		  	</div>
+	  	</div>
+	  </div>
+	  <div class="modal-footer">
+		<button class="btn btn-primary"  type="submit">Create</button>
+	  </div>
+	</div>
+  </div>
+  </form>
+</div>
+{% endblock %}
+		 

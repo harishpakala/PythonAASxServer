@@ -1,0 +1,17 @@
+{% extends "homelayout.html" %}
+
+{% block homecontent %}
+
+<div class="container">
+ <div class="row">
+ 	<div class="col">
+ 
+      	<button type="button" class="btn btn-primary" onclick= "getLog_MainService()">Get Log</button>
+      	  <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" id = "log-div" style="max-width: 900px; max-height: 500px;">
+	        <p id="logParagraph_MainService"></p>
+	      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
