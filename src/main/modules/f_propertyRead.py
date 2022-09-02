@@ -54,7 +54,7 @@ def function(pyAAS, *args):
     accessURI = params["href"]
     dataElement = params["dataElement"].aasELement
     if (accessURI[0:8] == "opc.tcp:"):
-        newValue = pyAAS.assetaccessEndpointHandlers["OPCUA"].read(accessURI)
+        newValue = pyAAS.assetaccessHandlers["OPCUA"].read(accessURI)
         if newValue == "error":
             pass
         else:

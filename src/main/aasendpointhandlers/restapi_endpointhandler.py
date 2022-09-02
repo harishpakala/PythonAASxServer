@@ -59,7 +59,7 @@ class AASEndPointHandler(AASEndPointHandler):
     def configure(self):
         
         self.ipaddressComdrv = '0.0.0.0'
-        self.portComdrv = self.pyAAS.lia_env_variable["LIA_AAS_RESTAPI_PORT_INTERN"]
+        self.portComdrv = self.pyAAS.lia_env_variable["LIA_AAS_RESTAPI_PORT"]
         
         
         # REST API
@@ -116,15 +116,13 @@ class AASEndPointHandler(AASEndPointHandler):
        
         self.pyAAS.serviceLogger.info("REST API namespaces are configured")
 
-    def update(self, channel):
-            pass
     
-    def run(self):
+    def update(self):
         drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv)
         self.pyAAS.serviceLogger.info("REST API namespaces are started")
     
     def start(self):
-        restServerThread = threading.Thread(target=self.run)
+        restServerThread = threading.Thread(target=self.update)
         restServerThread.start()
 
     def stop(self):

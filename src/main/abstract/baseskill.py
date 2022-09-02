@@ -98,7 +98,7 @@ except ImportError:
         
         MODULE_NAME = "PLC_OPCUA"
         #Accessing the specifc assetaaccess adaptor 
-        self.plcHandler = self.baseClass.saas.assetaccessEndpointHandlers[MODULE_NAME] # 1
+        self.plcHandler = self.baseClass.saas.assetaccessHandlers[MODULE_NAME] # 1
         
         #accessing the list property variables Dictionary are specified in the configuration file.  
         self.propertyDict = self.plcHandler.propertylist # 2

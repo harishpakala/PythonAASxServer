@@ -78,7 +78,7 @@ class ConceptDescriptions(Resource):
                 aasValid = AASMetaModelValidator(self.pyAAS)           
                 if(aasValid.validateConceptDescription(data)):
                     edm = ExecuteDBModifier(self.pyAAS)
-                    data,status = edm.executeModifer({"data":None,"method":"postConceptDescription"})
+                    data,status = edm.executeModifer({"data":data,"method":"postConceptDescription"})
                     if status:
                         return make_response(data,201)
                     else:
@@ -260,7 +260,7 @@ class Submodel(Resource):
                 if(aasValid.valitdateSubmodel(data)):
                     edm = ExecuteDBModifier(self.pyAAS)
                     data,status = edm.executeModifer({"data":{"_submodelid":submodelIdentifier,
-                                                                "submodelData":data},"method":"putSubmodel"})
+                                                                "requestData":data},"method":"putSubmodel"})
                     if status:
                         return make_response(data,204)
                     else:
@@ -308,7 +308,7 @@ class AssetAdministrationShellsSubmodelRefs(Resource):
                 aasValid = AASMetaModelValidator(self.pyAAS)           
                 if(aasValid.validateAASShellSubmodelRef(data)):
                     edm = ExecuteDBModifier(self.pyAAS)
-                    data,status = edm.executeModifer({"data":{"_shellId":aasIdentifier,"_submodelRef":data
+                    data,status = edm.executeModifer({"data":{"_shellId":aasIdentifier,"requestData":data
                                             },"method":"postShellSubmodelRef"})                      
                     if status:
                         return make_response(data,201)
@@ -346,7 +346,7 @@ class SubmodelELements(Resource):
                 aasValid = AASMetaModelValidator(self.pyAAS)           
                 if(aasValid.validateSubmodelElement(data)):
                     edm = ExecuteDBModifier(self.pyAAS)
-                    data,status = edm.executeModifer({"data":{"_idShortpath":submodelIdentifier,"elemData":data
+                    data,status = edm.executeModifer({"data":{"_idShortpath":submodelIdentifier,"requestData":data
                                             },"method":"postSubmodelElem"})                      
                     if status:
                         return make_response(data,201)
@@ -387,7 +387,7 @@ class SubmodelElementByIdShortPath(Resource):
                 aasValid = AASMetaModelValidator(self.pyAAS)           
                 if(aasValid.validateSubmodelELement(data)):
                     edm = ExecuteDBModifier(self.pyAAS)
-                    msg,status = edm.executeModifer({"data":{"elemData":data,
+                    msg,status = edm.executeModifer({"data":{"requestData":data,
                                             "_idShortpath" : submodelIdentifier+"."+idShortPath,
                                             },"method":"putSubmodelElem","instanceId" : str(uuid.uuid1())}) 
                     if status:
@@ -410,7 +410,7 @@ class SubmodelElementByIdShortPath(Resource):
                 aasValid = AASMetaModelValidator(self.pyAAS)           
                 if(aasValid.validateSubmodelELement(data)):
                     edm = ExecuteDBModifier(self.pyAAS)
-                    msg,status = edm.executeModifer({"data":{"elemData":data,
+                    msg,status = edm.executeModifer({"data":{"requestData":data,
                                             "_idShortpath" : submodelIdentifier+"."+idShortPath,
                                             },"method":"postSubmodelElem","instanceId" : str(uuid.uuid1())}) 
                     if status:
@@ -468,7 +468,7 @@ class AASSubmodelElementByIdShortPath(Resource):
                 aasValid = AASMetaModelValidator(self.pyAAS)           
                 if(aasValid.validateSubmodelELement(data)):
                     edm = ExecuteDBModifier(self.pyAAS)
-                    msg,status = edm.executeModifer({"data":{"elemData":data, 
+                    msg,status = edm.executeModifer({"data":{"requestData":data, 
                                             "_idShortpath" : submodelIdentifier+"."+idShortPath
                                             },"method":"putSubmodelElem","instanceId" : str(uuid.uuid1())}) 
                     if status:
@@ -493,7 +493,7 @@ class AASSubmodelElementByIdShortPath(Resource):
                 aasValid = AASMetaModelValidator(self.pyAAS)           
                 if(aasValid.validateSubmodelELement(data)):
                     edm = ExecuteDBModifier(self.pyAAS)
-                    msg,status = edm.executeModifer({"data":{"elemData":data, 
+                    msg,status = edm.executeModifer({"data":{"requestData":data, 
                                             "_idShortpath" : submodelIdentifier+"."+idShortPath
                                             },"method":"postSubmodelElem","instanceId" : str(uuid.uuid1())}) 
                     if status:
@@ -562,7 +562,7 @@ class AASassetInformationById(Resource):
                 aasValid = AASMetaModelValidator(self.pyAAS)           
                 if(aasValid.valitdateAsset(data)):
                     edm = ExecuteDBModifier(self.pyAAS),
-                    msg,status = edm.executeModifer({"data":{"_assetInformation":data,"_id":assetId},"method":"putAsset","instanceId" : str(uuid.uuid1())})
+                    msg,status = edm.executeModifer({"data":{"requestData":data,"_id":assetId},"method":"putAsset","instanceId" : str(uuid.uuid1())})
                     if status:
                         return make_response(msg,201)
                     else:
@@ -632,7 +632,7 @@ class AASsubmodelRefsIndentifier(Resource):
                 if(True):
                     if (True):
                         edm = ExecuteDBModifier(self.pyAAS)
-                        data,status = edm.executeModifer({"data":{"_shellId": aasId,"_submodelRef":data}
+                        data,status = edm.executeModifer({"data":{"_shellId": aasId,"requestData":data}
                                                                ,"method":"putShellSubmodelRef","instanceId" : str(uuid.uuid1())})            
                         if status:
                             return make_response(data,204)

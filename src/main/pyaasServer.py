@@ -61,41 +61,25 @@ try:
 except ImportError:
     from main.utils.utils import HashDict
 
-class LIAPyAAS(object):
-
+class PyAASServer(object):
+    
     def __init__(self):
-        self.reset()
-        self.endPointmodules = {}
-        self.AASendPointHandles = {}
-        self.assetaccessEndpointHandlers = {}
-        self.aasSkillHandles = {}
-        self.AASID = ''
-        self.BroadCastMQTTTopic = ''
-        self.msgHandler = MessageHandler(self)
-        self.skillInstanceDictbyAASId = {}
+        self.AASID = "PyAASServer"
         self.platform = platform.system()
         self.base_dir = os.path.dirname(os.path.realpath(__file__))
+        self.lia_env_variable = {}
         
-        self.lia_env_variable = {} 
+        self.initDataAccessPaths()
+        
+        self.aasEndPointHandlers = {}
+        self.assetaccessHandlers = {}
+        self.skillInstanceDictbyAASId = {}
+
         self.skilllogListDict = {}
-        self.conversationInteractionList = []
-        
-        #  submodel template
-        self.aasStandardSubmodelData = {}
-        self.aasStandardSubmodelList = {}
-
-        
-        self.aasIdentificationIdList = {}
-        self.heartBeatHandlerList = set()
-        
-        self.aasContentData = {}
-        self.skillListWeb = {}
-        self.AASData = []
-        self.tdProperties = {}
-        self.tdPropertiesList = {}
-        
-        self.pmIntancesDict = {}
-
+        self.dba = None
+    
+    
+    def initDataAccessVariables(self):
         if (self.platform == "Windows"):
             self.script_dir = (self.base_dir).split("src\main")[0]
         elif (self.platform == "Linux"):
@@ -110,20 +94,6 @@ class LIAPyAAS(object):
         self.js_repository = os.path.join(self.script_dir, "data/static/js")
         self.css_repository = os.path.join(self.script_dir, "data/static/css")
         
-        self.baseSkills = {}
-        self.dba = None
-        
-    def reset(self):
-        self.channels = {}
-        self.io_adapters = {}
-        self.AASendPointHandles = {}   
-        self.scheduler = None
-
-    def reconfigure(self):
-        self.stop()
-        self.reset()
-        self.configure()
-        self.start()
     
     ######## Configure Service Entities ##################
     
@@ -160,6 +130,16 @@ class LIAPyAAS(object):
             self.serviceLogger.info('Error configuring the Logger.'+str(E))
             self.shutDown()
 
+    def configureLogList(self):
+        try:
+            for aasIndex in self.skillInstanceDictbyAASId.keys():
+                skillLogs = {}
+                for skill in self.skillInstanceDictbyAASId[aasIndex].keys():
+                    skillLogs[skill] = LogList()
+                self.skilllogListDict[aasIndex] = skillLogs
+        except Exception as E:
+            self.serviceLogger.info('Error configuring Log Lists. ' + str(E))    
+
     def setExternalVariables(self,environ):
         try:
             for env_variable in environ.keys():
@@ -183,41 +163,56 @@ class LIAPyAAS(object):
                 self.shutDown()
         except Exception as E:
             self.serviceLogger.info('Error configuring the external variables. ' + str(E))
+
+    def configureDataStructures(self):
+        self.aasHashDict = HashDict()
+        self.submodelHashDict = HashDict()
+        self.assetHashDict = HashDict()
+        self.cdHashDict = HashDict()
+        self.conversHashDict = HashDict()
+        self.aasShellHashDict = HashDict()
+    
+    def configureWebInterfaceVariables(self):
+        
+        self.productionSequenceList = dict()
+        self.productionStepList = dict()
+        self.conversationIdList = dict()
+        self.thumbNailList = dict()
+        #  submodel template
+        self.aasStandardSubmodelData = {}
+        self.aasStandardSubmodelList = {}
+        self.heartBeatHandlerList = set()
+        self.skillListWeb = {}
+        self.conversationInteractionList = []      
+             
+    def configureInternalVariables(self):
+        self.configureDataStructures()
+        self.configureWebInterfaceVariables
+        self.aasList = dict()
+        self.aasIdList = []
+        self.aasIndexidShortDict = dict()
+        self.aasIdentificationIdList = {}
+        self.aasContentData = {}
+        self.AASData = []
+        self.tdProperties = {}
+        self.tdPropertiesList = {}
             
     def configureAASConfigureParser(self):
         try:
             packageFile = self.lia_env_variable["LIA_AAS_PACKAGE"]
             self.aasConfigurer = ConfigParser(self,packageFile)
             if self.aasConfigurer.reposStatus:
-                pass
+                if (self.aasConfigurer.configureAASJsonData()):
+                    self.serviceLogger.info('The AASX data is extracted and parsed')
+                else:
+                    self.serviceLogger.info('Error configuring the AAS Data. ')
+                    self.shutDown()                
             else:
                 self.serviceLogger.info('Error configuring the AASX parser.')
                 self.shutDown()
         except Exception as E:
             self.serviceLogger.info('Error configuring the AASX parser.'+str(E))
             self.shutDown()
-            
-    def configureAASID(self):
-        self.AASID = "PyAASServer"
-        self.serviceLogger.info('The AAS ID is configured.')
-
-    def configureInternalVariables(self):
-        self.registryAPI = ""
-        self.productionSequenceList = dict()
-        self.productionStepList = dict()
-        self.conversationIdList = dict()
-        self.aasList = dict()
-        self.aasIdList = []
-        self.thumbNailList = dict()
-        self.listnersConfig = dict()
-        self.aasHashDict = HashDict()
-        self.submodelHashDict = HashDict()
-        self.assetHashDict = HashDict()
-        self.cdHashDict = HashDict()
-        self.conversHashDict = HashDict()
-        self.aasShellHashDict = HashDict()    
-        self.listnerSockets = dict()    
-        self.aasIndexidShortDict = dict()
 
     def configureDataAdaptor(self):
         try:
@@ -229,26 +224,19 @@ class LIAPyAAS(object):
         except Exception as E:
             self.serviceLogger.info("Error while configuring the Database Server. " + str(E))
             self.shutDown()
-            
+     
+    
+    def configureMsgHandler(self):
+        self.msgHandler = MessageHandler(self)
+     
     def confiureDataManager(self):
         try:
             self.dataManager = DataManager(self)
         except Exception as E:
             self.serviceLogger.info("Error while configuring the Database manager. " + str(E))
             self.shutDown()        
-
-    def configureAASData(self):    
-        try:
-            if (self.aasConfigurer.configureAASJsonData()):
-                self.serviceLogger.info('The External DB is configured')
-            else:
-                self.serviceLogger.info('Error configuring the AAS Data. ')
-                self.shutDown()
-        except Exception as E:
-            self.serviceLogger.info('Error configuring the AAS Data. ' +  str(E))   
-            self.shutDown()         
-
-    def configureEndPoints(self):
+ 
+    def configureAASEndPoints(self):
         try:
             # configure Industrie 4.0 communication drivers
             aasEndPoints = self.aasConfigurer.getAASEndPoints()
@@ -256,12 +244,9 @@ class LIAPyAAS(object):
                 name = endPoint["Name"]
                 module = endPoint["Module"]
                 if module not in sys.modules:
-                    self.endPointmodules[module] = import_module("aasendpointhandlers"+module)
-                
-                endPoint0 = self.endPointmodules[module].AASEndPointHandler(self,self.msgHandler)
-                self.AASendPointHandles[name] = endPoint0
-    
-                endPoint0.configure()
+                    endPoint0 = import_module("aasendpointhandlers"+module).AASEndPointHandler(self,self.msgHandler)
+                    self.aasEndPointHandlers[name] = endPoint0
+                    endPoint0.configure()
                 
             self.serviceLogger.info('The AAS I40 End Points are configured')        
         except Exception as E:
@@ -276,11 +261,27 @@ class LIAPyAAS(object):
                 if module not in sys.modules:
                     self.assetmodule = import_module("assetaccessadapters"+module)
                     endPoint0 = self.assetmodule.AsssetEndPointHandler(self)
-                    self.assetaccessEndpointHandlers[key] = endPoint0
+                    self.assetaccessHandlers[key] = endPoint0
             
             self.serviceLogger.info('The Asset Access points are configured')        
         except Exception as E:
             self.serviceLogger.info('Error configuring the Asset access points. ' + str(E))
+
+    def configurePubSubManager(self):
+        self.listnersConfig = dict()
+        self.listnerSockets = dict()    
+        if (not self.aasConfigurer.extract_pubsublistner_config()):
+            self.serviceLogger.info("Error extracting the pubsub listner configuration.")
+            self.shutDown()
+            
+        self.pubsubManager = PubSubManager(self)
+        if (not self.pubsubManager.configure_listner()):
+            self.serviceLogger.info("Error configuring the listners. ")
+            self.shutDown()
+            
+        if (not self.pubsubManager.configure_listner_sockets()):
+            self.serviceLogger.info("Error configuring the listner sockets. ")
+            self.shutDown()
 
     def configureRegisterSKill(self):
         try:
@@ -323,16 +324,11 @@ class LIAPyAAS(object):
         except Exception as E:
             self.serviceLogger.info('Error configuring skills. ' + str(E))
         
+    def configureScheduler(self):
+        self.scheduler = Scheduler(self)
+        self.scheduler.configure()
         
-    def configureLogList(self):
-        try:
-            for aasIndex in self.skillInstanceDictbyAASId.keys():
-                skillLogs = {}
-                for skill in self.skillInstanceDictbyAASId[aasIndex].keys():
-                    skillLogs[skill] = LogList()
-                self.skilllogListDict[aasIndex] = skillLogs
-        except Exception as E:
-            self.serviceLogger.info('Error configuring Log Lists. ' + str(E))            
+
     
     def configureSkillWebList(self):
         i = 0
@@ -342,8 +338,7 @@ class LIAPyAAS(object):
             #    del self.skillListWeb[i]
             #    break
             i = i + 1
-        
-    
+  
     def getSubmodelPropertyListDict(self,aasIdentifier):
         self.submodelPropertyListDict = self.aasConfigurer.getSubmodelPropertyListDict(aasIdentifier)
         return self.submodelPropertyListDict
@@ -353,23 +348,20 @@ class LIAPyAAS(object):
         return self.submodelList
     ####### Start Service Entities ################
         
-    def startEndPoints(self):
+    def startAASEndPoints(self):
         try:
-            self.AASendPointHandlerObjects = {}
-            for module_name, endPointHandler in self.AASendPointHandles.items():
+            for endPointHandler in self.aasEndPointHandlers.values():
                 endPointHandler.start()
-                self.AASendPointHandlerObjects[module_name] = endPointHandler
-                
             self.serviceLogger.info('The AAS end Points are Started')        
         except Exception as E:
             self.serviceLogger.info('Error while starting the AAS End points. '+str(E))
         
-    def startAssetEndPoints(self):
+    def startAssetAccessPoints(self):
         self.serviceLogger.info('The Asset end Points are Started')
     
     def startMsgHandlerThread(self):
         try:
-            msgHandlerThread = threading.Thread(target=self.msgHandler.start,name="msgHandler", args=(self.skillInstanceDictbyAASId,self.AASendPointHandlerObjects,))     
+            msgHandlerThread = threading.Thread(target=self.msgHandler.start,name="msgHandler", args=(self.skillInstanceDictbyAASId,self.aasEndPointHandlers,))     
             msgHandlerThread.start()
         
             self.serviceLogger.info('The message handler started')            
@@ -407,20 +399,13 @@ class LIAPyAAS(object):
         except Exception as E:
             self.serviceLogger.info('Error while starting the DataManager thread. '+str(E))
 
-    def startPubsubListners(self):
+    def startPubSubManager(self):
         try:
             self.pubsubManager.start_listners()
             self.serviceLogger.info('PubSub listners are sucessfully started')     
         except Exception as E:
             self.serviceLogger.info('Error while starting the pubsub listners. ' +str(E))
-        
-    def startHeartBeatHandler(self):
-        try:
-            heartBeatThread = threading.Thread(target=self.msgHandler.trigggerHeartBeat)
-            heartBeatThread.start()        
-        except Exception as E:
-            self.serviceLogger.info('Error while starting the HeartBeat handler thread. '+str(E))
-    
+
     def configure(self):
         
         self.commList = [] # List of communication drivers
@@ -429,78 +414,55 @@ class LIAPyAAS(object):
 
         #configure Service Logger
         self.configureLogger()
+        #configure Logs
+        self.configureLogList()
         self.serviceLogger.info('Configuring the Service Entities.')
         #configure External Variables
         self.configureExternalVariables()
-        #configure AASXConfigParser
-        
-        #configure AASID
-        self.configureAASID()
         #configure registryAPI
         self.configureInternalVariables()
         self.serviceLogger.info("Configuration Parameters are Set.")
         
         self.configureAASConfigureParser() 
-        self.configureDataAdaptor()
-
-        self.configureAASData()
-        #configure the Data Manager
+        
         #configure Data Adaptor
-
+        self.configureDataAdaptor()
+        #configure message Handler
+        self.configureMsgHandler()
+        #configure the Data Manager
         self.confiureDataManager()
-        
-        #config PubSubManager
-        if (not self.aasConfigurer.extract_pubsublistner_config()):
-            self.serviceLogger.info("Error extracting the pubsub listner configuration.")
-            self.shutDown()
-            
-        self.pubsubManager = PubSubManager(self)
-        if (not self.pubsubManager.configure_listner()):
-            self.serviceLogger.info("Error configuring the listners. ")
-            self.shutDown()
-            
-        if (not self.pubsubManager.configure_listner_sockets()):
-            self.serviceLogger.info("Error configuring the listner sockets. ")
-            self.shutDown()
-        
         #configure EndPoints
-        self.configureEndPoints()
+        self.configureAASEndPoints()
         #configure IA Adaptors
         self.configureAssetAccessPoints()
-        #configure Skill    
-           
+        #configure PubSubManager    
+        self.configurePubSubManager()
+        #configure Skills
         self.configureSkills()
-        #configure Logs
-        self.configureLogList()
+        
         #configure skill web list
         self.configureSkillWebList()
         #configure submodel properties
         #self.configureSubmodelProperties()   
         # configure the scheduler
-        self.scheduler = Scheduler(self)
-        self.scheduler.configure()
+        self.configureScheduler()
         
     def start(self):
         
         self.serviceLogger.info('Starting the Service Entities')
-        
-        self.cdrivers = {}
-        self.cdrv_mqtt = None
         #start the Data Manager
         self.startDataManager()
         #start the pubsub listners
-        self.startPubsubListners()       
+        self.startPubSubManager()       
         #start the communication drivers
-        self.startEndPoints()
+        self.startAssetAccessPoints()
         #start the message handler thread
         self.startMsgHandlerThread()
         # start the scheduler
         self.startScheduler()
         #start the skills
         self.startSkills()
-        #heartBeatHandler
-        self.startHeartBeatHandler()
-    
+  
     def stop(self):
         self.scheduler.stop()
         for module_name, cdrv in self.cdrvs.items():
@@ -511,7 +473,7 @@ class LIAPyAAS(object):
         os._exit(0)
 
 if __name__ == "__main__":
-    pyAAS = LIAPyAAS()
+    pyAAS = PyAASServer()
     pyAAS.configure()
     pyAAS.start()
     print('Press Ctrl+{0} to exit'.format('C'))

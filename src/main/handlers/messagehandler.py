@@ -54,6 +54,12 @@ class MessageHandler(object):
         self.skillInstanceDictbyAASId = skillInstanceDictbyAASId
         self.AASendPointHandlerObjects = AASendPointHandlerObjects
         bCount = 0
+
+        try:
+            heartBeatThread = threading.Thread(target=self.trigggerHeartBeat)
+            heartBeatThread.start()        
+        except Exception as E:
+            self.serviceLogger.info('Error while starting the HeartBeat handler thread. '+str(E))
                 
         while self.POLL:
             time.sleep(0.01)
@@ -61,7 +67,7 @@ class MessageHandler(object):
                 obThread = threading.Thread(target=self.sendOutBoundMessage, args=(self.getObMessage(),))     
                 obThread.start()
             if (self.inBoundQueue).qsize() != 0:
-                ibThread = threading.Thread(target=self._receiveMessage_, args=(self.getIbMessage(),))     
+                ibThread = threading.Thread(target=self.receiveMessage, args=(self.getIbMessage(),))     
                 ibThread.start()
             if (self.statusMessageQueue).qsize() != 0:
                 smThread = threading.Thread(target=self.sendObstatusMessage, args=(self.getstatusMessage(),))
@@ -103,7 +109,7 @@ class MessageHandler(object):
     def createNewUUID(self):
         return uuid.uuid4()
         
-    def _receiveMessage_(self, jMessage):
+    def receiveMessage(self, jMessage):
         try:
             aasId = jMessage["frame"]["receiver"]["identification"]["id"]
             _skillName = jMessage["frame"]["receiver"]["role"]["name"]

@@ -226,7 +226,7 @@ class AAS_Database_Server(object):
     def postSubmodelElem(self,data):
         try:
             _idShortpath = data["_idShortpath"]
-            elemData = data["elemData"]
+            elemData = data["requestData"]
             aasSmParser = AASSubmodelParser(self.aasHashDict,self.submodelHashDict)
             _parentId = (_idShortpath.split("."))
             del _parentId[-1]
@@ -241,7 +241,7 @@ class AAS_Database_Server(object):
     def putSubmodelElem(self,data):
         try:
             _idShortpath = data["_idShortpath"]
-            elemData = data["elemData"]            
+            elemData = data["requestData"]            
             aasSmParser = AASSubmodelParser(self.aasHashDict,self.submodelHashDict)
             _parentId = (_idShortpath.split("."))
             del _parentId[-1]
@@ -298,7 +298,7 @@ class AAS_Database_Server(object):
         try:
             msg,status = self.deleteSubmodel(data["_submodelid"])
             if (status):
-                msg1,status1 = self.postSubmodel(data["submodelData"])
+                msg1,status1 = self.postSubmodel(data["requestData"])
                 if status1:
                     return  "Submodel updated successfully", "Unexpected Error"
                 else:
@@ -356,7 +356,7 @@ class AAS_Database_Server(object):
         try:
             msg,status = self.deleteConceptDescription(data["_conceptDescriptionId"])
             if (status):
-                msg1,status1 = self.postConceptDescription(data["_conceptDescription"])
+                msg1,status1 = self.postConceptDescription(data["requestData"])
                 if (status1):
                     return "Concept Description updated successfully", True
                 else:
@@ -456,7 +456,7 @@ class AAS_Database_Server(object):
         try:
             msg,status = self.deleteAASShell(data["_shellId"])
             if (status):
-                msg1,status1 =  self.postAASShell(data["_aasShell"])
+                msg1,status1 =  self.postAASShell(data["requestData"])
                 if (status1):
                     return "Asset Administration Shell updated successfully",True
                 else:
@@ -541,7 +541,7 @@ class AAS_Database_Server(object):
         try:
             msg,status = self.deleteShellSubmodelRef(data["_shellId"])
             if (status):
-                msg1,status1 =  self.postShellSubmodelRef(data["_submodelRef"])
+                msg1,status1 =  self.postShellSubmodelRef(data["requestData"])
                 if (status1):
                     return "Asset Administration Shell updated successfully",True
                 else:

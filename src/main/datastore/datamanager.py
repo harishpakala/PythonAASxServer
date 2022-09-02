@@ -29,8 +29,8 @@ class DataManager(object):
      
     def configure(self):
         self.pyAAS.serviceLogger.info('The Database manager is being configured')
-
-    def start(self):
+    
+    def requestHandler(self):
         self.POLL = True
         self.pyAAS.serviceLogger.info('The Database manager is being started')
         while self.POLL:
@@ -51,6 +51,8 @@ class DataManager(object):
                                                          inMessage["messageId"],
                                                          inMessage["direction"],
                                                          inMessage["message"],entryTime,inMessage["SenderAASID"])
+    def start(self):
+        self.requestHandler()
         self.pyAAS.serviceLogger.info('The Database manager is started')
         
     def stop(self):
