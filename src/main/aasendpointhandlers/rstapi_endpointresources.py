@@ -1302,7 +1302,7 @@ class AASWebInterface(Resource):
     def save_submodel(self,submodel_data) -> bool:
         try :
             edm = ExecuteDBModifier(self.pyaas)
-            data,status,statuscode = edm.execute({"data":{"_submodel":submodel_data}, "method": "PostSubmodel",
+            data,status,statuscode = edm.execute({"data":{"_submodel":submodel_data,"submodelIdentifier" : submodel_data["id"]}, "method": "PutSubmodelById",
                                                                  "instanceId" : str(uuid.uuid1())})
             return status
         except Exception as e:
@@ -1327,7 +1327,7 @@ class AASWebInterface(Resource):
             return False
         
     def create_skill_entry_sc(self,skill_details) -> dict:
-        operational_data = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["OperationaData"])
+        operational_data = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["OperationalData"])
         sc = operational_data["submodels"][0]["submodelElements"][0]
         sc["idShort"] = skill_details["SkillName"] 
         for index,sc_feature in enumerate(sc["value"]):
@@ -1522,7 +1522,7 @@ class AASWebInterfaceProductionManagement(Resource):
         try:
             aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode()
             data,status1 = self.pyaas.dba.get_aas_information(aasIdentifier1)
-            available_skills = set(self.pyaas.available_skills.keys()) - set(data["skillList"])
+            available_skills = set(self.pyaas.available_skills.keys()) - set(data["skillList"])  -set(["ProductionManager","Register"])
             productions_skills = set(data["skillList"]) -set(["ProductionManager","Register"])
             rv=   Response(render_template('productionmanager.html',thumbNail= urllib.parse.quote(data["thumbnail"],safe= ""),
                                                         aasIdentifier=aasIdentifier, exDomain=self.pyaas.exDomain , 

@@ -718,7 +718,7 @@ class sendCompletionResponse(object):
             I40FrameData = {
                 "semanticProtocol": self.baseClass.semanticProtocol,
                 "type": oMessage,
-                "messageId" : oMessage+"_"+str(self.base_class.pyaas.dba.getMessageCount()[0]+1),
+                "messageId" : oMessage+"_"+str(self.baseClass.pyaas.dba.getMessageCount()[0]+1),
                 "SenderAASID": message["frame"]["sender"]["id"],
                 "SenderRolename": self.baseClass.skillName,
                 "conversationId": message["frame"]["conversationId"],

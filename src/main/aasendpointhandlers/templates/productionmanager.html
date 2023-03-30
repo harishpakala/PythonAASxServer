@@ -77,7 +77,7 @@
 												<form action="/shells/{{aasIdentifier}}/productionmanager/webui" method="post">
 													<input type="hidden" name="operationType" value="delete" id="p1" />
 													<input type="hidden" name="skill_name" value="{{productionstep.skill_name}}" id="p1" />
-													<input type="hidden" name="submodel_id" value="{{productionstep.submodel_id}}" id="p1" />
+													<input type="hidden" name="submodel_id" value="{{productionstep.submodel_id_idSHort_list[0][0]}}" id="p1" />
 													<input type="hidden" name="sequence" value="{{loop.index}}" id="p1" />
 													<div class="std-submodel-add" style = "margin-left : 50%">
 														<input type = "image" style = "height : 4vh;cursor: pointer;" id = "std-submodel-img"  src="{{exDomain}}web/images/delete_button.svg" alt="Submit">
