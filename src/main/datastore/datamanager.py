@@ -53,7 +53,7 @@ class DataManager(object):
                                                          inMessage["direction"],
                                                          inMessage["message"],
                                                          entryTime,
-                                                         inMessage["SenderAASID"],)
+                                                         inMessage["SenderAASID"])
                     self.pyAAS.conversationUpdate = True
         self.pyAAS.serviceLogger.info('The Database manager is started')
         

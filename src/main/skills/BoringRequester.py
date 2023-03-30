@@ -131,7 +131,7 @@ except ImportError:
     
     The ReceiverAASID and ReceiverRolename could be obtained from sender part of the incoming message
     and these are to be provided empty, if there is no receiver.
-    receiverId = self.base_class.StateName_In["frame"]["sender"]["identification"]["id"]
+    receiverId = self.base_class.StateName_In["frame"]["sender"]["id"]
     receiverRole = self.base_class.StateName_In["frame"]["sender"]["role"]["name"]
     
     I40FrameData is a dictionary
@@ -439,7 +439,7 @@ class sendCompletionResponse:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -727,7 +727,7 @@ class sendTransportOrder:
         try:
             edm = ExecuteDBModifier(self.base_class.pyAAS)
             dataBaseResponse = edm.executeModifer({"data":{"entity":"submodels",
-                                                               "entityId":self.TransportSubmodel["identification"]["id"],
+                                                               "entityId":self.TransportSubmodel["id"],
                                                                 "entityData":self.TransportSubmodel, 
                                                                 "note":"Submodel"},"method":"putAASXEntityByID"})            
         except Exception as e:
@@ -750,7 +750,7 @@ class sendTransportOrder:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            #receiverId = message["frame"]["sender"]["identification"]["id"]
+            #receiverId = message["frame"]["sender"]["id"]
             receiverRole = "TransportRequester"
             
             # For sending the message to an internal skill
@@ -761,10 +761,10 @@ class sendTransportOrder:
                                     "semanticProtocol": self.base_class.semanticProtocol,
                                     "type" : oMessage,
                                     "messageId" : oMessage+"_"+str(self.base_class.pyAAS.dba.getMessageCount()["message"][0]+1),
-                                    "SenderAASID" : message["frame"]["receiver"]["identification"]["id"],
+                                    "SenderAASID" : message["frame"]["receiver"]["id"],
                                     "SenderRolename" : "BoringRequester",
                                     "conversationId" : psp.createTransportStepOrder(self.base_class.aasIndex,currentConvId),
-                                    "ReceiverAASID" :  message["frame"]["receiver"]["identification"]["id"],
+                                    "ReceiverAASID" :  message["frame"]["receiver"]["id"],
                                     "ReceiverRolename" : receiverRole
                                 }
         
@@ -867,7 +867,7 @@ class sendrejectProposal:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -982,7 +982,7 @@ class SendCFP:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            #receiverId = message["frame"]["sender"]["identification"]["id"]
+            #receiverId = message["frame"]["sender"]["id"]
             #receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -1316,7 +1316,7 @@ class sendacceptProposal:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -1478,9 +1478,9 @@ class BoringRequester:
         self.initialState = ""
         self.skill_service = ""
         self.gen = Generic()
-        #self.createStatusMessage()
         self.productionStepSeq = []
         self.responseMessage = {}
+        self.StatusResponseSM = [self.pyaas.aasConfigurer.getStatusResponseSubmodel()]
         
     def start(self, msgHandler,shellObject,_uid) -> None:
         """

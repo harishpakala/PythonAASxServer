@@ -1213,14 +1213,14 @@ class TransportRequester:
         self.productionStepSeq = []
         self.responseMessage = {}
         
-    def start(self, msgHandler,uuid,shellObject,_uid) -> None:
+    def start(self, msgHandler,shellObject,_uid) -> None:
         """
             Starting of the Skill state machine
         """
         self.msgHandler = msgHandler
         self.shellObject = shellObject
         self.aasID = shellObject.aasELement["id"]
-        self.uuid  = uuid
+        self._uid  = _uid
         self.create_status_message()
         self.skillLogger = logging.getLogger(self.aasID+"."+self.skillName)
         self.skillLogger.setLevel(logging.DEBUG)
@@ -1228,7 +1228,7 @@ class TransportRequester:
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self.uuid)+"_"+self.skillName+".LOG")
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self._uid)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
         self.listHandler = ServiceLogHandler(LogList())

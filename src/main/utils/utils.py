@@ -630,7 +630,7 @@ class ShellObject(AASElementObject):
         """        
         try:
             for index,entry in enumerate(self.productionStepList):
-                if skill_name  == entry["skill_name"] and submodel_id == entry["submodel_id"] and int(sequence) == index + 1:
+                if skill_name  == entry["skill_name"] and submodel_id == entry["submodel_id_idSHort_list"][0][0] and int(sequence) == index + 1:
                     del self.productionStepList[index]
                     return "Production step deleted", True
             return "No Data Found", False
