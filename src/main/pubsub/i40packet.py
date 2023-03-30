@@ -1,15 +1,14 @@
-'''
+"""
 Copyright (c) 2021-2022 OVGU LIA
 Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
-'''
-import jsonpickle
+"""
 try:
     from models.aas_basic_elements import Identification,Reference,Key
 except ImportError:
-    from  main.models.aas_basic_elements import Identification,Reference,Key
-
+    from  src.main.models.aas_basic_elements import Identification,Reference,Key
+import jsonpickle
 class Role(object):
     def __init__(self,name: str):
         self.name = name

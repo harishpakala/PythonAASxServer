@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+ <DocumentId DomainId="ABB">3KDE631001R2501</DocumentId>
+ <DocumentIdDomain DocumentDomainId="ABB">
+  <Party Role="Responsible">
+   <Organization OrganizationId="ABB" OrganizationName="ABB" OrganizationOfficialName="ABB"/>
+  </Party>
+ </DocumentIdDomain>
+ <DocumentClassification ClassificationSystem="VDI2770:2018">
+  <ClassId>04-01</ClassId>
+ </DocumentClassification>
+ <ReferencedObject Type="Product" Description="ToDo Type-Designator" RefType="ToDo Type-Designator2" ObjectId="ToDo ProductType_full">
+  <Party Role="Manufacturer">
+   <Organization OrganizationName="ABB" OrganizationOfficialName="ABB"/>
+  </Party>
+ </ReferencedObject>
+ <ReferencedObject Type="Product" Description="ToDo Modell" RefType="ToDo ProductId" ObjectId="ToDo ProductType_full">
+  <Party Role="Manufacturer">
+   <Organization OrganizationName="ABB" OrganizationOfficialName="ABB"/>
+  </Party>
+  <ReferencedObject Type="Product" Description="3K650000548503" ObjectId="ToDo ObjectId">
+   <Party Role="Manufacturer">
+    <Organization OrganizationName="ABB" OrganizationOfficialName="ABB"/>
+   </Party>
+  </ReferencedObject>
+  <DocumentVersion>
+   <DocumentVersionId DomainId="ABB">-</DocumentVersionId>
+   <Language>
+    <LanguageCode>en</LanguageCode>
+   </Language>
+   <Party Role="Author">
+    <Organization OrganizationName="ABB" OrganizationOfficialName="ABB"/>
+   </Party>
+   <Description>
+    <Title LanguageCode="en">Software license agreement - General terms</Title>
+    <Summary LanguageCode="en">Software license agreement - General terms</Summary>
+    <KeyWords LanguageCode="en">Agreement, Group Company Agreement, Local Company Agreement, </KeyWords>
+    <LifeCycleStatus StatusValue="Released" SetDate="2005-01-20 09:25:24">
+     <Party Role="Author">
+      <Organization OrganizationName="ABB" OrganizationOfficialName="ABB"/>
+     </Party>
+    </LifeCycleStatus>
+    <StoredDocumentRepresentation>
+     <DigitalFile FileId="3KDE631001R2501" FileName="3KDE631001R2501.pdf" FileFormat="application/pdf"/>
+    </StoredDocumentRepresentation>
+   </Description>
+  </DocumentVersion>
+ </ReferencedObject>
+</Document>

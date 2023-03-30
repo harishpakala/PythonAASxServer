@@ -1,0 +1,371 @@
+{
+    "assetAdministrationShells": [
+        {
+            "submodels": [
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "www.company.com/ids/sm/9746_9342_9937_6241"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "idShort": "ServiceRequesterProductLive",
+            "id": "https://ovgu.de/aas/product_live",
+            "modelType": "AssetAdministrationShell",
+            "assetInformation": {
+                "assetKind": "Instance",
+                "defaultThumbnail": {
+                    "path": "file://temp/asset.png"
+                },
+                "globalAssetId": {
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "www.company.com/asset/9746_9342_9937_6241"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            }
+        }
+    ],
+    "submodels": [
+        {
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "0173-1#01-AKG243#015"
+                    }
+                ],
+                "type": "GlobalReference"
+            },
+            "idShort": "Boring",
+            "kind": "Instance",
+            "submodelElements": [
+                {
+                    "idShort": "TechnicalProperties",
+                    "value": [
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-EX-1#01-XIT667#001"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "WorkpieceProperties",
+                            "value": [
+                                {
+                                    "value": "S235JR",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAM562#002"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "MaterialOfWorkpiece",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "Dimensions",
+                                    "value": [
+                                        {
+                                            "value": "60",
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAI631#007"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "idShort": "Height",
+                                            "kind": "Instance",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "value": "80",
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAI466#007"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "idShort": "Width",
+                                            "kind": "Instance",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "value": "80",
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAE432#007"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "idShort": "Depth",
+                                            "kind": "Instance",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "kind": "Instance",
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "value": "DIN EN 10027:2016-10",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAQ184#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "ReferencedStandartOfMaterialShortName",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "235",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAI990#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "TensileStrengthOfMaterial",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "HB 70",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#07-ABC885#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "Hardness",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "23.4",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-BAB576#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "WeightOfWorkpiece",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-EX-1#01-XHU299#001"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "FunctionalProperties",
+                            "value": [
+                                {
+                                    "value": "15",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAA026#007"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "drillingDiameter",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "50",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAJ214#003"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "drillingDepth",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "8",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAO933#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "ISOToleranceClass",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "6.3",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-EX-1#02-JKD108#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "RoughnessAverageOfBore",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "EnvironmentalProperties",
+                            "value": [
+                                {
+                                    "value": "live",
+                                    "idShort": "env",
+                                    "category": "CONSTANT",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-EX-1#01-LXV711#001"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "CommercialProperties",
+                    "value": [
+                        {
+                            "value": "DEU, Magdeburg",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-BAF163#002"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "PreferredVenueOfProvision",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "15d",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-AAO738#001"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "deliveryTime",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "200",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": ""
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "MaxDistanceToPreferredVenueOfProvision",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "www.company.com/ids/sm/9746_9342_9937_6241"
+        }
+    ]
+}

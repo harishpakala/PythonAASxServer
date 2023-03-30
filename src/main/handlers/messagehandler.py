@@ -1,4 +1,3 @@
-
 '''
 Copyright (c) 2021-2022 OVGU LIA
 Author: Harish Kumar Pakala
@@ -13,21 +12,17 @@ import uuid
 try:
     import queue as Queue
 except ImportError:
-    import Queue as Queue 
+    import Queue as Queue
 
 try:
     from datastore.datamanager import DataManager
 except ImportError:
-    from main.datastore.datamanager import DataManager
+    from src.main.datastore.datamanager import DataManager
 
-try:
-    from utils.aaslog import serviceLogHandler,LogList
-except ImportError:
-    from main.utils.aaslog import serviceLogHandler,LogList
 try:
     from utils.i40data import Generic
 except ImportError:
-    from main.utils.i40data import Generic    
+    from src.main.utils.i40data import Generic    
 
 
 class MessageHandler(object):
@@ -36,11 +31,11 @@ class MessageHandler(object):
     '''
     
 
-    def __init__(self, pyAAS):
+    def __init__(self, pyaas):
         '''
         Constructor
         '''
-        self.pyAAS = pyAAS
+        self.pyaas = pyaas
         self.inBoundQueue = Queue.Queue()
         self.outBoundQueue = Queue.Queue()
         self.statusMessageQueue = Queue.Queue()
@@ -105,17 +100,17 @@ class MessageHandler(object):
         
     def _receiveMessage_(self, jMessage):
         try:
-            aasId = jMessage["frame"]["receiver"]["identification"]["id"]
+            aasId = jMessage["frame"]["receiver"]["id"]
             _skillName = jMessage["frame"]["receiver"]["role"]["name"]
             if (_skillName == "AASHeartBeatHandler"):
                 return
             else:
-                aasIndex = self.pyAAS.aasIdentificationIdList[aasId]
-                t1 = self.assigntoSkill(_skillName,aasIndex)
-                t1.receiveMessage(jMessage)
+                _uid = self.pyaas.aasHashDict.__getHashEntry__(aasId).__getId__()
+                aasShellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uid)
+                aasShellObject.get_skill(_skillName).receiveMessage(jMessage)
         except Exception as E:
             try:
-                for aasIndex in self.pyAAS.skillInstanceDictbyAASId:
+                for aasIndex in self.pyaas.skillInstanceDictAASId:
                     for _skillName in self.skillInstanceDictbyAASId[aasIndex]:
                         if _skillName not in ["ProductionManager", "Register"]:
                             jMessageN = copy.deepcopy(jMessage)
@@ -125,15 +120,15 @@ class MessageHandler(object):
             
     def sendOutBoundMessage(self, ob_Message):
         try:
-            receiverID = ob_Message["frame"]["receiver"]["identification"]["id"]
-            if (ob_Message["frame"]["sender"]["identification"]["id"] == receiverID):
+            receiverID = ob_Message["frame"]["receiver"]["id"]
+            if (ob_Message["frame"]["sender"]["id"] == receiverID):
                 self.putIbMessage(ob_Message)
                 return 
         except Exception as E:
             pass
-        if (self.pyAAS.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
+        if (self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
             self.AASendPointHandlerObjects["MQTT"].dispatchMessage(ob_Message)
-        elif (self.pyAAS.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
+        elif (self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
             self.AASendPointHandlerObjects["RESTAPI"].dispatchMessage(ob_Message)             
         
     def sendObstatusMessage(self, sMessage):
@@ -152,16 +147,16 @@ class MessageHandler(object):
         for i in range (0, assetQueueSize):
             newAssetValueBatch.append(self.getAssetMessage())
         self.assetBatchCount = self.assetBatchCount + 1
-        self.pyAAS.dataStoreManager.assetDataStoreBackup()
-        self.pyAAS.dataStoreManager.assetDataValueStore(newAssetValueBatch)
+        self.pyaas.dataStoreManager.assetDataStoreBackup()
+        self.pyaas.dataStoreManager.assetDataValueStore(newAssetValueBatch)
         
     def trigggerHeartBeat(self):
         hbt = Generic()
         heartBeatCount = 1
         while True:
-            for hAASId in self.pyAAS.heartBeatHandlerList: 
+            for hAASId in self.pyaas.heartBeatHandlerList: 
                 _hbtMessage = hbt.createHeartBeatMessage(hAASId,heartBeatCount)
-                if (self.pyAAS.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
+                if (self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
                     self.AASendPointHandlerObjects["MQTT"].dispatchMessage(_hbtMessage)
                 else:
                     self.AASendPointHandlerObjects["RESTAPI"].dispatchMessage(_hbtMessage)

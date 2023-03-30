@@ -1,0 +1,196 @@
+nav{
+  z-index: 99;
+}
+nav .navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0 0;
+}
+nav .navbar .links{
+  display: flex;
+}
+nav .navbar .links li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+nav .navbar .links li .menubarA{
+  margin-top:5.5vh;
+  height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 75%;
+  font-weight: 500;
+  padding: 0 2vw;
+}
+nav .navbar .links .sub-menu .subMenubarA{
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+  height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 75%;
+  font-weight: 500;
+  text-transform: uppercase;
+
+}
+
+nav .navbar .links li .menu-arrow, .sub-menu-arrow, .more-sub-menu-arrow{
+  width: 2vw;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar .links li .sub-menu .more-sub-menu a{
+  color: #fff;
+    font-size: 75%;
+  font-weight: 500;
+}
+.navbar .links li .sub-menu .more .more-arrow{
+  line-height: 40px;
+}
+
+
+nav .navbar .links li .sub-menu li{
+  padding-right: 1.5vw;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-color : rgba(255,255,255,0.1);
+}
+nav .navbar .links li .sub-menu .more-sub-menu li{
+  padding-right: 1.5vw;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
+nav .navbar .links li .sub-menu {
+  position: absolute;
+  left: 0;
+  top : 8vh;
+  background:    rgb(0,52,215);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
+  display: none;
+}
+nav .navbar .links li .sub-menu .more-sub-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0 4px 4px 4px;
+  z-index: 1;
+  display: none;
+  background:  rgb(0,52,215,0.9);
+}
+nav .navbar .links li .sub-menu .more-sub-menu .more-more-sub-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0 4px 4px 4px;
+  z-index: 1;
+  display: none;
+  background:  rgb(0,52,215,0.9);
+}
+
+nav .navbar .links li:hover .menubarA::after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: #ffb380;
+  transition: 300ms;
+}
+
+nav .navbar .links li:hover .menubarA:hover::after {
+  width: 100%;
+}
+nav .navbar .links li:hover .sub-menu {
+  display: block;
+}
+nav .navbar .links li .sub-menu li:hover .more-sub-menu{
+  display: block;
+}
+nav .navbar .links li .sub-menu .more-sub-menu li:hover .more-more-sub-menu{
+	display: block;
+}
+
+nav .navbar .links li:hover .menu-arrow{
+  transform: rotate(180deg);
+}
+nav .navbar .links li .sub-menu li:hover .sub-menu-arrow{
+  transform: rotate(180deg);
+}
+nav .navbar .links li .sub-menu li .more-sub-menu li:hover .more-sub-menu-arrow{
+  transform: rotate(180deg);
+}
+
+.navbar .search-icon{
+   position: relative;
+   height: 4vh;
+   width: 4vw;
+}
+.navbar .search-icon i{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 100%;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navbar .search-icon .search-input-div{
+  position: absolute;
+  right: calc(100% - 2.7vw);
+  top: 8vh;
+  height: 6vh;
+  width: 15vw;
+  background: rgb(0,52,215);
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+.navbar.showInput .search-icon .search-input-div{
+  top: 8vh;
+  opacity: 1;
+  pointer-events: auto;
+  background: rgb(0,52,215);
+}
+.search-icon .search-input-div::before{
+  content: '';
+  position: absolute;
+  height: 4vh;
+  width:  3vw;
+  background: rgb(0,52,215);
+  right: 0.68vw;
+  top: -0.84;
+  transform: rotate(45deg);
+}
+.search-icon .search-input-div .search-input{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  height: 4vh;
+  width: 14vw;
+  outline: none;
+  padding: 0 0.5vw;
+  font-size: 100%;
+  border: none;
+}
+
+.logoutImg{
+	width:1.5vw;
+	height:1.5vw;
+	margin-left:5vh;
+	margin-right:5vh;
+}

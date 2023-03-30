@@ -1,0 +1,623 @@
+{% extends "homelayout.html" %} {% block homecontent %}
+<div style = "width: 100%;">
+
+<div class = "row">
+	<div class = "col-1">
+	</div>
+	<div class = "col-4">
+		<div class="accordion" id="SubmodelAccordin">
+			<div class="accordion-item" style = "border: 1px solid black; ">
+				<h2 class="accordion-header" id="submodelHeading" style = "background-color : rgb(0,52,215,0.9)">
+				  <button style = "color :white; font-size : 0.5em;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#submodelCollapse" aria-expanded="true" aria-controls="submodelCollapse">
+					{{submodelName}}
+				  </button>
+				</h2>
+				<div id="submodelCollapse" class="accordion-collapse collapse" aria-labelledby="submodelHeading" data-bs-parent="#SubmodelAccordin">
+				
+				
+				</div>			
+			</div>
+		</div>	
+	</div>
+	<div class = "col-1">
+	</div>
+	<div class="col-5">
+		<div class="accordion" id="ElementInformation">
+			<div class="accordion-item" style="border: 1px solid black;">
+				<h2 class="accordion-header" id="headingOne3"
+					style="background-color: rgb(0, 52, 215, 0.9)">
+					<button style="color: white; font-size : 0.5em;" class="accordion-button"
+						type="button" data-bs-toggle="collapse" data-bs-target="#elem21"
+						aria-controls="elem21">Element Information</button>
+				</h2>
+				<div id="elem21" class="accordion-collapse"
+					aria-labelledby="headingOne2"
+					data-bs-parent="#ElementInformation">
+						<div style="min-height: 2.5vh"></div>
+						<div
+							style="width: 98%; min-height: 3.5vh; padding-left: 5%; padding-right: 1%; background-color: rgb(26, 131, 168, 0.98);">
+							<span
+								style="color: white; font-size : 1em; display: inline-block; vertical-align: middle; line-height: normal;">Refereable</span>
+						</div>
+						<div
+							style="margin-top: 1vh; min-height: 5vh; width: 98%; padding-left: 5%; padding-right: 1%;">
+							<div class="row">
+								<div class="col-2"><p>IdShort</p></div>
+								<div class="col-1"></div>
+								<div class="col-8"><p id = "idShort_Value">{{submodelD['idShort']}}</p></div>
+								<div class="col-1"></div>
+							</div>
+						</div>
+						<div style="min-height: 2.5vh"></div>
+						<div
+							style="width: 98%; min-height: 3.5vh; padding-left: 5%; padding-right: 1%; background-color: rgb(26, 131, 168, 0.98);">
+							<span
+								style="color: white; display: font-size :1em; inline-block; vertical-align: middle; line-height: normal;">SemanticId</span>
+						</div>
+						<div id = "elementInformation_Semantics"
+							style="margin-top: 1vh; min-height: 5vh; width: 98%; padding-left: 5%; padding-right: 1%;">
+	
+						</div>
+						<div style="min-height: 2.5vh"></div>
+						<div
+							style="width: 98%; min-height: 3.5vh; padding-left: 5%; padding-right: 1%; background-color: rgb(26, 131, 168, 0.98);">
+							<span id = "Qualifiable"
+								style="color: white; font-size : 0.5em; display: inline-block; vertical-align: middle; line-height: normal;">Qualifiable</span>
+						</div>
+						<div id = "elementInformation_Qualifiable" style="margin-top: 1vh; min-height: 5vh; width: 98%; padding-left: 5%; padding-right: 1%;">
+	
+						</div>
+						<div style="min-height: 2.5vh"></div>
+						<div
+							style="width: 98%; min-height: 3.5vh; padding-left: 5%; padding-right: 1%; background-color: rgb(26, 131, 168, 0.98);">
+							<span id = "modelType"
+								style="color: white; font-size : 0.5em; display: inline-block; vertical-align: middle; line-height: normal;">Submodel</span>
+						</div>
+						<div id = "elementInformation_ModelType"
+							style="margin-top: 1vh; min-height: 5vh; width: 98%; padding-left: 5%; padding-right: 1%;">
+	
+						</div>
+						
+						
+						<div style="min-height: 2.5vh"></div>
+				 </div>
+			</div>
+			</div>
+			</div>
+</div>
+
+	<div style="min-height: 2.5vh"></div>	
+</div>
+
+<script>
+
+function updateELem(idShortPath,type)
+{
+	data = linearData[submodelId+"."+idShortPath]
+	var encodedString = btoa(submodelId);
+	var newValue_Text = document.getElementById("newValue_Text").value;
+	if (data["modelType"] == "MultiLanguageProperty"){
+		i = 0;
+		for (langString of data["value"]){
+			if (langString["language"] == type){
+				 data["value"][i]["text"] = newValue_Text;
+				 break;
+			}
+			i = i + s1;
+		}
+	}
+	else
+		{
+			data[type] = newValue_Text;	
+		}
+	
+	
+	var httpGetRequest = new XMLHttpRequest();
+	httpGetRequest.open('PUT',"/submodels/"+encodedString+"/submodel/submodel-elements/"+idShortPath);
+	httpGetRequest.setRequestHeader("Content-Type", "application/json");
+	httpGetRequest.onreadystatechange = function ()	 {
+		$("#elementUpdate").modal('hide');
+		  if (httpGetRequest.status == 204) {
+			  document.getElementById(idShortPath+"_"+type).innerHTML = newValue_Text;
+			  
+			  if ( type == "value")
+				  {
+				  document.getElementById("li_"+idShortPath).innerHTML = data["idShort"] +" = "+ newValue_Text;
+				  }
+			  if (type == "min" || type == "max"){
+				  document.getElementById("li_"+idShortPath).innerHTML = data["idShort"] +" = "+ data["min"] + " .. " +data["max"];
+			  }
+			  
+			  
+		  } else {
+		    
+		  }
+		};
+		console.log(data);
+	httpGetRequest.send(JSON.stringify(data));
+}
+function modalElemUpdate(idShortPath,type){
+	data = linearData[submodelId+"."+idShortPath];
+	document.getElementById("submodelPropertyHeader").innerHTML = "Update " + data["idShort"];
+	document.getElementById("idShortPath").value = idShortPath;
+	document.getElementById("submodelId").value = submodelId;
+	document.getElementById("submodelElemButton").setAttribute("onclick","updateELem('"+idShortPath+"','"+type+"')");
+	
+}
+function getImage(idShortPath,img,type)
+{
+	imageInput = document.createElement("input");
+	imageInput.setAttribute("type","image");
+	imageInput.setAttribute("style","height: 1.5vh;width: 1.5vw");
+	imageInput.setAttribute("onclick","modalElemUpdate('"+idShortPath+"','"+type+"')");
+	imageInput.setAttribute("data-bs-toggle","modal");
+	imageInput.setAttribute("data-bs-target","#elementUpdate");
+	imageInput.setAttribute("data-whatever","@mdo");
+	imageInput.setAttribute("src",'{{exDomain}}'+"web/images/"+img+".svg");
+	imageInput.setAttribute("name","submit");
+	
+	return imageInput;
+}
+function getEditButton(idShortPath,type)
+{
+	inputImage = getImage(idShortPath,"edit",type);
+	inputAImage = getImage(idShortPath,"edit1",type);
+	
+	var overlayDiv = document.createElement("div");
+	overlayDiv.setAttribute("class","overlay");
+	overlayDiv.appendChild(inputAImage);
+	
+	var imageCon = document.createElement("div");
+	imageCon.setAttribute("class","imagecontainer");
+	imageCon.appendChild(inputImage);
+	imageCon.appendChild(overlayDiv);
+	
+	return imageCon;
+}
+
+function metaDataDiv(type,value,idShort){
+	
+	var rowDiv = document.createElement('div') 
+	rowDiv.setAttribute("class","row");
+	
+	var col02 =  document.createElement('div') 
+	col02.setAttribute("class","col-2");
+	col02.innerHTML = type;
+	rowDiv.appendChild(col02);
+	
+	var col01  =  document.createElement('div') 
+	col01.setAttribute("class","col-1");
+	rowDiv.appendChild(col01);
+	
+	var col07 =  document.createElement('div') 
+	col07.setAttribute("class","col-7");
+	col07.setAttribute("id",idShort+"_"+type);
+	if (type == "File"){
+		imgElement = document.createElement("img");
+		imgElement.setAttribute("style","width: 3vh;height : 3vh;");
+		imgElement.setAttribute("src",'{{exDomain}}web/images/download.svg');
+		imgElement.setAttribute("class","document");
+		aElement = document.createElement("a");
+		aElement.setAttribute("id","fileDownload");
+		aElement.setAttribute("download","");
+		aElement.setAttribute("href",'{{exDomain}}config'+value);
+		aElement.appendChild(imgElement);
+		col07.appendChild(aElement);
+	}
+	else{
+		col07.innerHTML = value;
+	}
+	
+	rowDiv.appendChild(col07);
+	
+	var col01_1  =  document.createElement('div') 
+	col01_1.setAttribute("class","col-2");
+	rowDiv.appendChild(col01_1);
+	
+	return rowDiv;
+}
+function listCollectionClick(_id){
+	var data = linearData[submodelId+"."+_id] 
+	var listGroupItem = document.getElementsByClassName("list-group-item");
+	for (var i = 0; i < listGroupItem.length; i++ ) {
+		listGroupItem[i].style.border = "1px solid rgba(0,0,0,.125)";
+	}
+	var idShort_Value = document.getElementById("idShort_Value");
+	idShort_Value.innerHTML = data["idShort"];
+	
+	var elementInformation_Semantics = document.getElementById("elementInformation_Semantics");	
+	elementInformation_Semantics.innerHTML = "";
+	
+	for (semanticRef of data["semanticId"]["keys"])
+		{
+			var semRow = metaDataDiv(semanticRef["type"],semanticRef["value"]);
+			elementInformation_Semantics.appendChild(semRow);
+			elementInformation_Semantics.appendChild(seperaterRow("1.5vh"));
+			
+		}
+	
+	var modelType = document.getElementById("modelType");
+	modelType.innerHTML = data["modelType"]
+	
+	var elementInformation_ModelType = document.getElementById("elementInformation_ModelType");
+	elementInformation_ModelType.innerHTML = "";
+
+}
+function parseDataElement(_submodelElement,_parentId){
+    var _newId = _parentId +"."+ _submodelElement["idShort"]
+    linearData[_newId] = _submodelElement;
+    return _newId;
+}
+
+function parseSubmodelCollection(submodelColl,_parentId){
+    var _newId =_parentId +"."+ submodelColl["idShort"]
+    var collectionElemIds =  []
+    for (var _submodelElement of submodelColl["value"]){
+        if (_submodelElement["modelType"] != "SubmodelElementCollection"){
+        	collectionElemIds.push(parseDataElement(_submodelElement, _newId))
+        }
+        else{
+        	collectionElemIds.push(parseSubmodelCollection(_submodelElement,_newId))
+        }
+    }       
+    submodelColl["value"].splice(0,submodelColl["value"].length);
+    for (var _pid of collectionElemIds)
+    	{
+    		submodelColl["value"].push(_pid);
+    	}
+    linearData[_newId] = submodelColl;
+    return _newId;
+}
+
+var submodelId = '{{submodelId}}';
+var submodelCollapse = document.getElementById("submodelCollapse");
+var submodelTemp = JSON.parse('{{ submodelD | tojson | safe}}');
+var submodelD = JSON.parse('{{ submodelD | tojson | safe}}');
+
+var linearData1 = '{}';
+var linearData = JSON.parse(linearData1);
+submodelElements = [];
+
+addHasSemantics();
+function addIdentifiable(){
+	
+}
+
+function addReferable(){
+	
+}
+
+function addQualifiable(){
+	
+}
+function addKey(type,value){
+	let keyDiv = document.createElement('div') 
+	keyDiv.setAttribute("class","row");
+	
+	let col02_1 =  document.createElement('div') 
+	col02_1.setAttribute("class","col-2");
+	col02_1.innerHTML = type;
+	keyDiv.appendChild(col02_1);
+	
+	let col01  =  document.createElement('div') 
+	col01.setAttribute("class","col-1");
+	keyDiv.appendChild(col01);
+	
+	let col05 =  document.createElement('div') 
+	col05.setAttribute("class","col-5");
+	col05.setAttribute("id",idShort+"_"+type);
+	keyDiv.appendChild(col05);
+	
+	let col02_2 =  document.createElement('div') 
+	col02_2.setAttribute("class","col-2");
+	col02_2.setAttribute("id",idShort+"_"+type);
+	
+	let editButton =  getEditButton(_tempId,langString["language"])
+	keyDiv.appendChild(col02_2);
+	
+	let col02_3  =  document.createElement('div') 
+	col02_3.setAttribute("class","col-2");
+	keyDiv.appendChild(col02_3);
+	
+	return keyDiv;
+}
+function addReference(referenceD,_id){
+	let _refType = referenceD["type"];
+/* 	for (_key of referenceD["semanticId"]["keys"])
+	{
+		var semRow = metaDataDiv(_key["type"],_key["value"]);
+		elementInformation_Semantics.appendChild(semRow);
+		elementInformation_Semantics.appendChild(seperaterRow("1.5vh"));	
+	} */
+	return _refType;
+}
+function emptyRow(minHeight){
+	emptyRow = document.createElement("div");
+	emptyRow.setAttribute("style","min-height: "+ minHeight);
+	return emptyRow;
+}
+function addHasSemantics(parentElement,_id){
+	hasSemantics = document.createElement("div");
+	hasSemantics.setAttribute("style","margin-top: 1vh; min-height: 5vh; width: 98%; padding-left: 5%; padding-right: 1%;");
+	hasSemantics.setAttribute("id",_id+"_Parent_"+parentElement);
+	
+	if (submodelD.hasOwnProperty("semanticId")){ 
+		//hasSemantics.appendChild(addReference(submodelD["semanticId"],_id));
+	}
+	if (submodelD.hasOwnProperty("supplementalSemanticIds")){
+		for (_suppSemRef of  submodelD["supplementalSemanticIds"]){
+			hasSemantics.appendChild(addReference(_suppSemRef,_id));	
+		}
+	}
+	hasSemantics.appendChild(emptyRow("2.5vh"))
+}
+function addSubmodelElements(){
+	if (submodelTemp.hasOwnProperty("submodelElements")){
+		for (var _submodelElement of submodelTemp["submodelElements"]){
+			if (_submodelElement["modelType"] != "SubmodelElementCollection")
+		        {submodelElements.push(parseDataElement(_submodelElement,submodelId))}                    
+		    else
+		        {submodelElements.push(parseSubmodelCollection(_submodelElement,submodelId))}
+		}
+
+		submodelTemp["submodelElements"].splice(0,submodelTemp["submodelElements"].length);
+	}
+
+	for (var elemId of submodelElements){
+		submodelTemp["submodelElements"].push(elemId);
+	}
+	linearData[submodelTemp["id"]] = submodelTemp;
+	var submodelElems = document.createElement('ul');
+	submodelElems.setAttribute("class","list-group list-group-flush");
+	submodelElems.setAttribute("id","submodelElems");
+
+	for (var tId of submodelTemp['submodelElements']){
+		var elemC = linearData[tId];
+		if (elemC["modelType"] == "SubmodelElementCollection") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");
+				elemLi.setAttribute("id","li_"+elemC["idShort"]);
+				elemLi.appendChild(processCollection(elemC["idShort"]));
+						
+				submodelElems.appendChild(elemLi);
+			}
+		else {
+				submodelElems.appendChild(setSubmodelElemData(elemC["idShort"]));
+			}
+	}
+	submodelCollapse.appendChild(submodelElems);
+}
+
+function setSubmodelElemData(_id){
+	var elemLi = document.createElement('li');
+	var elemC = linearData[submodelId+"."+_id];
+	elemLi.setAttribute("class","list-group-item");
+	elemLi.setAttribute("id","li_"+_id);
+	elemLi.setAttribute("style","font-size : 1em");
+	elemLi.setAttribute("onClick","listElemClick('"+_id+"')");
+	
+	if (elemC["modelType"] == "Property" || elemC["modelType"] == "File" ){
+		elemLi.innerHTML = elemC["idShort"] +"   =   " +elemC["value"];
+	}
+	if (elemC["modelType"] == "Range"){
+		elemLi.innerHTML = elemC["idShort"] +"   =   " +elemC["min"] + ".." +elemC["max"];
+	}
+	if (elemC["modelType"] == "MultiLanguageProperty"){
+		try {
+			elemLi.innerHTML = elemC["idShort"] +"   ->   " +elemC["value"][0]["text"];
+			}
+			catch(err) {
+				elemLi.innerHTML = elemC["idShort"];
+			}
+		
+	}
+	
+	return elemLi;
+}
+function processCollection(_pidShort){
+	var tempId = submodelId+"."+_pidShort;
+	var collectionElem = linearData[tempId];
+	var idShort = collectionElem["idShort"]
+	
+	var collectionDiv = document.createElement('div');
+	collectionDiv.setAttribute("class","accordion");
+	collectionDiv.setAttribute("id",_pidShort.replaceAll(".","_"));
+	
+	var accordinDiv = document.createElement('div');
+	accordinDiv.setAttribute("class","accordion-item");
+	accordinDiv.appendChild(creatAccordinHeader(_pidShort,idShort));
+	
+	var accordinCollpase = createCollapseAccordin(_pidShort,idShort);
+	
+	for (var tId of collectionElem['value']){
+		console.log(tId);
+		var elemC = linearData[tId];
+		if (elemC["modelType"] == "SubmodelElementCollection") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");
+				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC["idShort"]));
+			}
+			else {
+				accordinCollpase.appendChild(setSubmodelElemData(_pidShort+"."+elemC["idShort"]));
+			}
+	}
+	accordinDiv.appendChild(accordinCollpase);
+	collectionDiv.appendChild(accordinDiv);
+	return collectionDiv	
+}
+
+function creatAccordinHeader(_pidShort,idShort){
+	var h2 = document.createElement('h2');
+	h2.setAttribute("class","accordion-header");
+	h2.setAttribute("id",_pidShort.replaceAll(".","_")+"_Header");
+	h2.setAttribute("style","background-color : rgb(0,52,215,0.9)");
+	h2.appendChild(createAccordinHeaderButton(_pidShort,idShort))
+	return h2;
+}
+
+function createAccordinHeaderButton(_pidShort,idShort){
+	var button = document.createElement('button');
+	button.setAttribute("class","accordion-button collapsed");
+	button.setAttribute("style","color :white;font-size : 0.35em");
+	button.setAttribute("type","button");
+	button.setAttribute("data-bs-toggle","collapse");
+	button.setAttribute("data-bs-target","#"+_pidShort.replaceAll(".","_")+"_Collapse");
+	button.setAttribute("aria-controls",_pidShort.replaceAll(".","_")+"_Collapse");
+	button.setAttribute("onClick","listCollectionClick('"+_pidShort+"')");
+	button.innerHTML = idShort;
+	return button;
+}
+
+function createCollapseAccordin(_pidShort,idShort){
+	var CollapseAccordinDiv = document.createElement('div');
+	CollapseAccordinDiv.setAttribute("class","accordion-collapse collapse");
+	CollapseAccordinDiv.setAttribute("id",_pidShort.replaceAll(".","_")+"_Collapse");
+	CollapseAccordinDiv.setAttribute("aria-labelledby",_pidShort.replaceAll(".","_")+"_Header");
+	CollapseAccordinDiv.setAttribute("data-bs-parent","#"+_pidShort.replaceAll(".","_"));
+	return CollapseAccordinDiv; 
+}
+function seperaterRow(minHeight){
+	var divRow = document.createElement('div');
+	divRow.setAttribute("style","min-height:"+minHeight);
+	return divRow;
+}
+
+function listElemClick(_tempId){
+	var data = linearData[submodelId+"."+_tempId];
+	var listGroupItem = document.getElementsByClassName("list-group-item");
+	for (var i = 0; i < listGroupItem.length; i++ ) {
+		listGroupItem[i].style.border = "1px solid rgba(0,0,0,.125)";
+	}
+	var liItem = document.getElementById("li_"+_tempId);
+	liItem.style.border = "thin solid #0000FF";
+	
+	var idShort_Value = document.getElementById("idShort_Value");
+	idShort_Value.innerHTML = data["idShort"];
+	
+	var elementInformation_Semantics = document.getElementById("elementInformation_Semantics");	
+	elementInformation_Semantics.innerHTML = "";
+	
+	if (data.hasOwnProperty("semanticId")){
+		for (semanticRef of data["semanticId"]["keys"])
+		{
+			var semRow = metaDataDiv(semanticRef["type"],semanticRef["value"]);
+			elementInformation_Semantics.appendChild(semRow);
+			elementInformation_Semantics.appendChild(seperaterRow("1.5vh"));
+			
+		}		
+	}
+
+	
+	var modelType = document.getElementById("modelType");
+	modelType.innerHTML = data["modelType"]
+	
+	var elementInformation_ModelType = document.getElementById("elementInformation_ModelType");
+	elementInformation_ModelType.innerHTML = "";
+	if (data["modelType"] == "MultiLanguageProperty"){
+		var i = 0;
+		for (langString of data["value"]){
+			var langS = metaDataDiv(langString["language"],langString["text"],_tempId);
+			elementInformation_ModelType.appendChild(langS);
+			elementInformation_ModelType.appendChild(seperaterRow("1.5vh"));
+			var image_edit_buttonDiv = langS.children[i+3];
+			var image_button = getEditButton(_tempId,langString["language"]);
+			image_edit_buttonDiv.appendChild(image_button);
+			i = i + 1; 
+		}	
+	}
+	if (data.hasOwnProperty("value") && ! (["File","MultiLanguageProperty"].includes(data["modelType"]))){
+		var value = metaDataDiv("value",data["value"],_tempId);
+		elementInformation_ModelType.appendChild(value);
+		elementInformation_ModelType.appendChild(seperaterRow("1.5vh"));
+		var image_edit_buttonDiv = value.children[3];
+		var image_button = getEditButton(_tempId,"value");
+		image_edit_buttonDiv.appendChild(image_button);
+	}
+	if (data.hasOwnProperty("min")){
+		var value = metaDataDiv("min",data["min"],_tempId);
+		elementInformation_ModelType.appendChild(value);
+		elementInformation_ModelType.appendChild(seperaterRow("1.5vh"));
+		var image_edit_buttonDiv = value.children[3];
+		var image_button = getEditButton(_tempId,"min");
+		image_edit_buttonDiv.appendChild(image_button);
+	}
+	if (data.hasOwnProperty("max")){
+		var value = metaDataDiv("max",data["max"],_tempId);
+		elementInformation_ModelType.appendChild(value);
+		elementInformation_ModelType.appendChild(seperaterRow("1.5vh"));
+		var image_edit_buttonDiv = value.children[3];
+		var image_button = getEditButton(_tempId,"max");
+		image_edit_buttonDiv.appendChild(image_button);
+	}
+	if (data.hasOwnProperty("valueType")){
+		var value = metaDataDiv("valueType",data["valueType"],_tempId);
+		elementInformation_ModelType.appendChild(value);
+		elementInformation_ModelType.appendChild(seperaterRow("1.5vh"));
+		var image_edit_buttonDiv = value.children[3];
+		var image_button = getEditButton(_tempId,"valueType");
+		image_edit_buttonDiv.appendChild(image_button);
+	}
+	if (data.hasOwnProperty("contentType")){
+		var value = metaDataDiv("contentType",data["contentType"],_tempId);
+		elementInformation_ModelType.appendChild(value);
+		elementInformation_ModelType.appendChild(seperaterRow("1.5vh"));
+		var image_edit_buttonDiv = value.children[3];
+		var image_button = getEditButton(_tempId,"contentType");
+		image_edit_buttonDiv.appendChild(image_button);
+	}
+	if (data["modelType"] == "File"){
+		var value = metaDataDiv("File",data["value"],_tempId);
+		elementInformation_ModelType.appendChild(value);
+		elementInformation_ModelType.appendChild(seperaterRow("1.5vh"));
+	}
+}
+
+
+
+</script>
+
+<div class="modal fade" data-bs-backdrop="static" id="elementUpdate" tabindex="-1" aria-labelledby="i" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" name="submodel" id="submodelPropertyHeader"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<input id="idShortPath" name="idShortPath" type="hidden" value="">
+				<input id="submodelId" name="submodelId" type="hidden" value="">
+				
+				<div class="modal-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-3">
+								<label for="newValue_Text" class="form-label">New Value</label>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-7">
+								<input type="text" name="newValue" class="form-control"
+									id="newValue_Text" required>
+							</div>
+							<div class="col-1"></div>
+						</div>
+					</div>
+				</div>
+			<div class="row" style="min-height : 2.5vh">
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-9"></div>
+						<div class="col-2">
+							<button class="btn btn-primary" id="submodelElemButton">Update</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="min-height : 2.5vh">
+			</div>
+			</div>
+		</div>
+	
+</div>
+{% endblock %}

@@ -12,37 +12,38 @@ class LogList(list):
     def __init__(self, *args, **kwargs):
         list.__init__(self, *args, **kwargs)
         self.maxSize = 100000000
-        
-    def setMaxSize(self,maxSize:int):
+
+    def setMaxSize(self, maxSize: int):
         self.maxSize = maxSize
-    
+
     def getCotent(self):
         returnCotent = "******".join(self)
         return returnCotent
-    
-    def getTailCotnent(self,numRecords:int):
+
+    def getTailCotnent(self, numRecords: int):
         returnCotent = "******".join(self[-numRecords:])
         return returnCotent
-    
-    def getHeadContent(self,numRecords:int):
+
+    def getHeadContent(self, numRecords: int):
         returnCotent = "******".join(self[0:numRecords])
         return returnCotent
-    
+
     def getCurrentSize(self):
         return len(self)
-    
+
     def getMaxSize(self):
         return self.maxSize
 
-class serviceLogHandler(logging.Handler):
-    def __init__(self,loglist):
+
+class ServiceLogHandler(logging.Handler):
+    def __init__(self, loglist):
         logging.Handler.__init__(self)
         self.loglist = loglist
-        
-    def emit(self,record):
+
+    def emit(self, record):
         try:
-            if len(self.loglist) ==  self.loglist.maxSize:
+            if len(self.loglist) == self.loglist.maxSize:
                 self.loglist.pop(0)
             self.loglist.append(str(self.format(record)))
-        except Exception:
+        except Exception as e:
             self.handleError(record)

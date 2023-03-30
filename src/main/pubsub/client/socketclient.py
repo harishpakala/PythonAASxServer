@@ -11,12 +11,12 @@ import threading
 try:
     from pubsub.utils import SocketConfig,I40PacketS
 except ImportError:
-    from  main.utis import SocketConfig,I40PacketS
+    from  src.main.utis import SocketConfig,I40PacketS
 
 try:
     from pubsub.i40packet import I40Packet,I40PubSubPacket
 except ImportError:
-    from  main.i40packet import I40Packet,I40PubSubPacket
+    from  src.main.i40packet import I40Packet,I40PubSubPacket
 
 
 class SocketClient(object):

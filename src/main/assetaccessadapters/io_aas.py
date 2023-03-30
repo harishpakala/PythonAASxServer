@@ -3,7 +3,10 @@ try:
     from abstract.assetendpointhandler import AsssetEndPointHandler
 except ImportError:
     from main.abstract.assetendpointhandler import AsssetEndPointHandler
-
+try:
+    from utils.utils import ExecuteDBModifier, SubscriptionMessage
+except ImportError:
+    from main.utils.utils import ExecuteDBModifier, SubscriptionMessage
 try:
     from pubsub.client.socketclient import SocketClient
 except ImportError:
@@ -40,3 +43,23 @@ class AASPubSubHandler(AsssetEndPointHandler):
                 
         except Exception as E:
             print(str(E))
+
+class PyAASSubscriptionHandler(object):
+    def __init__(self, pyAAS, params):
+        self.pyAAS = pyAAS
+        self.params = params
+
+    def on_message(self, i40Message):
+        new_value = i40Message["interactionElements"][0]
+        dataElement = self.params["dataElement"]
+        dataElement["value"] = new_value
+        edm = ExecuteDBModifier(self.pyAAS)
+        msg, status = edm.execute({"data": {"elemData": dataElement,
+                                            "_idShortpath": self.params["_referenceId"],
+                                            }, "method": "putSubmodelElem", "instanceId": str(uuid.uuid1())})
+
+    def handle(self):
+        accessURI = self.params["href"]
+        if (accessURI[0:3] == "AAS"):
+            handler = AASPubSubHandler(self.params, self.on_message)
+            handler.subscribe()

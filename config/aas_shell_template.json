@@ -1,0 +1,36 @@
+{
+      "administration": {},
+      "assetInformation": {
+        "assetKind": "Instance",
+        "defaultThumbnail": {
+          "path": "file:/path/to/somewhere"
+        },
+        "globalAssetId": {
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "something_random_8616ee5a"
+            }
+          ],
+          "type": "GlobalReference"
+        }
+      },
+      "category": "CONSTANT",
+      "description": [
+        {
+          "language": "en",
+          "text": "something_random_3e91e3e2"
+        }
+      ],
+      "displayName": [
+        {
+          "language": "en",
+          "text": "something_random_56d2caa9"
+        }
+      ],
+      "id": "something_random_5656575757",
+      "idShort": "Z80",
+      "modelType": "AssetAdministrationShell",
+      "submodels": [
+      ]
+}

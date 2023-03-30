@@ -86,30 +86,21 @@
     }
     {% for rtDataPair in tdProperties %}
     {% for rtProperty in rtDataPair %}
-    const config_{{rtProperty['propertyName']}} = getCOnfig('{{rtProperty['propertyName']}}','Time')
+    const config_{{rtProperty['propertyName']}} = getCOnfig('Time','{{rtProperty['propertyName']}}')
     const context_{{rtProperty['propertyName']}} = document.getElementById('{{rtProperty['propertyName']}}').getContext('2d');
     const linechart_{{rtProperty['propertyName']}} = new Chart(context_{{rtProperty['propertyName']}},config_{{rtProperty['propertyName']}} );
+    let idShortPath_{{rtProperty['propertyName']}} = '{{rtProperty['_referenceIdShortPath']}}';
+    let submodelId_{{rtProperty['propertyName']}} = '{{rtProperty['submodelId']}}';
+    const params_{{rtProperty['propertyName']}} = [btoa(unescape(encodeURIComponent(submodelId_{{rtProperty['propertyName']}}))),idShortPath_{{rtProperty['propertyName']}},btoa(unescape(encodeURIComponent('{{rtProperty['aasId']}}')))]
     {% endfor %}
     {% endfor %}
     
-    function updateCHartData(config,data)
+    function updateCHartData(config,params)
     {
-    	while(config.data.labels.length > 0) {
-        	config.data.labels.pop();
-        }
-        while( config.data.datasets[0].data.length > 0) {
-        	 config.data.datasets[0].data.pop();
-        }
-        config.data.labels.push(...data['label']);
-        config.data.datasets[0].data.push(...data['value']);
-    }
-
-    
-
-    setInterval(function() {
     	var req = new XMLHttpRequest();
-        req.open('POST', '', true);
-        req.onreadystatechange = function(e) {
+    	console.log('{{exDomain}}shells/'+params[2]+'/aas/submodels/'+params[0]+'/submodel/submodel-elements/'+params[1]+'/history');
+    	req.open('GET', '{{exDomain}}shells/'+params[2]+'/aas/submodels/'+params[0]+'/submodel/submodel-elements/'+params[1]+'/history', true);
+    	req.onreadystatechange = function(e) {
             if(req.readyState !== 4) {
                 return;
             }
@@ -118,15 +109,30 @@
             }
             else {
             	const data = JSON.parse(e.target.responseText);
-                {% for rtDataPair in tdProperties %}
+
+            	while(config.data.labels.length > 0) {
+                	config.data.labels.pop();
+                }
+                while( config.data.datasets[0].data.length > 0) {
+                	 config.data.datasets[0].data.pop();
+                }
+                config.data.labels.push(...data['label']);
+                config.data.datasets[0].data.push(...data['values']);
+            }
+        };
+        req.send();    	
+    }
+
+    
+
+    setInterval(function() {
+    	        {% for rtDataPair in tdProperties %}
                 {% for rtProperty in rtDataPair %}
-                updateCHartData(config_{{rtProperty['propertyName']}},data['{{rtProperty['propertyName']}}'])
+                updateCHartData(config_{{rtProperty['propertyName']}},params_{{rtProperty['propertyName']}})
                 linechart_{{rtProperty['propertyName']}}.update();
                 {% endfor %}
                 {% endfor %}
-            }
-        };
-        req.send();
+           
     }, 10000);  
     
 $(document).ready(function () {

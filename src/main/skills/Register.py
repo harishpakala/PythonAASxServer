@@ -19,12 +19,12 @@ except ImportError:
 try:
     from utils.i40data import Generic
 except ImportError:
-    from main.utils.i40data import Generic
+    from src.main.utils.i40data import Generic
 
 try:
-    from utils.aaslog import serviceLogHandler,LogList
+    from utils.aaslog import ServiceLogHandler,LogList
 except ImportError:
-    from main.utils.aaslog import serviceLogHandler,LogList
+    from src.main.utils.aaslog import ServiceLogHandler,LogList
 
 '''
     The skill generator extracts all the states from the transitions list.
@@ -91,7 +91,7 @@ except ImportError:
         
         MODULE_NAME = "PLC_OPCUA"
         #Accessing the specifc assetaaccess adaptor 
-        self.plcHandler = self.baseClass.pyAAS.assetaccessEndpointHandlers[MODULE_NAME] # 1
+        self.plcHandler = self.baseClass.pyaas.assetaccessEndpointHandlers[MODULE_NAME] # 1
         
         #accessing the list property variables Dictionary are specified in the configuration file.  
         self.propertyDict = self.plcHandler.propertylist # 2
@@ -126,14 +126,14 @@ except ImportError:
     
     The ReceiverAASID and ReceiverRolename could be obtained from sender part of the incoming message
     and these are to be provided empty, if there is no receiver.
-    receiverId = self.baseClass.StateName_In["frame"]["sender"]["identification"]["id"]
+    receiverId = self.baseClass.StateName_In["frame"]["sender"]["id"]
     receiverRole = self.baseClass.StateName_In["frame"]["sender"]["role"]["name"]
     
     I40FrameData is a dictionary
     
     language : English, German
-    format : Json, XML //self.baseClass.pyAAS.preferredCommunicationFormat
-    reply-to : HTTP,MQTT,OPCUA (endpoint) // self.baseClass.pyAAS.preferedI40EndPoint
+    format : Json, XML //self.baseClass.pyaas.preferredCommunicationFormat
+    reply-to : HTTP,MQTT,OPCUA (endpoint) // self.baseClass.pyaas.preferedI40EndPoint
     serviceDesc : "short description of the message"
     
     {
@@ -156,7 +156,7 @@ except ImportError:
     The fetching of the submodel elements is done dynamically from the database.
     
     example Boring (should be same as the one specified in AASX file.)
-    boringSubmodel = self.baseClass.pyAAS.dba.getAAsSubmodelsbyId(self.baseClass.pyAAS.AASID,"BoringSubmodel")
+    boringSubmodel = self.baseClass.pyaas.dba.getAAsSubmodelsbyId(self.baseClass.pyaas.AASID,"BoringSubmodel")
     # result is list
     I40OutBoundMessage = {
                             "frame" : frame,
@@ -172,7 +172,7 @@ except ImportError:
     
     def saveMessage(self,message):
         self.instanceId = str(uuid.uuid1())
-        self.baseClass.pyAAS.dataManager.pushInboundMessage({"functionType":3,"data":message,"instanceid":self.instanceId,
+        self.baseClass.pyaas.dataManager.pushInboundMessage({"functionType":3,"data":message,"instanceid":self.instanceId,
                                                             "messageType":message["frame"]["type"]})
         
     
@@ -195,8 +195,8 @@ class notifyonSuccessRegistration(object):
         self.baseClass.responseMessage["status"] = self.baseClass.waitforRegisterAck_In["interactionElements"][0]["submodelElements"][0]["value"]
         self.baseClass.responseMessage["code"] = self.baseClass.waitforRegisterAck_In["interactionElements"][0]["submodelElements"][1]["value"]
         self.baseClass.responseMessage["message"] = self.baseClass.waitforRegisterAck_In["interactionElements"][0]["submodelElements"][2]["value"] 
-        aasId = self.baseClass.WaitforNewOrder_In["frame"]["sender"]["identification"]["id"]
-        self.baseClass.pyAAS.heartBeatHandlerList.add(aasId)
+        aasId = self.baseClass.WaitforNewOrder_In["frame"]["sender"]["id"]
+        self.baseClass.pyaas.heartBeatHandlerList.add(aasId)
     
     def run(self):
             
@@ -243,12 +243,12 @@ class waitforRegisterAck(object):
         for i in range (0, self.baseClass.waitforRegisterAck_Queue.qsize()):
             message = inboundQueueList[i]
             self.instanceId = str(uuid.uuid1())
-            self.baseClass.pyAAS.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+            self.baseClass.pyaas.dataManager.pushInboundMessage({"functionType":3, "instanceid":self.instanceId,
                                                             "conversationId":message["frame"]["conversationId"],
                                                             "messageType":message["frame"]["type"],
                                                             "messageId":message["frame"]["messageId"],
                                                             "direction": "inbound",
-                                                            "SenderAASID" : message["frame"]["receiver"]["identification"]["id"],
+                                                            "SenderAASID" : message["frame"]["receiver"]["id"],
                                                             "message":message})
             
 
@@ -325,7 +325,7 @@ class CreateAndSendRegisterMessage(object):
     
 
     def CreateAndSendRegisterMessage_Logic(self):
-        self.InElem = self.baseClass.pyAAS.aasConfigurer.configureDescriptor(self.baseClass.WaitforNewOrder_In["frame"]["sender"]["identification"]["id"])
+        self.InElem = self.baseClass.pyaas.aasConfigurer.configureDescriptor(self.baseClass.WaitforNewOrder_In["frame"]["sender"]["id"])
 
     def create_Outbound_Message(self):
         self.oMessages = "register".split("/")
@@ -340,17 +340,17 @@ class CreateAndSendRegisterMessage(object):
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = "AASpillarbox"#message["frame"]["sender"]["identification"]["id"]
+            receiverId = "AASpillarbox"#message["frame"]["sender"]["id"]
             receiverRole = "RegistryHandler"#message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
             # The receiver Id should be
-            messageCount, status = self.baseClass.pyAAS.dba.getMessageCount()
+            messageCount, status = self.baseClass.pyaas.dba.getMessageCount()
             I40FrameData =      {
                                     "semanticProtocol": self.baseClass.semanticProtocol,
                                     "type" : oMessage,
                                     "messageId" : oMessage+"_"+str(int(messageCount)+1),
-                                    "SenderAASID" : message["frame"]["sender"]["identification"]["id"],
+                                    "SenderAASID" : self.baseClass.aasID,
                                     "SenderRolename" : self.baseClass.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
                                     "ReceiverAASID" :  receiverId,
@@ -364,16 +364,16 @@ class CreateAndSendRegisterMessage(object):
             # the relevant submodel could be retrieved using
             # interactionElements
             
-            #self.InElem = self.baseClass.pyAAS.dba.getAAsSubmodelsbyId(self.baseClass.pyAAS.AASID,"BoringSubmodel")
+            #self.InElem = self.baseClass.pyaas.dba.getAAsSubmodelsbyId(self.baseClass.pyaas.AASID,"BoringSubmodel")
             oMessage_Out ={"frame": self.frame,
                                     "interactionElements":[self.InElem]}
             self.instanceId = str(uuid.uuid1())
-            self.baseClass.pyAAS.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+            self.baseClass.pyaas.dataManager.pushInboundMessage({"functionType":3, "instanceid":self.instanceId,
                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction": "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["identification"]["id"],
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -532,17 +532,17 @@ class sendCompletionResponse(object):
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
             # The receiver Id should be
-            messageCount, status = self.baseClass.pyAAS.dba.getMessageCount()
+            messageCount, status = self.baseClass.pyaas.dba.getMessageCount()
             I40FrameData =      {
                                     "semanticProtocol": self.baseClass.semanticProtocol,
                                     "type" : oMessage,
                                     "messageId" : oMessage+"_"+str(int(messageCount)+1),
-                                    "SenderAASID" : message["frame"]["sender"]["identification"]["id"],
+                                    "SenderAASID" : message["frame"]["sender"]["id"],
                                     "SenderRolename" : self.baseClass.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
                                     "ReceiverAASID" :  receiverId,
@@ -556,16 +556,16 @@ class sendCompletionResponse(object):
             # the relevant submodel could be retrieved using
             # interactionElements
             
-            #self.InElem = self.baseClass.pyAAS.dba.getAAsSubmodelsbyId(self.baseClass.pyAAS.AASID,"BoringSubmodel")
+            #self.InElem = self.baseClass.pyaas.dba.getAAsSubmodelsbyId(self.baseClass.pyaas.AASID,"BoringSubmodel")
             oMessage_Out ={"frame": self.frame,
                                     "interactionElements":[self.InElem]}
             self.instanceId = str(uuid.uuid1())
-            self.baseClass.pyAAS.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+            self.baseClass.pyaas.dataManager.pushInboundMessage({"functionType":3, "instanceid":self.instanceId,
                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction": "internal",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["identification"]["id"],
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -619,12 +619,12 @@ class WaitforNewOrder(object):
         for i in range (0, self.baseClass.WaitforNewOrder_Queue.qsize()):
             message = inboundQueueList[i]
             self.instanceId = str(uuid.uuid1())
-            self.baseClass.pyAAS.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+            self.baseClass.pyaas.dataManager.pushInboundMessage({"functionType":3, "instanceid":self.instanceId,
                                                             "conversationId":message["frame"]["conversationId"],
                                                             "messageType":message["frame"]["type"],
                                                             "messageId":message["frame"]["messageId"],
                                                             "direction" : "internal",
-                                                            "SenderAASID" : message["frame"]["sender"]["identification"]["id"],
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":message})
             
 
@@ -712,18 +712,18 @@ class Register(object):
                                 "semanticProtocol": self.semanticProtocol,
                                 "type" : "StausChange",
                                 "messageId" : "StausChange_1",
-                                "SenderAASID" : self.pyAAS.AASID,
+                                "SenderAASID" : self.aasID,
                                 "SenderRolename" : self.skillName,
                                 "conversationId" : "AASNetworkedBidding",
-                                "ReceiverAASID" :  self.pyAAS.AASID + "/"+self.skillName,
+                                "ReceiverAASID" :  self.aasID,
                                 "ReceiverRolename" : "SkillStatusChange"
                             }
         self.statusframe = self.gen.createFrame(self.StatusDataFrame)
-        self.statusInElem = self.pyAAS.aasConfigurer.getStatusResponseSubmodel()
+        self.statusInElem = self.pyaas.aasConfigurer.getStatusResponseSubmodel()
         self.statusMessage ={"frame": self.statusframe,
                                 "interactionElements":[self.statusInElem]}    
     
-    def __init__(self, pyAAS):
+    def __init__(self, pyaas):
         '''
         Constructor
         '''
@@ -732,35 +732,36 @@ class Register(object):
                           "notifyonSuccessRegistration": "notifyonSuccessRegistration",  "waitforRegisterAck": "waitforRegisterAck",  "CreateAndSendRegisterMessage": "CreateAndSendRegisterMessage",  "evaluateRegisterAck": "evaluateRegisterAck",  "notifyOnError": "notifyOnError",  "sendCompletionResponse": "sendCompletionResponse",  "WaitforNewOrder": "WaitforNewOrder",
                        }
         
-        self.pyAAS = pyAAS
+        self.pyaas = pyaas
+        self.aasID = ""
         self.skillName = "Register"
+        self.initialState = "WaitforNewOrder"
+        self.skill_service = "Registration"
+        self.enabledStatus = {"Y":True, "N":False}
+        self.semanticProtocol = "www.admin-shell.io/interaction/registration"
+        self.enabledState = "Y"
         self.initstateSpecificQueueInternal()
         self.initInBoundMessages()
-
-        
-        self.enabledStatus = {"Y":True, "N":False}
-        self.enabledState = self.enabledStatus["Y"]
-        
-        self.semanticProtocol = "www.admin-shell.io/interaction/registration"
 
         self.gen = Generic()
         self.createStatusMessage()
         self.productionStepSeq = []
         self.responseMessage = {}
         
-    def Start(self, msgHandler,skillDetails,aasIndex):
+    def start(self,msgHandler,shellObject,_uuid) -> None:
         self.msgHandler = msgHandler
-        self.skillDetails = skillDetails
-        self.aasIndex = aasIndex
-        self.skillLogger = logging.getLogger(str(self.skillDetails["shellIndex"]) + " Register")
+        self.shellObject = shellObject
+        self.uuid = str(_uuid)
+        self.aasID = shellObject.aasELement["id"]
+        self.skillLogger = logging.getLogger(_uuid + "_Register")
         self.skillLogger.setLevel(logging.DEBUG)        
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyAAS.base_dir+"/logs/"+self.skillName+".LOG")
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self.uuid)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
-        self.listHandler = serviceLogHandler(self.pyAAS.skilllogListDict[self.aasIndex][self.skillName])
+        self.listHandler = ServiceLogHandler(LogList())
         self.listHandler.setLevel(logging.DEBUG)
         
         self.Handler_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s',datefmt='%m/%d/%Y %I:%M:%S %p')
@@ -778,7 +779,7 @@ class Register(object):
         currentState = WaitforNewOrder_1
         self.enabledState = "Y"
         
-        self.StatusResponseSM = self.pyAAS.aasConfigurer.getStatusResponseSubmodel()
+        self.StatusResponseSM = self.pyaas.aasConfigurer.getStatusResponseSubmodel()
         
         while (True):
             if ((currentState.__class__.__name__) == "WaitforNewOrder"):

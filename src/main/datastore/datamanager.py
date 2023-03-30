@@ -43,6 +43,7 @@ class DataManager(object):
                         self.outBoundProcessingDict[inMessage["instanceid"]] = _dba_method(inMessage['data'])
                     else:
                         self.outBoundProcessingDict[inMessage["instanceid"]] = _dba_method()
+                    self.pyAAS.AASXupdate = True
                 elif inMessage['functionType'] == 3:
                     dba = self.pyAAS.dba
                     entryTime = ((datetime.now()+ timedelta(hours=2)).strftime("%Y-%m-%d %H:%M:%S.%f"))[:-3]
@@ -50,7 +51,10 @@ class DataManager(object):
                                                          inMessage['messageType'],
                                                          inMessage["messageId"],
                                                          inMessage["direction"],
-                                                         inMessage["message"],entryTime,inMessage["SenderAASID"])
+                                                         inMessage["message"],
+                                                         entryTime,
+                                                         inMessage["SenderAASID"],)
+                    self.pyAAS.conversationUpdate = True
         self.pyAAS.serviceLogger.info('The Database manager is started')
         
     def stop(self):

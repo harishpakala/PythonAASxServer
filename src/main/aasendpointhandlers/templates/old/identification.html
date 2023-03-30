@@ -1,0 +1,291 @@
+{% extends "homelayout.html" %} {% block homecontent %}
+<div  style = "width: 100%;">
+<div class = "container">
+		<div class= "row" style = "height : 1.5vh">
+			<div class = "col-2 d-flex justify-content-left align-items-left" style = "">
+				<span style = "color : rgb(0,52,215,0.9);font-weight: bold; ">IDENTIFICATION</span>
+			</div>
+			<div class = "col-10"></div>
+		</div>	
+		<div class= "row" style = "min-height : 2.5vh">
+		</div>		
+		<div class = "row" style = "border-style : solid; border-color:rgb(0,52,215,0.9)">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgb(0,52,215,0.9); ">
+				<p style= "color: white;font-size: larger;">Manufacturer Details</p>
+			</div>
+			<div class = "col-10 ">
+			{% for key,value in stdSubmodelData.manufacturerDetails.items() %}
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color:rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<p >{{key}}</p>
+					</div>
+					<div class = "col-4">
+						<p id = "{{key}}">{{value}}</p>
+					</div>
+					<div class = "col-3 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.{{key}}','{{key}}','{{submodelidentificationId}}')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.{{key}}','{{key}}','{{submodelidentificationId}}')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+		<div class = "row" style = "border-style : solid; border-color:rgb(0,52,215,0.9)">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgb(0,52,215,0.9); ">
+				<p style= "color: white;font-size: larger;">Supplier Detais</p>
+			</div>
+			<div class = "col-10 ">
+			{% for key,value in stdSubmodelData.supplierDetails.items() %}
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color:rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<p> {{key}}</p>
+					</div>
+					<div class = "col-4">
+						<p id = "{{key}}">{{value}}</p>
+					</div>
+					<div class = "col-3 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.{{key}}','{{key}}','{{submodelidentificationId}}')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.{{key}}','{{key}}','{{submodelidentificationId}}')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+				{% endfor %}
+							
+			</div>
+		</div>
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+		<div class = "row" style = "border-style : solid; border-color:rgb(0,52,215,0.9)">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgb(0,52,215,0.9); ">
+				<p style= "color: white;font-size: larger;">Product Details</p>
+			</div>
+			<div class = "col-10 ">
+			{% for key,value in stdSubmodelData.productDetails.items() %}
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color:rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<p> {{key}}</p>
+					</div>
+					<div class = "col-4">
+						<p id = "{{key}}">{{value}}</p>
+					</div>
+					<div class = "col-3 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.{{key}}','{{key}}','{{submodelidentificationId}}')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.{{key}}','{{key}}','{{submodelidentificationId}}')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+				{% endfor %}				
+			
+			</div>
+		</div>
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+		<div class = "row" style = "border-style : solid; border-color:rgb(0,52,215,0.9)">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgb(0,52,215,0.9); ">
+				<p style= "color: white;font-size: larger;">Additional Details</p>
+			</div>
+			<div class = "col-10 ">
+			{% for key,value in stdSubmodelData.additionalDetails.items() %}
+				<div class = "row" style= "color: black;font-size: larger; border-bottom-color:rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+					<div class = "col-4" style = "padding-left:0">
+						<p> {{key}}</p>
+					</div>
+					<div class = "col-4">
+						<p id = "{{key}}">{{value}}</p>
+					</div>
+					<div class = "col-3 d-flex justify-content-end">
+								<div class="imagecontainer">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.{{key}}','{{key}}','{{submodelidentificationId}}')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+											name="submit">
+									<div class="overlay">
+										<input type="image" style="height: 2.5vh"
+											onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.{{key}}','{{key}}','{{submodelidentificationId}}')"
+											data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+											data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+											name="submit">
+									</div>
+								</div>					
+					</div>
+				</div>
+				{% endfor %}				
+								
+			</div>
+		</div>
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+		<div class="row  " style="height : 4.5vh;border-style : solid; border-color:rgb(0,52,215,0.9); background-color:rgb(0,52,215,0.9)">
+			<div class="col-12 d-flex justify-content-center  align-items-center" style="">
+				<p style="color: white;font-size: larger;">Contact Info</p>
+			</div>
+		</div>
+		{% for key, value in stdSubmodelData.contactInfo.items() %}
+		<div class = "row" style = "height : 4.5vh">
+		</div>		
+			<div class = "row" style = "border-style : solid; border-color:rgb(0,52,215,0.9)">
+				<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgb(0,52,215,0.9); ">
+					<p style= "color: white;font-size: larger;">{{key}}</p>
+				</div>
+				<div class = "col-10 ">
+				{% for key1,value1 in value.items() %}
+					<div class = "row" style= "color: black;font-size: larger; border-bottom-color:rgba(0, 52, 215, 0.9); border-bottom-style:solid;  margin-top: 2.5vh;margin-bottom: 2.5vh;  margin-left: 1vw; margin-right: 1vw;  padding-bottom : 1.5vh;">
+						<div class = "col-4" style = "padding-left:0">
+							<p> {{key1}}</p>
+						</div>
+						<div class = "col-4">
+							<p id = "{{key1}}">{{value1}}</p>
+						</div>
+						<div class = "col-3 d-flex justify-content-end">
+									<div class="imagecontainer">
+											<input type="image" style="height: 2.5vh"
+												onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.contactInfo.{{key1}}','{{key1}}','{{submodelidentificationId}}')"
+												data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+												data-whatever="@mdo" src="{{exDomain}}static/images/edit.svg"
+												name="submit">
+										<div class="overlay">
+											<input type="image" style="height: 2.5vh"
+												onclick="modalSubmodelDataModifier('{{aasIndex}}','{{key}}','Identification','None','{{submodelidentificationId}}.contactInfo.{{key1}}','{{key1}}','{{submodelidentificationId}}')"
+												data-bs-toggle="modal" data-bs-target="#propertyUpdate"
+												data-whatever="@mdo" src="{{exDomain}}static/images/edit1.svg"
+												name="submit">
+										</div>
+									</div>					
+						</div>
+					</div>
+					{% endfor %}				
+									
+				</div>
+			</div>
+		
+		{% endfor %}
+
+
+
+		<div class = "row" style = "height : 4.5vh">
+		</div>
+		<div class = "row" style = "border-style : solid; border-color:rgb(0,52,215,0.9)">
+			<div class = "col-2 d-flex justify-content-center  align-items-center" style = "background-color:rgb(0,52,215,0.9); ">
+				<p style= "color: white;font-size: larger;">Images</p>
+			</div>
+			<div class = "col-10" style = "margin-bottom: 2vh;">
+				<div class= "row">
+					<div class = "col-4">
+						{% if stdSubmodelData.Images.CompanyLogo != '' -%}
+						<div class   = "row d-flex justify-content-center  align-items-center">
+							<img id = "marking1" style="height: 20vh; width: 10vw; margin-top: 2vh; margin-right : 8vw;display: block;margin-right: auto;margin-left: auto;" src="{{stdSubmodelData.Images.CompanyLogo}}">
+						</div>
+						<div class  = "row d-flex justify-content-center  align-items-center" style = "margin-top : 1vh;" id = "CompanyLogo">
+							Company Logo 
+						</div>
+						{%- endif %}
+					</div>
+					<div class = "col-4">
+						{% if stdSubmodelData.Images.QrCode != '' -%}
+						<div class = "row d-flex justify-content-center  align-items-center">
+							<img id = "marking2" style="height: 20vh; width: 10vw; margin-top: 2vh; margin-right : 8vw;display: block;margin-right: auto;margin-left: auto;" src="{{stdSubmodelData.Images.QrCode}}">
+						</div>
+						<div class = "row d-flex justify-content-center  align-items-center" style = "margin-top : 1vh;" id = "QrCode">
+							QR Code 
+						</div>
+						{%- endif %}
+					</div>
+					<div class = "col-4">
+						{% if stdSubmodelData.Images.TypThumbnail != '' -%}
+						<div class = "row d-flex justify-content-center  align-items-center">
+							<img id = "marking3" style="height: 20vh; width: 10vw; margin-top: 2vh; margin-right : 8vw;display: block;margin-right: auto;margin-left: auto;" src="{{stdSubmodelData.Images.TypThumbnail}}">
+						</div>
+						<div class = "row d-flex justify-content-center  align-items-center" style = "margin-top : 1vh;" id = "TypThumbnail">
+							Typ Thumbnail 
+						</div>
+						{%- endif %}
+					</div>					
+				</div>
+			</div>
+		</div>
+		
+		<div class = "row" style = "height : 4.5vh">
+		</div>		
+</div>
+</div>
+
+
+
+<div class="modal fade" id="propertyUpdate" tabindex="-1" aria-labelledby="propertyUpdate" aria-hidden="true">
+
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" name="submodel" id="submodelPropertyHeader"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<input id="submodelNameInnerText" name="submodelName" type="hidden" value="">
+				<input id="submodelElemNameInnerText" name="submodelElemName" type="hidden" value="">
+				<input id="submodelElemTypeInnerText" name="submodelElemType" type="hidden" value="">
+				<input id="submodelElemidShortPathText" name="submodelElemidShortPath" type="hidden" value="">
+				<input id="submodelElemAdditionalInfo" name="submodelElemAdditionalInfo" type="hidden" value="">
+				<input id="submodelidentificationId" name="submodelidentificationId" type="hidden" value="">
+				
+				<div class="modal-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-3">
+								<label for="newValue_Text" class="form-label">New Value</label>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-7">
+								<input type="text" name="newValue" class="form-control"
+									id="newValue_Text" required>
+							</div>
+							<div class="col-1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" id ="submodelElemButton" data-dismiss="modal" type="submit">Update</button>
+					
+				</div>
+			</div>
+		</div>
+	
+</div>
+
+{% endblock %}

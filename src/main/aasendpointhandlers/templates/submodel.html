@@ -1,0 +1,352 @@
+{% extends "homelayout.html" %} {% block homecontent %}
+<div style = "width: 100%;">
+	<div class="row" style="height: 6.5vh;">
+		<div class="col-10"></div>
+		<div class="col-1 d-flex flex-wrap align-items-center text-center">
+			Update
+		</div>
+		<div class="col-1 col-1 d-flex flex-wrap align-items-center text-centercol-1 d-flex flex-wrap align-items-center text-center">
+			<div class="std-submodel-add" style="margin-left: 30%">
+
+				   <input  type="image"
+						style="height: 4vh; cursor: pointer;" id="std-submodel-img"
+						src="{{exDomain}}web/images/refresh.svg">
+					<div class="std-submodel-add-overlay">
+						<input type="image" style="height: 4vh; cursor: pointer;"
+							id="saveSubmodelForm"
+							src="{{exDomain}}web/images/refresh1.svg">
+					</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="row" style="height: 2.5vh;">
+	</div>
+	<div class = "row">
+	<div class = "col-1">
+	</div>
+	<div class = "col-4">
+		<div class="accordion" id="SubmodelAccordin">
+			<div class="accordion-item" style = "border: 1px solid black; ">
+				<h2 class="accordion-header" id="submodelHeading" style = "background-color : rgb(0,52,215,0.9)">
+				  <button style = "color :white; font-size : 0.5em;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#submodelCollapse" aria-expanded="true" aria-controls="submodelCollapse">
+					{{submodelName}}
+				  </button>
+				</h2>
+				<div id="submodelCollapse" class="accordion-collapse collapse" aria-labelledby="submodelHeading" data-bs-parent="#SubmodelAccordin">
+				
+				
+				</div>			
+			</div>
+		</div>	
+	</div>
+	<div class = "col-1">
+	</div>
+	<div class="col-5">
+		<div class="accordion" id="ElementInformation">
+			<div class="accordion-item" style="border: 1px solid black;">
+				<h2 class="accordion-header" id="headingOne3"
+					style="background-color: rgb(0, 52, 215, 0.9)">
+					<button style="color: white; font-size : 0.5em;" class="accordion-button"
+						type="button" data-bs-toggle="collapse" data-bs-target="#elem21"
+						aria-controls="elem21">Element Information</button>
+				</h2>
+				<div id="elem21" class="accordion-collapse"
+					aria-labelledby="headingOne2"
+					data-bs-parent="#ElementInformation">
+						<div style="min-height: 2.5vh"></div>
+
+				 </div>
+			</div>
+			</div>
+			</div>
+</div>
+
+	<div style="min-height: 2.5vh"></div>	
+</div>
+
+<script>
+document.getElementById("saveSubmodelForm").addEventListener( "click", (evt) => saveSubmodel(evt,'{{submodelId}}','{{aasIdentifier}}'));	
+var submodelId = '{{submodelId}}';
+var aasIdentifier = '{{aasIdentifier}}';
+var submodelCollapse = document.getElementById("submodelCollapse");
+var submodelTemp = JSON.parse('{{ submodelD | tojson | safe}}');
+var submodelD = JSON.parse('{{ submodelD | tojson | safe}}');
+
+var linearData1 = {};
+var linearData = {};
+submodelElements = [];
+
+_submodel1 = new Submodel();
+_submodel1.deserialize(submodelD,"elem21",'{{exDomain}}');
+_submodel1.createDom("elem21",'{{exDomain}}')
+
+
+var _submodelCollapse = document.getElementById('submodelCollapse')
+_submodelCollapse.addEventListener('hidden.bs.collapse', function () {
+	let _parent = document.getElementById("elem21");
+	_parent.innerHTML = "";
+	_submodel1.createDom("elem21",'{{exDomain}}');
+});
+
+addSubmodelElements("elem21",'{{exDomain}}');
+
+function addSubmodelElements(parent,exdomain){
+	if (submodelTemp.hasOwnProperty("submodelElements")){
+		for (var _submodelElement of submodelTemp["submodelElements"]){
+			if (_submodelElement.modelType != "SubmodelElementCollection")
+		        {submodelElements.push(parseDataElement(_submodelElement,submodelId,exdomain))}                    
+		    else
+		        {submodelElements.push(parseSubmodelCollection(_submodelElement,submodelId,exdomain))}
+		}
+
+		_submodel1.submodelElements.splice(0,submodelTemp["submodelElements"].length);
+	}
+	
+	for (var elemId of submodelElements){
+		_submodel1.submodelElements.push(elemId);
+	}
+	
+	linearData1[submodelTemp["id"]] = _submodel1;
+	var submodelElems = document.createElement('ul');
+	submodelElems.setAttribute("class","list-group list-group-flush");
+	submodelElems.setAttribute("id","submodelElems");
+
+	for (var tId of _submodel1.submodelElements){
+		var elemC = linearData1[tId];
+		
+		if (elemC.modelType == "SubmodelElementCollection") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");
+				elemLi.setAttribute("id","li_"+elemC.idShort.getString());
+				elemLi.appendChild(processCollection(elemC.idShort.getString()));
+						
+				submodelElems.appendChild(elemLi);
+			}
+		else {
+				let elemChild = setSubmodelElemData(elemC.idShort.getString(),parent,exdomain);
+				submodelElems.appendChild(elemChild);
+			}
+	}
+	submodelCollapse.appendChild(submodelElems);
+}
+
+function parseSubmodelCollection(submodelColl,_parentId,exdomain){
+    var _newId =_parentId +"."+ submodelColl["idShort"]
+    var collectionElemIds =  []
+
+    var _submodelElementCollection = new SubmodelElementCollection();
+    _submodelElementCollection.deserialize(submodelColl,_parentId,exdomain);
+	
+	
+    for (var _submodelElement of submodelColl["value"]){
+        if (_submodelElement["modelType"] != "SubmodelElementCollection"){
+        	collectionElemIds.push(parseDataElement(_submodelElement, _newId,exdomain))
+        }
+        else{
+        	collectionElemIds.push(parseSubmodelCollection(_submodelElement,_newId,exdomain))
+        }
+    }       
+    submodelColl["value"].splice(0,submodelColl["value"].length);
+    for (var _pid of collectionElemIds)
+    {
+    	_submodelElementCollection.value.push(_pid);
+    }
+    linearData1[_newId] = _submodelElementCollection;
+    return _newId;
+}
+
+function parseDataElement(data,_parentId,exdomain){
+    var _newId = _parentId +"."+ data["idShort"];
+    if (data["modelType"] == "Property"){
+		var _property = new Property();
+		_property.deserialize(data,_parentId,exdomain);
+		linearData1[_newId] = _property;
+	}
+    if (data["modelType"] == "File"){
+		var _file = new IFile();
+		_file.value.submodelIdentifier = btoa(submodelId);
+   		let splitString = (_newId.split((submodelId+".")));
+		_file.value.idShortPath = splitString[1];
+		_file.deserialize(data,_parentId,exdomain);
+		linearData1[_newId] = _file;
+	}
+	if (data["modelType"] == "Range"){
+		var _range = new Range();
+		_range.deserialize(data,_parentId,exdomain);
+		linearData1[_newId] = _range;
+	}
+	if (data["modelType"] == "MultiLanguageProperty"){
+		var _MultiLanguageProperty = new MultiLanguageProperty();
+		_MultiLanguageProperty.deserialize(data,_parentId,exdomain);
+		linearData1[_newId] = _MultiLanguageProperty;
+	}
+
+    return _newId;
+}
+function setSubmodelElemData(_id,parent,exdomain){
+	
+	var elemLi = document.createElement('li');
+	var elemC = linearData1[submodelId+"."+_id];
+	elemLi.setAttribute("class","list-group-item");
+	elemLi.setAttribute("id","li_"+_id);
+	elemLi.setAttribute("style","font-size : 1em");
+	elemLi.setAttribute("onClick","listElemClick('"+_id+"','"+parent+"','"+exdomain+"')");
+	
+	if (elemC.modelType == "Property" || elemC.modelType == "File" ){
+		elemLi.innerHTML = elemC.idShort.getString() +"   =   " +elemC.value.getString();
+	}
+	if (elemC.modelType == "Range"){
+		elemLi.innerHTML = elemC.idShort.getString() +"   =   " +elemC.min.getString() + ".." +elemC.max.getString();
+	}
+	if (elemC.modelType == "MultiLanguageProperty"){
+		try {
+			elemLi.innerHTML = elemC.idShort.getString() +"   ->   " ;
+			}
+			catch(err) {
+				elemLi.innerHTML = elemC.idShort.getString();
+			}
+	}
+	
+	return elemLi;
+}
+function processCollection(_pidShort){
+	var parent = "elem21";
+	var exdomain = "http://localhost:60011/";
+	var tempId = submodelId+"."+_pidShort;
+	
+	var collectionElem = linearData1[tempId];
+	var idShort = collectionElem.idShort.getString();
+	
+	var collectionDiv = document.createElement('div');
+	collectionDiv.setAttribute("class","accordion");
+	collectionDiv.setAttribute("id",_pidShort.replaceAll(".","_"));
+	
+	var accordinDiv = document.createElement('div');
+	accordinDiv.setAttribute("class","accordion-item");
+	accordinDiv.appendChild(creatAccordinHeader(_pidShort,idShort));
+	
+	var accordinCollpase = createCollapseAccordin(_pidShort,idShort);
+	
+	for (var tId of collectionElem.value){
+		var elemC = linearData1[tId];
+		if (elemC.modelType == "SubmodelElementCollection") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");
+				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString()));
+			}
+			else {
+				accordinCollpase.appendChild(setSubmodelElemData(_pidShort+"."+elemC.idShort.getString(),parent,exdomain));
+			}
+	}
+	accordinDiv.appendChild(accordinCollpase);
+	collectionDiv.appendChild(accordinDiv);
+	return collectionDiv	
+}
+
+function creatAccordinHeader(_pidShort,idShort){
+	var h2 = document.createElement('h2');
+	h2.setAttribute("class","accordion-header");
+	h2.setAttribute("id",_pidShort.replaceAll(".","_")+"_Header");
+	h2.setAttribute("style","background-color : rgb(0,52,215,0.9)");
+	h2.appendChild(createAccordinHeaderButton(_pidShort,idShort))
+	return h2;
+}
+
+function createAccordinHeaderButton(_pidShort,idShort){
+	var button = document.createElement('button');
+	button.setAttribute("class","accordion-button collapsed");
+	button.setAttribute("style","color :white;font-size : 0.35em");
+	button.setAttribute("type","button");
+	button.setAttribute("data-bs-toggle","collapse");
+	button.setAttribute("data-bs-target","#"+_pidShort.replaceAll(".","_")+"_Collapse");
+	button.setAttribute("aria-controls",_pidShort.replaceAll(".","_")+"_Collapse");
+	button.setAttribute("onClick","listCollectionClick('"+_pidShort+"')");
+	button.innerHTML = idShort;
+	return button;
+}
+
+function createCollapseAccordin(_pidShort,idShort){
+	var CollapseAccordinDiv = document.createElement('div');
+	CollapseAccordinDiv.setAttribute("class","accordion-collapse collapse");
+	CollapseAccordinDiv.setAttribute("id",_pidShort.replaceAll(".","_")+"_Collapse");
+	CollapseAccordinDiv.setAttribute("aria-labelledby",_pidShort.replaceAll(".","_")+"_Header");
+	CollapseAccordinDiv.setAttribute("data-bs-parent","#"+_pidShort.replaceAll(".","_"));
+	return CollapseAccordinDiv; 
+}
+function seperaterRow(minHeight){
+	var divRow = document.createElement('div');
+	divRow.setAttribute("style","min-height:"+minHeight);
+	return divRow;
+}
+
+function listElemClick(_tempId,_parentId,_exDomain){
+	let _parent = document.getElementById(_parentId);
+	_parent.innerHTML = "";
+	var data = linearData1[submodelId+"."+_tempId];
+	data.createDom(_parentId,_exDomain);
+	document.querySelectorAll('[id^="li_"]').forEach(element => {
+		element.style.border =  ""; 
+    });
+	document.getElementById("li_"+_tempId).style.border = "1px solid rgb(26, 131, 168,0.98)";
+	
+}
+function listCollectionClick(_id){
+	var data = linearData1[submodelId+"."+_id] 
+	let _parent = document.getElementById("elem21");
+	_parent.innerHTML = "";
+	data.createDom("elem21",'{{exDomain}}');
+	var listGroupItem = document.getElementsByClassName("list-group-item");
+	for (var i = 0; i < listGroupItem.length; i++ ) {
+		listGroupItem[i].style.border = "1px solid rgba(0,0,0,.125)";
+	}
+} 
+
+
+</script>
+
+<div class="modal fade" data-bs-backdrop="static" id="elementUpdate" tabindex="-1" aria-labelledby="i" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" name="submodel" id="submodelPropertyHeader"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<input id="idShortPath" name="idShortPath" type="hidden" value="">
+				<input id="submodelId" name="submodelId" type="hidden" value="">
+				
+				<div class="modal-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-3">
+								<label for="newValue_Text" class="form-label">New Value</label>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-7">
+								<input type="text" name="newValue" class="form-control"
+									id="newValue_Text" required>
+							</div>
+							<div class="col-1"></div>
+						</div>
+					</div>
+				</div>
+			<div class="row" style="min-height : 2.5vh">
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-9"></div>
+						<div class="col-2">
+							<button class="btn btn-primary" id="submodelElemButton">Update</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="min-height : 2.5vh">
+			</div>
+			</div>
+		</div>
+	
+</div>
+{% endblock %}

@@ -4,474 +4,268 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 '''
+from importlib import import_module
+
+from copy import deepcopy
 import json
 import os.path
 
 try:
-    from utils.utils import AASDescriptor
+    from utils.utils import AASDescriptor,ThingDescriptionProperty,ThingDescription
 except ImportError:
-    from main.utils.aaslog import AASDescriptor
+    from src.main.utils.aaslog import AASDescriptor,ThingDescriptionProperty,ThingDescription
 
-try:
-    from config.TemplateCapture import NameplateCapture,IdentificationCapture,DocumentCapture,TechnicalDataCapture
-except ImportError:
-    from main.config.TemplateCapture import NameplateCapture,IdentificationCapture,DocumentCapture,TechnicalDataCapture
-    
+enabledState = {"Y": True, "N": False}
 
-enabledState = {"Y":True, "N":False}
 
-class ConfigParser(object):
-    def __init__(self,pyAAS,packageFile):
-        self.pyAAS = pyAAS
+class ConfigParser:
+    def __init__(self, pyaas, package_file):
+        self.pyaas = pyaas
         self.jsonData = {}
-        self.templateData = {}
-        self.baseFile = packageFile 
+        self.submodel_template_dict = dict()
+        self.base_file = package_file
         self.reposStatus = self.__init_repositories()
-        
+
     def __init_repositories(self):
-        try :    
-            with open(os.path.join(self.pyAAS.repository, self.baseFile), encoding='utf-8') as json_file:
+        try:
+            with open(os.path.join(self.pyaas.repository, self.base_file), encoding='utf-8') as json_file:
                 self.jsonData = json.load(json_file)
-            with open(os.path.join(self.pyAAS.template_repository, "documentationInfo.json"), encoding='utf-8') as json_file_document:
-                self.templateData["Documentation"] = json.load(json_file_document)
-            with open(os.path.join(self.pyAAS.template_repository, "namplateInfo.json"), encoding='utf-8') as json_file_nameplate:
-                self.templateData["Nameplate"] = json.load(json_file_nameplate)
-            with open(os.path.join(self.pyAAS.repository,"ass_JsonSchema.json"), encoding='utf-8') as json_file_aas:
-                self.aasJsonSchema  = json.load(json_file_aas)
-            with open(os.path.join(self.pyAAS.repository,"aasShell_JsonSchema.json"), encoding='utf-8') as json_file_aasShell:
-                self.aasShell_JsonSchema  = json.load(json_file_aasShell)
-            with open(os.path.join(self.pyAAS.repository,"asset_JsonSchema.json"), encoding='utf-8') as json_file_asset:
-                self.assetJsonSchema  = json.load(json_file_asset)
-            with open(os.path.join(self.pyAAS.repository,"submodel_JsonSchema.json"), encoding='utf-8') as json_file_submodel:
-                self.submodelJsonSchema  = json.load(json_file_submodel)
-            with open(os.path.join(self.pyAAS.repository,"conceptDescription_JsonSchema.json"), encoding='utf-8') as json_file_submodel:
-                self.conceptDescription_JsonSchema  = json.load(json_file_submodel)
-            with open(os.path.join(self.pyAAS.base_dir,"config/status.json"), encoding='utf-8') as statusFile:
-                self.submodel_statusResponse  = json.load(statusFile)
-            with open(os.path.join(self.pyAAS.base_dir,"config/SrSp.json"), encoding='utf-8') as SrSp_Path:
-                self.SrSp  = json.load(SrSp_Path)    
+
+            with open(os.path.join(self.pyaas.repository, "ass_JsonSchema.json"), encoding='utf-8') as json_file_aas:
+                self.aasJsonSchema = json.load(json_file_aas)
+
+            with open(os.path.join(self.pyaas.repository, "aas_shell_template.json"),
+                      encoding='utf-8') as json_file_nameplate:
+                self.aas_shell_template = json.load(json_file_nameplate)
+
+            submodel_templates = os.listdir(self.pyaas.template_repository)
+            
+            for _fileName in submodel_templates:
+                with open(os.path.join(self.pyaas.template_repository, _fileName),
+                      encoding='utf-8') as json_file_nameplate:
+                    self.submodel_template_dict[_fileName.split(".")[0]] = json.load(json_file_nameplate)
+
+            self.pyaas.derAuthCert = open(
+                os.path.join(self.pyaas.repository, self.pyaas.lia_env_variable["LIA_PATH2AUTHCERT"]), "rb").read()
+
+            """
+            with open(os.path.join(self.pyaas.repository, "ass_JsonSchema.crt")) as json_file_aas:
+                self.certificateHandler = json.load(json_file_aas)
+            """
+
+            self.aasShell_JsonSchema = deepcopy(self.aasJsonSchema)
+            self.aasShell_JsonSchema["allOf"][0]["$ref"] = "#/definitions/AssetAdministrationShell"
+
+            self.assetInformation_JsonSchema = deepcopy(self.aasJsonSchema)
+            self.assetInformation_JsonSchema["allOf"][0]["$ref"] = "#/definitions/AssetInformation"
+
+            self.submodelJsonSchema = deepcopy(self.aasJsonSchema)
+            self.submodelJsonSchema["allOf"][0]["$ref"] = "#/definitions/Submodel"
+
+            self.conceptDescription_JsonSchema = deepcopy(self.aasJsonSchema)
+            self.conceptDescription_JsonSchema["allOf"][0]["$ref"] = "#/definitions/ConceptDescription"
+
+            self.reference_JsonSchema = deepcopy(self.aasJsonSchema)
+            self.reference_JsonSchema["allOf"][0]["$ref"] = "#/definitions/Reference"
+
+            with open(os.path.join(self.pyaas.base_dir, "config/status.json"), encoding='utf-8') as statusFile:
+                self.submodel_statusResponse = json.load(statusFile)
+            with open(os.path.join(self.pyaas.base_dir, "config/SrSp.json"), encoding='utf-8') as SrSp_Path:
+                self.SrSp = json.load(SrSp_Path)
                 del self.SrSp["temp"]
-            with open(os.path.join(self.pyAAS.dataRepository,"database.json"), encoding='utf-8') as json_file_dataBase:
-                self.dataBaseFile  = json.load(json_file_dataBase)
+            with open(os.path.join(self.pyaas.dataRepository, "database.json"), encoding='utf-8') as json_file_dataBase:
+                self.dataBaseFile = json.load(json_file_dataBase)
             return True
         except Exception as E:
-            self.pyAAS.serviceLogger.info('Error configuring the data respositories' + str(E))
+            self.pyaas.serviceLogger.info('Error configuring the data respositories' + str(E))
             return False
-            
+
     def getStatusResponseSubmodel(self):
         return self.submodel_statusResponse
-        
-    def configureAASJsonData(self):
-        try:
-            self.getStandardSubmodels()
-            self.aasIdList()
-            self.getAASList()
-            return True    
-        except Exception as E:
-            self.pyAAS.serviceLogger.info('Error configuring the database' + str(E))
-            return False        
-    
+
     def extract_pubsublistner_config(self):
         try:
             listnerConfig = dict()
-            listnerConfig["host"] = self.pyAAS.lia_env_variable["LIA_PUBSUB_LISTNER_HOST"] 
-            listnerConfig["port"] = self.pyAAS.lia_env_variable["LIA_PUBSUB_LISTNER_PORT"]
-            self.pyAAS.listnersConfig["AAS_PUBSUB"] = listnerConfig
+            listnerConfig["host"] = self.pyaas.lia_env_variable["LIA_PUBSUB_LISTNER_HOST"]
+            listnerConfig["port"] = self.pyaas.lia_env_variable["LIA_PUBSUB_LISTNER_PORT"]
+            self.pyaas.listeners_config["AAS_PUBSUB"] = listnerConfig
             return True
-        except Exception as E:
+        except SystemError as e:
             return False
-            self.pyAAS.serviceLogger.info("Error while extracting. " + str(E))
-    
-    def setThumbNails(self):
-        self.pyAAS.thumbNailList[0] = "sr.png"
-        
-    def getStandardSubmodels(self):
-        #self.setThumbNails()
-        for _uuid in (self.pyAAS.aasShellHashDict._getKeys()):
-            aasElementObject = self.pyAAS.aasShellHashDict.__getHashEntry__(_uuid)
-            _shell = aasElementObject.aasELement
-            _shellIndex = aasElementObject.elementIndex
-            _shellId = _shell["identification"]["id"]
-            self.stdSubmodelData = {}
-            self.stdSubmodelList = []
-            submodels,status = self.pyAAS.dba.getSubmodelsbyShell(_shellId)
-            for _index,submodel in (submodels).items():
-                _submodelId = submodel["identification"]["id"]
-                if (submodel["idShort"]).upper() == "NAMEPLATE":
-                    self.stdSubmodelData["NAMEPLATE"]  = [_submodelId,self.getNamePlateData(submodel,_submodelId)]
-                    self.stdSubmodelList.append("NAMEPLATE")
-                
-                elif (submodel["idShort"]).upper() in ["DOCUMENTATION" ,"MANUFACTURERDOCUMENTATION"]:        
-                    self.stdSubmodelData["DOCUMENTATION"]  = [_submodelId,self.getDcumentationData(submodel,_submodelId)]
-                    self.stdSubmodelList.append("DOCUMENTATION")
-                
-                elif (submodel["idShort"]).upper() in ["TECHNICAL_DATA","TECHNICALDATA"]:
-                    self.stdSubmodelData["TECHNICAL_DATA"]  = [_submodelId,self.getTechnicalData(submodel,_submodelId)]
-                    self.stdSubmodelList.append("TECHNICAL_DATA")
-                
-                elif (submodel["idShort"]).upper() in ["IDENTIFICATION"]:
-                    self.stdSubmodelData["IDENTIFICATION"]  = [_submodelId,self.getIdentificationData(submodel,_submodelId)]
-                    self.stdSubmodelList.append("IDENTIFICATION")
-                
-                elif (submodel["idShort"]).upper() in ["ASSETINTERFACEDESCRIPTION","THINGDESCRIPTION"]:
-                    self.stdSubmodelData["AssetInterfaceDescription"]  = [_submodelId,self.configureThingDescriptionProperties(submodel,_shellId,_shellIndex,_submodelId)]
-                    self.stdSubmodelList.append("AssetInterfaceDescription")
-            try :
-                if (self.stdSubmodelData["IDENTIFICATION"]["TypThumbnail"] != ""):
-                    self.pyAAS.thumbNailList[_shellIndex] = (self.stdSubmodelData["IDENTIFICATION"]["TypThumbnail"])
-                else:
-                    extHost = self.pyAAS.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"]
-                    port = self.pyAAS.lia_env_variable["LIA_AAS_RESTAPI_PORT_INTERN"]                    
-                    self.pyAAS.thumbNailList[_shellIndex] = "http://"+extHost+":"+str(port)+"/static/"+"DHT22_9adf2b76.jpg"
-            except Exception as E:
-                extHost = self.pyAAS.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"]
-                port = self.pyAAS.lia_env_variable["LIA_AAS_RESTAPI_PORT_INTERN"]                    
-                self.pyAAS.thumbNailList[_shellIndex] = "http://"+extHost+":"+str(port)+"/static/"+"DHT22_9adf2b76.jpg"
-                            
-            self.pyAAS.aasStandardSubmodelData[_shellIndex] = self.stdSubmodelData
-            self.pyAAS.aasStandardSubmodelList[_shellIndex] = self.stdSubmodelList
+            self.pyaas.serviceLogger.info("Error while extracting. " + str(e))
 
-    def aasIdList(self):
-        for index,_uuid in enumerate(self.pyAAS.aasShellHashDict._getKeys()):
-            aasElementObject = self.pyAAS.aasShellHashDict.__getHashEntry__(_uuid)
-            _shell = aasElementObject.aasELement
-            _shellIndex = aasElementObject.elementIndex
-            _shellId = _shell["identification"]["id"]
-            _shellidShort = _shell["idShort"]
-            self.pyAAS.aasIndexidShortDict[_shellIndex] = {"idShort":_shellidShort,"identificationId" : _shellId,"_uuid":_uuid}
-            self.pyAAS.aasIdentificationIdList[_shellId] = _shellIndex    
-            if _shellIndex not in list(self.pyAAS.conversationIdList.keys()):
-                self.pyAAS.conversationIdList[_shellIndex] = []  
-            if _shellIndex not in list(self.pyAAS.productionSequenceList.keys()):
-                self.pyAAS.productionSequenceList[_shellIndex] = []  
-            if _shellIndex not in list(self.pyAAS.thumbNailList.keys()):
-                self.pyAAS.thumbNailList[_shellIndex] = ""
-    
     def getAASEndPoints(self):
         aasEndpointsList = []
-        moduleDict = {"MQTT":".mqtt_endpointhandler","RESTAPI":".restapi_endpointhandler"}
+        moduleDict = {"MQTT": ".mqtt_endpointhandler", "RESTAPI": ".restapi_endpointhandler"}
         for moduleName in moduleDict.keys():
-            aasEndpointsList.append({"Name":moduleName,"Module":moduleDict[moduleName]})
+            aasEndpointsList.append({"Name": moduleName, "Module": moduleDict[moduleName]})
         return aasEndpointsList
 
-    def getAssetAccessEndPoints(self):
-        return {"OPCUA":".io_opcua"}
-    
-    def getpropertyValue(self,submodelElement):
-        check = True
-        if (submodelElement["modelType"]["name"] == "MultiLanguageProperty"):
-            for lang in submodelElement["value"]["langString"]: 
-                if lang["language"] == "de":
-                    return lang["text"]
-            if (check):
-                return submodelElement["langString"]["0"]["value"]
-        else:
-            return submodelElement["value"]
-    
-    def GetAAsxSkills(self):  
-        skillListAAS= {}
-        for _uuid in (self.pyAAS.aasShellHashDict._getKeys()):
-            aasElementObject = self.pyAAS.aasShellHashDict.__getHashEntry__(_uuid)
-            _shell = aasElementObject.aasELement
-            _shellIndex = aasElementObject.elementIndex
-            _shellId = _shell["identification"]["id"]
-            _shellIdShort = _shell["idShort"] 
-            self.stdSubmodelData = {}
-            self.stdSubmodelList = []
-            skillsDict = {}
-            stepList = []
-            submodels,status = self.pyAAS.dba.getSubmodelsbyShell(_shellId)
-            for _index,submodel in (submodels).items():
-                if (submodel["idShort"]).upper() == "OperationalData":
-                    for eachskill in submodel["submodelElements"]:
-                        skillName = ""
-                        skill = {}
-                        for skillDetails in eachskill["value"]: 
-                            if (skillDetails["idShort"] == "SkillName"):
-                                skill[skillDetails["idShort"]] = skillDetails["value"]
-                                skillName = skillDetails["value"]
-                            elif (skillDetails["idShort"] == "SkillService"):
-                                skill[skillDetails["idShort"]] = skillDetails["value"]
-                            elif (skillDetails["idShort"] == "InitialState"):
-                                skill[skillDetails["idShort"]] = skillDetails["value"]
-                            elif (skillDetails["idShort"] == "enabled"):
-                                skill[skillDetails["idShort"]] = enabledState[skillDetails["value"]] 
-                        skill["aasIdentificationId"] = _shellId
-                        skill["_shellIdShort"] = _shellIdShort
-                        skillsDict[skillName] = skill
-                        if (self.checkForOrderExistence(skill)):
-                            stepList.append(skillName)
-            else:
-                pass                   
-
-            for key in self.SrSp.keys():
-                skillsDict[key] = self.SrSp[key]
-                if (self.checkForOrderExistence(self.SrSp[key])):
-                    stepList.append(key)
-                    
-            skillListAAS[_shellIndex] = skillsDict
-            self.pyAAS.productionStepList[_shellIndex] = stepList
-        return skillListAAS 
-    
-    def getAASList(self):
-        try:
-            aasList = []
-            self.pyAAS.AASData = []
-            i = 0
-            for index,_uuid in enumerate(self.pyAAS.aasShellHashDict._getKeys()):
-                aasShellObject = self.pyAAS.aasShellHashDict.__getHashEntry__(_uuid)
-                _shell = aasShellObject.aasELement
-                _shellId = _shell["identification"]["id"]      
-                aasList.append({"aasId":aasShellObject.elementIndex,"_shellId":_shellId,"idShort":_shell["idShort"],"uuid":_uuid})      
-            numberofAAS = len(aasList)
-            if numberofAAS == 0:
-                self.pyAAS.AASData.append([])
-            elif numberofAAS == 1:
-                self.pyAAS.AASData.append(aasList)
-            else:
-                if ((numberofAAS % 2) == 0):
-                    for i in range(1,int(numberofAAS/2)+1):
-                        tempList = []
-                        tempList.append(aasList[2*i-2])
-                        tempList.append(aasList[2*i-1])
-                        self.pyAAS.AASData.append(tempList)
-                else: 
-                    numberofRows = int( (numberofAAS + 1)/ 2)
-                    for i in range(1,numberofRows):
-                        tempList = []
-                        tempList.append(aasList[2*i-2])
-                        tempList.append(aasList[2*i-1])
-                        self.pyAAS.AASData.append(tempList)
-                    self.pyAAS.AASData.append([aasList[numberofAAS-1]])
-
-        except Exception as E: 
-            print(str(E))        
-            return self.pyAAS.AASData
-        
-    def getRelevantSubModel(self,submodelId):
-        checkVar = False
-        for submodel in self.jsonData["submodels"]:         
-            if (submodel["identification"]["id"] == submodelId):
-                checkVar = True
-                return {"data" : submodel, "check" : True}
-        if(not checkVar):
-            return {"check" : False}
-        
-    def GetAAS(self):
-        return self.jsonData
-       
-    def getQualifiersList(self,submodelElem):
-        qualiferList = {}
-        if "constraints" in list(submodelElem.keys()):
-            for qualifier in submodelElem["constraints"]:
-                qualiferList[qualifier["type"]] = qualifier["value"]
-        return (qualiferList)
-    
-    def getSemanticIdList(self,submodelElem):
-        semanticIdList = {}
-        if "semanticId" in list(submodelElem.keys()):        
-            for semId in submodelElem["semanticId"]["keys"]:
-                semanticIdList[semId["type"]]  = semId["value"]
-        return (semanticIdList)
-    
-    def parseBlobData(self,mimeType,data):
-        if (mimeType == "application/json"):
-            jData =  json.loads(data)
-            return jData
-        else: 
-            return data
-        
-    def processSubmodelELement(self,submodelElement,submodelProperetyDict,idShortPath,identificationId):
-            if submodelElement["modelType"]["name"] == "SubmodelElementCollection":
-                collectionDict = {}
-                for elem in submodelElement["value"]: 
-                    collectionDict = self.processSubmodelELement(elem,collectionDict,idShortPath + "."+elem["idShort"],identificationId)
-                submodelProperetyDict[submodelElement["idShort"]] =  { "data" :  collectionDict,"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement), "type" : "collection" }
-            elif (submodelElement["modelType"]["name"] == "Property"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : submodelElement["value"],"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"Property","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "Range"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : {"min" : submodelElement["min"],"max" : submodelElement["max"] },"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"Range","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "MultiLanguageProperty"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : submodelElement["value"],"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"MultiLanguageProperty","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "File"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : submodelElement["value"],"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"File","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "Blob"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : self.parseBlobData(submodelElement["mimeType"], submodelElement["value"]), "mimeType" :submodelElement["mimeType"], "qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"Blob","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "ReferenceElement"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : submodelElement["value"],"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"ReferenceElement","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "RelationshipElement"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : {"first" : submodelElement["first"],"second" : submodelElement["second"]},"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"RelationshipElement","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "AnnotatedRelationshipElement"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : {"first" : submodelElement["first"],"second" : submodelElement["second"]},"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"AnnotatedRelationshipElement","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "Capability"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : "Capability","qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"Capability","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "Operation"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : {"inputVariable" : submodelElement["inputVariable"],"outputVariable" : submodelElement["outputVariable"],"inoutputVariable" : submodelElement["inoutputVariable"]},"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"Operation","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "BasicEvent"):
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : submodelElement["observed"],"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"BasicEvent","idShortPath":idShortPath,"identificationId":identificationId}
-            elif (submodelElement["modelType"]["name"] == "Entity"):     
-                submodelProperetyDict[submodelElement["idShort"]] =  {"data" : submodelElement["asset"],"qualifierList":self.getQualifiersList(submodelElement),"semanticIdList":self.getSemanticIdList(submodelElement),"type" :"Entity","idShortPath":idShortPath,"identificationId":identificationId}    
-            return submodelProperetyDict
-            
-    def getSubmodePropertyDict(self,submodel):
+    def getSubmodePropertyDict(self, submodel):
         submodelProperetyDict = {}
-        identificationId = submodel["identification"]["id"]
+        identificationId = submodel["id"]
         for eachSubmodelElem in submodel["submodelElements"]:
-            self.processSubmodelELement(eachSubmodelElem,submodelProperetyDict,eachSubmodelElem["idShort"],identificationId)
+            self.processSubmodelELement(eachSubmodelElem, submodelProperetyDict,
+                                        identificationId + "." + eachSubmodelElem["idShort"], identificationId)
         return submodelProperetyDict
-    
-    def getSubmodelPropertyList(self,aasIdentifier):
+
+    def getSubmodelPropertyList(self, aasIdentifier):
         submodelNameList = []
-        for submodel in self.pyAAS.aasContentData[aasIdentifier]["submodels"]:
+        for submodel in self.pyaas.aasContentData[aasIdentifier]["submodels"]:
             submodelNameList.append(submodel)
         return submodelNameList
-    
-    def getSubmodelPropertyListDict(self,aasIdentifier):
+
+    def getSubmodelPropertyListDict(self, aasIdentifier):
         submodelPropertyListDict = {}
         i = 0
-        submodels,status = self.pyAAS.dba.getSubmodelsbyShell(aasIdentifier)
-        for key,submodel in submodels.items():
-            submodelName =  submodel["idShort"]
-            if not (submodelName in ["Mechanical break down","Nameplate","TechnicalData","ManufacturerDocumentation",
-                                     "Documentation","ThingDescription","Identification"]):
-                submodelProperetyDict = self.getSubmodePropertyDict(submodel)    
+        submodels, status = self.pyaas.dba.getSubmodelsbyShell(aasIdentifier)
+        for key, submodel in submodels.items():
+            submodelName = submodel["idShort"]
+            if not (submodelName in ["Mechanical break down", "Nameplate", "TechnicalData", "ManufacturerDocumentation",
+                                     "Documentation", "Identification"]):  # ,"ThingDescription"
+                submodelProperetyDict = self.getSubmodePropertyDict(submodel)
                 if (i == 0):
                     status = " fade show active"
-                    i = 1        
+                    i = 1
                 else:
                     status = " fade show"
-                submodelPropertyListDict[submodelName] = {"status" : status,
-                                                          "data" : submodelProperetyDict,
-                                                          "type" : "collection"
-                                                         }
+                submodelPropertyListDict[submodelName] = {"status": status,
+                                                          "data": submodelProperetyDict,
+                                                          "type": "collection"
+                                                          }
         return submodelPropertyListDict
-    
-    def configureDescriptor(self,identifier):
-        aasDesc = AASDescriptor(self.pyAAS)
-        aasIndex = self.pyAAS.aasIdentificationIdList[identifier]
-        return aasDesc.createDescriptor(aasIndex)
 
-    def checkForOrderExistence(self,skill):
+    def configureDescriptor(self, _shellId):
+        aasDesc = AASDescriptor(self.pyaas)
+        return aasDesc.createDescriptor(_shellId)
+
+    def checkForOrderExistence(self, skill):
         if (skill["InitialState"] == "WaitforNewOrder"):
             return True
-        else :
+        else:
             return False
 
-    def submodelElemeObject(self,idShortPath):
-        _uuid = self.pyAAS.aasHashDict.__getHashEntry__(idShortPath).__getId__()
-        return self.pyAAS.submodelHashDict.__getHashEntry__(_uuid)
-    
-    def configureThingDescriptionProperties(self,submodel,aasIdenId,aasIndex,_submodelId):
-        tdProperties = []
-        tdPropertyDict = {}
-        #updateFrequency = 60
-        unit = ""
-        _href = ""
-        _requestType = ""
-        _referenceId = ""
+    def submodelElemeObject(self, idShortPath):
+        _uuid = self.pyaas.aasHashDict.__getHashEntry__(idShortPath).__getId__()
+        return self.pyaas.submodelHashDict.__getHashEntry__(_uuid)
+
+    def getAssetAccessEndPoints(self):
+        return {"OPCUA": ".io_opcua"}
+
+    def get_available_skills(self) -> dict:
+        skill_names = [f.split(".")[0] for f in os.listdir(self.pyaas.src_skills_repository) if
+                       os.path.isfile(os.path.join(self.pyaas.src_skills_repository, f))]
+        skillDetails = dict()
+        for skill in skill_names:
+            skillModule = import_module("." + skill, package="skills")
+            skillBaseclass_ = getattr(skillModule, skill)
+            _tempSKillInstance = skillBaseclass_(self.pyaas)
+
+            skill_details_dict = dict()
+            skill_details_dict["SkillName"] = skill
+            skill_details_dict["SkillService"] = _tempSKillInstance.skill_service
+            skill_details_dict["InitialState"] = _tempSKillInstance.initialState
+            skill_details_dict["enabled"] = _tempSKillInstance.enabledState
+            skill_details_dict["semanticProtocol"] = _tempSKillInstance.semanticProtocol
+            skill_details_dict["SkillHandler"] = None
+
+            skillDetails[skill] = skill_details_dict
+
+            del _tempSKillInstance
+
+        skillDetails["ProductionManager"] = {
+            "SkillName": "ProductionManager",
+            "SkillService": "Production Manager",
+            "InitialState": "WaitforNewOrder",
+            "enabled": "Y",
+            "semanticProtocol": "",
+            "SkillHandler": None,
+        }
+        skillDetails["Register"] = {
+            "SkillName": "Register",
+            "SkillService": "Registration",
+            "InitialState": "WaitforNewOrder",
+            "enabled": "Y",
+            "semanticProtocol": "",
+            "SkillHandler": None,
+        }
+
+        return skillDetails
+
+    def get_asset_interface_description(self, submodel, aasIdentifier,_uuid) -> list:
+        """
+        Retrieves the Asset Interface Description submodel for the specified aas_id,
+        extract the properties from the submodel and returns the list.
+        """
+        thing_description = ThingDescription()
         for tdELement in submodel["submodelElements"]:
-            if (tdELement["idShort"] == "properties"):
-                for tdproperty in tdELement["value"]:
-                    for pConstraint in tdproperty["constraints"]:
-                        if(pConstraint["type"] == "updateFrequencey"):
-                            updateFrequency = pConstraint["value"]
-                        if(pConstraint["type"] == "unit"):
-                            unit = pConstraint["value"]
-                        if(pConstraint["type"] == "refrence"):
-                            _referenceId= pConstraint["value"]                             
-                                            
-                    for pelem in tdproperty["value"]:
-                        if(pelem["idShort"] == "forms"):
-                            for formConstraint in pelem["value"][0]["constraints"]:
-                                if (formConstraint["type"] == "href"):
-                                    _href = formConstraint["value"]
-                                elif (formConstraint["type"] == "requestType"):
-                                    _requestType = formConstraint["value"]
+            if tdELement["idShort"] == "properties":
+                for aid_property in tdELement["value"]:
+                    td_property = ThingDescriptionProperty()
+                    td_property.aasIdentifier = aasIdentifier
+                    td_property.submodelIdentifier = submodel["id"]
+                    
+                    
+                    for pConstraint in aid_property["qualifiers"]:
+                        if (pConstraint["type"] == "type"):
+                            td_property._type =  pConstraint["value"]
+                        if (pConstraint["type"] == "read_only"):
+                            td_property.read_only =  pConstraint["value"]
+                        if (pConstraint["type"] == "observable"):
+                            td_property.observable =  pConstraint["value"]                     
+                        if pConstraint["type"] == "updateFrequencey":
+                            td_property.update_frequencey =  pConstraint["value"]
+                        if pConstraint["type"] == "unit":
+                            td_property._unit = pConstraint["value"]
+                        if (pConstraint["type"] == "submodelId"):
+                            td_property.submodel_Identifier = pConstraint["value"]
+                        if (pConstraint["type"] == "idShortPath"):
+                            td_property.idshort_path = pConstraint["value"]
+                    
+                    if (td_property.idshort_path != "" and 
+                                            td_property.submodel_Identifier):
+                    
+                        elem_uuid = self.pyaas.aasHashDict.__getHashEntry__(td_property.submodelIdentifier
+                                                            +"."+td_property.idshort_path)
+                    
+                        td_property.elemObject = self.pyaas.submodelHashDict.__getHashEntry__(elem_uuid)
+                    
+                    for pelem in aid_property["value"]:
+                        if pelem["idShort"] == "forms":
+                            for formConstraint in pelem["value"][0]["qualifiers"]:
+                                if formConstraint["type"] == "href":
+                                    td_property.href = formConstraint["value"]
+                                elif formConstraint["type"] == "requestType":
+                                    td_property.requestType = formConstraint["value"]
+            
+                    thing_description.add_property(td_property,aid_property["idShort"])
+        
+        return thing_description                   
 
-                    tddata ={"propertyName" :  tdproperty["idShort"],
-                                             "href" : _href,
-                                             "requestType" : _requestType,
-                                             "updateFrequency": updateFrequency,
-                                             "submodelName" : submodel["idShort"],
-                                             "aasId" : aasIdenId,
-                                             "aasIndex" : aasIndex,
-                                             "unit" : unit,
-                                             "_referenceId" : _referenceId,
-                                             "dataElement" : self.submodelElemeObject(_referenceId),
-                                             "value" : [0,0,0,0,0,0,0,0,0,0],
-                                             "label" : [0,0,0,0,0,0,0,0,0,0],
-                                             "idShortPath" : "properties."+tdproperty["idShort"]}
-                    tdProperties.append(tddata)
-                    tdPropertyDict[tdproperty["idShort"]] = tddata                                    
-                        
-            self.pyAAS.tdPropertiesList[aasIndex]  = tdPropertyDict
-        return self.reOrderEntityList(tdProperties)
+    def get_skills(self,aasIdentifier) -> dict:
+        submodel,status  = self.retrieve_submodel_semantic_id(aasIdentifier,"www.ovgu.de/submodel/operationaldata")
+        skills_list = []
+        if status:
+            for eachskill in submodel["submodelElements"]:
+                for skillDetails in eachskill["value"]: 
+                    if (skillDetails["idShort"] == "SkillName"):
+                        skills_list.append(skillDetails["value"])
+        return skills_list
 
-    def reOrderEntityList(self,documentationList):
-        numberofDocuments =len(documentationList)
-        if numberofDocuments == 0:
-            return []
-        elif numberofDocuments == 1:
-            return  [[documentationList[0]]]
-        else:
-            documentDivisions = []
-            if ((numberofDocuments % 2) == 0):
-                for i in range(1,int(numberofDocuments/2)+1):
-                    tempList = []
-                    tempList.append(documentationList[2*i-2])
-                    tempList.append(documentationList[2*i-1])
-                    documentDivisions.append(tempList)
-                return documentDivisions
-            else: 
-                numberofRows = int( (numberofDocuments + 1)/ 2)
-                for i in range(1,numberofRows):
-                    tempList = []
-                    tempList.append(documentationList[2*i-2])
-                    tempList.append(documentationList[2*i-1])
-                    documentDivisions.append(tempList)
-                documentDivisions.append([documentationList[numberofDocuments-1]])
-                return documentDivisions
-
-    def getDcumentationData(self,submodel,_submodelId):
-        documentationList = []
-        documentLangSet = set([])
-        languageDIct = {}        
-        for eachDocument in submodel["submodelElements"]:
-            tc = DocumentCapture(eachDocument,"Documentation",self.pyAAS)
-            documentData = tc.getTemplateInformation()
-            documentationList.append(documentData)
-            for lang in documentData["languageSet"]:
-                documentLangSet.add(lang)
-        for dLang in documentLangSet:
-            languageDIct[dLang] = []
-        for docData in documentationList:
-            for lang in docData["languageSet"]:
-                if lang in languageDIct.keys():
-                    languageDIct[lang].append(docData["data"])
-                        
-        documentationData = {}
-        i = 0
-        active = "active"
-        status = "true"
-        showActive = " show active"
-        for lang in languageDIct.keys():
-            if i == 0:
-                i = i + 1
-            else:
-                status = "false"
-                active = ""
-                showActive = ""
-            documentationData[lang]  = {"data":self.reOrderEntityList(languageDIct[lang]),"active":active,"status":status,"showActive":showActive}              
-        return documentationData
-              
-    def getNamePlateData(self,submodel,_submodelId):
-        tc = NameplateCapture(submodel,self.pyAAS)
-        return tc.getTemplateInformation(_submodelId)      
- 
-    def getIdentificationData(self,submodel,_submodelId):
-        tc = IdentificationCapture(submodel,self.pyAAS)
-        return tc.getTemplateInformation(_submodelId)
-           
-    def getTechnicalData(self,submodel,_submodelId):
-        tc = TechnicalDataCapture(submodel,self.pyAAS)
-        return tc.getTemplateInformation(_submodelId)
+    def retrieve_submodel_semantic_id(self,aasIdentifier,_semanticId):
+        try:
+            uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier)._id
+            _element = self.pyaas.aasShellHashDict.__getHashEntry__(uuid).getElement()
+            for submodel in _element["submodels"]:
+                _submodelid  = submodel["keys"][0]["value"]
+                if self.pyaas.aasHashDict.__isKeyPresent__(_submodelid):
+                    _id = self.pyaas.aasHashDict.__getHashEntry__(_submodelid)._id
+                    data,status, code = self.pyaas.dba.GetSubmodelById(_submodelid)
+                    if status:
+                        if type(data) == dict:
+                            if "semanticId" in data.keys():
+                                if data["semanticId"]["keys"][0]["value"] == _semanticId:
+                                    return data,True
+            return "NO Data", False
+        except Exception as e:
+            return "NO Data", False

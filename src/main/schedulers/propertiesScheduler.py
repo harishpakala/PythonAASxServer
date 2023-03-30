@@ -1,73 +1,71 @@
-'''
-Created on 24 Oct 2021
-
-@author: pakala
-'''
-from apscheduler.executors.pool import ThreadPoolExecutor
-from apscheduler.jobstores.memory import MemoryJobStore
-from apscheduler.schedulers.background import BackgroundScheduler
+"""
+Copyright (c) 2023 Otto-von-Guericke-Universitaet Magdeburg, Lehrstuhl Integrierte Automation
+Author: Harish Kumar Pakala
+This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
+This source code may use other Open Source software components (see LICENSE.txt).
+"""
 from importlib import import_module
+import threading
 
 try:
     from modules import *
 except ImportError:
-    from main.modules import *
+    from src.main.modules import *
 
-class Scheduler(object):
+
+class Scheduler:
     """
     The scheduler of the Administration Shell
     """
 
-    def __init__(self, pyAAS):
-        self.pyAAS = pyAAS
-        self.f_modules = {}
+    def __init__(self, pyaas):
+        self.pyaas = pyaas
+        self.jobs = dict()
 
-        jobstores = {
-            'default': MemoryJobStore()
-        }
-        executors = {
-            'default': ThreadPoolExecutor(20),
-        }
-        job_defaults = {
-            'coalesce': False,
-            'max_instances': 3
-        }
-
-        # initialize the scheduler
-        self.scheduler = BackgroundScheduler(
-            jobstores=jobstores, executors=executors, job_defaults=job_defaults)
-        self.triggers = {}
-
-    def configure(self):
-        """Configures the triggers and jobs out of the given configuration
-
-        :param lxml.etree.ElementTree configuration: XML DOM tree of
-        the configuration
-
+    def configure(self) -> bool:
         """
-        # add each trigger of the configuration to the scheduler
-        propertydict = self.pyAAS.tdPropertiesList
-        for aasId,aasproperyDict in propertydict.items():
-            for key,propertyData in aasproperyDict.items():
-                propertyData["key"] = key
-                params = [self.pyAAS,propertyData]
-                propertyName = propertyData["propertyName"]
-                updateFrequency = propertyData["updateFrequency"]
-                if (updateFrequency == "subscribe"):
-                    updateFunction = import_module("modules."+"f_propertySubscribe").function
-                    self.scheduler.add_job(updateFunction,args=params, id=propertyName)
-                elif (str(updateFrequency) != "0"):
-                    updateFunction = import_module("modules."+"f_propertyRead").function
-                    self.scheduler.add_job(updateFunction, "interval" ,seconds=5, args=params, id=propertyName, replace_existing=True)
+        Configures the PyAAS Scheduler
+        return True / False
+        """
+        try:
+            for _uuid in self.pyaas.aasShellHashDict._getKeys():
+                _shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
+                if (_shellObject.thing_description != None):
+                    for property_name,_property in _shellObject.thing_description.properties.items():
+                        if _property.update_frequencey == "subscribe":
+                            update_function = import_module("modules." + "f_property_subscribe").function
+                            self.jobs[property_name] = threading.Thread(target=update_function, args=(_shellObject._property,self.pyaas.asset_access_handlers,))
+                        elif str(_property.update_frequencey) != "0":
+                            update_function = import_module("modules." + "f_property_read").function
+                            self.jobs[property_name] = threading.Thread(target=update_function, args=(_shellObject._property,self.pyaas.asset_access_handlers,))
+        except SystemError as e:
+            self.pyaas.servself.serviceLogger.info(
+                "Error configuring PyAAS Scheduler " + str(e)
+            )
+        return False
 
-    def start(self):
+    def start(self) -> bool:
         """Runs the scheduler.
 
-        After the scheduler has been started, we can no longer alter
-        its settings.
+            return True or False
 
         """
-        self.scheduler.start()
+        try:
+            for job in self.jobs:
+                job.start()
+        except SystemError as e:
+            self.pyaas.servself.serviceLogger.info(
+                "Error starting PyAAS Scheduler " + str(e)
+            )
+        return False
 
-    def stop(self):
-        self.scheduler.shutdown()
+    def stop(self) -> bool:
+        try:
+            print("Scheduler stopped")
+            # self.scheduler.shutdown()
+            return True
+        except SystemError as e:
+            self.pyaas.servself.serviceLogger.info(
+                "Error stopping PyAAS Scheduler " + str(e)
+            )
+        return False

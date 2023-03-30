@@ -1,9 +1,0 @@
-{
-	"DocumentIdDomain" : {"Property":["DocumentDomainId","DocumentId","IsPrimary"]},
-	"DocumentClassification":{"Property":["ClassificationSystem","ClassId","ClassName"]},
-	"DocumentVersion":{
-						"Property":["Language","DocumentVersionId","SetDate","StatusValue","OrganizationName","OrganizationOfficialName"],
-						"MLP":["Title","SubTitle","Summary"],
-						"File":["DigitalFile","PreviewFile"]
-					}
-}

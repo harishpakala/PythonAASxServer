@@ -10,13 +10,12 @@ from apscheduler.triggers.cron import CronTrigger
 from apscheduler.triggers.date import DateTrigger
 from apscheduler.triggers.interval import IntervalTrigger
 from importlib import import_module
-import os.path 
 import sys
 
 try:
     from config import aasxconfig as aasxconfig
 except ImportError:
-    from main.config import aasxconfig as aasxconfig
+    from src.main.config import aasxconfig as aasxconfig
 
 
 

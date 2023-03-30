@@ -1,0 +1,83 @@
+{% extends "layout.html" %} {% block content %}
+<div class="layoutMenu">
+		<div class="layoutMenuBar" style = "align-items: center;height: 100%;display: flex;">
+		</div>
+</div>
+<div class="layoutBody">
+	<div style = "min-height:5vh">
+	</div>
+	<div style = "min-height:8vh">
+	<div class= "row">	
+		<div class = "col-1">
+			<div class="imagecontainer" style = "margin-left : 30%">
+				<img style = "height : 6vh;cursor: pointer;" id = "io-adaptor-img" data-bs-toggle="modal" data-bs-target="#ioAdaptorCration" data-whatever="@mdo" src="/static/images/plus_blue.svg">
+				<div class="overlay">
+					<img  style = "height : 6vh;cursor: pointer;" id = "io-adaptor-img-overlay" data-bs-toggle="modal" data-bs-target="#ioAdaptorCration" data-whatever="@mdo" src="/static/images/plus1.svg">
+				</div>
+			</div>	
+		</div>
+		<div class="col-10">
+		</div>	
+	</div>
+	</div>
+	<div style = "min-height:5vh">
+	</div>
+	{% for aasListPair in aasList %}
+	<div style = "">
+	<div class = "row  d-flex align-items-center justify-content-center">
+    	{% set parent_loop = loop %}
+		{% for aasData in aasListPair %}   
+    	<div class="col-6  d-flex align-items-center justify-content-center">
+    		<div style = " width : 50% ; height : 50%; vertical-align: top; display: inline-block;text-align: center;align-content:center;">
+    			<div style = "">
+    			 	<a  href= "/{{aasData.aasId}}/home">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.31 629.29"><defs><style>.j{fill:#0035d5;}.k{fill:#fff;}</style></defs><g id="a"/><g id="b"><path class="j" d="M551.09,214.02H129.23c-6.86,0-13.4,2.93-18.06,8.1l-39.75,44.01c-4.23,4.68-6.58,10.83-6.58,17.22v253.2c0,13.98,11.03,25.31,24.64,25.31h16.52c13.61,0,24.64-11.33,24.64-25.31v-33.39c0-6.35,2.32-12.47,6.51-17.14l16.91-18.88c4.67-5.21,11.24-8.17,18.13-8.17H506.96c6.47,0,12.69,2.62,17.3,7.29l19.35,19.59c4.7,4.76,7.34,11.25,7.34,18.03v32.67c0,13.98,11.03,25.31,24.64,25.31h15.25c13.61,0,24.64-11.33,24.64-25.31v-253.2c0-6.39-2.35-12.54-6.58-17.22l-39.75-44.01c-4.66-5.16-11.21-8.1-18.06-8.1Z"/><g><path class="k" d="M170.35,383.52l-6.44,24.2h-37.75l42.75-134.61h45.98l42.76,134.61h-37.75l-6.44-24.2h-43.11Zm32.74-38.95c-3.94-14.74-7.69-30.63-10.91-45.37h-.36c-3.22,14.75-6.98,30.63-11.09,45.37l-2.5,9.26h27.37l-2.5-9.26Z"/><path class="k" d="M322.61,383.52l-6.44,24.2h-37.75l42.75-134.61h45.98l42.76,134.61h-37.75l-6.44-24.2h-43.11Zm32.74-38.95c-3.94-14.74-7.69-30.63-10.91-45.37h-.36c-3.22,14.75-6.98,30.63-11.09,45.37l-2.5,9.26h27.37l-2.5-9.26Z"/><path class="k" d="M541.59,313.95h-37.57c0-9.83-5.36-15.31-15.74-15.31-8.95,0-14.13,4.16-14.13,10.4,0,7.75,5.91,10.02,23.08,14.37,25.05,6.43,47.05,14.18,47.05,43.86,0,26.85-20.39,43.49-54.21,43.49s-54.92-17.02-54.92-46.7h38.64c0,11.35,5.55,17.21,17.53,17.21,9.66,0,15.21-4.54,15.21-11.53,0-8.51-6.26-10.4-22.36-14.74-24.69-7-46.51-13.8-46.51-42.73,0-25.52,19.32-42.16,52.42-42.16s51.52,14.94,51.52,43.87Z"/></g><circle id="c" class="j" cx="487.27" cy="159.56" r="19.4"/><path id="d" class="j" d="M399.99,175.27c-5.42-9.33-5.42-20.85,0-30.18,5.8-6.77,15.99-7.55,22.75-1.75,.63,.54,1.21,1.13,1.75,1.75,5.42,9.33,5.42,20.85,0,30.18-5.79,6.77-15.97,7.56-22.74,1.77-.63-.54-1.22-1.13-1.77-1.77Zm4.84-25.91c-3.17,6.87-3.17,14.78,0,21.65,1.47,2.69,4.35,4.29,7.41,4.12,3.04,.19,5.92-1.41,7.38-4.09,3.09-6.9,3.09-14.8,0-21.7-1.45-2.68-4.32-4.27-7.36-4.09-3.06-.17-5.95,1.43-7.43,4.12h0Z"/><circle id="e" class="j" cx="340.41" cy="83.58" r="19.4"/><path id="f" class="j" d="M253.12,99.3c-5.42-9.33-5.42-20.85,0-30.18,5.8-6.77,15.99-7.55,22.75-1.75,.63,.54,1.21,1.13,1.75,1.75,5.42,9.33,5.42,20.85,0,30.18-5.79,6.77-15.97,7.56-22.74,1.77-.63-.54-1.22-1.13-1.77-1.77Zm4.84-25.91c-3.17,6.87-3.17,14.78,0,21.65,1.47,2.69,4.35,4.29,7.41,4.12,3.04,.19,5.92-1.41,7.38-4.09,3.09-6.9,3.09-14.8,0-21.7-1.45-2.68-4.32-4.27-7.36-4.09-3.06-.17-5.95,1.43-7.43,4.12h0Z"/><path id="g" class="j" d="M258.1,144.95h14.54v40.03h-6.42v-34.01h-8.13v-6.01Z"/><circle id="h" class="j" cx="340.41" cy="158.62" r="19.4"/><circle id="i" class="j" cx="190.38" cy="158.47" r="19.4"/></g>
+						<image  x="250" y="500" width="150" height="135" xlink:href="{{thumbNailList[aasData.aasId]}}" />
+						</svg>
+					</a>
+					<h5 style = "padding-top: 2.5vh; font-weight : bold">{{aasData.idShort}}</h5>
+    			</div>
+			</div>
+    	</div>
+
+    	{% endfor %}
+    </div>
+	</div>
+    	<div style = "min-height : 5vh;">
+    	</div>
+{% endfor %}
+	
+</div>
+<div class="modal fade" data-bs-backdrop="static" id="ioAdaptorCration" tabindex="-1" aria-labelledby="i" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title">Create New Asset Administration Shell</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" id = "close_btn_newAAS" aria-label="Close">
+		</button>
+	  </div>
+	  <div class="modal-body">
+	  	<div class="container">
+	  		<div class="form-floating">
+				<input type="text" class="form-control" id="AAS-IdShort" name="AAS-IdShort" required="required"><label for="AAS-IdShort">Please enter the IdShort</label>
+			</div>
+			<div class="row" style="min-height : 2.5vh">
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-9"></div>
+						<div class="col-2">
+							<button class="btn btn-primary" id="btn_newAAS">Create</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+
+{% endblock %}

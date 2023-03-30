@@ -1,15 +1,14 @@
-'''
+"""
 Copyright (c) 2021-2022 OVGU LIA
 Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
-'''
+"""
 from datetime import datetime,timedelta
-from _ast import While
 try:
     from pubsub.utils import SocketConfig,I40PacketS
 except ImportError:
-    from  main.utis import SocketConfig,I40PacketS
+    from  src.main.utis import SocketConfig,I40PacketS
     
 try:
     import queue as Queue
@@ -292,6 +291,7 @@ class SocketListner(object):
                         self.sessions[subscriber].send_message_queue.put((subscriptionI40Packet.to_json()))
                     except Exception as E:
                         print(str(E))
+                        
     def socket_start(self):
         ADDR = (self.socketConfig.host,int(self.socketConfig.port))
         self.serverInstance.bind(ADDR)
@@ -323,7 +323,6 @@ class SocketListner(object):
         self.sessions[sessionname] = sokcetClient
         thread = threading.Thread(target=sokcetClient.handle_connect,)
         thread.start()
-        
         
     def delete_seesion(self,sessionname):
         self.sessions[sessionname].session_terminate()

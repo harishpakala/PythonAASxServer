@@ -1,25 +1,25 @@
-'''
+"""
 Copyright (c) 2021-2022 OVGU LIA
 Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
-'''
+"""
 import socket
 import threading
 try:
     from pubsub.server.sokcetserver import SocketListner
 except ImportError:
-    from  main.pubsub.server.sokcetserver import SocketListner
+    from  src.main.pubsub.server.sokcetserver import SocketListner
 try:
     from pubsub.utils import SocketConfig
 except ImportError:
-    from  main.utis import SocketConfig
+    from  src.main.utis import SocketConfig
     
 
 class PubSubManager(object):
     def __init__(self,pyAAS):
         self.pyAAS = pyAAS
-        self.listnersConfig = self.pyAAS.listnersConfig
+        self.listnersConfig = self.pyAAS.listeners_config
         self.listnersSocketConfig = dict()
         
     def configure_listner(self):
@@ -38,7 +38,7 @@ class PubSubManager(object):
                 _listnersocketConfig = self.listnersSocketConfig[listnername]
                 listnerInstance = socket.socket(_listnersocketConfig.AF_INET, _listnersocketConfig.SOCK_STREAM)
                 socketListner = SocketListner(_listnersocketConfig,listnerInstance,self.pyAAS)
-                self.pyAAS.listnerSockets[listnername] = socketListner
+                self.pyAAS.listenerSockets[listnername] = socketListner
             return True
         except Exception as E:
             self.serviceLogger.info('Error while creating the configuration for PubSub Listners. '+str(E))
@@ -46,8 +46,8 @@ class PubSubManager(object):
         
     def start_listners(self):
         try:
-            for listnername in self.pyAAS.listnerSockets:
-                listnerthread = threading.Thread(target=self.pyAAS.listnerSockets[listnername].socket_start,)
+            for listnername in self.pyAAS.listenerSockets:
+                listnerthread = threading.Thread(target=self.pyAAS.listenerSockets[listnername].socket_start, )
                 listnerthread.start()
             return True
         except Exception as E:

@@ -1,9 +1,9 @@
 FROM python:3.7
-WORKDIR testsample
+WORKDIR PythonAASxServer
 COPY . .
 
-RUN pip3 install APScheduler python-snap7 opcua pybars3 paho-mqtt flask werkzeug  Flask Flask-RESTful pymongo python-dotenv requests jsonschema web3
+RUN pip3 install -r ./requirements.txt
 
-CMD [ "python3","-u", "./src/main/testsample.py" ]
+CMD [ "python3","-u", "./src/main/pyaasxServer.py" ]
 
 ENV TZ=Europe/Berlin

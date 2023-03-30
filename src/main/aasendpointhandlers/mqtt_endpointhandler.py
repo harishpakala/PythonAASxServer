@@ -13,7 +13,7 @@ import uuid
 try:
     from abstract.endpointhandler import AASEndPointHandler
 except ImportError:
-    from main.abstract.endpointhandler import AASEndPointHandler
+    from src.main.abstract.endpointhandler import AASEndPointHandler
 
 import paho.mqtt.client as mqtt
 
@@ -21,11 +21,10 @@ class AASEndPointHandler(AASEndPointHandler):
     
     def __init__(self, pyAAS, msgHandler):
         self.pyAAS = pyAAS
-        self.topicname = pyAAS.AASID
         self.msgHandler = msgHandler
     
     def on_connect(self, client, userdata, flags, rc):
-        pass#self.pyAAS.serviceLogger.info("MQTT channels are succesfully connected.",client,userdata,flags,rc)
+        pass#self.pyaas.serviceLogger.info("MQTT channels are succesfully connected.",client,userdata,flags,rc)
         
     def configure(self):
         self.ipaddressComdrv = self.pyAAS.lia_env_variable["LIA_AAS_MQTT_HOST"]
@@ -40,8 +39,11 @@ class AASEndPointHandler(AASEndPointHandler):
             self.stop()
             self.client.connect(self.ipaddressComdrv, port=(self.portComdrv))
             topicsList = []
-            for _ids in list(self.pyAAS.aasIdentificationIdList.keys()):
-                topicsList.append((_ids,0))
+            for _id in self.pyAAS.aasShellHashDict._getKeys():
+                topicsList.append((self.pyAAS.aasShellHashDict.__getHashEntry__(_id).aasELement["id"],0))
+            print(" #############################################################################snnnnnnnnnnn")
+            print(topicsList)
+            print(" #############################################################################snnnnnnnnnnn")
             self.client.subscribe(topicsList)
             self.client.loop_forever()
         except Exception as E:
@@ -94,15 +96,10 @@ class AASEndPointHandler(AASEndPointHandler):
         try:
             msg1 = str(msg.payload, "utf-8")
             jsonMessage = json.loads(msg1)
-            if (jsonMessage["frame"]["sender"]["identification"]["id"] == self.pyAAS.AASID):
+            if "receiver" in jsonMessage["frame"].keys():
                 self.msgHandler.putIbMessage(jsonMessage)
             else:
-                try:
-                    jsonMessage["frame"]["receiver"]["identification"]["id"]
-                    self.msgHandler.putIbMessage(jsonMessage)
-                except Exception as E:
-                    self.pyAAS.serviceLogger.info(str(E))
-                    self.handleBoradCastMessage(jsonMessage)
+                self.handleBoradCastMessage(jsonMessage)
         except:
             pass
             

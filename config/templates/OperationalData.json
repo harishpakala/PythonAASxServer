@@ -1,0 +1,106 @@
+{
+    "assetAdministrationShells": [
+        {
+            "hasDataSpecification": [],
+            "submodels": [
+            {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "test123"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+                
+            ],
+            "conceptDictionaries": [],
+            "idShort": "DLR_MO_DRONE_4",
+            "category": "PARAMETER",
+            "descriptions": [
+                {
+                    "language": "en",
+                    "text": "AAS description of DHT22 sensor Location A"
+                }
+            ],
+            "id": "test_aas",
+            "modelType": "AssetAdministrationShell",
+            "assetInformation": {
+                "assetKind": "Instance",
+                "defaultThumbnail": {
+                    "path": "file://temp/asset.png"
+                },
+                "globalAssetId": {
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "www.company.com/asset/9746_9342_9937_6241"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            }
+        }
+    ],
+    "submodels": [
+        {
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "Submodel",
+                        "value": "www.ovgu.de/submodel/operationaldata"
+                    }
+                ],
+                "type": "GlobalReference"
+            },        
+            "idShort": "OperationalData",
+            "kind": "Instance",
+            "submodelElements": [
+                {
+                    "idShort": "BoringProvider",
+                    "value": [
+                        {
+                            "value": "BoringProvider",
+                            "idShort": "SkillName",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Boring Provision",
+                            "idShort": "SkillService",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "WaitforCfp",
+                            "idShort": "InitialState",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Y",
+                            "idShort": "enabled",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "www.admin-shell.io/interaction/bidding",
+                            "idShort": "semanticProtocol",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "test123"
+        }
+    ]
+}

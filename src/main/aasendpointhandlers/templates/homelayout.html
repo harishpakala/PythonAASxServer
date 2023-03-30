@@ -2,36 +2,37 @@
 <div class="layoutMenu">
    <div class="layoutMenuBar">
 	<nav>
-    <div class="navbar">
+    <div class="navbar" style = "position: relative;overflow-y: visible;z-index: 999;">
       <div class="nav-links">
         <ul class="links">
-          <li><a href="/home"><img src="{{exDomain}}static/images/home11.svg" class = "imageHome" alt="Home" 
-                 onmouseover="this.src='{{exDomain}}static/images/home12.svg'"
-       onmouseout="this.src='{{exDomain}}static/images/home11.svg'"></a></li>
-		  <li><a href="/{{aasIndex}}/home" class = "menubarA">HOME</a></li>
-		  <li><a href="/{{aasIndex}}/submodels" class = "menubarA">CUSTOM SUBMODELS</a></li>
-		  <li>
-		  	<a href="#" class = "menubarA">STANDARD SUBMODELS
-		  	<i class='bx bxs-chevron-down menu-arrow'></i></a>
+          <li><a href="/shells/webui"><img src="{{exDomain}}web/images/home11.svg" class = "imageHome" alt="Home" 
+                 onmouseover="this.src='{{exDomain}}web/images/home12.svg'"
+       onmouseout="this.src='{{exDomain}}web/images/home11.svg'"></a></li>
+		  <li><a href="/shells/{{aasIdentifier}}/webui" class = "menubarA">HOME</a></li>
+		  <li><a href="/shells/{{aasIdentifier}}/productionmanager/webui" class = "menubarA">PRODUCTION MANAGER</a></li>
+		  <li><a href="#" class = "menubarA">SUBMODELS
+		  <i class='bx bxs-chevron-down menu-arrow'></i></a>
 		  	<ul class="sub-menu">
-		  		{% for std in stdSubmodelList %}
-		  	 	<li><a href="/{{aasIndex}}/{{std}}" class = "subMenubarA">{{std}}</a></li>
-		  	 	{% endfor %}   
+		  		{% for submodel in submodelList %}
+		  		  {% for _sid, _sidShort in submodel.items() %}
+		  		  <li><a href="/shells/{{aasIdentifier}}/aas/submodels/{{_sid}}/submodel/webui" class = "subMenubarA">{{_sidShort}}</a></li>
+		  		  {% endfor %}	
+		  		{% endfor %}
 		  	</ul>
-		  </li>
+		  </a></li>
 		  <li>
-            <a href="#" class = "menubarA">LOGS​<i class='bx bxs-chevron-down menu-arrow'></i></a>
+            <a href="#" class = "menubarA">LOGS<i class='bx bxs-chevron-down menu-arrow'></i></a>
             <ul class="sub-menu">
             	{% for skill in skillList %}
-				<li><a href="/{{aasIndex}}/log/{{skill}}"  class = "subMenubarA">{{skill}}</a></li>
+				<li><a href="/shells/{{aasIdentifier}}/log/{{skill}}/webui"  class = "subMenubarA">{{skill}}</a></li>
 			    {% endfor %}
             </ul>
           </li>
 		  <li>
             <a href="#" class = "menubarA">MISCELLANEOUS<i class='bx bxs-chevron-down menu-arrow'></i></a>
             <ul class="sub-menu">
-            	<li><a href="/{{aasIndex}}/registration" class = "subMenubarA">REGISTRATION</a></li>
-            	<li><a href="/{{aasIndex}}/rtdata/visualize" class = "subMenubarA">REAL TIME DATA</a></li>
+            	<li><a href="/shells/{{aasIdentifier}}/registration/webui" class = "subMenubarA">REGISTRATION</a></li>
+            	<li><a href="/{{aasIdentifier}}/rtdata/visualize" class = "subMenubarA">REAL TIME DATA</a></li>
             </ul>
           </li>		  
         </ul>
@@ -40,7 +41,7 @@
       <div class="search-icon">
 		<i class='bx bx-search'></i>
         <div class="search-input-div">
-        	<form action="/{{aasIndex}}/search" method="post">
+        	<form action="/{{aasIdentifier}}/search" method="post">
          		 <input class = "search-input" name = "searchQuery" type="text" placeholder="Search...">
          	</form>
         </div>
@@ -51,13 +52,12 @@
 		</div>
 	</div>
 
- 
-    <div class="layoutBody">
+ <div class="layoutBody">
 		<div class = "layoutInfoBar">
 		{% with flashMessages = get_flashed_messages(category_filter=["success"]) %}
 						{% if flashMessages %}
 							{%- for message in flashMessages %}
-							<div style = "height : 4.5vh;">
+							<div style = "height : 2.5vh;">
 							     <div class="alert alert-success alert-dismissible fade show" id = "flashMessageSuccess" role="alert" style="height: 4.5vh; padding-top: 0.2vh;">
 									<p style = "text-align: center; font-size: 15px;" >{{message}}</p>
 									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding-top: 0.2vh;"></button>
@@ -69,7 +69,7 @@
 					{% with flashMessages = get_flashed_messages(category_filter=["error"]) %}
 						{% if flashMessages %}
 						{%- for message in flashMessages %}
-						<div style = "height : 4.5vh;">
+						<div style = "height : 2.5vh;">
 							<div class="alert alert-danger alert-dismissible fade show"  id = "flashMessageDanger"role="alert" style="height: 4.5vh; padding-top: 0.2vh;">
 								<p style = "text-align: center; font-size: 15px;"  id = "flashMessageP">{{message}}</p>
 								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding-top: 0.2vh;"></button>
@@ -81,7 +81,7 @@
 					{% with flashMessages = get_flashed_messages(category_filter=["info"]) %}
 						{% if flashMessages %}
 						{%- for message in flashMessages %}
-						<div style = "height : 4.5vh;">
+						<div style = "height : 2.5vh;">
 							<div class="alert alert-info alert-dismissible fade show" role="alert"  id = "flashMessageInfo" style="height: 4.5vh; padding-top: 0.2vh;">
 								<p style = "text-align: center; font-size: 15px;"  id = "flashMessageP">{{message}}</p>
 					     		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding-top: 0.2vh;"></button>
@@ -94,6 +94,7 @@
 		<div class = "layoutBodyContent">
 			{% block homecontent %}{% endblock %}
 		</div>
+
     </div>
 
 
@@ -109,8 +110,6 @@ if(navbar.classList.contains("showInput")){
  searchBox.classList.replace("bx-x" ,"bx-search");
 }
 });
-</script>
-<<script>
 
 setTimeout(function(){
 

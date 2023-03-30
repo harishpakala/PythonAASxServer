@@ -1,0 +1,3502 @@
+{
+    "assetAdministrationShells": [
+        {
+            "hasDataSpecification": [],
+            "submodels": [
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "https://admin-shell.io/IDTA02004-1-2"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "conceptDictionaries": [],
+            "idShort": "HandoverDocumentationAAS",
+            "id": "https://demo.com/HandoverDocumentationAAS",
+            "modelType": "AssetAdministrationShell",
+            "assetInformation": {
+                "assetKind": "Instance",
+                "defaultThumbnail": {
+                    "path": "file://temp/asset.png"
+                },
+                "globalAssetId": {
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "www.company.com/asset/9746_9342_9937_6241"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            }
+        }
+    ],
+    "submodels": [
+        {
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "Submodel",
+                        "value": "0173-1#01-AHF578#001"
+                    }
+                ],
+                "type": "GlobalReference"
+            },
+            "qualifiers": [],
+            "administration": {
+                "version": "1",
+                "revision": "2"
+            },
+            "idShort": "HandoverDocumentation",
+            "category": "PARAMETER",
+            "kind": "Template",
+            "submodelElements": [
+                {
+                    "value": "",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-ABH990#001"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "numberOfDocuments",
+                    "category": "PARAMETER",
+                    "kind": "Template",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "type": "Relevance",
+                            "valueType": "",
+                            "value": "optional"
+                        }
+                    ]
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-ABI500#001/0173-1#01-AHF579#001*01"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Document",
+                    "value": [
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "ConceptDescription",
+                                        "value": "0173-1#02-ABI501#001/0173-1#01-AHF580#001*01"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "DocumentId",
+                            "category": "PARAMETER",
+                            "value": [
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABH994#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "DocumentDomainId",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Identification of the domain in which the given DocumentId is unique. The domain ID can e.g., be the name or acronym of the providing organisation."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "1213455566"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-AAO099#002"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "ValueId",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Identification number of the Document within a given domain, e.g. the providing organisation."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "XF90-884"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABH995#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "IsPrimary",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Flag indicating that a DocumentId within a collection of at least two DocumentId`s is the \u2018primary\u2019 identifier for the document. This is the preferred ID of the document (commonly from the point of view of the owner of the asset). Note: can be omitted, if the ID is not primary. Note: can be omitted, if only one ID is for a Document. Contraint: only one DocumentId in a collection may be marked as primary."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "ZeroToOne"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "true"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "kind": "Template",
+                            "descriptions": [
+                                {
+                                    "language": "en",
+                                    "text": "Set of document identifiers for the Document. One ID in this collection should be used as a preferred ID"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "type": "Cardinality",
+                                    "valueType": "",
+                                    "value": "OneToMany"
+                                }
+                            ]
+                        },
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "ConceptDescription",
+                                        "value": "0173-1#02-ABI502#001/0173-1#01-AHF581#001*01"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "DocumentClassification",
+                            "category": "PARAMETER",
+                            "value": [
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABH996#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "ClassId",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Unique ID of the document class within a ClassficationSystem. Constraint: If ClassificationSystem is set to \u201cVDI2770:2018\u201d, the given IDs of VDI2770:2018 shall be used"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "03-02"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-AAO102#003"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "ClassName",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "List of language-dependent names of the selected ClassID. Constraint: If ClassificationSystem is set to \u201cVDI2770:2018\u201d then the given names of VDI2770:2018 need be used. Constraint: languages shall match at least the language specifications of the included DocumentVersions (below)."
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "language": "en",
+                                            "text": ""
+                                        }
+                                    ],
+                                    "modelType": "MultiLanguageProperty",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "Operation@en"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABH997#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "ClassificationSystem",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Identification of the classification system. For classifications according VDI 2270 always set to \"VDI2770:2018\". Further classification systems are commonly used, such as \"IEC61355-1:2008\"."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "VDI2770:2018"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "kind": "Template",
+                            "descriptions": [
+                                {
+                                    "language": "en",
+                                    "text": "Set of information for describing the classification of the Document according to ClassificationSystems. Constraint: at least one classification according to VDI 2770 shall be provided."
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "type": "Cardinality",
+                                    "valueType": "",
+                                    "value": "OneToMany"
+                                }
+                            ]
+                        },
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "ConceptDescription",
+                                        "value": "0173-1#02-ABI503#001/0173-1#01-AHF582#001*01"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "DocumentVersion",
+                            "category": "PARAMETER",
+                            "value": [
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-AAN468#006"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "Language",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "This property contains a list of languages used within the DocumentVersion. Each property codes one language identification according to ISO 639-1 or ISO 639-2 used in the Document."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "OneToMany"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "en"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "AllowedIdShort",
+                                            "valueType": "",
+                                            "value": "Language[\\d{2,3}]"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-AAO100#002"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "DocumentVersionId",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Unambigous identification number of a DocumentVersion."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "V1.2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-AAO105#002"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "Title",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "List of language-dependent titles of the Document. Constraint: For each language-depended Title a Summary and at least one KeyWord shall exist for the given language."
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "language": "en",
+                                            "text": ""
+                                        }
+                                    ],
+                                    "modelType": "MultiLanguageProperty",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "Examplary title@en"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABH998#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "SubTitle",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "List of language-dependent subtitles of the Document."
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "language": "en",
+                                            "text": ""
+                                        }
+                                    ],
+                                    "modelType": "MultiLanguageProperty",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "ZeroToOne"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "Examplary subtitle@en"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-AAO106#002"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "Summary",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "List of language-dependent summaries of the Document. Constraint: For each language-depended Summary a Title and at least one KeyWord shall exist for the given language."
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "language": "en",
+                                            "text": ""
+                                        }
+                                    ],
+                                    "modelType": "MultiLanguageProperty",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "Abstract@en"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABH999#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "KeyWords",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "List of language-dependent keywords of the Document. Note: Mutiple keywords are given as comma separated list for each language. Constraint: For each language-depended KeyWord a Title and Summary shall exist for the given language. Note: This can be intentionally a blank."
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "language": "en",
+                                            "text": ""
+                                        }
+                                    ],
+                                    "modelType": "MultiLanguageProperty",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "Examplary keywords@en"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI000#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "StatusSetDate",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Date when the document status was set. Format is YYYY-MM-dd."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "2020-02-06"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI001#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "StatusValue",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Each document version represents a point in time in the document life cycle. This status value refers to the milestones in the document life cycle. The following two values should be used for the application of this guideline: InReview (under review), Released (released)"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "Released"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI002#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "OrganizationName",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Organiziation short name of the author of the Document."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "Example company"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "",
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI004#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "OrganizationOfficialName",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Official name of the organization of author of the Document."
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "One"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "Example company Ltd."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "keys": []
+                                    },
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI006#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "RefersTo",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Forms a generic RefersTo-relationship to another Document or DocumentVersion. They have a loose relationship. Constraint: reference targets a SMC \"Document\" or a \u201cDocumentVersion\u201d."
+                                        }
+                                    ],
+                                    "modelType": "ReferenceElement",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "ZeroToMany"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "AllowedIdShort",
+                                            "valueType": "",
+                                            "value": "RefersTo[\\d{2,3}]"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "keys": []
+                                    },
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI007#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "BasedOn",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Forms a BasedOn-relationship to another Document or DocumentVersion. Typically states, that the content of the document bases on another document (e.g. specification requirements). Both have a strong relationship. Constraint: reference targets a SMC \"Document\" or a \u201cDocumentVersion\u201d."
+                                        }
+                                    ],
+                                    "modelType": "ReferenceElement",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "ZeroToMany"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "AllowedIdShort",
+                                            "valueType": "",
+                                            "value": "BasedOn[\\d{2,3}]"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": {
+                                        "keys": []
+                                    },
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI008#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "TranslationOf",
+                                    "category": "PARAMETER",
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Forms a TranslationOf-relationship to another Document or DocumentVersion. Both have a strong relationship. Constaint: The (language independent) content must be identical in both documents or document versions. Constraint: reference targets a SMC \"Document\" or a \u201cDocumentVersion\u201d."
+                                        }
+                                    ],
+                                    "modelType": "ReferenceElement",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "ZeroToMany"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "AllowedIdShort",
+                                            "valueType": "",
+                                            "value": "TranslationOf[\\d{2,3}]"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI504#001/0173-1#01-AHF583#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "DigitalFile",
+                                    "value": [
+                                        {
+                                            "value": "",
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "ConceptDescription",
+                                                        "value": "0173-1#02-AAO214#002 "
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "idShort": "MimeType",
+                                            "category": "PARAMETER",
+                                            "kind": "Template",
+                                            "descriptions": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "The MIME-Type classifies the data of massage."
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "modelType": "Property",
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ],
+                                                        "type": "GlobalReference"
+                                                    },
+                                                    "type": "Cardinality",
+                                                    "valueType": "",
+                                                    "value": "One"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "",
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "ConceptDescription",
+                                                        "value": "0173-1#02-ABI005#001 "
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "idShort": "DocumentPath",
+                                            "category": "PARAMETER",
+                                            "kind": "Template",
+                                            "descriptions": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "The document path leads to the document."
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "modelType": "Property",
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ],
+                                                        "type": "GlobalReference"
+                                                    },
+                                                    "type": "Cardinality",
+                                                    "valueType": "",
+                                                    "value": "One"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Note: each DigitalFile represents the same content or Document version, but can be provided in different technical formats (PDF, PDFA, html..) or by a link."
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "OneToMany"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "docu_cecc_fullmanual_DE.PDF"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "AllowedIdShort",
+                                            "valueType": "",
+                                            "value": "DigitalFile[\\d{2,3}]"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "ConceptDescription",
+                                                "value": "0173-1#02-ABI505#001 /0173-1#01-AHF584#001"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "idShort": "PreviewFile",
+                                    "category": "PARAMETER",
+                                    "value": [
+                                        {
+                                            "value": "",
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "ConceptDescription",
+                                                        "value": "0173-1#02-AAO214#002 "
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "idShort": "MimeType",
+                                            "category": "PARAMETER",
+                                            "kind": "Template",
+                                            "descriptions": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "The MIME-Type classifies the data of massage."
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "modelType": "Property",
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ],
+                                                        "type": "GlobalReference"
+                                                    },
+                                                    "type": "Cardinality",
+                                                    "valueType": "",
+                                                    "value": "One"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "",
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "ConceptDescription",
+                                                        "value": "0173-1#02-ABI005#001 "
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "idShort": "DocumentPath",
+                                            "category": "PARAMETER",
+                                            "kind": "Template",
+                                            "descriptions": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "The document path leads to the document."
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "modelType": "Property",
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ],
+                                                        "type": "GlobalReference"
+                                                    },
+                                                    "type": "Cardinality",
+                                                    "valueType": "",
+                                                    "value": "One"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "kind": "Template",
+                                    "descriptions": [
+                                        {
+                                            "language": "en",
+                                            "text": "Provides a preview image of the DocumentVersion, e.g. first page, in a commonly used image format and low resolution. Note: low resolution e.g. < 512 x 512 pixels. Constraint: the MIME type needs to match the file type. Allowed file types are JPG, PNG, BMP."
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection",
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "Cardinality",
+                                            "valueType": "",
+                                            "value": "ZeroToMany"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "ExampleValue",
+                                            "valueType": "",
+                                            "value": "docu_cecc_fullmanual_DE.jpg"
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                                                    }
+                                                ],
+                                                "type": "GlobalReference"
+                                            },
+                                            "type": "AllowedIdShort",
+                                            "valueType": "",
+                                            "value": "PreviewFile[\\d{2,3}]"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "kind": "Template",
+                            "descriptions": [
+                                {
+                                    "language": "en",
+                                    "text": "Information elements of individual VDI 2770 DocumentVersion entities. Note: at the time of handover, this collection shall include at least one DocumentVersion."
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "type": "Cardinality",
+                                    "valueType": "",
+                                    "value": "ZeroToMany"
+                                }
+                            ]
+                        },
+                        {
+                            "value": {
+                                "keys": []
+                            },
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/vdi/2770/1/0/Document/DocumentedEntity"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "DocumentedEntity",
+                            "category": "PARAMETER",
+                            "kind": "Template",
+                            "descriptions": [
+                                {
+                                    "language": "en",
+                                    "text": "Identifies entities, which are subject to the Document. Note: can be omitted, if the subject of the Document is the overall Asset of the Asset Administration Shell. Note: if no Entity according clause 2.2 is referenced, this ReferenceElement is not required at all. Note: This mechanism substitutes the ObjectId-provision of the VDI2770 (see section 2.2 and appendix B)."
+                                }
+                            ],
+                            "modelType": "ReferenceElement",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "GlobalReference"
+                                    },
+                                    "type": "Cardinality",
+                                    "valueType": "",
+                                    "value": "ZeroToMany"
+                                }
+                            ]
+                        }
+                    ],
+                    "kind": "Template",
+                    "descriptions": [
+                        {
+                            "language": "en",
+                            "text": "Each SMC describes a Document (see IEC 82045-1 and IEC 8245-2), which is associated to the particular Asset Administration Shell."
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "type": "Cardinality",
+                            "valueType": "",
+                            "value": "ZeroToMany"
+                        }
+                    ]
+                },
+                {
+                    "entityType": "CoManagedEntity",
+                    "asset": {
+                        "keys": []
+                    },
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/vdi/2770/1/0/EntityForDocumentation"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Entity",
+                    "category": "PARAMETER",
+                    "statements": [],
+                    "kind": "Template",
+                    "descriptions": [
+                        {
+                            "language": "en",
+                            "text": "States, that the described Entity is an important entity for documentation of the superordinate Asset of the Asset Administration Shell. Note: typically, such Entities are well-identified sub-parts of the Asset, such as supplier parts delivered to the manufacturer of the Asset."
+                        }
+                    ],
+                    "modelType": "Entity",
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "type": "Cardinality",
+                            "valueType": "",
+                            "value": "ZeroToMany"
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "language": "en",
+                    "text": "The Submodel defines a set meta data for the handover of documentation from the manufacturer to the operator for industrial equipment."
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "https://admin-shell.io/IDTA02004-1-2"
+        }
+    ],
+    "conceptDescriptions": [
+        {
+            "idShort": "DocumentDomainId",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "DocumentDomainId"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Document Domain Identifikator"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "DocumentDomainId"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Document Domain Identifikator"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Identification of the domain in which the given DocumentId is unique. The domain ID can e.g., be the name or acronym of the providing organisation"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Identifikation der Dom\u00e4ne, in der die angegebene DocumentId eindeutig ist. Die Domain-ID kann z. B. der Name oder das Akronym der bereitstellenden Organisation sein\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABH994#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABH994#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "ValueId",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "document number"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentennummer"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "document number"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentennummer"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "alphanumeric character sequence uniquely identifying a document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-AAO099#002"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-AAO099#002",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "IsPrimary",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document is primary"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokument ist prim\u00e4r"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document is primary"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokument ist prim\u00e4r"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Flag indicating that a DocumentId within a collection of at least two DocumentId`s is the \u2018primary\u2019 identifier for the document. This is the preferred ID of the document (commonly from the point of view of the owner of the asset)"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Flag, das angibt, dass eine DocumentId innerhalb einer Sammlung von mindestens zwei DocumentIds die \u201eprim\u00e4re\u201c Kennung f\u00fcr das Dokument ist. Dies ist die bevorzugte ID des Dokuments (\u00fcblicherweise aus Sicht des Eigent\u00fcmers des Assets)\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABH995#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABH995#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "ClassId",
+            "category": "CONSTANT",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Class identifyer"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Klassenidentifikator"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Class identifyer"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Klassenidentifikator"
+                            }
+                        ],
+                        "unit": "",
+                        "valueFormat": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Unique ID of the document class within a ClassficationSystem"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Eindeutige ID der Dokumentenklasse innerhalb eines ClassificationSystems"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABH996#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABH996#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "ClassName",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "type of document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumententyp"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "type of document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumententyp"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "classification of a document according to its purpose or the information it contains"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Charakterisierung eines Dokuments bez\u00fcglich des Zwecks oder der Information, die es beinhaltet"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-AAO102#003"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-AAO102#003",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "ClassificationSystem",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Classification system"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Klassifizierungssystem"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Classification system"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Klassifizierungssystem"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Identification of the classification system"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Identifikation des Klassifikationssystems\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABH997#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABH997#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "Language",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "language of document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Sprache des Dokuments"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "language of document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Sprache des Dokuments"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "language style of the document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Sprachstil des Dokuments\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-AAN468#006"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-AAN468#006",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "DocumentVersionId",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document version"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenversion"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document version"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenversion"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Information elements of individual VDI 2770 DocumentVersion entities"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Informationselemente einzelner VDI 2770 DocumentVersion Entit\u00e4ten\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-AAO100#002"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-AAO100#002",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "Title",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "document name"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenname"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "document name"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenname"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "name of the document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Name des Dokuments\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-AAO105#002"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-AAO105#002",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "SubTitle",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Subtitle"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Untertitel"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Subtitle"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Untertitel"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "List of language-dependent subtitles of the Document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Liste der sprachabh\u00e4ngigen Untertitel des Dokuments\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABH998#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABH998#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "Summary",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "document description"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenbeschreibung"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "document description"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenbeschreibung"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "plain text characterizing the content of the document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Klartext, der den Inhalt des Dokuments kennzeichnet\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-AAO106#002"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-AAO106#002",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "KeyWords",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Keyword"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Stichwort"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Keyword"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Stichwort"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "List of language-dependent keywords of the document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Liste der sprachabh\u00e4ngigen Schl\u00fcsselw\u00f6rter des Dokuments\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABH999#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABH999#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "StatusSetDate",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document status set date"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Datum der Einstellung des Dokumentenstatus"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document status set date"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Datum der Einstellung des Dokumentenstatus"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Date when the document status was set"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Datum, an dem der Dokumentenstatus gesetzt wurde\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI000#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI000#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "StatusValue",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document status"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentstatus"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document status"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentstatus"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Each document version represents a point in time in the document life cycle. This status value refers to the milestones in the document life cycle. The following two values should be used for the application of this guideline: InReview (under review), Released (released)"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Jede Dokumentversion repr\u00e4sentiert einen Zeitpunkt im Dokumentlebenszyklus. Dieser Statuswert bezieht sich auf die Meilensteine \u200b\u200bim Dokumentenlebenszyklus. F\u00fcr die Anwendung dieser Richtlinie sollten die folgenden zwei Werte verwendet werden: InReview (in \u00dcberpr\u00fcfung), Released (freigegeben)\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI001#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI001#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "OrganizationName",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Organization short name"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Kurzname der Organisation"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Organization short name"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Kurzname der Organisation"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Organiziation name of the author of the document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Name der Organisation des Autors des Dokuments\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI002#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI002#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "OrganizationOfficialName",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Organization official name"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Offizieller Name der Organisation"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Organization official name"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Offizieller Name der Organisation"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Official name of the organization of author of the document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Offizieller Name der Organisation des Autors des Dokuments\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI004#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI004#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "RefersTo",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Reference to other document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Verweis auf ein anderes Dokument"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Reference to other document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Verweis auf ein anderes Dokument"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Forms a generic RefersTo-relationship to another Document or DocumentVersion. They have a loose relationship"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Bildet eine generische RefersTo-Beziehung zu einem anderen Dokument oder einer anderen Dokumentversion. Sie haben ein lockeres Verh\u00e4ltnis\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI006#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI006#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "BasedOn",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Based on other document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Basierend auf einem anderen Dokument"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Based on other document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Basierend auf einem anderen Dokument"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Forms a BasedOn-relationship to another Document or DocumentVersion. Typically states, that the content of the document bases on another document (e.g. specification requirements). Both have a strong relationship"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Bildet eine BasedOn-Beziehung zu einem anderen Dokument oder einer anderen Dokumentversion. Gibt typischerweise an, dass der Inhalt des Dokuments auf einem anderen Dokument basiert (z. B. Spezifikationsanforderungen). Beide haben eine starke Beziehung\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI007#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI007#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "TranslationOf",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Translation of other document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "\u00dcbersetzung eines anderen Dokuments"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Translation of other document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "\u00dcbersetzung eines anderen Dokuments"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Forms a TranslationOf-relationship to another Document or DocumentVersion. Both have a strong relationship"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Bildet eine TranslationOf-Beziehung zu einem anderen Dokument oder einer anderen Dokumentversion. Beide haben eine starke Beziehung\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI008#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI008#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "MimeType",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Mimetype"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Mimetyp"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Mimetype"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Mimetyp"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "type of the additional document which is oriented towards the mime type used in the Internet"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Typ des Zusatzdokuments, der sich an den im Internet verwendeten Mime-Typen orientiert\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-AAO214#002 "
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-AAO214#002 ",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "DocumentPath",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document path"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenpfad"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document path"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenpfad"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Path of the document"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Pfad des Dokuments\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI005#001 "
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI005#001 ",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "Document",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document (handover documentation)"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokument (\u00dcbergabedokumentation)"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document (handover documentation)"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokument (\u00dcbergabedokumentation)"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Each SubmodelElementCollection describes a document by standard, which is associated to the particular Asset Administration Shell"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Jede SubmodelElementCollection beschreibt ein Dokument (siehe IEC 82045-1 und IEC 8245-2), das der jeweiligen Asset Administration Shell zugeordnet ist\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI500#001/0173-1#01-AHF579#001*01"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI500#001/0173-1#01-AHF579#001*01",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "DocumentId",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document identifier"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentidentifikator"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document identifier"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentidentifikator"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Set of document identifiers for the Document. One ID in this collection should be used as a preferred ID"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Satz von Dokument-IDs f\u00fcr das Dokument. Eine ID in dieser Sammlung sollte als bevorzugte ID verwendet werden\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI501#001/0173-1#01-AHF580#001*01"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI501#001/0173-1#01-AHF580#001*01",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "DocumentClassification",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document classification"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenklassifizierung"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document classification"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenklassifizierung"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Set of information for describing the classification of the Document according to ClassificationSystems"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Satz von Informationen zur Beschreibung der Klassifizierung des Dokuments gem\u00e4\u00df Klassifizierungssystemen\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI502#001/0173-1#01-AHF581#001*01"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI502#001/0173-1#01-AHF581#001*01",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "DocumentVersion",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Document version"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenversion"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Document version"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Dokumentenversion"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Information elements of individual Document Version entities"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Informationselemente einzelner VDI 2770 DocumentVersion Entit\u00e4ten\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI503#001/0173-1#01-AHF582#001*01"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI503#001/0173-1#01-AHF582#001*01",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "DigitalFile",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Digital file"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Digitale Datei"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Digital file"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Digitale Datei"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "MIME-Type, file name and file contents given by the file SubmodelElement"
+                            },
+                            {
+                                "language": "de",
+                                "text": "MIME-Typ, Dateiname und Dateiinhalt, die von der Datei SubmodelElement vorgegeben werden\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI504#001/0173-1#01-AHF583#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI504#001/0173-1#01-AHF583#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "PreviewFile",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Preview file"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Vorschaudatei"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Preview file"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Vorschaudatei"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Provides a preview image of the Document Version, e.g. first page, in a commonly used image format and low resolution"
+                            },
+                            {
+                                "language": "de",
+                                "text": "Liefert ein Vorschaubild der DocumentVersion, z.B. erste Seite, in einem g\u00e4ngigen Bildformat und niedriger Aufl\u00f6sung.\t"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABI505#001 /0173-1#01-AHF584#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "id": "0173-1#02-ABI505#001 /0173-1#01-AHF584#001",
+            "modelType": "ConceptDescription"
+        },
+        {
+            "idShort": "numberOfDocuments",
+            "category": "PARAMETER",
+            "embeddedDataSpecifications": [
+                {
+                    "dataSpecificationContent": {
+                        "preferredName": [
+                            {
+                                "language": "en",
+                                "text": "Number of documents (handover documentation)"
+                            },
+                            {
+                                "language": "de",
+                                "text": " Anzahl der Dokumente (\u00dcbergabedokumentation)"
+                            }
+                        ],
+                        "shortName": [
+                            {
+                                "language": "en",
+                                "text": "Number of documents (handover documentation)"
+                            },
+                            {
+                                "language": "de",
+                                "text": " Anzahl der Dokumente (\u00dcbergabedokumentation)"
+                            }
+                        ],
+                        "unit": "",
+                        "dataType": "STRING_TRANSLATABLE",
+                        "definition": [
+                            {
+                                "language": "en",
+                                "text": "Number of documents (handover documentation)"
+                            },
+                            {
+                                "language": "de",
+                                "text": " Anzahl der Dokumente (\u00dcbergabedokumentation)"
+                            }
+                        ],
+                        "modelType": "DataSpecificationIEC61360"
+                    },
+                    "dataSpecification": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    }
+                }
+            ],
+            "isCaseOf": [
+                {
+                    "keys": [
+                        {
+                            "type": "ConceptDescription",
+                            "value": "0173-1#02-ABH990#001"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ],
+            "descriptions": [
+                {
+                    "language": "en",
+                    "text": "Number of Documents"
+                },
+                {
+                    "language": "de",
+                    "text": "Anzahl der Dokumente"
+                }
+            ],
+            "id": "0173-1#02-ABH990#001",
+            "modelType": "ConceptDescription"
+        }
+    ]
+}
