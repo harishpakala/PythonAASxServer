@@ -730,7 +730,7 @@ class Generate_AAS_Shell:
         self.pyaas = pyaas
         self.idShort = data["idShort"]
         self.description = data["description"]
-        self.thumnail = "/aasx/files/"+data["file"]
+        self.thumnail = "file://aasx/files/"+data["file"]
         self.displayName = data["displayName"]
         self.globalAssetId = data["globalAssetId"]
         

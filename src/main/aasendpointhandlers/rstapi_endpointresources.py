@@ -1156,7 +1156,7 @@ class AASWebInterfaceHome(Resource):
         if status:
             if self.process(shelldata):
                 _uuid = self.pyaas.aasHashDict.__getHashEntry__(shelldata["id"])._id
-                self.pyaas.configure_skills_by_id(_uuid)
+                self.pyaas.configure_skills_by_id(_uuid,shelldata["id"])
                 self.pyaas.start_skills_by_id(_uuid)
                 return True
             else:
@@ -1292,12 +1292,22 @@ class AASWebInterface(Resource):
             submodel_data["idShort"] = submodel_IdShort
             submodel_Ref["keys"][0]["value"] = submodel_Id
         
-            self.save_submodel(submodel_data)
+            self.create_submodel(submodel_data)
             self.save_submodel_ref(shellId,submodel_Ref)
             self.save_concept_descriptions(concept_Descriptions)
             return True
         except Exception as e:
             return False
+    
+    def create_submodel(self,submodel_data) -> bool:
+        try :
+            edm = ExecuteDBModifier(self.pyaas)
+            data,status,statuscode = edm.execute({"data":{"_submodel":submodel_data}, "method": "PostSubmodel",
+                                                                 "instanceId" : str(uuid.uuid1())})
+            return status
+        except Exception as e:
+            return False
+        
         
     def save_submodel(self,submodel_data) -> bool:
         try :
@@ -1350,7 +1360,7 @@ class AASWebInterface(Resource):
                 submodel_Ref = operational_data_aas["assetAdministrationShells"][0]["submodels"][0]
                 submodel_Ref["keys"][0]["value"] = submodel_Id
                 
-                self.save_submodel(operational_data_submodel)
+                self.create_submodel(operational_data_submodel)
                 self.save_submodel_ref(aasIdentifier, submodel_Ref)
             return True
         except Exception as E:
@@ -1423,7 +1433,7 @@ class AASWebInterface(Resource):
                 submodel_Id = "ww.ovgu.de/submodel/"+str(submodel_data["idShort"])
                 submodel_data["id"] = submodel_Id
                 _reference["keys"][0]["value"] = submodel_Id
-                self.save_submodel(submodel_data)
+                self.create_submodel(submodel_data)
                 self.save_submodel_ref(aasIdentifier1, _reference)
             
             elif operation_type == "download_json":

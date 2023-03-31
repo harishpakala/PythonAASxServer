@@ -373,7 +373,7 @@
                             "qualifiers": []
                         },
                         {
-                            "value": "Universitätsplatz 2 ",
+                            "value": "Universit\u00e4tsplatz 2 ",
                             "semanticId": {
                                 "keys": [
                                     {
@@ -704,6 +704,3000 @@
             ],
             "modelType": "Submodel",
             "id": "smart.festo.com/demo/sm/instance/1/1/19319DB561C9E160"
+        },
+        {
+            "idShort": "OperationalData",
+            "kind": "Instance",
+            "submodelElements": [
+                {
+                    "idShort": "BoringRequester",
+                    "value": [
+                        {
+                            "value": "BoringRequester",
+                            "idShort": "SkillName",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Boring Requesition",
+                            "idShort": "SkillService",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "WaitforNewOrder",
+                            "idShort": "InitialState",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Y",
+                            "idShort": "enabled",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "http://www.vdi.de/gma720/vdi2193_2/bidding",
+                            "idShort": "semanticProtocol",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "Transition1",
+                            "value": [
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "Order",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition2",
+                            "value": [
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition3",
+                            "value": [
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "callForProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition4",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition5",
+                            "value": [
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition6",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition7",
+                            "value": [
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition8",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition9",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendTransportOrder",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition10",
+                            "value": [
+                                {
+                                    "value": "sendTransportOrder",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforTransportOrderCompletion",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "Order",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition11",
+                            "value": [
+                                {
+                                    "value": "WaitforTransportOrderCompletion",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition12",
+                            "value": [
+                                {
+                                    "value": "WaitforTransportOrderCompletion",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition13",
+                            "value": [
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "acceptProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition14",
+                            "value": [
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "informConfirm",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition15",
+                            "value": [
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "TransportRequester",
+                    "value": [
+                        {
+                            "value": "TransportRequester",
+                            "idShort": "SkillName",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Transport Requesition",
+                            "idShort": "SkillService",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "WaitforNewOrder",
+                            "idShort": "InitialState",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Y",
+                            "idShort": "enabled",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "http://www.vdi.de/gma720/vdi2193_2/bidding",
+                            "idShort": "semanticProtocol",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "Transition1",
+                            "value": [
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "Order",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition2",
+                            "value": [
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition3",
+                            "value": [
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "callForProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition4",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition5",
+                            "value": [
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition6",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition7",
+                            "value": [
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition8",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition12",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition11",
+                            "value": [
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "acceptProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition12",
+                            "value": [
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "informConfirm",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition13",
+                            "value": [
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "HoningRequester",
+                    "value": [
+                        {
+                            "value": "HoningRequester",
+                            "idShort": "SkillName",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Honing Requesition",
+                            "idShort": "SkillService",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "WaitforNewOrder",
+                            "idShort": "InitialState",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Y",
+                            "idShort": "enabled",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "http://www.vdi.de/gma720/vdi2193_2/bidding",
+                            "idShort": "semanticProtocol",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "Transition1",
+                            "value": [
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "Order",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition2",
+                            "value": [
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition3",
+                            "value": [
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "callForProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition4",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition5",
+                            "value": [
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition6",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition7",
+                            "value": [
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition8",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition9",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendTransportOrder",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition10",
+                            "value": [
+                                {
+                                    "value": "sendTransportOrder",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforTransportOrderCompletion",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "Order",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition11",
+                            "value": [
+                                {
+                                    "value": "WaitforTransportOrderCompletion",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition12",
+                            "value": [
+                                {
+                                    "value": "WaitforTransportOrderCompletion",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition13",
+                            "value": [
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "acceptProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition14",
+                            "value": [
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "informConfirm",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition15",
+                            "value": [
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "StampingRequester",
+                    "value": [
+                        {
+                            "value": "StampingRequester",
+                            "idShort": "SkillName",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Stamping Requestion",
+                            "idShort": "SkillService",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "WaitforNewOrder",
+                            "idShort": "InitialState",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Y",
+                            "idShort": "enabled",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "http://www.vdi.de/gma720/vdi2193_2/bidding",
+                            "idShort": "semanticProtocol",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "Transition1",
+                            "value": [
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "Order",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition2",
+                            "value": [
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition3",
+                            "value": [
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "callForProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition4",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition5",
+                            "value": [
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition6",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition7",
+                            "value": [
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition8",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition12",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition11",
+                            "value": [
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "acceptProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition12",
+                            "value": [
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "informConfirm",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition13",
+                            "value": [
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "StoringRequester",
+                    "value": [
+                        {
+                            "value": "StoringRequester",
+                            "idShort": "SkillName",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Storing Requestion",
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SkillService",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "WaitforNewOrder",
+                            "idShort": "InitialState",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Y",
+                            "idShort": "enabled",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "http://www.vdi.de/gma720/vdi2193_2/bidding",
+                            "idShort": "semanticProtocol",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "Transition1",
+                            "value": [
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "Order",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition2",
+                            "value": [
+                                {
+                                    "value": "cfpConfiguration",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition3",
+                            "value": [
+                                {
+                                    "value": "SendCFP",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "callForProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition4",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition5",
+                            "value": [
+                                {
+                                    "value": "noProposalReceived",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition6",
+                            "value": [
+                                {
+                                    "value": "WaitForSPProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "proposal",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition7",
+                            "value": [
+                                {
+                                    "value": "EvaluateProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition8",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition12",
+                            "value": [
+                                {
+                                    "value": "sendrejectProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "rejectProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition11",
+                            "value": [
+                                {
+                                    "value": "sendacceptProposal",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "acceptProposal",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition12",
+                            "value": [
+                                {
+                                    "value": "WaitforInformConfirm",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "informConfirm",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Transition13",
+                            "value": [
+                                {
+                                    "value": "sendCompletionResponse",
+                                    "idShort": "Source",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "WaitforNewOrder",
+                                    "idShort": "Target",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "NA",
+                                    "idShort": "Input",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "-",
+                                    "idShort": "Condition",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "value": "OrderStatus",
+                                    "idShort": "Output",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "www.company.com/ids/sm/0055_4121_8002_0491"
         },
         {
             "semanticId": {
@@ -2059,7 +5053,7 @@
                     "value": [
                         {
                             "language": "de",
-                            "text": "Otto von Guericke Universität Magdeburg"
+                            "text": "Otto von Guericke Universit\u00e4t Magdeburg"
                         }
                     ],
                     "modelType": "MultiLanguageProperty",
@@ -2138,7 +5132,7 @@
                             "value": [
                                 {
                                     "language": "de",
-                                    "text": "Universitätsplaz 2"
+                                    "text": "Universit\u00e4tsplaz 2"
                                 }
                             ],
                             "modelType": "MultiLanguageProperty",
@@ -2799,7 +5793,7 @@
                                     "qualifiers": []
                                 },
                                 {
-                                    "value": "Otto von Guericke Universität Magdeburg - LIA",
+                                    "value": "Otto von Guericke Universit\u00e4t Magdeburg - LIA",
                                     "semanticId": {
                                         "keys": [
                                             {
@@ -2817,7 +5811,7 @@
                                     "qualifiers": []
                                 },
                                 {
-                                    "value": "Otto von Guericke Universität Magdeburg - LIA",
+                                    "value": "Otto von Guericke Universit\u00e4t Magdeburg - LIA",
                                     "semanticId": {
                                         "keys": [
                                             {
@@ -2912,7 +5906,7 @@
                     "category": "CONSTANT",
                     "value": [
                         {
-                            "value": "Otto von Guericke Universität Magdeburg - LIA",
+                            "value": "Otto von Guericke Universit\u00e4t Magdeburg - LIA",
                             "semanticId": {
                                 "keys": [
                                     {
@@ -3304,7 +6298,7 @@
             "kind": "Instance",
             "submodelElements": [
                 {
-                    "value": "Otto von Guericke Universität Magdeburg",
+                    "value": "Otto von Guericke Universit\u00e4t Magdeburg",
                     "semanticId": {
                         "keys": [
                             {
@@ -3394,7 +6388,7 @@
                     "qualifiers": []
                 },
                 {
-                    "value": "Universität",
+                    "value": "Universit\u00e4t",
                     "semanticId": {
                         "keys": [
                             {
@@ -3412,7 +6406,7 @@
                     "qualifiers": []
                 },
                 {
-                    "value": "Otto von Guericke Universität Magdeburg",
+                    "value": "Otto von Guericke Universit\u00e4t Magdeburg",
                     "semanticId": {
                         "keys": [
                             {
@@ -4291,149 +7285,6 @@
             ],
             "modelType": "Submodel",
             "id": "www.company.com/ids/sm/9155_8012_0102_7883"
-        },
-        {
-            "idShort": "OperationalData",
-            "kind": "Instance",
-            "submodelElements": [
-                {
-                    "idShort": "BoringRequester",
-                    "value": [
-                        {
-                            "value": "BoringRequester",
-                            "idShort": "SkillName",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "SkillService",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "InitialState",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "Y",
-                            "idShort": "enabled",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "semanticProtocol",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "kind": "Instance",
-                    "modelType": "SubmodelElementCollection"
-                },
-                {
-                    "idShort": "TransportRequester",
-                    "value": [
-                        {
-                            "value": "TransportRequester",
-                            "idShort": "SkillName",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "SkillService",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "InitialState",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "Y",
-                            "idShort": "enabled",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "semanticProtocol",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "kind": "Instance",
-                    "modelType": "SubmodelElementCollection"
-                },
-                {
-                    "idShort": "HoningRequester",
-                    "value": [
-                        {
-                            "value": "HoningRequester",
-                            "idShort": "SkillName",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "SkillService",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "InitialState",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "Y",
-                            "idShort": "enabled",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "",
-                            "idShort": "semanticProtocol",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "kind": "Instance",
-                    "modelType": "SubmodelElementCollection"
-                }
-            ],
-            "modelType": "Submodel",
-            "id": "www.company.com/ids/sm/0055_4121_8002_0491",
-            "semanticId": {
-                "keys": [
-                    {
-                        "type": "Submodel",
-                        "value": "www.ovgu.de/submodel/operationaldata"
-                    }
-                ],
-                "type": "GlobalReference"
-            }
         }
     ],
     "conceptDescriptions": [
@@ -4463,7 +7314,7 @@
                         "definition": [
                             {
                                 "language": "DE",
-                                "text": "Bezeichnung für eine natürliche oder juristische Person, die für die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
+                                "text": "Bezeichnung f\u00fcr eine nat\u00fcrliche oder juristische Person, die f\u00fcr die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
                             },
                             {
                                 "language": "EN",
@@ -4553,7 +7404,7 @@
                         "definition": [
                             {
                                 "language": "DE",
-                                "text": "Sammlung für reale physische Adresse"
+                                "text": "Sammlung f\u00fcr reale physische Adresse"
                             },
                             {
                                 "language": "EN",
@@ -4966,7 +7817,7 @@
                         "definition": [
                             {
                                 "language": "DE",
-                                "text": "Jahreszahl als Datumsangabe für die Fertigstellung des Objektes"
+                                "text": "Jahreszahl als Datumsangabe f\u00fcr die Fertigstellung des Objektes"
                             },
                             {
                                 "language": "EN",
@@ -5011,7 +7862,7 @@
                         "definition": [
                             {
                                 "language": "DE",
-                                "text": "Sammlungsdatei für Produktkennzeichnung"
+                                "text": "Sammlungsdatei f\u00fcr Produktkennzeichnung"
                             },
                             {
                                 "language": "EN",
@@ -5159,7 +8010,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Adressinformationen zu einem Geschäftspartner"
+                                "text": "Adressinformationen zu einem Gesch\u00e4ftspartner"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -5219,7 +8070,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "administrative Abteilung einer Organisation, in der ein Geschäftspartner vertreten ist"
+                                "text": "administrative Abteilung einer Organisation, in der ein Gesch\u00e4ftspartner vertreten ist"
                             },
                             {
                                 "language": "en",
@@ -5269,7 +8120,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Straße"
+                                "text": "Stra\u00dfe"
                             }
                         ],
                         "shortName": [
@@ -5287,7 +8138,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Straßenname und Hausnummer"
+                                "text": "Stra\u00dfenname und Hausnummer"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -5653,7 +8504,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Ländercode"
+                                "text": "L\u00e4ndercode"
                             }
                         ],
                         "shortName": [
@@ -5735,7 +8586,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Umsatzsteuer-ID des Geschäftspartners"
+                                "text": "Umsatzsteuer-ID des Gesch\u00e4ftspartners"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -5799,7 +8650,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "einfacher Text, der Adressinformationen kennzeichnet, bei denen kein Merkmal zur Verfügung steht"
+                                "text": "einfacher Text, der Adressinformationen kennzeichnet, bei denen kein Merkmal zur Verf\u00fcgung steht"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -5845,7 +8696,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "zusätzlicher Online-Verweis"
+                                "text": "zus\u00e4tzlicher Online-Verweis"
                             }
                         ],
                         "shortName": [
@@ -5863,7 +8714,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Angabe einer Web-Adresse, die zusätzliche Informationen zum Produkt oder Kontaktdaten enthält"
+                                "text": "Angabe einer Web-Adresse, die zus\u00e4tzliche Informationen zum Produkt oder Kontaktdaten enth\u00e4lt"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -5991,7 +8842,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "vollständige Telefonnummer, unter der ein Geschäftspartner erreichbar ist"
+                                "text": "vollst\u00e4ndige Telefonnummer, unter der ein Gesch\u00e4ftspartner erreichbar ist"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -6119,7 +8970,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "vollständige Telefonnummer, unter der das Faxgerät eines Geschäftspartners erreichbar ist"
+                                "text": "vollst\u00e4ndige Telefonnummer, unter der das Faxger\u00e4t eines Gesch\u00e4ftspartners erreichbar ist"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -6183,7 +9034,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "E-Mail-Adresse und Angaben zur Verschlüsselung"
+                                "text": "E-Mail-Adresse und Angaben zur Verschl\u00fcsselung"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -6247,7 +9098,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "E-Mailadresse eines Geschäftspartners"
+                                "text": "E-Mailadresse eines Gesch\u00e4ftspartners"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -6311,7 +9162,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Sammlung für Produktkennzeichnungen"
+                                "text": "Sammlung f\u00fcr Produktkennzeichnungen"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -6364,7 +9215,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "erfasst Information über die Produktkennzeichnung"
+                                "text": "erfasst Information \u00fcber die Produktkennzeichnung"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -6418,7 +9269,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Marktüblicher Name der Produktkennzeichnung"
+                                "text": "Markt\u00fcblicher Name der Produktkennzeichnung"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -6582,7 +9433,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Bezeichnung für eine natürliche oder juristische Person, die für die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
+                                "text": "Bezeichnung f\u00fcr eine nat\u00fcrliche oder juristische Person, die f\u00fcr die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
                             },
                             {
                                 "language": "en",
@@ -6650,7 +9501,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Bilddatei für Logo des Herstellers im gebräuchlichem Format (.png, .jpg). "
+                                "text": "Bilddatei f\u00fcr Logo des Herstellers im gebr\u00e4uchlichem Format (.png, .jpg). "
                             },
                             {
                                 "language": "en",
@@ -6775,7 +9626,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "eindeutiger Bestellschlüssel des Herstellers"
+                                "text": "eindeutiger Bestellschl\u00fcssel des Herstellers"
                             },
                             {
                                 "language": "en",
@@ -6843,7 +9694,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "eindeutiger Bestellschlüssel des Herstellers um exakt gleiches Produkt zu bestellen"
+                                "text": "eindeutiger Bestellschl\u00fcssel des Herstellers um exakt gleiches Produkt zu bestellen"
                             },
                             {
                                 "language": "en",
@@ -6889,7 +9740,7 @@
                         "preferredName": [
                             {
                                 "language": "de",
-                                "text": "Bilddatei für Produkt"
+                                "text": "Bilddatei f\u00fcr Produkt"
                             },
                             {
                                 "language": "en",
@@ -6911,7 +9762,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Bilddatei für das assozierte Produkt im gebräuchlichem Format (.png, .jpg). "
+                                "text": "Bilddatei f\u00fcr das assozierte Produkt im gebr\u00e4uchlichem Format (.png, .jpg). "
                             },
                             {
                                 "language": "en",
@@ -6968,7 +9819,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Produktklassifizierungen durch Assoziation mit Produktklassen in gebräuchlichen Klassifizierungssystemen."
+                                "text": "Produktklassifizierungen durch Assoziation mit Produktklassen in gebr\u00e4uchlichen Klassifizierungssystemen."
                             },
                             {
                                 "language": "en",
@@ -7082,7 +9933,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Gebräuchlicher Name für das Produkt-Klassifikationssystem"
+                                "text": "Gebr\u00e4uchlicher Name f\u00fcr das Produkt-Klassifikationssystem"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -7245,7 +10096,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Merkmal, welches nicht über ein gebräuchliches Klassifikationssystem beschrieben ist"
+                                "text": "Merkmal, welches nicht \u00fcber ein gebr\u00e4uchliches Klassifikationssystem beschrieben ist"
                             },
                             {
                                 "language": "en",
@@ -7280,7 +10131,7 @@
                         "preferredName": [
                             {
                                 "language": "de",
-                                "text": "Hauptsektion für Merkmale"
+                                "text": "Hauptsektion f\u00fcr Merkmale"
                             },
                             {
                                 "language": "en",
@@ -7302,7 +10153,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Haupt-Unterteilungsmöglichkeit für Merkmale. Kann über idShort benannt werden."
+                                "text": "Haupt-Unterteilungsm\u00f6glichkeit f\u00fcr Merkmale. Kann \u00fcber idShort benannt werden."
                             },
                             {
                                 "language": "en",
@@ -7337,7 +10188,7 @@
                         "preferredName": [
                             {
                                 "language": "de",
-                                "text": "Untersektion für Merkmale"
+                                "text": "Untersektion f\u00fcr Merkmale"
                             },
                             {
                                 "language": "en",
@@ -7359,7 +10210,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Untergeordnete Unterteilungsmöglichkeit für Merkmale. Kann über idShort benannt werden."
+                                "text": "Untergeordnete Unterteilungsm\u00f6glichkeit f\u00fcr Merkmale. Kann \u00fcber idShort benannt werden."
                             },
                             {
                                 "language": "en",
@@ -7416,7 +10267,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Weiterführende Informationen zum Produkt, der Gültigkeit der gemachten Angaben und zu diesem Datensatz"
+                                "text": "Weiterf\u00fchrende Informationen zum Produkt, der G\u00fcltigkeit der gemachten Angaben und zu diesem Datensatz"
                             },
                             {
                                 "language": "en",
@@ -7461,7 +10312,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Gültig am"
+                                "text": "G\u00fcltig am"
                             }
                         ],
                         "unit": "",
@@ -7473,7 +10324,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Aussage in Textform, etwa Gültigkeitsbereich der Aussagen."
+                                "text": "Aussage in Textform, etwa G\u00fcltigkeitsbereich der Aussagen."
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -7500,7 +10351,7 @@
                         "preferredName": [
                             {
                                 "language": "DE",
-                                "text": "Informationen gültig am"
+                                "text": "Informationen g\u00fcltig am"
                             },
                             {
                                 "language": "EN",
@@ -7514,7 +10365,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Gültig am"
+                                "text": "G\u00fcltig am"
                             }
                         ],
                         "unit": "",
@@ -7526,7 +10377,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Bezeichnet ein Datum, an welchem die im Submodel genannten Daten für das assoziierte Produkt gültig waren. Etwa: Tag der letzten Aktualisierung der Daten."
+                                "text": "Bezeichnet ein Datum, an welchem die im Submodel genannten Daten f\u00fcr das assoziierte Produkt g\u00fcltig waren. Etwa: Tag der letzten Aktualisierung der Daten."
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
