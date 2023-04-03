@@ -65,17 +65,18 @@ class ProductionStepOrder:
         self.pyaas = pyaas
         self.gen = Generic()
 
-    def createTransportStepOrder(self, aas_id, current_conv_id) -> str:
+    def createTransportStepOrder(self, aasIdentifier, current_conv_id) -> str:
         """
 
         """
         conversation_id = current_conv_id + "_1"
         self.pyaas.dba.createNewConversation(conversation_id)
         self.pyaas.conversationInteractionList.append(conversation_id)
-        self.pyaas.conversationIdList[aas_id].append(conversation_id)
-        if len(self.pyaas.conversationIdList) > 5:
-            del self.pyaas.conversationIdList[
-                0]  # if length of conversation id list is greater than 0 delete an element
+        
+        _uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier)._id
+        shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
+        shellObject.add_conversationId(conversation_id)
+            
         return conversation_id
 
     def createStepOrderConversation(self, aasId, conversation_id) -> str:
@@ -663,12 +664,59 @@ class SubscriptionMessage:
         self.modelType = modelType
         self.subscriptiondata = subscriptiondata
 
+class CarbonFootPrintObject:
+    def __init__(self,_coversationId):
+        self.startTime = ""
+        self.endTime = ""
+        self.totalTime = 0
+        self._cfp = 0
+        self.skillName = ""
+    
+    def setProperties(self,endTime,_cfp):
+        self._cfp = _cfp
+        self.endTime = endTime
+        self.totalTime = self.endTime - self.startTime
+    
+    def formatStartTime(self):
+        try:
+            return self.startTime.strftime("%Y-%m-%d %H:%M:%S")
+        except Exception as E:
+            return ""
 
+    def formatEndTime(self):
+        try:
+            return self.endTime.strftime("%Y-%m-%d %H:%M:%S")
+        except Exception as E:
+            return ""
+    
+    def getTotalTime(self):
+        try:
+            return self.totalTime.seconds
+        except Exception as E:
+            return 0    
+        
+    def getProperties(self):
+        return [self.skillName,self.formatStartTime(),self.formatEndTime(),
+                self.getTotalTime(),self._cfp]
+    
 class ConversationObject:
     def __init__(self, _coversationId):
         self._coversationId = _coversationId
         self.messages = []
-
+        self.cfpList = dict()
+    
+    def _createNewCFPObject(self,skillName,startTime,_uuid,coversationId):
+        cfpObject = CarbonFootPrintObject(coversationId);
+        cfpObject.skillName =  skillName
+        cfpObject.startTime =  startTime
+        self.cfpList[_uuid] =  cfpObject
+    
+    def modifyCFPObject(self,_uuid,endTime,_cfp):
+        self.cfpList[_uuid].setProperties(endTime,_cfp)
+    
+    def getCFPList(self):
+        return [ (self.cfpList[_key]).getProperties() for _key in self.cfpList.keys()]
+    
     def _insertMessage(self, messageType, messageId, direction, message, entryTime, SenderAASID):
         _message = {
             "messageType": messageType,
@@ -682,14 +730,17 @@ class ConversationObject:
 
     def _getMessages(self, identificationId):
         returnData = {"inbound": [], "outbound": [], "internal": []}
-        for message in self.messages:
-            if (message["SenderAASID"] == "Broadcast" or message["SenderAASID"] == identificationId):
-                if (message["direction"] == "inbound"):
-                    returnData["inbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
-                elif (message["direction"] == "outbound"):
-                    returnData["outbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
-                elif (message["direction"] == "internal"):
-                    returnData["internal"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
+        try:
+            for message in self.messages:
+                if (message["SenderAASID"] == "Broadcast" or message["SenderAASID"] == identificationId):
+                    if (message["direction"] == "inbound"):
+                        returnData["inbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
+                    elif (message["direction"] == "outbound"):
+                        returnData["outbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
+                    elif (message["direction"] == "internal"):
+                        returnData["internal"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
+        except Exception as E:
+            pass
         return returnData
 
     def _getMessage(self, messageId):

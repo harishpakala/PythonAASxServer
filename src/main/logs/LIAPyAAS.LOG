@@ -1,0 +1,1043 @@
+04/02/2023 11:18:11 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 11:18:11 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 11:18:11 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 11:18:11 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 11:18:12 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 11:18:12 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 11:18:13 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:18:14 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 11:19:05 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 11:19:05 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 11:19:05 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 11:19:05 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 11:19:05 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 11:19:05 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 11:19:06 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:19:07 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 11:21:35 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 11:21:35 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 11:21:35 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 11:21:35 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 11:21:35 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 11:21:35 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 11:21:36 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:21:37 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 11:40:25 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 11:40:25 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 11:40:25 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 11:40:25 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 11:40:25 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 11:40:25 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:40:26 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 11:45:21 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 11:45:21 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 11:45:21 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 11:45:21 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 11:45:22 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:45:23 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 11:47:44 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 11:47:44 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 11:47:44 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 11:47:44 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 11:47:44 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 11:47:44 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:47:45 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 11:49:50 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 11:49:50 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 11:49:50 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 11:49:50 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 11:49:51 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 11:49:52 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 11:49:52 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 11:49:52 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:05:33 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:05:33 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:05:33 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:05:33 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:05:34 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:05:34 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:05:35 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:09:28 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:09:28 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:09:28 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:09:28 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:09:29 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:09:29 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:09:29 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:09:30 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:26:28 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:26:28 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:26:28 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:26:28 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:26:29 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:26:29 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:26:29 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:26:29 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:26:29 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:26:29 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:26:29 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:26:30 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:26:30 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:26:30 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:26:30 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:26:30 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:26:30 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:30:24 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:30:24 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:30:24 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:30:24 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:30:27 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:30:28 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:30:28 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:33:12 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:33:12 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:33:12 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:33:12 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:33:13 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:33:14 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:33:14 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:33:14 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:33:14 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:35:48 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:35:48 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:35:48 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:35:48 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:35:52 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:35:52 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:35:54 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:35:54 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:35:54 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:35:54 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:35:54 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:35:54 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:35:54 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:35:55 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:35:55 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:35:55 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:35:55 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:39:23 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:39:23 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:39:23 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:39:23 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:39:27 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:39:27 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:39:29 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:39:30 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:43:11 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:43:11 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:43:11 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:43:11 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:43:13 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:43:13 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:43:15 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:43:16 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:46:10 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:46:10 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:46:10 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:46:10 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:46:13 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:46:13 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:46:14 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:46:15 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:48:42 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:48:42 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:48:42 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:48:42 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:48:44 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:48:44 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:48:46 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:48:47 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:52:40 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:52:40 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:52:40 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:52:40 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:52:42 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:52:42 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:52:44 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 05:58:33 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 05:58:33 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 05:58:33 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 05:58:33 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 05:58:33 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 05:58:33 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 05:58:34 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 05:58:35 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:01:21 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:01:21 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:01:21 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:01:21 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:01:24 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:01:24 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:01:27 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:01:28 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:01:36 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:01:36 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:01:36 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:01:36 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:01:39 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:01:39 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:01:42 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:04:44 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:04:44 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:04:44 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:04:44 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:04:45 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:04:45 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:04:46 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:11:38 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:11:38 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:11:38 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:11:38 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:11:39 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:13:20 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:13:20 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:13:20 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:13:20 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:13:21 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:13:21 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:13:22 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:13:23 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:17:14 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:17:14 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:17:14 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:17:14 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:17:15 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:17:16 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:17:16 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:17:16 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:20:25 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:20:25 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:20:25 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:20:25 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:20:28 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:20:28 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:20:29 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:33:33 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:33:33 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:33:33 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:33:33 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:33:34 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:33:34 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:33:35 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:33:36 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:33:40 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:33:41 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:49:35 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:49:36 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:49:36 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:49:36 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:49:57 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:49:59 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:49:59 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:49:59 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:49:59 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:50:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:50:01 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:55:40 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:55:41 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 06:58:28 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 06:58:29 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 07:00:53 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 07:00:53 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 07:00:53 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 07:00:53 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 07:00:54 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 07:05:35 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 07:05:36 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:36:22 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:36:22 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:36:22 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:36:22 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:36:24 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:36:25 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:37:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:37:01 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:40:51 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:40:52 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:40:52 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:42:31 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:42:31 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:42:31 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:42:31 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:42:32 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:42:33 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:43:57 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:43:58 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:43:58 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:43:58 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:43:58 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:43:58 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:45:04 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:45:04 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:45:04 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:45:04 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:45:04 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:45:04 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:45:05 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:46:37 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:46:38 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:51:08 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:51:08 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:51:08 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:51:08 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:51:09 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 09:56:59 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 09:57:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 09:57:00 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 10:00:27 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 10:00:27 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 10:00:27 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 10:00:27 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 10:00:27 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 10:00:27 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 10:00:27 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:00:28 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 10:11:45 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 10:11:46 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:11:46 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 10:11:46 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 10:11:46 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 10:11:46 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:11:46 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 10:13:01 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 10:13:01 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 10:13:01 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 10:13:01 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 10:13:02 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:13:03 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 10:15:08 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:15:09 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 10:16:21 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 10:16:21 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 10:16:21 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 10:16:21 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 10:16:22 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:16:23 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 10:17:55 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:17:56 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/02/2023 10:21:05 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/02/2023 10:21:05 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/02/2023 10:21:05 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/02/2023 10:21:05 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/02/2023 10:21:05 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/02/2023 10:21:05 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/02/2023 10:21:06 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 08:17:44 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 08:17:45 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:17:45 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 08:27:21 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 08:27:21 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 08:27:21 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 08:27:21 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 08:27:21 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 08:27:21 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 08:27:21 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:27:23 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 08:31:05 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 08:31:05 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 08:31:05 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 08:31:05 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 08:31:05 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 08:31:05 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 08:31:06 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 08:31:30 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 08:31:30 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 08:31:30 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 08:31:30 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 08:31:30 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 08:31:30 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 08:31:30 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 08:31:31 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:31:32 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 08:35:59 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 08:35:59 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 08:35:59 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 08:35:59 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 08:36:00 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 08:36:00 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 08:36:00 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 08:36:01 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:36:02 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 08:44:02 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 08:44:02 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 08:44:02 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 08:44:02 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 08:44:02 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 08:44:02 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 08:44:02 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:44:03 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 08:47:18 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 08:47:18 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 08:47:18 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 08:47:18 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 08:47:19 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 08:47:20 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 09:08:43 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 09:08:43 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 09:08:43 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 09:08:43 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 09:08:43 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 09:08:43 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 09:08:44 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 09:12:45 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 09:12:45 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 09:12:45 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 09:12:45 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 09:12:45 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 09:12:45 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 09:12:45 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 09:12:46 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 09:12:47 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 10:39:29 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 10:39:30 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 10:39:30 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 10:39:30 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 10:39:30 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 10:39:30 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/03/2023 10:40:06 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/03/2023 10:40:06 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/03/2023 10:40:06 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/03/2023 10:40:06 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StampingRequester'
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - Error configuring skill @configure_skill_by_id 'StoringRequester'
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/03/2023 10:40:07 AM - PyAASxServer Service Instance - INFO - The Skills are Started

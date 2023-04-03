@@ -611,9 +611,9 @@ class waitforStepOrderCompletion(object):
             self.baseClass.waitforStepOrderCompletion_In["interactionElements"][0]["submodelElements"][1]["value"]
             self.baseClass.responseMessage["message"] = \
             self.baseClass.waitforStepOrderCompletion_In["interactionElements"][0]["submodelElements"][2]["value"]
+            self.baseClass.CFPList.append(self.baseClass.waitforStepOrderCompletion_In["interactionElements"][0]["submodelElements"][3]["value"])
 
             if (self.orderStatus == "E"):
-
                 self.excProductionStepSeq_Enabled = True
             else:
                 self.sendFailureResponse_Enabled = False
@@ -694,6 +694,7 @@ class sendCompletionResponse(object):
         self.InElem["submodelElements"][0]["value"] = self.baseClass.responseMessage["status"]
         self.InElem["submodelElements"][1]["value"] = self.baseClass.responseMessage["code"]
         self.InElem["submodelElements"][2]["value"] = self.baseClass.responseMessage["message"]
+         
         self.baseClass.responseMessage = {}
 
     def create_Outbound_Message(self):
@@ -853,7 +854,8 @@ class ProductionManager(object):
         self.gen = Generic()
         self.createStatusMessage()
         self.responseMessage = {}
-
+        self.CFPList = []
+        
     def start(self,msgHandler,shellObject,_uuid) -> None:
         self.msgHandler = msgHandler
         self.shellObject = shellObject

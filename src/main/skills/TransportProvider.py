@@ -10,12 +10,13 @@ try:
     import queue as Queue
 except ImportError:
     import Queue as Queue 
-
+import base64
 import logging
 import sys
 import time
 import uuid
-
+from opcua import ua
+from opcua.ua.uatypes import DataValue
 try:
     from utils.i40data import Generic
 except ImportError:
@@ -25,7 +26,10 @@ try:
     from utils.aaslog import ServiceLogHandler,LogList
 except ImportError:
     from main.utils.aaslog import ServiceLogHandler,LogList
-
+try:
+    from utils.utils import ExecuteDBModifier
+except ImportError:
+    from main.utils.utils import ExecuteDBModifier
 '''
     The skill generator extracts all the states from the transitions list.
     For each STATE, a seperate python class is created. This python class has two main
@@ -140,7 +144,7 @@ except ImportError:
         "type" : ,
         "messageId":messageId,
         "SenderAASID" : self.base_class.aasID,
-        "SenderRolename" : "TransportRequester",
+        "SenderRolename" : "TransportProvider",
         "conversationId" : "AASNetworkedBidding",
         "replyBy" :  "",   # "The communication protocol that the AAS needs to use while sending message to other AAS."
         "replyTo" : "",    # "The communication protocol that the receipient AAS should use for reply"   
@@ -186,12 +190,13 @@ except ImportError:
                                                             "messageType":message["frame"]["type"],
                                                             "messageId":message["frame"]["messageId"],
                                                             "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":message})
         
     
 '''
     
-class WaitforInformConfirm:
+class sendingProposal:
     
     def __init__(self, base_class):
         """
@@ -201,239 +206,46 @@ class WaitforInformConfirm:
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
                 
-        self.sendCompletionResponse_Enabled = True
+        self.waitingforServiceRequesterAnswer_Enabled = True
     
-    def retrieve_WaitforInformConfirm_Message(self) -> None:
-        """
-            Method to retrieve the inbound i4.0 message from the relevant queue.
-            The retrieved message is assigned to the dictionary variabel designed
-            in the base clase. The Variable and the queue name are based on the 
-            current state.
-        """
-        self.base_class.WaitforInformConfirm_In = self.base_class.WaitforInformConfirm_Queue.get()
-    
-    def saveMessage(self) -> None:
-        """
-            Method to save the message into the database
-        """
-        inboundQueueList = list(self.base_class.WaitforInformConfirm_Queue.queue) # in case for further processing is required
-        # else creation of the new queue is not required.
-        for i in range (0, self.base_class.WaitforInformConfirm_Queue.qsize()):
-            message = inboundQueueList[i]
-            self.instanceId = str(uuid.uuid1())
-            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
-                                                            "conversationId":message["frame"]["conversationId"],
-                                                            "messageType":message["frame"]["type"],
-                                                            "messageId":message["frame"]["messageId"],
-                                                            "direction": "inbound",
-                                                            "SenderAASID" : message["frame"]["sender"]["id"],
-                                                            "message":message})
-            
 
-    def WaitforInformConfirm_Logic(self):
+    def sendingProposal_Logic(self):
         """
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.base_class.responseMessage["status"] = "S"
-        self.base_class.responseMessage["code"] = "A.013"
-        self.base_class.responseMessage["message"] =  "The Order is Succesfully Executed."          
-    
-    def run(self) -> None:
-        """
-            This method is first called form the base class after instantiating the
-            class. The method executes the entire of the state.
-        """
-        self.base_class.skillLogger.info("\n #############################################################################")
-        # StartState
-        self.base_class.skillLogger.info("StartState: WaitforInformConfirm")
-        # InputDocumentType"
-        InputDocument = "informConfirm"
-        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
-        
-        '''
-            In case a class expects an input document then.
-            It would need to lookup to its specific queue
-            that is defined in the based class
-        '''
-        if (InputDocument != "NA"):
-            self.messageExist = True
-            i = 0
-            sys.stdout.write(" Waiting for response")
-            sys.stdout.flush()
-            while (((self.base_class.WaitforInformConfirm_Queue).qsize()) == 0):
-                time.sleep(1)
-                i = i + 1 
-                if i > 60: # Time to wait the next incoming message
-                    self.messageExist = False # If the waiting time expires, the loop is broken
-                    break
-            if (self.messageExist):
-                self.saveMessage() # in case we need to store the incoming message
-                self.retrieve_WaitforInformConfirm_Message() # in case of multiple inbound messages this function should 
-                                                      # not be invoked. 
-        self.WaitforInformConfirm_Logic()
-        
-    def next(self) -> object:
-        """
-            This methods returns the object to the next state the needs
-            to be executed by the base class
-        """
-        OutputDocument = "NA"
-        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
-        
-        
-        if (self.sendCompletionResponse_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = sendCompletionResponse(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        
-class WaitForSPProposal:
-    
-    def __init__(self, base_class):
-        """
-        """
-        self.base_class = base_class
-        
-        #Transition to the next state is enabled using the targetState specific Boolen Variable
-        # for each target there will be a separate boolean variable
-                
-        self.noProposalReceived_Enabled = True
-        self.EvaluateProposal_Enabled = True
-    
-    def retrieve_WaitForSPProposal_Message(self) -> None:
-        """
-            Method to retrieve the inbound i4.0 message from the relevant queue.
-            The retrieved message is assigned to the dictionary variabel designed
-            in the base clase. The Variable and the queue name are based on the 
-            current state.
-        """
-        self.base_class.WaitForSPProposal_In = self.base_class.WaitForSPProposal_Queue.get()
-    
-    def saveMessage(self) -> None:
-        """
-            Method to save the message into the database
-        """
-        inboundQueueList = list(self.base_class.WaitForSPProposal_Queue.queue) # in case for further processing is required
-        # else creation of the new queue is not required.
-        for i in range (0, self.base_class.WaitForSPProposal_Queue.qsize()):
-            message = inboundQueueList[i]
-            self.instanceId = str(uuid.uuid1())
-            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
-                                                            "conversationId":message["frame"]["conversationId"],
-                                                            "messageType":message["frame"]["type"],
-                                                            "messageId":message["frame"]["messageId"],
-                                                            "direction": "inbound",
-                                                            "SenderAASID" : message["frame"]["sender"]["id"],
-                                                            "message":message})
-            
 
-    def WaitForSPProposal_Logic(self):
-        """
-            The actualy logic this state  goes into this method.
-            It is upto the developer to add the relevant code.
-        """
-        if (self.messageExist):
-            self.noProposalReceived_Enabled = False
-        else:
-            self.EvaluateProposal_Enabled = False        
-    
-    def run(self) -> None:
-        """
-            This method is first called form the base class after instantiating the
-            class. The method executes the entire of the state.
-        """
-        self.base_class.skillLogger.info("\n #############################################################################")
-        # StartState
-        self.base_class.skillLogger.info("StartState: WaitForSPProposal")
-        # InputDocumentType"
-        InputDocument = "proposal"
-        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
-        
-        '''
-            In case a class expects an input document then.
-            It would need to lookup to its specific queue
-            that is defined in the based class
-        '''
-        if (InputDocument != "NA"):
-            self.messageExist = True
-            i = 0
-            sys.stdout.write(" Waiting for response")
-            sys.stdout.flush()
-            while (((self.base_class.WaitForSPProposal_Queue).qsize()) == 0):
-                time.sleep(1)
-                i = i + 1 
-                if i > 20: # Time to wait the next incoming message
-                    self.messageExist = False # If the waiting time expires, the loop is broken
-                    break
-            if (self.messageExist):
-                self.saveMessage() # in case we need to store the incoming message
-                #self.retrieve_WaitForSPProposal_Message() # in case of multiple inbound messages this function should 
-                                                        # not be invoked. 
-        self.WaitForSPProposal_Logic()
-        
-    def next(self) -> object:
-        """
-            This methods returns the object to the next state the needs
-            to be executed by the base class
-        """
-        OutputDocument = "NA"
-        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
-        
-        
-        if (self.noProposalReceived_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = noProposalReceived(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        if (self.EvaluateProposal_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = EvaluateProposal(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        
-class sendCompletionResponse:
-    
-    def __init__(self, base_class):
-        """
-        """
-        self.base_class = base_class
-        
-        #Transition to the next state is enabled using the targetState specific Boolen Variable
-        # for each target there will be a separate boolean variable
-                
-        self.WaitforNewOrder_Enabled = True
-
-    def set_cfp_properties(self,conversationId,_cfp):
-        endTime = datetime.now()
-        self.base_class.pyaas.dba.modifyCFPObject(self.base_class.cfp_uid,endTime,
-                                                  _cfp,conversationId)
-    def sendCompletionResponse_Logic(self):
-        """
-            The actualy logic this state  goes into this method.
-            It is upto the developer to add the relevant code.
-        """
-        self.InElem = self.base_class.StatusResponseSM
-        self.InElem[0]["submodelElements"][0]["value"] = self.base_class.responseMessage["status"]
-        self.InElem[0]["submodelElements"][1]["value"] = self.base_class.responseMessage["code"]
-        self.InElem[0]["submodelElements"][2]["value"] = self.base_class.responseMessage["message"]
-        self.set_cfp_properties(self.base_class.WaitforNewOrder_In["frame"]["conversationId"],
-                                self.base_class.CFP)
-        self.base_class.responseMessage = {}
-
-        
+    def getPropertyElem(self,iSubmodel,propertyName):
+        for submodelELem in iSubmodel["submodelElements"]:
+            if submodelELem["idShort"] =="CommercialProperties":
+                for sproperty in submodelELem["value"]:
+                    if sproperty["idShort"] == propertyName:
+                        return sproperty
+                   
+    def addPropertyElems(self,oSubmodel1,iSubmodel1):
+        self.oSubmodel1 = oSubmodel1
+        self.iSubmodel1 = iSubmodel1
+        i = 0
+        listPrice = self.getPropertyElem(self.iSubmodel1,"listprice")
+        CFP = self.getPropertyElem(self.iSubmodel1,"cfp")
+        for submodelELem in self.oSubmodel1["submodelElements"]:
+            if submodelELem["idShort"] =="CommercialProperties":
+                self.oSubmodel1["submodelElements"][i]["value"].append(listPrice)
+                self.oSubmodel1["submodelElements"][i]["value"].append(CFP)
+                break
+            i = i + 1
+        return self.oSubmodel1
+           
     def create_Outbound_Message(self) -> list:
         """
             The method is used to create the outbound I4.0 messages.
             The message type is carried from the json file.
         """
-        self.oMessages = "OrderStatus".split("/")
+        self.oMessages = "proposal".split("/")
         outboundMessages = []
         for oMessage in self.oMessages:
-            message = self.base_class.WaitforNewOrder_In
+            import copy
+            message = copy.deepcopy(self.base_class.WaitForCallForProposal_In)
             self.gen = Generic()
             #receiverId = "" # To be decided by the developer
             #receiverRole = "" # To be decided by the developer
@@ -456,312 +268,6 @@ class sendCompletionResponse:
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
                                     "replyBy" :  "",
-                                    "replyTo" :  message["frame"]["replyBy"],
-                                    "ReceiverAASID" :  receiverId,
-                                    "ReceiverRolename" : receiverRole
-                                }
-        
-            self.frame = self.gen.createFrame(I40FrameData)
-    
-            # oMessage_Out = {"frame": self.frame}
-            # Usually the interaction Elements are the submodels fro that particualar skill
-            # the relevant submodel could be retrieved using
-            # interactionElements
-            
-            #submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("submodelIdentifier")
-            oMessage_Out ={"frame": self.frame,
-                                    "interactionElements":self.InElem}
-            self.instanceId = str(uuid.uuid1())
-            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
-                                                            "conversationId":oMessage_Out["frame"]["conversationId"],
-                                                            "messageType":oMessage_Out["frame"]["type"],
-                                                            "messageId":oMessage_Out["frame"]["messageId"],
-                                                            "direction" : "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
-                                                            "message":oMessage_Out})
-            outboundMessages.append(oMessage_Out)
-        return outboundMessages
-    
-    def run(self) -> None:
-        """
-            This method is first called form the base class after instantiating the
-            class. The method executes the entire of the state.
-        """
-        self.base_class.skillLogger.info("\n #############################################################################")
-        # StartState
-        self.base_class.skillLogger.info("StartState: sendCompletionResponse")
-        # InputDocumentType"
-        InputDocument = "NA"
-        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
-        
-        self.sendCompletionResponse_Logic()
-        
-    def next(self) -> object:
-        """
-            This methods returns the object to the next state the needs
-            to be executed by the base class
-        """
-        OutputDocument = "OrderStatus"
-        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
-        
-        if (OutputDocument != "NA"):
-            self.outboundMessages = self.create_Outbound_Message()
-            for outbMessage in self.outboundMessages:
-                self.base_class.sendMessage(outbMessage)
-        
-        if (self.WaitforNewOrder_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = WaitforNewOrder(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        
-class cfpConfiguration:
-    
-    def __init__(self, base_class):
-        """
-        """
-        self.base_class = base_class
-        
-        #Transition to the next state is enabled using the targetState specific Boolen Variable
-        # for each target there will be a separate boolean variable
-                
-        self.sendCompletionResponse_Enabled = True
-        self.SendCFP_Enabled = True
-    
-
-    def cfpConfiguration_Logic(self):
-        """
-            The actual logic this state  goes into this method.
-            It is upto the developer to add the relevant code.
-        """
-        if (len(self.base_class.WaitforNewOrder_In["interactionElements"]) == 1):
-            transportIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][0][0]
-            transport_submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(transportIdentifier)
-            if transport_submodel["semanticId"]["keys"][0]["value"] == "0173-1#01-ADR740#004":
-                self.sendCompletionResponse_Enabled = False
-            else:
-                    self.base_class.responseMessage["status"] = "E"
-                    self.base_class.responseMessage["code"] = "E.01"
-                    self.base_class.responseMessage["message"] =  "The Transport submodel is not provided"
-                    self.SendCFP_Enabled = False
-        else:
-            self.base_class.responseMessage["status"] = "E"
-            self.base_class.responseMessage["code"] = "E.01"
-            self.base_class.responseMessage["message"] =  "No submodel Id is provided"
-            self.SendCFP_Enabled = False
-    
-    def run(self) -> None:
-        """
-            This method is first called form the base class after instantiating the
-            class. The method executes the entire of the state.
-        """
-        self.base_class.skillLogger.info("\n #############################################################################")
-        # StartState
-        self.base_class.skillLogger.info("StartState: cfpConfiguration")
-        # InputDocumentType"
-        InputDocument = "NA"
-        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
-        
-        self.cfpConfiguration_Logic()
-        
-    def next(self) -> object:
-        """
-            This methods returns the object to the next state the needs
-            to be executed by the base class
-        """
-        OutputDocument = "NA"
-        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
-        
-        
-        if (self.sendCompletionResponse_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = sendCompletionResponse(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        if (self.SendCFP_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = SendCFP(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        
-class sendrejectProposal:
-    
-    def __init__(self, base_class):
-        """
-        """
-        self.base_class = base_class
-        
-        #Transition to the next state is enabled using the targetState specific Boolen Variable
-        # for each target there will be a separate boolean variable
-                
-        self.sendCompletionResponse_Enabled = True
-        self.sendacceptProposal_Enabled = True
-    
-
-    def sendrejectProposal_Logic(self):
-        """
-            The actualy logic this state  goes into this method.
-            It is upto the developer to add the relevant code.
-        """
-        if (self.base_class.sendacceptProposal_Queue.qsize() == 0):
-            self.sendacceptProposal_Enabled = False
-            self.base_class.responseMessage["status"] = "E"
-            self.base_class.responseMessage["code"] = "E.06"
-            self.base_class.responseMessage["message"] =  "None of the provider is selected."           
-        else:
-            self.sendCompletionResponse_Enabled = False
-        
-    def create_Outbound_Message(self) -> list:
-        """
-            The method is used to create the outbound I4.0 messages.
-            The message type is carried from the json file.
-        """
-        self.oMessages = "rejectProposal".split("/")
-        outboundMessages = []
-        for oMessage in self.oMessages:
-            message = self.base_class.sendrejectProposal_Queue.get()
-            self.gen = Generic()
-            #receiverId = "" # To be decided by the developer
-            #receiverRole = "" # To be decided by the developer
-            
-            # For broadcast message the receiverId and the 
-            # receiverRole could be empty 
-            
-            # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["id"]
-            receiverRole = message["frame"]["sender"]["role"]["name"]
-            
-            # For sending the message to an internal skill
-            # The receiver Id should be
-            
-            I40FrameData =      {
-                                    "semanticProtocol": self.base_class.semanticProtocol,
-                                    "type" : oMessage,
-                                    "messageId" : oMessage+"_"+str(self.base_class.pyaas.dba.getMessageCount()[0]+1),
-                                    "SenderAASID" : self.base_class.aasID,
-                                    "SenderRolename" : self.base_class.skillName,
-                                    "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
-                                    "replyTo" :  message["frame"]["replyBy"],
-                                    "ReceiverAASID" :  receiverId,
-                                    "ReceiverRolename" : receiverRole
-                                }
-        
-            self.frame = self.gen.createFrame(I40FrameData)
-    
-            oMessage_Out = {"frame": self.frame,"interactionElements":[]}
-            # Usually the interaction Elements are the submodels fro that particualar skill
-            # the relevant submodel could be retrieved using
-            # interactionElements
-            
-            #submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("submodelIdentifier")
-            #oMessage_Out ={"frame": self.frame,
-            #                        "interactionElements":submodel}
-            self.instanceId = str(uuid.uuid1())
-            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
-                                                            "conversationId":oMessage_Out["frame"]["conversationId"],
-                                                            "messageType":oMessage_Out["frame"]["type"],
-                                                            "messageId":oMessage_Out["frame"]["messageId"],
-                                                            "direction" : "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
-                                                            "message":oMessage_Out})
-            outboundMessages.append(oMessage_Out)
-        return outboundMessages
-    
-    def run(self) -> None:
-        """
-            This method is first called form the base class after instantiating the
-            class. The method executes the entire of the state.
-        """
-        self.base_class.skillLogger.info("\n #############################################################################")
-        # StartState
-        self.base_class.skillLogger.info("StartState: sendrejectProposal")
-        # InputDocumentType"
-        InputDocument = "NA"
-        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
-        
-        self.sendrejectProposal_Logic()
-        
-    def next(self) -> object:
-        """
-            This methods returns the object to the next state the needs
-            to be executed by the base class
-        """
-        OutputDocument = "rejectProposal"
-        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
-        
-        if (OutputDocument != "NA"):
-            if (self.base_class.sendrejectProposal_Queue).qsize() > 0:
-                self.outboundMessages = self.create_Outbound_Message()
-                for outbMessage in self.outboundMessages:
-                    self.base_class.sendMessage(outbMessage)
-        
-        if (self.sendCompletionResponse_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = sendCompletionResponse(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        if (self.sendacceptProposal_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = sendacceptProposal(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        
-class SendCFP:
-    
-    def __init__(self, base_class):
-        """
-        """
-        self.base_class = base_class
-        
-        #Transition to the next state is enabled using the targetState specific Boolen Variable
-        # for each target there will be a separate boolean variable
-                
-        self.WaitForSPProposal_Enabled = True
-    
-
-    def SendCFP_Logic(self):
-        """
-            The actualy logic this state  goes into this method.
-            It is upto the developer to add the relevant code.
-        """
-        
-    def create_Outbound_Message(self) -> list:
-        """
-            The method is used to create the outbound I4.0 messages.
-            The message type is carried from the json file.
-        """
-        self.oMessages = "callForProposal".split("/")
-        outboundMessages = []
-        for oMessage in self.oMessages:
-            message = self.base_class.WaitforNewOrder_In
-            self.gen = Generic()
-            #receiverId = "" # To be decided by the developer
-            #receiverRole = "" # To be decided by the developer
-            
-            # For broadcast message the receiverId and the 
-            # receiverRole could be empty 
-            
-            # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["id"]
-            receiverRole = "TransportProvider"#message["frame"]["sender"]["role"]["name"]
-            
-            # For sending the message to an internal skill
-            # The receiver Id should be
-            
-            I40FrameData =      {
-                                    "semanticProtocol": self.base_class.semanticProtocol,
-                                    "type" : oMessage,
-                                    "messageId" : oMessage+"_"+str(self.base_class.pyaas.dba.getMessageCount()[0]+1),
-                                    "SenderAASID" : self.base_class.aasID,
-                                    "SenderRolename" : self.base_class.skillName,
-                                    "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
@@ -773,17 +279,19 @@ class SendCFP:
             # Usually the interaction Elements are the submodels fro that particualar skill
             # the relevant submodel could be retrieved using
             # interactionElements
-            submodelIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][0][0]
-            submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(submodelIdentifier)
+            
+            self.InElem,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/4494_7040_1122_9311")
+            transportSubmodel = self.addPropertyElems(message["interactionElements"][0],self.InElem)
             oMessage_Out ={"frame": self.frame,
-                                    "interactionElements":[submodel]}
+                                    "interactionElements":[transportSubmodel]}
+            
             self.instanceId = str(uuid.uuid1())
             self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -795,19 +303,19 @@ class SendCFP:
         """
         self.base_class.skillLogger.info("\n #############################################################################")
         # StartState
-        self.base_class.skillLogger.info("StartState: SendCFP")
+        self.base_class.skillLogger.info("StartState: sendingProposal")
         # InputDocumentType"
         InputDocument = "NA"
         self.base_class.skillLogger.info("InputDocument : " + InputDocument)
         
-        self.SendCFP_Logic()
+        self.sendingProposal_Logic()
         
     def next(self) -> object:
         """
             This methods returns the object to the next state the needs
             to be executed by the base class
         """
-        OutputDocument = "callForProposal"
+        OutputDocument = "proposal"
         self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
         
         if (OutputDocument != "NA"):
@@ -815,14 +323,14 @@ class SendCFP:
             for outbMessage in self.outboundMessages:
                 self.base_class.sendMessage(outbMessage)
         
-        if (self.WaitForSPProposal_Enabled):
+        if (self.waitingforServiceRequesterAnswer_Enabled):
             self.base_class.skillLogger.info("Condition :" + "-")
-            ts = WaitForSPProposal(self.base_class)
+            ts = waitingforServiceRequesterAnswer(self.base_class)
             self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
             self.base_class.skillLogger.info("############################################################################# \n")
             return ts
         
-class EvaluateProposal:
+class PriceCalculation:
     
     def __init__(self, base_class):
         """
@@ -832,47 +340,14 @@ class EvaluateProposal:
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
                 
-        self.sendrejectProposal_Enabled = True
+        self.sendingProposal_Enabled = True
     
 
-    def getItem(self,submodelElement,Item_Name):
-        for value in submodelElement["value"]:
-            if value['idShort'] == Item_Name:
-                return int(value['value']) 
-
-    def EvaluateProposal_Logic(self) -> int:
+    def PriceCalculation_Logic(self):
         """
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        try:
-            proposlList = []
-            ListPrice_CFP = [] 
-            qsize = self.base_class.WaitForSPProposal_Queue.qsize()
-            for i in range (0,qsize):
-                proposlList.append(self.base_class.WaitForSPProposal_Queue.get())
-            print(qsize)
-            for eachPorposal in proposlList:
-                for submodelElement in eachPorposal['interactionElements'][0]['submodelElements']:
-                    if (submodelElement['idShort'] == 'CommercialProperties'):
-                        ListPrice_CFP.append([self.getItem(submodelElement,"cfp"),self.getItem(submodelElement,"listprice")])
-            
-            qoutes = []
-            
-            for lsp in ListPrice_CFP:
-                qoutes.append(lsp[0] + lsp[1])
-            
-            bestPrice = min(qoutes)
-            bestPriceIndex = qoutes.index(bestPrice)          
-            self.base_class.CFP = ListPrice_CFP[bestPriceIndex][0]
-            for i  in range(0,len(proposlList)):
-                if (i == bestPriceIndex):
-                    self.base_class.sendacceptProposal_Queue.put(proposlList[i])
-                else:
-                    self.base_class.sendrejectProposal_Queue.put(proposlList[i])
-        except Exception as e:
-            self.base_class.skillLogger.info("Evaluate Proposal Error" + str(e))
-
         
     
     def run(self) -> None:
@@ -882,12 +357,12 @@ class EvaluateProposal:
         """
         self.base_class.skillLogger.info("\n #############################################################################")
         # StartState
-        self.base_class.skillLogger.info("StartState: EvaluateProposal")
+        self.base_class.skillLogger.info("StartState: PriceCalculation")
         # InputDocumentType"
         InputDocument = "NA"
         self.base_class.skillLogger.info("InputDocument : " + InputDocument)
         
-        self.EvaluateProposal_Logic()
+        self.PriceCalculation_Logic()
         
     def next(self) -> object:
         """
@@ -898,14 +373,14 @@ class EvaluateProposal:
         self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
         
         
-        if (self.sendrejectProposal_Enabled):
+        if (self.sendingProposal_Enabled):
             self.base_class.skillLogger.info("Condition :" + "-")
-            ts = sendrejectProposal(self.base_class)
+            ts = sendingProposal(self.base_class)
             self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
             self.base_class.skillLogger.info("############################################################################# \n")
             return ts
         
-class WaitforNewOrder:
+class sendingRefuse:
     
     def __init__(self, base_class):
         """
@@ -915,177 +390,24 @@ class WaitforNewOrder:
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
                 
-        self.cfpConfiguration_Enabled = True
-
-    def createNewCFPObject(self,conversationId):
-        startTime = datetime.now()
-        self.base_class.cfp_uid = str(uuid.uuid4())
-        self.base_class.pyaas.dba.createNewCFPObject(conversationId,self.base_class.skillName,
-                                       startTime,self.base_class.cfp_uid)
-
+        self.WaitForCallForProposal_Enabled = True
     
-    def retrieve_WaitforNewOrder_Message(self) -> None:
-        """
-            Method to retrieve the inbound i4.0 message from the relevant queue.
-            The retrieved message is assigned to the dictionary variabel designed
-            in the base clase. The Variable and the queue name are based on the 
-            current state.
-        """
-        self.base_class.WaitforNewOrder_In = self.base_class.WaitforNewOrder_Queue.get()
-    
-    def saveMessage(self) -> None:
-        """
-            Method to save the message into the database
-        """
-        inboundQueueList = list(self.base_class.WaitforNewOrder_Queue.queue) # in case for further processing is required
-        # else creation of the new queue is not required.
-        for i in range (0, self.base_class.WaitforNewOrder_Queue.qsize()):
-            message = inboundQueueList[i]
-            self.instanceId = str(uuid.uuid1())
-            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
-                                                            "conversationId":message["frame"]["conversationId"],
-                                                            "messageType":message["frame"]["type"],
-                                                            "messageId":message["frame"]["messageId"],
-                                                            "direction": "inbound",
-                                                            "SenderAASID" : message["frame"]["sender"]["id"],
-                                                            "message":message})
-            
 
-    def WaitforNewOrder_Logic(self):
+    def sendingRefuse_Logic(self):
         """
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.createNewCFPObject(self.base_class.WaitforNewOrder_In["frame"]["conversationId"])
-    
-    def run(self) -> None:
-        """
-            This method is first called form the base class after instantiating the
-            class. The method executes the entire of the state.
-        """
-        self.base_class.skillLogger.info("\n #############################################################################")
-        # StartState
-        self.base_class.skillLogger.info("StartState: WaitforNewOrder")
-        # InputDocumentType"
-        InputDocument = "Order"
-        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
         
-        '''
-            In case a class expects an input document then.
-            It would need to lookup to its specific queue
-            that is defined in the based class
-        '''
-        if (InputDocument != "NA"):
-            self.messageExist = True
-            sys.stdout.write(" Waiting for response")
-            sys.stdout.flush()
-            while (((self.base_class.WaitforNewOrder_Queue).qsize()) == 0):
-                time.sleep(1)
-            if (self.messageExist):
-                self.saveMessage() # in case we need to store the incoming message
-                self.retrieve_WaitforNewOrder_Message() # in case of multiple inbound messages this function should 
-                                                        # not be invoked. 
-        self.WaitforNewOrder_Logic()
-        
-    def next(self) -> object:
-        """
-            This methods returns the object to the next state the needs
-            to be executed by the base class
-        """
-        OutputDocument = "NA"
-        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
-        
-        
-        if (self.cfpConfiguration_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = cfpConfiguration(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        
-class noProposalReceived:
-    
-    def __init__(self, base_class):
-        """
-        """
-        self.base_class = base_class
-        
-        #Transition to the next state is enabled using the targetState specific Boolen Variable
-        # for each target there will be a separate boolean variable
-                
-        self.sendCompletionResponse_Enabled = True
-    
-
-    def noProposalReceived_Logic(self):
-        """
-            The actualy logic of this state  goes into this method.
-            It is upto the developer to add the relevant code.
-        """
-        self.base_class.responseMessage = {}
-        self.base_class.responseMessage["status"] = "E"
-        self.base_class.responseMessage["code"] = "E.06"
-        self.base_class.responseMessage["message"] =  "No proposals received from any of the Service Providers"
-        
-    
-    def run(self) -> None:
-        """
-            This method is first called form the base class after instantiating the
-            class. The method executes the entire of the state.
-        """
-        self.base_class.skillLogger.info("\n #############################################################################")
-        # StartState
-        self.base_class.skillLogger.info("StartState: noProposalReceived")
-        # InputDocumentType"
-        InputDocument = "NA"
-        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
-        
-        self.noProposalReceived_Logic()
-        
-    def next(self) -> object:
-        """
-            This methods returns the object to the next state the needs
-            to be executed by the base class
-        """
-        OutputDocument = "NA"
-        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
-        
-        
-        if (self.sendCompletionResponse_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = sendCompletionResponse(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
-        
-class sendacceptProposal:
-    
-    def __init__(self, base_class):
-        """
-        """
-        self.base_class = base_class
-        
-        #Transition to the next state is enabled using the targetState specific Boolen Variable
-        # for each target there will be a separate boolean variable
-                
-        self.WaitforInformConfirm_Enabled = True     
-
-    def sendacceptProposal_Logic(self):
-        """
-            The actualy logic this state  goes into this method.
-            It is upto the developer to add the relevant code.
-        """
-        pass
-    
     def create_Outbound_Message(self) -> list:
         """
             The method is used to create the outbound I4.0 messages.
             The message type is carried from the json file.
         """
-        self.oMessages = "acceptProposal".split("/")
+        self.oMessages = "refuseProposal".split("/")
         outboundMessages = []
         for oMessage in self.oMessages:
-            message = self.base_class.sendacceptProposal_Queue.get()
-            self.base_class.acceptProposal = message
+            message = self.base_class.WaitForCallForProposal_In
             self.gen = Generic()
             #receiverId = "" # To be decided by the developer
             #receiverRole = "" # To be decided by the developer
@@ -1129,7 +451,7 @@ class sendacceptProposal:
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -1141,19 +463,19 @@ class sendacceptProposal:
         """
         self.base_class.skillLogger.info("\n #############################################################################")
         # StartState
-        self.base_class.skillLogger.info("StartState: sendacceptProposal")
+        self.base_class.skillLogger.info("StartState: sendingRefuse")
         # InputDocumentType"
         InputDocument = "NA"
         self.base_class.skillLogger.info("InputDocument : " + InputDocument)
         
-        self.sendacceptProposal_Logic()
+        self.sendingRefuse_Logic()
         
     def next(self) -> object:
         """
             This methods returns the object to the next state the needs
             to be executed by the base class
         """
-        OutputDocument = "acceptProposal"
+        OutputDocument = "refuseProposal"
         self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
         
         if (OutputDocument != "NA"):
@@ -1161,9 +483,840 @@ class sendacceptProposal:
             for outbMessage in self.outboundMessages:
                 self.base_class.sendMessage(outbMessage)
         
-        if (self.WaitforInformConfirm_Enabled):
+        if (self.WaitForCallForProposal_Enabled):
             self.base_class.skillLogger.info("Condition :" + "-")
-            ts = WaitforInformConfirm(self.base_class)
+            ts = WaitForCallForProposal(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class WaitForCallForProposal:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.capabilitycheck_Enabled = True
+    
+    def retrieve_WaitForCallForProposal_Message(self) -> None:
+        """
+            Method to retrieve the inbound i4.0 message from the relevant queue.
+            The retrieved message is assigned to the dictionary variabel designed
+            in the base clase. The Variable and the queue name are based on the 
+            current state.
+        """
+        self.base_class.WaitForCallForProposal_In = self.base_class.WaitForCallForProposal_Queue.get()
+    
+    def saveMessage(self) -> None:
+        """
+            Method to save the message into the database
+        """
+        inboundQueueList = list(self.base_class.WaitForCallForProposal_Queue.queue) # in case for further processing is required
+        # else creation of the new queue is not required.
+        for i in range (0, self.base_class.WaitForCallForProposal_Queue.qsize()):
+            message = inboundQueueList[i]
+            self.instanceId = str(uuid.uuid1())
+            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+                                                            "conversationId":message["frame"]["conversationId"],
+                                                            "messageType":message["frame"]["type"],
+                                                            "messageId":message["frame"]["messageId"],
+                                                            "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
+                                                            "message":message})
+            
+
+    def WaitForCallForProposal_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: WaitForCallForProposal")
+        # InputDocumentType"
+        InputDocument = "callForProposal"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        '''
+            In case a class expects an input document then.
+            It would need to lookup to its specific queue
+            that is defined in the based class
+        '''
+        if (InputDocument != "NA"):
+            self.messageExist = True
+            sys.stdout.write(" Waiting for response")
+            sys.stdout.flush()
+            while (((self.base_class.WaitForCallForProposal_Queue).qsize()) == 0):
+                time.sleep(1)
+
+            if (self.messageExist):
+                self.saveMessage() # in case we need to store the incoming message
+                self.retrieve_WaitForCallForProposal_Message() # in case of multiple inbound messages this function should 
+                                                      # not be invoked. 
+        self.WaitForCallForProposal_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "NA"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        
+        if (self.capabilitycheck_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = capabilitycheck(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class capabilitycheck:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.sendingNotUnderstood_Enabled = True
+        self.feasibilityCheck_Enabled = True
+
+    def getProperty(self,submodelElem):
+        if submodelElem["modelType"] == "Property":
+            return submodelElem["value"] 
+        elif submodelElem["modelType"] == "Range":
+            return  {"min":submodelElem["min"],"max":submodelElem["max"]} 
+    
+    def getPropertyList(self,submodel):
+        tempDict = {}
+        for submodelElem in submodel["submodelElements"]:
+            if submodelElem["idShort"] == "CommercialProperties":
+                for elem in submodelElem["value"]:
+                    tempDict[elem["idShort"]] = self.getProperty(elem)
+                    
+            elif submodelElem["idShort"] == "TechnicalProperties": 
+                for elem in submodelElem["value"]:
+                    if elem["idShort"] == "FunctionalProperties" or elem["idShort"] == "EnvironmentalProperties": 
+                        for ele in elem["value"]:
+                            tempDict[ele["idShort"]] = self.getProperty(ele)
+                    elif elem["idShort"] == "WorkpieceProperties": 
+                        for ele in elem["value"]:
+                            if ele["idShort"] == "Dimensions":
+                                for el in ele["value"]:
+                                    tempDict[el["idShort"]] = self.getProperty(el)
+                            else:
+                                tempDict[ele["idShort"]] = self.getProperty(ele)      
+        return tempDict       
+
+    def capabilitycheck_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        self.submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/4494_7040_1122_9311")
+        tempDict1 = self.getPropertyList(self.submodel)
+        tempDict = self.getPropertyList(self.base_class.WaitForCallForProposal_In['interactionElements'][0])
+        try:
+            self.base_class.env = tempDict["env"]
+            print("THis is the environment "+ self.base_class.env)
+            if (tempDict["env"] not in  ["live","cyclic"]):
+                self.feasibilityCheck_Enabled = False
+            else:       
+                for key in list(tempDict1.keys()):
+                    self.base_class.subModelTypes[key] = tempDict1[key]        
+                try:
+                    for key in list(tempDict.keys()):
+                        self.base_class.proposalSubmodelTypes[key] = tempDict[key]     
+                    
+                    submodelTypeList = list(self.base_class.subModelTypes.keys())
+                    if len(list(self.base_class.proposalSubmodelTypes.keys())) == 0:
+                        self.feasibilityCheck_Enabled = False
+                    for key in list(self.base_class.proposalSubmodelTypes.keys()):
+                        if (key in ["MaxDistanceToPreferredVenueOfProvision","PreferredVenueOfProvision","deliveryTime"]):
+                            pass                
+                        elif key not in submodelTypeList:
+                            self.feasibilityCheck_Enabled = False
+                            break
+                except Exception as E:
+                    print("Test 3 Exception check Failed")
+                    self.feasibilityCheck_Enabled = False
+        except:
+            self.feasibilityCheck_Enabled = False
+        if self.feasibilityCheck_Enabled:
+            self.sendingNotUnderstood_Enabled = False
+        else:
+            self.feasibilityCheck_Enabled = False        
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: capabilitycheck")
+        # InputDocumentType"
+        InputDocument = "NA"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        self.capabilitycheck_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "NA"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        
+        if (self.sendingNotUnderstood_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = sendingNotUnderstood(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        if (self.feasibilityCheck_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = feasibilityCheck(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class serviceProvision:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.sendinPropoposalporvisionConfirm_Enabled = True
+        self.WaitForCallForProposal_Enabled = True
+        self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
+        self.tdPropertiesList = self.base_class.shellObject.thing_description  
+        self.sMessage_out_data = ""
+        self.sMessage_out_purpose = ""    
+
+    def getLocation(self,specifier,submodelD):
+        for submodelElem in submodelD["submodelElements"]:
+            if (submodelElem["idShort"] == "TechnicalProperties"):
+                for valueELem in submodelElem["value"]:
+                    if (valueELem["idShort"] == "FunctionalProperties"):
+                        for specifierElem in valueELem["value"]:
+                            if (specifierElem["idShort"] == specifier):
+                                return specifierElem["value"]
+
+    def serviceProvision_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        cfpMessage = self.base_class.WaitForCallForProposal_In
+        
+        self.TargetLocation = ""
+        self.CurrentLocation = ""
+        try:
+            
+            self.TransportSubmodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/4494_7040_1122_9311")
+            
+            self.CurrentLocation = self.getLocation("currentLocation",self.TransportSubmodel)
+            self.TargetLocation = self.getLocation("targetLocation",cfpMessage["interactionElements"][0])
+            
+            try:  
+                (self.plcHandler.write(self.tdPropertiesList["xProductionMode"]["href"],"Process"))
+                if (self.CurrentLocation == self.TargetLocation):
+                    self.TargetLocation = "Pos 0"
+                self.base_class.skillLogger.info(self.CurrentLocation + " "+ self.TargetLocation)
+                (self.plcHandler.write(self.tdPropertiesList["sMessage_in_purpose"]["href"],"Process"))
+                (self.plcHandler.write(self.tdPropertiesList["sMessage_in_data_SR"]["href"],self.CurrentLocation))
+                (self.plcHandler.write(self.tdPropertiesList["sMessage_in_data_SP"]["href"],self.TargetLocation))
+                
+            except Exception as E:
+                print(str(E),"Error Write 1")
+            
+            plcBoool = True
+            if (self.CurrentLocation == "Pos 0" and self.TargetLocation == "Pos 0"):
+                pass
+            else:
+                while (plcBoool):
+                    self.sMessage_out_data = self.plcHandler.read(self.tdPropertiesList["sMessage_out_data"]["href"])
+                    self.sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList["sMessage_out_purpose"]["href"])
+                    if  (self.sMessage_out_data == "end of process" and self.sMessage_out_purpose == "Acknowledge"):
+                        plcBoool = False
+            i = 0
+            j = 0
+            k = 0
+            for submodelElem in self.TransportSubmodel["submodelElements"]:
+                if (submodelElem["idShort"] == "TechnicalProperties"):
+                    for valueELem in submodelElem["value"]:
+                        if (valueELem["idShort"] == "FunctionalProperties"):
+                            for specifierElem in valueELem["value"]:
+                                if (specifierElem["idShort"] == "currentLocation"):
+                                    self.TransportSubmodel["submodelElements"][i]["value"][j]["value"][k]["value"] = self.TargetLocation
+                                k = k + 1
+                        j = j + 1     
+                i = i + 1
+            try:
+                edm = ExecuteDBModifier(self.base_class.pyaas)
+                dataBaseResponse = edm.executeModifer({"data":{"entity":"submodels",
+                                                               "entityId":self.TransportSubmodel["identification"]["id"],
+                                                                "entityData":self.TransportSubmodel, 
+                                                                "note":"Submodel"},"method":"putAASXEntityByID"})
+            except Exception as e:
+                self.base_class.skillLogger.info("Error" + str(e))   
+
+        except Exception as e:
+            self.base_class.skillLogger.info(e)
+        self.WaitForCallForProposal_Enabled = False        
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: serviceProvision")
+        # InputDocumentType"
+        InputDocument = "NA"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        self.WaitForCallForProposal_Enabled = False
+        #self.serviceProvision_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "NA"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        
+        if (self.sendinPropoposalporvisionConfirm_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = sendinPropoposalporvisionConfirm(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        if (self.WaitForCallForProposal_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = WaitForCallForProposal(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class waitingforServiceRequesterAnswer:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.WaitForCallForProposal_Enabled = True
+        self.serviceProvision_Enabled = True
+    
+    def retrieve_waitingforServiceRequesterAnswer_Message(self) -> None:
+        """
+            Method to retrieve the inbound i4.0 message from the relevant queue.
+            The retrieved message is assigned to the dictionary variabel designed
+            in the base clase. The Variable and the queue name are based on the 
+            current state.
+        """
+        self.base_class.waitingforServiceRequesterAnswer_In = self.base_class.waitingforServiceRequesterAnswer_Queue.get()
+    
+    def saveMessage(self) -> None:
+        """
+            Method to save the message into the database
+        """
+        inboundQueueList = list(self.base_class.waitingforServiceRequesterAnswer_Queue.queue) # in case for further processing is required
+        # else creation of the new queue is not required.
+        for i in range (0, self.base_class.waitingforServiceRequesterAnswer_Queue.qsize()):
+            message = inboundQueueList[i]
+            self.instanceId = str(uuid.uuid1())
+            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+                                                            "conversationId":message["frame"]["conversationId"],
+                                                            "messageType":message["frame"]["type"],
+                                                            "messageId":message["frame"]["messageId"],
+                                                            "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
+                                                            "message":message})
+            
+
+    def waitingforServiceRequesterAnswer_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        if (self.messageExist):
+            if (self.base_class.waitingforServiceRequesterAnswer_In["frame"]["type"] =="rejectProposal"):
+                self.serviceProvision_Enabled = False
+            else:
+                self.WaitForCallForProposal_Enabled = False
+        else:
+            self.serviceProvision_Enabled = False        
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: waitingforServiceRequesterAnswer")
+        # InputDocumentType"
+        InputDocument = "acceptProposal / rejectProposal"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        '''
+            In case a class expects an input document then.
+            It would need to lookup to its specific queue
+            that is defined in the based class
+        '''
+        if (InputDocument != "NA"):
+            self.messageExist = True
+            i = 0
+            sys.stdout.write(" Waiting for response")
+            sys.stdout.flush()
+            while (((self.base_class.waitingforServiceRequesterAnswer_Queue).qsize()) == 0):
+                time.sleep(1)
+                i = i + 1 
+                if i > 60: # Time to wait the next incoming message
+                    self.messageExist = False # If the waiting time expires, the loop is broken
+                    break
+            if (self.messageExist):
+                self.saveMessage() # in case we need to store the incoming message
+                self.retrieve_waitingforServiceRequesterAnswer_Message() # in case of multiple inbound messages this function should 
+                                                    # not be invoked. 
+        self.waitingforServiceRequesterAnswer_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "NA"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        
+        if (self.WaitForCallForProposal_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = WaitForCallForProposal(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        if (self.serviceProvision_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = serviceProvision(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class sendinPropoposalporvisionConfirm:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.WaitForCallForProposal_Enabled = True
+    
+
+    def sendinPropoposalporvisionConfirm_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        
+    def create_Outbound_Message(self) -> list:
+        """
+            The method is used to create the outbound I4.0 messages.
+            The message type is carried from the json file.
+        """
+        self.oMessages = "informConfirm".split("/")
+        outboundMessages = []
+        for oMessage in self.oMessages:
+            message = self.base_class.waitingforServiceRequesterAnswer_In
+            self.gen = Generic()
+            #receiverId = "" # To be decided by the developer
+            #receiverRole = "" # To be decided by the developer
+            
+            # For broadcast message the receiverId and the 
+            # receiverRole could be empty 
+            
+            # For the return reply these details could be obtained from the inbound Message
+            receiverId = message["frame"]["sender"]["id"]
+            receiverRole = message["frame"]["sender"]["role"]["name"]
+            
+            # For sending the message to an internal skill
+            # The receiver Id should be
+            
+            I40FrameData =      {
+                                    "semanticProtocol": self.base_class.semanticProtocol,
+                                    "type" : oMessage,
+                                    "messageId" : oMessage+"_"+str(self.base_class.pyaas.dba.getMessageCount()[0]+1),
+                                    "SenderAASID" : self.base_class.aasID,
+                                    "SenderRolename" : self.base_class.skillName,
+                                    "conversationId" : message["frame"]["conversationId"],
+                                    "replyBy" :  "",
+                                    "replyTo" :  message["frame"]["replyBy"],
+                                    "ReceiverAASID" :  receiverId,
+                                    "ReceiverRolename" : receiverRole
+                                }
+        
+            self.frame = self.gen.createFrame(I40FrameData)
+    
+            oMessage_Out = {"frame": self.frame,"interactionElements":[]}
+            # Usually the interaction Elements are the submodels fro that particualar skill
+            # the relevant submodel could be retrieved using
+            # interactionElements
+            
+            #submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("submodelIdentifier")
+            #oMessage_Out ={"frame": self.frame,
+            #                        "interactionElements":submodel}
+            self.instanceId = str(uuid.uuid1())
+            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+                                                            "conversationId":oMessage_Out["frame"]["conversationId"],
+                                                            "messageType":oMessage_Out["frame"]["type"],
+                                                            "messageId":oMessage_Out["frame"]["messageId"],
+                                                            "direction" : "outbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
+                                                            "message":oMessage_Out})
+            outboundMessages.append(oMessage_Out)
+        return outboundMessages
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: sendinPropoposalporvisionConfirm")
+        # InputDocumentType"
+        InputDocument = "NA"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        self.sendinPropoposalporvisionConfirm_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "informConfirm"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        if (OutputDocument != "NA"):
+            self.outboundMessages = self.create_Outbound_Message()
+            for outbMessage in self.outboundMessages:
+                self.base_class.sendMessage(outbMessage)
+        
+        if (self.WaitForCallForProposal_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = WaitForCallForProposal(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class checkingSchedule:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.sendingRefuse_Enabled = True
+        self.PriceCalculation_Enabled = True
+        self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
+        self.tdPropertiesList = self.base_class.shellObject.thing_description    
+
+    def checkingSchedule_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        try:
+            sMessage_out_data = self.plcHandler.read(self.tdPropertiesList["sMessage_out_data"]["href"]) #ready
+            sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList["sMessage_out_purpose"]["href"]) #Inform
+            envWrite = ""
+            if (self.base_class.env == "live"):
+                dv = ua.DataValue(False)
+                envWrite = self.plcHandler.write(self.tdPropertiesList["xProductionMode"]["href"],dv)
+            elif (self.base_class.env == "cyclic"):
+                dv = ua.DataValue(False)
+                envWrite = self.plcHandler.write(self.tdPropertiesList["sMessage_out_purpose"]["xProductionMode"],dv)
+            if sMessage_out_data == "error" or sMessage_out_purpose == "error" or envWrite == "error":
+                self.PriceCalculation_Enabled = False
+            else :
+                if sMessage_out_data == "ready" and sMessage_out_purpose == "Inform":
+                    self.sendingRefuse_Enabled = False
+                else:
+                    self.PriceCalculation_Enabled = False
+        except Exception as E:
+            self.PriceCalculation_Enabled = False        
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: checkingSchedule")
+        # InputDocumentType"
+        InputDocument = "NA"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        self.sendingRefuse_Enabled = False
+        #self.checkingSchedule_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "NA"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        
+        if (self.sendingRefuse_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = sendingRefuse(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        if (self.PriceCalculation_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = PriceCalculation(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class sendingNotUnderstood:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.WaitForCallForProposal_Enabled = True
+    
+
+    def sendingNotUnderstood_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        
+    def create_Outbound_Message(self) -> list:
+        """
+            The method is used to create the outbound I4.0 messages.
+            The message type is carried from the json file.
+        """
+        self.oMessages = "notUnderstood".split("/")
+        outboundMessages = []
+        for oMessage in self.oMessages:
+            message = self.base_class.WaitForCallForProposal_In
+            self.gen = Generic()
+            #receiverId = "" # To be decided by the developer
+            #receiverRole = "" # To be decided by the developer
+            
+            # For broadcast message the receiverId and the 
+            # receiverRole could be empty 
+            
+            # For the return reply these details could be obtained from the inbound Message
+            receiverId = message["frame"]["sender"]["id"]
+            receiverRole = message["frame"]["sender"]["role"]["name"]
+            
+            # For sending the message to an internal skill
+            # The receiver Id should be
+            
+            I40FrameData =      {
+                                    "semanticProtocol": self.base_class.semanticProtocol,
+                                    "type" : oMessage,
+                                    "messageId" : oMessage+"_"+str(self.base_class.pyaas.dba.getMessageCount()[0]+1),
+                                    "SenderAASID" : self.base_class.aasID,
+                                    "SenderRolename" : self.base_class.skillName,
+                                    "conversationId" : message["frame"]["conversationId"],
+                                    "replyBy" :  "",
+                                    "replyTo" :  message["frame"]["replyBy"],
+                                    "ReceiverAASID" :  receiverId,
+                                    "ReceiverRolename" : receiverRole
+                                }
+        
+            self.frame = self.gen.createFrame(I40FrameData)
+    
+            oMessage_Out = {"frame": self.frame,"interactionElements":[]}
+            # Usually the interaction Elements are the submodels fro that particualar skill
+            # the relevant submodel could be retrieved using
+            # interactionElements
+            
+            #submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("submodelIdentifier")
+            #oMessage_Out ={"frame": self.frame,
+            #                        "interactionElements":submodel}
+            self.instanceId = str(uuid.uuid1())
+            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+                                                            "conversationId":oMessage_Out["frame"]["conversationId"],
+                                                            "messageType":oMessage_Out["frame"]["type"],
+                                                            "messageId":oMessage_Out["frame"]["messageId"],
+                                                            "direction" : "outbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
+                                                            "message":oMessage_Out})
+            outboundMessages.append(oMessage_Out)
+        return outboundMessages
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: sendingNotUnderstood")
+        # InputDocumentType"
+        InputDocument = "NA"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        self.sendingNotUnderstood_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "notUnderstood"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        if (OutputDocument != "NA"):
+            self.outboundMessages = self.create_Outbound_Message()
+            for outbMessage in self.outboundMessages:
+                self.base_class.sendMessage(outbMessage)
+        
+        if (self.WaitForCallForProposal_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = WaitForCallForProposal(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class feasibilityCheck:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.sendingRefuse_Enabled = True
+        self.checkingSchedule_Enabled = True
+    
+
+    def feasibilityCheck_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        self.itemsCheck = {"MaterialOfWorkpiece":"Property","Height":"Range",
+         "Depth":"Range","Width":"Range","ReferencedStandartOfMaterialShortName":"Property",
+         "TensileStrengthOfMaterial":"Range","WeightOfWorkpiece":"Range","Hardness":"TRange"}
+        
+        feasibilityLen = 0
+        for key in list(self.itemsCheck):
+            item = self.itemsCheck[key]
+            if  item == "Property":
+                if (key == "MaterialOfWorkpiece"):
+                    feasibilityLen = feasibilityLen + 1 
+                elif ( self.base_class.proposalSubmodelTypes[key] == self.base_class.subModelTypes[key] ):
+                    feasibilityLen = feasibilityLen + 1
+                else :
+                    pass#print(key,self.base_class.proposalSubmodelTypes[key],self.base_class.subModelTypes[key])
+            elif item == "Range":
+                value = self.base_class.proposalSubmodelTypes[key]
+                min = float(self.base_class.subModelTypes[key]["min"])
+                max = float(self.base_class.subModelTypes[key]["max"])
+                if float(value) >= min and float(value) <= max :
+                    feasibilityLen = feasibilityLen + 1
+                else :
+                    pass#print(key,value,self.base_class.subModelTypes[key])                    
+            elif item == "TRange":
+                value = self.base_class.proposalSubmodelTypes[key]
+                min = float((self.base_class.subModelTypes[key]["min"]).split(" ")[1])
+                max = float((self.base_class.subModelTypes[key]["max"]).split(" ")[1])
+                tempValue = value.split(" ")[1]
+                if float(tempValue) >= min and float(tempValue) <= max :
+                    feasibilityLen = feasibilityLen + 1
+                else :
+                    pass#print(key,value,self.base_class.subModelTypes[key])                    
+                    
+        if feasibilityLen == 8:
+            self.sendingRefuse_Enabled = False
+        else:
+            self.checkingSchedule_Enabled = False     
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: feasibilityCheck")
+        # InputDocumentType"
+        InputDocument = "NA"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        self.feasibilityCheck_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "NA"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        
+        if (self.sendingRefuse_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = sendingRefuse(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        if (self.checkingSchedule_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = checkingSchedule(self.base_class)
             self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
             self.base_class.skillLogger.info("############################################################################# \n")
             return ts
@@ -1171,7 +1324,7 @@ class sendacceptProposal:
 
 
 
-class TransportRequester:
+class TransportProvider:
     '''
     classdocs
     '''
@@ -1182,28 +1335,28 @@ class TransportRequester:
         """
         self.QueueDict = {}
         
-        self.WaitforInformConfirm_Queue = Queue.Queue()
-        self.WaitForSPProposal_Queue = Queue.Queue()
-        self.sendCompletionResponse_Queue = Queue.Queue()
-        self.cfpConfiguration_Queue = Queue.Queue()
-        self.sendrejectProposal_Queue = Queue.Queue()
-        self.SendCFP_Queue = Queue.Queue()
-        self.EvaluateProposal_Queue = Queue.Queue()
-        self.WaitforNewOrder_Queue = Queue.Queue()
-        self.noProposalReceived_Queue = Queue.Queue()
-        self.sendacceptProposal_Queue = Queue.Queue()
+        self.sendingProposal_Queue = Queue.Queue()
+        self.PriceCalculation_Queue = Queue.Queue()
+        self.sendingRefuse_Queue = Queue.Queue()
+        self.WaitForCallForProposal_Queue = Queue.Queue()
+        self.capabilitycheck_Queue = Queue.Queue()
+        self.serviceProvision_Queue = Queue.Queue()
+        self.waitingforServiceRequesterAnswer_Queue = Queue.Queue()
+        self.sendinPropoposalporvisionConfirm_Queue = Queue.Queue()
+        self.checkingSchedule_Queue = Queue.Queue()
+        self.sendingNotUnderstood_Queue = Queue.Queue()
+        self.feasibilityCheck_Queue = Queue.Queue()
         
                 
         self.QueueDict = {
-              "informConfirm": self.WaitforInformConfirm_Queue,
-              "proposal": self.WaitForSPProposal_Queue,
-              "Order": self.WaitforNewOrder_Queue,
+              "callForProposal": self.WaitForCallForProposal_Queue,
+              "acceptProposal": self.waitingforServiceRequesterAnswer_Queue,
+              "rejectProposal": self.waitingforServiceRequesterAnswer_Queue,
             }
     
     def init_inbound_messages(self) -> None:
-        self.WaitforInformConfirm_In = {}
-        self.WaitForSPProposal_In = {}
-        self.WaitforNewOrder_In = {}
+        self.waitingforServiceRequesterAnswer_In = {}
+        self.WaitForCallForProposal_In = {}
         pass
     
     def empty_all_queues(self) -> None:
@@ -1237,11 +1390,11 @@ class TransportRequester:
         '''
         
         self.SKILL_STATES = {
-                          "WaitforInformConfirm": "WaitforInformConfirm",  "WaitForSPProposal": "WaitForSPProposal",  "sendCompletionResponse": "sendCompletionResponse",  "cfpConfiguration": "cfpConfiguration",  "sendrejectProposal": "sendrejectProposal",  "SendCFP": "SendCFP",  "EvaluateProposal": "EvaluateProposal",  "WaitforNewOrder": "WaitforNewOrder",  "noProposalReceived": "noProposalReceived",  "sendacceptProposal": "sendacceptProposal",
+                          "sendingProposal": "sendingProposal",  "PriceCalculation": "PriceCalculation",  "sendingRefuse": "sendingRefuse",  "WaitForCallForProposal": "WaitForCallForProposal",  "capabilitycheck": "capabilitycheck",  "serviceProvision": "serviceProvision",  "waitingforServiceRequesterAnswer": "waitingforServiceRequesterAnswer",  "sendinPropoposalporvisionConfirm": "sendinPropoposalporvisionConfirm",  "checkingSchedule": "checkingSchedule",  "sendingNotUnderstood": "sendingNotUnderstood",  "feasibilityCheck": "feasibilityCheck",
                        }
         
         self.pyaas = pyaas
-        self.skillName = "TransportRequester"
+        self.skillName = "TransportProvider"
         self.initstate_specific_queue_internal()
         self.init_inbound_messages()
         self.currentConversationId = "temp"
@@ -1249,14 +1402,16 @@ class TransportRequester:
         self.enabledStatus = {"Y":True, "N":False}
         self.enabledState = "Y"
         
-        self.semanticProtocol = "ovgu.de/http://www.vdi.de/gma720/vdi2193_2/bidding"
-        self.initialState = "WaitforNewOrder"
-        self.skill_service = "Transport Requisition"
+        self.semanticProtocol = "www.admin-shell.io/interaction/bidding"
+        self.initialState = "WaitForCallForProposal"
+        self.skill_service = "Transport Provision"
         self.gen = Generic()
         self.productionStepSeq = []
         self.responseMessage = {}
         self.StatusResponseSM = [self.pyaas.aasConfigurer.getStatusResponseSubmodel()]
-        self.CFP = 0
+        self.subModelTypes = {}
+        self.proposalSubmodelTypes = {}
+        self.env = ""
         
     def start(self, msgHandler,shellObject,_uid) -> None:
         """
@@ -1265,15 +1420,18 @@ class TransportRequester:
         self.msgHandler = msgHandler
         self.shellObject = shellObject
         self.aasID = shellObject.aasELement["id"]
-        self._uid  = _uid
+        self.uuid  = _uid
         self.create_status_message()
         self.skillLogger = logging.getLogger(self.aasID+"."+self.skillName)
         self.skillLogger.setLevel(logging.DEBUG)
         
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
+
+        bString = base64.b64encode(bytes(self.aasID,'utf-8'))
+        base64_string= bString.decode('utf-8')
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self._uid)+"_"+self.skillName+".LOG")
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
         self.listHandler = ServiceLogHandler(LogList())
@@ -1289,13 +1447,13 @@ class TransportRequester:
         self.skillLogger.addHandler(self.commandLogger_handler)
         self.skillLogger.addHandler(self.fileLogger_Handler)
         
-        WaitforNewOrder_1 = WaitforNewOrder(self)
-        self.stateChange("WaitforNewOrder")
-        currentState = WaitforNewOrder_1
+        WaitForCallForProposal_1 = WaitForCallForProposal(self)
+        self.stateChange("WaitForCallForProposal")
+        currentState = WaitForCallForProposal_1
         
         
         while (True):
-            if ((currentState.__class__.__name__) == "WaitforNewOrder"):
+            if ((currentState.__class__.__name__) == "WaitForCallForProposal"):
                 if(self.enabledState):
                     currentState.run()
                     ts = currentState.next()
@@ -1340,6 +1498,5 @@ class TransportRequester:
 
 
 if __name__ == '__main__':
-    
-    lm2 = TransportRequester()
+    lm2 = TransportProvider()
     lm2.Start('msgHandler')

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="546"
+   width="456"
+   sodipodi:docname="co2.svg"
+   version="1.1"
+   viewBox="0 0 456 546"
+   id="svg2">
+  <defs
+     id="defs17">
+    <clipPath
+       id="clipPath846"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         ry="1.6974199"
+         y="370.81946"
+         x="-634.82257"
+         height="601.74512"
+         width="454.67783"
+         id="rect848"
+         style="opacity:0.999;fill:#ffb380;stroke:#ffd35c;stroke-width:4.19766" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     inkscape:current-layer="g3062"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-6"
+     inkscape:window-x="-6"
+     inkscape:cy="245.77679"
+     inkscape:cx="471.1681"
+     inkscape:zoom="0.80327869"
+     showgrid="false"
+     id="namedview15"
+     inkscape:window-height="658"
+     inkscape:window-width="1280"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <g
+     transform="translate(5,-397.36)"
+     id="layer4">
+    <g
+       transform="matrix(-1,0,0,1,600,0)"
+       id="g3854">
+      <g
+         clip-path="url(#clipPath846)"
+         fill-opacity="0.74173"
+         fill="#44aa00"
+         transform="matrix(-1.0021,0,0,0.90614,-32.474849,50.335934)"
+         id="g3062">
+        <path
+           d="m -528.88,710.67 c -30.46,-56.988 2.184,-116.51 38.904,-151.14 37.497,-35.36 88.212,-34.913 128.92,11.028 45.041,50.837 -1.0946,120.11 31.206,184.55 24.171,48.222 118.12,77.482 130.54,130.82 5.7228,24.567 -9.1907,49.605 -24.14,61.988 -13.312,11.027 -33.238,11.298 -50.052,4.0644 -38.104,-16.392 -63.499,-69.822 -97.641,-100.01 -48.758,-43.111 -126.83,-83.469 -157.74,-141.3 z"
+           id="path4790" />
+        <path
+           d="m -1497.6,-392.16 c 0,72.526 -35.042,131.32 -78.268,131.32 -43.226,0 -78.268,-58.794 -78.268,-131.32 0,-72.526 35.042,-131.32 78.268,-131.32 43.226,0 78.268,58.794 78.268,131.32 z"
+           transform="matrix(0.34738,-0.20513,0.19157,0.39979,183.81,293.39)"
+           id="path4792" />
+        <path
+           d="m -1487.6,-392.16 c 0,72.526 -39.527,131.32 -88.285,131.32 -48.759,0 -88.285,-58.794 -88.285,-131.32 0,-72.526 39.527,-131.32 88.285,-131.32 48.759,0 88.285,58.794 88.285,131.32 z"
+           transform="matrix(0.19564,-0.12942,0.11611,0.25851,-146.5,394.4)"
+           id="path4794" />
+        <path
+           d="m -1460.1,-392.16 c 0,72.526 -51.82,131.32 -115.74,131.32 -63.924,0 -115.74,-58.794 -115.74,-131.32 0,-72.526 51.82,-131.32 115.74,-131.32 63.924,0 115.74,58.794 115.74,131.32 z"
+           transform="matrix(0.17098,-0.1131,0.10148,0.22593,-233.03,451.36)"
+           id="path4796" />
+        <path
+           d="m -1470.6,-392.16 c 0,72.526 -47.132,131.32 -105.27,131.32 -58.14,0 -105.27,-58.794 -105.27,-131.32 0,-72.526 47.132,-131.32 105.27,-131.32 58.14,0 105.27,58.794 105.27,131.32 z"
+           transform="matrix(0.15865,-0.10495,0.09416,0.20964,-283.73,516.4)"
+           id="path4798" />
+        <path
+           d="m -1466.7,-392.16 c 0,72.526 -48.844,131.32 -109.1,131.32 -60.252,0 -109.1,-58.794 -109.1,-131.32 0,-72.526 48.844,-131.32 109.1,-131.32 60.252,0 109.1,58.794 109.1,131.32 z"
+           transform="matrix(0.11921,-0.078855,0.070748,0.15752,-367.29,594.04)"
+           id="path4800" />
+      </g>
+    </g>
+  </g>
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title></dc:title>
+        <dc:date>2012-06-05T17:33:47</dc:date>
+        <dc:description>CO2, carbon, clip art, clipart, co2, ecology, foot, footprint, green, humor, icon, print, </dc:description>
+        <dc:source>http://openclipart.org/detail/170434/eco-green-carbon-print-by-cybergedeon-170434</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dominiquechappard</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>CO2</rdf:li>
+            <rdf:li>carbon</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>co2</rdf:li>
+            <rdf:li>ecology</rdf:li>
+            <rdf:li>foot</rdf:li>
+            <rdf:li>footprint</rdf:li>
+            <rdf:li>green</rdf:li>
+            <rdf:li>humor</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>print</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

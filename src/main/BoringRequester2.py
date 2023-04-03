@@ -26,6 +26,11 @@ try:
 except ImportError:
     from main.utils.aaslog import ServiceLogHandler,LogList
 
+try:
+    from utils.utils import ExecuteDBModifier,ProductionStepOrder
+except ImportError:
+    from main.utils.utils import ExecuteDBModifier,ProductionStepOrder
+
 '''
     The skill generator extracts all the states from the transitions list.
     For each STATE, a seperate python class is created. This python class has two main
@@ -43,9 +48,9 @@ except ImportError:
     to definite state of the skill state-machine. The base class represents the skill 
     and coordinates the transition from one state to another.
     
-    The base_class is responsible for collecting the documents from the external
+    The baseclass is responsible for collecting the documents from the external
     world (either from other skill that is part of the AAS or a skill part of 
-    of another AAS). For this the base_class maintains a queue one for each class. 
+    of another AAS). For this the baseclass maintains a queue one for each class. 
     
     The communication between any two skills of the same AAS or the skills of 
     different AAS is done in I4.0 language.
@@ -62,7 +67,7 @@ except ImportError:
     Skill. The base-class maintains a specific InboundQueue, into the messages dropped by the
     messagehandler. 
     
-    A class specific inbound queue is defined in the base_class for the classes defined in this
+    A class specific inbound queue is defined in the baseclass for the classes defined in this
     source-code. A dictionary is also manitained, with key representing the messagetype and the
     value being the class specific inboundqueue.
     
@@ -75,7 +80,7 @@ except ImportError:
     StateName_In         
     StateName_Queue 
         
-    The sendMessage method in the base_class submits an outbound message to the message handler so that
+    The sendMessage method in the baseclass submits an outbound message to the message handler so that
     it could be routed to its destination. Every class can access this method and publish the outbound
     messgae.  
     
@@ -140,7 +145,7 @@ except ImportError:
         "type" : ,
         "messageId":messageId,
         "SenderAASID" : self.base_class.aasID,
-        "SenderRolename" : "TransportRequester",
+        "SenderRolename" : "BoringRequester",
         "conversationId" : "AASNetworkedBidding",
         "replyBy" :  "",   # "The communication protocol that the AAS needs to use while sending message to other AAS."
         "replyTo" : "",    # "The communication protocol that the receipient AAS should use for reply"   
@@ -237,7 +242,7 @@ class WaitforInformConfirm:
         """
         self.base_class.responseMessage["status"] = "S"
         self.base_class.responseMessage["code"] = "A.013"
-        self.base_class.responseMessage["message"] =  "The Order is Succesfully Executed."          
+        self.base_class.responseMessage["message"] =  "TheOrder is Succesfully Executed."        
     
     def run(self) -> None:
         """
@@ -337,7 +342,7 @@ class WaitForSPProposal:
         if (self.messageExist):
             self.noProposalReceived_Enabled = False
         else:
-            self.EvaluateProposal_Enabled = False        
+            self.EvaluateProposal_Enabled = False
     
     def run(self) -> None:
         """
@@ -364,13 +369,13 @@ class WaitForSPProposal:
             while (((self.base_class.WaitForSPProposal_Queue).qsize()) == 0):
                 time.sleep(1)
                 i = i + 1 
-                if i > 20: # Time to wait the next incoming message
+                if i > 10: # Time to wait the next incoming message
                     self.messageExist = False # If the waiting time expires, the loop is broken
                     break
             if (self.messageExist):
                 self.saveMessage() # in case we need to store the incoming message
-                #self.retrieve_WaitForSPProposal_Message() # in case of multiple inbound messages this function should 
-                                                        # not be invoked. 
+                self.retrieve_WaitForSPProposal_Message() # in case of multiple inbound messages this function should 
+                                                      # not be invoked. 
         self.WaitForSPProposal_Logic()
         
     def next(self) -> object:
@@ -406,11 +411,8 @@ class sendCompletionResponse:
         # for each target there will be a separate boolean variable
                 
         self.WaitforNewOrder_Enabled = True
+    
 
-    def set_cfp_properties(self,conversationId,_cfp):
-        endTime = datetime.now()
-        self.base_class.pyaas.dba.modifyCFPObject(self.base_class.cfp_uid,endTime,
-                                                  _cfp,conversationId)
     def sendCompletionResponse_Logic(self):
         """
             The actualy logic this state  goes into this method.
@@ -420,11 +422,8 @@ class sendCompletionResponse:
         self.InElem[0]["submodelElements"][0]["value"] = self.base_class.responseMessage["status"]
         self.InElem[0]["submodelElements"][1]["value"] = self.base_class.responseMessage["code"]
         self.InElem[0]["submodelElements"][2]["value"] = self.base_class.responseMessage["message"]
-        self.set_cfp_properties(self.base_class.WaitforNewOrder_In["frame"]["conversationId"],
-                                self.base_class.CFP)
         self.base_class.responseMessage = {}
-
-        
+                
     def create_Outbound_Message(self) -> list:
         """
             The method is used to create the outbound I4.0 messages.
@@ -455,7 +454,7 @@ class sendCompletionResponse:
                                     "SenderAASID" : self.base_class.aasID,
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  "",
+                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
@@ -463,21 +462,21 @@ class sendCompletionResponse:
         
             self.frame = self.gen.createFrame(I40FrameData)
     
-            # oMessage_Out = {"frame": self.frame}
+            #oMessage_Out = {"frame": self.frame}
             # Usually the interaction Elements are the submodels fro that particualar skill
             # the relevant submodel could be retrieved using
             # interactionElements
             
-            #submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("submodelIdentifier")
-            oMessage_Out ={"frame": self.frame,
-                                    "interactionElements":self.InElem}
+            #self.InElem = self.base_class.pyaas.dba.getSubmodelsbyId({"aasId":self.base_class.aasID,"submodelId":"BoringSubmodel"})
+            oMessage_Out = {"frame": self.frame,
+                                "interactionElements":self.InElem}
             self.instanceId = str(uuid.uuid1())
             self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -516,6 +515,124 @@ class sendCompletionResponse:
             self.base_class.skillLogger.info("############################################################################# \n")
             return ts
         
+class WaitforTransportOrderCompletion:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.WaitforInformConfirm_Enabled = True
+        self.sendCompletionResponse_Enabled = True
+    
+    def retrieve_WaitforTransportOrderCompletion_Message(self) -> None:
+        """
+            Method to retrieve the inbound i4.0 message from the relevant queue.
+            The retrieved message is assigned to the dictionary variabel designed
+            in the base clase. The Variable and the queue name are based on the 
+            current state.
+        """
+        self.base_class.WaitforTransportOrderCompletion_In = self.base_class.WaitforTransportOrderCompletion_Queue.get()
+    
+    def saveMessage(self) -> None:
+        """
+            Method to save the message into the database
+        """
+        inboundQueueList = list(self.base_class.WaitforTransportOrderCompletion_Queue.queue) # in case for further processing is required
+        # else creation of the new queue is not required.
+        for i in range (0, self.base_class.WaitforTransportOrderCompletion_Queue.qsize()):
+            message = inboundQueueList[i]
+            self.instanceId = str(uuid.uuid1())
+            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+                                                            "conversationId":message["frame"]["conversationId"],
+                                                            "messageType":message["frame"]["type"],
+                                                            "messageId":message["frame"]["messageId"],
+                                                            "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
+                                                            "message":message})
+            
+
+    def WaitforTransportOrderCompletion_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        try:
+            statusMessage = self.base_class.WaitforTransportOrderCompletion_In["interactionElements"][0]
+            statusResponse = statusMessage["submodelElements"][0]["value"]
+            if (statusResponse == "E"):
+                self.base_class.responseMessage["status"] = "E"
+                self.base_class.responseMessage["code"] = statusMessage["submodelElements"][1]["value"]
+                self.base_class.responseMessage["message"] =  statusMessage["submodelElements"][2]["value"]
+                self.WaitforInformConfirm_Enabled = False
+            else:
+                self.sendCompletionResponse_Enabled = False
+        except Exception as e:
+            self.base_class.responseMessage["status"] = "E"
+            self.base_class.responseMessage["code"] = "E.014"
+            self.base_class.responseMessage["message"] =  "Error Processing the Order"
+            self.WaitforInformConfirm_Enabled = False
+        
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: WaitforTransportOrderCompletion")
+        # InputDocumentType"
+        InputDocument = "OrderStatus"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        '''
+            In case a class expects an input document then.
+            It would need to lookup to its specific queue
+            that is defined in the based class
+        '''
+        if (InputDocument != "NA"):
+            self.messageExist = True
+            i = 0
+            sys.stdout.write(" Waiting for response")
+            sys.stdout.flush()
+            while (((self.base_class.WaitforTransportOrderCompletion_Queue).qsize()) == 0):
+                time.sleep(1)
+                i = i + 1 
+                if i > 120: # Time to wait the next incoming message
+                    self.messageExist = False # If the waiting time expires, the loop is broken
+                    break
+            if (self.messageExist):
+                self.saveMessage() # in case we need to store the incoming message
+                self.retrieve_WaitforTransportOrderCompletion_Message() # in case of multiple inbound messages this function should 
+                                                      # not be invoked. 
+        self.WaitforTransportOrderCompletion_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "NA"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        
+        if (self.WaitforInformConfirm_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = WaitforInformConfirm(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        if (self.sendCompletionResponse_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = sendCompletionResponse(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
 class cfpConfiguration:
     
     def __init__(self, base_class):
@@ -526,30 +643,15 @@ class cfpConfiguration:
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
                 
-        self.sendCompletionResponse_Enabled = True
         self.SendCFP_Enabled = True
     
 
     def cfpConfiguration_Logic(self):
         """
-            The actual logic this state  goes into this method.
+            The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        if (len(self.base_class.WaitforNewOrder_In["interactionElements"]) == 1):
-            transportIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][0][0]
-            transport_submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(transportIdentifier)
-            if transport_submodel["semanticId"]["keys"][0]["value"] == "0173-1#01-ADR740#004":
-                self.sendCompletionResponse_Enabled = False
-            else:
-                    self.base_class.responseMessage["status"] = "E"
-                    self.base_class.responseMessage["code"] = "E.01"
-                    self.base_class.responseMessage["message"] =  "The Transport submodel is not provided"
-                    self.SendCFP_Enabled = False
-        else:
-            self.base_class.responseMessage["status"] = "E"
-            self.base_class.responseMessage["code"] = "E.01"
-            self.base_class.responseMessage["message"] =  "No submodel Id is provided"
-            self.SendCFP_Enabled = False
+        
     
     def run(self) -> None:
         """
@@ -574,15 +676,153 @@ class cfpConfiguration:
         self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
         
         
-        if (self.sendCompletionResponse_Enabled):
-            self.base_class.skillLogger.info("Condition :" + "-")
-            ts = sendCompletionResponse(self.base_class)
-            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
-            self.base_class.skillLogger.info("############################################################################# \n")
-            return ts
         if (self.SendCFP_Enabled):
             self.base_class.skillLogger.info("Condition :" + "-")
             ts = SendCFP(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
+        
+class sendTransportOrder:
+    
+    def __init__(self, base_class):
+        """
+        """
+        self.base_class = base_class
+        
+        #Transition to the next state is enabled using the targetState specific Boolen Variable
+        # for each target there will be a separate boolean variable
+                
+        self.WaitforTransportOrderCompletion_Enabled = True
+    
+
+    def sendTransportOrder_Logic(self):
+        """
+            The actualy logic this state  goes into this method.
+            It is upto the developer to add the relevant code.
+        """
+        try:
+            #acceptproposalMessageList = list(self.base_class.sendacceptProposal_Queue.queue) # in case for further processing is required
+            acceptproposalMessage = self.base_class.acceptProposal#acceptproposalMessageList[0]
+            
+            for submodelElem in acceptproposalMessage["interactionElements"][0]["submodelElements"]:
+                if (submodelElem['idShort'] == 'CommercialProperties'):
+                    for value in submodelElem["value"]:
+                        if value['idShort'] == "workStationLocation":
+                            self.TargetLocation = value["value"]               
+        except Exception as e:
+            print("Error ", str(e))
+
+        i = 0
+        j = 0
+        k = 0
+        self.TransportSubmodel,status,statuscode = self.base_class.pyAAS.dba.GetSubmodelById("www.company.com/ids/sm/0364_8256_7746_9243")
+        for submodelElem in self.TransportSubmodel["submodelElements"]:
+            if (submodelElem["idShort"] == "TechnicalProperties"):
+                for valueELem in submodelElem["value"]:
+                    if (valueELem["idShort"] == "FunctionalProperties"):
+                        for specifierElem in valueELem["value"]:
+                            if (specifierElem["idShort"] == "targetLocation"):
+                                self.TransportSubmodel["submodelElements"][i]["value"][j]["value"][k]["value"] = self.TargetLocation
+                            k = k + 1
+                    j = j + 1
+            i = i + 1
+ 
+        try:
+            edm = ExecuteDBModifier(self.base_class.pyAAS)
+            dataBaseResponse = edm.executeModifer({"data":{"entity":"submodels",
+                                                               "entityId":self.TransportSubmodel["id"],
+                                                                "entityData":self.TransportSubmodel, 
+                                                                "note":"Submodel"},"method":"putAASXEntityByID"})            
+        except Exception as e:
+            self.base_class.skillLogger.info("Error" + str(e))   
+        
+    def create_Outbound_Message(self) -> list:
+        """
+            The method is used to create the outbound I4.0 messages.
+            The message type is carried from the json file.
+        """
+        self.oMessages = "Order".split("/")
+        outboundMessages = []
+        for oMessage in self.oMessages:
+            message = self.base_class.WaitforNewOrder_In
+            self.gen = Generic()
+            #receiverId = "" # To be decided by the developer
+            #receiverRole = "" # To be decided by the developer
+            
+            # For broadcast message the receiverId and the 
+            # receiverRole could be empty 
+            
+            # For the return reply these details could be obtained from the inbound Message
+            #receiverId = message["frame"]["sender"]["id"]
+            receiverRole = "TransportRequester"
+            
+            # For sending the message to an internal skill
+            # The receiver Id should be
+            psp = ProductionStepOrder(self.base_class.pyAAS)
+            currentConvId = message["frame"]["conversationId"]
+            I40FrameData =      {
+                                    "semanticProtocol": self.base_class.semanticProtocol,
+                                    "type" : oMessage,
+                                    "messageId" : oMessage+"_"+str(self.base_class.pyAAS.dba.getMessageCount()["message"][0]+1),
+                                    "SenderAASID" : message["frame"]["receiver"]["id"],
+                                    "SenderRolename" : "BoringRequester",
+                                    "conversationId" : psp.createTransportStepOrder(self.base_class.aasIndex,currentConvId),
+                                    "ReceiverAASID" :  message["frame"]["receiver"]["id"],
+                                    "ReceiverRolename" : receiverRole
+                                }
+        
+            self.frame = self.gen.createFrame(I40FrameData)
+    
+            #oMessage_Out = {"frame": self.frame}
+            # Usually the interaction Elements are the submodels fro that particualar skill
+            # the relevant submodel could be retrieved using
+            # interactionElements
+            
+            #self.InElem = self.base_class.pyaas.dba.getSubmodelsbyId({"aasId":self.base_class.aasID,"submodelId":"BoringSubmodel"})
+            oMessage_Out ={"frame": self.frame,
+                                    "interactionElements":message["interactionElements"][1][0]}
+            self.instanceId = str(uuid.uuid1())
+            self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+                                                            "conversationId":oMessage_Out["frame"]["conversationId"],
+                                                            "messageType":oMessage_Out["frame"]["type"],
+                                                            "messageId":oMessage_Out["frame"]["messageId"],
+                                                            "direction" : "outbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
+                                                            "message":oMessage_Out})
+            outboundMessages.append(oMessage_Out)
+        return outboundMessages
+    
+    def run(self) -> None:
+        """
+            This method is first called form the base class after instantiating the
+            class. The method executes the entire of the state.
+        """
+        self.base_class.skillLogger.info("\n #############################################################################")
+        # StartState
+        self.base_class.skillLogger.info("StartState: sendTransportOrder")
+        # InputDocumentType"
+        InputDocument = "NA"
+        self.base_class.skillLogger.info("InputDocument : " + InputDocument)
+        
+        self.sendTransportOrder_Logic()
+        
+    def next(self) -> object:
+        """
+            This methods returns the object to the next state the needs
+            to be executed by the base class
+        """
+        OutputDocument = "Order"
+        self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
+        
+        if (OutputDocument != "NA"):
+            self.outboundMessages = self.create_Outbound_Message()
+            for outbMessage in self.outboundMessages:
+                self.base_class.sendMessage(outbMessage)
+        
+        if (self.WaitforTransportOrderCompletion_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = WaitforTransportOrderCompletion(self.base_class)
             self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
             self.base_class.skillLogger.info("############################################################################# \n")
             return ts
@@ -613,6 +853,7 @@ class sendrejectProposal:
             self.base_class.responseMessage["message"] =  "None of the provider is selected."           
         else:
             self.sendCompletionResponse_Enabled = False
+
         
     def create_Outbound_Message(self) -> list:
         """
@@ -652,21 +893,21 @@ class sendrejectProposal:
         
             self.frame = self.gen.createFrame(I40FrameData)
     
-            oMessage_Out = {"frame": self.frame,"interactionElements":[]}
+            oMessage_Out = {"frame": self.frame}
             # Usually the interaction Elements are the submodels fro that particualar skill
             # the relevant submodel could be retrieved using
             # interactionElements
             
-            #submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("submodelIdentifier")
+            #self.InElem = self.base_class.pyaas.dba.getSubmodelsbyId({"aasId":self.base_class.aasID,"submodelId":"BoringSubmodel"})
             #oMessage_Out ={"frame": self.frame,
-            #                        "interactionElements":submodel}
+            #                        "interactionElements":self.InElem["message"]}
             self.instanceId = str(uuid.uuid1())
             self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -694,10 +935,9 @@ class sendrejectProposal:
         self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
         
         if (OutputDocument != "NA"):
-            if (self.base_class.sendrejectProposal_Queue).qsize() > 0:
-                self.outboundMessages = self.create_Outbound_Message()
-                for outbMessage in self.outboundMessages:
-                    self.base_class.sendMessage(outbMessage)
+            self.outboundMessages = self.create_Outbound_Message()
+            for outbMessage in self.outboundMessages:
+                self.base_class.sendMessage(outbMessage)
         
         if (self.sendCompletionResponse_Enabled):
             self.base_class.skillLogger.info("Condition :" + "-")
@@ -741,15 +981,15 @@ class SendCFP:
         for oMessage in self.oMessages:
             message = self.base_class.WaitforNewOrder_In
             self.gen = Generic()
-            #receiverId = "" # To be decided by the developer
-            #receiverRole = "" # To be decided by the developer
+            receiverId = "" # To be decided by the developer
+            receiverRole = "" # To be decided by the developer
             
             # For broadcast message the receiverId and the 
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["id"]
-            receiverRole = "TransportProvider"#message["frame"]["sender"]["role"]["name"]
+            #receiverId = message["frame"]["sender"]["id"]
+            #receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
             # The receiver Id should be
@@ -773,17 +1013,17 @@ class SendCFP:
             # Usually the interaction Elements are the submodels fro that particualar skill
             # the relevant submodel could be retrieved using
             # interactionElements
-            submodelIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][0][0]
+            submodelIdentifier = message["interactionElements"][0][0]
             submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(submodelIdentifier)
             oMessage_Out ={"frame": self.frame,
-                                    "interactionElements":[submodel]}
+                                    "interactionElements":submodel}
             self.instanceId = str(uuid.uuid1())
             self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -834,13 +1074,12 @@ class EvaluateProposal:
                 
         self.sendrejectProposal_Enabled = True
     
-
-    def getItem(self,submodelElement,Item_Name):
+    def getItem(self,submodelElement,Item_Name) -> int:
         for value in submodelElement["value"]:
             if value['idShort'] == Item_Name:
                 return int(value['value']) 
 
-    def EvaluateProposal_Logic(self) -> int:
+    def EvaluateProposal_Logic(self):
         """
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
@@ -861,10 +1100,9 @@ class EvaluateProposal:
             
             for lsp in ListPrice_CFP:
                 qoutes.append(lsp[0] + lsp[1])
-            
+                
             bestPrice = min(qoutes)
             bestPriceIndex = qoutes.index(bestPrice)          
-            self.base_class.CFP = ListPrice_CFP[bestPriceIndex][0]
             for i  in range(0,len(proposlList)):
                 if (i == bestPriceIndex):
                     self.base_class.sendacceptProposal_Queue.put(proposlList[i])
@@ -872,6 +1110,7 @@ class EvaluateProposal:
                     self.base_class.sendrejectProposal_Queue.put(proposlList[i])
         except Exception as e:
             self.base_class.skillLogger.info("Evaluate Proposal Error" + str(e))
+
 
         
     
@@ -916,13 +1155,6 @@ class WaitforNewOrder:
         # for each target there will be a separate boolean variable
                 
         self.cfpConfiguration_Enabled = True
-
-    def createNewCFPObject(self,conversationId):
-        startTime = datetime.now()
-        self.base_class.cfp_uid = str(uuid.uuid4())
-        self.base_class.pyaas.dba.createNewCFPObject(conversationId,self.base_class.skillName,
-                                       startTime,self.base_class.cfp_uid)
-
     
     def retrieve_WaitforNewOrder_Message(self) -> None:
         """
@@ -956,7 +1188,7 @@ class WaitforNewOrder:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.createNewCFPObject(self.base_class.WaitforNewOrder_In["frame"]["conversationId"])
+        
     
     def run(self) -> None:
         """
@@ -1018,10 +1250,9 @@ class noProposalReceived:
 
     def noProposalReceived_Logic(self):
         """
-            The actualy logic of this state  goes into this method.
+            The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.base_class.responseMessage = {}
         self.base_class.responseMessage["status"] = "E"
         self.base_class.responseMessage["code"] = "E.06"
         self.base_class.responseMessage["message"] =  "No proposals received from any of the Service Providers"
@@ -1067,15 +1298,15 @@ class sendacceptProposal:
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
                 
-        self.WaitforInformConfirm_Enabled = True     
+        self.sendTransportOrder_Enabled = True
+    
 
     def sendacceptProposal_Logic(self):
         """
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        pass
-    
+        
     def create_Outbound_Message(self) -> list:
         """
             The method is used to create the outbound I4.0 messages.
@@ -1085,7 +1316,6 @@ class sendacceptProposal:
         outboundMessages = []
         for oMessage in self.oMessages:
             message = self.base_class.sendacceptProposal_Queue.get()
-            self.base_class.acceptProposal = message
             self.gen = Generic()
             #receiverId = "" # To be decided by the developer
             #receiverRole = "" # To be decided by the developer
@@ -1107,7 +1337,7 @@ class sendacceptProposal:
                                     "SenderAASID" : self.base_class.aasID,
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  "",
+                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
@@ -1115,21 +1345,21 @@ class sendacceptProposal:
         
             self.frame = self.gen.createFrame(I40FrameData)
     
-            oMessage_Out = {"frame": self.frame,"interactionElements":[]}
+            oMessage_Out = {"frame": self.frame}
             # Usually the interaction Elements are the submodels fro that particualar skill
             # the relevant submodel could be retrieved using
             # interactionElements
             
-            #submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("submodelIdentifier")
+            #self.InElem = self.base_class.pyaas.dba.getSubmodelsbyId({"aasId":self.base_class.aasID,"submodelId":"BoringSubmodel"})
             #oMessage_Out ={"frame": self.frame,
-            #                        "interactionElements":submodel}
+            #                        "interactionElements":self.InElem["message"]}
             self.instanceId = str(uuid.uuid1())
             self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
-                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -1161,9 +1391,9 @@ class sendacceptProposal:
             for outbMessage in self.outboundMessages:
                 self.base_class.sendMessage(outbMessage)
         
-        if (self.WaitforInformConfirm_Enabled):
+        if (self.sendTransportOrder_Enabled):
             self.base_class.skillLogger.info("Condition :" + "-")
-            ts = WaitforInformConfirm(self.base_class)
+            ts = sendTransportOrder(self.base_class)
             self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
             self.base_class.skillLogger.info("############################################################################# \n")
             return ts
@@ -1171,7 +1401,7 @@ class sendacceptProposal:
 
 
 
-class TransportRequester:
+class BoringRequester:
     '''
     classdocs
     '''
@@ -1185,7 +1415,9 @@ class TransportRequester:
         self.WaitforInformConfirm_Queue = Queue.Queue()
         self.WaitForSPProposal_Queue = Queue.Queue()
         self.sendCompletionResponse_Queue = Queue.Queue()
+        self.WaitforTransportOrderCompletion_Queue = Queue.Queue()
         self.cfpConfiguration_Queue = Queue.Queue()
+        self.sendTransportOrder_Queue = Queue.Queue()
         self.sendrejectProposal_Queue = Queue.Queue()
         self.SendCFP_Queue = Queue.Queue()
         self.EvaluateProposal_Queue = Queue.Queue()
@@ -1197,6 +1429,7 @@ class TransportRequester:
         self.QueueDict = {
               "informConfirm": self.WaitforInformConfirm_Queue,
               "proposal": self.WaitForSPProposal_Queue,
+              "OrderStatus": self.WaitforTransportOrderCompletion_Queue,
               "Order": self.WaitforNewOrder_Queue,
             }
     
@@ -1204,6 +1437,7 @@ class TransportRequester:
         self.WaitforInformConfirm_In = {}
         self.WaitForSPProposal_In = {}
         self.WaitforNewOrder_In = {}
+        self.WaitforTransportOrderCompletion_In = {}
         pass
     
     def empty_all_queues(self) -> None:
@@ -1237,11 +1471,11 @@ class TransportRequester:
         '''
         
         self.SKILL_STATES = {
-                          "WaitforInformConfirm": "WaitforInformConfirm",  "WaitForSPProposal": "WaitForSPProposal",  "sendCompletionResponse": "sendCompletionResponse",  "cfpConfiguration": "cfpConfiguration",  "sendrejectProposal": "sendrejectProposal",  "SendCFP": "SendCFP",  "EvaluateProposal": "EvaluateProposal",  "WaitforNewOrder": "WaitforNewOrder",  "noProposalReceived": "noProposalReceived",  "sendacceptProposal": "sendacceptProposal",
+                          "WaitforInformConfirm": "WaitforInformConfirm",  "WaitForSPProposal": "WaitForSPProposal",  "sendCompletionResponse": "sendCompletionResponse",  "WaitforTransportOrderCompletion": "WaitforTransportOrderCompletion",  "cfpConfiguration": "cfpConfiguration",  "sendTransportOrder": "sendTransportOrder",  "sendrejectProposal": "sendrejectProposal",  "SendCFP": "SendCFP",  "EvaluateProposal": "EvaluateProposal",  "WaitforNewOrder": "WaitforNewOrder",  "noProposalReceived": "noProposalReceived",  "sendacceptProposal": "sendacceptProposal",
                        }
         
         self.pyaas = pyaas
-        self.skillName = "TransportRequester"
+        self.skillName = "BoringRequester"
         self.initstate_specific_queue_internal()
         self.init_inbound_messages()
         self.currentConversationId = "temp"
@@ -1251,12 +1485,11 @@ class TransportRequester:
         
         self.semanticProtocol = "ovgu.de/http://www.vdi.de/gma720/vdi2193_2/bidding"
         self.initialState = "WaitforNewOrder"
-        self.skill_service = "Transport Requisition"
+        self.skill_service = "Boring Requisition"
         self.gen = Generic()
         self.productionStepSeq = []
         self.responseMessage = {}
         self.StatusResponseSM = [self.pyaas.aasConfigurer.getStatusResponseSubmodel()]
-        self.CFP = 0
         
     def start(self, msgHandler,shellObject,_uid) -> None:
         """
@@ -1292,7 +1525,6 @@ class TransportRequester:
         WaitforNewOrder_1 = WaitforNewOrder(self)
         self.stateChange("WaitforNewOrder")
         currentState = WaitforNewOrder_1
-        
         
         while (True):
             if ((currentState.__class__.__name__) == "WaitforNewOrder"):
@@ -1341,5 +1573,5 @@ class TransportRequester:
 
 if __name__ == '__main__':
     
-    lm2 = TransportRequester()
+    lm2 = BoringRequester()
     lm2.Start('msgHandler')

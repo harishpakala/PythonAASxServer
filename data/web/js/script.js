@@ -33,7 +33,7 @@ function getLog_MainService(){
 		const logData = (httpGetRequest.responseText)
 		document.getElementById("logParagraph_MainService").innerHTML = logData.replace(/\\n/g, "<br>");
 	}
-	httpGetRequest.send()
+	httpGetRequest.send();
 }
 
 function getLog(skillName,aasId){
@@ -52,22 +52,24 @@ function getLog(skillName,aasId){
     }
 	httpGetRequest.send()
 }
-function get_MessageData(messageID,conversationId,exDomain,aasIndex){
-	uri = encodeURI(messageID+"**"+conversationId);
+function get_MessageData(messageID,conversationId,exDomain,aasIdentifier){
+	var uri = encodeURI(messageID+"**"+conversationId);
 	var output = document.getElementById('data_Content_modal');
 	var httpGetRequest = new XMLHttpRequest();
-	httpGetRequest.open('GET',"/"+aasIndex+"/search/"+uri);
+	httpGetRequest.open('GET',"/"+aasIdentifier+"/search?searchQuery="+uri,true);
 	document.getElementById("FrameTreeDiv").innerHTML = "";
 	document.getElementById("data_Content_header").innerHTML = "";
 	httpGetRequest.onload = () => {
 		var data = (httpGetRequest.responseText)
 		var data1 = data.replace(/\\n/g, "<br>");
 		data = JSON.parse(data1);
+		console.log(data);
 		document.getElementById("data_Content_header").innerHTML = messageID;
 		
 		var downloadImg = document.createElement('img');
 		downloadImg.setAttribute("alt","exportJSON");
-		downloadImg.setAttribute("src",exDomain+"/static/images/download.svg");
+		downloadImg.setAttribute("style","height: 2.5vh; width : 2.5vh;");
+		downloadImg.setAttribute("src",exDomain+"web/images/download.svg");
 
 		var downloadA = document.createElement('a');
 		downloadA.setAttribute("id","exportJSON");
@@ -99,7 +101,7 @@ function get_MessageData(messageID,conversationId,exDomain,aasIndex){
 
 		setResultFrameTreeListner()
 	}
-httpGetRequest.send()
+httpGetRequest.send();
 }
 function setResultFrameTreeListner()
 {
@@ -305,7 +307,6 @@ function submodelElem(aasIndex,propertyName,submodelName,elemType,idShortPath,ad
 			const logData = (httpGetRequest.responseText)
 		}
 		httpGetRequest.send(formData);
-		console.log(submodelName);
 		if (submodelName.toUpperCase() == "NAMEPLATE")
 		{
 		dataElemDiv = document.getElementById(additionalInfo+"."+propertyName);
@@ -751,9 +752,9 @@ function processDirectionMessage(messages,conVId,exDomain,aasIndex)
 	}
 	return messagesList;
 }
-function createTable(messages,conVId,exDomain,aasIndex)
+function createTable(messages,conVId,exDomain,aasIdentifier)
 {
-	var messagesList = processDirectionMessage(messages,conVId,exDomain,aasIndex);
+	var messagesList = processDirectionMessage(messages,conVId,exDomain,aasIdentifier);
 	var tbody= document.createElement("tbody");
 	for ( var i = 0; i < messagesList.length; i ++)
 	{
@@ -767,15 +768,15 @@ function createTable(messages,conVId,exDomain,aasIndex)
 }
 function createSearResultTree(data,exDomain,aasIndex)
 {	
-	var resultList = data[Object.keys(data)[0]]
+	var resultList = data[Object.keys(data)[0]];
 	var searchResultInbound = document.getElementById("searchResultInbound");
-	searchResultInbound.append(createTable(resultList["inbound"],String(Object.keys(data)[0]),exDomain,aasIndex));
+	searchResultInbound.appendChild(createTable(resultList["inbound"],String(Object.keys(data)[0]),exDomain,aasIndex));
 	
-	var searchResultInbound = document.getElementById("searchResultInternal");
-	searchResultInbound.append(createTable(resultList["internal"],String(Object.keys(data)[0]),exDomain,aasIndex));
+	var searchResultInternal = document.getElementById("searchResultInternal");
+	searchResultInternal.appendChild(createTable(resultList["internal"],String(Object.keys(data)[0]),exDomain,aasIndex));
 	
-	var searchResultInbound = document.getElementById("searchResultOutbound");
-	searchResultInbound.append(createTable(resultList["outbound"],String(Object.keys(data)[0]),exDomain,aasIndex));
+	var searchResultOutbound = document.getElementById("searchResultOutbound");
+	searchResultOutbound.appendChild(createTable(resultList["outbound"],String(Object.keys(data)[0]),exDomain,aasIndex));
 }
 // Result Frame Tree
 function createResultFrameTree(data)
@@ -1086,3 +1087,28 @@ function searchQueryAAS() {
         }
     }
 }
+function getCFP(conversationId){
+	var httpGetRequest = new XMLHttpRequest();
+	httpGetRequest.open('GET',"/"+conversationId+'/cfp');
+	httpGetRequest.onload = () => {
+		var resultList = JSON.parse(httpGetRequest.responseText);
+		console.log(resultList,httpGetRequest.responseText);
+		var cfp_conversationIdElem = document.getElementById("cfp_conversationId");
+		cfp_conversationIdElem.innerHTML = "";
+		var cfpList = resultList["cfpList"];
+		for (let i = 0; i < cfpList.length; i++) {
+			var _row = `<tr>
+				<td style = "border: 1px solid #ddd;">`+cfpList[i][0]+`</td>
+				<td style = "border: 1px solid #ddd;">`+cfpList[i][1]+`</td>
+				<td style = "border: 1px solid #ddd;">`+cfpList[i][2]+`</td>
+				<td style = "border: 1px solid #ddd;">`+cfpList[i][3]+`</td>
+				<td style = "border: 1px solid #ddd;">`+cfpList[i][4]+`</td>
+			</tr>`;
+			cfp_conversationIdElem.insertAdjacentHTML(
+					'afterbegin',
+					_row
+				);
+		}
+	}
+	httpGetRequest.send();
+}	

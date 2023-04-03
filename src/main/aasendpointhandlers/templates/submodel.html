@@ -5,7 +5,7 @@
 		<div class="col-1 d-flex flex-wrap align-items-center text-center">
 			Update
 		</div>
-		<div class="col-1 col-1 d-flex flex-wrap align-items-center text-centercol-1 d-flex flex-wrap align-items-center text-center">
+		<div class="col-1 d-flex flex-wrap align-items-center text-centercol-1 d-flex flex-wrap align-items-center text-center">
 			<div class="std-submodel-add" style="margin-left: 30%">
 
 				   <input  type="image"
@@ -119,7 +119,7 @@ function addSubmodelElements(parent,exdomain){
 				var elemLi = document.createElement('li');	
 				elemLi.setAttribute("class","list-group-item");
 				elemLi.setAttribute("id","li_"+elemC.idShort.getString());
-				elemLi.appendChild(processCollection(elemC.idShort.getString()));
+				elemLi.appendChild(processCollection(elemC.idShort.getString(),exdomain));
 						
 				submodelElems.appendChild(elemLi);
 			}
@@ -210,9 +210,8 @@ function setSubmodelElemData(_id,parent,exdomain){
 	
 	return elemLi;
 }
-function processCollection(_pidShort){
+function processCollection(_pidShort,exdomain){
 	var parent = "elem21";
-	var exdomain = "http://localhost:60011/";
 	var tempId = submodelId+"."+_pidShort;
 	
 	var collectionElem = linearData1[tempId];
@@ -233,7 +232,7 @@ function processCollection(_pidShort){
 		if (elemC.modelType == "SubmodelElementCollection") {
 				var elemLi = document.createElement('li');	
 				elemLi.setAttribute("class","list-group-item");
-				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString()));
+				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString(),exdomain));
 			}
 			else {
 				accordinCollpase.appendChild(setSubmodelElemData(_pidShort+"."+elemC.idShort.getString(),parent,exdomain));

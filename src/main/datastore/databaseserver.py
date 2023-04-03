@@ -1505,6 +1505,32 @@ class AAS_Database_Server(object):
         except Exception as E:
             return  str(E) + "Unexpected Error", False
 
+    def createNewCFPObject(self,coversationId,skillName,startTime,_uuid):
+        try:
+            _uuid = self.aasHashDict.__getHashEntry__(coversationId).__getId__()
+            converseObject = self.conversHashDict.__getHashEntry__(_uuid)
+            converseObject._createNewCFPObject(skillName,startTime,_uuid,coversationId)
+        except Exception as E:
+            return  str(E) + "Unexpected Error", False
+
+    def modifyCFPObject(self,_uuid,endTime,_cfp,coversationId):
+        try:
+            _uuid = self.aasHashDict.__getHashEntry__(coversationId).__getId__()
+            converseObject = self.conversHashDict.__getHashEntry__(_uuid)
+            converseObject.modifyCFPObject(_uuid,endTime,_cfp)
+        except Exception as E:
+            return  str(E) + "Unexpected Error", False
+
+    
+    def getConversationCFP(self,coversationId):
+        try:
+            _uuid = self.aasHashDict.__getHashEntry__(coversationId).__getId__()
+            converseObject = self.conversHashDict.__getHashEntry__(_uuid)
+            tes = converseObject.getCFPList()
+            return tes
+        except Exception as E:
+            return [] 
+
     def getMessageCount(self):
         try:
             uuids = self.conversHashDict._getKeys()
@@ -1513,11 +1539,11 @@ class AAS_Database_Server(object):
         except Exception as E:
             return  str(E) + "Unexpected Error", False
            
-    def getConversationsById(self,coversationId,identificationId):
+    def getConversationsById(self,coversationId,aasIdentifier):
         try:
             _uuid = self.aasHashDict.__getHashEntry__(coversationId).__getId__()
             converseObject = self.conversHashDict.__getHashEntry__(_uuid)
-            conversation = converseObject._getMessages(identificationId)
+            conversation = converseObject._getMessages(aasIdentifier)
             return conversation, True
         except Exception as E:
             return  str(E) + "Unexpected Error", False

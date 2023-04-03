@@ -1474,9 +1474,9 @@ class HoningRequester:
         self.enabledStatus = {"Y":True, "N":False}
         self.enabledState = "Y"
         
-        self.semanticProtocol = ""
-        self.initialState = ""
-        self.skill_service = ""
+        self.semanticProtocol = "ovgu.de/http://www.vdi.de/gma720/vdi2193_2/bidding"
+        self.initialState = "WaitforNewOrder"
+        self.skill_service = "Honing Requisition"
         self.gen = Generic()
         #self.createStatusMessage()
         self.productionStepSeq = []
