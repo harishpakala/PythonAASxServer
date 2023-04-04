@@ -2,7 +2,7 @@
   uses: microsoft/action-python@0.3.9
   with:
     # Project root directory.
-Default '.'
+Default './src/main'
 
     root: # optional, default is .
     # pyproject.toml location.
