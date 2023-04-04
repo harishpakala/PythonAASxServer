@@ -11,6 +11,7 @@ try:
 except ImportError:
     import Queue as Queue 
 
+import base64
 import logging
 import sys
 import time
@@ -91,7 +92,7 @@ except ImportError:
         
         MODULE_NAME = "PLC_OPCUA"
         #Accessing the specifc assetaaccess adaptor 
-        self.plcHandler = self.base_class.pyaas.assetaccessEndpointHandlers[MODULE_NAME] # 1
+        self.plcHandler = self.base_class.pyaas.asset_access_handlers[MODULE_NAME] # 1
         
         #accessing the list property variables Dictionary are specified in the configuration file.  
         self.propertylist = self.base_class.shellObject.thing_description
@@ -126,7 +127,7 @@ except ImportError:
     
     The ReceiverAASID and ReceiverRolename could be obtained from sender part of the incoming message
     and these are to be provided empty, if there is no receiver.
-    receiverId = self.base_class.StateName_In["frame"]["sender"]["identification"]["id"]
+    receiverId = self.base_class.StateName_In["frame"]["sender"]["id"]
     receiverRole = self.base_class.StateName_In["frame"]["sender"]["role"]["name"]
     
     I40FrameData is a dictionary
@@ -227,7 +228,7 @@ class sendingRefuse:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -262,6 +263,7 @@ class sendingRefuse:
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -336,7 +338,7 @@ class sendinPropoposalporvisionConfirm:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -349,7 +351,7 @@ class sendinPropoposalporvisionConfirm:
                                     "SenderAASID" : self.base_class.aasID,
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
+                                    "replyBy" :  "",
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
@@ -371,6 +373,7 @@ class sendinPropoposalporvisionConfirm:
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -445,7 +448,7 @@ class sendingNotUnderstood:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -480,6 +483,7 @@ class sendingNotUnderstood:
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -549,27 +553,27 @@ class feasibilityCheck:
             if  item =="Property":
                 if (key =="MaterialOfWorkpiece"):
                     feasibilityLen = feasibilityLen + 1 
-                elif ( self.baseClassBoringProvider.proposalSubmodelTypes[key] == self.baseClassBoringProvider.subModelTypes[key] ):
+                elif ( self.base_class.proposalSubmodelTypes[key] == self.base_class.subModelTypes[key] ):
                     feasibilityLen = feasibilityLen + 1
                 else :
-                    print(key,self.baseClassBoringProvider.proposalSubmodelTypes[key],self.baseClassBoringProvider.subModelTypes[key])
+                    print(key,self.base_class.proposalSubmodelTypes[key],self.base_class.subModelTypes[key])
             elif item =="Range":
-                value = self.baseClassBoringProvider.proposalSubmodelTypes[key]
-                min = float(self.baseClassBoringProvider.subModelTypes[key]["min"])
-                max = float(self.baseClassBoringProvider.subModelTypes[key]["max"])
+                value = self.base_class.proposalSubmodelTypes[key]
+                min = float(self.base_class.subModelTypes[key]["min"])
+                max = float(self.base_class.subModelTypes[key]["max"])
                 if float(value) >= min and float(value) <= max :
                     feasibilityLen = feasibilityLen + 1
                 else :
-                    print(key,value,self.baseClassBoringProvider.subModelTypes[key])                    
+                    print(key,value,self.base_class.subModelTypes[key])                    
             elif item =="TRange":
-                value = self.baseClassBoringProvider.proposalSubmodelTypes[key]
-                min = float((self.baseClassBoringProvider.subModelTypes[key]["min"]).split(" ")[1])
-                max = float((self.baseClassBoringProvider.subModelTypes[key]["max"]).split(" ")[1])
+                value = self.base_class.proposalSubmodelTypes[key]
+                min = float((self.base_class.subModelTypes[key]["min"]).split(" ")[1])
+                max = float((self.base_class.subModelTypes[key]["max"]).split(" ")[1])
                 tempValue = value.split(" ")[1]
                 if float(tempValue) >= min and float(tempValue) <= max :
                     feasibilityLen = feasibilityLen + 1
                 else :
-                    print(key,value,self.baseClassBoringProvider.subModelTypes[key])                    
+                    print(key,value,self.base_class.subModelTypes[key])                    
                     
         if feasibilityLen == 12:
             self.sendingRefuse_Enabled = False
@@ -651,6 +655,7 @@ class WaitForCallForProposal:
                                                             "messageType":message["frame"]["type"],
                                                             "messageId":message["frame"]["messageId"],
                                                             "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":message})
             
 
@@ -686,10 +691,10 @@ class WaitForCallForProposal:
             while (((self.base_class.WaitForCallForProposal_Queue).qsize()) == 0):
                 time.sleep(1)
                 
-            self.base_class.WaitForCallForProposal_InSP = {}
+            self.base_class.WaitForCallForProposal_In = {}
             self.base_class.proposalSubmodelTypes = {}
             self.base_class.subModelTypes = {}
-            self.base_class.emptyAllQueues()   
+            self.base_class.emptyAllQueues()
             self.base_class.initInBoundMessages()               
 
             self.saveMessage() # in case we need to store the incoming message
@@ -749,6 +754,7 @@ class waitingforServiceRequesterAnswer:
                                                             "messageType":message["frame"]["type"],
                                                             "messageId":message["frame"]["messageId"],
                                                             "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":message})
             
 
@@ -757,6 +763,13 @@ class waitingforServiceRequesterAnswer:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
+        if (self.messageExist):
+            if (self.base_class.waitingforServiceRequesterAnswer_In["frame"]["type"] =="rejectProposal"):
+                self.serviceProvision_Enabled = False
+            else:
+                self.WaitForCallForProposal_Enabled = False
+        else:
+            self.serviceProvision_Enabled = False
         
     
     def run(self) -> None:
@@ -841,11 +854,13 @@ class sendingProposal:
         self.iSubmodel1 = iSubmodel1
         i = 0
         listPrice = self.getPropertyElem(self.iSubmodel1,"listprice")
+        CFP = self.getPropertyElem(self.iSubmodel1,"cfp")
         workStationLocation = self.getPropertyElem(self.iSubmodel1,"workStationLocation")
         for submodelELem in self.oSubmodel1["submodelElements"]:
             if submodelELem["idShort"] =="CommercialProperties":
                 self.oSubmodel1["submodelElements"][i]["value"].append(listPrice)
                 self.oSubmodel1["submodelElements"][i]["value"].append(workStationLocation)
+                self.oSubmodel1["submodelElements"][i]["value"].append(CFP)
                 break
             i = i + 1
         return self.oSubmodel1
@@ -866,7 +881,7 @@ class sendingProposal:
         outboundMessages = []
         for oMessage in self.oMessages:
             import copy
-            message = copy.deepcopy(self.baseClassBoringProvider.WaitForCallForProposal_In)
+            message = copy.deepcopy(self.base_class.WaitForCallForProposal_In)
 
             self.gen = Generic()
             #receiverId = "" # To be decided by the developer
@@ -876,7 +891,7 @@ class sendingProposal:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -902,7 +917,7 @@ class sendingProposal:
             # the relevant submodel could be retrieved using
             # interactionElements
             
-            self.InElem = self.base_class.pyAAS.dba.GetSubmodelById("https://example.com/ids/sm/2334_7040_1122_4553")
+            self.InElem,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/2334_7040_1122_4553")
             
             self.boringSubmodel1 = self.addPropertyElems(message["interactionElements"][0],self.InElem)
             oMessage_Out ={"frame": self.frame,
@@ -914,6 +929,7 @@ class sendingProposal:
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -971,7 +987,7 @@ class checkingSchedule:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.plcHandler = self.base_class.pyaas.assetaccessEndpointHandlers["OPCUA"]
+        self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
             sPermissionVariable = ""#self.plcHandler.read(self.tdPropertiesList["sPermission"].href)
@@ -1032,9 +1048,9 @@ class capabilitycheck:
         self.feasibilityCheck_Enabled = True
 
     def getProperty(self,submodelElem):
-        if submodelElem["modelType"]["name"] =="Property":
+        if submodelElem["modelType"] =="Property":
             return submodelElem["value"] 
-        elif submodelElem["modelType"]["name"] =="Range":
+        elif submodelElem["modelType"] =="Range":
             return  {"min":submodelElem["min"],"max":submodelElem["max"]} 
     
     def getPropertyList(self,submodel):
@@ -1063,32 +1079,32 @@ class capabilitycheck:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.submodel,status,statuscode = self.base_class.pyAAS.dba.GetSubmodel("https://example.com/ids/sm/2334_7040_1122_4553")
+        self.submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/2334_7040_1122_4553")
         tempDict1 = self.getPropertyList(self.submodel)
-        tempDict = self.getPropertyList(self.baseClassBoringProvider.WaitForCallForProposal_InSP['interactionElements'][0])
+        tempDict = self.getPropertyList(self.base_class.WaitForCallForProposal_In['interactionElements'][0])
 
         try:
             if (tempDict["env"] !="live"):
                 self.feasibilityCheck_Enabled = False
-                self.baseClassBoringProvider.skillLogger.info("Environment Error")
+                self.base_class.skillLogger.info("Environment Error")
             else:       
                 for key in list(tempDict1.keys()):
-                    self.baseClassBoringProvider.subModelTypes[key] = tempDict1[key]        
+                    self.base_class.subModelTypes[key] = tempDict1[key]        
                 
                 for key in list(tempDict.keys()):
-                    self.baseClassBoringProvider.proposalSubmodelTypes[key] = tempDict[key]     
+                    self.base_class.proposalSubmodelTypes[key] = tempDict[key]     
                     
-                submodelTypeList = list(self.baseClassBoringProvider.subModelTypes.keys())
-                if len(list(self.baseClassBoringProvider.proposalSubmodelTypes.keys())) == 0:
+                submodelTypeList = list(self.base_class.subModelTypes.keys())
+                if len(list(self.base_class.proposalSubmodelTypes.keys())) == 0:
                     self.feasibilityCheck_Enabled = False
-                    self.baseClassBoringProvider.skillLogger.info("Not Equal number of property types")
+                    self.base_class.skillLogger.info("Not Equal number of property types")
                     
-                for key in list(self.baseClassBoringProvider.proposalSubmodelTypes.keys()):
+                for key in list(self.base_class.proposalSubmodelTypes.keys()):
                     if (key in ["MaxDistanceToPreferredVenueOfProvision","PreferredVenueOfProvision","deliveryTime"]):
                         pass                
                     elif key not in submodelTypeList:
                         self.feasibilityCheck_Enabled = False
-                        self.baseClassBoringProvider.skillLogger.info("one of the property missing" + str(key))
+                        self.base_class.skillLogger.info("one of the property missing" + str(key))
                         break
         except Exception as E:
             self.feasibilityCheck_Enabled = False
@@ -1147,7 +1163,7 @@ class serviceProvision:
                 
         self.sendinPropoposalporvisionConfirm_Enabled = True
         self.WaitForCallForProposal_Enabled = True
-        self.plcHandler = self.base_class.pyaas.assetaccessEndpointHandlers["OPCUA"]
+        self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description  
                 
 
@@ -1160,7 +1176,7 @@ class serviceProvision:
             #self.plcHandler.write(self.tdPropertiesList["sPermission"]["href"],"true")
             plcBoool = True
             while (plcBoool):
-                time.sleep(10)
+                time.sleep(20)
                 sPermissionVariable = "FALSE"#self.plcHandler.read(self.tdPropertiesList["sPermission"]["href"])
                 if  (sPermissionVariable.upper() =="FALSE"):
                     plcBoool = False
@@ -1284,7 +1300,8 @@ class BoringProvider:
                 
         self.QueueDict = {
               "callForProposal": self.WaitForCallForProposal_Queue,
-              "acceptProposal / rejectProposal": self.waitingforServiceRequesterAnswer_Queue,
+              "acceptProposal": self.waitingforServiceRequesterAnswer_Queue,
+              "rejectProposal": self.waitingforServiceRequesterAnswer_Queue,
             }
     
     def init_inbound_messages(self) -> None:
@@ -1344,6 +1361,16 @@ class BoringProvider:
 
         self.subModelTypes = {}
         self.proposalSubmodelTypes = {}
+
+
+    def emptyAllQueues(self):
+        waitingforServiceRequesterAnswerList = list(self.waitingforServiceRequesterAnswer_Queue.queue)
+        for elem in range(0,len(waitingforServiceRequesterAnswerList)):
+            self.waitingforServiceRequesterAnswer_Queue.get()
+
+    def initInBoundMessages(self):
+            self.WaitForCallForProposal_In = {}
+            self.waitingforServiceRequesterAnswer_In = {}
         
     def start(self, msgHandler,shellObject,_uid) -> None:
         """
@@ -1360,7 +1387,10 @@ class BoringProvider:
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self._uid)+"_"+self.skillName+".LOG")
+        bString = base64.b64encode(bytes(self.aasID,'utf-8'))
+        base64_string= bString.decode('utf-8')
+        
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
         self.listHandler = ServiceLogHandler(LogList())

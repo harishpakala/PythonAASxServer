@@ -4,17 +4,17 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 '''
-import logging
-import sys
-import time
-import uuid
-
 
 try:
     import queue as Queue
 except ImportError:
     import Queue as Queue 
 
+import base64
+import logging
+import sys
+import time
+import uuid
 
 try:
     from utils.i40data import Generic
@@ -758,7 +758,10 @@ class Register(object):
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self.uuid)+"_"+self.skillName+".LOG")
+        bString = base64.b64encode(bytes(self.aasID,'utf-8'))
+        base64_string= bString.decode('utf-8')
+        
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
         self.listHandler = ServiceLogHandler(LogList())

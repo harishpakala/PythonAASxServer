@@ -30,9 +30,9 @@ except ImportError:
     from src.main.aasendpointhandlers.rstapi_endpointresources import AssetAdministrationShells,AssetAdministrationShellById,AssetAdministrationShell,SubmodelReferences,DeleteSubmodelReference,AssetInformation,Submodel,SubmodelElements,SubmodelElementByPath,FileByPath,ConceptDescriptions,ConceptDescriptionById,Submodels,SubmodelById,Submodel_SRI,SubmodelElements_SRI,SubmodelElementByPath_SRI,FileByPath_SRI,SubmodelElementByPath_history,Submodels_shell#,AssetAdministrationShell,ConceptDescriptions,ConceptDescription,Submodels,Submodel,AssetAdministrationShellsSubmodelRefs,SubmodelELements,SubmodelElementByIdShortPath,AASSubmodelElementByIdShortPath,AASStaticSource,AASStaticWebSources,AASRTDataVisualizer,AASWebInterfaceConversationMessage,AASWebInterfaceRegister
 
 try:
-    from aasendpointhandlers.rstapi_endpointresources import RetrieveMessage,AASWebInterfaceHome,AASWebInterface,AASWebInterfaceSearch,AASWebInterfaceSubmodels,AASWebInterfaceSubmodelElemValue,AASWebInterfaceSKillLog,AASWebInterfaceProductionManagement,AASDocumentationDownload,AASDocumentationDownload,AASDocumentationDownloadSubmodel,AASStaticConfigSource,AASStaticSource,AASRTDataVisualizer,AASWebInterfaceRegister
+    from aasendpointhandlers.rstapi_endpointresources import RetrieveMessage,AASWebInterfaceHome,AASWebInterface,AASWebInterfaceSearch,AASWebInterfaceSubmodels,AASWebInterfaceSubmodelElemValue,AASWebInterfaceSKillLog,AASWebInterfaceProductionManagement,AASDocumentationDownload,AASDocumentationDownload,AASDocumentationDownloadSubmodel,AASStaticConfigSource,AASStaticSource,AASRTDataVisualizer,AASWebInterfaceRegister,AASWebInterfaceCFP
 except ImportError:
-    from src.main.aasendpointhandlers.rstapi_endpointresources import RetrieveMessage,AASWebInterfaceHome,AASWebInterface,AASWebInterfaceSearch,AASWebInterfaceSubmodels,AASWebInterfaceSubmodelElemValue,AASWebInterfaceSKillLog,AASWebInterfaceProductionManagement,AASDocumentationDownload,AASDocumentationDownload,AASDocumentationDownloadSubmodel,AASStaticConfigSource,AASStaticSource,AASRTDataVisualizer,AASWebInterfaceRegister
+    from src.main.aasendpointhandlers.rstapi_endpointresources import RetrieveMessage,AASWebInterfaceHome,AASWebInterface,AASWebInterfaceSearch,AASWebInterfaceSubmodels,AASWebInterfaceSubmodelElemValue,AASWebInterfaceSKillLog,AASWebInterfaceProductionManagement,AASDocumentationDownload,AASDocumentationDownload,AASDocumentationDownloadSubmodel,AASStaticConfigSource,AASStaticSource,AASRTDataVisualizer,AASWebInterfaceRegister,AASWebInterfaceCFP
     
 drv_rst_app = Flask(__name__)
 drv_rst_app.secret_key = os.urandom(24)
@@ -73,9 +73,10 @@ class AASEndPointHandler(AASEndPointHandler):
         #drv_rst_api.add_resource(AASStaticSource, "/web/<filename>",resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AASStaticConfigSource, "/config/<path:filename>",resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AASStaticWebSources, "/web/<string:webtype>/<filename>",resource_class_args=tuple([self.pyaas]))
-        drv_rst_api.add_resource(AASRTDataVisualizer, "/<int:aasId>/rtdata/visualize",resource_class_args=tuple([self.pyaas]))
+        drv_rst_api.add_resource(AASRTDataVisualizer, "/<path:aasIdentifier>/rtdata/visualize",resource_class_args=tuple([self.pyaas]))
        
-        
+        drv_rst_api.add_resource(AASWebInterfaceSearch,"/<path:aasIdentifier>/search",resource_class_args=tuple([self.pyaas]))
+        drv_rst_api.add_resource(AASWebInterfaceCFP,"/<path:conversationId>/cfp",resource_class_args=tuple([self.pyaas]))
         # REST API
         drv_rst_api.add_resource(AssetAdministrationShells, "/shells/", resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AssetAdministrationShellById, "/shells/<path:aasIdentifier>", resource_class_args=tuple([self.pyaas]))
@@ -99,7 +100,7 @@ class AASEndPointHandler(AASEndPointHandler):
         
         drv_rst_api.add_resource(Submodels, "/submodels", resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(SubmodelById, "/submodels/<path:submodelIdentifier>", resource_class_args=tuple([self.pyaas]))
-
+        
 
         drv_rst_api.add_resource(Submodel_SRI,"/submodels/<path:submodelIdentifier>/submodel", resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(SubmodelElements_SRI,"/submodels/<path:submodelIdentifier>/submodel/submodel-elements", resource_class_args=tuple([self.pyaas]))
@@ -141,7 +142,7 @@ class AASEndPointHandler(AASEndPointHandler):
         
                                                                                       
         drv_rst_api.add_resource(AASWebInterfaceRegister, "/<int:aasIndex>/registration", resource_class_args=tuple([self.pyaas]))        
-        drv_rst_api.add_resource(AASWebInterfaceSearch,"/<int:aasIndex>/search",resource_class_args=tuple([self.pyaas]))
+        
         drv_rst_api.add_resource(AASWebInterfaceConversationMessage,"/<int:aasIndex>/search/<query>",resource_class_args=tuple([self.pyaas]))        
         drv_rst_api.add_resource(AASWebInterfaceSubmodelElemValue,"/<int:aasIdentifier>/submodels/elem",resource_class_args=tuple([self.pyaas]))
         

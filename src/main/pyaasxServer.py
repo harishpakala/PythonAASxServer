@@ -80,6 +80,7 @@ class PyAASxServer:
         self.submodelHashDict = HashDict()
         self.cdHashDict = HashDict()
         self.converseHashDict = HashDict()
+        self.cfpHashDict = HashDict()
         self.aasShellHashDict = HashDict()
         self.assetHashDict = HashDict()
         

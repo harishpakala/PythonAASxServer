@@ -4,15 +4,16 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 """
-import logging
-import sys
-import time
-import uuid
-
 try:
     import queue as Queue
 except ImportError:
     import Queue as Queue
+import base64
+from datetime import datetime
+import logging
+import sys
+import time
+import uuid
 
 try:
     from utils.utils import ExecuteDBModifier, ProductionStepOrder
@@ -128,7 +129,7 @@ except ImportError:
     
     The ReceiverAASID and ReceiverRolename could be obtained from sender part of the incoming message
     and these are to be provided empty, if there is no receiver.
-    receiverId = self.baseClass.StateName_In["frame"]["sender"]["identification"]["id"]
+    receiverId = self.baseClass.StateName_In["frame"]["sender"]["id"]
     receiverRole = self.baseClass.StateName_In["frame"]["sender"]["role"]["name"]
     
     I40FrameData is a dictionary
@@ -306,10 +307,14 @@ class sendFailureResponse(object):
         self.InElem["submodelElements"][1]["value"] = self.baseClass.responseMessage["code"]
         self.InElem["submodelElements"][2]["value"] = self.baseClass.responseMessage["message"]
 
+        aasId = self.baseClass.WaitforNewOrder_In["frame"]["sender"]["id"]
+        _uid = self.baseClass.pyaas.aasHashDict.__getHashEntry__(aasId).__getId__()
+        aasShellObject = self.baseClass.pyaas.aasShellHashDict.__getHashEntry__(_uid)
+        aasShellObject.productionStepList.clear()
         self.baseClass.responseMessage = {}
 
     def create_Outbound_Message(self):
-        self.oMessages = "OrderStatus".split("/")
+        self.oMessages = "ProductionOrderStatus".split("/")
         outboundMessages = []
         for oMessage in self.oMessages:
             message = self.baseClass.WaitforNewOrder_In
@@ -321,7 +326,7 @@ class sendFailureResponse(object):
             # receiverRole could be empty 
 
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
 
             # For sending the message to an internal skill
@@ -330,7 +335,7 @@ class sendFailureResponse(object):
             I40FrameData = {
                 "semanticProtocol": self.baseClass.semanticProtocol,
                 "type": oMessage,
-                "messageId": oMessage + "_" + str(self.baseClass.pyaas.dba.getMessageCount()),
+                "messageId": oMessage + "_" + str(self.baseClass.pyaas.dba.getMessageCount()[0]+1),
                 "SenderAASID": message["frame"]["sender"]["id"],
                 "SenderRolename": self.baseClass.skillName,
                 "conversationId": message["frame"]["conversationId"],
@@ -347,13 +352,15 @@ class sendFailureResponse(object):
 
             # self.InElem = self.baseClass.pyaas.dba.getAAsSubmodelsbyId(self.baseClass.pyaas.AASID,"BoringSubmodel")
             oMessage_Out = {"frame": self.frame,
-                            "interactionElements": self.InElem}
+                            "interactionElements":[self.InElem]}
             self.instanceId = str(uuid.uuid1())
-            #             self.baseClass.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
-            #                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
-            #                                                             "messageType":oMessage_Out["frame"]["type"],
-            #                                                             "messageId":oMessage_Out["frame"]["messageId"],
-            #                                                             "message":oMessage_Out})
+            self.baseClass.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
+                                                                         "conversationId":oMessage_Out["frame"]["conversationId"],
+                                                                         "messageType":oMessage_Out["frame"]["type"],
+                                                                         "messageId":oMessage_Out["frame"]["messageId"],
+                                                                         "SenderAASID":message["frame"]["sender"]["id"],
+                                                                         "direction" : "internal",
+                                                                         "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
 
@@ -476,9 +483,8 @@ class sendProductionStepOrder(object):
 
         # Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
-
         self.waitforStepOrderCompletion_Enabled = True
-
+            
     def sendProductionStepOrder_Logic(self):
         aasId = self.baseClass.WaitforNewOrder_In["frame"]["sender"]["id"]
         _uid = self.baseClass.pyaas.aasHashDict.__getHashEntry__(aasId).__getId__()
@@ -508,7 +514,7 @@ class sendProductionStepOrder(object):
             ps0 = ProductionStepOrder(self.baseClass.pyaas)
             conversationId = ps0.createStepOrderConversation(receiverId, message["frame"][
                 "conversationId"] + "_" + str(self.productionStepLen))
-
+            
             I40FrameData = {
                 "semanticProtocol": self.baseClass.semanticProtocol,
                 "type": oMessage,
@@ -528,7 +534,7 @@ class sendProductionStepOrder(object):
             # the relevant submodel could be retrieved using
             # interactionElements
 
-            # self.InElem = self.baseClass.pyaas.dba.getAAsSubmodelsbyId(self.baseClass.pyaas.AASID,"BoringSubmodel")
+                        # self.InElem = self.baseClass.pyaas.dba.getAAsSubmodelsbyId(self.baseClass.pyaas.AASID,"BoringSubmodel")
             # oMessage_Out ={"frame": self.frame,
             #                        "interactionElements":self.InElem["message"]}
             self.instanceId = str(uuid.uuid1())
@@ -537,6 +543,7 @@ class sendProductionStepOrder(object):
             #                                                "messageType":oMessage_Out["frame"]["type"],
             #                                                "messageId":oMessage_Out["frame"]["messageId"],
             #                                                "message":oMessage_Out})
+
             outboundMessages.append(oMessage_Out)
         return outboundMessages
 
@@ -560,7 +567,7 @@ class sendProductionStepOrder(object):
             self.outboundMessages = self.create_Outbound_Message()
             for outbMessage in self.outboundMessages:
                 self.baseClass.sendMessage(outbMessage)
-
+            
         if (self.waitforStepOrderCompletion_Enabled):
             self.baseClass.skillLogger.info("Condition :" + "-")
             ts = waitforStepOrderCompletion(self.baseClass)
@@ -605,16 +612,13 @@ class waitforStepOrderCompletion(object):
         if (self.messageExist):
             self.orderStatus = \
             self.baseClass.waitforStepOrderCompletion_In["interactionElements"][0]["submodelElements"][0]["value"]
-            self.baseClass.responseMessage["status"] = \
-            self.baseClass.waitforStepOrderCompletion_In["interactionElements"][0]["submodelElements"][0]["value"]
-            self.baseClass.responseMessage["code"] = \
-            self.baseClass.waitforStepOrderCompletion_In["interactionElements"][0]["submodelElements"][1]["value"]
-            self.baseClass.responseMessage["message"] = \
-            self.baseClass.waitforStepOrderCompletion_In["interactionElements"][0]["submodelElements"][2]["value"]
-
+            
             if (self.orderStatus == "E"):
-
-                self.excProductionStepSeq_Enabled = True
+                self.excProductionStepSeq_Enabled = False
+                self.baseClass.responseMessage["status"] = "E"
+                self.baseClass.responseMessage["code"] = "E.013"
+                self.baseClass.responseMessage["message"] = \
+                "The placed order is not successfully executed please try it later."
             else:
                 self.sendFailureResponse_Enabled = False
         else:
@@ -694,6 +698,7 @@ class sendCompletionResponse(object):
         self.InElem["submodelElements"][0]["value"] = self.baseClass.responseMessage["status"]
         self.InElem["submodelElements"][1]["value"] = self.baseClass.responseMessage["code"]
         self.InElem["submodelElements"][2]["value"] = self.baseClass.responseMessage["message"]
+         
         self.baseClass.responseMessage = {}
 
     def create_Outbound_Message(self):
@@ -853,7 +858,8 @@ class ProductionManager(object):
         self.gen = Generic()
         self.createStatusMessage()
         self.responseMessage = {}
-
+        self.CFPList = []
+        
     def start(self,msgHandler,shellObject,_uuid) -> None:
         self.msgHandler = msgHandler
         self.shellObject = shellObject
@@ -866,7 +872,10 @@ class ProductionManager(object):
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
 
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self.uuid)+"_"+self.skillName+".LOG")
+        bString = base64.b64encode(bytes(self.aasID,'utf-8'))
+        base64_string= bString.decode('utf-8')
+        
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
 
         self.listHandler = ServiceLogHandler(LogList())

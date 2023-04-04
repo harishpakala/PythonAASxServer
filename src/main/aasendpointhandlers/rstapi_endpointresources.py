@@ -1156,7 +1156,7 @@ class AASWebInterfaceHome(Resource):
         if status:
             if self.process(shelldata):
                 _uuid = self.pyaas.aasHashDict.__getHashEntry__(shelldata["id"])._id
-                self.pyaas.configure_skills_by_id(_uuid)
+                self.pyaas.configure_skills_by_id(_uuid,shelldata["id"])
                 self.pyaas.start_skills_by_id(_uuid)
                 return True
             else:
@@ -1292,12 +1292,22 @@ class AASWebInterface(Resource):
             submodel_data["idShort"] = submodel_IdShort
             submodel_Ref["keys"][0]["value"] = submodel_Id
         
-            self.save_submodel(submodel_data)
+            self.create_submodel(submodel_data)
             self.save_submodel_ref(shellId,submodel_Ref)
             self.save_concept_descriptions(concept_Descriptions)
             return True
         except Exception as e:
             return False
+    
+    def create_submodel(self,submodel_data) -> bool:
+        try :
+            edm = ExecuteDBModifier(self.pyaas)
+            data,status,statuscode = edm.execute({"data":{"_submodel":submodel_data}, "method": "PostSubmodel",
+                                                                 "instanceId" : str(uuid.uuid1())})
+            return status
+        except Exception as e:
+            return False
+        
         
     def save_submodel(self,submodel_data) -> bool:
         try :
@@ -1341,8 +1351,10 @@ class AASWebInterface(Resource):
                 data["submodelElements"].append(self.create_skill_entry_sc(skill_details))
                 self.save_submodel(data)
             else:
-                submodel_Id = "ww.ovgu.de/submodel/OperationaData"
-                operational_data_aas = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["OperationaData"])
+                uuidG = UUIDGenerator()
+                _uuid = uuidG.getnewUUID()
+                submodel_Id = "www.ovgu.de/submodel/OperationaData/"+str(_uuid)
+                operational_data_aas = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["OperationalData"])
                 operational_data_submodel = operational_data_aas["submodels"][0]
                 operational_data_submodel["submodelElements"].clear()
                 operational_data_submodel["submodelElements"].append(self.create_skill_entry_sc(skill_details))
@@ -1350,7 +1362,7 @@ class AASWebInterface(Resource):
                 submodel_Ref = operational_data_aas["assetAdministrationShells"][0]["submodels"][0]
                 submodel_Ref["keys"][0]["value"] = submodel_Id
                 
-                self.save_submodel(operational_data_submodel)
+                self.create_submodel(operational_data_submodel)
                 self.save_submodel_ref(aasIdentifier, submodel_Ref)
             return True
         except Exception as E:
@@ -1423,7 +1435,7 @@ class AASWebInterface(Resource):
                 submodel_Id = "ww.ovgu.de/submodel/"+str(submodel_data["idShort"])
                 submodel_data["id"] = submodel_Id
                 _reference["keys"][0]["value"] = submodel_Id
-                self.save_submodel(submodel_data)
+                self.create_submodel(submodel_data)
                 self.save_submodel_ref(aasIdentifier1, _reference)
             
             elif operation_type == "download_json":
@@ -1530,7 +1542,7 @@ class AASWebInterfaceProductionManagement(Resource):
                                                         aasIdShort = data["idShort"],
                                                         submodelList = data["submodelList"],
                                                         available_skills = list(available_skills),
-                                                        conversationIdList=data["conversationIdList"][-5:],
+                                                        conversationIdList=data["conversationIdList"],
                                                         productionStepList=data["productionStepList"],
                                                         productions_skills = productions_skills))
             return rv  
@@ -1550,7 +1562,7 @@ class AASWebInterfaceProductionManagement(Resource):
                 skill_name = request.form.get("skill_name")     
                 submodel_ids = request.form.getlist("submodel_id_idshort")
                 if skill_name != None:
-                    if submodel_ids != None:
+                    if submodel_ids != None and len(submodel_ids) > 0:
                         submodel_id_idSHort_list = []
                         for _id_idSHort in submodel_ids:
                             submodel_id_idshort_encoded = _id_idSHort.split(".")
@@ -1641,46 +1653,58 @@ class AASWebInterfaceSKillLog(Resource):
         except Exception as e:
             return redirect('/shells/'+aasIdentifier+"/webui", code=302)
 
+class AASWebInterfaceCFP(Resource):
+    def __init__(self,pyaas):
+        self.pyaas = pyaas
+
+    def get(self,conversationId):         
+        try:
+            return {"cfpList" :self.pyaas.dba.getConversationCFP(conversationId)} 
+        except Exception as E:
+            return {"cfpList" : []}
+
 
 class AASWebInterfaceSearch(Resource):
     def __init__(self,pyaas):
         self.pyaas = pyaas
-    
-    def post(self,aasIndex):
-        try:
-            updateInfo = request.form
-            query =  updateInfo["searchQuery"]
-            identificationId  = self.pyaas.aasIndexidShortDict[aasIndex]["identificationId"]
-            conversaation,status = self.pyaas.dba.getConversationsById(query,identificationId)
-            if status:
-                return  Response(render_template('search.html',
-                                                  aasIndex=aasIndex,exDomain=self.pyaas.exDomain,
-                                                 skillList= self.pyaas.skillListWeb[aasIndex],
-                                                 stdSubmodelList = self.pyaas.aasStandardSubmodelList[aasIndex],
-                                                 aasIdShort = self.pyaas.aasIndexidShortDict[aasIndex]["idShort"],
-                                                 resultList = {query:conversaation}))
-            else:
-                count = self.pyaas.dba.getMessageCount()
-                flash("The conversation Id is not found, the last count is " + str(count["message"][0]),"error")
-                return redirect("/"+str(aasIndex)+"/home")
-                
-        except Exception as E:
-            flash("Error","error")
-            self.pyaas.serviceLogger.info("Error at postAASWebInterfaceSearch Rest" + str(E))
-            return redirect("/"+str(aasIndex)+"/home")
 
-
-class AASWebInterfaceConversationMessage(Resource):
-    def __init__(self,pyaas):
-        self.pyaas = pyaas
-    
-    def get(self,aasIndex,query):         
+    def get(self,aasIdentifier):         
         try:
+            args = request.args
+            query =  args["searchQuery"]
             queryList = str(unquote(query)).split("**")
             return self.pyaas.dba.getMessagebyId(queryList[0],queryList[1])
         except Exception as E:
             return str(queryList) + str(E)
-
+            
+    def post(self,aasIdentifier):
+        try:
+            updateInfo = request.form
+            query =  updateInfo["searchQuery"]
+            aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode()
+            conversation,status = self.pyaas.dba.getConversationsById(query,aasIdentifier1)
+            data,status = self.pyaas.dba.get_aas_information(aasIdentifier1)
+            if status:
+                available_skills = set(self.pyaas.available_skills.keys()) - set(data["skillList"])
+                rv=   Response(render_template('search.html',thumbNail= urllib.parse.quote(data["thumbnail"],safe= ""),
+                                                        aasIdentifier=aasIdentifier, exDomain=self.pyaas.exDomain , 
+                                                        skillList= data["skillList"],
+                                                        aasIdShort = data["idShort"],
+                                                        submodelList = data["submodelList"],
+                                                        std_submodels = list(self.pyaas.aasConfigurer.submodel_template_dict.keys()),
+                                                        available_skills = list(available_skills),
+                                                        conversationId = query,
+                                                        resultList = {query:conversation}))
+                return rv
+            else:
+                count = self.pyaas.dba.getMessageCount()
+                flash("The conversation Id is not found, the last count is " + str(count["message"][0]),"error")
+                return redirect('/shells/'+aasIdentifier+"/webui", code=302)
+                
+        except Exception as E:
+            flash("Error","error")
+            self.pyaas.serviceLogger.info("Error at postAASWebInterfaceSearch Rest" + str(E))
+            return redirect('/shells/'+aasIdentifier+"/webui", code=302)
 
 class AASWebInterfaceRegister(Resource):
     def __init__(self,pyaas):
@@ -1760,7 +1784,7 @@ class AASWebInterfaceSubmodelElemValue(Resource):
             elemData,status = self.getRelevantElemData(aasIdentifier,updateValue,idShortPath,submodelName,submodelElemAdditionalInfo,
                                                 submodelELemType,submodelidentificationId)
             if status :
-                msg1,status1 = edm.execute({"data":{"elemData":elemData,
+                msg1,status1,statuscode = edm.execute({"data":{"elemData":elemData,
                                                 "_idShortpath" : idShortPath
                                                     },"method":"putSubmodelElem","instanceId" : str(uuid.uuid1())})
                 return  msg1,status1  

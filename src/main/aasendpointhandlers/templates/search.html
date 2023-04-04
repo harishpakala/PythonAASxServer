@@ -1,19 +1,37 @@
 {% extends "homelayout.html" %}
 {% block homecontent %}
-		<div class= "row" style = "height : 1.5vh">
+
+		<div class= "row" style = "height : 5vh">
 			<div class = "col-2 d-flex justify-content-left align-items-left" style = "margin-left : 1vw">
 				<span style = "color : rgb(0,52,215,0.9);font-weight: bold; ">MESSAGES</span>
 			</div>
-			<div class = "col-9"></div>
+			<div class = "col-6"></div>
+			<div class = "col-3 d-flex justify-content-end" >
+						<div class="std-submodel-add" style="margin-left: 30%">
+
+				   <input  type="image"
+						style="height: 5vh; cursor: pointer;" id="std-submodel-img"
+						src="{{exDomain}}web/images/co2_1.svg"
+						data-bs-toggle="modal" data-bs-target="#co2Modal" data-whatever="@mdo"
+						 onclick = "getCFP('{{conversationId}}')">
+					<div class="std-submodel-add-overlay">
+						<input type="image" style="height: 5vh; cursor: pointer;"
+							id="saveSubmodelForm"
+							src="{{exDomain}}web/images/co2.svg"
+							data-bs-toggle="modal" data-bs-target="#co2Modal" data-whatever="@mdo"
+							 onclick = "getCFP('{{conversationId}}')">
+					</div>
+
+			</div>
+			</div>
 		</div>	
-<div class= "row" style = "min-height : 2.5vh">
-</div>
+<div class= "row" style = "min-height : 2.5vh"></div>
 <div class = "row"  style = "height : 25vh;">
 	<div class = "col-3">
 	</div>
 	<div class = "col-6" >
 		<div class = "  d-flex align-items-center justify-content-center">
-					<img id = "svg-Div" alt="idta.svg" src="{{exDomain}}static/images/idtan.svg" style = "width : 25%; height :25%">
+					<img id = "svg-Div" alt="idta.svg" src="{{exDomain}}web/images/idtan.svg" style = "width : 25%; height :25%">
 		
 		</div>
 	</div>
@@ -24,7 +42,7 @@
 <div class = "col-12">
 </div>
 </div>
-	<div class ="row">
+<div class ="row">
 	<div class = "col-1">
 	</div>
 		<div class = "col-3"  id = "div-inbound"> 
@@ -94,14 +112,13 @@
 		</div>
 		<div class = "col-1">
 		</div>
-				<script>
-					var resultList = JSON.parse('{{ resultList | tojson | safe}}');
-					console.log(resultList);
-					 createSearResultTree(resultList,'{{exDomain}}','{{aasIndex}}');
+				
+</div>
+<div class= "row" style = "min-height : 2.5vh"></div>
 
-				</script>
-
-	</div>
+<script>
+	
+</script>
 
 <div class="modal fade" id="framedataBox" tabindex="-1" aria-labelledby="data_Content_header" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-scrollable" id = "FrameTree" style = "min-width : 75vw;">
@@ -113,7 +130,8 @@
 				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				<script>
-					
+				var resultList = JSON.parse('{{ resultList | tojson | safe}}');
+				createSearResultTree(resultList,'{{exDomain}}','{{aasIdentifier}}');				
 				</script>
 			</div>
 			<div class="modal-body" id ="data_Content_modal">
@@ -136,6 +154,36 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" id="co2Modal" tabindex="-1" aria-labelledby="i" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title">Carbon FootPrint</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" id = "close_btn_skill" aria-label="Close">
+		</button>
+	  </div>
+	  <div class="modal-body">
+	  	<div class="container">
+	  		<table style="border-collapse: collapse;width: 100%;border: 1px solid #ddd;">
+				<thead>
+				  <tr>
+				    <th style = "border: 1px solid #ddd;">SKill Name</th>
+				    <th style = "border: 1px solid #ddd;">Start Time</th>
+				    <th style = "border: 1px solid #ddd;">End Time</th>
+				    <th style = "border: 1px solid #ddd;">Total Time</th>
+				    <th style = "border: 1px solid #ddd;">CFP</th>
+				  </tr>
+				</thead>
+				<tbody id = "cfp_conversationId">
+					
+				</tbody>
+			</table>
+		</div>
+	  </div>
+	</div>
+  </div>
 </div>
 
 {% endblock %}

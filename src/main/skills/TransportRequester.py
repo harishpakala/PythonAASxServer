@@ -4,13 +4,13 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 """
-from datetime import datetime
 
+from datetime import datetime
 try:
     import queue as Queue
 except ImportError:
     import Queue as Queue 
-
+import base64
 import logging
 import sys
 import time
@@ -43,9 +43,9 @@ except ImportError:
     to definite state of the skill state-machine. The base class represents the skill 
     and coordinates the transition from one state to another.
     
-    The baseclass is responsible for collecting the documents from the external
+    The base_class is responsible for collecting the documents from the external
     world (either from other skill that is part of the AAS or a skill part of 
-    of another AAS). For this the baseclass maintains a queue one for each class. 
+    of another AAS). For this the base_class maintains a queue one for each class. 
     
     The communication between any two skills of the same AAS or the skills of 
     different AAS is done in I4.0 language.
@@ -62,7 +62,7 @@ except ImportError:
     Skill. The base-class maintains a specific InboundQueue, into the messages dropped by the
     messagehandler. 
     
-    A class specific inbound queue is defined in the baseclass for the classes defined in this
+    A class specific inbound queue is defined in the base_class for the classes defined in this
     source-code. A dictionary is also manitained, with key representing the messagetype and the
     value being the class specific inboundqueue.
     
@@ -75,7 +75,7 @@ except ImportError:
     StateName_In         
     StateName_Queue 
         
-    The sendMessage method in the baseclass submits an outbound message to the message handler so that
+    The sendMessage method in the base_class submits an outbound message to the message handler so that
     it could be routed to its destination. Every class can access this method and publish the outbound
     messgae.  
     
@@ -126,7 +126,7 @@ except ImportError:
     
     The ReceiverAASID and ReceiverRolename could be obtained from sender part of the incoming message
     and these are to be provided empty, if there is no receiver.
-    receiverId = self.base_class.StateName_In["frame"]["sender"]["identification"]["id"]
+    receiverId = self.base_class.StateName_In["frame"]["sender"]["id"]
     receiverRole = self.base_class.StateName_In["frame"]["sender"]["role"]["name"]
     
     I40FrameData is a dictionary
@@ -226,6 +226,7 @@ class WaitforInformConfirm:
                                                             "messageType":message["frame"]["type"],
                                                             "messageId":message["frame"]["messageId"],
                                                             "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":message})
             
 
@@ -234,7 +235,9 @@ class WaitforInformConfirm:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        
+        self.base_class.responseMessage["status"] = "S"
+        self.base_class.responseMessage["code"] = "A.013"
+        self.base_class.responseMessage["message"] =  "The Order is Succesfully Executed."          
     
     def run(self) -> None:
         """
@@ -261,7 +264,7 @@ class WaitforInformConfirm:
             while (((self.base_class.WaitforInformConfirm_Queue).qsize()) == 0):
                 time.sleep(1)
                 i = i + 1 
-                if i > 10: # Time to wait the next incoming message
+                if i > 60: # Time to wait the next incoming message
                     self.messageExist = False # If the waiting time expires, the loop is broken
                     break
             if (self.messageExist):
@@ -322,6 +325,7 @@ class WaitForSPProposal:
                                                             "messageType":message["frame"]["type"],
                                                             "messageId":message["frame"]["messageId"],
                                                             "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":message})
             
 
@@ -365,7 +369,7 @@ class WaitForSPProposal:
                     break
             if (self.messageExist):
                 self.saveMessage() # in case we need to store the incoming message
-                self.retrieve_WaitForSPProposal_Message() # in case of multiple inbound messages this function should 
+                #self.retrieve_WaitForSPProposal_Message() # in case of multiple inbound messages this function should 
                                                         # not be invoked. 
         self.WaitForSPProposal_Logic()
         
@@ -402,18 +406,24 @@ class sendCompletionResponse:
         # for each target there will be a separate boolean variable
                 
         self.WaitforNewOrder_Enabled = True
-    
 
+    def set_cfp_properties(self,conversationId,_cfp):
+        endTime = datetime.now()
+        self.base_class.pyaas.dba.setFinalProperties(conversationId,
+                             endTime,_cfp)
+        
     def sendCompletionResponse_Logic(self):
         """
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.InElem = self.baseClass.StatusResponseSM
-        self.InElem[0]["submodelElements"][0]["value"] = self.baseClass.responseMessage["status"]
-        self.InElem[0]["submodelElements"][1]["value"] = self.baseClass.responseMessage["code"]
-        self.InElem[0]["submodelElements"][2]["value"] = self.baseClass.responseMessage["message"]
-        self.baseClass.responseMessage = {}
+        self.InElem = self.base_class.StatusResponseSM
+        self.InElem[0]["submodelElements"][0]["value"] = self.base_class.responseMessage["status"]
+        self.InElem[0]["submodelElements"][1]["value"] = self.base_class.responseMessage["code"]
+        self.InElem[0]["submodelElements"][2]["value"] = self.base_class.responseMessage["message"]
+        self.set_cfp_properties(self.base_class.WaitforNewOrder_In["frame"]["conversationId"],
+                                self.base_class.CFP)
+        self.base_class.responseMessage = {}
 
         
     def create_Outbound_Message(self) -> list:
@@ -433,7 +443,7 @@ class sendCompletionResponse:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -446,7 +456,7 @@ class sendCompletionResponse:
                                     "SenderAASID" : self.base_class.aasID,
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
+                                    "replyBy" :  "",
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
@@ -468,6 +478,7 @@ class sendCompletionResponse:
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -516,15 +527,30 @@ class cfpConfiguration:
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
                 
+        self.sendCompletionResponse_Enabled = True
         self.SendCFP_Enabled = True
     
 
     def cfpConfiguration_Logic(self):
         """
-            The actualy logic this state  goes into this method.
+            The actual logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        
+        if (len(self.base_class.WaitforNewOrder_In["interactionElements"]) == 1):
+            transportIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][0][0]
+            transport_submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(transportIdentifier)
+            if transport_submodel["semanticId"]["keys"][0]["value"] == "0173-1#01-ADR740#004":
+                self.sendCompletionResponse_Enabled = False
+            else:
+                    self.base_class.responseMessage["status"] = "E"
+                    self.base_class.responseMessage["code"] = "E.01"
+                    self.base_class.responseMessage["message"] =  "The Transport submodel is not provided"
+                    self.SendCFP_Enabled = False
+        else:
+            self.base_class.responseMessage["status"] = "E"
+            self.base_class.responseMessage["code"] = "E.01"
+            self.base_class.responseMessage["message"] =  "No submodel Id is provided"
+            self.SendCFP_Enabled = False
     
     def run(self) -> None:
         """
@@ -549,6 +575,12 @@ class cfpConfiguration:
         self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
         
         
+        if (self.sendCompletionResponse_Enabled):
+            self.base_class.skillLogger.info("Condition :" + "-")
+            ts = sendCompletionResponse(self.base_class)
+            self.base_class.skillLogger.info("TargettState: " + ts.__class__.__name__)
+            self.base_class.skillLogger.info("############################################################################# \n")
+            return ts
         if (self.SendCFP_Enabled):
             self.base_class.skillLogger.info("Condition :" + "-")
             ts = SendCFP(self.base_class)
@@ -575,11 +607,11 @@ class sendrejectProposal:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        if (self.baseClass.sendacceptProposal_Queue.qsize() == 0):
+        if (self.base_class.sendacceptProposal_Queue.qsize() == 0):
             self.sendacceptProposal_Enabled = False
-            self.baseClass.responseMessage["status"] = "E"
-            self.baseClass.responseMessage["code"] = "E.06"
-            self.baseClass.responseMessage["message"] =  "None of the provider is selected."           
+            self.base_class.responseMessage["status"] = "E"
+            self.base_class.responseMessage["code"] = "E.06"
+            self.base_class.responseMessage["message"] =  "None of the provider is selected."           
         else:
             self.sendCompletionResponse_Enabled = False
         
@@ -600,7 +632,7 @@ class sendrejectProposal:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -621,7 +653,7 @@ class sendrejectProposal:
         
             self.frame = self.gen.createFrame(I40FrameData)
     
-            oMessage_Out = {"frame": self.frame}
+            oMessage_Out = {"frame": self.frame,"interactionElements":[]}
             # Usually the interaction Elements are the submodels fro that particualar skill
             # the relevant submodel could be retrieved using
             # interactionElements
@@ -635,6 +667,7 @@ class sendrejectProposal:
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -662,9 +695,10 @@ class sendrejectProposal:
         self.base_class.skillLogger.info("OutputDocumentType : " + OutputDocument)
         
         if (OutputDocument != "NA"):
-            self.outboundMessages = self.create_Outbound_Message()
-            for outbMessage in self.outboundMessages:
-                self.base_class.sendMessage(outbMessage)
+            if (self.base_class.sendrejectProposal_Queue).qsize() > 0:
+                self.outboundMessages = self.create_Outbound_Message()
+                for outbMessage in self.outboundMessages:
+                    self.base_class.sendMessage(outbMessage)
         
         if (self.sendCompletionResponse_Enabled):
             self.base_class.skillLogger.info("Condition :" + "-")
@@ -715,8 +749,8 @@ class SendCFP:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
-            receiverRole = message["frame"]["sender"]["role"]["name"]
+            receiverId = message["frame"]["sender"]["id"]
+            receiverRole = "TransportProvider"#message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
             # The receiver Id should be
@@ -740,16 +774,17 @@ class SendCFP:
             # Usually the interaction Elements are the submodels fro that particualar skill
             # the relevant submodel could be retrieved using
             # interactionElements
-            submodelIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][0]
+            submodelIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][0][0]
             submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(submodelIdentifier)
             oMessage_Out ={"frame": self.frame,
-                                    "interactionElements":submodel}
+                                    "interactionElements":[submodel]}
             self.instanceId = str(uuid.uuid1())
             self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
                                                             "conversationId":oMessage_Out["frame"]["conversationId"],
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -814,9 +849,9 @@ class EvaluateProposal:
         try:
             proposlList = []
             ListPrice_CFP = [] 
-            qsize = self.baseClass.WaitForSPProposal_Queue.qsize()
+            qsize = self.base_class.WaitForSPProposal_Queue.qsize()
             for i in range (0,qsize):
-                proposlList.append(self.baseClass.WaitForSPProposal_Queue.get())
+                proposlList.append(self.base_class.WaitForSPProposal_Queue.get())
             print(qsize)
             for eachPorposal in proposlList:
                 for submodelElement in eachPorposal['interactionElements'][0]['submodelElements']:
@@ -827,16 +862,17 @@ class EvaluateProposal:
             
             for lsp in ListPrice_CFP:
                 qoutes.append(lsp[0] + lsp[1])
-                
+            
             bestPrice = min(qoutes)
             bestPriceIndex = qoutes.index(bestPrice)          
+            self.base_class.CFP = ListPrice_CFP[bestPriceIndex][0]
             for i  in range(0,len(proposlList)):
                 if (i == bestPriceIndex):
-                    self.baseClass.sendacceptProposal_Queue.put(proposlList[i])
+                    self.base_class.sendacceptProposal_Queue.put(proposlList[i])
                 else:
-                    self.baseClass.sendrejectProposal_Queue.put(proposlList[i])
+                    self.base_class.sendrejectProposal_Queue.put(proposlList[i])
         except Exception as e:
-            self.baseClass.skillLogger.info("Evaluate Proposal Error" + str(e))
+            self.base_class.skillLogger.info("Evaluate Proposal Error" + str(e))
 
         
     
@@ -881,6 +917,13 @@ class WaitforNewOrder:
         # for each target there will be a separate boolean variable
                 
         self.cfpConfiguration_Enabled = True
+
+    def createNewCFPObject(self,conversationId):
+        startTime = datetime.now()
+        self.base_class.cfp_uid = str(uuid.uuid4())
+        self.base_class.pyaas.dba.createNewCFPObject(conversationId,self.base_class.skillName,
+                                       startTime,self.base_class.cfp_uid)
+
     
     def retrieve_WaitforNewOrder_Message(self) -> None:
         """
@@ -905,6 +948,7 @@ class WaitforNewOrder:
                                                             "messageType":message["frame"]["type"],
                                                             "messageId":message["frame"]["messageId"],
                                                             "direction": "inbound",
+                                                            "SenderAASID" : message["frame"]["sender"]["id"],
                                                             "message":message})
             
 
@@ -913,7 +957,9 @@ class WaitforNewOrder:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        
+        startTime = datetime.now()
+        self.base_class.pyaas.dba.setInitialValue(self.base_class.WaitforNewOrder_In["frame"]["conversationId"],
+                             self.base_class.skillName,startTime)
     
     def run(self) -> None:
         """
@@ -934,12 +980,10 @@ class WaitforNewOrder:
         '''
         if (InputDocument != "NA"):
             self.messageExist = True
-            i = 0
             sys.stdout.write(" Waiting for response")
             sys.stdout.flush()
             while (((self.base_class.WaitforNewOrder_Queue).qsize()) == 0):
                 time.sleep(1)
-                i = i + 1 
             if (self.messageExist):
                 self.saveMessage() # in case we need to store the incoming message
                 self.retrieve_WaitforNewOrder_Message() # in case of multiple inbound messages this function should 
@@ -980,10 +1024,10 @@ class noProposalReceived:
             The actualy logic of this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.baseClass.responseMessage = {}
-        self.baseClass.responseMessage["status"] = "E"
-        self.baseClass.responseMessage["code"] = "E.06"
-        self.baseClass.responseMessage["message"] =  "No proposals received from any of the Service Providers"
+        self.base_class.responseMessage = {}
+        self.base_class.responseMessage["status"] = "E"
+        self.base_class.responseMessage["code"] = "E.06"
+        self.base_class.responseMessage["message"] =  "No proposals received from any of the Service Providers"
         
     
     def run(self) -> None:
@@ -1026,15 +1070,15 @@ class sendacceptProposal:
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
                 
-        self.WaitforInformConfirm_Enabled = True
-    
+        self.WaitforInformConfirm_Enabled = True     
 
     def sendacceptProposal_Logic(self):
         """
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        
+        pass
+    
     def create_Outbound_Message(self) -> list:
         """
             The method is used to create the outbound I4.0 messages.
@@ -1043,7 +1087,8 @@ class sendacceptProposal:
         self.oMessages = "acceptProposal".split("/")
         outboundMessages = []
         for oMessage in self.oMessages:
-            message = self.baseClass.sendacceptProposal_Queue.get()
+            message = self.base_class.sendacceptProposal_Queue.get()
+            self.base_class.acceptProposal = message
             self.gen = Generic()
             #receiverId = "" # To be decided by the developer
             #receiverRole = "" # To be decided by the developer
@@ -1052,7 +1097,7 @@ class sendacceptProposal:
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["identification"]["id"]
+            receiverId = message["frame"]["sender"]["id"]
             receiverRole = message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
@@ -1065,7 +1110,7 @@ class sendacceptProposal:
                                     "SenderAASID" : self.base_class.aasID,
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
+                                    "replyBy" :  "",
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
@@ -1073,7 +1118,7 @@ class sendacceptProposal:
         
             self.frame = self.gen.createFrame(I40FrameData)
     
-            oMessage_Out = {"frame": self.frame}
+            oMessage_Out = {"frame": self.frame,"interactionElements":[]}
             # Usually the interaction Elements are the submodels fro that particualar skill
             # the relevant submodel could be retrieved using
             # interactionElements
@@ -1087,6 +1132,7 @@ class sendacceptProposal:
                                                             "messageType":oMessage_Out["frame"]["type"],
                                                             "messageId":oMessage_Out["frame"]["messageId"],
                                                             "direction" : "outbound",
+                                                            "SenderAASID" : oMessage_Out["frame"]["sender"]["id"],
                                                             "message":oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages
@@ -1206,12 +1252,14 @@ class TransportRequester:
         self.enabledStatus = {"Y":True, "N":False}
         self.enabledState = "Y"
         
-        self.semanticProtocol = ""
-        self.initialState = ""
-        self.skill_service = ""
+        self.semanticProtocol = "ovgu.de/http://www.vdi.de/gma720/vdi2193_2/bidding"
+        self.initialState = "WaitforNewOrder"
+        self.skill_service = "Transport Requisition"
         self.gen = Generic()
         self.productionStepSeq = []
         self.responseMessage = {}
+        self.StatusResponseSM = [self.pyaas.aasConfigurer.getStatusResponseSubmodel()]
+        self.CFP = 0
         
     def start(self, msgHandler,shellObject,_uid) -> None:
         """
@@ -1228,7 +1276,10 @@ class TransportRequester:
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self._uid)+"_"+self.skillName+".LOG")
+        bString = base64.b64encode(bytes(self.aasID,'utf-8'))
+        base64_string= bString.decode('utf-8')
+        
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
         self.listHandler = ServiceLogHandler(LogList())

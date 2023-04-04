@@ -65,17 +65,18 @@ class ProductionStepOrder:
         self.pyaas = pyaas
         self.gen = Generic()
 
-    def createTransportStepOrder(self, aas_id, current_conv_id) -> str:
+    def createTransportStepOrder(self, aasIdentifier, current_conv_id) -> str:
         """
 
         """
         conversation_id = current_conv_id + "_1"
         self.pyaas.dba.createNewConversation(conversation_id)
         self.pyaas.conversationInteractionList.append(conversation_id)
-        self.pyaas.conversationIdList[aas_id].append(conversation_id)
-        if len(self.pyaas.conversationIdList) > 5:
-            del self.pyaas.conversationIdList[
-                0]  # if length of conversation id list is greater than 0 delete an element
+        
+        _uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier)._id
+        shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
+        shellObject.add_conversationId(conversation_id)
+            
         return conversation_id
 
     def createStepOrderConversation(self, aasId, conversation_id) -> str:
@@ -90,6 +91,26 @@ class ProductionStepOrder:
         aasShellObject.add_conversationId(conversation_id)
         return conversation_id
 
+
+    def createNewCFPObject(self):
+        for convId in self.conversationIdList:
+            self.baseClass.pyaas.dba.createNewCFPObject(convId)
+    
+    def addsubConversationIdsList(self,conversation_id,productionStepList):
+        consList = []
+        for i in range(0,len(productionStepList)):
+            _conv = conversation_id+"_"+str(len(productionStepList)-i)
+            consList.append(_conv)
+            for j in range(0,len(productionStepList[i]["submodel_id_idSHort_list"])-1):
+                __conv = _conv +"_"+str(j+1) 
+                consList.append(__conv)
+                
+        self.pyaas.dba.insertSubCovsersationIds(consList,conversation_id)
+
+        self.pyaas.dba.createNewCFPObject(conversation_id)
+        for _id in consList:
+            self.pyaas.dba.createNewCFPObject(_id)
+
     def createProductionStepOrder(self, aasIdentifier) -> (str,bool):
         """
 
@@ -99,10 +120,13 @@ class ProductionStepOrder:
             conversation_id = "ProductionOrder" + "_" + str(int(conversation_count) + 1)
             self.pyaas.dba.createNewConversation(conversation_id)
             self.pyaas.conversationInteractionList.append(conversation_id)
-            
+                
             _uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier)._id
             shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
             shellObject.add_conversationId(conversation_id)
+            
+            self.addsubConversationIdsList(conversation_id,shellObject.productionStepList)
+            
             
             frame_data = {
                 "semanticProtocol": "update",
@@ -118,6 +142,7 @@ class ProductionStepOrder:
             frame = self.gen.createFrame(frame_data)
             i40_message = {"frame": frame, "interactionElements": []}
             self.pyaas.msgHandler.putIbMessage(i40_message)
+            
             return conversation_id, True
         except Exception as e:
             return str(e), False
@@ -663,12 +688,59 @@ class SubscriptionMessage:
         self.modelType = modelType
         self.subscriptiondata = subscriptiondata
 
+class CarbonFootPrintObject:
+    def __init__(self,_coversationId,_uuid):
+        self._coversationId = _coversationId
+        self._uuid = _uuid
+        self.startTime = ""
+        self.endTime = ""
+        self.totalTime = 0
+        self._cfp = 0
+        self.skillName = ""
+    
+    def formatTime(self,_time):
+        try:
+            if (_time == "Start"):
+                return self.startTime.strftime("%Y-%m-%d %H:%M:%S")
+            else :
+                return self.endTime.strftime("%Y-%m-%d %H:%M:%S")
+        except Exception as E:
+            return ""
+    
+    def getTotalTime(self):
+        try:
+            return self.totalTime.seconds
+        except Exception as E:
+            return 0    
+        
+    def getProperties(self):
+        return [self.skillName,self.formatTime("Start"),self.formatTime("End"),
+                self.getTotalTime(),self._cfp]
 
+    def setInitialValue(self,_skillName,startTime):
+        self.skillName = _skillName 
+        self.startTime =startTime
+    
+    def setFinalProperties(self,endTime,_cfp):
+        self._cfp = _cfp
+        self.endTime = endTime
+        try:
+            self.totalTime = self.endTime - self.startTime
+        except Exception as e:
+            self.totalTime = 0
+    
+    def getMessageCount(self):
+        return 0    
+    
 class ConversationObject:
     def __init__(self, _coversationId):
         self._coversationId = _coversationId
         self.messages = []
-
+        self.sub_coversationIds = []
+    
+    def extend_sub_conversation_ids(self,sub_ids):
+        self.sub_coversationIds.extend(sub_ids)
+    
     def _insertMessage(self, messageType, messageId, direction, message, entryTime, SenderAASID):
         _message = {
             "messageType": messageType,
@@ -678,18 +750,21 @@ class ConversationObject:
             "entryTime": entryTime,
             "SenderAASID": SenderAASID
         }
-        self.messages.append(_message)
+        self.messages.append(copy.deepcopy(_message))
 
     def _getMessages(self, identificationId):
         returnData = {"inbound": [], "outbound": [], "internal": []}
-        for message in self.messages:
-            if (message["SenderAASID"] == "Broadcast" or message["SenderAASID"] == identificationId):
-                if (message["direction"] == "inbound"):
-                    returnData["inbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
-                elif (message["direction"] == "outbound"):
-                    returnData["outbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
-                elif (message["direction"] == "internal"):
-                    returnData["internal"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
+        try:
+            for message in self.messages:
+                if (message["SenderAASID"] == "Broadcast" or message["SenderAASID"] == identificationId):
+                    if (message["direction"] == "inbound"):
+                        returnData["inbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
+                    elif (message["direction"] == "outbound"):
+                        returnData["outbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
+                    elif (message["direction"] == "internal"):
+                        returnData["internal"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
+        except Exception as E:
+            pass
         return returnData
 
     def _getMessage(self, messageId):
@@ -730,7 +805,7 @@ class Generate_AAS_Shell:
         self.pyaas = pyaas
         self.idShort = data["idShort"]
         self.description = data["description"]
-        self.thumnail = "/aasx/files/"+data["file"]
+        self.thumnail = "file://aasx/files/"+data["file"]
         self.displayName = data["displayName"]
         self.globalAssetId = data["globalAssetId"]
         
