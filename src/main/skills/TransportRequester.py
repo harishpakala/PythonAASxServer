@@ -4,13 +4,13 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 """
-from datetime import datetime
 
+from datetime import datetime
 try:
     import queue as Queue
 except ImportError:
     import Queue as Queue 
-
+import base64
 import logging
 import sys
 import time
@@ -409,8 +409,9 @@ class sendCompletionResponse:
 
     def set_cfp_properties(self,conversationId,_cfp):
         endTime = datetime.now()
-        self.base_class.pyaas.dba.modifyCFPObject(self.base_class.cfp_uid,endTime,
-                                                  _cfp,conversationId)
+        self.base_class.pyaas.dba.setFinalProperties(conversationId,
+                             endTime,_cfp)
+        
     def sendCompletionResponse_Logic(self):
         """
             The actualy logic this state  goes into this method.
@@ -956,7 +957,9 @@ class WaitforNewOrder:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.createNewCFPObject(self.base_class.WaitforNewOrder_In["frame"]["conversationId"])
+        startTime = datetime.now()
+        self.base_class.pyaas.dba.setInitialValue(self.base_class.WaitforNewOrder_In["frame"]["conversationId"],
+                             self.base_class.skillName,startTime)
     
     def run(self) -> None:
         """
@@ -1273,7 +1276,10 @@ class TransportRequester:
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self._uid)+"_"+self.skillName+".LOG")
+        bString = base64.b64encode(bytes(self.aasID,'utf-8'))
+        base64_string= bString.decode('utf-8')
+        
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
         self.listHandler = ServiceLogHandler(LogList())

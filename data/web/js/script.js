@@ -60,7 +60,7 @@ function get_MessageData(messageID,conversationId,exDomain,aasIdentifier){
 	document.getElementById("FrameTreeDiv").innerHTML = "";
 	document.getElementById("data_Content_header").innerHTML = "";
 	httpGetRequest.onload = () => {
-		var data = (httpGetRequest.responseText)
+		var data = (httpGetRequest.responseText);
 		var data1 = data.replace(/\\n/g, "<br>");
 		data = JSON.parse(data1);
 		console.log(data);

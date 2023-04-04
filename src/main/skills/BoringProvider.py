@@ -11,6 +11,7 @@ try:
 except ImportError:
     import Queue as Queue 
 
+import base64
 import logging
 import sys
 import time
@@ -1175,7 +1176,7 @@ class serviceProvision:
             #self.plcHandler.write(self.tdPropertiesList["sPermission"]["href"],"true")
             plcBoool = True
             while (plcBoool):
-                time.sleep(50)
+                time.sleep(20)
                 sPermissionVariable = "FALSE"#self.plcHandler.read(self.tdPropertiesList["sPermission"]["href"])
                 if  (sPermissionVariable.upper() =="FALSE"):
                     plcBoool = False
@@ -1386,7 +1387,10 @@ class BoringProvider:
         self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
         self.commandLogger_handler.setLevel(logging.DEBUG)
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(self._uid)+"_"+self.skillName+".LOG")
+        bString = base64.b64encode(bytes(self.aasID,'utf-8'))
+        base64_string= bString.decode('utf-8')
+        
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
         self.listHandler = ServiceLogHandler(LogList())

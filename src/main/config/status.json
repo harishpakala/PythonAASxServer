@@ -7,7 +7,7 @@
         {
           "value": "E",
           "idShort": "Status",
-          "name": "Property",
+          "modelType": "Property",
           "kind": "Instance"
         },
         {

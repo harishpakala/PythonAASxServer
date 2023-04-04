@@ -326,11 +326,6 @@ class WaitforNewOrder:
                 
         self.cfpConfiguration_Enabled = True
     
-    def createNewCFPObject(self,conversationId):
-        startTime = datetime.now()
-        self.base_class.cfp_uid = str(uuid.uuid4())
-        self.base_class.pyaas.dba.createNewCFPObject(conversationId,self.base_class.skillName,
-                                       startTime,self.base_class.cfp_uid)
     
     def retrieve_WaitforNewOrder_Message(self) -> None:
         """
@@ -364,7 +359,9 @@ class WaitforNewOrder:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.createNewCFPObject(self.base_class.WaitforNewOrder_In["frame"]["conversationId"])
+        startTime = datetime.now()
+        self.base_class.pyaas.dba.setInitialValue(self.base_class.WaitforNewOrder_In["frame"]["conversationId"],
+                             self.base_class.skillName,startTime)
     
     def run(self) -> None:
         """
@@ -431,22 +428,39 @@ class cfpConfiguration:
             It is upto the developer to add the relevant code.
         """
         if (len(self.base_class.WaitforNewOrder_In["interactionElements"]) == 2):
-            boringIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][0][0]
-            boring_submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(boringIdentifier)
-            if boring_submodel["semanticId"]["keys"][0]["value"] == "0173-1#01-AKG243#015":
-                transportIdentifier = self.base_class.WaitforNewOrder_In["interactionElements"][1][0]
-                transport_submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(transportIdentifier)
-                if transport_submodel["semanticId"]["keys"][0]["value"] == "0173-1#01-ADR740#004":
-                    self.sendCompletionResponse_Enabled = False
-                else:
+            Identifier1 = self.base_class.WaitforNewOrder_In["interactionElements"][0]
+            Identifier2 = self.base_class.WaitforNewOrder_In["interactionElements"][1]
+            submodel1,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(Identifier1[0])
+            submodel2,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(Identifier2[0])
+            
+            if status and status:
+                if (submodel1["semanticId"]["keys"][0]["value"] == "0173-1#01-AKG243#015"):
+                    if (submodel2["semanticId"]["keys"][0]["value"] == "0173-1#01-ADR740#004"):
+                        self.sendCompletionResponse_Enabled = False
+                    else:
+                        self.base_class.responseMessage["status"] = "E"
+                        self.base_class.responseMessage["code"] = "E.01"
+                        self.base_class.responseMessage["message"] =  "The Transport submodel is not provided."
+                        self.SendCFP_Enabled = False
+                elif (submodel2["semanticId"]["keys"][0]["value"] == "0173-1#01-AKG243#015"):
+                    if (submodel1["semanticId"]["keys"][0]["value"] == "0173-1#01-ADR740#004"):
+                        self.base_class.WaitforNewOrder_In["interactionElements"][0] = Identifier2
+                        self.base_class.WaitforNewOrder_In["interactionElements"][1] = Identifier1
+                        self.sendCompletionResponse_Enabled = False
+                    else:
+                        self.base_class.responseMessage["status"] = "E"
+                        self.base_class.responseMessage["code"] = "E.01"
+                        self.base_class.responseMessage["message"] =  "The Transport submodel is not provided."
+                        self.SendCFP_Enabled = False
+                else: 
                     self.base_class.responseMessage["status"] = "E"
                     self.base_class.responseMessage["code"] = "E.01"
-                    self.base_class.responseMessage["message"] =  "The Transport submodel is not provided"
+                    self.base_class.responseMessage["message"] =  "The boring submodel is not provided."
                     self.SendCFP_Enabled = False
             else:
                 self.base_class.responseMessage["status"] = "E"
                 self.base_class.responseMessage["code"] = "E.01"
-                self.base_class.responseMessage["message"] =  "The Boring submodel is not provided"
+                self.base_class.responseMessage["message"] =  "Error retriving the submodels"
                 self.SendCFP_Enabled = False
         else:
             self.base_class.responseMessage["status"] = "E"
@@ -1157,7 +1171,7 @@ class WaitforInformConfirm:
         """
         self.base_class.responseMessage["status"] = "S"
         self.base_class.responseMessage["code"] = "A.013"
-        self.base_class.responseMessage["message"] =  "TheOrder is Succesfully Executed."        
+        self.base_class.responseMessage["message"] =  "The Order is Succesfully Executed."        
             
     
     def run(self) -> None:
@@ -1224,8 +1238,8 @@ class sendCompletionResponse:
     
     def set_cfp_properties(self,conversationId,_cfp):
         endTime = datetime.now()
-        self.base_class.pyaas.dba.modifyCFPObject(self.base_class.cfp_uid,endTime,
-                                                  _cfp,conversationId)
+        self.base_class.pyaas.dba.setFinalProperties(conversationId,
+                             endTime,_cfp)
 
 
     def sendCompletionResponse_Logic(self):

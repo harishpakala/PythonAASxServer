@@ -1542,7 +1542,7 @@ class AASWebInterfaceProductionManagement(Resource):
                                                         aasIdShort = data["idShort"],
                                                         submodelList = data["submodelList"],
                                                         available_skills = list(available_skills),
-                                                        conversationIdList=data["conversationIdList"][-5:],
+                                                        conversationIdList=data["conversationIdList"],
                                                         productionStepList=data["productionStepList"],
                                                         productions_skills = productions_skills))
             return rv  

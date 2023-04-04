@@ -9,9 +9,9 @@ import os
 import uuid
 from datetime import datetime
 try:
-    from utils.utils import AASHashObject,UUIDGenerator,AASElementObject,ConversationObject,HistoryObject,SubscriptionMessage,ShellObject
+    from utils.utils import AASHashObject,UUIDGenerator,AASElementObject,ConversationObject,HistoryObject,SubscriptionMessage,ShellObject,CarbonFootPrintObject
 except ImportError:
-    from src.main.utils.utils import AASHashObject,UUIDGenerator,AASElementObject,ConversationObject,HistoryObject,SubscriptionMessage,ShellObject
+    from src.main.utils.utils import AASHashObject,UUIDGenerator,AASElementObject,ConversationObject,HistoryObject,SubscriptionMessage,ShellObject,CarbonFootPrintObject
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -131,6 +131,7 @@ class AAS_Database_Server(object):
         self.assetHashDict = self.pyAAS.assetHashDict
         self.cdHashDict = self.pyAAS.cdHashDict
         self.conversHashDict = self.pyAAS.converseHashDict
+        self.cfpHashDict = self.pyAAS.cfpHashDict
         self.aasShellHashDict = self.pyAAS.aasShellHashDict
         self.dbServerStatus = self.__initAASPackage__()
         
@@ -1505,39 +1506,67 @@ class AAS_Database_Server(object):
         except Exception as E:
             return  str(E) + "Unexpected Error", False
 
-    def createNewCFPObject(self,coversationId,skillName,startTime,_uuid):
+    def createNewCFPObject(self,_coversationId):
         try:
-            _uuid = self.aasHashDict.__getHashEntry__(coversationId).__getId__()
-            converseObject = self.conversHashDict.__getHashEntry__(_uuid)
-            converseObject._createNewCFPObject(skillName,startTime,_uuid,coversationId)
+            uuidG = UUIDGenerator()
+            _uuid = uuidG.getnewUUID()
+            cfpo = CarbonFootPrintObject(_coversationId,_uuid)
+            self.cfpHashDict.__insertHashEntry__(_coversationId, cfpo)
+        except Exception as E:
+            return  str(E) + "Unexpected Error", False
+    
+    def setInitialValue(self,coversationId,_skillName,startTime):
+        try:
+            cfpo = self.cfpHashDict.__getHashEntry__(coversationId)
+            cfpo.setInitialValue(_skillName,startTime)
         except Exception as E:
             return  str(E) + "Unexpected Error", False
 
-    def modifyCFPObject(self,_uuid,endTime,_cfp,coversationId):
+    def setFinalProperties(self,coversationId,endTime,_cfp):
         try:
-            _uuid = self.aasHashDict.__getHashEntry__(coversationId).__getId__()
-            converseObject = self.conversHashDict.__getHashEntry__(_uuid)
-            converseObject.modifyCFPObject(_uuid,endTime,_cfp)
+            cfpo = self.cfpHashDict.__getHashEntry__(coversationId)
+            cfpo.setFinalProperties(endTime,_cfp)
         except Exception as E:
-            return  str(E) + "Unexpected Error", False
-
+            return  str(E) + "Unexpected Error", False    
+    
+    def getCFPObject(self,coversationId):
+        cfpo = self.cfpHashDict.__getHashEntry__(coversationId)
+        return cfpo.getProperties()
     
     def getConversationCFP(self,coversationId):
         try:
             _uuid = self.aasHashDict.__getHashEntry__(coversationId).__getId__()
             converseObject = self.conversHashDict.__getHashEntry__(_uuid)
-            tes = converseObject.getCFPList()
-            return tes
+            if len(converseObject.sub_coversationIds) == 0:
+                return [self.getCFPObject(coversationId)]
+            else:
+                tes = []
+                subList = [self.getCFPObject(sci) for sci in converseObject.sub_coversationIds]
+                baseObject = self.getCFPObject(coversationId)
+                baseObject[3] = sum([int(obj[3]) for obj in subList])
+                baseObject[4] = sum([int(obj[4]) for obj in subList])
+                tes.append(baseObject)
+                tes.extend(subList)
+                return tes
         except Exception as E:
             return [] 
-
+    
     def getMessageCount(self):
         try:
             uuids = self.conversHashDict._getKeys()
             messageCount = sum(   self.conversHashDict.__getHashEntry__(uuid)._getMessageCount() for uuid in uuids)   
             return messageCount, "Success"    
         except Exception as E:
-            return  str(E) + "Unexpected Error", False
+            return  0, False
+    
+    def insertSubCovsersationIds(self,sci_list,coversationId):
+        try:
+            _uuid = self.aasHashDict.__getHashEntry__(coversationId).__getId__()
+            converseObject = self.conversHashDict.__getHashEntry__(_uuid)
+            converseObject.extend_sub_conversation_ids(sci_list)
+            return True
+        except Exception as E:
+            return False
            
     def getConversationsById(self,coversationId,aasIdentifier):
         try:

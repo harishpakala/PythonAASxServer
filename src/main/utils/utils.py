@@ -91,6 +91,26 @@ class ProductionStepOrder:
         aasShellObject.add_conversationId(conversation_id)
         return conversation_id
 
+
+    def createNewCFPObject(self):
+        for convId in self.conversationIdList:
+            self.baseClass.pyaas.dba.createNewCFPObject(convId)
+    
+    def addsubConversationIdsList(self,conversation_id,productionStepList):
+        consList = []
+        for i in range(0,len(productionStepList)):
+            _conv = conversation_id+"_"+str(len(productionStepList)-i)
+            consList.append(_conv)
+            for j in range(0,len(productionStepList[i]["submodel_id_idSHort_list"])-1):
+                __conv = _conv +"_"+str(j+1) 
+                consList.append(__conv)
+                
+        self.pyaas.dba.insertSubCovsersationIds(consList,conversation_id)
+
+        self.pyaas.dba.createNewCFPObject(conversation_id)
+        for _id in consList:
+            self.pyaas.dba.createNewCFPObject(_id)
+
     def createProductionStepOrder(self, aasIdentifier) -> (str,bool):
         """
 
@@ -100,10 +120,13 @@ class ProductionStepOrder:
             conversation_id = "ProductionOrder" + "_" + str(int(conversation_count) + 1)
             self.pyaas.dba.createNewConversation(conversation_id)
             self.pyaas.conversationInteractionList.append(conversation_id)
-            
+                
             _uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier)._id
             shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
             shellObject.add_conversationId(conversation_id)
+            
+            self.addsubConversationIdsList(conversation_id,shellObject.productionStepList)
+            
             
             frame_data = {
                 "semanticProtocol": "update",
@@ -119,6 +142,7 @@ class ProductionStepOrder:
             frame = self.gen.createFrame(frame_data)
             i40_message = {"frame": frame, "interactionElements": []}
             self.pyaas.msgHandler.putIbMessage(i40_message)
+            
             return conversation_id, True
         except Exception as e:
             return str(e), False
@@ -665,27 +689,21 @@ class SubscriptionMessage:
         self.subscriptiondata = subscriptiondata
 
 class CarbonFootPrintObject:
-    def __init__(self,_coversationId):
+    def __init__(self,_coversationId,_uuid):
+        self._coversationId = _coversationId
+        self._uuid = _uuid
         self.startTime = ""
         self.endTime = ""
         self.totalTime = 0
         self._cfp = 0
         self.skillName = ""
     
-    def setProperties(self,endTime,_cfp):
-        self._cfp = _cfp
-        self.endTime = endTime
-        self.totalTime = self.endTime - self.startTime
-    
-    def formatStartTime(self):
+    def formatTime(self,_time):
         try:
-            return self.startTime.strftime("%Y-%m-%d %H:%M:%S")
-        except Exception as E:
-            return ""
-
-    def formatEndTime(self):
-        try:
-            return self.endTime.strftime("%Y-%m-%d %H:%M:%S")
+            if (_time == "Start"):
+                return self.startTime.strftime("%Y-%m-%d %H:%M:%S")
+            else :
+                return self.endTime.strftime("%Y-%m-%d %H:%M:%S")
         except Exception as E:
             return ""
     
@@ -696,26 +714,32 @@ class CarbonFootPrintObject:
             return 0    
         
     def getProperties(self):
-        return [self.skillName,self.formatStartTime(),self.formatEndTime(),
+        return [self.skillName,self.formatTime("Start"),self.formatTime("End"),
                 self.getTotalTime(),self._cfp]
+
+    def setInitialValue(self,_skillName,startTime):
+        self.skillName = _skillName 
+        self.startTime =startTime
+    
+    def setFinalProperties(self,endTime,_cfp):
+        self._cfp = _cfp
+        self.endTime = endTime
+        try:
+            self.totalTime = self.endTime - self.startTime
+        except Exception as e:
+            self.totalTime = 0
+    
+    def getMessageCount(self):
+        return 0    
     
 class ConversationObject:
     def __init__(self, _coversationId):
         self._coversationId = _coversationId
         self.messages = []
-        self.cfpList = dict()
+        self.sub_coversationIds = []
     
-    def _createNewCFPObject(self,skillName,startTime,_uuid,coversationId):
-        cfpObject = CarbonFootPrintObject(coversationId);
-        cfpObject.skillName =  skillName
-        cfpObject.startTime =  startTime
-        self.cfpList[_uuid] =  cfpObject
-    
-    def modifyCFPObject(self,_uuid,endTime,_cfp):
-        self.cfpList[_uuid].setProperties(endTime,_cfp)
-    
-    def getCFPList(self):
-        return [ (self.cfpList[_key]).getProperties() for _key in self.cfpList.keys()]
+    def extend_sub_conversation_ids(self,sub_ids):
+        self.sub_coversationIds.extend(sub_ids)
     
     def _insertMessage(self, messageType, messageId, direction, message, entryTime, SenderAASID):
         _message = {
@@ -726,7 +750,7 @@ class ConversationObject:
             "entryTime": entryTime,
             "SenderAASID": SenderAASID
         }
-        self.messages.append(_message)
+        self.messages.append(copy.deepcopy(_message))
 
     def _getMessages(self, identificationId):
         returnData = {"inbound": [], "outbound": [], "internal": []}
