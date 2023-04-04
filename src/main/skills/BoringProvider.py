@@ -241,7 +241,7 @@ class sendingRefuse:
                                     "SenderAASID" : self.base_class.aasID,
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
+                                    "replyBy" :  "",
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
@@ -461,7 +461,7 @@ class sendingNotUnderstood:
                                     "SenderAASID" : self.base_class.aasID,
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
+                                    "replyBy" :  "",
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
@@ -904,7 +904,7 @@ class sendingProposal:
                                     "SenderAASID" : self.base_class.aasID,
                                     "SenderRolename" : self.base_class.skillName,
                                     "conversationId" : message["frame"]["conversationId"],
-                                    "replyBy" :  self.base_class.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"],
+                                    "replyBy" :  "",
                                     "replyTo" :  message["frame"]["replyBy"],
                                     "ReceiverAASID" :  receiverId,
                                     "ReceiverRolename" : receiverRole
