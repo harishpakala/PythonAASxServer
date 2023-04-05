@@ -1014,7 +1014,7 @@ class WaitForSPProposal:
             while (((self.base_class.WaitForSPProposal_Queue).qsize()) == 0):
                 time.sleep(1)
                 i = i + 1 
-                if i > 10: # Time to wait the next incoming message
+                if i > 30: # Time to wait the next incoming message
                     self.messageExist = False # If the waiting time expires, the loop is broken
                     break
             if (self.messageExist):
@@ -1375,15 +1375,15 @@ class SendCFP:
         for oMessage in self.oMessages:
             message = self.base_class.WaitforNewOrder_In
             self.gen = Generic()
-            #receiverId = "" # To be decided by the developer
-            #receiverRole = "" # To be decided by the developer
+            receiverId = "" # To be decided by the developer
+            receiverRole = "" # To be decided by the developer
             
             # For broadcast message the receiverId and the 
             # receiverRole could be empty 
             
             # For the return reply these details could be obtained from the inbound Message
-            receiverId = message["frame"]["sender"]["id"]
-            receiverRole = "BoringProvider"#message["frame"]["sender"]["role"]["name"]
+            #receiverId = message["frame"]["sender"]["id"]
+            #receiverRole = "BoringProvider"#message["frame"]["sender"]["role"]["name"]
             
             # For sending the message to an internal skill
             # The receiver Id should be
@@ -1619,10 +1619,10 @@ class BoringRequester:
     
     
     def stateChange(self, STATE) -> None:
-        self.statusMessage["interactionElements"][0]["submodelElements"][0]["value"] = "I"
-        self.statusMessage["interactionElements"][0]["submodelElements"][1]["value"] = "A006. internal-status-change"
-        self.statusMessage["interactionElements"][0]["submodelElements"][2]["value"] = str(datetime.now()) +" "+STATE
-        #self.sendMessage(self.statusMessage)
+        #self.statusMessage["interactionElements"][0]["submodelElements"][0]["value"] = "I"
+        #self.statusMessage["interactionElements"][0]["submodelElements"][1]["value"] = "A006. internal-status-change"
+        #self.statusMessage["interactionElements"][0]["submodelElements"][2]["value"] = str(datetime.now()) +" "+STATE
+        pass#self.sendMessage(self.statusMessage)
     
     def sendMessage(self, sendMessage) -> None:
         self.msgHandler.putObMessage(sendMessage)
@@ -1632,7 +1632,10 @@ class BoringRequester:
             _conversationId = str(inMessage['frame']['conversationId'])
             senderRole = str(inMessage["frame"]['sender']['role']["name"])
             _messageType = str(inMessage['frame']['type'])
-            self.QueueDict[_messageType].put(inMessage)
+            if (_messageType == "proposal"):
+                self.QueueDict[_messageType].put(inMessage)
+            else:
+                self.QueueDict[_messageType].put(inMessage)
         except Exception as E:
             pass#self.skillLogger.info("Raise an Exception " + str(E))
 

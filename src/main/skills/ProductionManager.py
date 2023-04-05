@@ -748,8 +748,7 @@ class sendCompletionResponse(object):
                                                                  "messageType": oMessage_Out["frame"]["type"],
                                                                  "messageId": oMessage_Out["frame"]["messageId"],
                                                                  "direction": "internal",
-                                                                 "SenderAASID":
-                                                                     message["frame"]["sender"]["id"],
+                                                                 "SenderAASID":message["frame"]["sender"]["id"],
                                                                  "message": oMessage_Out})
             outboundMessages.append(oMessage_Out)
         return outboundMessages

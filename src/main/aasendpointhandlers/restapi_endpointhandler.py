@@ -55,7 +55,7 @@ class AASEndPointHandler(AASEndPointHandler):
         
     def configure(self):
         
-        self.ipaddressComdrv = self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"]
+        self.ipaddressComdrv = '0.0.0.0'#self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"]
         self.portComdrv = self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_PORT_INTERN"]
         
         drv_rst_app.config['JS_REPOSITORY'] = self.pyaas.js_repository
