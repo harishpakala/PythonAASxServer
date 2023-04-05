@@ -380,7 +380,7 @@ class SubmodelElementByPath(Resource):
             if "interactionElements" in data:
                 pass
                 #return self.pyaas.skillInstanceDict["AASHandler"].restAPIHandler(data)
-            else: 
+            else:
                 aasValid = AASMetaModelValidator(self.pyaas)           
                 if(aasValid.validateSubmodelElement(data)):
                     edm = ExecuteDBModifier(self.pyaas)
@@ -1404,12 +1404,20 @@ class AASWebInterface(Resource):
             return cds,True
         except Exception as e:
             return "Error", False
-        
+    
+    
     def post(self,aasIdentifier):
         try:
             operation_type = request.form["operation_type"]
             aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode()
             _uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier1)._id
+            if operation_type == "delete_aas":
+                try:
+                    edm = ExecuteDBModifier(self.pyaas)
+                    data,status,statuscode = edm.execute({"data":aasIdentifier1, "method": "DeleteAssetAdministrationShellByIdandSubmodels",
+                                                         "instanceId" : str(uuid.uuid1())})
+                except Exception as E:
+                    pass
             if operation_type == "available_skills":
                 if "skill_name" in list(request.form.keys()):
                     skill_name = request.form["skill_name"]
