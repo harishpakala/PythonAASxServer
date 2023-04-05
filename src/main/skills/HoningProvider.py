@@ -219,7 +219,7 @@ class sendingRefuse:
         self.oMessages = "refuseProposal".split("/")
         outboundMessages = []
         for oMessage in self.oMessages:
-            message = self.base_class.sendingRefuse_In
+            message = self.base_class.WaitForCallForProposal_In
             self.gen = Generic()
             #receiverId = "" # To be decided by the developer
             #receiverRole = "" # To be decided by the developer
@@ -439,7 +439,7 @@ class sendingNotUnderstood:
         self.oMessages = "notUnderstood".split("/")
         outboundMessages = []
         for oMessage in self.oMessages:
-            message = self.base_class.sendingNotUnderstood_In
+            message = self.base_class.WaitForCallForProposal_In
             self.gen = Generic()
             #receiverId = "" # To be decided by the developer
             #receiverRole = "" # To be decided by the developer

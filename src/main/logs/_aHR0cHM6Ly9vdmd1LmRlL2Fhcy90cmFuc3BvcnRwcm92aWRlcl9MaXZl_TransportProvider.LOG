@@ -1,0 +1,416 @@
+04/06/2023 12:07:56 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:07:56 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:07:56 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Honing12
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendingNotUnderstood
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendingNotUnderstood
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : notUnderstood
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:08:51 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Transport1
+04/06/2023 12:08:51 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:51 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: feasibilityCheck
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: feasibilityCheck
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: checkingSchedule
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: checkingSchedule
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: PriceCalculation
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: PriceCalculation
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendingProposal
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendingProposal
+04/06/2023 12:08:52 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:53 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : proposal
+04/06/2023 12:08:53 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:53 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: waitingforServiceRequesterAnswer
+04/06/2023 12:08:53 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:53 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:53 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: waitingforServiceRequesterAnswer
+04/06/2023 12:08:53 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : acceptProposal / rejectProposal
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: serviceProvision
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: serviceProvision
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendinPropoposalporvisionConfirm
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendinPropoposalporvisionConfirm
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : informConfirm
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:08:55 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Boring123wwww
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendingNotUnderstood
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendingNotUnderstood
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : notUnderstood
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Transport1
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: feasibilityCheck
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: feasibilityCheck
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: checkingSchedule
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: checkingSchedule
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: PriceCalculation
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: PriceCalculation
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendingProposal
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendingProposal
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : proposal
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: waitingforServiceRequesterAnswer
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: waitingforServiceRequesterAnswer
+04/06/2023 12:10:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : acceptProposal / rejectProposal
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: serviceProvision
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: serviceProvision
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendinPropoposalporvisionConfirm
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendinPropoposalporvisionConfirm
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : informConfirm
+04/06/2023 12:10:37 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:10:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:10:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:10:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:11:01 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Honing12
+04/06/2023 12:11:01 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:01 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:01 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:11:01 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:01 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendingNotUnderstood
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendingNotUnderstood
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : notUnderstood
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Transport1
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: feasibilityCheck
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: feasibilityCheck
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: checkingSchedule
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: checkingSchedule
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: PriceCalculation
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: PriceCalculation
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendingProposal
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendingProposal
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : proposal
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: waitingforServiceRequesterAnswer
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: waitingforServiceRequesterAnswer
+04/06/2023 12:11:06 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : acceptProposal / rejectProposal
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: serviceProvision
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: serviceProvision
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendinPropoposalporvisionConfirm
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendinPropoposalporvisionConfirm
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : informConfirm
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:08 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:11:09 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:09 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:09 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:11:09 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Transport1
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: feasibilityCheck
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: feasibilityCheck
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: checkingSchedule
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: checkingSchedule
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: PriceCalculation
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: PriceCalculation
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendingProposal
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendingProposal
+04/06/2023 12:11:36 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:36 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : proposal
+04/06/2023 12:11:36 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:36 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: waitingforServiceRequesterAnswer
+04/06/2023 12:11:36 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:36 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:36 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: waitingforServiceRequesterAnswer
+04/06/2023 12:11:36 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : acceptProposal / rejectProposal
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: serviceProvision
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: serviceProvision
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: sendinPropoposalporvisionConfirm
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: sendinPropoposalporvisionConfirm
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : NA
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - OutputDocumentType : informConfirm
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - Condition :-
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:38 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:11:39 AM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal

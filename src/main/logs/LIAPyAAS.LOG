@@ -1,0 +1,22 @@
+04/06/2023 12:07:54 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/06/2023 12:07:54 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/06/2023 12:07:54 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/06/2023 12:07:54 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/06/2023 12:07:55 AM - PyAASxServer Service Instance - INFO - The message handler started
+04/06/2023 12:07:56 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+04/06/2023 12:08:46 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+04/06/2023 12:08:51 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+04/06/2023 12:10:28 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+04/06/2023 12:10:32 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+04/06/2023 12:11:01 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+04/06/2023 12:11:05 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+04/06/2023 12:11:33 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage

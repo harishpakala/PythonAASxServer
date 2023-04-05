@@ -1,0 +1,306 @@
+04/06/2023 12:07:56 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:07:56 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:07:56 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: feasibilityCheck
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: feasibilityCheck
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: checkingSchedule
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: checkingSchedule
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: PriceCalculation
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: PriceCalculation
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendingProposal
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendingProposal
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:08:47 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : proposal
+04/06/2023 12:08:48 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:08:48 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: waitingforServiceRequesterAnswer
+04/06/2023 12:08:48 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:48 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:48 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: waitingforServiceRequesterAnswer
+04/06/2023 12:08:48 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : acceptProposal / rejectProposal
+04/06/2023 12:08:50 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:08:50 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:08:50 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: serviceProvision
+04/06/2023 12:08:50 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:08:50 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:08:50 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: serviceProvision
+04/06/2023 12:08:50 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendinPropoposalporvisionConfirm
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendinPropoposalporvisionConfirm
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : informConfirm
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:09:10 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - one of the property missingcurrentLocation
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendingNotUnderstood
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendingNotUnderstood
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : notUnderstood
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:09:11 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - one of the property missingdrillingDiameter
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendingNotUnderstood
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendingNotUnderstood
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : notUnderstood
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:10:29 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - one of the property missingcurrentLocation
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:10:33 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendingNotUnderstood
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendingNotUnderstood
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : notUnderstood
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:10:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: feasibilityCheck
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: feasibilityCheck
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: checkingSchedule
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: checkingSchedule
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: PriceCalculation
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: PriceCalculation
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendingProposal
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendingProposal
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : proposal
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: waitingforServiceRequesterAnswer
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: waitingforServiceRequesterAnswer
+04/06/2023 12:11:02 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : acceptProposal / rejectProposal
+04/06/2023 12:11:04 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:04 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: serviceProvision
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: serviceProvision
+04/06/2023 12:11:05 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendinPropoposalporvisionConfirm
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendinPropoposalporvisionConfirm
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : informConfirm
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:25 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - one of the property missingcurrentLocation
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendingNotUnderstood
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendingNotUnderstood
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : notUnderstood
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:11:26 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: capabilitycheck
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:34 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: capabilitycheck
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - one of the property missingcurrentLocation
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: sendingNotUnderstood
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: sendingNotUnderstood
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : NA
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - OutputDocumentType : notUnderstood
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - Condition :-
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - TargettState: WaitForCallForProposal
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - ############################################################################# 
+
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/06/2023 12:11:35 AM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal

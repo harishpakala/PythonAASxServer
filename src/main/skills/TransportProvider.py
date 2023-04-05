@@ -511,7 +511,10 @@ class WaitForCallForProposal:
             current state.
         """
         self.base_class.WaitForCallForProposal_In = self.base_class.WaitForCallForProposal_Queue.get()
-    
+        self.base_class.proposalSubmodelTypes = dict()
+        self.base_class.subModelTypes = dict()
+        self.base_class.skillLogger.info(self.base_class.WaitForCallForProposal_In["interactionElements"][0]["idShort"])
+        
     def saveMessage(self) -> None:
         """
             Method to save the message into the database
@@ -562,6 +565,7 @@ class WaitForCallForProposal:
                 time.sleep(1)
 
             if (self.messageExist):
+                self.base_class.WaitForCallForProposal_In = dict()
                 self.saveMessage() # in case we need to store the incoming message
                 self.retrieve_WaitForCallForProposal_Message() # in case of multiple inbound messages this function should 
                                                       # not be invoked. 
