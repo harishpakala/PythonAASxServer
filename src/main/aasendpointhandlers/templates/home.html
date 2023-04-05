@@ -27,6 +27,21 @@
 	<ul id="aas-list-ul">
 {% for aasData in aasList %}
 <li>
+<div class = "row">
+	<div class = "col-10"></div>
+	<div class = "col-2 d-flex align-items-center justify-content-center">
+	<form action="/shells/{{aasData.aasIdentifier}}/webui" method="post">
+		<input type="hidden" name="operation_type" value="delete_aas" id="operation_type" />
+		<div class="std-submodel-add" >
+			<input type = "image" style = "height : 3vh; width : 3svh ;cursor: pointer;" src="{{exDomain}}web/images/delete_button.svg" >
+			<div class="std-submodel-add-overlay">
+				<input type = "image"  style = "height : 3vh; width : 3vh ;cursor: pointer;"  src="{{exDomain}}web/images/delete_button1.svg">
+			</div>
+		</div>
+	</form>
+	</div>
+</div>
+<div class = "row" style = "min-height : 1.5vh;"></div>
 <a href = "/shells/{{aasData.aasIdentifier}}/webui">
 	<div id ="home-aas-card" class = "row d-flex align-items-center justify-content-center" style = "height : 12vh"> 
 

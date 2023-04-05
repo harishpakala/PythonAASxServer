@@ -918,6 +918,27 @@ class AAS_Database_Server(object):
             self.pyAAS.serviceLogger.info("Error at DeleteAssetAdministrationShellById DB" + str(E))
             return  "Internal Server Error", False,500      
 
+    def DeleteAssetAdministrationShellByIdandSubmodels(self,_shellId):
+        try:
+            if _shellId not in self.aasHashDict._getKeys():
+                return "The Asset administration shell not found", False, 404
+            else:
+                _id = (self.aasHashDict.__getHashEntry__(_shellId).__getId__())
+                aasElement = self.aasShellHashDict.__getHashEntry__(_id).aasELement
+                if "submodels" in aasElement.keys():
+                    for _submodel in aasElement["submodels"]:
+                        try:
+                            self.DeleteSubmodelById(_submodel["keys"][0]["value"])
+                        except Exception as E:
+                            pass
+                self.aasShellHashDict.__deleteHashEntry__(_id)
+                self.aasHashDict.__deleteHashEntry__(_shellId)
+            return "Asset Administration Shell deleted successfully", True, 204
+        except Exception as E:
+            self.pyAAS.serviceLogger.info("Error at DeleteAssetAdministrationShellById DB" + str(E))
+            return  "Internal Server Error", False,500      
+
+
     '''
        Shell Repository Interface End
     '''
