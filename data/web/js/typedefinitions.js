@@ -1,7 +1,7 @@
 class StringObject{
 	constructor(name,required="required",text = ""){
 		this.text = text;
-		this._uuid = crypto.randomUUID();
+		this._uuid = this.crypto.randomUUID();
 		this.name = name;
 		this.parentId = "";
 		this.required = required;
@@ -45,7 +45,7 @@ class StringObject{
 class DataObject{
 	constructor(name,text = "",submodelIdentifier,idShortPath){
 		this.text = text;
-		this._uuid = crypto.randomUUID();
+		this._uuid = this.crypto.randomUUID();
 		this.name = name;
 		this.parentId = "";
 		this.exdomain = "";
@@ -104,7 +104,7 @@ class DataObject{
 class SelectObject{
 	constructor(name,Enum,_item){
 		this.selectedItem = _item;
-		this._uuid = crypto.randomUUID();
+		this._uuid = this.crypto.randomUUID();
 		this.name = name;
 		this.parentId = "";
 		this.Enum = Enum;
@@ -161,7 +161,7 @@ class ListObject{
 }
 class ListCollection{
 	constructor(name,className){
-		this._uuid = crypto.randomUUID();
+		this._uuid = this.crypto.randomUUID();
 		this.name = name;
 		this.parentId = "";
 		this.exdomain = "";
@@ -280,7 +280,7 @@ class ListCollection{
 	}
 	addFunctionHandler(evt) {
 		evt.preventDefault();
-		let _iuuid = crypto.randomUUID();
+		let _iuuid = this.crypto.randomUUID();
 		let _classObject = this.getclassObject(_iuuid);
 		let _objectDIv = this.getObjectDom(_iuuid);
 		let _listObject = new ListObject(_iuuid,_classObject,_objectDIv);
@@ -308,7 +308,7 @@ class ListCollection{
 		this.exdomain = exdomain;
 		for (var i = 0; i < data.length; i++ ) {
 			console.log(data[i]);
-			let _iuuid = crypto.randomUUID();
+			let _iuuid = this.crypto.randomUUID();
 			let _classObject = this.getclassObject(_iuuid);
 			let _objectDIv = this.getObjectDom(_iuuid);
 			let _listObject = new ListObject(_iuuid,_classObject,_objectDIv);
@@ -319,7 +319,7 @@ class ListCollection{
 }
 class ComplexObject{
 	constructor(name,className){
-		this._uuid = crypto.randomUUID();
+		this._uuid = this.crypto.randomUUID();
 		this.name = name;
 		this.parentId = "";
 		this.exdomain = "";
@@ -401,7 +401,7 @@ class ComplexObject{
 	addObject(){
 		document.getElementById(this._uuid+"-remove").style.visibility = "visible";
 		document.getElementById(this._uuid+"-add").style.visibility = "hidden";
-		let _iuuid = crypto.randomUUID();
+		let _iuuid = this.crypto.randomUUID();
 		this._object = this.getclassObject(_iuuid);
 		this._object.createDom(this._uuid+"-Object",this.exdomain);
 	}
@@ -425,7 +425,7 @@ class ComplexObject{
 		}
 	}
 	deserialize(data,parentId,exdomain){
-		let _iuuid = crypto.randomUUID();
+		let _iuuid = this.crypto.randomUUID();
 		this._object = this.getclassObject(_iuuid);
 		this._object.deserialize(data,parentId,exdomain);
 	}
@@ -546,7 +546,7 @@ class Key{
 		this.type = new SelectObject("type",KeyType,type);
 		this.value = new StringObject("text");
 		this._uuid = _uuid
-		if (_uuid == ""){this._uuid = crypto.randomUUID();}
+		if (_uuid == ""){this._uuid = this.crypto.randomUUID();}
 	}
 	serialize(){
         return {"type":this.type.getSelectedItem(),"value":this.value.getString()};
@@ -591,7 +591,7 @@ class LangString{
         		"text":this.text.getString()};
     }
     createDom(parentId,exdomain){
-    	if (this._uuid == ""){this._uuid = crypto.randomUUID()};
+    	if (this._uuid == ""){this._uuid = this.crypto.randomUUID()};
     	document.getElementById(parentId).insertAdjacentHTML(
 				 'afterbegin',
 					`<div class = "row" id = "`+this._uuid+"LangString"+`">
@@ -620,7 +620,7 @@ class Reference{
 		this.keys = new ListCollection("keys","Key");
 		this.referredSemanticId = referredSemanticId;
 		this._uuid = _uuid ;
-		if (_uuid == ""){this._uuid = crypto.randomUUID();}
+		if (_uuid == ""){this._uuid = this.crypto.randomUUID();}
 	}
 	serialize(){
 		let jsonData = {};
@@ -675,7 +675,7 @@ class AdministrativeInformation extends HasDataSpecification{
     	super(dataSpecifications);
         this.version  = new StringObject("version");
         this.revision = new StringObject("revision");
-        if (uuid == ""){this.uuid = crypto.randomUUID();}
+        if (uuid == ""){this.uuid = this.crypto.randomUUID();}
     }
     serialize(){
         let jsonData = super.serialize();
@@ -737,7 +737,7 @@ class Qualifier extends HasSemantics{
 		this.valueId = new ComplexObject("valueId","Reference");
 		this._HasSemantics = new ComplexObject("HasSemantics","HasSemantics");
 		this._uuid = _uuid;
-		if (_uuid == ""){this._uuid = crypto.randomUUID();}
+		if (_uuid == ""){this._uuid = this.crypto.randomUUID();}
 	}
 	serialize(){
 		let jsonData = {}
@@ -786,7 +786,7 @@ class Extension extends HasSemantics{
 		this.name = new StringObject("name");
 		this.refersTo = new ComplexObject("refersTo","Reference");
 		this._uuid = _uuid;
-		if (_uuid == ""){this._uuid = crypto.randomUUID();} 
+		if (_uuid == ""){this._uuid = this.crypto.randomUUID();} 
 	}
 	serialize(){
 		let jsonData = super.serialize();
@@ -932,7 +932,7 @@ class Qualifiable{
 	constructor(qualifiers,_uuid){
 		this.qualifiers = new ListCollection("Qualifier","Qualifier");
 		this._uuid = _uuid; 
-		if (_uuid == ""){this._uuid = crypto.randomUUID();}
+		if (_uuid == ""){this._uuid = this.crypto.randomUUID();}
 	}
 	serialize(){
 		let jsonData = {}
@@ -1390,7 +1390,7 @@ class Submodel extends Identifiable{
        this.exdomain = "";
     }
 	createDom(parent,exdomain){
-		this.uuid = crypto.randomUUID();
+		this.uuid = this.crypto.randomUUID();
 		this.exdomain = exdomain;
 		document.getElementById(parent).insertAdjacentHTML(
 				 'afterbegin',
