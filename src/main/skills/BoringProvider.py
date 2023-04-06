@@ -987,13 +987,18 @@ class checkingSchedule:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
+        self.base_class.skillLogger.info("checkingSchedule_Logic")
+        print("checkingSchedule_Logic")
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
             self.base_class.skillLogger.info(self.tdPropertiesList)
             self.base_class.skillLogger.info(self.tdPropertiesList["sPermission"])
+            print(self.tdPropertiesList)
+            print(self.tdPropertiesList["sPermission"])            
             sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"].href)
             self.base_class.skillLogger.info(sPermissionVariable)
+            print(sPermissionVariable)
             if sPermissionVariable =="error":
                 self.PriceCalculation_Enabled = False
             else:
