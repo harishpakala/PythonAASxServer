@@ -4,6 +4,7 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 '''
+import time
 try:
     import queue as Queue
 except ImportError:
@@ -34,6 +35,7 @@ class DataManager(object):
         self.POLL = True
         self.pyAAS.serviceLogger.info('The Database manager is being started')
         while self.POLL:
+            time.sleep(0.1)
             if (self.InBoundProcessingQueue).qsize() != 0:
                 inMessage = self.InBoundProcessingQueue.get()
                 if inMessage["functionType"] == 1:
