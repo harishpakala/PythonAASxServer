@@ -803,8 +803,8 @@ class serviceProvision:
         InputDocument = "NA"
         self.base_class.skillLogger.info("InputDocument : " + InputDocument)
         
-        self.WaitForCallForProposal_Enabled = False
-        #self.serviceProvision_Logic()
+        #self.WaitForCallForProposal_Enabled = False
+        self.serviceProvision_Logic()
         
     def next(self) -> object:
         """
@@ -1099,8 +1099,8 @@ class checkingSchedule:
         InputDocument = "NA"
         self.base_class.skillLogger.info("InputDocument : " + InputDocument)
         
-        self.sendingRefuse_Enabled = False
-        #self.checkingSchedule_Logic()
+        #self.sendingRefuse_Enabled = False
+        self.checkingSchedule_Logic()
         
     def next(self) -> object:
         """
