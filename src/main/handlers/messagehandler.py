@@ -127,9 +127,9 @@ class MessageHandler(object):
                 return 
         except Exception as E:
             pass
-        if (self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
+        if True:#(self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
             self.AASendPointHandlerObjects["MQTT"].dispatchMessage(ob_Message)
-        elif (self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
+        elif (self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "RESTAPI"):
             self.AASendPointHandlerObjects["RESTAPI"].dispatchMessage(ob_Message)             
         
     def sendObstatusMessage(self, sMessage):
@@ -157,7 +157,7 @@ class MessageHandler(object):
         while True:
             for hAASId in self.pyaas.heartBeatHandlerList: 
                 _hbtMessage = hbt.createHeartBeatMessage(hAASId,heartBeatCount)
-                if (self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
+                if True:#(self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
                     self.AASendPointHandlerObjects["MQTT"].dispatchMessage(_hbtMessage)
                 else:
                     self.AASendPointHandlerObjects["RESTAPI"].dispatchMessage(_hbtMessage)
