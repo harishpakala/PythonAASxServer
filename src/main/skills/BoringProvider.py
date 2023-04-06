@@ -990,6 +990,8 @@ class checkingSchedule:
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
+            self.base_class.skillLogger.info(self.tdPropertiesList)
+            self.base_class.skillLogger.info(self.tdPropertiesList["sPermission"])
             sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"].href)
             self.base_class.skillLogger.info(sPermissionVariable)
             if sPermissionVariable =="error":
