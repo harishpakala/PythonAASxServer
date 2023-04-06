@@ -55,7 +55,7 @@ class AASEndPointHandler(AASEndPointHandler):
         
     def configure(self):
         
-        self.ipaddressComdrv = self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"]
+        self.ipaddressComdrv = '0.0.0.0'#self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"]
         self.portComdrv = self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_PORT_INTERN"]
         
         drv_rst_app.config['JS_REPOSITORY'] = self.pyaas.js_repository
@@ -160,9 +160,9 @@ class AASEndPointHandler(AASEndPointHandler):
     
     def run(self):
         #drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv)
-        
-        http_server = WSGIServer((self.ipaddressComdrv, int(self.portComdrv)), drv_rst_app)
-        http_server.serve_forever()
+        drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv,ssl_context=(self.pyaas.lia_env_variable["LIA_PATH2AUTHCERT"], self.pyaas.lia_env_variable["LIA_PATH2SIGNINGKEY"]))
+        #http_server = WSGIServer((self.ipaddressComdrv, int(self.portComdrv)), drv_rst_app)
+        #http_server.serve_forever()
         self.pyAAS.serviceLogger.info("REST API namespaces are started")
     
     def start(self):
