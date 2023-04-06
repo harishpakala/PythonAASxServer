@@ -1173,7 +1173,7 @@ class serviceProvision:
             It is upto the developer to add the relevant code.
         """
         try :
-           self.plcHandler.write(self.tdPropertiesList["sPermission"]["href"],"true")
+            self.plcHandler.write(self.tdPropertiesList["sPermission"]["href"],"true")
             plcBoool = True
             while (plcBoool):
                 time.sleep(20)
