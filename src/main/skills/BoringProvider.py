@@ -991,6 +991,7 @@ class checkingSchedule:
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
             sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"].href)
+            self.base_class.skillLogger.info(sPermissionVariable)
             if sPermissionVariable =="error":
                 self.PriceCalculation_Enabled = False
             else:
