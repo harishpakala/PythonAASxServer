@@ -160,9 +160,9 @@ class AASEndPointHandler(AASEndPointHandler):
     
     def run(self):
         #drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv)
-        
-        http_server = WSGIServer((self.ipaddressComdrv, int(self.portComdrv)), drv_rst_app)
-        http_server.serve_forever()
+        drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv,ssl_context=(self.pyaas.lia_env_variable["LIA_PATH2AUTHCERT"], self.pyaas.lia_env_variable["LIA_PATH2SIGNINGKEY"]))
+        #http_server = WSGIServer((self.ipaddressComdrv, int(self.portComdrv)), drv_rst_app)
+        #http_server.serve_forever()
         self.pyAAS.serviceLogger.info("REST API namespaces are started")
     
     def start(self):
