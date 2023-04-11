@@ -12,12 +12,12 @@ except ImportError:
     import Queue as Queue 
 
 import base64
+import copy
 import logging
 import sys
 import time
 import uuid
 from opcua import ua
-from opcua.ua.uatypes import DataValue
 try:
     from utils.i40data import Generic
 except ImportError:
@@ -738,20 +738,18 @@ class serviceProvision:
         self.TargetLocation = ""
         self.CurrentLocation = ""
         try:
-            
             self.TransportSubmodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/4494_7040_1122_9311")
-            
             self.CurrentLocation = self.getLocation("currentLocation",self.TransportSubmodel)
             self.TargetLocation = self.getLocation("targetLocation",cfpMessage["interactionElements"][0])
             
             try:  
-                self.plcHandler.write(self.tdPropertiesList.get_property("xProductionMode").href,"Process")
+                #self.plcHandler.write(self.tdPropertiesList.get_property("xProductionMode").href,"Process")
                 if (self.CurrentLocation == self.TargetLocation):
                     self.TargetLocation = "Pos 0"
                 self.base_class.skillLogger.info(self.CurrentLocation + " "+ self.TargetLocation)
-                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_purpose").href,"Process")
-                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_data_SR").href,self.CurrentLocation)
-                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_data_SP").href,self.TargetLocation)
+                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_purpose").href,ua.DataValue("Process"))
+                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_data_SR").href,ua.DataValue(self.CurrentLocation))
+                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_data_SP").href,ua.DataValue(self.TargetLocation))
                 
             except Exception as E:
                 print(str(E),"Error Write 1")
@@ -762,7 +760,7 @@ class serviceProvision:
             else:
                 while (plcBoool):
                     self.sMessage_out_data = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_data").href)
-                    self.sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList.get_property(sMessage_out_purpose).href)
+                    self.sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_purpose").href)
                     if  (self.sMessage_out_data == "end of process" and self.sMessage_out_purpose == "Acknowledge"):
                         plcBoool = False
             i = 0
@@ -780,10 +778,11 @@ class serviceProvision:
                 i = i + 1
             try:
                 edm = ExecuteDBModifier(self.base_class.pyaas)
-                dataBaseResponse = edm.executeModifer({"data":{"entity":"submodels",
-                                                               "entityId":self.TransportSubmodel["identification"]["id"],
-                                                                "entityData":self.TransportSubmodel, 
-                                                                "note":"Submodel"},"method":"putAASXEntityByID"})
+                data,status,statuscode = edm.execute({"data":{"submodelIdentifier":self.TransportSubmodel["id"], 
+                                                              "_submodel":copy.deepcopy(self.TransportSubmodel)},
+                                                            "method": "PutSubmodelById",
+                                                                "instanceId" : str(uuid.uuid1())})
+                print(data,status,statuscode)
             except Exception as e:
                 self.base_class.skillLogger.info("Error" + str(e))   
 
@@ -1068,8 +1067,8 @@ class checkingSchedule:
             It is upto the developer to add the relevant code.
         """
         try:
-            sMessage_out_data = self.plcHandler.read(self.tdPropertiesList.get_property(sMessage_out_data).href)
-            sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList.get_property(sMessage_out_purpose).href)
+            sMessage_out_data = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_data").href)
+            sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_purpose").href)
             envWrite = ""
             if (self.base_class.env == "live"):
                 dv = ua.DataValue(False)

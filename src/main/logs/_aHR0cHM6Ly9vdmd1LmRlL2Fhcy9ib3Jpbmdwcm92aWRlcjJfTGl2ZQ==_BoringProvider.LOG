@@ -1,0 +1,201 @@
+04/11/2023 05:09:28 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:09:28 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: WaitForCallForProposal
+04/11/2023 05:09:28 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : callForProposal
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: capabilitycheck
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: capabilitycheck
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: feasibilityCheck
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: feasibilityCheck
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: checkingSchedule
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: checkingSchedule
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - checkingSchedule_Logic
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - <utils.utils.ThingDescription object at 0x0000021E9B2BD820>
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - opc.tcp://192.168.1.51:4840/ns=4;s=|var|WAGO 750-8203 PFC200 CS 2ETH CAN.Application.PLC_PRG.sPermission
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - false
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: PriceCalculation
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: PriceCalculation
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: sendingProposal
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: sendingProposal
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : proposal
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: waitingforServiceRequesterAnswer
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: waitingforServiceRequesterAnswer
+04/11/2023 05:11:04 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : acceptProposal / rejectProposal
+04/11/2023 05:11:07 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:07 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:07 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: serviceProvision
+04/11/2023 05:11:07 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:07 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:07 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: serviceProvision
+04/11/2023 05:11:07 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: sendinPropoposalporvisionConfirm
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: sendinPropoposalporvisionConfirm
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : informConfirm
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: WaitForCallForProposal
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: WaitForCallForProposal
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : callForProposal
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: capabilitycheck
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: capabilitycheck
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - one of the property missingcurrentLocation
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: sendingNotUnderstood
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: sendingNotUnderstood
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : notUnderstood
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: WaitForCallForProposal
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: WaitForCallForProposal
+04/11/2023 05:11:38 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : callForProposal
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: capabilitycheck
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: capabilitycheck
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - one of the property missinghoningDiameter
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: sendingNotUnderstood
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: sendingNotUnderstood
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : notUnderstood
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: WaitForCallForProposal
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: WaitForCallForProposal
+04/11/2023 05:12:20 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : callForProposal
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: capabilitycheck
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: capabilitycheck
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - one of the property missingcurrentLocation
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: sendingNotUnderstood
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: sendingNotUnderstood
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : notUnderstood
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: WaitForCallForProposal
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: WaitForCallForProposal
+04/11/2023 05:12:25 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : callForProposal
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: capabilitycheck
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: capabilitycheck
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - one of the property missingcurrentLocation
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : NA
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: sendingNotUnderstood
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: sendingNotUnderstood
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : NA
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - OutputDocumentType : notUnderstood
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - Condition :-
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - TargettState: WaitForCallForProposal
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - ############################################################################# 
+
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - 
+ #############################################################################
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - StartState: WaitForCallForProposal
+04/11/2023 05:13:13 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider - INFO - InputDocument : callForProposal

@@ -5,7 +5,7 @@ This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 """
 from datetime import datetime
-
+from opcua import ua
 try:
     import queue as Queue
 except ImportError:
@@ -990,7 +990,7 @@ class checkingSchedule:
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
-            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"].href)
+            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
             if sPermissionVariable =="error":
                 self.PriceCalculation_Enabled = False
             else:
@@ -1173,11 +1173,11 @@ class serviceProvision:
             It is upto the developer to add the relevant code.
         """
         try :
-            self.plcHandler.write(self.tdPropertiesList["sPermission"]["href"],"true")
+            self.plcHandler.write(self.tdPropertiesList.get_property("sPermission").href,ua.DataValue("true"))
             plcBoool = True
             while (plcBoool):
                 time.sleep(20)
-                sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"]["href"])
+                sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
                 if  (sPermissionVariable.upper() =="FALSE"):
                     plcBoool = False
             self.WaitForCallForProposal_Enabled = False

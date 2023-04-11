@@ -5,7 +5,7 @@ This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 """
 from datetime import datetime
-
+from opcua import ua
 try:
     import queue as Queue
 except ImportError:
@@ -141,7 +141,7 @@ except ImportError:
         "type" : ,
         "messageId":messageId,
         "SenderAASID" : self.base_class.aasID,
-        "SenderRolename" : "BoringProvider2",
+        "SenderRolename" : "BoringProvider",
         "conversationId" : "AASNetworkedBidding",
         "replyBy" :  "",   # "The communication protocol that the AAS needs to use while sending message to other AAS."
         "replyTo" : "",    # "The communication protocol that the receipient AAS should use for reply"   
@@ -987,10 +987,16 @@ class checkingSchedule:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
+        self.base_class.skillLogger.info("checkingSchedule_Logic")
+        print("checkingSchedule_Logic")
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
+            self.base_class.skillLogger.info(self.tdPropertiesList)
+            self.base_class.skillLogger.info(self.tdPropertiesList.get_property("sPermission").href)
             sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
+            self.base_class.skillLogger.info(sPermissionVariable)
+            print(sPermissionVariable)
             if sPermissionVariable =="error":
                 self.PriceCalculation_Enabled = False
             else:
@@ -1079,7 +1085,7 @@ class capabilitycheck:
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
-        self.submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/2334_7040_1122_4553")
+        self.submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/5554_7040_1122_5332")
         tempDict1 = self.getPropertyList(self.submodel)
         tempDict = self.getPropertyList(self.base_class.WaitForCallForProposal_In['interactionElements'][0])
 
@@ -1173,11 +1179,11 @@ class serviceProvision:
             It is upto the developer to add the relevant code.
         """
         try :
-            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
+            self.plcHandler.write(self.tdPropertiesList.get_property("sPermission").href,ua.DataValue("true"))
             plcBoool = True
             while (plcBoool):
-                time.sleep(20)
-                sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"]["href"])
+                #time.sleep(20)
+                sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
                 if  (sPermissionVariable.upper() =="FALSE"):
                     plcBoool = False
             self.WaitForCallForProposal_Enabled = False
@@ -1344,7 +1350,7 @@ class BoringProvider2:
                        }
         
         self.pyaas = pyaas
-        self.skillName = "BoringProvider2"
+        self.skillName = "BoringProvider"
         self.initstate_specific_queue_internal()
         self.init_inbound_messages()
         self.currentConversationId = "temp"
