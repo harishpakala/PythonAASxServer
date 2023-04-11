@@ -994,9 +994,7 @@ class checkingSchedule:
         try:
             self.base_class.skillLogger.info(self.tdPropertiesList)
             self.base_class.skillLogger.info(self.tdPropertiesList["sPermission"])
-            print(self.tdPropertiesList)
-            print(self.tdPropertiesList["sPermission"])            
-            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"].href)
+            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
             self.base_class.skillLogger.info(sPermissionVariable)
             print(sPermissionVariable)
             if sPermissionVariable =="error":
@@ -1181,11 +1179,11 @@ class serviceProvision:
             It is upto the developer to add the relevant code.
         """
         try :
-            self.plcHandler.write(self.tdPropertiesList["sPermission"]["href"],"true")
+            self.plcHandler.write(self.tdPropertiesList.get_property("sPermission").href,"true")
             plcBoool = True
             while (plcBoool):
                 #time.sleep(20)
-                sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"]["href"])
+                sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
                 if  (sPermissionVariable.upper() =="FALSE"):
                     plcBoool = False
             self.WaitForCallForProposal_Enabled = False
