@@ -745,13 +745,13 @@ class serviceProvision:
             self.TargetLocation = self.getLocation("targetLocation",cfpMessage["interactionElements"][0])
             
             try:  
-                (self.plcHandler.write(self.tdPropertiesList["xProductionMode"]["href"],"Process"))
+                self.plcHandler.write(self.tdPropertiesList.get_property("xProductionMode").href,"Process")
                 if (self.CurrentLocation == self.TargetLocation):
                     self.TargetLocation = "Pos 0"
                 self.base_class.skillLogger.info(self.CurrentLocation + " "+ self.TargetLocation)
-                (self.plcHandler.write(self.tdPropertiesList["sMessage_in_purpose"]["href"],"Process"))
-                (self.plcHandler.write(self.tdPropertiesList["sMessage_in_data_SR"]["href"],self.CurrentLocation))
-                (self.plcHandler.write(self.tdPropertiesList["sMessage_in_data_SP"]["href"],self.TargetLocation))
+                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_purpose").href,"Process")
+                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_data_SR").href,self.CurrentLocation)
+                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_data_SP").href,self.TargetLocation)
                 
             except Exception as E:
                 print(str(E),"Error Write 1")
@@ -761,8 +761,8 @@ class serviceProvision:
                 pass
             else:
                 while (plcBoool):
-                    self.sMessage_out_data = self.plcHandler.read(self.tdPropertiesList["sMessage_out_data"]["href"])
-                    self.sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList["sMessage_out_purpose"]["href"])
+                    self.sMessage_out_data = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_data").href)
+                    self.sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList.get_property(sMessage_out_purpose).href)
                     if  (self.sMessage_out_data == "end of process" and self.sMessage_out_purpose == "Acknowledge"):
                         plcBoool = False
             i = 0
@@ -1068,15 +1068,15 @@ class checkingSchedule:
             It is upto the developer to add the relevant code.
         """
         try:
-            sMessage_out_data = self.plcHandler.read(self.tdPropertiesList["sMessage_out_data"]["href"]) #ready
-            sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList["sMessage_out_purpose"]["href"]) #Inform
+            sMessage_out_data = self.plcHandler.read(self.tdPropertiesList.get_property(sMessage_out_data).href)
+            sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList.get_property(sMessage_out_purpose).href)
             envWrite = ""
             if (self.base_class.env == "live"):
                 dv = ua.DataValue(False)
-                envWrite = self.plcHandler.write(self.tdPropertiesList["xProductionMode"]["href"],dv)
+                envWrite = self.plcHandler.write(self.tdPropertiesList.get_property("xProductionMode").href,dv)
             elif (self.base_class.env == "cyclic"):
                 dv = ua.DataValue(False)
-                envWrite = self.plcHandler.write(self.tdPropertiesList["sMessage_out_purpose"]["xProductionMode"],dv)
+                envWrite = self.plcHandler.write(self.tdPropertiesList.get_property("xProductionMode").href,dv)
             if sMessage_out_data == "error" or sMessage_out_purpose == "error" or envWrite == "error":
                 self.PriceCalculation_Enabled = False
             else :
