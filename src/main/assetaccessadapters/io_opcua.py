@@ -58,7 +58,6 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             except Exception as e2:
                 print(str(e2))
                 return "error"
-
     def write(self,urI,value):
         try:
             host = urI.split("opc.tcp://")[1].split("/")[0]
