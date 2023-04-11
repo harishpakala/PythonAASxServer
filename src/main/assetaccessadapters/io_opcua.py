@@ -38,13 +38,11 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             print(str(E))
             return False
 
-    def read(self, urI):
+    def read(self,urI):
         try:
-            host = urI.split("opc.tcp://")[1].split("/")[0].split(":")
-            IP = host[0]
-            PORT = host[1]
+            host = urI.split("opc.tcp://")[1].split("/")[0]
             nodeId = (urI.split("opc.tcp://")[1]).split("/")[-1]
-            plc_opcua_Client = Client("opc.tcp://" + IP + ":" + PORT + "/", timeout=800000)
+            plc_opcua_Client =  Client("opc.tcp://" + host,timeout = 800000)
             plc_opcua_Client.description = str(uuid.uuid4())
             plc_opcua_Client.session_timeout = 600000
             plc_opcua_Client.secure_channel_timeout = 600000
@@ -53,26 +51,29 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             plc_opcua_Client.disconnect()
             return rValue
         except Exception as e1:
+            print(str(e1))
             try:
                 plc_opcua_Client.disconnect()
                 return "error"
             except Exception as e2:
+                print(str(e2))
                 return "error"
 
-    def write(self, urI, value):
+    def write(self,urI,value):
         try:
-            host = urI.split("opc.tcp://")[1].split("/")[0].split(":")
-            IP = host[0]
-            PORT = host[1]
-            nodeId = urI.split("opc.tcp://")[1].split("/")[1]
-            self.td_opcua_client = Client("opc.tcp://" + IP + ":" + PORT + "/", timeout=600000)
+            host = urI.split("opc.tcp://")[1].split("/")[0]
+            nodeId = (urI.split("opc.tcp://")[1]).split("/")[-1]
+            self.td_opcua_client =  Client("opc.tcp://" + host,timeout = 800000)
             self.td_opcua_client.description = str(uuid.uuid1())
-            self.td_opcua_client.connect()
+            self.td_opcua_client.session_timeout = 600000
+            self.td_opcua_client.secure_channel_timeout = 600000
+            self.td_opcua_client.connect() 
             tdProperty = self.td_opcua_client.get_node(nodeId)
-            tdProperty.set_value(value)
+            tdProperty.set_attribute(ua.AttributeIds.Value,value)
         except Exception as E:
+            print(str(E))
             self.td_opcua_client.disconnect()
-            return str(E)
+            return "error"
         finally:
             self.td_opcua_client.disconnect()
             return "Success"
