@@ -990,7 +990,7 @@ class checkingSchedule:
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
-            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList["sPermission"].href)
+            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
             if sPermissionVariable =="error":
                 self.PriceCalculation_Enabled = False
             else:
@@ -1173,7 +1173,7 @@ class serviceProvision:
             It is upto the developer to add the relevant code.
         """
         try :
-            self.plcHandler.write(self.tdPropertiesList["sPermission"]["href"],"true")
+            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
             plcBoool = True
             while (plcBoool):
                 time.sleep(20)
