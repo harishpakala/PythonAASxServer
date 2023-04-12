@@ -6,6 +6,7 @@ This source code may use other Open Source software components (see LICENSE.txt)
 """
 from datetime import datetime
 
+
 try:
     import queue as Queue
 except ImportError:
@@ -323,7 +324,7 @@ class WaitforNewOrder:
         
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
-                
+        self.base_class.empty_all_queues()       
         self.cfpConfiguration_Enabled = True
     
     
@@ -1011,11 +1012,12 @@ class WaitForSPProposal:
             i = 0
             sys.stdout.write(" Waiting for response")
             sys.stdout.flush()
-            while (((self.base_class.WaitForSPProposal_Queue).qsize()) == 0):
+            while True:
                 time.sleep(1)
                 i = i + 1 
-                if i > 30: # Time to wait the next incoming message
-                    self.messageExist = False # If the waiting time expires, the loop is broken
+                if i > 10: # Time to wait the next incoming message
+                    if (self.base_class.WaitForSPProposal_Queue.qsize() == 0):
+                        self.messageExist = False # If the waiting time expires, the loop is broken
                     break
             if (self.messageExist):
                 self.saveMessage() # in case we need to store the incoming message
@@ -1082,7 +1084,8 @@ class EvaluateProposal:
             
             for lsp in ListPrice_CFP:
                 qoutes.append(lsp[0] + lsp[1])
-                
+            print(ListPrice_CFP)
+            print(qoutes)   
             bestPrice = min(qoutes)
             bestPriceIndex = qoutes.index(bestPrice)  
             self.base_class.CFP = ListPrice_CFP[bestPriceIndex][0]        
@@ -1172,7 +1175,7 @@ class WaitforInformConfirm:
         self.base_class.responseMessage["status"] = "S"
         self.base_class.responseMessage["code"] = "A.013"
         self.base_class.responseMessage["message"] =  "The Order is Succesfully Executed."        
-            
+           
     
     def run(self) -> None:
         """
@@ -1500,10 +1503,10 @@ class BoringRequester:
         pass
     
     def empty_all_queues(self) -> None:
-        for queueName,queue in self.QueueDict.items():
-            queueList = list(self.queue.queue)
+        for queueName,queue1 in self.QueueDict.items():
+            queueList = list(queue1.queue)
             for elem in range(0,len(queueList)):
-                queue.get()
+                queue1.get()
     
     def create_status_message(self) -> None:
         self.StatusDataFrame =      {

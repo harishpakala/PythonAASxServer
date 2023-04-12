@@ -51,6 +51,7 @@ class AASEndPointHandler(AASEndPointHandler):
     
     def restart(self):
         try :
+            self.configure()
             mqttClientThread1 = threading.Thread(target=self.update)
             mqttClientThread1.start()
           

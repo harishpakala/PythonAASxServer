@@ -1,0 +1,12 @@
+04/12/2023 02:34:28 PM - 504c6173-3b03-429f-bb18-252a11363e1c_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:34:28 PM - 504c6173-3b03-429f-bb18-252a11363e1c_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 02:34:28 PM - 504c6173-3b03-429f-bb18-252a11363e1c_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 03:02:15 PM - 047e0d9d-9707-48fe-9cb5-42c807e92ca4_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:02:15 PM - 047e0d9d-9707-48fe-9cb5-42c807e92ca4_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 03:02:15 PM - 047e0d9d-9707-48fe-9cb5-42c807e92ca4_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_ProductionManager - INFO - InputDocument : ProductionOrder

@@ -695,10 +695,14 @@ class sendCompletionResponse(object):
 
     def sendCompletionResponse_Logic(self):
         self.InElem = self.baseClass.statusInElem
-        self.InElem["submodelElements"][0]["value"] = self.baseClass.responseMessage["status"]
-        self.InElem["submodelElements"][1]["value"] = self.baseClass.responseMessage["code"]
-        self.InElem["submodelElements"][2]["value"] = self.baseClass.responseMessage["message"]
-         
+        if (self.baseClass.responseMessage["status"] == "E"):
+            self.InElem["submodelElements"][0]["value"] = self.baseClass.responseMessage["status"]
+            self.InElem["submodelElements"][1]["value"] = self.baseClass.responseMessage["code"]
+            self.InElem["submodelElements"][2]["value"] = self.baseClass.responseMessage["message"]
+        else:
+            self.InElem["submodelElements"][0]["value"] = "S"
+            self.InElem["submodelElements"][1]["value"] = "A.03"
+            self.InElem["submodelElements"][2]["value"] = "The placed order is succesfully executed."
         self.baseClass.responseMessage = {}
 
     def create_Outbound_Message(self):

@@ -1,0 +1,102 @@
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - The message handler started
+ #############################################################################snnnnnnnnnnn
+[('ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e', 0), ('ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0', 0), ('ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea', 0)]
+ #############################################################################snnnnnnnnnnn
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.TransportRequester - INFO - StartState: WaitforNewOrder
+ * Serving Flask app "aasendpointhandlers.restapi_endpointhandler" (lazy loading)
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.TransportRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.HoningRequester - INFO - StartState: WaitforNewOrder
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.BoringRequester - INFO - 
+ #############################################################################
+   Use a production WSGI server instead.
+ Waiting for response * Debug mode: off
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.HoningRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.BoringRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/67e882ad-7027-4854-b6db-8f5b30e21e1e.BoringRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_Register - INFO - 
+ #############################################################################
+ Waiting for response04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_ProductionManager - INFO - StartState: WaitforNewOrder
+ Waiting for response04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_ProductionManager - INFO - InputDocument : ProductionOrder
+ Waiting for response04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : Order
+ Waiting for response04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_Register - INFO - InputDocument : Order
+ Waiting for response04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : Order
+ Waiting for response04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_Register - INFO - 
+ #############################################################################
+ Waiting for response04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.BoringRequester - INFO - 
+ #############################################################################
+ Waiting for response04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.HoningRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.BoringRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_Register - INFO - InputDocument : Order
+ * Running on https://0.0.0.0:60019/ (Press CTRL+C to quit)
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.TransportRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+ Waiting for response04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.BoringRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.TransportRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/c7713761-a435-40ac-922b-926ca2665aea.HoningRequester - INFO - InputDocument : Order
+ Waiting for response04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_ProductionManager - INFO - StartState: WaitforNewOrder
+ Waiting for response04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_Register - INFO - 
+ #############################################################################
+Press Ctrl+C to exit
+04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_Register - INFO - StartState: WaitforNewOrder
+ Waiting for response04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 03:07:40 PM - 2f799bc0-4f21-4944-a30b-dfde827ef5a1_Register - INFO - InputDocument : Order
+ Waiting for response Waiting for response141.44.234.243 - - [12/Apr/2023 15:07:47] "[37mGET /shells/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:07:53] "[37mGET /shells/d3cub3ZndS5kZS9hYXMvNjdlODgyYWQtNzAyNy00ODU0LWI2ZGItOGY1YjMwZTIxZTFl/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:07:56] "[37mGET /shells/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:08:14] "[37mGET /shells/d3cub3ZndS5kZS9hYXMvNjdlODgyYWQtNzAyNy00ODU0LWI2ZGItOGY1YjMwZTIxZTFl/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:08:15] "[37mGET /shells/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:08:21] "[37mGET /shells/d3cub3ZndS5kZS9hYXMvNjdlODgyYWQtNzAyNy00ODU0LWI2ZGItOGY1YjMwZTIxZTFl/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:08:22] "[37mGET /shells/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:08:25] "[37mGET /shells/d3cub3ZndS5kZS9hYXMvNjdlODgyYWQtNzAyNy00ODU0LWI2ZGItOGY1YjMwZTIxZTFl/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:08:28] "[37mGET /shells/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:08:57] "[37mGET /shells/d3cub3ZndS5kZS9hYXMvNjdlODgyYWQtNzAyNy00ODU0LWI2ZGItOGY1YjMwZTIxZTFl/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:08:59] "[37mGET /shells/d3cub3ZndS5kZS9hYXMvNjdlODgyYWQtNzAyNy00ODU0LWI2ZGItOGY1YjMwZTIxZTFl/registration/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:09:13] "[37mGET /shells/d3cub3ZndS5kZS9hYXMvNjdlODgyYWQtNzAyNy00ODU0LWI2ZGItOGY1YjMwZTIxZTFl/registration/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:09:28] "[37mGET /shells/webui HTTP/1.1[0m" 200 -
+141.44.234.243 - - [12/Apr/2023 15:10:01] "[37mGET /shells/d3cub3ZndS5kZS9hYXMvNjdlODgyYWQtNzAyNy00ODU0LWI2ZGItOGY1YjMwZTIxZTFl/webui HTTP/1.1[0m" 200 -
+84.175.77.41 - - [12/Apr/2023 17:44:56] "[37mGET /shells/webui HTTP/1.1[0m" 200 -
+84.175.77.41 - - [12/Apr/2023 17:44:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+84.175.77.41 - - [12/Apr/2023 17:50:41] "[37mGET /shells/webui HTTP/1.1[0m" 200 -

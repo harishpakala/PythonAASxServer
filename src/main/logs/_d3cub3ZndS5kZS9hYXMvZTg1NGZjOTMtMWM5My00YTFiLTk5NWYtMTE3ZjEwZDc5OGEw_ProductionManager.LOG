@@ -1,0 +1,129 @@
+04/12/2023 02:16:41 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:16:41 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 02:16:41 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:21:37 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:22:39 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:23:43 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - Condition :-
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 02:24:27 PM - 2953411e-ed96-4e11-8826-384018871268_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 03:02:15 PM - 2b92ec6e-b12b-4a2c-97ae-f261fd0550d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:02:15 PM - 2b92ec6e-b12b-4a2c-97ae-f261fd0550d2_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 03:02:15 PM - 2b92ec6e-b12b-4a2c-97ae-f261fd0550d2_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_ProductionManager - INFO - InputDocument : ProductionOrder

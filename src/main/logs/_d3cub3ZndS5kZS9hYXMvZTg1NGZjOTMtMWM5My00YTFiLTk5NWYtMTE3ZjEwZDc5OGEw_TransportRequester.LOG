@@ -1,0 +1,255 @@
+04/12/2023 02:18:32 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:18:32 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 02:18:32 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : Order
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: cfpConfiguration
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: cfpConfiguration
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: SendCFP
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: SendCFP
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : callForProposal
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitForSPProposal
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitForSPProposal
+04/12/2023 02:21:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : proposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: EvaluateProposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: EvaluateProposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendrejectProposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendrejectProposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : rejectProposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendacceptProposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendacceptProposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : acceptProposal
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitforInformConfirm
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforInformConfirm
+04/12/2023 02:22:01 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : informConfirm
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendCompletionResponse
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : Order
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: cfpConfiguration
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: cfpConfiguration
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: SendCFP
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: SendCFP
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : callForProposal
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitForSPProposal
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitForSPProposal
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : proposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: EvaluateProposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: EvaluateProposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendrejectProposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendrejectProposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : rejectProposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendacceptProposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendacceptProposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : acceptProposal
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitforInformConfirm
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforInformConfirm
+04/12/2023 02:23:02 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : informConfirm
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendCompletionResponse
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 02:23:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : Order
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: cfpConfiguration
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: cfpConfiguration
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: SendCFP
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: SendCFP
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : callForProposal
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitForSPProposal
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitForSPProposal
+04/12/2023 02:23:44 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : proposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: EvaluateProposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: EvaluateProposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendrejectProposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendrejectProposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : rejectProposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendacceptProposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendacceptProposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : acceptProposal
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitforInformConfirm
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforInformConfirm
+04/12/2023 02:23:55 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : informConfirm
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: sendCompletionResponse
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : NA
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - Condition :-
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - ############################################################################# 
+
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 02:24:22 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : Order
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.TransportRequester - INFO - InputDocument : Order

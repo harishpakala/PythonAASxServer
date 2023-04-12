@@ -361,16 +361,18 @@ class WaitForSPProposal:
             i = 0
             sys.stdout.write(" Waiting for response")
             sys.stdout.flush()
-            while (((self.base_class.WaitForSPProposal_Queue).qsize()) == 0):
+            while True:
                 time.sleep(1)
                 i = i + 1 
-                if i > 20: # Time to wait the next incoming message
-                    self.messageExist = False # If the waiting time expires, the loop is broken
+                if i > 10: # Time to wait the next incoming message
+                    if (self.base_class.WaitForSPProposal_Queue.qsize() == 0):
+                        self.messageExist = False # If the waiting time expires, the loop is broken
                     break
             if (self.messageExist):
                 self.saveMessage() # in case we need to store the incoming message
                 #self.retrieve_WaitForSPProposal_Message() # in case of multiple inbound messages this function should 
-                                                        # not be invoked. 
+                                                      # not be invoked. 
+
         self.WaitForSPProposal_Logic()
         
     def next(self) -> object:
@@ -915,7 +917,7 @@ class WaitforNewOrder:
         
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
-                
+        self.base_class.empty_all_queues()       
         self.cfpConfiguration_Enabled = True
 
     def createNewCFPObject(self,conversationId):
@@ -1210,10 +1212,10 @@ class TransportRequester:
         pass
     
     def empty_all_queues(self) -> None:
-        for queueName,queue in self.QueueDict.items():
-            queueList = list(self.queue.queue)
+        for queueName,queue1 in self.QueueDict.items():
+            queueList = list(queue1.queue)
             for elem in range(0,len(queueList)):
-                queue.get()
+                queue1.get()
     
     def create_status_message(self) -> None:
         self.StatusDataFrame =      {

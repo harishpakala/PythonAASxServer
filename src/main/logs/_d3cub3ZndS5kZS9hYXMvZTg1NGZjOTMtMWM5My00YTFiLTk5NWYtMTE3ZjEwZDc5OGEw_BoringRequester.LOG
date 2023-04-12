@@ -1,0 +1,111 @@
+04/12/2023 02:18:27 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:18:27 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 02:18:27 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : Order
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: cfpConfiguration
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: cfpConfiguration
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : NA
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: SendCFP
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: SendCFP
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : NA
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : callForProposal
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: WaitForSPProposal
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: WaitForSPProposal
+04/12/2023 02:21:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : proposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: EvaluateProposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: EvaluateProposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : NA
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: sendrejectProposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: sendrejectProposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : NA
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : rejectProposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: sendacceptProposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: sendacceptProposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : NA
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : acceptProposal
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: sendTransportOrder
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: sendTransportOrder
+04/12/2023 02:21:48 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : NA
+04/12/2023 02:21:49 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : Order
+04/12/2023 02:21:49 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:21:49 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: WaitforTransportOrderCompletion
+04/12/2023 02:21:49 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:21:49 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:21:49 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: WaitforTransportOrderCompletion
+04/12/2023 02:21:49 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : OrderStatus
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: WaitforInformConfirm
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: WaitforInformConfirm
+04/12/2023 02:22:28 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : informConfirm
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: sendCompletionResponse
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : NA
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - Condition :-
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 02:22:33 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : Order
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.BoringRequester - INFO - InputDocument : Order

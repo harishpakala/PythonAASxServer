@@ -1,0 +1,1494 @@
+04/12/2023 11:46:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:46:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 11:46:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 11:48:06 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: sendFailureResponse
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: sendFailureResponse
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 11:48:43 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 11:49:52 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 11:50:35 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 11:51:08 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 11:57:42 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 11:58:51 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : NA
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - Condition :-
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 11:59:25 AM - 83b88b41-e50a-443e-8307-622fc5369b83_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:04:13 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:04:13 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:04:13 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - Condition :-
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - Condition :-
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - Condition :-
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - Condition :-
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:04:32 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - Condition :-
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - TargettState: sendFailureResponse
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - StartState: sendFailureResponse
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - Condition :-
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:05:09 PM - af77ebc2-107a-481c-beb9-821f77bb457a_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:07:39 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:07:39 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:07:39 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - Condition :-
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - Condition :-
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - Condition :-
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - Condition :-
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:08:10 PM - 8326dafe-0f07-421f-911f-4974cc7a7760_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:09:01 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:09:01 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:09:01 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:09:18 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:11:50 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:12:24 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:18:43 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: sendFailureResponse
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: sendFailureResponse
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - Condition :-
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:19:00 PM - 66108d59-7504-4e0e-8833-5eaa091e9e3a_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:21:07 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:21:07 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:21:07 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:21:21 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: sendFailureResponse
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: sendFailureResponse
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:21:38 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - Condition :-
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:22:25 PM - fa64dd47-d6a6-4d0c-a581-7e2302805968_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:23:50 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:23:50 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:23:50 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:24:24 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:26:57 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - Condition :-
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:27:30 PM - bff736fc-69a3-4f1b-9169-5414ea2db1d2_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:41:45 PM - 3f9c9255-e732-4e9e-b860-986f0694859b_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:41:45 PM - 3f9c9255-e732-4e9e-b860-986f0694859b_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:41:45 PM - 3f9c9255-e732-4e9e-b860-986f0694859b_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:42:34 PM - 4665a2ce-131c-4b29-acec-fc0228fd5efe_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:42:34 PM - 4665a2ce-131c-4b29-acec-fc0228fd5efe_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:42:34 PM - 4665a2ce-131c-4b29-acec-fc0228fd5efe_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:43:32 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:43:32 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:43:32 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - Condition :-
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - Condition :-
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - Condition :-
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - Condition :-
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:43:47 PM - 8c2ac0f8-49bf-4e6f-a6f0-048d1d78ca0a_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:46:56 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:46:56 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:46:56 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - Condition :-
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - Condition :-
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - Condition :-
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - Condition :-
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:47:24 PM - f43b6e84-3770-4050-acd6-993bdc46f30b_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:48:22 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:48:22 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:48:22 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - Condition :-
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - Condition :-
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - Condition :-
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - Condition :-
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:48:45 PM - d741546a-fe1e-4bb8-956f-75631f3ace79_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:53:33 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:53:33 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:53:33 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - Condition :-
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - Condition :-
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - Condition :-
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - Condition :-
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:53:44 PM - 119dd012-238d-4937-80bc-d4ee4ba1e95f_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:55:49 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:55:49 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:55:49 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - Condition :-
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - Condition :-
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - Condition :-
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - Condition :-
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:56:01 PM - de11f51c-8bd6-4d4a-99ee-d3109f9ebdab_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 12:57:55 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:57:55 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 12:57:55 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - Condition :-
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - Condition :-
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - Condition :-
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - InputDocument : NA
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - Condition :-
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 12:58:10 PM - 9901ed28-f176-40cf-8e78-5362a061498f_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:05:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:05:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 01:05:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 01:05:15 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 01:06:16 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:07:00 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:07:00 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 01:07:01 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 01:07:54 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 01:08:56 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 01:10:02 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 01:10:46 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 01:11:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 01:12:23 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 01:13:27 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : NA
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - Condition :-
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 01:14:10 PM - 6c7d3243-db52-4e15-be4c-4a8d0e405e82_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 01:15:41 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 01:15:41 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 01:15:41 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:08:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:09:00 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:10:05 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 02:10:49 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: retrieveProductionStepSeq
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: retrieveProductionStepSeq
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:11:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:12:24 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: sendProductionStepOrder
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: sendProductionStepOrder
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : Order
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: waitforStepOrderCompletion
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: waitforStepOrderCompletion
+04/12/2023 02:13:29 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : OrderStatus
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: excProductionStepSeq
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: excProductionStepSeq
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : NA
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: sendCompletionResponse
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : NA
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - Condition :-
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - ############################################################################# 
+
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 02:14:13 PM - fabaeff0-ef13-4d20-abfc-7b797bedffab_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 03:02:15 PM - 19048010-7c05-4c65-a492-86619bbffbac_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:02:15 PM - 19048010-7c05-4c65-a492-86619bbffbac_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 03:02:15 PM - 19048010-7c05-4c65-a492-86619bbffbac_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - 2866c7b5-9cd2-4cf0-9edb-d2265632aded_ProductionManager - INFO - InputDocument : ProductionOrder

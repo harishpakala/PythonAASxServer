@@ -116,7 +116,7 @@ class AASShellParser(object):
         self.aasHashDict.__insertHashEntry__(_newId, aasHashObj)
         _aasElementObject = ShellObject(_element,_newId,shellIndex)
         self.aasShellHashDict.__insertHashEntry__(_uuid, _aasElementObject)
-        
+    
         return _uuid
 
     def parse(self,_assShell):
@@ -158,7 +158,7 @@ class AAS_Database_Server(object):
     def parseAssetAdministrationShells(self,assetAdministrationShells):
         for _aasShell in assetAdministrationShells:
             aasShellObject = AASShellParser(self.aasHashDict,self.submodelHashDict,self.aasShellHashDict)
-            aasShellObject.parse(_aasShell)    
+            aasShellObject.parse(_aasShell)
             
     def processCollectionElements(self,collectionElem):
         values = []
@@ -885,6 +885,7 @@ class AAS_Database_Server(object):
         try:
             aasShellParser = AASShellParser(self.aasHashDict,self.submodelHashDict,self.aasShellHashDict)
             aasShellParser.parse(_aasShell)
+            self.pyAAS.AASendPointHandles["MQTT"].restart()
             return "Asset Administration Shell created successfully", True,201
         except Exception as E:
             self.pyAAS.serviceLogger.info("Error at PostAssetAdministrationShell DB" + str(E))

@@ -1,0 +1,66 @@
+04/12/2023 02:16:41 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - 
+ #############################################################################
+04/12/2023 02:16:41 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 02:16:41 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - InputDocument : Order
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - OutputDocumentType : NA
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - Condition :-
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - TargettState: CreateAndSendRegisterMessage
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - ############################################################################# 
+
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - 
+ #############################################################################
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - StartState: CreateAndSendRegisterMessage
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - InputDocument : NA
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - OutputDocumentType : register
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - Condition :-
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - TargettState: waitforRegisterAck
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - ############################################################################# 
+
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - 
+ #############################################################################
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - StartState: waitforRegisterAck
+04/12/2023 02:16:58 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - InputDocument : registerack
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - OutputDocumentType : NA
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - Condition :-
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - TargettState: evaluateRegisterAck
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - ############################################################################# 
+
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - 
+ #############################################################################
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - StartState: evaluateRegisterAck
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - InputDocument : NA
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - OutputDocumentType : NA
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - Condition :-
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - TargettState: notifyonSuccessRegistration
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - ############################################################################# 
+
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - 
+ #############################################################################
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - StartState: notifyonSuccessRegistration
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - InputDocument : NA
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - OutputDocumentType : NA
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - Condition :-
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - ############################################################################# 
+
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - 
+ #############################################################################
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - StartState: sendCompletionResponse
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - InputDocument : NA
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - Condition :-
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - ############################################################################# 
+
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - 
+ #############################################################################
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 02:17:00 PM - 2953411e-ed96-4e11-8826-384018871268_Register - INFO - InputDocument : Order
+04/12/2023 03:02:15 PM - 2b92ec6e-b12b-4a2c-97ae-f261fd0550d2_Register - INFO - 
+ #############################################################################
+04/12/2023 03:02:15 PM - 2b92ec6e-b12b-4a2c-97ae-f261fd0550d2_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 03:02:15 PM - 2b92ec6e-b12b-4a2c-97ae-f261fd0550d2_Register - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_Register - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - cf399862-52e8-4dde-95fb-5a07e4e8279d_Register - INFO - InputDocument : Order

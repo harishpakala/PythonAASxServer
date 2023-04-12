@@ -1,0 +1,111 @@
+04/12/2023 02:18:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:18:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 02:18:37 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : Order
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: cfpConfiguration
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: cfpConfiguration
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : NA
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: SendCFP
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: SendCFP
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : NA
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : callForProposal
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: WaitForSPProposal
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: WaitForSPProposal
+04/12/2023 02:22:39 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : proposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: EvaluateProposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: EvaluateProposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : NA
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: sendrejectProposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: sendrejectProposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : NA
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : rejectProposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: sendacceptProposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: sendacceptProposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : NA
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : acceptProposal
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: sendTransportOrder
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: sendTransportOrder
+04/12/2023 02:22:50 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : NA
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : Order
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: WaitforTransportOrderCompletion
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: WaitforTransportOrderCompletion
+04/12/2023 02:22:51 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : OrderStatus
+04/12/2023 02:23:34 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:34 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:23:34 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: WaitforInformConfirm
+04/12/2023 02:23:34 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:34 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:34 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: WaitforInformConfirm
+04/12/2023 02:23:34 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : informConfirm
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : NA
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: sendCompletionResponse
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: sendCompletionResponse
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : NA
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - OutputDocumentType : OrderStatus
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - Condition :-
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - TargettState: WaitforNewOrder
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - ############################################################################# 
+
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 02:23:38 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : Order
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:02:15 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : Order
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - 
+ #############################################################################
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - StartState: WaitforNewOrder
+04/12/2023 03:07:40 PM - ww.ovgu.de/aas/e854fc93-1c93-4a1b-995f-117f10d798a0.HoningRequester - INFO - InputDocument : Order
