@@ -6,6 +6,7 @@ This source code may use other Open Source software components (see LICENSE.txt)
 """
 from datetime import datetime
 from opcua import ua
+from opcua import Client
 try:
     import queue as Queue
 except ImportError:
@@ -44,9 +45,9 @@ except ImportError:
     to definite state of the skill state-machine. The base class represents the skill 
     and coordinates the transition from one state to another.
     
-    The base_class is responsible for collecting the documents from the external
+    The baseclass is responsible for collecting the documents from the external
     world (either from other skill that is part of the AAS or a skill part of 
-    of another AAS). For this the base_class maintains a queue one for each class. 
+    of another AAS). For this the baseclass maintains a queue one for each class. 
     
     The communication between any two skills of the same AAS or the skills of 
     different AAS is done in I4.0 language.
@@ -63,7 +64,7 @@ except ImportError:
     Skill. The base-class maintains a specific InboundQueue, into the messages dropped by the
     messagehandler. 
     
-    A class specific inbound queue is defined in the base_class for the classes defined in this
+    A class specific inbound queue is defined in the baseclass for the classes defined in this
     source-code. A dictionary is also manitained, with key representing the messagetype and the
     value being the class specific inboundqueue.
     
@@ -76,7 +77,7 @@ except ImportError:
     StateName_In         
     StateName_Queue 
         
-    The sendMessage method in the base_class submits an outbound message to the message handler so that
+    The sendMessage method in the baseclass submits an outbound message to the message handler so that
     it could be routed to its destination. Every class can access this method and publish the outbound
     messgae.  
     
@@ -141,7 +142,7 @@ except ImportError:
         "type" : ,
         "messageId":messageId,
         "SenderAASID" : self.base_class.aasID,
-        "SenderRolename" : "HoningProvider",
+        "SenderRolename" : "BoringProvider",
         "conversationId" : "AASNetworkedBidding",
         "replyBy" :  "",   # "The communication protocol that the AAS needs to use while sending message to other AAS."
         "replyTo" : "",    # "The communication protocol that the receipient AAS should use for reply"   
@@ -159,14 +160,14 @@ except ImportError:
     
     The fetching of the submodel elements is done dynamically from the database.
     
-    example Honing (should be same as the one specified in AASX file.)
+    example Boring (should be same as the one specified in AASX file.)
     submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("submodelIdentifier")
     Here status is a boolean variable and when it is False submodel is not returned.
     statuscode can be ignored in this context 
     # result is list
     I40OutBoundMessage = {
                             "frame" : frame,
-                            "interactionElements" : HoningSubmodel
+                            "interactionElements" : boringSubmodel
                         }
                         
     Saving the inbound and outbound messages into the datastore
@@ -550,14 +551,14 @@ class feasibilityCheck:
         feasibilityLen = 0
         for key in list(self.itemsCheck):
             item = self.itemsCheck[key]
-            if  item == "Property":
-                if (key == "MaterialOfWorkpiece"):
+            if  item =="Property":
+                if (key =="MaterialOfWorkpiece"):
                     feasibilityLen = feasibilityLen + 1 
                 elif ( self.base_class.proposalSubmodelTypes[key] == self.base_class.subModelTypes[key] ):
                     feasibilityLen = feasibilityLen + 1
                 else :
                     print(key,self.base_class.proposalSubmodelTypes[key],self.base_class.subModelTypes[key])
-            elif item == "Range":
+            elif item =="Range":
                 value = self.base_class.proposalSubmodelTypes[key]
                 min = float(self.base_class.subModelTypes[key]["min"])
                 max = float(self.base_class.subModelTypes[key]["max"])
@@ -565,12 +566,12 @@ class feasibilityCheck:
                     feasibilityLen = feasibilityLen + 1
                 else :
                     print(key,value,self.base_class.subModelTypes[key])                    
-            elif item == "TRange":
+            elif item =="TRange":
                 value = self.base_class.proposalSubmodelTypes[key]
-                _min = float((self.base_class.subModelTypes[key]["min"]).split(" ")[1])
-                _max = float((self.base_class.subModelTypes[key]["max"]).split(" ")[1])
+                min = float((self.base_class.subModelTypes[key]["min"]).split(" ")[1])
+                max = float((self.base_class.subModelTypes[key]["max"]).split(" ")[1])
                 tempValue = value.split(" ")[1]
-                if float(tempValue) >= _min and float(tempValue) <= _max :
+                if float(tempValue) >= min and float(tempValue) <= max :
                     feasibilityLen = feasibilityLen + 1
                 else :
                     print(key,value,self.base_class.subModelTypes[key])                    
@@ -626,7 +627,7 @@ class WaitForCallForProposal:
         
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
-                
+        self.base_class.empty_all_queues()                
         self.capabilitycheck_Enabled = True
     
     def retrieve_WaitForCallForProposal_Message(self) -> None:
@@ -919,9 +920,9 @@ class sendingProposal:
             
             self.InElem,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById("https://example.com/ids/sm/4084_7040_1122_9091")
             
-            self.HoningSubmodel1 = self.addPropertyElems(message["interactionElements"][0],self.InElem)
+            self.boringSubmodel1 = self.addPropertyElems(message["interactionElements"][0],self.InElem)
             oMessage_Out ={"frame": self.frame,
-                                   "interactionElements":[self.HoningSubmodel1]}
+                                   "interactionElements":[self.boringSubmodel1]}
             
             self.instanceId = str(uuid.uuid1())
             self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":self.instanceId,
@@ -981,17 +982,36 @@ class checkingSchedule:
         self.sendingRefuse_Enabled = True
         self.PriceCalculation_Enabled = True
     
+    def opc_access(self):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://admin:wago@192.168.1.50:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node("ns=4;s=|var|WAGO 750-8212 PFC200 G2 2ETH RS.Application.PLC_PRG.sPermission")).get_value()
+            print(rValue)
+            plc_opcua_Client.disconnect()
+            return rValue
+        except:
+            return rValue
 
     def checkingSchedule_Logic(self):
         """
             The actualy logic this state  goes into this method.
             It is upto the developer to add the relevant code.
         """
+        self.base_class.skillLogger.info("checkingSchedule_Logic")
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
-            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
-            if sPermissionVariable =="error":
+            self.base_class.skillLogger.info(self.tdPropertiesList)
+            self.base_class.skillLogger.info(self.tdPropertiesList.get_property("sPermission").href)
+            sPermissionVariable = self.plcHandler.read("opc.tcp://admin:wago@192.168.1.50:4840/ns=4;s=|var|WAGO 750-8212 PFC200 G2 2ETH RS.Application.PLC_PRG.sPermission")
+            self.base_class.skillLogger.info(sPermissionVariable)
+            print(sPermissionVariable)
+            if self.opc_access() =="error":
                 self.PriceCalculation_Enabled = False
             else:
                 self.sendingRefuse_Enabled = False
@@ -1165,7 +1185,37 @@ class serviceProvision:
         self.WaitForCallForProposal_Enabled = True
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description  
-                
+
+    def opc_access(self):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://admin:wago@192.168.1.50:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node("ns=4;s=|var|WAGO 750-8212 PFC200 G2 2ETH RS.Application.PLC_PRG.sPermission")).get_value()
+            print(rValue)
+            plc_opcua_Client.disconnect()
+            return rValue
+        except:
+            return rValue                
+
+    def wopc_access(self):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://admin:wago@192.168.1.50:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node("ns=4;s=|var|WAGO 750-8212 PFC200 G2 2ETH RS.Application.PLC_PRG.sPermission"))
+            print(rValue.set_value(ua.DataValue(True)))
+            plc_opcua_Client.disconnect()
+            return rValue
+        except Exception as E:
+            print(str(E))
+            return rValue 
 
     def serviceProvision_Logic(self):
         """
@@ -1173,12 +1223,13 @@ class serviceProvision:
             It is upto the developer to add the relevant code.
         """
         try :
-            self.plcHandler.write(self.tdPropertiesList.get_property("sPermission").href,ua.DataValue("true"))
+            #self.plcHandler.write(self.tdPropertiesList.get_property("sPermission").href,ua.DataValue("true"))
+            self.wopc_access()
             plcBoool = True
             while (plcBoool):
-                time.sleep(20)
-                sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
-                if  (sPermissionVariable.upper() =="FALSE"):
+                #time.sleep(20)
+                #sPermissionVariable = self.plcHandler.read("opc.tcp://admin:wago@192.168.1.50:4840/ns=4;s=|var|WAGO 750-8212 PFC200 G2 2ETH RS.Application.PLC_PRG.sPermission")
+                if  ((str(self.opc_access())).upper() =="FALSE"):
                     plcBoool = False
             self.WaitForCallForProposal_Enabled = False
         except Exception as E:
@@ -1310,10 +1361,10 @@ class HoningProvider:
         pass
     
     def empty_all_queues(self) -> None:
-        for queueName,queue in self.QueueDict.items():
-            queueList = list(self.queue.queue)
+        for queueName,queue1 in self.QueueDict.items():
+            queueList = list(queue1.queue)
             for elem in range(0,len(queueList)):
-                queue.get()
+                queue1.get()
     
     def create_status_message(self) -> None:
         self.StatusDataFrame =      {
@@ -1364,8 +1415,8 @@ class HoningProvider:
 
 
     def emptyAllQueues(self):
-        waitingforServiceRequesterAnswerList = list(self.waitingforServiceRequesterAnswer_Queue.queue)
-        for elem in range(0,len(waitingforServiceRequesterAnswerList)):
+        queueList = list(self.waitingforServiceRequesterAnswer_Queue.queue)
+        for elem in range(0,len(queueList)):
             self.waitingforServiceRequesterAnswer_Queue.get()
 
     def initInBoundMessages(self):

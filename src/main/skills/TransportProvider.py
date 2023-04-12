@@ -500,7 +500,7 @@ class WaitForCallForProposal:
         
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
-                
+        self.base_class.empty_all_queues()
         self.capabilitycheck_Enabled = True
     
     def retrieve_WaitForCallForProposal_Message(self) -> None:
@@ -513,7 +513,6 @@ class WaitForCallForProposal:
         self.base_class.WaitForCallForProposal_In = self.base_class.WaitForCallForProposal_Queue.get()
         self.base_class.proposalSubmodelTypes = dict()
         self.base_class.subModelTypes = dict()
-        self.base_class.skillLogger.info(self.base_class.WaitForCallForProposal_In["interactionElements"][0]["idShort"])
         
     def saveMessage(self) -> None:
         """
@@ -873,6 +872,9 @@ class waitingforServiceRequesterAnswer:
             It is upto the developer to add the relevant code.
         """
         if (self.messageExist):
+            self.base_class.skillLogger.info(self.base_class.waitingforServiceRequesterAnswer_In["frame"]["receiver"] )
+            self.base_class.skillLogger.info(self.base_class.waitingforServiceRequesterAnswer_In["frame"]["sender"] )
+            self.base_class.skillLogger.info(self.base_class.waitingforServiceRequesterAnswer_In["frame"]["type"] )
             if (self.base_class.waitingforServiceRequesterAnswer_In["frame"]["type"] =="rejectProposal"):
                 self.serviceProvision_Enabled = False
             else:
@@ -1364,10 +1366,9 @@ class TransportProvider:
         pass
     
     def empty_all_queues(self) -> None:
-        for queueName,queue in self.QueueDict.items():
-            queueList = list(self.queue.queue)
-            for elem in range(0,len(queueList)):
-                queue.get()
+        queueList = list(self.waitingforServiceRequesterAnswer_Queue.queue)
+        for elem in range(0,len(queueList)):
+            self.waitingforServiceRequesterAnswer_Queue.get()
     
     def create_status_message(self) -> None:
         self.StatusDataFrame =      {

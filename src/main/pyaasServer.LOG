@@ -1,0 +1,77 @@
+04/12/2023 05:53:32 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+04/12/2023 05:53:32 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+04/12/2023 05:53:32 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+04/12/2023 05:53:32 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - The message handler started
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - The message handler started
+ #############################################################################snnnnnnnnnnn
+[('https://ovgu.de/aas/boringprovider_live', 0), ('https://ovgu.de/aas/boringprovider2_Live', 0), ('https://ovgu.de/aas/honingprovider_Live', 0), ('https://ovgu.de/aas/transportprovider_Live', 0)]
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/boringprovider_live.BoringProvider - INFO - 
+ #############################################################################
+ #############################################################################snnnnnnnnnnn
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/boringprovider_live.BoringProvider - INFO - StartState: WaitForCallForProposal
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/boringprovider_live.BoringProvider - INFO - InputDocument : callForProposal
+04/12/2023 05:53:33 PM - c4a5fe2d-7c89-4373-b816-323f9004bf77_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 05:53:33 PM - c4a5fe2d-7c89-4373-b816-323f9004bf77_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 05:53:33 PM - c4a5fe2d-7c89-4373-b816-323f9004bf77_Register - INFO - 
+ #############################################################################
+ * Serving Flask app "aasendpointhandlers.restapi_endpointhandler" (lazy loading)
+04/12/2023 05:53:33 PM - c4a5fe2d-7c89-4373-b816-323f9004bf77_ProductionManager - INFO - InputDocument : ProductionOrder
+ * Environment: production
+04/12/2023 05:53:33 PM - c4a5fe2d-7c89-4373-b816-323f9004bf77_Register - INFO - StartState: WaitforNewOrder
+   WARNING: This is a development server. Do not use it in a production deployment.
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider2 - INFO - 
+ #############################################################################
+   Use a production WSGI server instead.
+ Waiting for response Waiting for response04/12/2023 05:53:33 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider2 - INFO - StartState: WaitForCallForProposal
+04/12/2023 05:53:33 PM - c4a5fe2d-7c89-4373-b816-323f9004bf77_Register - INFO - InputDocument : Order
+04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/boringprovider2_Live.BoringProvider2 - INFO - InputDocument : callForProposal
+ * Debug mode: off
+04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_Register - INFO - 
+ #############################################################################
+04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_ProductionManager - INFO - StartState: WaitforNewOrder
+ Waiting for response04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_ProductionManager - INFO - InputDocument : ProductionOrder
+ Waiting for response Waiting for response04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_Register - INFO - InputDocument : Order
+04/12/2023 05:53:33 PM - 763bef8b-6b0e-4022-9a19-3a160ecc03b6_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - 
+ #############################################################################
+04/12/2023 05:53:33 PM - 763bef8b-6b0e-4022-9a19-3a160ecc03b6_ProductionManager - INFO - StartState: WaitforNewOrder
+ Waiting for response04/12/2023 05:53:33 PM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - StartState: WaitForCallForProposal
+04/12/2023 05:53:33 PM - 763bef8b-6b0e-4022-9a19-3a160ecc03b6_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/honingprovider_Live.HoningProvider - INFO - InputDocument : callForProposal
+04/12/2023 05:53:33 PM - 763bef8b-6b0e-4022-9a19-3a160ecc03b6_Register - INFO - 
+ #############################################################################
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - 
+ #############################################################################
+ Waiting for response04/12/2023 05:53:33 PM - b483bab1-9027-4b60-8c2b-17ec8a3ad25b_ProductionManager - INFO - 
+ #############################################################################
+04/12/2023 05:53:33 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+ Waiting for response04/12/2023 05:53:33 PM - 763bef8b-6b0e-4022-9a19-3a160ecc03b6_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 05:53:33 PM - 763bef8b-6b0e-4022-9a19-3a160ecc03b6_Register - INFO - InputDocument : Order
+ Waiting for response04/12/2023 05:53:33 PM - b483bab1-9027-4b60-8c2b-17ec8a3ad25b_ProductionManager - INFO - StartState: WaitforNewOrder
+04/12/2023 05:53:33 PM - b483bab1-9027-4b60-8c2b-17ec8a3ad25b_ProductionManager - INFO - InputDocument : ProductionOrder
+04/12/2023 05:53:33 PM - b483bab1-9027-4b60-8c2b-17ec8a3ad25b_Register - INFO - 
+ #############################################################################
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - StartState: WaitForCallForProposal
+ Waiting for responsePress Ctrl+C to exit * Running on https://0.0.0.0:60018/ (Press CTRL+C to quit)
+
+04/12/2023 05:53:33 PM - b483bab1-9027-4b60-8c2b-17ec8a3ad25b_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 05:53:33 PM - https://ovgu.de/aas/transportprovider_Live.TransportProvider - INFO - InputDocument : callForProposal
+04/12/2023 05:53:33 PM - b483bab1-9027-4b60-8c2b-17ec8a3ad25b_Register - INFO - InputDocument : Order
+ Waiting for response Waiting for response84.175.77.41 - - [12/Apr/2023 17:53:37] "[37mGET /shells/webui HTTP/1.1[0m" 200 -
+84.175.77.41 - - [12/Apr/2023 17:53:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+84.175.77.41 - - [12/Apr/2023 17:53:47] "[37mGET /shells/aHR0cHM6Ly9vdmd1LmRlL2Fhcy9ib3Jpbmdwcm92aWRlcjJfTGl2ZQ==/webui HTTP/1.1[0m" 200 -
+84.175.77.41 - - [12/Apr/2023 17:53:56] "[37mGET /shells/webui HTTP/1.1[0m" 200 -

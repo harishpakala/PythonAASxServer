@@ -1,280 +1,64 @@
-04/06/2023 12:07:56 AM - e5cc2cac-021b-4b1f-a223-b4e5f356ca31_Register - INFO - 
- #############################################################################
-04/06/2023 12:07:56 AM - e5cc2cac-021b-4b1f-a223-b4e5f356ca31_Register - INFO - StartState: WaitforNewOrder
-04/06/2023 12:07:56 AM - e5cc2cac-021b-4b1f-a223-b4e5f356ca31_Register - INFO - InputDocument : Order
-04/11/2023 11:58:21 AM - 83709a71-4f71-41db-9163-f3e0d71fd389_Register - INFO - 
- #############################################################################
-04/11/2023 11:58:21 AM - 83709a71-4f71-41db-9163-f3e0d71fd389_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 11:58:21 AM - 83709a71-4f71-41db-9163-f3e0d71fd389_Register - INFO - InputDocument : Order
-04/11/2023 12:01:25 PM - 4a527821-9f8b-473a-a64a-24b5c0a696fe_Register - INFO - 
- #############################################################################
-04/11/2023 12:01:25 PM - 4a527821-9f8b-473a-a64a-24b5c0a696fe_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:01:25 PM - 4a527821-9f8b-473a-a64a-24b5c0a696fe_Register - INFO - InputDocument : Order
-04/11/2023 12:03:12 PM - 18100029-6a91-447b-a5bc-1e5adc5f466a_Register - INFO - 
- #############################################################################
-04/11/2023 12:03:12 PM - 18100029-6a91-447b-a5bc-1e5adc5f466a_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:03:12 PM - 18100029-6a91-447b-a5bc-1e5adc5f466a_Register - INFO - InputDocument : Order
-04/11/2023 12:04:27 PM - 33cb713e-b7e3-47f6-a5c2-94c6d2f7b36d_Register - INFO - 
- #############################################################################
-04/11/2023 12:04:27 PM - 33cb713e-b7e3-47f6-a5c2-94c6d2f7b36d_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:04:27 PM - 33cb713e-b7e3-47f6-a5c2-94c6d2f7b36d_Register - INFO - InputDocument : Order
-04/11/2023 12:05:53 PM - 446fee67-14fd-4fd0-ae82-e26bcbabde35_Register - INFO - 
- #############################################################################
-04/11/2023 12:05:53 PM - 446fee67-14fd-4fd0-ae82-e26bcbabde35_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:05:53 PM - 446fee67-14fd-4fd0-ae82-e26bcbabde35_Register - INFO - InputDocument : Order
-04/11/2023 12:10:18 PM - 7ba6aee8-f864-439c-abf2-bee969a5e4ca_Register - INFO - 
- #############################################################################
-04/11/2023 12:10:18 PM - 7ba6aee8-f864-439c-abf2-bee969a5e4ca_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:10:18 PM - 7ba6aee8-f864-439c-abf2-bee969a5e4ca_Register - INFO - InputDocument : Order
-04/11/2023 12:11:06 PM - 83d0ff71-5257-4c79-85da-fd40a3f41e7b_Register - INFO - 
- #############################################################################
-04/11/2023 12:11:06 PM - 83d0ff71-5257-4c79-85da-fd40a3f41e7b_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:11:06 PM - 83d0ff71-5257-4c79-85da-fd40a3f41e7b_Register - INFO - InputDocument : Order
-04/11/2023 12:29:35 PM - d9cf2dc7-9889-4748-b303-4fec9481a76e_Register - INFO - 
- #############################################################################
-04/11/2023 12:29:35 PM - d9cf2dc7-9889-4748-b303-4fec9481a76e_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:29:35 PM - d9cf2dc7-9889-4748-b303-4fec9481a76e_Register - INFO - InputDocument : Order
-04/11/2023 12:30:19 PM - 0de9356f-09ed-47f8-8b62-392fb162feb2_Register - INFO - 
- #############################################################################
-04/11/2023 12:30:19 PM - 0de9356f-09ed-47f8-8b62-392fb162feb2_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:30:19 PM - 0de9356f-09ed-47f8-8b62-392fb162feb2_Register - INFO - InputDocument : Order
-04/11/2023 12:32:45 PM - e32e8f2f-a895-4741-a72f-51ffa4917f18_Register - INFO - 
- #############################################################################
-04/11/2023 12:32:45 PM - e32e8f2f-a895-4741-a72f-51ffa4917f18_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:32:45 PM - e32e8f2f-a895-4741-a72f-51ffa4917f18_Register - INFO - InputDocument : Order
-04/11/2023 12:33:52 PM - 8d9aff68-865c-4ab1-94bd-5c33de2bb1cd_Register - INFO - 
- #############################################################################
-04/11/2023 12:33:52 PM - 8d9aff68-865c-4ab1-94bd-5c33de2bb1cd_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:33:52 PM - 8d9aff68-865c-4ab1-94bd-5c33de2bb1cd_Register - INFO - InputDocument : Order
-04/11/2023 12:35:03 PM - 3aba9f29-020d-4c7a-8e3c-88cce2bfb62c_Register - INFO - 
- #############################################################################
-04/11/2023 12:35:03 PM - 3aba9f29-020d-4c7a-8e3c-88cce2bfb62c_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:35:03 PM - 3aba9f29-020d-4c7a-8e3c-88cce2bfb62c_Register - INFO - InputDocument : Order
-04/11/2023 12:47:38 PM - 23ec5521-50ad-4e71-88ac-14ca62fff0f1_Register - INFO - 
- #############################################################################
-04/11/2023 12:47:38 PM - 23ec5521-50ad-4e71-88ac-14ca62fff0f1_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:47:38 PM - 23ec5521-50ad-4e71-88ac-14ca62fff0f1_Register - INFO - InputDocument : Order
-04/11/2023 12:54:42 PM - 72e31bd6-dd8f-455e-8f36-a67aa62ccd5c_Register - INFO - 
- #############################################################################
-04/11/2023 12:54:42 PM - 72e31bd6-dd8f-455e-8f36-a67aa62ccd5c_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:54:42 PM - 72e31bd6-dd8f-455e-8f36-a67aa62ccd5c_Register - INFO - InputDocument : Order
-04/11/2023 12:56:49 PM - 9a781d41-a6c6-4bd6-b026-b7b8624b556f_Register - INFO - 
- #############################################################################
-04/11/2023 12:56:49 PM - 9a781d41-a6c6-4bd6-b026-b7b8624b556f_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:56:49 PM - 9a781d41-a6c6-4bd6-b026-b7b8624b556f_Register - INFO - InputDocument : Order
-04/11/2023 12:58:19 PM - 07213132-281a-4fac-a82e-4796917daf2e_Register - INFO - 
- #############################################################################
-04/11/2023 12:58:19 PM - 07213132-281a-4fac-a82e-4796917daf2e_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 12:58:19 PM - 07213132-281a-4fac-a82e-4796917daf2e_Register - INFO - InputDocument : Order
-04/11/2023 01:01:00 PM - 87885f56-efed-4d32-b54f-adbdfb3a667c_Register - INFO - 
- #############################################################################
-04/11/2023 01:01:00 PM - 87885f56-efed-4d32-b54f-adbdfb3a667c_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:01:00 PM - 87885f56-efed-4d32-b54f-adbdfb3a667c_Register - INFO - InputDocument : Order
-04/11/2023 01:09:33 PM - 98298cbb-41b9-446d-b7f7-d48a6b63c3e1_Register - INFO - 
- #############################################################################
-04/11/2023 01:09:33 PM - 98298cbb-41b9-446d-b7f7-d48a6b63c3e1_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:09:33 PM - 98298cbb-41b9-446d-b7f7-d48a6b63c3e1_Register - INFO - InputDocument : Order
-04/11/2023 01:12:06 PM - cec7d215-acf7-4674-95ee-8e52b11cfc7b_Register - INFO - 
- #############################################################################
-04/11/2023 01:12:06 PM - cec7d215-acf7-4674-95ee-8e52b11cfc7b_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:12:06 PM - cec7d215-acf7-4674-95ee-8e52b11cfc7b_Register - INFO - InputDocument : Order
-04/11/2023 01:13:23 PM - 49f939cc-a2ce-42d5-9ff6-b78218fcb093_Register - INFO - 
- #############################################################################
-04/11/2023 01:13:23 PM - 49f939cc-a2ce-42d5-9ff6-b78218fcb093_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:13:23 PM - 49f939cc-a2ce-42d5-9ff6-b78218fcb093_Register - INFO - InputDocument : Order
-04/11/2023 01:15:20 PM - a66e3cee-ba62-4e79-a43b-2a333c5f3205_Register - INFO - 
- #############################################################################
-04/11/2023 01:15:20 PM - a66e3cee-ba62-4e79-a43b-2a333c5f3205_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:15:20 PM - a66e3cee-ba62-4e79-a43b-2a333c5f3205_Register - INFO - InputDocument : Order
-04/11/2023 01:16:52 PM - 3cfd717f-cb1c-4217-8a3f-20ce87487aad_Register - INFO - 
- #############################################################################
-04/11/2023 01:16:52 PM - 3cfd717f-cb1c-4217-8a3f-20ce87487aad_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:16:52 PM - 3cfd717f-cb1c-4217-8a3f-20ce87487aad_Register - INFO - InputDocument : Order
-04/11/2023 01:18:18 PM - eb2336d2-d8f3-4f51-9593-6e7413cdf45d_Register - INFO - 
- #############################################################################
-04/11/2023 01:18:18 PM - eb2336d2-d8f3-4f51-9593-6e7413cdf45d_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:18:18 PM - eb2336d2-d8f3-4f51-9593-6e7413cdf45d_Register - INFO - InputDocument : Order
-04/11/2023 01:20:50 PM - ee370aeb-7c0a-4d0a-a63a-b6be95d8002c_Register - INFO - 
- #############################################################################
-04/11/2023 01:20:50 PM - ee370aeb-7c0a-4d0a-a63a-b6be95d8002c_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:20:50 PM - ee370aeb-7c0a-4d0a-a63a-b6be95d8002c_Register - INFO - InputDocument : Order
-04/11/2023 01:23:01 PM - afb1e00b-934a-4b68-afab-8e50059b0484_Register - INFO - 
- #############################################################################
-04/11/2023 01:23:01 PM - afb1e00b-934a-4b68-afab-8e50059b0484_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:23:01 PM - afb1e00b-934a-4b68-afab-8e50059b0484_Register - INFO - InputDocument : Order
-04/11/2023 01:32:18 PM - 58f34098-80cd-44ec-828e-f37a38586248_Register - INFO - 
- #############################################################################
-04/11/2023 01:32:18 PM - 58f34098-80cd-44ec-828e-f37a38586248_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:32:18 PM - 58f34098-80cd-44ec-828e-f37a38586248_Register - INFO - InputDocument : Order
-04/11/2023 01:33:41 PM - ea2f1c53-c59d-4c59-99de-2117f6bd23a0_Register - INFO - 
- #############################################################################
-04/11/2023 01:33:41 PM - ea2f1c53-c59d-4c59-99de-2117f6bd23a0_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:33:41 PM - ea2f1c53-c59d-4c59-99de-2117f6bd23a0_Register - INFO - InputDocument : Order
-04/11/2023 01:37:59 PM - 304a1e7e-2b4e-443e-8fab-a5020a41ecfe_Register - INFO - 
- #############################################################################
-04/11/2023 01:37:59 PM - 304a1e7e-2b4e-443e-8fab-a5020a41ecfe_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:37:59 PM - 304a1e7e-2b4e-443e-8fab-a5020a41ecfe_Register - INFO - InputDocument : Order
-04/11/2023 01:40:28 PM - 42c89807-545e-408b-a9c4-ada021425685_Register - INFO - 
- #############################################################################
-04/11/2023 01:40:28 PM - 42c89807-545e-408b-a9c4-ada021425685_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:40:28 PM - 42c89807-545e-408b-a9c4-ada021425685_Register - INFO - InputDocument : Order
-04/11/2023 01:41:09 PM - af440466-6ff7-4e44-994f-43538404f5f4_Register - INFO - 
- #############################################################################
-04/11/2023 01:41:09 PM - af440466-6ff7-4e44-994f-43538404f5f4_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:41:09 PM - af440466-6ff7-4e44-994f-43538404f5f4_Register - INFO - InputDocument : Order
-04/11/2023 01:43:43 PM - 6d014b72-36ea-44be-8701-fac177eb106d_Register - INFO - 
- #############################################################################
-04/11/2023 01:43:43 PM - 6d014b72-36ea-44be-8701-fac177eb106d_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:43:43 PM - 6d014b72-36ea-44be-8701-fac177eb106d_Register - INFO - InputDocument : Order
-04/11/2023 01:44:17 PM - f9bbd68d-b79f-4837-b3e9-a274f30e6861_Register - INFO - 
- #############################################################################
-04/11/2023 01:44:17 PM - f9bbd68d-b79f-4837-b3e9-a274f30e6861_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:44:17 PM - f9bbd68d-b79f-4837-b3e9-a274f30e6861_Register - INFO - InputDocument : Order
-04/11/2023 01:45:28 PM - 7d73dd17-0ada-4e6c-ab52-096436a80df3_Register - INFO - 
- #############################################################################
-04/11/2023 01:45:28 PM - 7d73dd17-0ada-4e6c-ab52-096436a80df3_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:45:28 PM - 7d73dd17-0ada-4e6c-ab52-096436a80df3_Register - INFO - InputDocument : Order
-04/11/2023 01:46:23 PM - bf2f89b3-f7a4-4267-a33a-f567ad2e8941_Register - INFO - 
- #############################################################################
-04/11/2023 01:46:23 PM - bf2f89b3-f7a4-4267-a33a-f567ad2e8941_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:46:23 PM - bf2f89b3-f7a4-4267-a33a-f567ad2e8941_Register - INFO - InputDocument : Order
-04/11/2023 01:47:01 PM - 1ab42bcd-c61c-4ce6-a9ef-b0d7d6ae6a6a_Register - INFO - 
- #############################################################################
-04/11/2023 01:47:01 PM - 1ab42bcd-c61c-4ce6-a9ef-b0d7d6ae6a6a_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:47:01 PM - 1ab42bcd-c61c-4ce6-a9ef-b0d7d6ae6a6a_Register - INFO - InputDocument : Order
-04/11/2023 01:47:40 PM - 2880fe98-3b29-442b-b969-f76da54a5cb2_Register - INFO - 
- #############################################################################
-04/11/2023 01:47:40 PM - 2880fe98-3b29-442b-b969-f76da54a5cb2_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:47:40 PM - 2880fe98-3b29-442b-b969-f76da54a5cb2_Register - INFO - InputDocument : Order
-04/11/2023 01:48:47 PM - 99936327-c75b-490e-88d2-60b6e3f42979_Register - INFO - 
- #############################################################################
-04/11/2023 01:48:47 PM - 99936327-c75b-490e-88d2-60b6e3f42979_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:48:47 PM - 99936327-c75b-490e-88d2-60b6e3f42979_Register - INFO - InputDocument : Order
-04/11/2023 01:49:33 PM - 1d73a080-2be6-4aa5-a741-b230737dde87_Register - INFO - 
- #############################################################################
-04/11/2023 01:49:33 PM - 1d73a080-2be6-4aa5-a741-b230737dde87_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:49:33 PM - 1d73a080-2be6-4aa5-a741-b230737dde87_Register - INFO - InputDocument : Order
-04/11/2023 01:56:24 PM - 7748db35-6ddf-4dfd-9cec-1f31ae6002b9_Register - INFO - 
- #############################################################################
-04/11/2023 01:56:24 PM - 7748db35-6ddf-4dfd-9cec-1f31ae6002b9_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:56:24 PM - 7748db35-6ddf-4dfd-9cec-1f31ae6002b9_Register - INFO - InputDocument : Order
-04/11/2023 01:56:30 PM - 70bb0955-3895-4545-92ef-a38c3c51ed1c_Register - INFO - 
- #############################################################################
-04/11/2023 01:56:30 PM - 70bb0955-3895-4545-92ef-a38c3c51ed1c_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:56:30 PM - 70bb0955-3895-4545-92ef-a38c3c51ed1c_Register - INFO - InputDocument : Order
-04/11/2023 01:58:14 PM - 13953725-5a23-4c15-b31e-7aa89ca70ebd_Register - INFO - 
- #############################################################################
-04/11/2023 01:58:14 PM - 13953725-5a23-4c15-b31e-7aa89ca70ebd_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 01:58:14 PM - 13953725-5a23-4c15-b31e-7aa89ca70ebd_Register - INFO - InputDocument : Order
-04/11/2023 02:01:14 PM - fa43cc4f-5045-4ea2-af0f-635418e49988_Register - INFO - 
- #############################################################################
-04/11/2023 02:01:14 PM - fa43cc4f-5045-4ea2-af0f-635418e49988_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:01:14 PM - fa43cc4f-5045-4ea2-af0f-635418e49988_Register - INFO - InputDocument : Order
-04/11/2023 02:03:35 PM - 4af04137-ed86-4f61-9151-77cf0d20ca2b_Register - INFO - 
- #############################################################################
-04/11/2023 02:03:35 PM - 4af04137-ed86-4f61-9151-77cf0d20ca2b_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:03:35 PM - 4af04137-ed86-4f61-9151-77cf0d20ca2b_Register - INFO - InputDocument : Order
-04/11/2023 02:04:22 PM - bedba26d-d6bf-4b7c-9bd8-ecdd0d277674_Register - INFO - 
- #############################################################################
-04/11/2023 02:04:22 PM - bedba26d-d6bf-4b7c-9bd8-ecdd0d277674_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:04:22 PM - bedba26d-d6bf-4b7c-9bd8-ecdd0d277674_Register - INFO - InputDocument : Order
-04/11/2023 02:06:07 PM - 1942b437-6e8d-409b-8b27-61ca28fd8bb6_Register - INFO - 
+04/12/2023 11:57:24 AM - ab6f7d07-dc8c-450b-a8b4-f1269119c297_Register - INFO - 
  #############################################################################
-04/11/2023 02:06:07 PM - 1942b437-6e8d-409b-8b27-61ca28fd8bb6_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:06:07 PM - 1942b437-6e8d-409b-8b27-61ca28fd8bb6_Register - INFO - InputDocument : Order
-04/11/2023 02:09:19 PM - de6257e9-c264-4529-b19e-ce0f1d677d1e_Register - INFO - 
+04/12/2023 11:57:24 AM - ab6f7d07-dc8c-450b-a8b4-f1269119c297_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 11:57:24 AM - ab6f7d07-dc8c-450b-a8b4-f1269119c297_Register - INFO - InputDocument : Order
+04/12/2023 12:05:20 PM - 6cde72d5-a34b-4a72-be7e-dc43d0d3265d_Register - INFO - 
  #############################################################################
-04/11/2023 02:09:19 PM - de6257e9-c264-4529-b19e-ce0f1d677d1e_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:09:19 PM - de6257e9-c264-4529-b19e-ce0f1d677d1e_Register - INFO - InputDocument : Order
-04/11/2023 02:14:59 PM - abf00445-59df-40fe-92ed-2e147272d9b3_Register - INFO - 
+04/12/2023 12:05:20 PM - 6cde72d5-a34b-4a72-be7e-dc43d0d3265d_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:05:20 PM - 6cde72d5-a34b-4a72-be7e-dc43d0d3265d_Register - INFO - InputDocument : Order
+04/12/2023 12:08:33 PM - e26ecfd9-db2d-480c-a3a2-607501580517_Register - INFO - 
  #############################################################################
-04/11/2023 02:14:59 PM - abf00445-59df-40fe-92ed-2e147272d9b3_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:14:59 PM - abf00445-59df-40fe-92ed-2e147272d9b3_Register - INFO - InputDocument : Order
-04/11/2023 02:17:21 PM - a49da243-d674-4195-822d-ad568493294a_Register - INFO - 
+04/12/2023 12:08:33 PM - e26ecfd9-db2d-480c-a3a2-607501580517_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:08:33 PM - e26ecfd9-db2d-480c-a3a2-607501580517_Register - INFO - InputDocument : Order
+04/12/2023 12:18:21 PM - f9465dbf-968d-4c43-aa10-b0fe56b55ae8_Register - INFO - 
  #############################################################################
-04/11/2023 02:17:21 PM - a49da243-d674-4195-822d-ad568493294a_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:17:21 PM - a49da243-d674-4195-822d-ad568493294a_Register - INFO - InputDocument : Order
-04/11/2023 02:26:02 PM - 77b438dd-23b3-416f-a381-ad098f2be710_Register - INFO - 
+04/12/2023 12:18:21 PM - f9465dbf-968d-4c43-aa10-b0fe56b55ae8_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:18:21 PM - f9465dbf-968d-4c43-aa10-b0fe56b55ae8_Register - INFO - InputDocument : Order
+04/12/2023 12:20:57 PM - 0b60f9d0-cbd0-4967-9e20-5d8242f33f2d_Register - INFO - 
  #############################################################################
-04/11/2023 02:26:02 PM - 77b438dd-23b3-416f-a381-ad098f2be710_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:26:02 PM - 77b438dd-23b3-416f-a381-ad098f2be710_Register - INFO - InputDocument : Order
-04/11/2023 02:27:32 PM - ae5f1501-e8cb-45a5-8559-775c9ee4e459_Register - INFO - 
+04/12/2023 12:20:57 PM - 0b60f9d0-cbd0-4967-9e20-5d8242f33f2d_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:20:57 PM - 0b60f9d0-cbd0-4967-9e20-5d8242f33f2d_Register - INFO - InputDocument : Order
+04/12/2023 12:22:13 PM - 561cb5b9-cea0-4459-a542-beb33dc3eb26_Register - INFO - 
  #############################################################################
-04/11/2023 02:27:32 PM - ae5f1501-e8cb-45a5-8559-775c9ee4e459_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:27:32 PM - ae5f1501-e8cb-45a5-8559-775c9ee4e459_Register - INFO - InputDocument : Order
-04/11/2023 02:31:46 PM - 060fcb70-895f-447d-8655-c4cde4dff4b8_Register - INFO - 
+04/12/2023 12:22:13 PM - 561cb5b9-cea0-4459-a542-beb33dc3eb26_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:22:13 PM - 561cb5b9-cea0-4459-a542-beb33dc3eb26_Register - INFO - InputDocument : Order
+04/12/2023 12:24:04 PM - e6ad89d7-2c1e-4fdb-ae68-65e6b26f5898_Register - INFO - 
  #############################################################################
-04/11/2023 02:31:46 PM - 060fcb70-895f-447d-8655-c4cde4dff4b8_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:31:46 PM - 060fcb70-895f-447d-8655-c4cde4dff4b8_Register - INFO - InputDocument : Order
-04/11/2023 02:31:53 PM - 225f0f39-3025-4c7b-8b85-228ef7cfd5b6_Register - INFO - 
+04/12/2023 12:24:04 PM - e6ad89d7-2c1e-4fdb-ae68-65e6b26f5898_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:24:04 PM - e6ad89d7-2c1e-4fdb-ae68-65e6b26f5898_Register - INFO - InputDocument : Order
+04/12/2023 12:41:41 PM - 5db17fe2-9dfe-4e2c-b24e-2fbf4d8599ed_Register - INFO - 
  #############################################################################
-04/11/2023 02:31:53 PM - 225f0f39-3025-4c7b-8b85-228ef7cfd5b6_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 02:31:53 PM - 225f0f39-3025-4c7b-8b85-228ef7cfd5b6_Register - INFO - InputDocument : Order
-04/11/2023 03:28:08 PM - 72f611f5-cbae-4859-bee1-0e33bb159913_Register - INFO - 
+04/12/2023 12:41:41 PM - 5db17fe2-9dfe-4e2c-b24e-2fbf4d8599ed_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:41:41 PM - 5db17fe2-9dfe-4e2c-b24e-2fbf4d8599ed_Register - INFO - InputDocument : Order
+04/12/2023 12:46:52 PM - 74d586a0-ff72-463d-b03c-bf65175f46b8_Register - INFO - 
  #############################################################################
-04/11/2023 03:28:08 PM - 72f611f5-cbae-4859-bee1-0e33bb159913_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 03:28:08 PM - 72f611f5-cbae-4859-bee1-0e33bb159913_Register - INFO - InputDocument : Order
-04/11/2023 03:49:51 PM - 55288caa-3608-4eb1-bca9-2e10f83229e2_Register - INFO - 
+04/12/2023 12:46:52 PM - 74d586a0-ff72-463d-b03c-bf65175f46b8_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:46:52 PM - 74d586a0-ff72-463d-b03c-bf65175f46b8_Register - INFO - InputDocument : Order
+04/12/2023 12:48:19 PM - f59be02c-0d30-49d5-bd4f-c34ab9f223ca_Register - INFO - 
  #############################################################################
-04/11/2023 03:49:51 PM - 55288caa-3608-4eb1-bca9-2e10f83229e2_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 03:49:51 PM - 55288caa-3608-4eb1-bca9-2e10f83229e2_Register - INFO - InputDocument : Order
-04/11/2023 04:00:13 PM - 25192195-ee10-40ad-84e4-84429eceede6_Register - INFO - 
+04/12/2023 12:48:19 PM - f59be02c-0d30-49d5-bd4f-c34ab9f223ca_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:48:19 PM - f59be02c-0d30-49d5-bd4f-c34ab9f223ca_Register - INFO - InputDocument : Order
+04/12/2023 12:53:31 PM - a765eec3-60bf-476c-a1f4-46a2424e6229_Register - INFO - 
  #############################################################################
-04/11/2023 04:00:13 PM - 25192195-ee10-40ad-84e4-84429eceede6_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:00:13 PM - 25192195-ee10-40ad-84e4-84429eceede6_Register - INFO - InputDocument : Order
-04/11/2023 04:04:28 PM - c7f681b0-09e7-4507-ac8a-144d2e93adde_Register - INFO - 
+04/12/2023 12:53:31 PM - a765eec3-60bf-476c-a1f4-46a2424e6229_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:53:31 PM - a765eec3-60bf-476c-a1f4-46a2424e6229_Register - INFO - InputDocument : Order
+04/12/2023 12:55:46 PM - 21bb1049-0a05-4954-9a68-3fd948dc043d_Register - INFO - 
  #############################################################################
-04/11/2023 04:04:28 PM - c7f681b0-09e7-4507-ac8a-144d2e93adde_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:04:28 PM - c7f681b0-09e7-4507-ac8a-144d2e93adde_Register - INFO - InputDocument : Order
-04/11/2023 04:06:55 PM - f7be0b9d-0964-411b-93f6-fb92708dc049_Register - INFO - 
+04/12/2023 12:55:46 PM - 21bb1049-0a05-4954-9a68-3fd948dc043d_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:55:46 PM - 21bb1049-0a05-4954-9a68-3fd948dc043d_Register - INFO - InputDocument : Order
+04/12/2023 12:57:53 PM - 33bd3d65-7bd4-405e-a12d-6ca04dbb816b_Register - INFO - 
  #############################################################################
-04/11/2023 04:06:55 PM - f7be0b9d-0964-411b-93f6-fb92708dc049_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:06:55 PM - f7be0b9d-0964-411b-93f6-fb92708dc049_Register - INFO - InputDocument : Order
-04/11/2023 04:12:08 PM - 49e07fbc-db61-4cfa-abd7-318d01c8f315_Register - INFO - 
+04/12/2023 12:57:53 PM - 33bd3d65-7bd4-405e-a12d-6ca04dbb816b_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 12:57:53 PM - 33bd3d65-7bd4-405e-a12d-6ca04dbb816b_Register - INFO - InputDocument : Order
+04/12/2023 01:05:00 PM - b458b6d3-1991-4e9e-b1c5-ff0b542d7d27_Register - INFO - 
  #############################################################################
-04/11/2023 04:12:08 PM - 49e07fbc-db61-4cfa-abd7-318d01c8f315_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:12:08 PM - 49e07fbc-db61-4cfa-abd7-318d01c8f315_Register - INFO - InputDocument : Order
-04/11/2023 04:14:53 PM - 2dfe2366-318e-489e-83b7-87f9eba43451_Register - INFO - 
+04/12/2023 01:05:00 PM - b458b6d3-1991-4e9e-b1c5-ff0b542d7d27_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 01:05:00 PM - b458b6d3-1991-4e9e-b1c5-ff0b542d7d27_Register - INFO - InputDocument : Order
+04/12/2023 01:15:47 PM - a65a44fc-e126-489f-81d0-17ea265445e1_Register - INFO - 
  #############################################################################
-04/11/2023 04:14:53 PM - 2dfe2366-318e-489e-83b7-87f9eba43451_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:14:53 PM - 2dfe2366-318e-489e-83b7-87f9eba43451_Register - INFO - InputDocument : Order
-04/11/2023 04:21:14 PM - d7319929-8386-472a-8b20-82375f47c7ae_Register - INFO - 
+04/12/2023 01:15:47 PM - a65a44fc-e126-489f-81d0-17ea265445e1_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 01:15:47 PM - a65a44fc-e126-489f-81d0-17ea265445e1_Register - INFO - InputDocument : Order
+04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_Register - INFO - 
  #############################################################################
-04/11/2023 04:21:14 PM - d7319929-8386-472a-8b20-82375f47c7ae_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:21:14 PM - d7319929-8386-472a-8b20-82375f47c7ae_Register - INFO - InputDocument : Order
-04/11/2023 04:24:01 PM - 5e0a7a4c-3732-47e1-b453-af64cdf41f33_Register - INFO - 
- #############################################################################
-04/11/2023 04:24:01 PM - 5e0a7a4c-3732-47e1-b453-af64cdf41f33_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:24:01 PM - 5e0a7a4c-3732-47e1-b453-af64cdf41f33_Register - INFO - InputDocument : Order
-04/11/2023 04:28:47 PM - 0d127635-7b22-4c64-92cb-2d53b6262bb8_Register - INFO - 
- #############################################################################
-04/11/2023 04:28:47 PM - 0d127635-7b22-4c64-92cb-2d53b6262bb8_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:28:47 PM - 0d127635-7b22-4c64-92cb-2d53b6262bb8_Register - INFO - InputDocument : Order
-04/11/2023 04:55:34 PM - 08e9cda0-84d8-49df-9539-a795d3be1661_Register - INFO - 
- #############################################################################
-04/11/2023 04:55:34 PM - 08e9cda0-84d8-49df-9539-a795d3be1661_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:55:34 PM - 08e9cda0-84d8-49df-9539-a795d3be1661_Register - INFO - InputDocument : Order
-04/11/2023 04:55:44 PM - ffdcddb6-f1ee-43c0-b310-88455cf18cab_Register - INFO - 
- #############################################################################
-04/11/2023 04:55:44 PM - ffdcddb6-f1ee-43c0-b310-88455cf18cab_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:55:44 PM - ffdcddb6-f1ee-43c0-b310-88455cf18cab_Register - INFO - InputDocument : Order
-04/11/2023 04:56:43 PM - cf525d46-b87d-44bc-974d-e80e9f72ef05_Register - INFO - 
- #############################################################################
-04/11/2023 04:56:43 PM - cf525d46-b87d-44bc-974d-e80e9f72ef05_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:56:43 PM - cf525d46-b87d-44bc-974d-e80e9f72ef05_Register - INFO - InputDocument : Order
-04/11/2023 04:58:53 PM - 0b101659-d5d8-45fd-b25a-0931a94c2673_Register - INFO - 
- #############################################################################
-04/11/2023 04:58:53 PM - 0b101659-d5d8-45fd-b25a-0931a94c2673_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:58:53 PM - 0b101659-d5d8-45fd-b25a-0931a94c2673_Register - INFO - InputDocument : Order
-04/11/2023 04:59:44 PM - f7032052-dd83-4c89-a5b9-384e9b035c16_Register - INFO - 
- #############################################################################
-04/11/2023 04:59:44 PM - f7032052-dd83-4c89-a5b9-384e9b035c16_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 04:59:44 PM - f7032052-dd83-4c89-a5b9-384e9b035c16_Register - INFO - InputDocument : Order
-04/11/2023 05:02:43 PM - 4efd4e19-98a3-4fb6-a55c-295bb13fdb39_Register - INFO - 
- #############################################################################
-04/11/2023 05:02:43 PM - 4efd4e19-98a3-4fb6-a55c-295bb13fdb39_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 05:02:43 PM - 4efd4e19-98a3-4fb6-a55c-295bb13fdb39_Register - INFO - InputDocument : Order
-04/11/2023 05:09:28 PM - 89c81199-b732-4200-af83-8f45acd46d47_Register - INFO - 
- #############################################################################
-04/11/2023 05:09:28 PM - 89c81199-b732-4200-af83-8f45acd46d47_Register - INFO - StartState: WaitforNewOrder
-04/11/2023 05:09:28 PM - 89c81199-b732-4200-af83-8f45acd46d47_Register - INFO - InputDocument : Order
+04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_Register - INFO - StartState: WaitforNewOrder
+04/12/2023 05:53:33 PM - 7cb8fed1-15fc-4f0e-98c4-38fff04e4ad2_Register - INFO - InputDocument : Order

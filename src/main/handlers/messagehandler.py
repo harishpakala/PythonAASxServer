@@ -105,17 +105,24 @@ class MessageHandler(object):
             if (_skillName == "AASHeartBeatHandler"):
                 return
             else:
+                print("#############sssssssssssssssssssssssssssssssssss#############################################")
                 _uid = self.pyaas.aasHashDict.__getHashEntry__(aasId).__getId__()
                 aasShellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uid)
-                aasShellObject.get_skill(_skillName).receiveMessage(jMessage)
+                jMessageN = copy.deepcopy(jMessage)
+                print(aasShellObject.skills)
+                print(aasShellObject.aasELement["id"])
+                aasShellObject.get_skill(_skillName).receiveMessage(jMessageN)
         except Exception as E:
+            
+            print(str(E))
+            print("###########################sssssssssssssssssssssssssssssssssss###############################")
             try:
                 for _uuid in self.pyaas.aasShellHashDict._getKeys():
                     aasShellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
                     for _skillName in list(aasShellObject.skills.keys()):
                         if _skillName not in ["ProductionManager", "Register"]:
                             jMessageN = copy.deepcopy(jMessage)
-                            aasShellObject.get_skill(_skillName).receiveMessage(jMessage)
+                            aasShellObject.get_skill(_skillName).receiveMessage(jMessageN)
             except Exception as E:
                 print(E)             
             

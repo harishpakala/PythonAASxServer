@@ -45,7 +45,7 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             PORT = host[1]
             nodeId = (urI.split("opc.tcp://")[1]).split("/")[-1]
             plc_opcua_Client = Client("opc.tcp://" + IP + ":" + PORT + "/", timeout=800000)
-            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.description = str(datetime.now())
             plc_opcua_Client.session_timeout = 600000
             plc_opcua_Client.secure_channel_timeout = 600000
             plc_opcua_Client.connect()

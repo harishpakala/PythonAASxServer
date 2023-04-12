@@ -6,6 +6,7 @@ This source code may use other Open Source software components (see LICENSE.txt)
 """
 from datetime import datetime
 from opcua import ua
+from opcua import Client
 try:
     import queue as Queue
 except ImportError:
@@ -626,7 +627,7 @@ class WaitForCallForProposal:
         
         #Transition to the next state is enabled using the targetState specific Boolen Variable
         # for each target there will be a separate boolean variable
-                
+        self.base_class.empty_all_queues()
         self.capabilitycheck_Enabled = True
     
     def retrieve_WaitForCallForProposal_Message(self) -> None:
@@ -764,6 +765,7 @@ class waitingforServiceRequesterAnswer:
             It is upto the developer to add the relevant code.
         """
         if (self.messageExist):
+            self.base_class.skillLogger.info(self.base_class.waitingforServiceRequesterAnswer_In["frame"]["type"])
             if (self.base_class.waitingforServiceRequesterAnswer_In["frame"]["type"] =="rejectProposal"):
                 self.serviceProvision_Enabled = False
             else:
@@ -980,6 +982,21 @@ class checkingSchedule:
                 
         self.sendingRefuse_Enabled = True
         self.PriceCalculation_Enabled = True
+
+    def opc_access(self):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://192.168.1.51:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node("ns=4;s=|var|WAGO 750-8203 PFC200 CS 2ETH CAN.Application.PLC_PRG.sPermission")).get_value()
+            print(rValue)
+            plc_opcua_Client.disconnect()
+            return rValue
+        except:
+            return rValue
     
 
     def checkingSchedule_Logic(self):
@@ -992,12 +1009,12 @@ class checkingSchedule:
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description
         try:
-            self.base_class.skillLogger.info(self.tdPropertiesList)
-            self.base_class.skillLogger.info(self.tdPropertiesList.get_property("sPermission").href)
-            sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
-            self.base_class.skillLogger.info(sPermissionVariable)
-            print(sPermissionVariable)
-            if sPermissionVariable =="error":
+            #self.base_class.skillLogger.info(self.tdPropertiesList)
+            #self.base_class.skillLogger.info(self.tdPropertiesList.get_property("sPermission").href)
+            #sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
+            #self.base_class.skillLogger.info(sPermissionVariable)
+            #print(sPermissionVariable)
+            if self.opc_access() == "error":
                 self.PriceCalculation_Enabled = False
             else:
                 self.sendingRefuse_Enabled = False
@@ -1171,6 +1188,37 @@ class serviceProvision:
         self.WaitForCallForProposal_Enabled = True
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
         self.tdPropertiesList = self.base_class.shellObject.thing_description  
+
+    def opc_access(self):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://192.168.1.51:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node("ns=4;s=|var|WAGO 750-8203 PFC200 CS 2ETH CAN.Application.PLC_PRG.sPermission")).get_value()
+            print(rValue)
+            plc_opcua_Client.disconnect()
+            return rValue
+        except:
+            return rValue                
+
+    def wopc_access(self):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://192.168.1.51:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node("ns=4;s=|var|WAGO 750-8203 PFC200 CS 2ETH CAN.Application.PLC_PRG.sPermission"))
+            print(rValue.set_value(ua.DataValue(True)))
+            plc_opcua_Client.disconnect()
+            return rValue
+        except Exception as E:
+            print(str(E))
+            return rValue 
                 
 
     def serviceProvision_Logic(self):
@@ -1179,12 +1227,13 @@ class serviceProvision:
             It is upto the developer to add the relevant code.
         """
         try :
-            self.plcHandler.write(self.tdPropertiesList.get_property("sPermission").href,ua.DataValue("true"))
+            #self.plcHandler.write(self.tdPropertiesList.get_property("sPermission").href,ua.DataValue("true"))
+            self.wopc_access()
             plcBoool = True
             while (plcBoool):
                 #time.sleep(20)
                 sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
-                if  (sPermissionVariable.upper() =="FALSE"):
+                if  ((str(self.opc_access())).upper() =="FALSE"):
                     plcBoool = False
             self.WaitForCallForProposal_Enabled = False
         except Exception as E:
@@ -1316,10 +1365,9 @@ class BoringProvider2:
         pass
     
     def empty_all_queues(self) -> None:
-        for queueName,queue in self.QueueDict.items():
-            queueList = list(self.queue.queue)
-            for elem in range(0,len(queueList)):
-                queue.get()
+        queueList = list(self.waitingforServiceRequesterAnswer_Queue.queue)
+        for elem in range(0,len(queueList)):
+            self.waitingforServiceRequesterAnswer_Queue.get()
     
     def create_status_message(self) -> None:
         self.StatusDataFrame =      {
@@ -1350,7 +1398,7 @@ class BoringProvider2:
                        }
         
         self.pyaas = pyaas
-        self.skillName = "BoringProvider"
+        self.skillName = "BoringProvider2"
         self.initstate_specific_queue_internal()
         self.init_inbound_messages()
         self.currentConversationId = "temp"
@@ -1396,7 +1444,7 @@ class BoringProvider2:
         bString = base64.b64encode(bytes(self.aasID,'utf-8'))
         base64_string= bString.decode('utf-8')
         
-        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str("Boring2")+"_"+self.skillName+".LOG")
         self.fileLogger_Handler.setLevel(logging.DEBUG)
         
         self.listHandler = ServiceLogHandler(LogList())

@@ -6998,7 +6998,7 @@
                                     }
                                 ]
                             },
-                            "value": "2",
+                            "value": "100",
                             "modelType": "Property"
                         },
                         {
@@ -7013,7 +7013,7 @@
                                     }
                                 ]
                             },
-                            "value": "15",
+                            "value": "10",
                             "modelType": "Property"
                         },
                         {
