@@ -14,8 +14,8 @@ class Role(object):
         self.name = name
 
 class EndPoint(object):
-    def __init__(self,identification:Identification,role:Role):
-        self.identification = identification 
+    def __init__(self,id:str,role:Role):
+        self.id = id 
         self.role = role
 
 class I40PacketHeader(object):
@@ -49,9 +49,9 @@ class I40Packet(object):
                           for _key in keys])
             
     def create_endpoint(self,endpoint):
-        _identification = endpoint["identification"]
+        _id = endpoint["id"]
         _role = endpoint["role"]
-        return EndPoint(Identification(_identification["id"],_identification["idType"]),Role(_role["name"]))
+        return EndPoint(_id,Role(_role["name"]))
     
     
     def create_frame(self,semanticProtocol,_type,messageId,sender,receiver,
