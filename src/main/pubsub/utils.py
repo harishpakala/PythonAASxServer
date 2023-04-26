@@ -6,23 +6,31 @@ This source code may use other Open Source software components (see LICENSE.txt)
 """
 import socket
 
+
 class I40PacketS(object):
-    PUBLISH = "publish"
-    PUBACK = "puback"
-    SUBSCRIBE = "subscribe"
-    SUBACK = "suback"
-    UNSUBSCRIBE = "unsubscribe"
-    UNSUBACK = "unsuback"
-    CONNECT = "connect"
-    CONNACK = "connack"
-    DISCONNECT  = "disconnect"
-    
+
+    INITIATE = "initiate"
+    ACKNOWLEDGE = "acknowledge"
+    INSERT = "insert"
+    DELETE = "delete"
+    MODIFY = "modify"
+    INSERTACK = "insertack"
+    DELETEACK = "deleteack"
+    MODIFYACK = "modifyack"
+    MONITOR = "monitor"
+    UNMONITOR= "unmonitor"
+    READREQUEST = "readrequest"
+    MONITORACK = "monitorack"
+    READRESPOSE = "readresponse"
+    NOTIFY = "notify"
+    TERMINATE = "terminate"
+
 
 class SocketConfig(object):
-    def __init__(self,host,port,socketname):
+    def __init__(self, host, port, socketname):
         self.host = host
         self.port = port
-        self.encodingFormat = "utf-8"
+        self.encodingformat = "utf-8"
         self.header = 64
         self.sessiontimout = 3600
         self.qos = 0
@@ -30,20 +38,20 @@ class SocketConfig(object):
         self.AF_INET = socket.AF_INET
         self.SOCK_STREAM = socket.SOCK_STREAM
         self.socketname = socketname
-        self.headerpacketsize = 2048
+        self.headerpacketsize = 8
         self.listnername = socketname
     
-    def set_encodingformat(self,encodingFormat):
-        self.encodingFormat = encodingFormat
+    def set_encodingformat(self, encodingformat):
+        self.encodingformat = encodingformat
     
-    def set_header(self,header):
+    def set_header(self, header):
         self.header = header
     
-    def set_qos(self,qos):
+    def set_qos(self, qos):
         self.qos = qos
     
-    def set_sesiontimeout(self,sessiontimout):
+    def set_sesiontimeout(self, sessiontimout):
         self.sessiontimout = sessiontimout
     
-    def set_headerpacketsize(self,headerpacketsize):
+    def set_headerpacketsize(self, headerpacketsize):
         self.headerpacketsize = headerpacketsize

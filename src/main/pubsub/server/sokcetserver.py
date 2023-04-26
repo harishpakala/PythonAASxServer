@@ -139,7 +139,7 @@ class SocketSession(object):
         pubAckPacket = I40PubSubPacket()
         subscribe_ack = pubAckPacket.create_publish_packet(i40Packet)
         subscribe_ack.interactionElements.append(message)
-        self.send_message_queue(pubAckPacket.to_json())
+        self.send_message_queue.put(pubAckPacket.to_json())
                         
     def handle_publish(self,i40Packet):
         if len(i40Packet.interactionElements) == 0:
@@ -262,7 +262,7 @@ class SocketSession(object):
             self.empty_subscrptions()
             i40Packet = I40PubSubPacket()
             disconnect_ack = i40Packet.create_disconnectack_packet()
-            self.send_messages(disconnect_ack)
+            self.send_messages()
             time.sleep(2)
             self.connectionHandle.close()
         except Exception as E:
@@ -337,7 +337,7 @@ class SocketListner(object):
                 if "sessionname" not in self.sessions:
                     self.create_session(conn,addr,i40Packet.frame.sender.identification.id)
                 else:
-                    self.reactivate_session()
+                    self.reactivate_session(xyz)
             else:
                 conn.close()
         except Exception as E:
