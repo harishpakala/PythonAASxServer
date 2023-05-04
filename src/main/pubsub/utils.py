@@ -18,7 +18,7 @@ class I40PacketS(object):
     DELETEACK = "deleteack"
     MODIFYACK = "modifyack"
     MONITOR = "monitor"
-    UNMONITOR= "unmonitor"
+    UNMONITOR = "unmonitor"
     READREQUEST = "readrequest"
     MONITORACK = "monitorack"
     READRESPOSE = "readresponse"

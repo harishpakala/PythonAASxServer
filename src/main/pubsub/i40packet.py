@@ -171,6 +171,14 @@ class I40PubSubPacket(I40Packet):
                                        conversationId)
         self.interactionElements = []
 
+    def create_unmonitor_packet(self, messageId, sender, receiver, replyBy, replyTo, conversationId):
+            semanticProtocol = self.create_semanticprotocol()
+            _sender, _receiver = self._create_frame_header(sender, receiver)
+            self.frame = self.create_frame(semanticProtocol, "unmonitor", messageId, _sender, _receiver, replyBy,
+                                           replyTo,
+                                           conversationId)
+            self.interactionElements = []
+
     def create_monitorack_packet(self, messageId, sender, receiver, replyBy, replyTo, conversationId):
         semanticProtocol = self.create_semanticprotocol()
         _sender, _receiver = self._create_frame_header(sender, receiver)
@@ -199,52 +207,3 @@ class I40PubSubPacket(I40Packet):
                                        conversationId)
         self.interactionElements = []
 
-    def create_terminateack_packet(self, messageId, sender, receiver, replyBy, replyTo, conversationId):
-        semanticProtocol = self.create_semanticprotocol()
-        _sender, _receiver = self._create_frame_header(sender, receiver)
-        self.frame = self.create_frame(semanticProtocol, "terminateack_disconnectack", messageId, _sender, _receiver, replyBy,
-                                        replyTo, conversationId)
-        self.interactionElements = []
-
-    def create_publish_packet(self, messageId, sender, receiver, replyBy, replyTo, conversationId):
-        semanticProtocol = self.create_semanticprotocol()
-        _sender, _receiver = self._create_frame_header([sender, "idShort", "connectprovider"],
-                                                       [receiver, "idShort", "connectreceiver"], )
-        self.frame = self.create_frame(semanticProtocol, "publish", messageId, _sender, _receiver, replyBy, replyTo,
-                                       conversationId)
-        self.interactionElements = []
-
-    def create_publishack_packet(self, messageId, sender, receiver, replyBy, replyTo, conversationId):
-        semanticProtocol = self.create_semanticprotocol()
-        _sender, _receiver = self._create_frame_header(sender, receiver)
-        self.frame = self.create_frame(semanticProtocol, "publishack", messageId, _sender, _receiver, replyBy, replyTo,
-                                       conversationId)
-        self.interactionElements = []
-
-    def create_subscribe_packet(self, messageId, sender, receiver, replyBy, replyTo, conversationId):
-        semanticProtocol = self.create_semanticprotocol()
-        _sender, _receiver = self._create_frame_header(sender, receiver)
-        self.frame = self.create_frame(semanticProtocol, "subscribe", messageId, _sender, _receiver, replyBy, replyTo,
-                                       conversationId)
-        self.interactionElements = []
-
-    def create_unsubscribe_packet(self, _type, messageId, sender, receiver, replyBy, replyTo, conversationId):
-        semanticProtocol = self.create_semanticprotocol()
-        _sender, _receiver = self._create_frame_header(sender, receiver)
-        self.frame = self.create_frame(semanticProtocol, "unsubscribe", messageId, _sender, _receiver, replyBy, replyTo,
-                                       conversationId)
-        self.interactionElements = []
-
-    def create_subscribeack_packet(self, messageId, sender, receiver, replyBy, replyTo, conversationId):
-        semanticProtocol = self.create_semanticprotocol()
-        _sender, _receiver = self._create_frame_header(sender, receiver)
-        self.frame = self.create_frame(semanticProtocol, "suback", messageId, _sender, _receiver, replyBy, replyTo,
-                                       conversationId)
-        self.interactionElements = []
-
-    def create_unsubscribeack_packet(self, messageId, sender, receiver, replyBy, replyTo, conversationId):
-        semanticProtocol = self.create_semanticprotocol()
-        _sender, _receiver = self._create_frame_header(sender, receiver)
-        self.frame = self.create_frame(semanticProtocol, "unsubscribeack", messageId, _sender, _receiver, replyBy,
-                                       replyTo, conversationId)
-        self.interactionElements = []
