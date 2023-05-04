@@ -8,7 +8,7 @@ from datetime import datetime,timedelta
 try:
     from pubsub.utils import SocketConfig,I40PacketS
 except ImportError:
-    from  src.main.utis import SocketConfig,I40PacketS
+    from src.main.utis import SocketConfig,I40PacketS
     
 try:
     import queue as Queue
@@ -337,7 +337,7 @@ class SocketListner(object):
                 if "sessionname" not in self.sessions:
                     self.create_session(conn,addr,i40Packet.frame.sender.identification.id)
                 else:
-                    self.reactivate_session(xyz)
+                    self.reactivate_session()
             else:
                 conn.close()
         except Exception as E:
