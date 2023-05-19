@@ -69,6 +69,15 @@ Within a particular ecosystem, there may be a common way of installing things, s
 ## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
+|                         HTTP URI                                                 |        GET         |        PUT         |       DELETE       |     POST      |
+|----------------------------------------------------------------------------------| ------------------ | ------------------ | ------------------ | --------------|
+|<http://localhost:9021/registry/shell-descriptors>                                | :heavy_check_mark: |       :x:          |      :x:         |:heavy_check_mark:|
+|<http://localhost:9021/registry/shell-descriptors/{aas-identifier}>               | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |    :x:        |
+|<http://localhost:9021/registry/shell-descriptors/{aas-identifier}/submodel-descriptors>     | :heavy_check_mark: | :x: | :x: | :heavy_check_mark:|
+|<http://localhost:9021//registry/shell-descriptors/{aas-identifier}/submodel-descriptors/{path:submodelId}> | :heavy_check_mark: |       :x:          |      :x:           |        :x:        |
+
+
+
 ## Support
 Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
