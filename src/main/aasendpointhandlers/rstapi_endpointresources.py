@@ -4,10 +4,11 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 '''
-import base64
 from flask_restful import Resource,request
 from flask import render_template,Response,redirect,flash,make_response,send_file,send_from_directory,jsonify
 from urllib.parse import unquote
+import base64
+import csv
 import json
 import os
 import uuid
@@ -15,9 +16,9 @@ import copy
 import urllib
 from werkzeug.utils import secure_filename
 try:
-    from utils.utils import ExecuteDBModifier,ProductionStepOrder,ExecuteDBRetriever,AASMetaModelValidator,Generate_AAS_Shell,UUIDGenerator
+    from utils.utils import ExecuteDBModifier,ProductionStepOrder,ExecuteDBRetriever,AASMetaModelValidator,Generate_AAS_Shell,UUIDGenerator,AIDProperty,AssetInterfaceDescription
 except ImportError:
-    from src.main.utils.utils import ExecuteDBModifier,ProductionStepOrder,ExecuteDBRetriever,AASMetaModelValidator,Generate_AAS_Shell,UUIDGenerator
+    from src.main.utils.utils import ExecuteDBModifier,ProductionStepOrder,ExecuteDBRetriever,AASMetaModelValidator,Generate_AAS_Shell,UUIDGenerator,AIDProperty,AssetInterfaceDescription
 #from jwkest.jws import JWSig, SIGNER_ALGS, JWS
 #from jwkest.jwk import rsa_load, RSAKey,pem_cert2rsa,der_cert2rsa,der2rsa
 #from jwkest.jwt import b64encode_item
@@ -1568,7 +1569,8 @@ class AASWebInterfaceProductionManagement(Resource):
         elif (tag == "create"):
             try:
                 skill_name = request.form.get("skill_name")     
-                submodel_ids = request.form.getlist("submodel_id_idshort")
+                submodel_ids = [request.form.get("submodel_id_idshort")]
+                idShortPath = request.form.get("idShortPath") 
                 if skill_name != None:
                     if submodel_ids != None and len(submodel_ids) > 0:
                         submodel_id_idSHort_list = []
@@ -1576,7 +1578,7 @@ class AASWebInterfaceProductionManagement(Resource):
                             submodel_id_idshort_encoded = _id_idSHort.split(".")
                             submodel_id = ((base64.decodebytes((submodel_id_idshort_encoded[0]).encode())).decode())
                             idShort = submodel_id_idshort_encoded[1]
-                            submodel_id_idSHort_list.append([submodel_id,idShort])
+                            submodel_id_idSHort_list.append([submodel_id,idShort,idShortPath])
                         _uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier1)._id
                         shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
                         data, status = shellObject.add_produtionstep(skill_name,submodel_id_idSHort_list)
@@ -1837,31 +1839,160 @@ class AASDocumentationDownload(Resource):
         except Exception as E:
             print(str(E))
 
-class AASRTDataVisualizer(Resource):        
+class AASAssetInterfaceDescription(Resource):        
     def __init__(self,pyaas):
         self.pyaas = pyaas
-
-    def get(self,aasId): 
-        if  "AssetInterfaceDescription" in self.pyaas.aasStandardSubmodelData[aasId].keys():      
-            return  Response(render_template('rtdata.html',aasIndex=aasId,exDomain=self.pyaas.exDomain ,
-                                             tdProperties = self.pyaas.aasStandardSubmodelData[aasId]["AssetInterfaceDescription"][1],
-                                             skillList= self.pyaas.skillListWeb[aasId],
-                                             stdSubmodelList = self.pyaas.aasStandardSubmodelList[aasId],
-                                             aasIdShort = self.pyaas.aasIndexidShortDict[aasId]["idShort"]))
-        
-        else:
-            return  Response(render_template('rtdata.html',aasIndex=aasId,exDomain=self.pyaas.exDomain ,
-                                             tdProperties = [],
-                                             skillList= self.pyaas.skillListWeb[aasId],
-                                             stdSubmodelList = self.pyaas.aasStandardSubmodelList[aasId],
-                                             aasIdShort = self.pyaas.aasIndexidShortDict[aasId]["idShort"]))
-    def post(self,aasId):
-        returnData = {}
+    
+    def check_referred_property_exists(self,submodelId,idShortPath):
         try:
-            for key,tdPData in self.pyaas.tdPropertiesList[aasId].items(): 
-                dataElement = tdPData["dataElement"]
-                returnData[key] = {'label': [(dt.timestamp).split(" ")[1] for dt in dataElement.history][-19:], 'value': [dt.aasELemObject for dt in dataElement.history][-19:]}
-            return returnData
+            return self.pyaas.aasHashDict.__isKeyPresent__(submodelId+"."+idShortPath)
         except Exception as E:
-            print(E)
-            return {}
+            print(str(E))
+            return False
+    
+    def check_aid_exists(self,aasIdentifier:str) -> bool:
+        try:
+            data, status = self.pyaas.aasConfigurer.retrieve_submodel_semantic_id(aasIdentifier,"https://www.w3.org/2019/wot/td#Thing")
+            return status
+        except Exception as E:
+            print(str(E))
+            return False
+
+    def save_submodel(self,submodel_data) -> bool:
+        try :
+            edm = ExecuteDBModifier(self.pyaas)
+            data,status,statuscode = edm.execute({"data":{"_submodel":submodel_data}, "method": "PostSubmodel",
+                                                                 "instanceId" : str(uuid.uuid1())})
+            
+            print("status "+status + " save_submodel")
+            return status
+        except Exception as e:
+            return False
+        
+    def save_submodel_ref(self,aasIdentifier,_reference) -> bool:
+        try:
+            edm = ExecuteDBModifier(self.pyaas)
+            data,status,statuscode = edm.execute({"data": {"_shellId":aasIdentifier, "_Reference":_reference}, "method": "PostSubmodelReference",
+                                                             "instanceId" : str(uuid.uuid1())})
+            return status        
+        except Exception as e:
+            return False
+
+    
+    def add_aid_propertys(self,aasIdentifier:str,aid_data:list):
+        aid_properties_aas = []
+        for aid_property in aid_data:
+            aid_property["aasIdentifier"] = aasIdentifier
+            aidP = AIDProperty()
+            aidP.from_json(aid_property)
+            elem_uuid = self.pyaas.aasHashDict.__getHashEntry__(aid_property["submodelId"]
+                                                            +"."+aid_property["idShortPath"])._id
+                    
+            aidP.elemObject = self.pyaas.submodelHashDict.__getHashEntry__(elem_uuid)
+            self.pyaas.scheduler.update_scheduler(aidP)
+            aid_properties_aas.append(aidP)
+            
+        if not self.check_aid_exists(aasIdentifier):
+            aid_submodel = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["asset_interface_description"]["ThingDescription"])
+            aid_submodel_ref = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["asset_interface_description"]["SubmodelReference"])
+
+            for aidp in aid_properties_aas:
+                aid_property_aas_json = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["asset_interface_description"]["Property"])
+                aid_submodel["submodelElements"][3]["value"].append(aidp.to_aas_josn(aid_property_aas_json))
+        
+            uuidG = UUIDGenerator()
+            _uuid = uuidG.getnewUUID()
+            submodel_Id = "ww.ovgu.de/submodel/"+str(_uuid)
+            
+            aid_submodel["id"] = submodel_Id
+            aid_submodel_ref["keys"][0]["value"] = submodel_Id
+            
+            self.save_submodel(aid_submodel)
+            self.save_submodel_ref(aasIdentifier, aid_submodel_ref)
+        else:
+            aid_data_submodel, status = self.pyaas.aasConfigurer.retrieve_submodel_semantic_id(aasIdentifier,"https://www.w3.org/2019/wot/td#Thing")
+            i = 0 
+            for aid in aid_data_submodel["submodelElements"]:
+                if (aid["idShort"] == "properties"):
+                    break
+                i = i + 1
+            for aidp in aid_properties_aas:
+                aid_property_aas_json = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["asset_interface_description"]["Property"])
+                aid_data_submodel["submodelElements"][i]["value"].append(aidp.to_aas_josn(aid_property_aas_json))
+            
+            self.save_submodel(aid_data_submodel)
+            
+            
+            aas_shell_uuid = self.pyaas.aasHashDict.__getHashEntry__(aidP.submodelIdentifier
+                                                            +"."+aidP.idshort_path)
+                    
+            aasHashObject = self.pyaas.aasShellHashDict.__getHashEntry__(aas_shell_uuid)
+
+            for aidP in aid_properties_aas:
+                elem_uuid = self.pyaas.aasHashDict.__getHashEntry__(aidP.submodelIdentifier
+                                                            +"."+aidP.idshort_path)
+                    
+                aidP.elemObject = self.pyaas.submodelHashDict.__getHashEntry__(elem_uuid)
+                if aasHashObject.asset_interface_description != None:
+                    aasHashObject.asset_interface_description.add_property(aidP,aidP.property_name)
+                else:
+                    aasHashObject.asset_interface_description = AssetInterfaceDescription()
+                    aasHashObject.asset_interface_description.add_property(aidP,aidP.property_name)
+                    
+    def get(self,aasIdentifier): 
+        try:
+            aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode()
+            data,status = self.pyaas.dba.get_aas_information(aasIdentifier1)
+            if status:
+                available_skills = set(self.pyaas.available_skills.keys()) - set(data["skillList"])
+                rv=   Response(render_template('aid.html',thumbNail= urllib.parse.quote(data["thumbnail"],safe= ""),
+                                                        aasIdentifier=aasIdentifier, exDomain=self.pyaas.exDomain , 
+                                                        skillList= data["skillList"],
+                                                        aasIdShort = data["idShort"],
+                                                        submodelList = data["submodelList"],
+                                                        std_submodels = list(self.pyaas.aasConfigurer.submodel_template_dict.keys()),
+                                                        available_skills = list(available_skills),
+                                                        asssetInterfaceList = data["asssetInterfaceList"]))
+                return rv
+            else:
+                return redirect("/shells/"+aasIdentifier+"/webui", code=302)
+        except Exception as E:
+            return redirect("/shells/"+aasIdentifier+"/webui", code=302)
+        
+    def post(self,aasIdentifier):
+        updateInfo = request.form
+        tag =  updateInfo["operationType"]   
+        aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode()
+        if (tag =="retreive-aid-property-data"):        
+            returnData = {}
+            try:
+                for key,tdPData in self.pyaas.tdPropertiesList[aasIdentifier].items(): 
+                    dataElement = tdPData["dataElement"]
+                    returnData[key] = {'label': [(dt.timestamp).split(" ")[1] for dt in dataElement.history][-19:], 'value': [dt.aasELemObject for dt in dataElement.history][-19:]}
+                return returnData
+            except Exception as E:
+                print(str(E))
+                return redirect("/shells/"+aasIdentifier+"/webui", code=302) 
+        
+        elif (tag == "add-aid-properties"):
+            try:
+                aid_csv_file = request.files["file"]
+                aid_header_line = (aid_csv_file.stream.readline()).decode().strip().split(',')
+                aid_data = []
+                for aid_line_stream in aid_csv_file.stream.readlines():
+                    aid_line = aid_line_stream.decode().strip().split(',')
+                    aid_property = dict()
+                    i = 0
+                    for _header_elem in aid_header_line:
+                        aid_property[_header_elem] = aid_line[i]
+                        i = i + 1
+                    if not self.check_referred_property_exists(aid_property["submodelId"],
+                                                           aid_property["idShortPath"]):
+                        flash("The referred property does not exist","error")
+                        return redirect("/shells/"+aasIdentifier+"/aid/webui", code=302)
+                    aid_data.append(aid_property)
+                self.add_aid_propertys(aasIdentifier1,aid_data)
+                return redirect("/shells/"+aasIdentifier+"/aid/webui", code=302)
+            except Exception as E:
+                flash(str(E),"error")
+                return redirect("/shells/"+aasIdentifier+"/aid/webui", code=302)

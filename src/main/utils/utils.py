@@ -585,14 +585,14 @@ class AASElementObject:
         """
         return self.idShortPath
 
-class ThingDescriptionProperty:
-    def __init__(self,_type="string",read_only=False,observable=False,update_frequencey= 0,
+class AIDProperty:
+    def __init__(self,_type="string",read_only=False,observable=False,update_frequency= 0,
                  _unit="",aasIdentifier = "",submodelIdentifier ="",idshort_path="",
-                 href="",operation_type="",requestType="",elemObject = None):
+                 href="",operation_type="",requestType="",elemObject = None,property_name = ""):
         self._type = _type
         self.read_only = read_only
         self.observable = observable
-        self.update_frequencey = update_frequencey
+        self.update_frequency = update_frequency
         self._unit = _unit
         self.aasIdentifier = aasIdentifier
         self.submodelIdentifier = submodelIdentifier 
@@ -601,8 +601,70 @@ class ThingDescriptionProperty:
         self.operation_type = operation_type
         self.elemObject = elemObject
         self.requestType = requestType
+        self.property_name = ""
+    
+    def from_json(self,aid_json):
+        '''
+        '''
+        try:
+            self._type = aid_json['type']
+            self.read_only = aid_json['readOnly']
+            self.observable = aid_json['observable']
+            self.update_frequency = aid_json['updateFrequency']
+            self._unit = aid_json['unit']
+            self.aasIdentifier = aid_json['aasIdentifier']
+            self.submodelIdentifier = aid_json['submodelId'] 
+            self.idshort_path = aid_json['idShortPath']
+            self.href = aid_json['href']
+            #self.operation_type = aid_json['requestType']
+            self.requestType = aid_json['requestType']
+            self.property_name = aid_json['property_name']
+            return True
+        except Exception as E:
+            print(str(E))
+            return False
+    
+    def to_aas_josn(self,aid_property):
+        '''
+            
+        '''
+        try:
+            i = 0 
+            aid_property["idShort"] = self.property_name
+            for pConstraint in aid_property["qualifiers"]:
+                if (pConstraint["type"] == "type"):
+                    aid_property["qualifiers"][i]["value"] = self._type
+                if (pConstraint["type"] == "readOnly"):
+                    aid_property["qualifiers"][i]["value"] = self.read_only
+                if (pConstraint["type"] == "observable"):
+                    aid_property["qualifiers"][i]["value"] = self.observable       
+                if pConstraint["type"] == "updateFrequency":
+                    aid_property["qualifiers"][i]["value"] = self.update_frequency
+                if pConstraint["type"] == "unit":
+                    aid_property["qualifiers"][i]["value"] = self.unit  
+                if (pConstraint["type"] == "submodelId"):
+                    aid_property["qualifiers"][i]["value"] = self.submodelIdentifier
+                if (pConstraint["type"] == "idShortPath"):
+                    aid_property["qualifiers"][i]["value"] = self.idShortPath
+                i = i + 1  
+            
+            i = 0
+            for pelem in aid_property["value"]:
+                if pelem["idShort"] == "forms":
+                    for formConstraint in pelem["value"][0]["qualifiers"]:
+                        j = 0
+                        if formConstraint["type"] == "href":
+                            aid_property["value"][i]["value"][0]["qualifiers"][j]["value"] = self.href
+                        elif formConstraint["type"] == "requestType":
+                            aid_property["value"][i]["value"][0]["qualifiers"][j]["value"] = self.requestType
+                        j = j + 1
+                i = i + 1
+            
+            return aid_property
+        except Exception as E:
+            return aid_property
         
-class ThingDescription:
+class AssetInterfaceDescription:
     def __init__(self):
         self.properties = dict()
         self.security = None
@@ -618,7 +680,7 @@ class ShellObject(AASElementObject):
     def __init__(self,aasElement, idShortPath, elemIndex=0):
         AASElementObject.__init__(self, aasElement, idShortPath, elemIndex)
         self.skills = dict()
-        self.thing_description = None
+        self.asset_interface_description = None
         self.productionStepList = []
         self.conversationIdList = []
     

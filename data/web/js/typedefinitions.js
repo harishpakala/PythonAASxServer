@@ -543,7 +543,7 @@ class QualifierKind{
 }
 class Key{
 	constructor(type="GlobalReference",value,_uuid = ""){
-		this.type = new SelectObject("type",KeyType,type);
+		this.type = new SelectObject("type",KeyType,"GlobalReference");
 		this.value = new StringObject("text");
 		this._uuid = _uuid
 		if (_uuid == ""){this._uuid = crypto.randomUUID();}
@@ -729,7 +729,6 @@ class Qualifier extends HasSemantics{
 	constructor(type,valueType="xs:anyURI",semanticId,supplementalSemanticIds,kind="valueQualifier",
 				value,valueId,_uuid=""){
 		super(semanticId,supplementalSemanticIds);
-		
 		this.kind = new SelectObject("kind",QualifierKind,kind);
 		this.valueType = new SelectObject("valueType",DataTypeXSD,valueType);
 		this.value = new StringObject("value");
@@ -1019,22 +1018,24 @@ class Property extends DataElement{
 	constructor(extensions,category,idShort,displayName,description,
 			checksum,kind,semanticId,supplementalSemanticIds,
 			qualifiers,embeddedDataSpecifications,
-			valueType,
+			valueType="xs:string",
 			value,
 			valueId){
 			super(extensions,category,idShort,displayName,description,
 					checksum,kind,semanticId,supplementalSemanticIds,
 					qualifiers,embeddedDataSpecifications);
-			this.valueType = valueType;
 			this.value = new StringObject("value");
-			this.valueId =valueId;
+			this.valueType = new SelectObject("valueType",DataTypeXSD,valueType);
+			this.valueId = new ComplexObject("valueId","Reference");
 			this.modelType = "Property";
 	}
 	serialize(){
 		let jsonData =  super.serialize();
 		jsonData["value"] = this.value.getString();
-		//jsonData["valueType"] = this.valueType.getSelectedItem();
-		//jsonData["valueId"] = this.valueId.serialize();
+		jsonData["valueType"] = this.valueType.getSelectedItem();
+		if (this.valueId._object != null){
+			jsonData["valueId"] = this.valueId.serialize();
+		}
 		jsonData["modelType"] = "Property";
 		return jsonData;
 	}
@@ -1046,8 +1047,16 @@ class Property extends DataElement{
 		
 	}
 	createDom(parentId,exdomain){
-		this.value.createDom(parentId,exdomain);
-		super.createDom(parentId,exdomain);
+		this.uuid = crypto.randomUUID();
+		this.exdomain = exdomain;
+		document.getElementById(parentId).insertAdjacentHTML(
+				 'afterbegin',
+				 `<div class="temp" id = "`+this.uuid+`">
+				 </div>`);
+		this.value.createDom(this.uuid,exdomain);
+		this.valueType.createDom(this.uuid,exdomain);
+		this.valueId.createDom(this.uuid,exdomain);
+		super.createDom(this.uuid,exdomain);
 	}
 }
 class MultiLanguageProperty extends DataElement{
@@ -1066,7 +1075,9 @@ class MultiLanguageProperty extends DataElement{
 	serialize(){
 		let jsonData =  super.serialize();
 		jsonData["value"] = this.value.serialize();
-		//jsonData["valueId"] = this.valueId.serialize();
+		if (this.valueId._object != null){
+			jsonData["valueId"] = this.valueId.serialize();
+		}
 		jsonData["modelType"] = "MultiLanguageProperty";
 		return jsonData;
 	}
@@ -1091,14 +1102,16 @@ class Range extends DataElement{
 			super(extensions,category,idShort,displayName,description,
 					checksum,kind,semanticId,supplementalSemanticIds,
 					qualifiers,embeddedDataSpecifications);
-			this.valueType = valueType;
+			this.valueType = new SelectObject("valueType",DataTypeXSD,valueType);
 			this.min = new StringObject("min");
 			this.max =  new StringObject("max");
 			this.modelType = "Range";
 	}
 	serialize(){
 		let jsonData =  super.serialize();
-		//jsonData["valueId"] = this.valueId.getSelectedItem();
+		if (this.valueId._object != null){
+			jsonData["valueId"] = this.valueId.serialize();
+		}
 		jsonData["min"] = this.min.getString();
 		jsonData["max"] = this.max.getString();
 		jsonData["modelType"] = "Range";
@@ -1114,9 +1127,17 @@ class Range extends DataElement{
 		}
 	}
 	createDom(parentId,exdomain){
-		this.max.createDom(parentId,exdomain);
-		this.min.createDom(parentId,exdomain);
-		super.createDom(parentId,exdomain);
+		
+		this.uuid = crypto.randomUUID();
+		this.exdomain = exdomain;
+		document.getElementById(parentId).insertAdjacentHTML(
+				 'afterbegin',
+				 `<div class="temp" id = "`+this.uuid+`">
+				 </div>`);
+		this.max.createDom(this.uuid,exdomain);
+		this.min.createDom(this.uuid,exdomain);
+		super.createDom(this.uuid,exdomain);
+
 	}
 }
 class ReferenceElement extends DataElement{
@@ -1201,8 +1222,16 @@ class SubmodelElementCollection extends SubmodelElement{
 			}
 	serialize(){
 		let jsonData =  super.serialize();
-		jsonData["value"] = this.value;
-		jsonData["modelType"] = "SubmodelElementCollection";
+		if (this.value != null){
+			if (this.value.length > 0 ){
+				jsonData["value"] = new Array();
+				for (var elemId of this.value){
+					jsonData["value"].push(elemId);
+				}
+				
+			}	
+		}
+		jsonData["modelType"] = this.modelType;
 		return jsonData;
 	}
 	deserialize(data,parentId,exdomain){

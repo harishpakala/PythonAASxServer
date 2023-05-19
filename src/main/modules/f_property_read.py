@@ -10,11 +10,6 @@ try:
 except ImportError:
     from src.main.utils.utils import ExecuteDBModifier, SubscriptionMessage, HistoryObject
 
-try:
-    from assetaccessadapters.io_opcua import AssetOPCUAEndPointSubscription
-except ImportError:
-    from src.main.assetaccessadapters.io_opcua import AssetOPCUAEndPointSubscription
-
 from datetime import datetime
 import time
 

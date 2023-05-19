@@ -1,18 +1,35 @@
 {% extends "homelayout.html" %} {% block homecontent %}
 <div style = "width: 100%;">
 	<div class="row" style="height: 6.5vh;">
-		<div class="col-10"></div>
-		<div class="col-1 d-flex flex-wrap align-items-center text-center">
-			Update
+		<div class="col-4">
+			<div id= "addAASElementDiv" style = "height :100%">
+				<div class= "row d-flex flex-wrap align-items-center text-center" style = "height : 100%">
+					<div class = "col-8 std-submodel-text  d-flex flex-wrap justify-content-end" >
+						<span>Add New AAS Element</span>
+					</div>
+					<div class = "col-4  d-flex flex-wrap align-items-center text-center">
+						<div class="std-submodel-add" style = "margin-left : 30%">
+							<img style = "height : 3vh;cursor: pointer;" id = "std-submodel-img" data-bs-toggle="modal" data-bs-target="#new_aas_element" data-whatever="@mdo" src="{{exDomain}}web/images/plus_blue.svg">
+							<div class="std-submodel-add-overlay">
+								<img  style = "height : 3vh;cursor: pointer;" id = "std-submodel-img-overlay" data-bs-toggle="modal" data-bs-target="#new_aas_element" data-whatever="@mdo" src="{{exDomain}}web/images/plus1.svg">
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
 		</div>
+		<div class="col-5  d-flex flex-wrap align-items-center text-center"></div>
+		<div class="col-1 d-flex flex-wrap align-items-center text-center">
+				Update
+			</div>
 		<div class="col-1 d-flex flex-wrap align-items-center text-centercol-1 d-flex flex-wrap align-items-center text-center">
 			<div class="std-submodel-add" style="margin-left: 30%">
 
 				   <input  type="image"
-						style="height: 4vh; cursor: pointer;" id="std-submodel-img"
+						style="height: 3vh; cursor: pointer;" id="saveSubmodelForm1"
 						src="{{exDomain}}web/images/refresh.svg">
 					<div class="std-submodel-add-overlay">
-						<input type="image" style="height: 4vh; cursor: pointer;"
+						<input type="image" style="height: 3vh; cursor: pointer;"
 							id="saveSubmodelForm"
 							src="{{exDomain}}web/images/refresh1.svg">
 					</div>
@@ -20,7 +37,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row" style="height: 2.5vh;">
+	<div class="row" style="min-height: 2.5vh;">
 	</div>
 	<div class = "row">
 	<div class = "col-1">
@@ -64,7 +81,27 @@
 
 	<div style="min-height: 2.5vh"></div>	
 </div>
+<div class="modal fade" data-bs-backdrop="static" id="new_aas_element" tabindex="-1" aria-labelledby="i" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title">Add AAS Meta Model Element</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" id = "close_btn_newAAS" aria-label="Close">
+		</button>
+	  </div>
+	  <div class="modal-body">
+	  	  	<div id = "new_aas_element_div">
 
+			</div>
+			<div id = "new_aas_element_form__div">
+
+			</div>
+			<div class="row" style="min-height : 2.5vh"></div>
+
+	  </div>
+	</div>
+  </div>
+</div>
 <script>
 document.getElementById("saveSubmodelForm").addEventListener( "click", (evt) => saveSubmodel(evt,'{{submodelId}}','{{aasIdentifier}}'));	
 var submodelId = '{{submodelId}}';
@@ -79,13 +116,16 @@ submodelElements = [];
 
 _submodel1 = new Submodel();
 _submodel1.deserialize(submodelD,"elem21",'{{exDomain}}');
-_submodel1.createDom("elem21",'{{exDomain}}')
+_submodel1.createDom("elem21",'{{exDomain}}');
 
+create_aas_elem('{{exDomain}}','new_aas_element_form__div',aasIdentifier,submodelId,submodelId);
 
 var _submodelCollapse = document.getElementById('submodelCollapse')
 _submodelCollapse.addEventListener('hidden.bs.collapse', function () {
+	document.getElementById('addAASElementDiv').style.display = "block";
 	let _parent = document.getElementById("elem21");
 	_parent.innerHTML = "";
+	create_aas_elem('{{exDomain}}','new_aas_element_form__div', '{{aasIdentifier}}','{{submodelId}}','{{submodelId}}');
 	_submodel1.createDom("elem21",'{{exDomain}}');
 });
 
@@ -138,19 +178,20 @@ function parseSubmodelCollection(submodelColl,_parentId,exdomain){
     var _submodelElementCollection = new SubmodelElementCollection();
     _submodelElementCollection.deserialize(submodelColl,_parentId,exdomain);
 	
-	
-    for (var _submodelElement of submodelColl["value"]){
-        if (_submodelElement["modelType"] != "SubmodelElementCollection"){
-        	collectionElemIds.push(parseDataElement(_submodelElement, _newId,exdomain))
+    if (submodelColl.hasOwnProperty("value")) {
+        for (var _submodelElement of submodelColl["value"]){
+            if (_submodelElement["modelType"] != "SubmodelElementCollection"){
+            	collectionElemIds.push(parseDataElement(_submodelElement, _newId,exdomain))
+            }
+            else{
+            	collectionElemIds.push(parseSubmodelCollection(_submodelElement,_newId,exdomain))
+            }
+        }       
+        submodelColl["value"].splice(0,submodelColl["value"].length);
+        for (var _pid of collectionElemIds)
+        {
+        	_submodelElementCollection.value.push(_pid);
         }
-        else{
-        	collectionElemIds.push(parseSubmodelCollection(_submodelElement,_newId,exdomain))
-        }
-    }       
-    submodelColl["value"].splice(0,submodelColl["value"].length);
-    for (var _pid of collectionElemIds)
-    {
-    	_submodelElementCollection.value.push(_pid);
     }
     linearData1[_newId] = _submodelElementCollection;
     return _newId;
@@ -288,8 +329,35 @@ function listElemClick(_tempId,_parentId,_exDomain){
 		element.style.border =  ""; 
     });
 	document.getElementById("li_"+_tempId).style.border = "1px solid rgb(26, 131, 168,0.98)";
+	document.getElementById('addAASElementDiv').style.display = "none";
 	
 }
+
+function create_aas_elem(exDomain,form_id,aasIdentifier,submodelId,idShortPath){
+	let new_aas_element_div = document.getElementById("new_aas_element_div");
+	new_aas_element_div.innerHTML = "";
+	new_aas_element_div.innerHTML = `<input id="operation_type" name="operation_type" type="hidden" value="download_json">
+										<div class="row">
+										<div class="container">
+											<div class="row">
+												<div class="col-9">
+													<div class="submodel-form" id = "submodel-form">
+														<select id = "aas_elem_type" name ="aas_elem_type" class="form-select" aria-label="Default select example">
+															<option value="SubmodelElementCollection">SubmodelElementCollection</option>
+															<option value="Property">Property</option>
+															<option value="Range">Range</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-2">
+													<button class="btn btn-primary" onclick="addAASElementtoForm(event,'`+exDomain+`','`+form_id+`','`+aasIdentifier+`','`+submodelId+`','`+idShortPath+`');return false;">Create</button>
+												</div>
+											</div>
+										</div>
+										<div class="row" style="min-height : 2.5vh;"></div>
+									</div>`;
+}
+
 function listCollectionClick(_id){
 	var data = linearData1[submodelId+"."+_id] 
 	let _parent = document.getElementById("elem21");
@@ -299,53 +367,11 @@ function listCollectionClick(_id){
 	for (var i = 0; i < listGroupItem.length; i++ ) {
 		listGroupItem[i].style.border = "1px solid rgba(0,0,0,.125)";
 	}
+	document.getElementById('addAASElementDiv').style.display = "block";
+	create_aas_elem('{{exDomain}}','new_aas_element_form__div','{{aasIdentifier}}',submodelId,_id);
 } 
 
 
 </script>
 
-<div class="modal fade" data-bs-backdrop="static" id="elementUpdate" tabindex="-1" aria-labelledby="i" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" name="submodel" id="submodelPropertyHeader"></h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close"></button>
-				</div>
-				<input id="idShortPath" name="idShortPath" type="hidden" value="">
-				<input id="submodelId" name="submodelId" type="hidden" value="">
-				
-				<div class="modal-body">
-					<div class="container">
-						<div class="row">
-							<div class="col-3">
-								<label for="newValue_Text" class="form-label">New Value</label>
-							</div>
-							<div class="col-1"></div>
-							<div class="col-7">
-								<input type="text" name="newValue" class="form-control"
-									id="newValue_Text" required>
-							</div>
-							<div class="col-1"></div>
-						</div>
-					</div>
-				</div>
-			<div class="row" style="min-height : 2.5vh">
-			</div>
-			<div class="row">
-				<div class="container">
-					<div class="row">
-						<div class="col-9"></div>
-						<div class="col-2">
-							<button class="btn btn-primary" id="submodelElemButton">Update</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row" style="min-height : 2.5vh">
-			</div>
-			</div>
-		</div>
-	
-</div>
 {% endblock %}

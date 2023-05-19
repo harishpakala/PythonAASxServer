@@ -1,15 +1,16 @@
 from opcua import Client
-import uuid
 from datetime import datetime
+import asyncio
+import uuid
 
 try:
     from utils.utils import HistoryObject
 except ImportError:
-    from src.main.utils.utils import HistoryObject
+    from main.utils.utils import HistoryObject
 try:
     from abstract.assetendpointhandler import AsssetEndPointHandler
 except ImportError:
-    from src.main.abstract.assetendpointhandler import AsssetEndPointHandler
+    from main.abstract.assetendpointhandler import AsssetEndPointHandler
 
 
 class AsssetEndPointHandler(AsssetEndPointHandler):
@@ -77,34 +78,12 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             self.td_opcua_client.disconnect()
             return "Success"
 
-    def subscribe(self, uri, endPointSUbHandler):
-        plc_opcua_client = None
-        try:
-            host = uri.split("opc.tcp://")[1].split("/")[0].split(":")
-            ip_address = host[0]
-            port = host[1]
-            node_id = (uri.split("opc.tcp://")[1]).split("/")[-1]
-            plc_opcua_client = Client("opc.tcp://" + ip_address + ":" + port + "/")
-            plc_opcua_client.description = str(uuid.uuid4())
-            plc_opcua_client.connect()
-            node = plc_opcua_client.get_node(node_id)
-            sub = plc_opcua_client.create_subscription(10, endPointSUbHandler)
-            handle = sub.subscribe_data_change([node])
-        except Exception as e1:
-            print(e1)
-            try:
-                plc_opcua_client.disconnect()
-            except Exception as e2:
-                print(e1)
-
-
-class AssetOPCUAEndPointSubscription:
+class OPCUASubscriptionHandler:
 
     def __init__(self, td_property):
         self.td_property = td_property
 
     def datachange_notification(self, node, val, data):
-        aas_element = self.td_property.aasELement
         while not self.td_property.elem_lock:
             self.td_property.elem_lock = True
             _dt = datetime.now()
@@ -113,3 +92,35 @@ class AssetOPCUAEndPointSubscription:
             self.td_property.aasELement["value"] = val
             self.td_property.elem_lock = False
             break
+
+class OPCUASubscription:
+    def __init__(self,_uri,_handler):
+        self.poll = True
+        self.uri_nodeid = self.get_uri_nodeid(_uri)
+        self.handler = _handler
+
+    def get_uri_nodeid(self,uri):
+        host = uri.split("opc.tcp://")[1].split("/")[0].split(":")
+        ip_address = host[0]
+        port = host[1]
+        node_id = (uri.split("opc.tcp://")[1]).split("/")[-1]
+        _uri = "opc.tcp://" + ip_address + ":" + port + "/"
+        return [node_id,_uri]
+
+    async def subscribe(self, uri, sub_handler):
+        try:
+            while self.poll:
+                client = Client(url=self.uri_nodeid[0])
+                try:
+                    async with client:
+                        subscription = await client.create_subscription(500, sub_handler)
+                        tnode = (client.get_node(self.uri_nodeid[1]))
+                        await subscription.subscribe_data_change(tnode)
+                        while True:
+                            await asyncio.sleep(1)
+                            await client.check_connection()  # Throws a exception if connection is lost
+                except:
+                    await asyncio.sleep(1)
+        except Exception as e1:
+            print(str(e1))
+

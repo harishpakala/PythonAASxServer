@@ -9,7 +9,6 @@ try:
 except ImportError:
     import Queue as Queue
 import base64
-from datetime import datetime
 import logging
 import sys
 import time
@@ -930,6 +929,7 @@ class ProductionManager(object):
         # self.sendMessage(self.statusMessage)
 
     def sendMessage(self, sendMessage):
+        print(sendMessage)
         self.msgHandler.putObMessage(sendMessage)
 
     def receiveMessage(self, inMessage):

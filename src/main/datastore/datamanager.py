@@ -9,7 +9,7 @@ try:
 except ImportError:
     import Queue as Queue
 from datetime import datetime,timedelta
-
+import time
 class DataManager(object):
     '''
     classdocs
@@ -34,6 +34,7 @@ class DataManager(object):
         self.POLL = True
         self.pyAAS.serviceLogger.info('The Database manager is being started')
         while self.POLL:
+            time.sleep(0.01)
             if (self.InBoundProcessingQueue).qsize() != 0:
                 inMessage = self.InBoundProcessingQueue.get()
                 if inMessage["functionType"] == 1:

@@ -11,9 +11,9 @@ import json
 import os.path
 
 try:
-    from utils.utils import AASDescriptor,ThingDescriptionProperty,ThingDescription
+    from utils.utils import AASDescriptor,AIDProperty,AssetInterfaceDescription
 except ImportError:
-    from src.main.utils.aaslog import AASDescriptor,ThingDescriptionProperty,ThingDescription
+    from src.main.utils.aaslog import AASDescriptor,AIDProperty,AssetInterfaceDescription
 
 enabledState = {"Y": True, "N": False}
 
@@ -122,7 +122,7 @@ class ConfigParser:
         for key, submodel in submodels.items():
             submodelName = submodel["idShort"]
             if not (submodelName in ["Mechanical break down", "Nameplate", "TechnicalData", "ManufacturerDocumentation",
-                                     "Documentation", "Identification"]):  # ,"ThingDescription"
+                                     "Documentation", "Identification"]):  
                 submodelProperetyDict = self.getSubmodePropertyDict(submodel)
                 if (i == 0):
                     status = " fade show active"
@@ -197,11 +197,11 @@ class ConfigParser:
         Retrieves the Asset Interface Description submodel for the specified aas_id,
         extract the properties from the submodel and returns the list.
         """
-        thing_description = ThingDescription()
+        asset_interface_description = AssetInterfaceDescription()
         for tdELement in submodel["submodelElements"]:
             if tdELement["idShort"] == "properties":
                 for aid_property in tdELement["value"]:
-                    td_property = ThingDescriptionProperty()
+                    td_property = AIDProperty()
                     td_property.aasIdentifier = aasIdentifier
                     td_property.submodelIdentifier = submodel["id"]
                     
@@ -209,11 +209,11 @@ class ConfigParser:
                     for pConstraint in aid_property["qualifiers"]:
                         if (pConstraint["type"] == "type"):
                             td_property._type =  pConstraint["value"]
-                        if (pConstraint["type"] == "read_only"):
+                        if (pConstraint["type"] == "SerialNumber"):
                             td_property.read_only =  pConstraint["value"]
                         if (pConstraint["type"] == "observable"):
                             td_property.observable =  pConstraint["value"]                     
-                        if pConstraint["type"] == "updateFrequencey":
+                        if pConstraint["type"] == "updateFrequency":
                             td_property.update_frequencey =  pConstraint["value"]
                         if pConstraint["type"] == "unit":
                             td_property._unit = pConstraint["value"]
@@ -238,9 +238,9 @@ class ConfigParser:
                                 elif formConstraint["type"] == "requestType":
                                     td_property.requestType = formConstraint["value"]
             
-                    thing_description.add_property(td_property,aid_property["idShort"])
+                    asset_interface_description.add_property(td_property,aid_property["idShort"])
         
-        return thing_description                   
+        return asset_interface_description                   
 
     def get_skills(self,aasIdentifier) -> dict:
         submodel,status  = self.retrieve_submodel_semantic_id(aasIdentifier,"www.ovgu.de/submodel/operationaldata")

@@ -287,7 +287,7 @@ class PyAASxServer:
             _submodel,status = self.aasConfigurer.retrieve_submodel_semantic_id(aasIdentifier,"https://www.w3.org/2019/wot/td#Thing")
             if status :
                 shellObject = self.aasShellHashDict.__getHashEntry__(_uuid)
-                shellObject.thing_description = self.aasConfigurer.get_asset_interface_description(_submodel,aasIdentifier,_uuid) 
+                shellObject.asset_interface_description = self.aasConfigurer.get_asset_interface_description(_submodel,aasIdentifier,_uuid) 
         except Exception as E:
             self.serviceLogger.info(
                 "Error configuring the Asset end point. " + str(E)

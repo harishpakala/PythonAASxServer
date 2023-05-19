@@ -30,14 +30,14 @@ class Scheduler:
         try:
             for _uuid in self.pyaas.aasShellHashDict._getKeys():
                 _shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
-                if (_shellObject.thing_description != None):
-                    for property_name,_property in _shellObject.thing_description.properties.items():
-                        if _property.update_frequencey == "subscribe":
+                if (_shellObject.asset_interface_description != None):
+                    for property_name,_property in _shellObject.asset_interface_description.properties.items():
+                        if _property.update_frequency == "subscribe":
                             update_function = import_module("modules." + "f_property_subscribe").function
-                            self.jobs[property_name] = threading.Thread(target=update_function, args=(_shellObject._property,self.pyaas.asset_access_handlers,))
-                        elif str(_property.update_frequencey) != "0":
+                            self.jobs[property_name] = threading.Thread(target=update_function, args=(_property,self.pyaas.asset_access_handlers,))
+                        elif str(_property.update_frequency) != "0":
                             update_function = import_module("modules." + "f_property_read").function
-                            self.jobs[property_name] = threading.Thread(target=update_function, args=(_shellObject._property,self.pyaas.asset_access_handlers,))
+                            self.jobs[property_name] = threading.Thread(target=update_function, args=(_property,self.pyaas.asset_access_handlers,))
         except SystemError as e:
             self.pyaas.servself.serviceLogger.info(
                 "Error configuring PyAAS Scheduler " + str(e)
@@ -69,3 +69,19 @@ class Scheduler:
                 "Error stopping PyAAS Scheduler " + str(e)
             )
         return False
+    
+    def update_scheduler(self,aid_property) -> bool:
+        try:
+            if aid_property.update_frequency == "subscribe":
+                update_function = import_module("modules." + "f_property_subscribe").function
+                th = threading.Thread(target=update_function, args=(aid_property,self.pyaas.asset_access_handlers,))
+                th.start()
+            elif str(aid_property.update_frequency) != "0":
+                update_function = import_module("modules." + "f_property_read").function
+                th = threading.Thread(target=update_function, args=(aid_property,self.pyaas.asset_access_handlers,))
+                th.start()
+            return True
+        except SystemError as e:
+            print(str(e))
+        return False 
+    

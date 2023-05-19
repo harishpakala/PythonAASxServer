@@ -280,6 +280,15 @@
                         }
                     ],
                     "type": "GlobalReference"
+                },
+                {
+                    "type": "GlobalReference",
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "ww.ovgu.de/submodel/Test1234Submodel"
+                        }
+                    ]
                 }
             ]
         }
@@ -523,7 +532,7 @@
                     "idShort": "CommercialProperties",
                     "value": [
                         {
-                            "value": "DEU, Magdeburg, Universitätsplatz 2",
+                            "value": "DEU, Magdeburg, Universitaetsplatz 2",
                             "semanticId": {
                                 "keys": [
                                     {
@@ -893,7 +902,7 @@
                     "idShort": "CommercialProperties",
                     "value": [
                         {
-                            "value": "DEU, Magdeburg, Universitätsplatz 2",
+                            "value": "DEU, Magdeburg, Universitaetsplatz 2",
                             "semanticId": {
                                 "keys": [
                                     {
@@ -1206,7 +1215,7 @@
                             "qualifiers": []
                         },
                         {
-                            "value": "Universitätsplatz 2 ",
+                            "value": "Universitaetsplatz 2 ",
                             "semanticId": {
                                 "keys": [
                                     {
@@ -4837,7 +4846,7 @@
                     "idShort": "CommercialProperties",
                     "value": [
                         {
-                            "value": "DEU, Magdeburg, Universitätsplatz 2",
+                            "value": "DEU, Magdeburg, Universitaetsplatz 2",
                             "semanticId": {
                                 "keys": [
                                     {
@@ -5926,7 +5935,7 @@
                     "value": [
                         {
                             "language": "de",
-                            "text": "Otto von Guericke Universität Magdeburg"
+                            "text": "Otto von Guericke Universitaet Magdeburg"
                         }
                     ],
                     "modelType": "MultiLanguageProperty",
@@ -6005,7 +6014,7 @@
                             "value": [
                                 {
                                     "language": "de",
-                                    "text": "Universitätsplaz 2"
+                                    "text": "Universitaetsplaz 2"
                                 }
                             ],
                             "modelType": "MultiLanguageProperty",
@@ -6666,7 +6675,7 @@
                                     "qualifiers": []
                                 },
                                 {
-                                    "value": "Otto von Guericke Universität Magdeburg - LIA",
+                                    "value": "Otto von Guericke Universitaet Magdeburg - LIA",
                                     "semanticId": {
                                         "keys": [
                                             {
@@ -6684,7 +6693,7 @@
                                     "qualifiers": []
                                 },
                                 {
-                                    "value": "Otto von Guericke Universität Magdeburg - LIA",
+                                    "value": "Otto von Guericke Universitaet Magdeburg - LIA",
                                     "semanticId": {
                                         "keys": [
                                             {
@@ -6779,7 +6788,7 @@
                     "category": "CONSTANT",
                     "value": [
                         {
-                            "value": "Otto von Guericke Universität Magdeburg - LIA",
+                            "value": "Otto von Guericke Universitaet Magdeburg - LIA",
                             "semanticId": {
                                 "keys": [
                                     {
@@ -7171,7 +7180,7 @@
             "kind": "Instance",
             "submodelElements": [
                 {
-                    "value": "Otto von Guericke Universität Magdeburg",
+                    "value": "Otto von Guericke Universitaet Magdeburg",
                     "semanticId": {
                         "keys": [
                             {
@@ -7261,7 +7270,7 @@
                     "qualifiers": []
                 },
                 {
-                    "value": "Universität",
+                    "value": "Universitaet",
                     "semanticId": {
                         "keys": [
                             {
@@ -7279,7 +7288,7 @@
                     "qualifiers": []
                 },
                 {
-                    "value": "Otto von Guericke Universität Magdeburg",
+                    "value": "Otto von Guericke Universitaet Magdeburg",
                     "semanticId": {
                         "keys": [
                             {
@@ -10446,6 +10455,56 @@
             ],
             "modelType": "Submodel",
             "id": "ww.ovgu.de/submodel/3f8b66cc-8bb9-4da7-bd79-521bf6801c7c"
+        },
+        {
+            "idShort": "Test1234Submodel",
+            "category": "CONSTANT",
+            "id": "ww.ovgu.de/submodel/Test1234Submodel",
+            "modelType": "Submodel",
+            "submodelElements": [
+                {
+                    "idShort": "TestCollection",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "idShort": "ddddd111",
+                            "category": "CONSTANT",
+                            "value": "eeee",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "gddd",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "idShort": "hhh",
+                                    "category": "CONSTANT",
+                                    "value": "sss",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "Testc",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "idShort": "ddddd",
+                            "category": "CONSTANT",
+                            "value": "4444www",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ]
         }
     ],
     "conceptDescriptions": [
@@ -10475,7 +10534,7 @@
                         "definition": [
                             {
                                 "language": "DE",
-                                "text": "Bezeichnung für eine natürliche oder juristische Person, die für die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
+                                "text": "Bezeichnung fuer eine natuerliche oder juristische Person, die fuer die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
                             },
                             {
                                 "language": "EN",
@@ -10511,7 +10570,7 @@
                         ],
                         "shortName": [
                             {
-                                "language": "EN?",
+                                "language": "EN",
                                 "text": "ManufacturerTypName"
                             }
                         ],
@@ -10565,7 +10624,7 @@
                         "definition": [
                             {
                                 "language": "DE",
-                                "text": "Sammlung für reale physische Adresse"
+                                "text": "Sammlung fuer reale physische Adresse"
                             },
                             {
                                 "language": "EN",
@@ -10978,7 +11037,7 @@
                         "definition": [
                             {
                                 "language": "DE",
-                                "text": "Jahreszahl als Datumsangabe für die Fertigstellung des Objektes"
+                                "text": "Jahreszahl als Datumsangabe fuer die Fertigstellung des Objektes"
                             },
                             {
                                 "language": "EN",
@@ -11023,7 +11082,7 @@
                         "definition": [
                             {
                                 "language": "DE",
-                                "text": "Sammlungsdatei für Produktkennzeichnung"
+                                "text": "Sammlungsdatei fuer Produktkennzeichnung"
                             },
                             {
                                 "language": "EN",
@@ -11171,7 +11230,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Adressinformationen zu einem Geschäftspartner"
+                                "text": "Adressinformationen zu einem Geschaeftspartner"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -11231,7 +11290,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "administrative Abteilung einer Organisation, in der ein Geschäftspartner vertreten ist"
+                                "text": "administrative Abteilung einer Organisation, in der ein Geschaeftspartner vertreten ist"
                             },
                             {
                                 "language": "en",
@@ -11281,7 +11340,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Straße"
+                                "text": "Strasse"
                             }
                         ],
                         "shortName": [
@@ -11299,7 +11358,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Straßenname und Hausnummer"
+                                "text": "Strassenname und Hausnummer"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -11665,7 +11724,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Ländercode"
+                                "text": "Laendercode"
                             }
                         ],
                         "shortName": [
@@ -11747,7 +11806,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Umsatzsteuer-ID des Geschäftspartners"
+                                "text": "Umsatzsteuer-ID des Geschaeftspartners"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -11811,7 +11870,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "einfacher Text, der Adressinformationen kennzeichnet, bei denen kein Merkmal zur Verfügung steht"
+                                "text": "einfacher Text, der Adressinformationen kennzeichnet, bei denen kein Merkmal zur Verfuegung steht"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -11857,7 +11916,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "zusätzlicher Online-Verweis"
+                                "text": "zusaetzlicher Online-Verweis"
                             }
                         ],
                         "shortName": [
@@ -11875,7 +11934,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Angabe einer Web-Adresse, die zusätzliche Informationen zum Produkt oder Kontaktdaten enthält"
+                                "text": "Angabe einer Web-Adresse, die zusaetzliche Informationen zum Produkt oder Kontaktdaten enthaelt"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -12003,7 +12062,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "vollständige Telefonnummer, unter der ein Geschäftspartner erreichbar ist"
+                                "text": "vollstaendige Telefonnummer, unter der ein Geschaeftspartner erreichbar ist"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -12131,7 +12190,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "vollständige Telefonnummer, unter der das Faxgerät eines Geschäftspartners erreichbar ist"
+                                "text": "vollstaendige Telefonnummer, unter der das Faxgeraet eines Geschaeftspartners erreichbar ist"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -12195,7 +12254,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "E-Mail-Adresse und Angaben zur Verschlüsselung"
+                                "text": "E-Mail-Adresse und Angaben zur Verschluesselung"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -12259,7 +12318,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "E-Mailadresse eines Geschäftspartners"
+                                "text": "E-Mailadresse eines Geschaeftspartners"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -12323,7 +12382,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Sammlung für Produktkennzeichnungen"
+                                "text": "Sammlung fuer Produktkennzeichnungen"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -12376,7 +12435,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "erfasst Information über die Produktkennzeichnung"
+                                "text": "erfasst Information ueber die Produktkennzeichnung"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -12430,7 +12489,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Marktüblicher Name der Produktkennzeichnung"
+                                "text": "Marktueblicher Name der Produktkennzeichnung"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -12594,7 +12653,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Bezeichnung für eine natürliche oder juristische Person, die für die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
+                                "text": "Bezeichnung fuer eine natuerliche oder juristische Person, die fuer die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
                             },
                             {
                                 "language": "en",
@@ -12662,7 +12721,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Bilddatei für Logo des Herstellers im gebräuchlichem Format (.png, .jpg). "
+                                "text": "Bilddatei fuer Logo des Herstellers im gebraeuchlichem Format (.png, .jpg). "
                             },
                             {
                                 "language": "en",
@@ -12787,7 +12846,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "eindeutiger Bestellschlüssel des Herstellers"
+                                "text": "eindeutiger Bestellschluessel des Herstellers"
                             },
                             {
                                 "language": "en",
@@ -12855,7 +12914,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "eindeutiger Bestellschlüssel des Herstellers um exakt gleiches Produkt zu bestellen"
+                                "text": "eindeutiger Bestellschluessel des Herstellers um exakt gleiches Produkt zu bestellen"
                             },
                             {
                                 "language": "en",
@@ -12901,7 +12960,7 @@
                         "preferredName": [
                             {
                                 "language": "de",
-                                "text": "Bilddatei für Produkt"
+                                "text": "Bilddatei fuer Produkt"
                             },
                             {
                                 "language": "en",
@@ -12923,7 +12982,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Bilddatei für das assozierte Produkt im gebräuchlichem Format (.png, .jpg). "
+                                "text": "Bilddatei fuer das assozierte Produkt im gebraeuchlichem Format (.png, .jpg). "
                             },
                             {
                                 "language": "en",
@@ -12980,7 +13039,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Produktklassifizierungen durch Assoziation mit Produktklassen in gebräuchlichen Klassifizierungssystemen."
+                                "text": "Produktklassifizierungen durch Assoziation mit Produktklassen in gebraeuchlichen Klassifizierungssystemen."
                             },
                             {
                                 "language": "en",
@@ -13094,7 +13153,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Gebräuchlicher Name für das Produkt-Klassifikationssystem"
+                                "text": "Gebraeuchlicher Name fuer das Produkt-Klassifikationssystem"
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -13257,7 +13316,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Merkmal, welches nicht über ein gebräuchliches Klassifikationssystem beschrieben ist"
+                                "text": "Merkmal, welches nicht ueber ein gebraeuchliches Klassifikationssystem beschrieben ist"
                             },
                             {
                                 "language": "en",
@@ -13292,7 +13351,7 @@
                         "preferredName": [
                             {
                                 "language": "de",
-                                "text": "Hauptsektion für Merkmale"
+                                "text": "Hauptsektion fuer Merkmale"
                             },
                             {
                                 "language": "en",
@@ -13314,7 +13373,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Haupt-Unterteilungsmöglichkeit für Merkmale. Kann über idShort benannt werden."
+                                "text": "Haupt-Unterteilungsmoeglichkeit fuer Merkmale. Kann ueber idShort benannt werden."
                             },
                             {
                                 "language": "en",
@@ -13349,7 +13408,7 @@
                         "preferredName": [
                             {
                                 "language": "de",
-                                "text": "Untersektion für Merkmale"
+                                "text": "Untersektion fuer Merkmale"
                             },
                             {
                                 "language": "en",
@@ -13371,7 +13430,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Untergeordnete Unterteilungsmöglichkeit für Merkmale. Kann über idShort benannt werden."
+                                "text": "Untergeordnete Unterteilungsmoeglichkeit fuer Merkmale. Kann ueber idShort benannt werden."
                             },
                             {
                                 "language": "en",
@@ -13428,7 +13487,7 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Weiterführende Informationen zum Produkt, der Gültigkeit der gemachten Angaben und zu diesem Datensatz"
+                                "text": "Weiterfuehrende Informationen zum Produkt, der Gueltigkeit der gemachten Angaben und zu diesem Datensatz"
                             },
                             {
                                 "language": "en",
@@ -13473,7 +13532,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Gültig am"
+                                "text": "Gueltig am"
                             }
                         ],
                         "unit": "",
@@ -13485,7 +13544,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Aussage in Textform, etwa Gültigkeitsbereich der Aussagen."
+                                "text": "Aussage in Textform, etwa Gueltigkeitsbereich der Aussagen."
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"
@@ -13512,7 +13571,7 @@
                         "preferredName": [
                             {
                                 "language": "DE",
-                                "text": "Informationen gültig am"
+                                "text": "Informationen gueltig am"
                             },
                             {
                                 "language": "EN",
@@ -13526,7 +13585,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Gültig am"
+                                "text": "Gueltig am"
                             }
                         ],
                         "unit": "",
@@ -13538,7 +13597,7 @@
                             },
                             {
                                 "language": "DE",
-                                "text": "Bezeichnet ein Datum, an welchem die im Submodel genannten Daten für das assoziierte Produkt gültig waren. Etwa: Tag der letzten Aktualisierung der Daten."
+                                "text": "Bezeichnet ein Datum, an welchem die im Submodel genannten Daten fuer das assoziierte Produkt gueltig waren. Etwa: Tag der letzten Aktualisierung der Daten."
                             }
                         ],
                         "modelType": "DataSpecificationIEC61360"

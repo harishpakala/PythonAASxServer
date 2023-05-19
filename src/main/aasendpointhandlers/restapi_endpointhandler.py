@@ -25,15 +25,11 @@ except ImportError:
     from src.main.abstract.endpointhandler import AASEndPointHandler
 
 try:
-    from aasendpointhandlers.rstapi_endpointresources import AssetAdministrationShells,AssetAdministrationShellById,AssetAdministrationShell,SubmodelReferences,DeleteSubmodelReference,AssetInformation,Submodel,SubmodelElements,SubmodelElementByPath,FileByPath,ConceptDescriptions,ConceptDescriptionById,Submodels,SubmodelById,Submodel_SRI,SubmodelElements_SRI,SubmodelElementByPath_SRI,FileByPath_SRI,SubmodelElementByPath_history,Submodels_shell#,#AssetAdministrationShell,ConceptDescriptions,ConceptDescription,Submodels,Submodel,AssetAdministrationShellsSubmodelRefs,SubmodelELements,SubmodelElementByIdShortPath,AASSubmodelElementByIdShortPath,AASStaticSource,AASStaticWebSources,AASRTDataVisualizer,AASWebInterfaceConversationMessage,AASWebInterfaceRegister
+    from aasendpointhandlers.rstapi_endpointresources import AssetAdministrationShells,AssetAdministrationShellById,AssetAdministrationShell,SubmodelReferences,DeleteSubmodelReference,AssetInformation,Submodel,SubmodelElements,SubmodelElementByPath,FileByPath,ConceptDescriptions,ConceptDescriptionById,Submodels,SubmodelById,Submodel_SRI,SubmodelElements_SRI,SubmodelElementByPath_SRI,FileByPath_SRI,SubmodelElementByPath_history,Submodels_shell, RetrieveMessage,AASWebInterfaceHome,AASWebInterface,AASWebInterfaceSearch,AASWebInterfaceSubmodels,AASWebInterfaceSubmodelElemValue,AASWebInterfaceSKillLog,AASWebInterfaceProductionManagement,AASDocumentationDownload,AASDocumentationDownload,AASDocumentationDownloadSubmodel,AASStaticConfigSource,AASStaticSource,AASWebInterfaceRegister,AASWebInterfaceCFP,AASAssetInterfaceDescription
 except ImportError:
-    from src.main.aasendpointhandlers.rstapi_endpointresources import AssetAdministrationShells,AssetAdministrationShellById,AssetAdministrationShell,SubmodelReferences,DeleteSubmodelReference,AssetInformation,Submodel,SubmodelElements,SubmodelElementByPath,FileByPath,ConceptDescriptions,ConceptDescriptionById,Submodels,SubmodelById,Submodel_SRI,SubmodelElements_SRI,SubmodelElementByPath_SRI,FileByPath_SRI,SubmodelElementByPath_history,Submodels_shell#,AssetAdministrationShell,ConceptDescriptions,ConceptDescription,Submodels,Submodel,AssetAdministrationShellsSubmodelRefs,SubmodelELements,SubmodelElementByIdShortPath,AASSubmodelElementByIdShortPath,AASStaticSource,AASStaticWebSources,AASRTDataVisualizer,AASWebInterfaceConversationMessage,AASWebInterfaceRegister
+    from main.aasendpointhandlers.rstapi_endpointresources import AssetAdministrationShells,AssetAdministrationShellById,AssetAdministrationShell,SubmodelReferences,DeleteSubmodelReference,AssetInformation,Submodel,SubmodelElements,SubmodelElementByPath,FileByPath,ConceptDescriptions,ConceptDescriptionById,Submodels,SubmodelById,Submodel_SRI,SubmodelElements_SRI,SubmodelElementByPath_SRI,FileByPath_SRI,SubmodelElementByPath_history,Submodels_shell, RetrieveMessage,AASWebInterfaceHome,AASWebInterface,AASWebInterfaceSearch,AASWebInterfaceSubmodels,AASWebInterfaceSubmodelElemValue,AASWebInterfaceSKillLog,AASWebInterfaceProductionManagement,AASDocumentationDownload,AASDocumentationDownload,AASDocumentationDownloadSubmodel,AASStaticConfigSource,AASStaticSource,AASWebInterfaceRegister,AASWebInterfaceCFP,AASAssetInterfaceDescription
 
-try:
-    from aasendpointhandlers.rstapi_endpointresources import RetrieveMessage,AASWebInterfaceHome,AASWebInterface,AASWebInterfaceSearch,AASWebInterfaceSubmodels,AASWebInterfaceSubmodelElemValue,AASWebInterfaceSKillLog,AASWebInterfaceProductionManagement,AASDocumentationDownload,AASDocumentationDownload,AASDocumentationDownloadSubmodel,AASStaticConfigSource,AASStaticSource,AASRTDataVisualizer,AASWebInterfaceRegister,AASWebInterfaceCFP
-except ImportError:
-    from src.main.aasendpointhandlers.rstapi_endpointresources import RetrieveMessage,AASWebInterfaceHome,AASWebInterface,AASWebInterfaceSearch,AASWebInterfaceSubmodels,AASWebInterfaceSubmodelElemValue,AASWebInterfaceSKillLog,AASWebInterfaceProductionManagement,AASDocumentationDownload,AASDocumentationDownload,AASDocumentationDownloadSubmodel,AASStaticConfigSource,AASStaticSource,AASRTDataVisualizer,AASWebInterfaceRegister,AASWebInterfaceCFP
-    
+  
 drv_rst_app = Flask(__name__)
 drv_rst_app.secret_key = os.urandom(24)
 #drv_rst_app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -73,8 +69,8 @@ class AASEndPointHandler(AASEndPointHandler):
         #drv_rst_api.add_resource(AASStaticSource, "/web/<filename>",resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AASStaticConfigSource, "/config/<path:filename>",resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AASStaticWebSources, "/web/<string:webtype>/<filename>",resource_class_args=tuple([self.pyaas]))
-        drv_rst_api.add_resource(AASRTDataVisualizer, "/<path:aasIdentifier>/rtdata/visualize",resource_class_args=tuple([self.pyaas]))
-       
+        drv_rst_api.add_resource(AASAssetInterfaceDescription, "/shells/<path:aasIdentifier>/aid/webui",resource_class_args=tuple([self.pyaas]))
+       #
         drv_rst_api.add_resource(AASWebInterfaceSearch,"/<path:aasIdentifier>/search",resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AASWebInterfaceCFP,"/<path:conversationId>/cfp",resource_class_args=tuple([self.pyaas]))
         # REST API

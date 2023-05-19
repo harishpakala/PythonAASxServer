@@ -55,14 +55,15 @@ class AASSubmodelParser(object):
     def parseSubmodelCollection(self,submodelColl,_parentId,_update=False):
         _newId =_parentId +"."+ submodelColl["idShort"]
         collectionElemIds =  []
-        for _submodelElement in submodelColl["value"]:
-            if (_submodelElement["modelType"] != "SubmodelElementCollection"):
-                collectionElemIds.append(self.parseDataElement(_submodelElement, _newId,_update))
-            else:
-                collectionElemIds.append(self.parseSubmodelCollection(_submodelElement,_newId,_update))
-        submodelColl["value"].clear()
-        for _uid in collectionElemIds:
-            submodelColl["value"].append(_uid)
+        if "value" in list(submodelColl.keys()):
+            for _submodelElement in submodelColl["value"]:
+                if (_submodelElement["modelType"] != "SubmodelElementCollection"):
+                    collectionElemIds.append(self.parseDataElement(_submodelElement, _newId,_update))
+                else:
+                    collectionElemIds.append(self.parseSubmodelCollection(_submodelElement,_newId,_update))
+            submodelColl["value"].clear()
+            for _uid in collectionElemIds:
+                submodelColl["value"].append(_uid)
         if (_update):
             return  self.updatePropertyElement(_submodelElement,_newId)
         else:
@@ -161,24 +162,26 @@ class AAS_Database_Server(object):
             aasShellObject.parse(_aasShell)
             
     def processCollectionElements(self,collectionElem):
-        values = []
-        for _subid in collectionElem["value"]:
-            subelem = (self.submodelHashDict.__getHashEntry__(_subid)).getElement()
-            if (subelem["modelType"] != "SubmodelElementCollection"):
-                values.append(subelem)
-            else:
-                values.append(self.processCollectionElements(subelem))
-        collectionElem["value"] = values
+        if "value" in list(collectionElem.keys()):
+            values = []
+            for _subid in collectionElem["value"]:
+                subelem = (self.submodelHashDict.__getHashEntry__(_subid)).getElement()
+                if (subelem["modelType"] != "SubmodelElementCollection"):
+                    values.append(subelem)
+                else:
+                    values.append(self.processCollectionElements(subelem))
+            collectionElem["value"] = values
         return collectionElem
         
     def deleteCollectionElems(self,collectionElem):
-        for _subid in collectionElem["value"]:
-            _aasElementObject = (self.submodelHashDict.__getHashEntry__(_subid))
-            subelem = _aasElementObject.getElement()
-            if (subelem["modelType"] == "SubmodelElementCollection"):
-                self.deleteCollectionElems(subelem)
-            self.submodelHashDict.__deleteHashEntry__(_subid)
-            self.aasHashDict.__deleteHashEntry__(_aasElementObject.getIdShortPath())
+        if "value" in list(collectionElem.keys()): 
+            for _subid in collectionElem["value"]:
+                _aasElementObject = (self.submodelHashDict.__getHashEntry__(_subid))
+                subelem = _aasElementObject.getElement()
+                if (subelem["modelType"] == "SubmodelElementCollection"):
+                    self.deleteCollectionElems(subelem)
+                self.submodelHashDict.__deleteHashEntry__(_subid)
+                self.aasHashDict.__deleteHashEntry__(_aasElementObject.getIdShortPath())
         
     def postSubmodelElem(self,data):
         try:
@@ -1254,7 +1257,10 @@ class AAS_Database_Server(object):
                     else:
                         _newuuid = aasSmParser.parseDataElement(_elemData, _submodelIdentifier)
                     _sid = (self.aasHashDict.__getHashEntry__(_submodelIdentifier).__getId__())
-                    (self.submodelHashDict.__getHashEntry__(_sid)).aasELement["submodelElements"].append(_newuuid)
+                    if "submodelElements" in list((self.submodelHashDict.__getHashEntry__(_sid)).aasELement.keys()):
+                        (self.submodelHashDict.__getHashEntry__(_sid)).aasELement["submodelElements"].append(_newuuid)
+                    else:
+                        (self.submodelHashDict.__getHashEntry__(_sid)).aasELement["submodelElements"] = [_newuuid]
                     return "Submodel Element is created Successfully",True,201
             else:
                 return "The submodel is not found", True,404             
@@ -1364,7 +1370,10 @@ class AAS_Database_Server(object):
                                     _newuuid = aasSmParser.parseSubmodelCollection(_elemData, _parentId)
                                 else:
                                     _newuuid = aasSmParser.parseDataElement(_elemData, _parentId)
-                                (self.submodelHashDict.__getHashEntry__(_pid)).aasELement["value"].append(_newuuid)
+                                if ("value" in list(parentElement.keys())):
+                                    (self.submodelHashDict.__getHashEntry__(_pid)).aasELement["value"].append(_newuuid)
+                                else:
+                                    (self.submodelHashDict.__getHashEntry__(_pid)).aasELement["value"] = [_newuuid]
                                 return "Submodel element created successfully", True,201                                    
                             else:
                                 return "The new element cannot be created at this place",False,400                        
@@ -1654,13 +1663,16 @@ class AAS_Database_Server(object):
             submodelList = []
     
             for submodelRef in _aasShell.aasELement["submodels"]:
-                submodelId = submodelRef["keys"][0]["value"]
-                _suid = (self.aasHashDict.__getHashEntry__(submodelId).__getId__())
-                submodelidShort = self.submodelHashDict.__getHashEntry__(_suid).idShort            
-                bString = base64.b64encode(bytes(submodelId,'utf-8'))
-                base64_string= bString.decode('utf-8')
-                submodelList.append({base64_string:submodelidShort})
-                
+                try:
+                    submodelId = submodelRef["keys"][0]["value"]
+                    _suid = (self.aasHashDict.__getHashEntry__(submodelId).__getId__())
+                    submodelidShort = self.submodelHashDict.__getHashEntry__(_suid).idShort            
+                    bString = base64.b64encode(bytes(submodelId,'utf-8'))
+                    base64_string= bString.decode('utf-8')
+                    submodelList.append({base64_string:submodelidShort})
+                except Exception as E:
+                    print(str(E))
+                    pass
             returnDict["submodelList"] = submodelList
             returnDict["skillList"] = list(_aasShell.skills.keys())
             returnDict["thumbnail"] = ((_aasShell.aasELement["assetInformation"]["defaultThumbnail"]["path"]).split("file:/"))[1]    
@@ -1669,8 +1681,11 @@ class AAS_Database_Server(object):
             returnDict["_aasShell"] = _aasShell
             returnDict["productionStepList"] = _aasShell.productionStepList
             returnDict["conversationIdList"] = _aasShell.conversationIdList
-            
+            if _aasShell.asset_interface_description != None:
+                returnDict["asssetInterfaceList"] = list(_aasShell.asset_interface_description.properties.keys())
+            returnDict["asssetInterfaceList"] = []
         except Exception as e:
+            print(str(e))
             return returnDict,False 
         return returnDict,True
 #         

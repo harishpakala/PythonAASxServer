@@ -183,7 +183,7 @@
 					<p> Select the Submodel</p>
 				</div>
 				<div class = "col-6">
-					<select name ="submodel_id_idshort" class="form-select" multiple aria-label="multiple select example">
+					<select name ="submodel_id_idshort" class="form-select" aria-label="Default select example">
 				  	{% for submodel in submodelList %}
 				  	{% for _sid, _sidShort in submodel.items() %}
 						<option value="{{_sid}}.{{_sidShort}}">{{_sidShort}}</option>
@@ -195,7 +195,16 @@
 				
 			</div>	  		
 			<div class="row" style="min-height : 2.5vh"></div>
-			
+			<div class="row">
+				<div class = "col-6">
+					<p> idShortPath</p>
+				</div>
+				<div class = "col-6">
+					<input type="text" class="form-control" 
+					name="idShortPath" value="">
+				</div>
+			</div>
+			<div class="row" style="min-height : 2.5vh"></div>
 			<div class="row">
 				<div class="container">
 					<div class="row">

@@ -4,6 +4,43 @@ function addSubmodeltoForm(exdomain){
 	_submodel = new Submodel();
     _submodel.createDom("submodel-form",exdomain);	
 }
+function addAASElementtoForm(event,exdomain,formId,aasIdentifier,submodelId,IdShortPath){
+	event.stopPropagation();
+    event.preventDefault();
+    console.log(formId);
+    aas_element_form = document.getElementById(formId);
+    aas_element_form.innerHTML = '';
+    aas_element_form.innerHTML = `<form onsubmit="createNewAASElement(event,'aas_element_form','`+aasIdentifier+`','`+submodelId+`','`+IdShortPath+`');return false;">
+				<div class="submodel-form" id = "aas_element_form">
+					
+				</div>
+				<div class="row" style="min-height : 2.5vh;"></div>
+				<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-9"></div>
+						<div class="col-2">
+							<button class="btn btn-primary">ADD</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			</form>`;
+    var aas_elem_type = document.getElementById("aas_elem_type").value;
+    if (aas_elem_type === "SubmodelElementCollection"){
+    	_aas_elem = new SubmodelElementCollection();
+    	_aas_elem.createDom(formId,exdomain);	
+    }
+    else if (aas_elem_type === "Property"){
+    	_aas_elem = new Property();
+    	_aas_elem.createDom(formId,exdomain);	
+    }
+    else if (aas_elem_type === "Range"){
+    	_aas_elem = new Range();
+    	_aas_elem.createDom(formId,exdomain);	
+    }
+	
+}
 function createNewSubmodel1(event,element_form_id,aasIdentifier){
 	event.stopPropagation();
     event.preventDefault();
@@ -24,6 +61,30 @@ function createNewSubmodel1(event,element_form_id,aasIdentifier){
 	}
 	httpGetRequest.send(FD);
 }
+function createNewAASElement(event,element_form_id,aasIdentifier,submodelId,idShortPath){
+	event.stopPropagation();
+    event.preventDefault();
+    console.log("Preparing the request");
+    $("#new_aas_element").modal('hide');
+    
+	var httPOSTRequest = new XMLHttpRequest();
+	if (submodelId === idShortPath){
+		httPOSTRequest.open('POST',"/submodels/"+btoa(submodelId)+"/submodel/submodel-elements");	
+		httPOSTRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		httPOSTRequest.onload = () => {
+			window.location.replace('/shells/'+aasIdentifier+'/aas/submodels/'+btoa(submodelId)+'/submodel/webui');
+		}
+		httPOSTRequest.send(JSON.stringify(_aas_elem.serialize()));
+	}
+	else{
+		httPOSTRequest.open('POST',"/submodels/"+btoa(submodelId)+"/submodel/submodel-elements/"+idShortPath);	
+		httPOSTRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		httPOSTRequest.onload = () => {
+			window.location.replace('/shells/'+aasIdentifier+'/aas/submodels/'+btoa(submodelId)+'/submodel/webui');
+		}
+		httPOSTRequest.send(JSON.stringify(_aas_elem.serialize()));
+	}
+}
 
 function getCollectionData(_uuid){
 	let collectionElem = linearData1[_uuid]
@@ -39,6 +100,7 @@ function getCollectionData(_uuid){
 	return collectionElem.serialize();
 }
 function saveSubmodel(event,submodelIdentifier,aasIdentifier){
+	console.log("Test123");
 	event.stopPropagation();
     event.preventDefault();
     let _submodel_New = linearData1[submodelIdentifier].serialize();
