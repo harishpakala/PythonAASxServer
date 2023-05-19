@@ -785,7 +785,10 @@ class AAS_Database_Server(object):
                 _submodelRef = data["_Reference"]
                 _id = self.aasHashDict.__getHashEntry__(_shellId).__getId__()
                 _aasShell = self.aasShellHashDict.__getHashEntry__(_id).getElement()
-                _aasShell["submodels"].append(_submodelRef)
+                if "submodels" in list(_aasShell.keys()):
+                    _aasShell["submodels"].append(_submodelRef)
+                else:
+                    _aasShell["submodels"] = [_submodelRef]
                 self.aasShellHashDict.__getHashEntry__(_id).setElement(_aasShell)
                 return "Submodel reference created successfully", True,201
         except Exception as E:

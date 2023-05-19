@@ -81,11 +81,9 @@ class AASEndPointHandler(AASEndPointHandler):
         drv_rst_api.add_resource(SubmodelReferences,"/shells/<path:aasIdentifier>/aas/submodels", resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(DeleteSubmodelReference,"/shells/<path:aasIdentifier>/aas/submodels/<path:submodelIdentifier>", resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AssetInformation,"/shells/<path:aasIdentifier>/aas/asset-information", resource_class_args=tuple([self.pyaas]))
+        drv_rst_api.add_resource(Submodels_shell,"/shells/<path:aasIdentifier>/aas/submodels", resource_class_args=tuple([self.pyaas]))
 
         drv_rst_api.add_resource(Submodel,"/shells/<path:aasIdentifier>/aas/submodels/<path:submodelIdentifier>/submodel", resource_class_args=tuple([self.pyaas]))
-        #extra
-        drv_rst_api.add_resource(Submodels_shell,"/shells/<path:aasIdentifier>/aas/submodels", resource_class_args=tuple([self.pyaas]))
-        #extraa
         drv_rst_api.add_resource(SubmodelElements,"/shells/<path:aasIdentifier>/aas/submodels/<path:submodelIdentifier>/submodel/submodel-elements", resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(SubmodelElementByPath,"/shells/<path:aasIdentifier>/aas/submodels/<path:submodelIdentifier>/submodel/submodel-elements/<path:idShortPath>", resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(SubmodelElementByPath_history,"/shells/<path:aasIdentifier>/aas/submodels/<path:submodelIdentifier>/submodel/submodel-elements/<path:idShortPath>/history", resource_class_args=tuple([self.pyaas]))

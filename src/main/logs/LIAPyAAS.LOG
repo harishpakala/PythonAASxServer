@@ -4463,3 +4463,39 @@ On instance['idShort']:
 05/19/2023 09:28:15 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
 05/19/2023 09:28:15 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
 05/19/2023 09:28:18 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+05/19/2023 10:46:14 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/19/2023 10:46:14 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/19/2023 10:46:14 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/19/2023 10:46:14 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - The message handler started
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - The message handler started
+05/19/2023 10:46:15 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+05/19/2023 10:46:19 AM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+05/19/2023 10:51:39 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+05/19/2023 10:51:43 AM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - The message handler started
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - The message handler started
+05/19/2023 10:54:09 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+05/19/2023 10:54:13 AM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+05/19/2023 10:54:20 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+05/19/2023 10:54:24 AM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it

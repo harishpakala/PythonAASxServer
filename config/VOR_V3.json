@@ -260,6 +260,74 @@
                     "type": "GlobalReference"
                 }
             }
+        },
+        {
+            "administration": {},
+            "assetInformation": {
+                "assetKind": "Instance",
+                "defaultThumbnail": {
+                    "path": "file://aasx/files/testssts.png"
+                },
+                "globalAssetId": {
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "Test123"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            },
+            "category": "CONSTANT",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "Test123"
+                }
+            ],
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "Test123"
+                }
+            ],
+            "id": "ww.ovgu.de/aas/2a3b731a-c027-47b9-b7ce-6bd4a85ca8cf",
+            "idShort": "Test123",
+            "modelType": "AssetAdministrationShell",
+            "submodels": []
+        },
+        {
+            "assetInformation": {
+                "assetKind": "Instance",
+                "defaultThumbnail": {
+                    "path": "file://aasx/files/testssts.png"
+                },
+                "globalAssetId": {
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "Test123"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            },
+            "category": "CONSTANT",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "Test123"
+                }
+            ],
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "Test123"
+                }
+            ],
+            "id": "ww.ovgu.de/aas/2a3b731a-c027-47b9-b7ce-6bd4a85ca8cf_TestSample",
+            "idShort": "Test123",
+            "modelType": "AssetAdministrationShell"
         }
     ],
     "submodels": [

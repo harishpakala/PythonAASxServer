@@ -690,3 +690,11 @@
  #############################################################################
 05/19/2023 09:26:04 AM - cb74ca50-5012-44cc-ba11-6e530b586f1f_Register - INFO - StartState: WaitforNewOrder
 05/19/2023 09:26:04 AM - cb74ca50-5012-44cc-ba11-6e530b586f1f_Register - INFO - InputDocument : Order
+05/19/2023 10:46:15 AM - f8397e0d-efc7-4978-9d9d-8333d63c81cf_Register - INFO - 
+ #############################################################################
+05/19/2023 10:46:15 AM - f8397e0d-efc7-4978-9d9d-8333d63c81cf_Register - INFO - StartState: WaitforNewOrder
+05/19/2023 10:46:15 AM - f8397e0d-efc7-4978-9d9d-8333d63c81cf_Register - INFO - InputDocument : Order
+05/19/2023 10:54:09 AM - 70f96227-6a54-49b0-9f0a-ef385b6e684d_Register - INFO - 
+ #############################################################################
+05/19/2023 10:54:09 AM - 70f96227-6a54-49b0-9f0a-ef385b6e684d_Register - INFO - StartState: WaitforNewOrder
+05/19/2023 10:54:09 AM - 70f96227-6a54-49b0-9f0a-ef385b6e684d_Register - INFO - InputDocument : Order
