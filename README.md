@@ -86,7 +86,7 @@ Use examples liberally, and show the expected output if you can. It's helpful to
 |<http://localhost:60012/submodels/{path:submodelIdentifier}> | ✔️|✔️|❌|❌|
 |<http://localhost:60012/submodels/{path:submodelIdentifier}/submodel> | ✔️|✔️|❌|❌|
 |<http://localhost:60012/submodels/{path:submodelIdentifier}/submodel/submodel-elements> | ✔️|❌|❌|✔️|
-|<http://localhost:60012/submodels/{path:submodelIdentifier}/submodel/submodel-elements/[path:idShortPath}> | ✔️|✔️|✔️|✔️|
+|<http://localhost:60012/submodels/{path:submodelIdentifier}/submodel/submodel-elements/{path:idShortPath}> | ✔️|✔️|✔️|✔️|
 |<http://localhost:60012/submodels/{path:submodelIdentifier}/submodel/submodel-elements/{path:idShortPath}/attachment>| ✔️|✔️|❌|❌|
 |<http://localhost:60012/concept-descriptions>| ✔️|❌|❌|✔️|
 |<http://localhost:60012/concept-descriptions/{path:cdIdentifier}>| ✔️|✔️|✔️|❌|
