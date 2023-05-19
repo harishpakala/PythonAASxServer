@@ -69,13 +69,19 @@ Within a particular ecosystem, there may be a common way of installing things, s
 ## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-|                         HTTP URI                                                 |        GET         |        PUT         |       DELETE       |     POST      |
-|----------------------------------------------------------------------------------| ------------------ | ------------------ | ------------------ | --------------|
-|<http://localhost:9021/registry/shell-descriptors>                                | :heavy_check_mark: |       :x:          |      :x:         |:heavy_check_mark:|
-|<http://localhost:9021/registry/shell-descriptors/{aas-identifier}>               | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |    :x:        |
-|<http://localhost:9021/registry/shell-descriptors/{aas-identifier}/submodel-descriptors>     | :heavy_check_mark: | :x: | :x: | :heavy_check_mark:|
-|<http://localhost:9021//registry/shell-descriptors/{aas-identifier}/submodel-descriptors/{path:submodelId}> | :heavy_check_mark: |       :x:          |      :x:           |        :x:        |
-
+|                         HTTP URI                                                 |        GET         |        PUT         |       DELETE       |     POST         |
+|----------------------------------------------------------------------------------| ------------------ | ------------------ | ------------------ | -----------------|
+|<http://localhost:60012/shells>                                                   | ✔️                |       ❌           |      ❌           |✔️|
+|<http://localhost:60012/shells/{path:aasIdentifier}>                              | ✔️                |       ✔️           |      ✔️           |❌|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas>                          | ✔️                |       ✔️           |      ❌           |❌|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas/submodels>                | ✔️                |       ❌           |      ❌           |✔️|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas/submodels/{path:submodelIdentifier}>          | ❌                |       ❌           |      ✔️           |❌|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas/asset-information>        | ✔️                |      ✔️           |      ❌           |❌|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas/submodels>        | ✔️                |      ❌           |      ❌           |❌|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas/submodels/{path:submodelIdentifier}/submodel>         | ✔️                |      ✔️           |      ❌           |❌|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas/submodels/{path:submodelIdentifier}/submodel/submodel-elements>    | ✔️                |       ❌           |      ❌           |✔️|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas/submodels/{path:submodelIdentifier}/submodel/submodel-elements/{path:idShortPath}>| ✔️                |       ✔️           |      ✔️           |✔️|
+|<http://localhost:60012/shells/{path:aasIdentifier}/aas/submodels/{path:submodelIdentifier}/submodel/submodel-elements/{path:idShortPath}/attachment>| ✔️                |      ✔️           |      ❌           |❌|
 
 
 ## Support
