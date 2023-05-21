@@ -7,7 +7,6 @@ function addSubmodeltoForm(exdomain){
 function addAASElementtoForm(event,exdomain,formId,aasIdentifier,submodelId,IdShortPath){
 	event.stopPropagation();
     event.preventDefault();
-    console.log(formId);
     aas_element_form = document.getElementById(formId);
     aas_element_form.innerHTML = '';
     aas_element_form.innerHTML = `<form onsubmit="createNewAASElement(event,'aas_element_form','`+aasIdentifier+`','`+submodelId+`','`+IdShortPath+`');return false;">
@@ -39,7 +38,10 @@ function addAASElementtoForm(event,exdomain,formId,aasIdentifier,submodelId,IdSh
     	_aas_elem = new Range();
     	_aas_elem.createDom(formId,exdomain);	
     }
-	
+    else if (aas_elem_type === "MultiLanguageProperty"){
+    	_aas_elem = new MultiLanguageProperty();
+    	_aas_elem.createDom(formId,exdomain);	
+    }
 }
 function createNewSubmodel1(event,element_form_id,aasIdentifier){
 	event.stopPropagation();
@@ -124,4 +126,25 @@ function saveSubmodel(event,submodelIdentifier,aasIdentifier){
 	}
 	httpGetRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	httpGetRequest.send(JSON.stringify(_submodel_New));
+}
+function delete_element(event,submodelIdentifier,aasIdentifier){
+	if (submodelIdentifier === event.target.alt){
+		var httpGetRequest = new XMLHttpRequest();
+		httpGetRequest.open('DELETE',"/submodels/"+btoa(submodelIdentifier));
+		httpGetRequest.onload = () => {
+			window.location.replace("/shells/"+aasIdentifier+"/webui");
+			
+		}
+		httpGetRequest.send();
+	}
+	else{
+		var httpGetRequest = new XMLHttpRequest();
+		
+		httpGetRequest.open('DELETE',"/shells/"+aasIdentifier+"/aas/submodels/"+btoa(submodelIdentifier)+"/submodel/submodel-elements/"+ event.target.alt);
+		httpGetRequest.onload = () => {
+			window.location.replace("/shells/"+aasIdentifier+"/aas/submodels/"+btoa(submodelIdentifier)+"/submodel/webui");
+			
+		}
+		httpGetRequest.send();
+	}
 }

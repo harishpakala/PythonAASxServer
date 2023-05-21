@@ -8,7 +8,6 @@ from flask_restful import Resource,request
 from flask import render_template,Response,redirect,flash,make_response,send_file,send_from_directory,jsonify
 from urllib.parse import unquote
 import base64
-import csv
 import json
 import os
 import uuid
@@ -1923,21 +1922,20 @@ class AASAssetInterfaceDescription(Resource):
             self.save_submodel(aid_data_submodel)
             
             
-            aas_shell_uuid = self.pyaas.aasHashDict.__getHashEntry__(aidP.submodelIdentifier
-                                                            +"."+aidP.idshort_path)
+            aas_shell_uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier)._id
                     
             aasHashObject = self.pyaas.aasShellHashDict.__getHashEntry__(aas_shell_uuid)
 
-            for aidP in aid_properties_aas:
-                elem_uuid = self.pyaas.aasHashDict.__getHashEntry__(aidP.submodelIdentifier
-                                                            +"."+aidP.idshort_path)
+            for aidp in aid_properties_aas:
+                elem_uuid = self.pyaas.aasHashDict.__getHashEntry__(aidp.submodelIdentifier
+                                                            +"."+aidp.idshort_path)._id
                     
-                aidP.elemObject = self.pyaas.submodelHashDict.__getHashEntry__(elem_uuid)
+                aidp.elemObject = self.pyaas.submodelHashDict.__getHashEntry__(elem_uuid)
                 if aasHashObject.asset_interface_description != None:
-                    aasHashObject.asset_interface_description.add_property(aidP,aidP.property_name)
+                    aasHashObject.asset_interface_description.add_property(aidp,aidp.property_name)
                 else:
                     aasHashObject.asset_interface_description = AssetInterfaceDescription()
-                    aasHashObject.asset_interface_description.add_property(aidP,aidP.property_name)
+                    aasHashObject.asset_interface_description.add_property(aidp,aidp.property_name)
                     
     def get(self,aasIdentifier): 
         try:
@@ -1961,14 +1959,17 @@ class AASAssetInterfaceDescription(Resource):
         
     def post(self,aasIdentifier):
         updateInfo = request.form
-        tag =  updateInfo["operationType"]   
+        tag =  updateInfo["operationType"]
         aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode()
         if (tag =="retreive-aid-property-data"):        
             returnData = {}
             try:
-                for key,tdPData in self.pyaas.tdPropertiesList[aasIdentifier].items(): 
-                    dataElement = tdPData["dataElement"]
-                    returnData[key] = {'label': [(dt.timestamp).split(" ")[1] for dt in dataElement.history][-19:], 'value': [dt.aasELemObject for dt in dataElement.history][-19:]}
+                property_Name =  updateInfo["propertyName"]
+                aas_shell_uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier1)._id
+                aasHashObject = self.pyaas.aasShellHashDict.__getHashEntry__(aas_shell_uuid)
+                elemObject = aasHashObject.asset_interface_description.get_property(property_Name).elemObject
+                aasHashObject.asset_interface_description.get_property('Temperature').elemObject.history[0].timestamp
+                returnData[property_Name] = {'label': [(str(dt.timestamp)).split(" ")[1] for dt in elemObject.history][-19:], 'value': [dt.aasElementValue for dt in elemObject.history][-19:]}
                 return returnData
             except Exception as E:
                 print(str(E))
@@ -1994,5 +1995,6 @@ class AASAssetInterfaceDescription(Resource):
                 self.add_aid_propertys(aasIdentifier1,aid_data)
                 return redirect("/shells/"+aasIdentifier+"/aid/webui", code=302)
             except Exception as E:
+                print(str(E))
                 flash(str(E),"error")
                 return redirect("/shells/"+aasIdentifier+"/aid/webui", code=302)

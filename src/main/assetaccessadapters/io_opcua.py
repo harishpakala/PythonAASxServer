@@ -1,6 +1,8 @@
 from opcua import Client
 from datetime import datetime
 import asyncio
+from asyncua import Client, ua, Node
+import time
 import uuid
 
 try:
@@ -79,19 +81,39 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             return "Success"
 
 class OPCUASubscriptionHandler:
-
-    def __init__(self, td_property):
-        self.td_property = td_property
-
-    def datachange_notification(self, node, val, data):
+    """
+    Subscription Handler. To receive events from server for a subscription
+    This class is just a sample class. Whatever class having these methods can be used
+    """
+    
+    def set_property(self,td_property):
+        self.td_property = td_property        
+    
+    def datachange_notification(self, node: Node, val, data):
+        """
+        called for every datachange notification from server
+        """
         while not self.td_property.elem_lock:
             self.td_property.elem_lock = True
             _dt = datetime.now()
-            _ho = HistoryObject(self.td_property.aas_element["value"], _dt)
+            _ho = HistoryObject(self.td_property.aasELement["value"], _dt)
             self.td_property.addhistoryElement(_ho)
             self.td_property.aasELement["value"] = val
             self.td_property.elem_lock = False
-            break
+            break        
+        
+    def event_notification(self, event: ua.EventNotificationList):
+        """
+        called for every event notification from server
+        """
+        pass
+
+    def status_change_notification(self, status: ua.StatusChangeNotification):
+        """
+        called for every status change notification from server
+        """
+        pass
+
 
 class OPCUASubscription:
     def __init__(self,_uri,_handler):
@@ -105,22 +127,26 @@ class OPCUASubscription:
         port = host[1]
         node_id = (uri.split("opc.tcp://")[1]).split("/")[-1]
         _uri = "opc.tcp://" + ip_address + ":" + port + "/"
-        return [node_id,_uri]
+        return [_uri,node_id]
 
-    async def subscribe(self, uri, sub_handler):
-        try:
-            while self.poll:
-                client = Client(url=self.uri_nodeid[0])
-                try:
-                    async with client:
-                        subscription = await client.create_subscription(500, sub_handler)
-                        tnode = (client.get_node(self.uri_nodeid[1]))
-                        await subscription.subscribe_data_change(tnode)
-                        while True:
-                            await asyncio.sleep(1)
-                            await client.check_connection()  # Throws a exception if connection is lost
-                except:
-                    await asyncio.sleep(1)
-        except Exception as e1:
-            print(str(e1))
+    async def subscribe(self):
+        while True:
+            time.sleep(0.1)
+            print("New COnnection")
+            try:
+                client = Client(url="opc.tcp://localhost:4851")
+                async with client:
+                    subscription = await client.create_subscription(0.1, self.handler)
+                    tnode = (client.get_node("ns=1;i=1023"))
+                    await subscription.subscribe_data_change(tnode)
+                    while True:
+                        time.sleep(0.1)
+                        et = await client.get_endpoints()
+                        if len(et) == 0:
+                            print("connection broke")
+                            break
+            except Exception as E:
+                print(str(E))
+                pass#await asyncio.sleep(0.1)
+
 

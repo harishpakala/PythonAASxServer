@@ -43,42 +43,154 @@
 <div class="d-flex align-items-start">
 	<div class = "row" style = "width : 100%">
 		<div class = "col-4">
-			<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="">
-			    <div class="list-group list-group-flush border-bottom scrollarea" style ="padding-left:10vh;">
-			      <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
-			        <div class="d-flex w-100 align-items-center justify-content-between">
-			          <strong class="mb-1">List group item heading</strong>
-			          <small>active</small>
-			        </div>
-			        <div class="row">
-						<div class="col-10 mb-1 small">
-							<span>Some placeholder content in a paragraph below the heading and date.
-							</span>
-				        </div>			        
-			        </div>	
-			      </a>
-			      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
-			        <div class="d-flex w-100 align-items-center justify-content-between">
-			          <strong class="mb-1">List group item heading</strong>
-			          <small class="text-body-secondary">active</small>
-			        </div>
-			        <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
-			      </a>
-			      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
-			        <div class="d-flex w-100 align-items-center justify-content-between">
-			          <strong class="mb-1">List group item heading</strong>
-			          <small class="text-body-secondary">active</small>
-			        </div>
-			        <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
-			      </a>
+			<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="margin-left : 5vw;border: #e9ecef;border-style: groove;height: 50vh;scroll-behavior: auto;overflow-y: auto;">
+			    <div class="list-group list-group-flush border-bottom scrollarea" >
+			      {% for aid_property in asssetInterfaceList %}
+			       {% if loop.index0 == 0 %}
+				    <a href="javascript:void(0);" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true" onclick = "ConstructChart(event,'{{aid_property}}')">
+				        <div class="d-flex w-100 align-items-center justify-content-between">
+				          <strong class="mb-1">{{aid_property}}</strong>
+				        </div>
+				      </a>
+				    {% else %}
+				     <a href="javascript:void(0);" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true"  onclick = "ConstructChart(event,'{{aid_property}}')">
+				        <div class="d-flex w-100 align-items-center justify-content-between">
+				          <strong class="mb-1">{{aid_property}}</strong>
+				        </div>
+				      </a>
+				   {% endif %}
+			      {% endfor %}
 			    </div>
 		  	</div>	
 		</div>
 		<div class = "col-1">
 		</div>
-		<div class = "col-6">
+		<div class = "col-6" id="graph_aid_property">
+			
 		</div>
 	</div>
 </div>
+<script>
+{% for aid_property in asssetInterfaceList %}
+{% if loop.index0 == 0 %}
+var property_config = getConfig('{{aid_property}}','Time');
+var property_div = document.getElementById('graph_aid_property');
+property_div.innerHTML = `<canvas id = "graph_aid_canvas"></canvas>`;
+var property_context = document.getElementById('graph_aid_canvas').getContext('2d');
+var linechart = new Chart(property_context,property_config );
+startDataRetrieval('{{aid_property}}');
+var _timer = setInterval(startDataRetrieval, 10000,'{{aid_property}}');
+{% endif %}
+{% endfor %}
+function getConfig(xLabel,yLabel)
+{
+	return {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: xLabel +" "+ yLabel+" Plot",
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [],
+                fill: false,
+            }],
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Projecting real time data AASx package'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: xLabel
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: yLabel
+                    }
+                }]
+            }
+        }
+    }
+}
+function ConstructChart(event,propertyName){
+	eventElement = event
+	if (event.target.parentElement.localName == 'a'){
+		for (child of eventElement.target.parentElement.parentElement.children){
+			child.classList.remove('active');
+		} 
+		event.target.parentElement.className += ' active';
+	}
+	else if (event.target.localName == 'a'){
+		for (child of eventElement.target.parentElement.children){
+			child.classList.remove('active');
+		}
+		event.target.className += ' active';
+	}
+	else{
+		console.log(event.target.localName);
+	}
+    clearInterval(_timer);
+	var property_div = document.getElementById('graph_aid_property');
+	property_div.innerHTML = '';
+	property_div.innerHTML = `<canvas id = "graph_aid_canvas"></canvas>`;
+	
+	property_config = getConfig(propertyName,'Time')
+    property_context = document.getElementById('graph_aid_canvas').getContext('2d');
+    linechart = new Chart(property_context,property_config );
+    startDataRetrieval(propertyName);
+    _timer = setInterval(startDataRetrieval, 10000,propertyName);
+} 
+function startDataRetrieval(propertyName){
+	var formData = new FormData();
+    formData.append("propertyName", propertyName);
+    formData.append("operationType", "retreive-aid-property-data");
+    console.log(propertyName);
+	var req = new XMLHttpRequest();
+    req.open('POST', '', true);
+    req.onreadystatechange = function(e) {
+        if(req.readyState !== 4) {
+            return;
+        }
+        if ([200, 304].indexOf(req.status) === -1) {
+            console.warn('Error! XHR failed.');
+        }
+        else {
+        	const data = JSON.parse(e.target.responseText);
+        	updateChartData(property_config,data[propertyName])
+            linechart.update();
+        }
+    };
+    req.send(formData);
+}
+
+function updateChartData(config,data){
+	while(config.data.labels.length > 0) {
+    	config.data.labels.pop();
+	}
+	while( config.data.datasets[0].data.length > 0) {
+		config.data.datasets[0].data.pop();
+	}
+	config.data.labels.push(...data['label']);
+	config.data.datasets[0].data.push(...data['value']);
+}
+
+</script>
 
 {% endblock %}

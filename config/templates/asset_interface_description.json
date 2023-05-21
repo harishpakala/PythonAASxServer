@@ -278,7 +278,7 @@
                                                     },
                                                     "type": "href",
                                                     "valueType": "",
-                                                    "value": "opc.tcp://admin:wago@192.168.1.52:4840/ns=4;s=|var|WAGO 750-8202 PFC200 CS 2ETH RS.Application.PLC_PRG.sPermission"
+                                                    "value": ""
                                                 }
                                             ]
                                         }

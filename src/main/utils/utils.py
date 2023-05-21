@@ -511,7 +511,7 @@ class HashDict:
 
 
 class HistoryObject:
-    def __init__(self, timestamp, aasElementValue):
+    def __init__(self,aasElementValue ,timestamp):
         self.timestamp = timestamp
         self.aasElementValue = aasElementValue
 
@@ -601,7 +601,7 @@ class AIDProperty:
         self.operation_type = operation_type
         self.elemObject = elemObject
         self.requestType = requestType
-        self.property_name = ""
+        self.property_name = property_name
     
     def from_json(self,aid_json):
         '''
@@ -611,7 +611,7 @@ class AIDProperty:
             self.read_only = aid_json['readOnly']
             self.observable = aid_json['observable']
             self.update_frequency = aid_json['updateFrequency']
-            self._unit = aid_json['unit']
+            self.unit = aid_json['unit']
             self.aasIdentifier = aid_json['aasIdentifier']
             self.submodelIdentifier = aid_json['submodelId'] 
             self.idshort_path = aid_json['idShortPath']
@@ -645,7 +645,7 @@ class AIDProperty:
                 if (pConstraint["type"] == "submodelId"):
                     aid_property["qualifiers"][i]["value"] = self.submodelIdentifier
                 if (pConstraint["type"] == "idShortPath"):
-                    aid_property["qualifiers"][i]["value"] = self.idShortPath
+                    aid_property["qualifiers"][i]["value"] = self.idshort_path
                 i = i + 1  
             
             i = 0
@@ -660,9 +660,10 @@ class AIDProperty:
                         j = j + 1
                 i = i + 1
             
-            return aid_property
+            return copy.deepcopy(aid_property)
         except Exception as E:
-            return aid_property
+            print(str(E))
+            return copy.deepcopy(aid_property)
         
 class AssetInterfaceDescription:
     def __init__(self):

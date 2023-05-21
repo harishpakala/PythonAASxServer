@@ -34,7 +34,7 @@ class Scheduler:
                     for property_name,_property in _shellObject.asset_interface_description.properties.items():
                         if _property.update_frequency == "subscribe":
                             update_function = import_module("modules." + "f_property_subscribe").function
-                            self.jobs[property_name] = threading.Thread(target=update_function, args=(_property,self.pyaas.asset_access_handlers,))
+                            self.jobs[property_name] = threading.Thread(target=update_function, args=(_property,))
                         elif str(_property.update_frequency) != "0":
                             update_function = import_module("modules." + "f_property_read").function
                             self.jobs[property_name] = threading.Thread(target=update_function, args=(_property,self.pyaas.asset_access_handlers,))
@@ -51,8 +51,8 @@ class Scheduler:
 
         """
         try:
-            for job in self.jobs:
-                job.start()
+            for job_name in self.jobs.keys():
+                self.jobs[job_name].start()
         except SystemError as e:
             self.pyaas.servself.serviceLogger.info(
                 "Error starting PyAAS Scheduler " + str(e)
@@ -74,7 +74,7 @@ class Scheduler:
         try:
             if aid_property.update_frequency == "subscribe":
                 update_function = import_module("modules." + "f_property_subscribe").function
-                th = threading.Thread(target=update_function, args=(aid_property,self.pyaas.asset_access_handlers,))
+                th = threading.Thread(target=update_function, args=(aid_property,))
                 th.start()
             elif str(aid_property.update_frequency) != "0":
                 update_function = import_module("modules." + "f_property_read").function

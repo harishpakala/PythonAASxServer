@@ -307,7 +307,7 @@ class ListCollection{
 	deserialize(data,parentId,exdomain){
 		this.exdomain = exdomain;
 		for (var i = 0; i < data.length; i++ ) {
-			console.log(data[i]);
+			
 			let _iuuid = crypto.randomUUID();
 			let _classObject = this.getclassObject(_iuuid);
 			let _objectDIv = this.getObjectDom(_iuuid);
@@ -987,7 +987,6 @@ class SubmodelElement extends Referable {
 	}
 	deserialize(data,parentId,exdomain){
 		if (data.hasOwnProperty('qualifiers')){
-			console.log(data["qualifiers"]);
 			this._Qualifiable.deserialize(data['qualifiers'],parentId,exdomain);
 		}
 		this._HasSemantics.deserialize(data,parentId,exdomain);
@@ -1069,7 +1068,7 @@ class MultiLanguageProperty extends DataElement{
 					checksum,kind,semanticId,supplementalSemanticIds,
 					qualifiers,embeddedDataSpecifications);
 			this.value = new ListCollection("value","LangString");
-			this.valueId =valueId;
+			this.valueId =new ComplexObject("valueId","Reference");
 			this.modelType = "MultiLanguageProperty";
 	}
 	serialize(){
@@ -1088,7 +1087,14 @@ class MultiLanguageProperty extends DataElement{
 		}
 	}
 	createDom(parentId,exdomain){
+		this.uuid = crypto.randomUUID();
+		this.exdomain = exdomain;
+		document.getElementById(parentId).insertAdjacentHTML(
+				 'afterbegin',
+				 `<div class="temp" id = "`+this.uuid+`">
+				 </div>`);
 		this.value.createDom(parentId,exdomain);
+		this.valueId.createDom(this.uuid,exdomain);
 		super.createDom(parentId,exdomain);
 	}
 }
@@ -1096,7 +1102,7 @@ class Range extends DataElement{
 	constructor(extensions,category,idShort,displayName,description,
 			checksum,kind,semanticId,supplementalSemanticIds,
 			qualifiers,embeddedDataSpecifications,
-			valueType,
+			valueType="xs:string",
 			min,
 			max){
 			super(extensions,category,idShort,displayName,description,
@@ -1105,6 +1111,7 @@ class Range extends DataElement{
 			this.valueType = new SelectObject("valueType",DataTypeXSD,valueType);
 			this.min = new StringObject("min");
 			this.max =  new StringObject("max");
+			this.valueId = new ComplexObject("valueId","Reference");
 			this.modelType = "Range";
 	}
 	serialize(){
@@ -1112,6 +1119,7 @@ class Range extends DataElement{
 		if (this.valueId._object != null){
 			jsonData["valueId"] = this.valueId.serialize();
 		}
+		jsonData["valueType"] = this.valueType.getSelectedItem();
 		jsonData["min"] = this.min.getString();
 		jsonData["max"] = this.max.getString();
 		jsonData["modelType"] = "Range";
@@ -1127,7 +1135,6 @@ class Range extends DataElement{
 		}
 	}
 	createDom(parentId,exdomain){
-		
 		this.uuid = crypto.randomUUID();
 		this.exdomain = exdomain;
 		document.getElementById(parentId).insertAdjacentHTML(
@@ -1136,6 +1143,8 @@ class Range extends DataElement{
 				 </div>`);
 		this.max.createDom(this.uuid,exdomain);
 		this.min.createDom(this.uuid,exdomain);
+		this.valueType.createDom(this.uuid,exdomain);
+		this.valueId.createDom(this.uuid,exdomain);
 		super.createDom(this.uuid,exdomain);
 
 	}
@@ -1469,7 +1478,7 @@ class Submodel extends Identifiable{
 	deserialize(data,parentId,exdomain){
 		super.deserialize(data,parentId,exdomain);
 		if (data.hasOwnProperty('qualifiers')){
-			console.log(data["qualifiers"]);
+			
 			this._Qualifiable.deserialize(data['qualifiers'],parentId,exdomain);
 		}
 	  if (data.hasOwnProperty('submodelElements')){

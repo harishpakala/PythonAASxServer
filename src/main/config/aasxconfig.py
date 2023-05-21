@@ -203,30 +203,28 @@ class ConfigParser:
                 for aid_property in tdELement["value"]:
                     td_property = AIDProperty()
                     td_property.aasIdentifier = aasIdentifier
-                    td_property.submodelIdentifier = submodel["id"]
-                    
-                    
+                                        
                     for pConstraint in aid_property["qualifiers"]:
                         if (pConstraint["type"] == "type"):
                             td_property._type =  pConstraint["value"]
-                        if (pConstraint["type"] == "SerialNumber"):
+                        if (pConstraint["type"] == "readOnly"):
                             td_property.read_only =  pConstraint["value"]
                         if (pConstraint["type"] == "observable"):
                             td_property.observable =  pConstraint["value"]                     
                         if pConstraint["type"] == "updateFrequency":
-                            td_property.update_frequencey =  pConstraint["value"]
+                            td_property.update_frequency =  pConstraint["value"]
                         if pConstraint["type"] == "unit":
                             td_property._unit = pConstraint["value"]
                         if (pConstraint["type"] == "submodelId"):
-                            td_property.submodel_Identifier = pConstraint["value"]
+                            td_property.submodelIdentifier = pConstraint["value"]
                         if (pConstraint["type"] == "idShortPath"):
                             td_property.idshort_path = pConstraint["value"]
                     
                     if (td_property.idshort_path != "" and 
-                                            td_property.submodel_Identifier):
+                                            td_property.submodelIdentifier != ""):
                     
                         elem_uuid = self.pyaas.aasHashDict.__getHashEntry__(td_property.submodelIdentifier
-                                                            +"."+td_property.idshort_path)
+                                                            +"."+td_property.idshort_path)._id
                     
                         td_property.elemObject = self.pyaas.submodelHashDict.__getHashEntry__(elem_uuid)
                     

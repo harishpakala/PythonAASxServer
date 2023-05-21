@@ -579,7 +579,7 @@ class PyAASxServer:
         # start the message handler thread
         self.start_msg_handler_thread()
         # start the scheduler
-        # self.startScheduler()
+        self.start_scheduler()
         # start the skills
         self.start_skills()
         # heartBeatHandler

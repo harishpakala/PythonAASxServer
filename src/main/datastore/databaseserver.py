@@ -1177,8 +1177,8 @@ class AAS_Database_Server(object):
                     for uuid in _submodel["submodelElements"]:
                         _key = self.aasHashDict.__getkey__(uuid)
                         self.deleteSubmodelElem(_key)
-                    self.submodelHashDict.__deleteHashEntry__(_id)
-                    self.aasHashDict.__deleteHashEntry__(_submodelid)
+                self.submodelHashDict.__deleteHashEntry__(_id)
+                self.aasHashDict.__deleteHashEntry__(_submodelid)
                 return "Submodel deleted Successfully", True,204
             else:
                 return "Submodel not found", False,404
@@ -1686,7 +1686,8 @@ class AAS_Database_Server(object):
             returnDict["conversationIdList"] = _aasShell.conversationIdList
             if _aasShell.asset_interface_description != None:
                 returnDict["asssetInterfaceList"] = list(_aasShell.asset_interface_description.properties.keys())
-            returnDict["asssetInterfaceList"] = []
+            else:
+                returnDict["asssetInterfaceList"] = []
         except Exception as e:
             print(str(e))
             return returnDict,False 

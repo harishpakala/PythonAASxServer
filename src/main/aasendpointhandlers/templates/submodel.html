@@ -20,21 +20,26 @@
 		</div>
 		<div class="col-5  d-flex flex-wrap align-items-center text-center"></div>
 		<div class="col-1 d-flex flex-wrap align-items-center text-center">
-				Update
-			</div>
-		<div class="col-1 d-flex flex-wrap align-items-center text-centercol-1 d-flex flex-wrap align-items-center text-center">
 			<div class="std-submodel-add" style="margin-left: 30%">
 
 				   <input  type="image"
-						style="height: 3vh; cursor: pointer;" id="saveSubmodelForm1"
-						src="{{exDomain}}web/images/refresh.svg">
+						style="height: 4vh; width : 4vh;cursor: pointer;" id="saveSubmodelForm1"
+						src="{{exDomain}}web/images/update.svg">
 					<div class="std-submodel-add-overlay">
-						<input type="image" style="height: 3vh; cursor: pointer;"
+						<input type="image" style="height: 4vh;width : 4vh; cursor: pointer;"
 							id="saveSubmodelForm"
-							src="{{exDomain}}web/images/refresh1.svg">
+							src="{{exDomain}}web/images/update1.svg">
 					</div>
 
 			</div>
+			</div>
+		<div class="col-1 d-flex flex-wrap align-items-center text-centercol-1 d-flex flex-wrap align-items-center text-center">
+			<div class="std-submodel-add" >
+			<input type = "image" style = "height : 4vh; width : 4vh ;cursor: pointer;" src="{{exDomain}}web/images/delete_button.svg"  id = "delete_element" alt = "Test1">
+			<div class="std-submodel-add-overlay">
+				<input type = "image"  style = "height : 4vh; width : 4vh ;cursor: pointer;"  src="{{exDomain}}web/images/delete_button1.svg" id = "delete_element1" alt = "Test1">
+			</div>
+		</div>
 		</div>
 	</div>
 	<div class="row" style="min-height: 2.5vh;">
@@ -103,7 +108,8 @@
   </div>
 </div>
 <script>
-document.getElementById("saveSubmodelForm").addEventListener( "click", (evt) => saveSubmodel(evt,'{{submodelId}}','{{aasIdentifier}}'));	
+document.getElementById("saveSubmodelForm").addEventListener( "click", (evt) => saveSubmodel(evt,'{{submodelId}}','{{aasIdentifier}}'));
+document.getElementById("delete_element1").addEventListener( "click", (evt) => delete_element(evt,'{{submodelId}}','{{aasIdentifier}}'));
 var submodelId = '{{submodelId}}';
 var aasIdentifier = '{{aasIdentifier}}';
 var submodelCollapse = document.getElementById("submodelCollapse");
@@ -113,7 +119,7 @@ var submodelD = JSON.parse('{{ submodelD | tojson | safe}}');
 var linearData1 = {};
 var linearData = {};
 submodelElements = [];
-
+document.getElementById('delete_element1').alt = submodelId;
 _submodel1 = new Submodel();
 _submodel1.deserialize(submodelD,"elem21",'{{exDomain}}');
 _submodel1.createDom("elem21",'{{exDomain}}');
@@ -123,6 +129,7 @@ create_aas_elem('{{exDomain}}','new_aas_element_form__div',aasIdentifier,submode
 var _submodelCollapse = document.getElementById('submodelCollapse')
 _submodelCollapse.addEventListener('hidden.bs.collapse', function () {
 	document.getElementById('addAASElementDiv').style.display = "block";
+	document.getElementById('delete_element1').alt = submodelId;
 	let _parent = document.getElementById("elem21");
 	_parent.innerHTML = "";
 	create_aas_elem('{{exDomain}}','new_aas_element_form__div', '{{aasIdentifier}}','{{submodelId}}','{{submodelId}}');
@@ -321,6 +328,7 @@ function seperaterRow(minHeight){
 }
 
 function listElemClick(_tempId,_parentId,_exDomain){
+	document.getElementById('delete_element1').alt = _tempId;
 	let _parent = document.getElementById(_parentId);
 	_parent.innerHTML = "";
 	var data = linearData1[submodelId+"."+_tempId];
@@ -346,6 +354,7 @@ function create_aas_elem(exDomain,form_id,aasIdentifier,submodelId,idShortPath){
 															<option value="SubmodelElementCollection">SubmodelElementCollection</option>
 															<option value="Property">Property</option>
 															<option value="Range">Range</option>
+															<option value="MultiLanguageProperty">MultiLanguageProperty</option>
 														</select>
 													</div>
 												</div>
@@ -359,6 +368,7 @@ function create_aas_elem(exDomain,form_id,aasIdentifier,submodelId,idShortPath){
 }
 
 function listCollectionClick(_id){
+	document.getElementById('delete_element1').alt = _id;
 	var data = linearData1[submodelId+"."+_id] 
 	let _parent = document.getElementById("elem21");
 	_parent.innerHTML = "";
