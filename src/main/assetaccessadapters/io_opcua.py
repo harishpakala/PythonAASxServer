@@ -1,6 +1,5 @@
 from opcua import Client
 from datetime import datetime
-import asyncio
 from asyncua import Client, ua, Node
 import time
 import uuid
