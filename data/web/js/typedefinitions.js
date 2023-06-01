@@ -789,8 +789,8 @@ class Extension extends HasSemantics{
 	}
 	serialize(){
 		let jsonData = super.serialize();
-		jsonData["value"] = this.value.getString();
 		jsonData["name"] = this.name.getString();
+		jsonData["value"] = this.value.getString();
 		jsonData["valueType"] = this.valueType.getSelectedItem();
 		if (this.refersTo._object != null){
 			jsonData["refersTo"] = this.refersTo.serialize(); 

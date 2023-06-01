@@ -803,6 +803,7 @@ class AAS_Database_Server(object):
                 for index, submodelRef in  enumerate(_aasShell["submodels"]):
                     if submodelRef["keys"][0]["value"] == data["submodelIdentifier"]:
                         del _aasShell["submodels"][index]
+                        self.aasShellHashDict.__getHashEntry__(_id).setElement(_aasShell)
                         return "Submodel reference deleted successfully", True,204
                 return "The submodel reference not found",False,404
             else:

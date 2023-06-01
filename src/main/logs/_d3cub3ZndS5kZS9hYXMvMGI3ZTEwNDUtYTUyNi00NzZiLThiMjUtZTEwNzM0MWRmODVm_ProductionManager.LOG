@@ -1,8 +1,0 @@
-05/19/2023 03:39:45 PM - 66da1f92-a448-4f1a-abe4-b67f2d219d4f_ProductionManager - INFO - 
- #############################################################################
-05/19/2023 03:39:45 PM - 66da1f92-a448-4f1a-abe4-b67f2d219d4f_ProductionManager - INFO - StartState: WaitforNewOrder
-05/19/2023 03:39:45 PM - 66da1f92-a448-4f1a-abe4-b67f2d219d4f_ProductionManager - INFO - InputDocument : ProductionOrder
-05/19/2023 03:53:22 PM - 76d00afd-ec89-49e7-a221-19d40ee1670f_ProductionManager - INFO - 
- #############################################################################
-05/19/2023 03:53:22 PM - 76d00afd-ec89-49e7-a221-19d40ee1670f_ProductionManager - INFO - StartState: WaitforNewOrder
-05/19/2023 03:53:22 PM - 76d00afd-ec89-49e7-a221-19d40ee1670f_ProductionManager - INFO - InputDocument : ProductionOrder

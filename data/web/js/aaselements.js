@@ -102,7 +102,6 @@ function getCollectionData(_uuid){
 	return collectionElem.serialize();
 }
 function saveSubmodel(event,submodelIdentifier,aasIdentifier){
-	console.log("Test123");
 	event.stopPropagation();
     event.preventDefault();
     let _submodel_New = linearData1[submodelIdentifier].serialize();
@@ -129,13 +128,21 @@ function saveSubmodel(event,submodelIdentifier,aasIdentifier){
 }
 function delete_element(event,submodelIdentifier,aasIdentifier){
 	if (submodelIdentifier === event.target.alt){
+		
+		var httpGetRequest1 = new XMLHttpRequest();
+		httpGetRequest1.open('DELETE',"/shells/"+aasIdentifier+"/aas/submodels/"+btoa(submodelIdentifier));
+		httpGetRequest1.onload = () => {
+			
+		}
+		httpGetRequest1.send();
+		
 		var httpGetRequest = new XMLHttpRequest();
 		httpGetRequest.open('DELETE',"/submodels/"+btoa(submodelIdentifier));
 		httpGetRequest.onload = () => {
 			window.location.replace("/shells/"+aasIdentifier+"/webui");
-			
 		}
 		httpGetRequest.send();
+		
 	}
 	else{
 		var httpGetRequest = new XMLHttpRequest();

@@ -156,6 +156,7 @@ class ConfigParser:
         skill_names = [f.split(".")[0] for f in os.listdir(self.pyaas.src_skills_repository) if
                        os.path.isfile(os.path.join(self.pyaas.src_skills_repository, f))]
         skillDetails = dict()
+        print(skill_names)
         for skill in skill_names:
             skillModule = import_module("." + skill, package="skills")
             skillBaseclass_ = getattr(skillModule, skill)
@@ -163,7 +164,7 @@ class ConfigParser:
 
             skill_details_dict = dict()
             skill_details_dict["SkillName"] = skill
-            skill_details_dict["SkillService"] = _tempSKillInstance.skill_service
+            skill_details_dict["SkillService"] = _tempSKillInstance.SkillService
             skill_details_dict["InitialState"] = _tempSKillInstance.initialState
             skill_details_dict["enabled"] = _tempSKillInstance.enabledState
             skill_details_dict["semanticProtocol"] = _tempSKillInstance.semanticProtocol

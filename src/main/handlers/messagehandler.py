@@ -152,16 +152,17 @@ class MessageHandler(object):
         self.pyaas.dataStoreManager.assetDataValueStore(newAssetValueBatch)
         
     def trigggerHeartBeat(self):
-        hbt = Generic()
-        heartBeatCount = 1
-        while True:
-            for hAASId in self.pyaas.heartBeatHandlerList: 
-                _hbtMessage = hbt.createHeartBeatMessage(hAASId,heartBeatCount)
-                if True:#(self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
-                    self.AASendPointHandlerObjects["MQTT"].dispatchMessage(_hbtMessage)
-                else:
-                    self.AASendPointHandlerObjects["RESTAPI"].dispatchMessage(_hbtMessage)
-            time.sleep(5)
-            heartBeatCount = heartBeatCount + 1
+        pass
+#         hbt = Generic()
+#         heartBeatCount = 1
+#         while True:
+#             for hAASId in self.pyaas.heartBeatHandlerList: 
+#                 _hbtMessage = hbt.createHeartBeatMessage(hAASId,heartBeatCount)
+#                 if True:#(self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
+#                     self.AASendPointHandlerObjects["MQTT"].dispatchMessage(_hbtMessage)
+#                 else:
+#                     self.AASendPointHandlerObjects["RESTAPI"].dispatchMessage(_hbtMessage)
+#             time.sleep(5)
+#             heartBeatCount = heartBeatCount + 1
            
             

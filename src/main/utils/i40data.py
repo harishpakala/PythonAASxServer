@@ -4,10 +4,13 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 '''
+import uuid
 
 class Generic(object):
-    def __init__(self):
-        pass
+    def __init__(self,aasID,skillName,semanticProtocol):
+        self.aasID = aasID
+        self.skillName = skillName
+        self.semanticProtocol = semanticProtocol
     
     def toString(self,message32):
         message32 = message32.hex().rstrip("0")
@@ -30,38 +33,38 @@ class Generic(object):
                 }
         return I40Frame
     
-    def createFrame(self,I40Frame):
+    def create_i40_message(self,oMessage,conVID,receiverId="",receiverRole= ""):
         frame = {
                     "semanticProtocol": {
                     "keys": [
                         {
                             "type": "GlobalReference",
-                            "value": "ovgu.de/"+I40Frame["semanticProtocol"], 
+                            "value": self.semanticProtocol, 
                         }
                         ]
                     }, 
-                    "type": I40Frame["type"],
-                    "messageId": I40Frame["messageId"], 
+                    "type": oMessage,
+                    "messageId": oMessage+"_"+str(uuid.uuid4()), 
                     "sender": {
-                        "id": I40Frame["SenderAASID"],
+                        "id": self.aasID,
                         "role": {
-                            "name": I40Frame["SenderRolename"]
+                            "name": self.skillName
                             }
                         },
-                    "conversationId": I40Frame["conversationId"],
+                    "conversationId": conVID,
                     "replyBy" : "",
                     "replyTo" : ""
                 }
         
-        if (I40Frame["ReceiverAASID"] != ""):
+        if (receiverId != ""):
             frame["receiver"] = {
-                                    "id": I40Frame["ReceiverAASID"], 
+                                    "id": receiverId, 
                                     "role": {
-                                        "name": I40Frame["ReceiverRolename"]
+                                        "name": receiverRole
                                     }
                                 }
      
-        return frame
+        return {"frame" :frame, "interactionElements": []}
     
 
   

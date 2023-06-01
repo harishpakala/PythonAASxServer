@@ -1,0 +1,331 @@
+06/01/2023 08:34:18 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:34:18 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:34:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:34:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:39:13 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:39:13 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:40:27 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:40:27 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:41:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:41:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:42:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:42:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:44:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:44:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:46:02 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:02 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:46:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - TargettState: performFeasibilityCheck
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - ############################################################################# 
+
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: performFeasibilityCheck
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: sendProposal
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : proposal
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:49 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForResoponse
+06/01/2023 08:46:53 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:46:53 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:53 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendSelectionCriteria
+06/01/2023 08:46:53 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : selection-criteria
+06/01/2023 08:46:53 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:53 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForCriteria
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: ProductSelection
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendProduct
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : product
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:46:54 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:48:50 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:48:50 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - TargettState: performFeasibilityCheck
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - ############################################################################# 
+
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: performFeasibilityCheck
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: sendProposal
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : proposal
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:49:06 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForResoponse
+06/01/2023 08:49:10 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:49:10 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:49:10 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendSelectionCriteria
+06/01/2023 08:49:10 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : selection-criteria
+06/01/2023 08:49:10 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:49:10 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForCriteria
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: ProductSelection
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendProduct
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : product
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 08:49:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:31:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - TargettState: performFeasibilityCheck
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - ############################################################################# 
+
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: performFeasibilityCheck
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: sendProposal
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : proposal
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:24 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForResoponse
+06/01/2023 09:31:28 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:31:28 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:28 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendSelectionCriteria
+06/01/2023 09:31:28 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : selection-criteria
+06/01/2023 09:31:28 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:28 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForCriteria
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: ProductSelection
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendProduct
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : product
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:31:29 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:34:48 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:34:48 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:35:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - TargettState: performFeasibilityCheck
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - ############################################################################# 
+
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: performFeasibilityCheck
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: sendProposal
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : proposal
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:51 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForResoponse
+06/01/2023 09:35:55 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:35:55 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:55 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendSelectionCriteria
+06/01/2023 09:35:55 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : selection-criteria
+06/01/2023 09:35:55 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:55 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForCriteria
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: ProductSelection
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendProduct
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : product
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:35:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:36:40 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:36:40 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - TargettState: performFeasibilityCheck
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - ############################################################################# 
+
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: performFeasibilityCheck
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: sendProposal
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : proposal
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:36:56 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForResoponse
+06/01/2023 09:37:00 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:37:00 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:37:00 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendSelectionCriteria
+06/01/2023 09:37:00 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : selection-criteria
+06/01/2023 09:37:00 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:37:00 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForCriteria
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: ProductSelection
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendProduct
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : product
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:37:01 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:40:14 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:14 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - TargettState: performFeasibilityCheck
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - ############################################################################# 
+
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: performFeasibilityCheck
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: sendProposal
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : proposal
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:34 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForResoponse
+06/01/2023 09:40:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:40:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendSelectionCriteria
+06/01/2023 09:40:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : selection-criteria
+06/01/2023 09:40:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForCriteria
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: ProductSelection
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendProduct
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : product
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:40:39 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:44:17 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:17 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - TargettState: performFeasibilityCheck
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - ############################################################################# 
+
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: performFeasibilityCheck
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: sendProposal
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : proposal
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:38 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForResoponse
+06/01/2023 09:44:42 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:44:42 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:42 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendSelectionCriteria
+06/01/2023 09:44:42 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : selection-criteria
+06/01/2023 09:44:42 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:42 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForCriteria
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: ProductSelection
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendProduct
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : product
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:44:43 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:53:48 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:53:48 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - TargettState: performFeasibilityCheck
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - ############################################################################# 
+
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: performFeasibilityCheck
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: sendProposal
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : proposal
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:54:07 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForResoponse
+06/01/2023 09:54:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:54:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:54:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendSelectionCriteria
+06/01/2023 09:54:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : selection-criteria
+06/01/2023 09:54:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:54:11 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitForCriteria
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: ProductSelection
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : NA
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: SendProduct
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - OutputDocumentType : product
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - 
+ #############################################################################
+06/01/2023 09:54:12 PM - ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35.VWSProduzent - INFO - StartState: WaitforRequestProposal

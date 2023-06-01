@@ -102,7 +102,6 @@ class PyAASxServer:
         self.lia_env_variable = {}
         self.conversationInteractionList = []
         
-        self.aasIdentificationIdList = {}
         self.heartBeatHandlerList = set()
 
         self.aasContentData = {}

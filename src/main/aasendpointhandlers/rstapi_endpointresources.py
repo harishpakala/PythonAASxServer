@@ -1624,7 +1624,7 @@ class AASWebInterfaceProductionManagement(Resource):
         
         elif (tag == "start"):
             try:
-                pso = ProductionStepOrder(self.pyaas)
+                pso = ProductionStepOrder(self.pyaas,aasIdentifier1)
                 conversationID,status = pso.createProductionStepOrder(aasIdentifier1)
                 if status:
                     flash("New Order booked with Order ID " + conversationID + " is booked","info")

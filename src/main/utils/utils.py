@@ -4,16 +4,33 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 """
+from abc import abstractmethod
+from copy import deepcopy
+from datetime import datetime
+from jsonschema import validate
 import base64
 import copy
-from copy import deepcopy
+from typing import final
+import logging
+import sys
+import time
 import uuid
-from jsonschema import validate
+
 #from Cryptodome.PublicKey import RSA
 #from Cryptodome.IO import PEM
 #from jwkest.jws import JWSig, SIGNER_ALGS, JWS
 #from jwkest.jwk import rsa_load, RSAKey,pem_cert2rsa,der_cert2rsa,der2rsa
 #from jwkest.jwt import b64encode_item
+
+try:
+    from utils.i40data import Generic
+except ImportError:
+    from main.utils.i40data import Generic
+
+try:
+    from utils.aaslog import ServiceLogHandler,LogList
+except ImportError:
+    from main.utils.aaslog import ServiceLogHandler,LogList
 
 
 
@@ -61,9 +78,9 @@ class ExecuteDBModifier(object):
 
 
 class ProductionStepOrder:
-    def __init__(self, pyaas):
+    def __init__(self, pyaas,aasIdentifier):
         self.pyaas = pyaas
-        self.gen = Generic()
+        self.gen = Generic(aasIdentifier,"ProductionManager","ovgu.de/ordermanagement")
 
     def createTransportStepOrder(self, aasIdentifier, current_conv_id) -> str:
         """
@@ -115,6 +132,7 @@ class ProductionStepOrder:
         """
 
         """
+        
         try:
             conversation_count, status = self.pyaas.dba.getMessageCount()
             conversation_id = "ProductionOrder" + "_" + str(int(conversation_count) + 1)
@@ -126,21 +144,7 @@ class ProductionStepOrder:
             shellObject.add_conversationId(conversation_id)
             
             self.addsubConversationIdsList(conversation_id,shellObject.productionStepList)
-            
-            
-            frame_data = {
-                "semanticProtocol": "update",
-                "type": "ProductionOrder",
-                "messageId": "ProductionOrder_" + str(int(conversation_count) + 2),
-                "SenderAASID": aasIdentifier,
-                "SenderRolename": "WebInterface",
-                "conversationId": conversation_id,
-                "ReceiverAASID": aasIdentifier,
-                "ReceiverRolename": "ProductionManager"
-            }
-    
-            frame = self.gen.createFrame(frame_data)
-            i40_message = {"frame": frame, "interactionElements": []}
+            i40_message = self.gen.create_i40_message("ProductionOrder",conversation_id,aasIdentifier,"ProductionManager")
             self.pyaas.msgHandler.putIbMessage(i40_message)
             
             return conversation_id, True
@@ -819,7 +823,7 @@ class ConversationObject:
         returnData = {"inbound": [], "outbound": [], "internal": []}
         try:
             for message in self.messages:
-                if (message["SenderAASID"] == "Broadcast" or message["SenderAASID"] == identificationId):
+                if True:#(message["SenderAASID"] == "Broadcast" or message["SenderAASID"] == identificationId):
                     if (message["direction"] == "inbound"):
                         returnData["inbound"].append(message["message"]["frame"]["messageId"] + ":" + message["entryTime"])
                     elif (message["direction"] == "outbound"):
@@ -894,3 +898,223 @@ class Generate_AAS_Shell:
             print("Error @Generate_AAS_Shell execute"+ str(e))
             return "Error generating the shell",False 
         return shell_data,True
+
+class AState:
+    def __init__(self,base_class,StateName):
+        self.base_class = base_class
+        self.StateName = StateName
+        self.message = dict()
+        self.initialize()
+    
+    @abstractmethod
+    def initialize(self):
+        ...
+    
+    @abstractmethod
+    def transitions(self):
+        ...
+        
+    @abstractmethod
+    def actions(self):
+        ...
+    
+    def send(self,messages:list) -> None:
+        for msg in messages:
+            self.base_class.send(msg)
+    
+    def receive(self) -> None:
+        self.message = self.in_queue.get()
+        return self.message
+        
+    def receive_all(self) -> list:
+        messages = [] 
+        for i in range (0, self.in_queue.qsize()):
+            messages.append(self.in_queue.get())
+        return messages
+
+    def log_info(self,log_text):
+        self.base_class.skillLogger.info(log_text);
+    
+    def create_i40_message(self,oMessage,conV1,receiverId,receiverRole):
+        return self.base_class.gen.create_i40_message(oMessage,conV1,receiverId,receiverRole)
+    
+    def save_in_message(self,save_message):
+        instanceId = str(uuid.uuid1())
+        self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":instanceId,
+                                                            "conversationId":save_message["frame"]["conversationId"],
+                                                            "messageType":save_message["frame"]["type"],
+                                                            "messageId":save_message["frame"]["messageId"],
+                                                            "direction" : "inbound",
+                                                            "SenderAASID" : save_message["frame"]["sender"]["id"],
+                                                            "message":deepcopy(save_message)})
+
+    def save_out_message(self,save_message):
+        instanceId = str(uuid.uuid1())
+        self.base_class.pyaas.dataManager.pushInboundMessage({"functionType":3,"instanceid":instanceId,
+                                                            "conversationId":save_message["frame"]["conversationId"],
+                                                            "messageType":save_message["frame"]["type"],
+                                                            "messageId":save_message["frame"]["messageId"],
+                                                            "direction" : "outbound",
+                                                            "SenderAASID" : save_message["frame"]["sender"]["id"],
+                                                            "message":deepcopy(save_message)})
+    
+    
+    @final    
+    def run(self) -> None:
+        self.log_info("\n #############################################################################")
+        self.log_info("StartState: "+self.StateName)
+        self.actions()
+    
+    @final
+    def next(self) -> object:
+        self.log_info("OutputDocumentType : " + self.OutputDocument)
+        return self.transitions()
+    
+    def GetSubmodelById(self,submodelId):
+        submodel,status,statuscode = self.base_class.pyaas.dba.GetSubmodelById(submodelId)
+        if status:
+            return submodel
+        else:
+            return None
+    
+    def GetSubmodelELementByIdshoortPath(self,submodelId,IdShortPath):
+        submodelElem,status,statuscode = self.base_class.pyaas.dba.GetSubmodelElementByPath_SRI(submodelId,IdShortPath)
+        if status:
+            return submodelElem
+        else:
+            return None
+    
+    def wait_untill_timer(self,message_count,timer) -> bool:
+        i = 1
+        while (self.in_queue.qsize() < message_count) and (i > timer): 
+            time.sleep(1)
+            i = i + 1
+        
+        if (self.in_queue.qsize() == message_count):
+            return True
+        else:
+            return False 
+
+    def wait(self,timer_count) -> bool:
+        time.sleep(timer_count)
+        return True
+    
+    def wait_untill(self,message_count) -> bool:
+        while (self.in_queue.qsize() < message_count): 
+            time.sleep(1)
+            
+        if (self.in_queue.qsize() == message_count):
+            return True
+        else:
+            return False
+    
+    def rcv_msg_count(self):
+        return self.in_queue.qsize()
+      
+class Actor:
+    def __init__(self,pyaas,skillName,semanticProtocol,SkillService,initialState):
+        self.pyaas = pyaas
+        
+        self.productionStepSeq = []
+        self.responseMessage = {}
+        
+        self.SkillService = SkillService
+        self.skillName = skillName
+        self.semanticProtocol = semanticProtocol
+        self.initialState = initialState
+        
+        self.initstate_specific_queue_internal()
+        self.init_inbound_messages()
+        self.currentConversationId = "temp"
+        
+        self.enabledStatus = {"Y":True, "N":False}
+        self.enabledState = "Y"
+        
+        self.statusInElem = self.pyaas.aasConfigurer.getStatusResponseSubmodel()
+        
+
+    def create_status_message(self) -> None:
+        self.statusMessage = self.gen.create_i40_message("StausChange","AASNetworkedBidding",
+                                                       self.aasID + "/"+self.skillName,
+                                                       "SkillStatusChange")
+        self.statusMessage["interactionElements"].append(self.pyaas.aasConfigurer.getStatusResponseSubmodel())
+        
+
+    def empty_all_queues(self) -> None:
+        for queueName,queue in self.QueueDict.items():
+            queueList = list(self.queue.queue)
+            for elem in range(0,len(queueList)):
+                queue.get()
+        
+    def start(self, msgHandler,shellObject,_uid):
+        self.StatusResponseSM = [self.pyaas.aasConfigurer.getStatusResponseSubmodel()]
+        self.msgHandler = msgHandler
+        self.shellObject = shellObject
+        self.aasID = shellObject.aasELement["id"]
+        self.uuid  = _uid
+        self.gen = Generic(self.aasID,self.skillName,self.semanticProtocol)
+        self.create_status_message()
+        self.skillLogger = logging.getLogger(self.aasID+"."+self.skillName)
+        self.skillLogger.setLevel(logging.DEBUG)
+        
+        self.commandLogger_handler = logging.StreamHandler(stream=sys.stdout)
+        self.commandLogger_handler.setLevel(logging.DEBUG)
+
+        bString = base64.b64encode(bytes(self.aasID,'utf-8'))
+        base64_string= bString.decode('utf-8')
+        
+        self.fileLogger_Handler = logging.FileHandler(self.pyaas.base_dir+"/logs/"+"_"+str(base64_string)+"_"+self.skillName+".LOG")
+        self.fileLogger_Handler.setLevel(logging.DEBUG)
+        
+        self.listHandler = ServiceLogHandler(LogList())
+        self.listHandler.setLevel(logging.DEBUG)
+        
+        self.Handler_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s',datefmt='%m/%d/%Y %I:%M:%S %p')
+        
+        self.listHandler.setFormatter(self.Handler_format)
+        self.commandLogger_handler.setFormatter(self.Handler_format)
+        self.fileLogger_Handler.setFormatter(self.Handler_format)
+        
+        self.skillLogger.addHandler(self.listHandler)
+        self.skillLogger.addHandler(self.commandLogger_handler)
+        self.skillLogger.addHandler(self.fileLogger_Handler)
+ 
+
+    def geCurrentSKILLState(self) -> str:
+        return self.SKILL_STATE
+    
+    def getListofSKILLStates(self) -> list:
+        return self.SKILL_STATES
+    
+    
+    def stateChange(self, STATE) -> None:
+        self.statusMessage["interactionElements"][0]["submodelElements"][0]["value"] = "I"
+        self.statusMessage["interactionElements"][0]["submodelElements"][1]["value"] = "A006. internal-status-change"
+        self.statusMessage["interactionElements"][0]["submodelElements"][2]["value"] = str(datetime.now()) +" "+STATE
+        #self.sendMessage(self.statusMessage)
+     
+    def send(self, sendMessage) -> None:
+        self.msgHandler.putObMessage(sendMessage)
+    
+    def run(self,currentState,InitialState):
+        self.currentState = currentState
+        while (True):
+            if ((self.currentState.__class__.__name__) == InitialState):
+                if(self.enabledState):
+                    self.currentState.run()
+                    ts = currentState.next()
+                    #self.stateChange(ts.__class__.__name__)
+                    self.currentState = ts
+                    self.skillLogger.info("TargettState: " + ts.__class__.__name__)
+                    self.skillLogger.info("############################################################################# \n")
+                else:
+                    time.sleep(1)
+            else:
+                self.currentState.run()
+                ts = self.currentState.next()
+                if not (ts):
+                    break
+                else:
+                    #self.stateChange(ts.__class__.__name__)
+                    self.currentState = ts
+    

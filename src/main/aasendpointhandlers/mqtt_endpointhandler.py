@@ -79,13 +79,13 @@ class AASEndPointHandler(AASEndPointHandler):
             self.pyAAS.serviceLogger.info('Error disconnecting to the server ' + str(e))
 
     def dispatchMessage(self, send_Message): 
-        publishTopic = "AASpillarbox"
+        publishTopic = ""#"AASpillarbox"
         try:
-            publishTopic = send_Message["frame"]["receiver"]["identification"]["id"]
+            publishTopic = send_Message["frame"]["receiver"]["id"]
         except:
             pass
         try:
-            if (publishTopic in list(self.pyAAS.aasIdentificationIdList.keys())):
+            if (publishTopic in list(self.pyAAS.aasHashDict._getKeys())):
                 self.msgHandler.putIbMessage(send_Message)
             else:
                 self.client.publish("AASpillarbox", str(json.dumps(send_Message)))                

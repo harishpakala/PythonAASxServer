@@ -23,7 +23,7 @@ class AAS_Database_UtilServer(object):
     def start(self): 
         self.POLL = True
         while self.POLL:
-            time.sleep(5)
+            time.sleep(1)
             self.saveToDatabase()
 
     def serialize_shells(self) -> list:
