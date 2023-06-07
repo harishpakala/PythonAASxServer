@@ -5,13 +5,13 @@
             "assetInformation": {
                 "assetKind": "Instance",
                 "defaultThumbnail": {
-                    "path": "file://aasx/files/robot.png"
+                    "path": "file://aasx/files/din-dke-logo.jpg"
                 },
                 "globalAssetId": {
                     "keys": [
                         {
                             "type": "GlobalReference",
-                            "value": "RTB_Besteller"
+                            "value": "DKE_Innovation_Tag"
                         }
                     ],
                     "type": "GlobalReference"
@@ -21,17 +21,17 @@
             "description": [
                 {
                     "language": "en",
-                    "text": "Besteller"
+                    "text": "DKE_Innovation_Tag"
                 }
             ],
             "displayName": [
                 {
                     "language": "en",
-                    "text": "RTB Besteller"
+                    "text": "DKE_Innovation_Tag"
                 }
             ],
-            "id": "ww.ovgu.de/aas/8011ec1c-e671-4856-90b5-558df19ec694",
-            "idShort": "RTB_Besteller",
+            "id": "ww.ovgu.de/aas/7dfe363e-6cf5-4c12-9fe2-08f427716965",
+            "idShort": "DKEInnovationTag",
             "modelType": "AssetAdministrationShell",
             "submodels": [
                 {
@@ -39,607 +39,105 @@
                     "keys": [
                         {
                             "type": "GlobalReference",
-                            "value": "ww.ovgu.de/submodel/Besteller_Requests"
+                            "value": "ww.ovgu.de/submodel/Standard62443Part3of3"
                         }
                     ]
-                },
-                {
-                    "keys": [
-                        {
-                            "type": "Submodel",
-                            "value": "www.ovgu.de/submodel/OperationaData/d2a7e90d-dd48-43d6-9c8a-b6f237ad24a3"
-                        }
-                    ],
-                    "type": "GlobalReference"
-                }
-            ]
-        },
-        {
-            "administration": {},
-            "assetInformation": {
-                "assetKind": "Instance",
-                "defaultThumbnail": {
-                    "path": "file://aasx/files/circle.png"
-                },
-                "globalAssetId": {
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": "RTB_Produzent"
-                        }
-                    ],
-                    "type": "GlobalReference"
-                }
-            },
-            "category": "CONSTANT",
-            "description": [
-                {
-                    "language": "en",
-                    "text": "RTB_Produzent"
-                }
-            ],
-            "displayName": [
-                {
-                    "language": "en",
-                    "text": "RTB_Produzent"
-                }
-            ],
-            "id": "ww.ovgu.de/aas/62cc0c7f-1e37-40fc-a0e5-6ffc7b245d35",
-            "idShort": "RTB_Produzent",
-            "modelType": "AssetAdministrationShell",
-            "submodels": [
-                {
-                    "type": "GlobalReference",
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": "ww.ovgu.de/submodel/SelectionMechanism"
-                        }
-                    ]
-                },
-                {
-                    "type": "GlobalReference",
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": "ww.ovgu.de/submodel/KatologSubmodel"
-                        }
-                    ]
-                },
-                {
-                    "keys": [
-                        {
-                            "type": "Submodel",
-                            "value": "www.ovgu.de/submodel/OperationaData/d7e4a3fe-bd14-4607-9b7c-1218931f41be"
-                        }
-                    ],
-                    "type": "GlobalReference"
                 }
             ]
         }
     ],
     "submodels": [
         {
-            "idShort": "KatologSubmodel",
+            "idShort": "Standard62443Part3of3",
             "category": "CONSTANT",
-            "id": "ww.ovgu.de/submodel/KatologSubmodel",
+            "id": "ww.ovgu.de/submodel/Standard62443Part3of3",
             "modelType": "Submodel",
             "submodelElements": [
                 {
-                    "idShort": "S62012RSRFD",
+                    "idShort": "Clause1",
                     "category": "CONSTANT",
                     "value": [
                         {
-                            "idShort": "Name",
+                            "idShort": "id",
                             "category": "CONSTANT",
-                            "value": "Rillenkugellager S62..-2RSR-FD, korrosionsbeständige Materialien, für Lebensmittelindustrie, einreihig, Dichtscheiben, Stahlblechkäfig",
+                            "value": "FR1",
                             "valueType": "xs:string",
                             "modelType": "Property"
                         },
                         {
-                            "idShort": "Aussendurchmesser",
+                            "idShort": "title",
                             "category": "CONSTANT",
-                            "value": "4",
+                            "value": "Identification and authentication control",
                             "valueType": "xs:string",
                             "modelType": "Property"
                         },
                         {
-                            "idShort": "DynamischeTragzahl",
+                            "idShort": "Provisions",
                             "category": "CONSTANT",
-                            "value": "1300",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Beschichtung",
-                            "category": "CONSTANT",
-                            "value": "Keine",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Schmierung",
-                            "category": "CONSTANT",
-                            "value": "Lebensdauerschmierung, Wartungsfreiheit",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Belastung",
-                            "category": "CONSTANT",
-                            "value": "Radiale Last",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "C02Footprint",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Preis",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "modelType": "SubmodelElementCollection"
-                },
-                {
-                    "idShort": "EGB0303E40",
-                    "category": "CONSTANT",
-                    "value": [
-                        {
-                            "idShort": "Name",
-                            "category": "CONSTANT",
-                            "value": "Metall-Polymer Verbundgleitbuchse, wartungsfrei, ISO 3547, mit Stahlrücken",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Aussendurchmesser",
-                            "category": "CONSTANT",
-                            "value": "4.5",
-                            "valueType": "xs:duration",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "DynamischeTragzahl",
-                            "category": "CONSTANT",
-                            "value": "1260",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Beschichtung",
-                            "category": "CONSTANT",
-                            "value": "Keine",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Schmierung",
-                            "category": "CONSTANT",
-                            "value": "Lebensdauerschmierung, Wartungsfreiheit",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Belastung",
-                            "category": "CONSTANT",
-                            "value": "Radiale Last",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "C02Footprint",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Preis",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "modelType": "SubmodelElementCollection"
-                },
-                {
-                    "idShort": "EGB0505E40B",
-                    "category": "CONSTANT",
-                    "value": [
-                        {
-                            "idShort": "Name",
-                            "category": "CONSTANT",
-                            "value": "Metall-Polymer Verbundgleitbuchse, wartungsfrei, ISO 3547, mit Bronzerücken",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Aussendurchmesser",
-                            "category": "CONSTANT",
-                            "value": "7",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "DynamischeTragzahl",
-                            "category": "CONSTANT",
-                            "value": "3500",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Beschichtung",
-                            "category": "CONSTANT",
-                            "value": "Geschuetzt gegen Rost",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Schmierung",
-                            "category": "CONSTANT",
-                            "value": "Lebensdauerschmierung, Wartungsfreiheit",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Belastung",
-                            "category": "CONSTANT",
-                            "value": "Radiale Last",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "C02Footprint",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Preis",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "modelType": "SubmodelElementCollection"
-                },
-                {
-                    "idShort": "EGB0505E40",
-                    "category": "CONSTANT",
-                    "value": [
-                        {
-                            "idShort": "Name",
-                            "category": "CONSTANT",
-                            "value": "Metall-Polymer Verbundgleitbuchse, wartungsfrei, ISO 3547, mit Stahlrücken",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Aussendurchmesser",
-                            "category": "CONSTANT",
-                            "value": "7",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "DynamischeTragzahl",
-                            "category": "CONSTANT",
-                            "value": "3500",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Beschichtung",
-                            "category": "CONSTANT",
-                            "value": "keine",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Schmierung",
-                            "category": "CONSTANT",
-                            "value": "Lebensdauerschmierung, Wartungsfreiheit",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Belastung",
-                            "category": "CONSTANT",
-                            "value": "Radiale Last",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "C02Footprint",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Preis",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "modelType": "SubmodelElementCollection"
-                },
-                {
-                    "idShort": "HK0408RRB",
-                    "category": "CONSTANT",
-                    "value": [
-                        {
-                            "idShort": "Name",
-                            "category": "CONSTANT",
-                            "value": "Nadelhülse HK..-RR-B, 1-reihig, mit Käfig",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Aussendurchmesser",
-                            "category": "CONSTANT",
-                            "value": "8",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "DynamischeTragzahl",
-                            "category": "CONSTANT",
-                            "value": "1780",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Beschichtung",
-                            "category": "CONSTANT",
-                            "value": "Geschützt gegen Rost",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Schmierung",
-                            "category": "CONSTANT",
-                            "value": "Fettschmierung",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Belastung",
-                            "category": "CONSTANT",
-                            "value": "Radiale Last",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Preis",
-                            "category": "CONSTANT",
-                            "value": "",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
+                            "value": [
+                                {
+                                    "idShort": "Provision1",
+                                    "category": "CONSTANT",
+                                    "value": [
+                                        {
+                                            "idShort": "id",
+                                            "category": "CONSTANT",
+                                            "value": "SR1.1",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "title",
+                                            "category": "CONSTANT",
+                                            "value": "Human user, process and device identification and authentication",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "ProvisionContent",
+                                            "category": "CONSTANT",
+                                            "value": "The ICS shall provide the capability to uniquely identify and authenticate all users (humans, processes and devices). This capability shall enforce such identification and authentication on all interfaces which provide access to the ICS to support segregation of duties and least privilege in accordance with applicable security policies and procedures.",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "Provision2",
+                                    "category": "CONSTANT",
+                                    "value": [
+                                        {
+                                            "idShort": "id",
+                                            "category": "CONSTANT",
+                                            "value": "SR1.2",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "title",
+                                            "category": "CONSTANT",
+                                            "value": "Account management",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "ProvisionContent",
+                                            "category": "CONSTANT",
+                                            "value": "The ICS shall provide the capability to support the management of accounts, including establishing, activating, modifying, disabling and removing accounts. ",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
                         }
                     ],
                     "modelType": "SubmodelElementCollection"
                 }
             ]
-        },
-        {
-            "idShort": "SelectionMechanism",
-            "category": "CONSTANT",
-            "id": "ww.ovgu.de/submodel/SelectionMechanism",
-            "modelType": "Submodel",
-            "submodelElements": [
-                {
-                    "idShort": "LeastCFP",
-                    "category": "CONSTANT",
-                    "value": "True",
-                    "valueType": "xs:boolean",
-                    "modelType": "Property"
-                },
-                {
-                    "idShort": "LeastPrice",
-                    "category": "CONSTANT",
-                    "value": "False",
-                    "valueType": "xs:boolean",
-                    "modelType": "Property"
-                }
-            ]
-        },
-        {
-            "idShort": "Besteller_Requests",
-            "category": "CONSTANT",
-            "id": "ww.ovgu.de/submodel/Besteller_Requests",
-            "modelType": "Submodel",
-            "submodelElements": [
-                {
-                    "idShort": "Request1",
-                    "category": "CONSTANT",
-                    "value": [
-                        {
-                            "idShort": "Aussendurchmesser",
-                            "category": "CONSTANT",
-                            "valueType": "xs:string",
-                            "min": "35",
-                            "max": "55",
-                            "modelType": "Range"
-                        },
-                        {
-                            "idShort": "DynamischeTragzahl",
-                            "category": "CONSTANT",
-                            "value": "500",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Belastung",
-                            "category": "CONSTANT",
-                            "value": "Radiale Last",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "modelType": "SubmodelElementCollection"
-                },
-                {
-                    "idShort": "Request2",
-                    "category": "CONSTANT",
-                    "value": [
-                        {
-                            "idShort": "Aussendurchmesser",
-                            "category": "CONSTANT",
-                            "valueType": "xs:string",
-                            "min": "5",
-                            "max": "10",
-                            "modelType": "Range"
-                        },
-                        {
-                            "idShort": "DynamischeTragzahl",
-                            "category": "CONSTANT",
-                            "value": "450",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "idShort": "Belastung",
-                            "category": "CONSTANT",
-                            "value": "Radiale Last",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "modelType": "SubmodelElementCollection"
-                }
-            ]
-        },
-        {
-            "semanticId": {
-                "keys": [
-                    {
-                        "type": "Submodel",
-                        "value": "www.ovgu.de/submodel/operationaldata"
-                    }
-                ],
-                "type": "GlobalReference"
-            },
-            "idShort": "OperationalData",
-            "kind": "Instance",
-            "submodelElements": [
-                {
-                    "idShort": "VWSBesterller",
-                    "value": [
-                        {
-                            "value": "VWSBesterller",
-                            "idShort": "SkillName",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "VWS Order",
-                            "idShort": "SkillService",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "WaitforNewOrder",
-                            "idShort": "InitialState",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "Y",
-                            "idShort": "enabled",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "www.admin-shell.io/interaction/negotiation",
-                            "idShort": "semanticProtocol",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "kind": "Instance",
-                    "modelType": "SubmodelElementCollection"
-                }
-            ],
-            "modelType": "Submodel",
-            "id": "www.ovgu.de/submodel/OperationaData/d2a7e90d-dd48-43d6-9c8a-b6f237ad24a3"
-        },
-        {
-            "semanticId": {
-                "keys": [
-                    {
-                        "type": "Submodel",
-                        "value": "www.ovgu.de/submodel/operationaldata"
-                    }
-                ],
-                "type": "GlobalReference"
-            },
-            "idShort": "OperationalData",
-            "kind": "Instance",
-            "submodelElements": [
-                {
-                    "idShort": "VWSProduzent",
-                    "value": [
-                        {
-                            "value": "VWSProduzent",
-                            "idShort": "SkillName",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "VWS Order",
-                            "idShort": "SkillService",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "WaitforRequestProposal",
-                            "idShort": "InitialState",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "Y",
-                            "idShort": "enabled",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "www.admin-shell.io/interaction/negotiation",
-                            "idShort": "semanticProtocol",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "kind": "Instance",
-                    "modelType": "SubmodelElementCollection"
-                }
-            ],
-            "modelType": "Submodel",
-            "id": "www.ovgu.de/submodel/OperationaData/d7e4a3fe-bd14-4607-9b7c-1218931f41be"
         }
     ],
     "conceptDescriptions": [
