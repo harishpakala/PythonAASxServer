@@ -42,23 +42,61 @@
                             "value": "ww.ovgu.de/submodel/Standard62443Part3of3"
                         }
                     ]
+                },
+				
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "urn:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardsNameplate:61326"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                },
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "urn:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardsScope:61326"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                },
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "https://example.com/ids/sm/1484_8191_6032_8741"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                },
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "urn:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardsFiles:61326"
+                        }
+                    ],
+                    "type": "GlobalReference"
                 }
+            
             ]
         }
     ],
     "submodels": [
         {
-            "idShort": "Standard62443Part3of3",
+            "idShort": "ProvisionsOfIEC62443_3_3",
             "category": "CONSTANT",
             "id": "ww.ovgu.de/submodel/Standard62443Part3of3",
             "modelType": "Submodel",
             "submodelElements": [
                 {
-                    "idShort": "Clause1",
+                    "idShort": "Clause4",
                     "category": "CONSTANT",
                     "value": [
                         {
-                            "idShort": "id",
+                            "idShort": "ClauseId",
                             "category": "CONSTANT",
                             "value": "FR1",
                             "valueType": "xs:string",
@@ -82,7 +120,7 @@
                                         {
                                             "idShort": "id",
                                             "category": "CONSTANT",
-                                            "value": "SR1.1",
+                                            "value": "SR1.1_Req",
                                             "valueType": "xs:string",
                                             "modelType": "Property"
                                         },
@@ -97,6 +135,20 @@
                                             "idShort": "ProvisionContent",
                                             "category": "CONSTANT",
                                             "value": "The ICS shall provide the capability to uniquely identify and authenticate all users (humans, processes and devices). This capability shall enforce such identification and authentication on all interfaces which provide access to the ICS to support segregation of duties and least privilege in accordance with applicable security policies and procedures.",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Modality",
+                                            "category": "CONSTANT",
+                                            "value": "Requirement",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Bindingness",
+                                            "category": "CONSTANT",
+                                            "value": "normative",
                                             "valueType": "xs:string",
                                             "modelType": "Property"
                                         }
@@ -127,6 +179,265 @@
                                             "value": "The ICS shall provide the capability to support the management of accounts, including establishing, activating, modifying, disabling and removing accounts. ",
                                             "valueType": "xs:string",
                                             "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Modality",
+                                            "category": "CONSTANT",
+                                            "value": "Requirement",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Bingingness",
+                                            "category": "CONSTANT",
+                                            "value": "normative",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "Provision3",
+                                    "category": "CONSTANT",
+                                    "value": [
+                                        {
+                                            "idShort": "id",
+                                            "category": "CONSTANT",
+                                            "value": "SR1.1_Guidance",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "title",
+                                            "category": "CONSTANT",
+                                            "value": "Rationale and supplemental guidance",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Content",
+                                            "category": "CONSTANT",
+                                            "value": "All users (human, processes and devices) need to be uniquely identified and authenticated for all access to the ICS. Authentication of the identity of these users should be accomplished by using methods such as passwords, tokens, biometrics or, in the case of multifactor authentication, some combination thereof. This requirement should be applied to both local and remote access to the ICS. In addition to identifying and authenticating all users at the ICS level (for example, at system logon), identification and authentication mechanisms should be employed at the application level, when necessary, to provide increased information security. Where human users function as a single group (such as, control room operators), user identification and authentication may be role-based, group-based or device-based. For some ICS, the capability for immediate operator interaction is critical. It is essential that local emergency actions for the ICS not be hampered by identification or authentication requirements. Access to these systems may be restricted by appropriate physical security mechanisms. In order to support such access control policies, the ICS verifies the identity of all users and ICS objects as a first step. In a second step, the permissions assigned to the identified user are enforced (see 5.3, SR 2.1 – Authorization enforcement).",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Modality",
+                                            "category": "CONSTANT",
+                                            "value": "Recommendation",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Bindingness",
+                                            "category": "CONSTANT",
+                                            "value": "normative",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "Provision4",
+                                    "category": "CONSTANT",
+                                    "value": [
+                                        {
+                                            "idShort": "id",
+                                            "category": "CONSTANT",
+                                            "value": "SR1.1_Enhancement_1",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "title",
+                                            "category": "CONSTANT",
+                                            "value": "Requirement enhancements",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "content",
+                                            "category": "CONSTANT",
+                                            "value": "(1) The ICS shall provide the capability to employ multifactor authentication for access via an untrusted network (see 4.13, SR 1.11 – Access via untrusted networks). NOTE Access via untrusted networks to ICS components is enabled only when necessary and approved.",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Modality",
+                                            "category": "CONSTANT",
+                                            "value": "Requirement",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Bindingness",
+                                            "category": "CONSTANT",
+                                            "value": "normative",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "Provision5",
+                                    "category": "CONSTANT",
+                                    "value": [
+                                        {
+                                            "idShort": "id",
+                                            "category": "CONSTANT",
+                                            "value": "SR1.1_Enhancement_2",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "title",
+                                            "category": "CONSTANT",
+                                            "value": "Requirement enhancements",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "content",
+                                            "category": "CONSTANT",
+                                            "value": "(2) The ICS shall provide the capability to employ multifactor authentication for all system access.",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Modality",
+                                            "category": "CONSTANT",
+                                            "value": "Requirement",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Bindingness",
+                                            "category": "CONSTANT",
+                                            "value": "normative",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "Provision6",
+                                    "category": "CONSTANT",
+                                    "modelType": "SubmodelElementCollection",
+                                    "value": [
+                                        {
+                                            "idShort": "id",
+                                            "category": "CONSTANT",
+                                            "value": "SAL-C_AC_System_SR1.1",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "title",
+                                            "category": "CONSTANT",
+                                            "value": "Security assurance level SR1.1",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "content",
+                                            "category": "CONSTANT",
+                                            "value": "The requirements for the four SAL levels that relate to SR 1.1 are: • SAL-C(IAC,system) 1: Not Selected • SAL-C(IAC,system) 2: SR 1.1 (1) • SAL-C(IAC,system) 3: SR 1.1 (1) (2) • SAL-C(IAC,system) 4: SR 1.1 (1) (2)",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Modality",
+                                            "category": "CONSTANT",
+                                            "value": "Requirement",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "Bindingness",
+                                            "category": "CONSTANT",
+                                            "value": "normative",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "ProvisionSets",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "idShort": "ProvisionSet1",
+                                    "category": "CONSTANT",
+                                    "value": [
+                                        {
+                                            "idShort": "ProvisionReferences",
+                                            "category": "CONSTANT",
+                                            "value": [
+                                                {
+                                                    "idShort": "ProvRef1",
+                                                    "category": "CONSTANT",
+                                                    "value": "SR1.1_Req",
+                                                    "valueType": "xs:string",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "ProvRef2",
+                                                    "category": "CONSTANT",
+                                                    "value": "SR1.1_Guidance",
+                                                    "valueType": "xs:string",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "ProvRef3",
+                                                    "category": "CONSTANT",
+                                                    "value": "SR1.1_Enhancement_1",
+                                                    "valueType": "xs:string",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "ProvRef4",
+                                                    "category": "CONSTANT",
+                                                    "value": "SR1.1_Enhancement_2",
+                                                    "valueType": "xs:string",
+                                                    "modelType": "Property"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        },
+                                        {
+                                            "idShort": "Relations",
+                                            "category": "CONSTANT",
+                                            "modelType": "SubmodelElementCollection",
+                                            "value": [
+                                                {
+                                                    "idShort": "Realtion1",
+                                                    "category": "CONSTANT",
+                                                    "modelType": "SubmodelElementCollection",
+                                                    "value": [
+                                                        {
+                                                            "idShort": "RelElement1",
+                                                            "category": "CONSTANT",
+                                                            "value": "SR1.1_Req",
+                                                            "valueType": "xs:string",
+                                                            "modelType": "Property"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "idShort": "id",
+                                            "category": "CONSTANT",
+                                            "value": "SR1.1",
+                                            "valueType": "xs:string",
+                                            "modelType": "Property"
                                         }
                                     ],
                                     "modelType": "SubmodelElementCollection"
@@ -136,9 +447,2653 @@
                         }
                     ],
                     "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "Bindingness",
+                    "category": "CONSTANT",
+                    "value": "normative",
+                    "valueType": "xs:string",
+                    "modelType": "Property"
                 }
             ]
+        },
+		{
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate"
+                    }
+                ],
+                "type": "GlobalReference"
+            },
+            "qualifiers": [],
+            "idShort": "StandardsNameplate_IEC62443-3-3",
+            "category": "CONSTANT",
+            "kind": "Instance",
+            "submodelElements": [
+                {
+                    "value": "Standard Publication",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:DocumentType"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "DocumentType",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "value": "International Standard",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:StandardCategory"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "StandardCategory",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:ICSClassifications"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "ICSClassifications",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "25.040.40",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsScope:ICSClassifications:ICSClassification"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "ICSClassification_1",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "35.110",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsScope:ICSClassifications:ICSClassification"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "ICSClassification_2",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:DocumentNumbers"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "DocumentNumbers",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "IEC 62443-3-3:2013",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:DocumentNumbers:DocumentNumber"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "DocumentNumber_1",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "value": "Active",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:LifeCycle"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "LifeCycle",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:SuccessorOfStandards"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "SuccessorOfStandards",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "E DIN IEC 61326-1 (VDE 0843-20-1):2010-05",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:SuccessorOfStandards:SuccessorOfStandard"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SuccessorOfStandard_1",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:AdoptedFromStandards"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "AdoptedFromStandards",
+                    "category": "CONSTANT",
+                    "value": [],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:RelatesToDirectives"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "RelatesToDirectives",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "2004/108/EG (2004-12-15)<H>",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:RelatesToDirectives:RelatesToDirective"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "RelatesToDirective_1",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "2014/30/EU (2014-02-26)<H>",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:RelatesToDirectives:RelatesToDirective"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "RelatesToDirective_2",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "2004/108/EGMitt 2014-02 (2014-02-25)<T>",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:RelatesToDirectives:RelatesToDirective"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "RelatesToDirective_3",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "2004/108/EGMitt 2015-01 (2015-01-16)<T>",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:RelatesToDirectives:RelatesToDirective"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "RelatesToDirective_4",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "2014/30/EUMitt (2016-05-13)<T>",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:RelatesToDirectives:RelatesToDirective"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "RelatesToDirective_5",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "2014/30/EUMitt 2016-08 (2016-08-12)<T>",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:RelatesToDirectives:RelatesToDirective"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "RelatesToDirective_6",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "2014/30/EUMitt 2018-07 (2018-07-13)<T>",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:RelatesToDirectives:RelatesToDirective"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "RelatesToDirective_7",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "value": "2024-12-31",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:TransitionPeriodEnd"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "TransitionPeriodEnd",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "value": "2013-08-07",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:PublicationDate"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "PublicationDate",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "value": "",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:WithdrawalDate"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "WithdrawalDate",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "value": "TC 65",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:Committee"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Committee_1",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "value": "DKE/UK 931.2",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:Committee"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Committee_2",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:Titel"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Titel",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "value": [
+                        {
+                            "language": "de",
+                            "text": "Elektrische Mess-, Steuer-, Regel- und Laborger\u00e4te - EMV-Anforderungen - Teil 1: Allgemeine Anforderungen (IEC 61326-1:2012); Deutsche Fassung EN 61326-1:2013"
+                        },
+                        {
+                            "language": "en",
+                            "text": "Electrical equipment for measurement, control and laboratory use - EMC requirements - Part 1: General requirements (IEC 61326-1:2012); German version EN 61326-1:2013"
+                        },
+                        {
+                            "language": "fr",
+                            "text": "Mat\u00e9riel \u00e9lectrique de mesure, de commande et de laboratoire - Exigences relatives \u00e0 la CEM - Partie 1: Exigences g\u00e9n\u00e9rales"
+                        }
+                    ],
+                    "modelType": "MultiLanguageProperty",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:Languages"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Languages",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "en",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsNameplate:Languages:Language"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "Language_1",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "urn:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardsNameplate:61326"
+        },
+        {
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsScope"
+                    }
+                ],
+                "type": "GlobalReference"
+            },
+            "qualifiers": [],
+            "idShort": "StandardsScope_IEC62443-3-3",
+            "category": "CONSTANT",
+            "kind": "Instance",
+            "submodelElements": [
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsScope:ICSClassifications"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "ICSClassifications",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "25.040.40",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsScope:ICSClassifications:ICSClassification"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "ICSClassification_1",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "35.110",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsScope:ICSClassifications:ICSClassification"
+                                    }
+                                ],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "ICSClassification_2",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "idShort": "Keywords",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "",
+                            "idShort": "Keyword1",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "idShort": "Abstract",
+                    "kind": "Instance",
+                    "value": [
+                        {
+                            "language": "en",
+                            "text": "IEC 61326-1:2020 is available as &lt;a href=\"https://webstore.iec.ch/publication/67782\"&gt;IEC 61326-1:2020 RLV&lt;/a&gt; which contains the International Standard and its Redline version, showing all                changes of the technical content compared to the previous edition.&lt;br /&gt; &lt;br /&gt; IEC 61326:2020 specifies requirements for immunity and emissions regarding electro\u00acmagnetic compatibility (EMC) for electrical equipment, operating from a supply or battery of less than 1 000 V AC or 1 500 V DC or from the circuit being measured. Equipment intended for professional, industrial-process, industrial-manufacturing and educational use is covered by this part. It includes equipment and computing devices for&lt;br /&gt; - measurement and test;&lt;br /&gt; - control;&lt;br /&gt; - LABORATORY use;&lt;br /&gt; - accessories intended for use with the above (such as sample handling equipment),&lt;br /&gt; intended to be used in industrial and non-industrial locations."
+                        },
+                        {
+                            "language": "fr",
+                            "text": "IEC 61326-1:2020 est disponible sous forme de &lt;a href=\"https://webstore.iec.ch/publication/67782\"&gt;IEC 61326-1:2020 RLV&lt;/a&gt; qui contient la Norme internationale et sa version Redline, illustrant les modifications du contenu technique depuis l'\u00e9dition pr\u00e9c\u00e9dente.&lt;br /&gt; &lt;br/&gt; L\u2019IEC 61326:2020 sp\u00e9cifie les exigences relatives \u00e0 l'immunit\u00e9 et aux \u00e9missions concernant la compatibilit\u00e9 \u00e9lectromagn\u00e9tique (CEM) pour les mat\u00e9riels \u00e9lectriques fonctionnant \u00e0 partir d'une source d'alimentation ou d'une batterie inf\u00e9rieure \u00e0 1 000 V en courant alternatif ou 1 500 V en courant continu ou \u00e0 partir du circuit mesur\u00e9. Elle concerne les mat\u00e9riels pr\u00e9vus pour un usage professionnel, pour les processus industriels et pour l'enseignement. Cela comprend les mat\u00e9riels et les dispositifs informatiques pour&lt;br /&gt; - le mesurage et les essais;&lt;br /&gt; - la commande;&lt;br /&gt; - les applications en LABORATOIRE;&lt;br /&gt; - les accessoires pr\u00e9vus pour \u00eatre utilis\u00e9s dans les cas susmentionn\u00e9s (par exemple, mat\u00e9riel de manipulation d\u2019\u00e9chantillons),&lt;br /&gt; dans un usage en milieu industriel ou non industriel."
+                        }
+                    ],
+                    "modelType": "MultiLanguageProperty",
+                    "qualifiers": []
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "urn:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardsScope:61326"
+        },
+        {
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsFiles"
+                    }
+                ],
+                "type": "GlobalReference"
+            },
+            "qualifiers": [],
+            "idShort": "StandardsFiles_IEC62443-3-3",
+            "category": "CONSTANT",
+            "kind": "Instance",
+            "submodelElements": [
+                {
+                    "value": "",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsFiles:PDF"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "PDF",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                },
+                {
+                    "value": "",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:IDiS:AG2:Pilot:NormAAS:SemID:Submodel:StandardsFiles:IIRDS"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "IIRDS",
+                    "category": "CONSTANT",
+                    "kind": "Instance",
+                    "valueType": "xs:string",
+                    "modelType": "Property",
+                    "qualifiers": []
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "urn:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardsFiles:61326"
+        },
+        {
+            "qualifiers": [],
+            "idShort": "StandardContent_IEC62443-3-3",
+            "kind": "Instance",
+            "submodelElements": [
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_1",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.1_Req",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Human user, process and device identification and authentication - Requirement "
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "The ICS shall provide the capability to uniquely identify and authenticate all users (humans, processes and devices). This capability shall enforce such identification and authentication on all interfaces which provide access to the ICS to support segregation of duties and least privilege in accordance with applicable security policies and procedures."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_2",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.1_Guidance",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Human user, process and device identification and authentication - Rationale and supplemental guidance "
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "All users (human, processes and devices) need to be uniquely identified and authenticated for all access to the ICS. Authentication of the identity of these users should be accomplished by using methods such as passwords, tokens, biometrics or, in the case of multifactor authentication, some combination thereof. This requirement should be applied to both local and remote access to the ICS. In addition to identifying and authenticating all users at the ICS level (for example, at system logon), identification and authentication mechanisms should be employed at the application level, when necessary, to provide increased information security. Where human users function as a single group (such as, control room operators), user identification and authentication may be role-based, group-based or device-based. For some ICS, the capability for immediate operator interaction is critical. It is essential that local emergency actions for the ICS not be hampered by identification or authentication requirements. Access to these systems may be restricted by appropriate physical security mechanisms. In order to support such access control policies, the ICS verifies the identity of all users and ICS objects as a first step. In a second step, the permissions assigned to the identified user are enforced (see 5.3, SR 2.1 \u2013 Authorization enforcement)."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Recommendation",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_3",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.1_Enhancement_1",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Human user, process and device identification and authentication - Requirement enhancements (1)"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "(1) The ICS shall provide the capability to employ multifactor authentication for access via an untrusted network (see 4.13, SR 1.11 \u2013 Access via untrusted networks). NOTE Access via untrusted networks to ICS components is enabled only when necessary and approved."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_4",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.1_Enhancement_2",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Human user, process and device identification and authentication - Requirement enhancements (2)"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "(2) The ICS shall provide the capability to employ multifactor authentication for all system access."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_5",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.1_SAL",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Human user, process and device identification and authentication - Security assurance levels"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "The requirements for the four SAL levels that relate to SR 1.1 are: - SAL-C(IAC,system) 1: Not Selected, - SAL-C(IAC,system) 2: SR 1.1 (1), - SAL-C(IAC,system) 3: SR 1.1 (1) (2) - SAL-C(IAC,system) 4: SR 1.1 (1) (2)"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_6",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.2_Req",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Account management - Requirement "
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "The ICS shall provide the capability to support the management of accounts, including establishing, activating, modifying, disabling and removing accounts."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_7",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.2_Guidance",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Account management - Rationale and supplemental guidance "
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Account management may include grouping of accounts (for example, individual, role-based, device-based and system), establishment of conditions for group membership and assignment of associated authorizations. In certain IACS instances, where individual accounts are determined to be  unnecessary from a risk-analysis and/or regulatory aspect, shared accounts are acceptable as long as adequate compensating controls (such as limited physical access) are in place and documented. Non-human user accounts (sometimes termed service accounts) that are utilized for processto-process communication (for example, a human-machine interface (HMI) connecting to a database) typically require different security policies and procedures from human user accounts."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Recommendation",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_8",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.2_SAL",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Account management - Security assurance levels"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "The requirements for the four SAL levels that relate to SR 1.2 are: - SAL-C(IAC,system) 1: SR 1.2, - SAL-C(IAC,system) 2: SR 1.2, - SAL-C(IAC,system) 3: SR 1.2, - SAL-C(IAC,system) 4: SR 1.2"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_9",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.5_Req",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Strength of password-based authentication - Requirement "
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "For ICS utilizing password-based authentication, the ICS shall provide the capability to enforce: a) configurable password strength based on minimum length and variety of character types; and b) password minimum and maximum lifetime restrictions for human users."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_10",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.5_Guidance",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Strength of password-based authentication - Recommendation"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "User authentication based on a username and a secret password is a very commonly used mechanism. Many attacks on such mechanisms focus on guessing the password (for example, dictionary attacks or targeted social engineering) or breaking the cryptographic protection of the stored password representation (for example, using rainbow tables or bruteforcing a hash collision).  Increasing the size of the set of valid passwords by increasing the number of allowed characters makes such attacks more complex, but only if the increased set size is actually used (generally users would tend to not include special characters in a password as they are perceived harder to remember). Limiting the lifetime of a password decreases the window of opportunity for an attacker to breach a given password\u2019s secrecy. In order to prevent users from circumventing this control by once changing their password to a new one and then immediately changing back to their original password, a minimum lifetime for a password is commonly enforced as well. This protection can be further enhanced by limiting the reuse of passwords (preventing small sets of alternating passwords), which further decreases the usefulness of a once-breached password. Extended protection beyond password based mechanisms can be achieved using multifactor authentication (see 4.3, SR 1.1 \u2013 Human user, process and device identification and authentication)."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Recommendation",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_11",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.5_Enhancement_1",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Strength of password-based authentication - Requirement enhancements (1)"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "(1) The ICS shall provide the capability to limit password reuse for a specified number of generations for human users."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_12",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.5_Enhancement_2",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Strength of password-based authentication - Requirement enhancements (1)"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "(2) The ICS shall provide the capability to enforce password minimum and maximum lifetime restrictions for process and device users."
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "GlobalReference"
+                    },
+                    "idShort": "Provision_13",
+                    "category": "CONSTANT",
+                    "value": [
+                        {
+                            "value": "SR1.5_SAL-C",
+                            "idShort": "id",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "valueId": {
+                                "keys": [],
+                                "type": "GlobalReference"
+                            },
+                            "idShort": "SectionTitle",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "Strength of password-based authentication - SAL"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Content",
+                            "kind": "Instance",
+                            "value": [
+                                {
+                                    "language": "en",
+                                    "text": "The requirements for the four SAL levels that relate to SR 1.5 are:- SAL-C(IAC,system) 1: Not Selected, - SAL-C(IAC,system) 2: SR 1.5, - SAL-C(IAC,system) 3: SR 1.5 (1), - SAL-C(IAC,system) 4: SR 1.5 (1) (2)"
+                                }
+                            ],
+                            "modelType": "MultiLanguageProperty",
+                            "qualifiers": []
+                        },
+                        {
+                            "idShort": "Tags",
+                            "category": "CONSTANT",
+                            "value": [
+                                {
+                                    "value": "Assessment",
+                                    "idShort": "What",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Inspection",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                },
+                                {
+                                    "value": "Generic Conformity",
+                                    "idShort": "Why",
+                                    "kind": "Instance",
+                                    "valueType": "xs:string",
+                                    "modelType": "Property",
+                                    "qualifiers": []
+                                }
+                            ],
+                            "kind": "Instance",
+                            "modelType": "SubmodelElementCollection",
+                            "qualifiers": [
+                                {
+                                    "type": "What",
+                                    "valueType": "",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "How",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Who",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Where",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "When",
+                                    "valueType": ""
+                                },
+                                {
+                                    "type": "Why",
+                                    "valueType": ""
+                                }
+                            ]
+                        },
+                        {
+                            "value": "Requirement",
+                            "idShort": "Modality",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": "normative",
+                            "idShort": "Bindingness",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "idShort": "ProvisionSet-SAL-C-2",
+                    "value": [
+                        {
+                            "value": "SAL-C-2",
+                            "idShort": "id",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": {
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "local": true,
+                                        "value": "https://example.com/ids/sm/1484_8191_6032_8741",
+                                        "index": 0,
+                                        "idType": "IRI"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "local": true,
+                                        "value": "Provision_1",
+                                        "index": 1,
+                                        "idType": "IdShort"
+                                    },
+                                    {
+                                        "type": "Property",
+                                        "local": true,
+                                        "value": "id",
+                                        "index": 2,
+                                        "idType": "IdShort"
+                                    }
+                                ]
+                            },
+                            "idShort": "Reference1",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "modelType": "ReferenceElement",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": {
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "local": true,
+                                        "value": "https://example.com/ids/sm/1484_8191_6032_8741",
+                                        "index": 0,
+                                        "idType": "IRI"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "local": true,
+                                        "value": "Provision_3",
+                                        "index": 1,
+                                        "idType": "IdShort"
+                                    },
+                                    {
+                                        "type": "Property",
+                                        "local": true,
+                                        "value": "id",
+                                        "index": 2,
+                                        "idType": "IdShort"
+                                    }
+                                ]
+                            },
+                            "idShort": "Reference2",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "modelType": "ReferenceElement",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": {
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "local": true,
+                                        "value": "https://example.com/ids/sm/1484_8191_6032_8741",
+                                        "index": 0,
+                                        "idType": "IRI"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "local": true,
+                                        "value": "Provision_9",
+                                        "index": 1,
+                                        "idType": "IdShort"
+                                    },
+                                    {
+                                        "type": "Property",
+                                        "local": true,
+                                        "value": "id",
+                                        "index": 2,
+                                        "idType": "IdShort"
+                                    }
+                                ]
+                            },
+                            "idShort": "Reference3",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "modelType": "ReferenceElement",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                },
+                {
+                    "idShort": "ProvisionSet-SAL-C-3",
+                    "value": [
+                        {
+                            "value": "SAL-C-3",
+                            "idShort": "id",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": {
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "local": true,
+                                        "value": "https://example.com/ids/sm/1484_8191_6032_8741",
+                                        "index": 0,
+                                        "idType": "IRI"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "local": true,
+                                        "value": "Provision_1",
+                                        "index": 1,
+                                        "idType": "IdShort"
+                                    },
+                                    {
+                                        "type": "Property",
+                                        "local": true,
+                                        "value": "id",
+                                        "index": 2,
+                                        "idType": "IdShort"
+                                    }
+                                ]
+                            },
+                            "idShort": "Reference1",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "modelType": "ReferenceElement",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": {
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "local": true,
+                                        "value": "https://example.com/ids/sm/1484_8191_6032_8741",
+                                        "index": 0,
+                                        "idType": "IRI"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "local": true,
+                                        "value": "Provision_3",
+                                        "index": 1,
+                                        "idType": "IdShort"
+                                    },
+                                    {
+                                        "type": "Property",
+                                        "local": true,
+                                        "value": "id",
+                                        "index": 2,
+                                        "idType": "IdShort"
+                                    }
+                                ]
+                            },
+                            "idShort": "Reference2",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "modelType": "ReferenceElement",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": {
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "local": true,
+                                        "value": "https://example.com/ids/sm/1484_8191_6032_8741",
+                                        "index": 0,
+                                        "idType": "IRI"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "local": true,
+                                        "value": "Provision_4",
+                                        "index": 1,
+                                        "idType": "IdShort"
+                                    },
+                                    {
+                                        "type": "Property",
+                                        "local": true,
+                                        "value": "id",
+                                        "index": 2,
+                                        "idType": "IdShort"
+                                    }
+                                ]
+                            },
+                            "idShort": "Reference3",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "modelType": "ReferenceElement",
+                            "qualifiers": []
+                        },
+                        {
+                            "value": {
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "local": true,
+                                        "value": "https://example.com/ids/sm/1484_8191_6032_8741",
+                                        "index": 0,
+                                        "idType": "IRI"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "local": true,
+                                        "value": "Provision_11",
+                                        "index": 1,
+                                        "idType": "IdShort"
+                                    },
+                                    {
+                                        "type": "Property",
+                                        "local": true,
+                                        "value": "id",
+                                        "index": 2,
+                                        "idType": "IdShort"
+                                    }
+                                ]
+                            },
+                            "idShort": "Reference4",
+                            "category": "CONSTANT",
+                            "kind": "Instance",
+                            "modelType": "ReferenceElement",
+                            "qualifiers": []
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection",
+                    "qualifiers": []
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "https://example.com/ids/sm/1484_8191_6032_8741"
         }
+    
     ],
     "conceptDescriptions": [
         {

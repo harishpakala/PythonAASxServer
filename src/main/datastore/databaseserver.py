@@ -1085,8 +1085,6 @@ class AAS_Database_Server(object):
                     submodel,status,statuscode = self.getSubmodel(_submodelId)
                     if status:
                         _submodels.append(submodel)
-                    else:
-                        return submodel,status,statuscode
             return _submodels, True,200
         except Exception as E:
             self.pyAAS.serviceLogger.info("Error at GetAllSubmodels DB" + str(E))

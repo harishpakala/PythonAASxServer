@@ -42,6 +42,10 @@ function addAASElementtoForm(event,exdomain,formId,aasIdentifier,submodelId,IdSh
     	_aas_elem = new MultiLanguageProperty();
     	_aas_elem.createDom(formId,exdomain);	
     }
+    else if (aas_elem_type === "ReferenceElement"){
+    	_aas_elem = new ReferenceElement();
+    	_aas_elem.createDom(formId,exdomain);	
+    }
 }
 function createNewSubmodel1(event,element_form_id,aasIdentifier){
 	event.stopPropagation();

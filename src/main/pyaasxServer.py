@@ -327,7 +327,7 @@ class PyAASxServer:
         try:
             registerModule = import_module("." + "Register", package="skills")
             registerBaseCLass = getattr(registerModule, "Register")
-            return registerBaseCLass(self)
+            return registerBaseCLass()
         except Exception as E:
             self.serviceLogger.info("Error configuring the register skill " + str(E))
 
@@ -335,7 +335,7 @@ class PyAASxServer:
         try:
             pManagerModule = import_module("." + "ProductionManager", package="skills")
             pmBaseCLass = getattr(pManagerModule, "ProductionManager")
-            return pmBaseCLass(self)
+            return pmBaseCLass()
         except Exception as E:
             self.serviceLogger.info(
                 "Error configuring the production management skill. " + str(E)
@@ -351,7 +351,8 @@ class PyAASxServer:
             skillDetails = copy.deepcopy(self.available_skills[skill_name])
             skill_module = import_module("." + skill_name, package="skills")
             skill_base_class = getattr(skill_module, skill_name)
-            skillDetails["SkillHandler"] = skill_base_class(self)
+            skillDetails["SkillHandler"] = skill_base_class()
+            skillDetails["SkillHandler"].set_base(self)
             shellObject.add_skill(skill_name, skillDetails)
         except Exception as e:
             self.serviceLogger.info("Error configuring skill @configure_skill_by_id " + str(e))
@@ -366,10 +367,12 @@ class PyAASxServer:
                 
             pm_skillDetails = copy.deepcopy(self.available_skills["ProductionManager"])
             pm_skillDetails["SkillHandler"] = self.configure_pm_skill()
+            pm_skillDetails["SkillHandler"].set_base(self)
             shellObject.add_skill("ProductionManager", pm_skillDetails)
 
             rg_skillDetails = copy.deepcopy(self.available_skills["Register"])
             rg_skillDetails["SkillHandler"] = self.configure_register_sKill()
+            rg_skillDetails["SkillHandler"].set_base(self)
             shellObject.add_skill("Register", rg_skillDetails)
             
             
@@ -449,7 +452,7 @@ class PyAASxServer:
             shellObject = self.aasShellHashDict.__getHashEntry__(_uid)
             skill = shellObject.skills[skill_name]
             skill_thread = threading.Thread(
-                        target=skill["SkillHandler"].start,
+                        target=skill["SkillHandler"]._start,
                         args=(
                             self.msgHandler,
                             shellObject,_uid,),
@@ -465,7 +468,7 @@ class PyAASxServer:
             shellObject = self.aasShellHashDict.__getHashEntry__(_uid)
             for skill_name,skill in shellObject.skills.items():
                 threading.Thread(
-                        target=skill["SkillHandler"].start,
+                        target=skill["SkillHandler"]._start,
                         args=(
                             self.msgHandler,
                             shellObject,_uid,),

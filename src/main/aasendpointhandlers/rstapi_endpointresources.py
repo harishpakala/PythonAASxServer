@@ -1568,8 +1568,8 @@ class AASWebInterfaceProductionManagement(Resource):
         elif (tag == "create"):
             try:
                 skill_name = request.form.get("skill_name")     
-                submodel_ids = [request.form.get("submodel_id_idshort")]
-                idShortPath = request.form.get("idShortPath") 
+                submodel_ids = request.form.getlist("submodel_id_idshort")
+                idShortPath = ""#request.form.get("idShortPath") 
                 if skill_name != None:
                     if submodel_ids != None and len(submodel_ids) > 0:
                         submodel_id_idSHort_list = []

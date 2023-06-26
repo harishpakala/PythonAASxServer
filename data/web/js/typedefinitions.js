@@ -1157,14 +1157,35 @@ class ReferenceElement extends DataElement{
 			super(extensions,category,idShort,displayName,description,
 					checksum,kind,semanticId,supplementalSemanticIds,
 					qualifiers,embeddedDataSpecifications);
-			this.value = value;
+			this.value = new ComplexObject("value","Reference");
+			this.modelType = "ReferenceElement";
 	}		
 	serialize(){
 		let jsonData =  super.serialize();
 		jsonData["value"] = this.value.serialize();
+		if (this.valueId._object != null){
+			jsonData["valueId"] = this.valueId.serialize();
+		}
 		jsonData["modelType"] = "ReferenceElement";
 		return jsonData;
-	}	
+	}
+	deserialize(data,parentId,exdomain){
+		super.deserialize(data,parentId,exdomain);
+		if (data.hasOwnProperty("value")){
+			this.value.deserialize(data["value"],parentId,exdomain);
+		}
+	}
+	createDom(parentId,exdomain){
+		this.uuid = crypto.randomUUID();
+		this.exdomain = exdomain;
+		document.getElementById(parentId).insertAdjacentHTML(
+				 'afterbegin',
+				 `<div class="temp" id = "`+this.uuid+`">
+				 </div>`);
+		this.value.createDom(parentId,exdomain);
+		super.createDom(parentId,exdomain);
+	}
+	
 }
 class Blob extends DataElement{
 	constructor(extensions,category,idShort,displayName,description,
