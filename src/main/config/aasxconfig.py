@@ -156,11 +156,11 @@ class ConfigParser:
         skill_names = [f.split(".")[0] for f in os.listdir(self.pyaas.src_skills_repository) if
                        os.path.isfile(os.path.join(self.pyaas.src_skills_repository, f))]
         skillDetails = dict()
-        print(skill_names)
+        
         for skill in skill_names:
             skillModule = import_module("." + skill, package="skills")
             skillBaseclass_ = getattr(skillModule, skill)
-            _tempSKillInstance = skillBaseclass_(self.pyaas)
+            _tempSKillInstance = skillBaseclass_()
 
             skill_details_dict = dict()
             skill_details_dict["SkillName"] = skill
