@@ -958,8 +958,7 @@
             },
             "idShort": {
               "type": "string",
-              "maxLength": 128,
-              "pattern": "^[a-zA-Z][a-zA-Z0-9_]+$"
+              "maxLength": 128
             },
             "displayName": {
               "type": "array",

@@ -936,7 +936,9 @@ class AState:
             
     def receive_all(self,msg_in) -> list:
         try:
-            msgs =  copy.deepcopy(self.base_class.in_messages[msg_in])
+            msgs = []
+            for msg in (self.base_class.in_messages[msg_in]) : 
+                msgs.append(msg)
             self.base_class.in_messages[msg_in].clear()
             return msgs
         except Exception as E:
@@ -1071,7 +1073,13 @@ class AState:
     
     def create_transport_conv_id(self,aasId,convsersationId):
         return self.base_class.create_transport_conv_id(aasId,convsersationId)
+    
+    def clear_production_steps(self,aasId):
+        self.base_class.clear_production_steps(aasId)
         
+    def clear_messages(self):
+        self.base_class.clear_messages()
+    
 class Actor:
     def __init__(self,skillName,semanticProtocol,SkillService,initialState):
         
@@ -1092,6 +1100,7 @@ class Actor:
         self.tape = dict()
         self.in_messages = dict()
         self.set_in_messages()
+        self.clear_messages()
         
     def set_in_messages(self):
         skillModule = import_module("." + self.skillName, package="skills")
@@ -1100,9 +1109,12 @@ class Actor:
         elems.remove("Actor")
         elems.remove("AState")
         actor_states = [ x for x in elems  if isclass(getattr(skillModule, x))]
+        if "datetime"  in actor_states: actor_states.remove("datetime")
         for _state in actor_states:
             _skill = import_module("."+self.skillName, package="skills")
+            print(_state)
             a_state = getattr(_skill, _state)(_state)
+            
             try:
                 for _msg_type in a_state.message_in:
                     if _msg_type is not None:
@@ -1116,6 +1128,14 @@ class Actor:
             return ed
         except Exception as E:
             return 0
+
+    def clear_messages(self):
+        try:
+            for x in self.in_messages.keys():
+                self.in_messages[x].clear()
+        except Exception as E:
+            return 0
+
             
     def set_base(self,pyaas):
         self.pyaas = pyaas
@@ -1237,7 +1257,12 @@ class Actor:
         _uid = self.pyaas.aasHashDict.__getHashEntry__(aasId).__getId__()
         aasShellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uid)
         return aasShellObject.productionStepList
-    
+
+    def clear_production_steps(self,aasId):
+        _uid = self.pyaas.aasHashDict.__getHashEntry__(aasId).__getId__()
+        aasShellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uid)
+        aasShellObject.productionStepList.clear()
+            
     def get_production_step(self,aasId):
         _uid = self.pyaas.aasHashDict.__getHashEntry__(aasId).__getId__()
         aasShellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uid)

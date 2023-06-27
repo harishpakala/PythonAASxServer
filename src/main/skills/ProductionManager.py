@@ -33,11 +33,8 @@ class waitforStepOrderCompletion(AState):
                 responseSM["submodelElements"][2]["value"] = "The placed order is not successfully executed please try it later."
             else:
                 self.sendFailureResponse_Enabled = False
-                responseSM["submodelElements"][0]["value"] = "E"
-                responseSM["submodelElements"][1]["value"] = "E.013"
-                responseSM["submodelElements"][2]["value"] = "The placed order is successfully executed."
-                
         else:
+            self.excProductionStepSeq_Enabled = False
             responseSM["submodelElements"][0]["value"] = "E"
             responseSM["submodelElements"][1]["value"] = "E.013"
             responseSM["submodelElements"][2]["value"] = "The placed order is not successfully executed please try it later."
@@ -66,8 +63,9 @@ class sendFailureResponse(AState):
         oMessage_Out["interactionElements"].append(self.retrieve("responseSM"))
         self.save_out_message(oMessage_Out)
         return [oMessage_Out]    
+    
     def actions(self) -> None:
-        pass
+        self.clear_production_steps(self.retrieve("ProductionOrder")["frame"]["sender"]["id"])
         
     def transitions(self) -> object:
         self.send(self.create_outbound_message(sendFailureResponse.message_out[0]))
@@ -104,9 +102,9 @@ class excProductionStepSeq(AState):
             self.sendProductionStepOrder_Enabled = False
             self.sendFailureResponse_Enabled = False
             responseSM = self.getStatusResponseSM()
-            responseSM["status"] = "S"
-            responseSM["code"] = "A00.12"
-            responseSM["message"] = "The placed order is successfully executed."
+            responseSM["submodelElements"][0]["value"] = "A"
+            responseSM["submodelElements"][1]["value"] = "A.016"
+            responseSM["submodelElements"][2]["value"] = "All the production steps are executed"
             self.push("responseSM", responseSM)
         else:
             self.sendCompletionResponse_Enabled = False
@@ -137,7 +135,7 @@ class sendCompletionResponse(AState):
         #submodel = self.GetSubmodelById('submodelId')
         oMessage_Out["interactionElements"].append(self.retrieve("responseSM"))
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -186,6 +184,8 @@ class WaitforNewOrder(AState):
             
     
     def actions(self) -> None:
+        self.flush_tape()
+        self.clear_messages()
         if (self.wait_untill_message(1, WaitforNewOrder.message_in)):
             message = self.receive(WaitforNewOrder.message_in[0])
             self.save_in_message(message)

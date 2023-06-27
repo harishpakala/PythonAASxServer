@@ -869,9 +869,9 @@ class Referable extends HasExtensions{
 		return jsonData;
 	}
 	createDom(parentId,exdomain){
-		super.createDom(parentId,exdomain);
-		this.description.createDom(parentId,exdomain);
-		this.displayName.createDom(parentId,exdomain);
+		//super.createDom(parentId,exdomain);
+		//this.description.createDom(parentId,exdomain);
+		//this.displayName.createDom(parentId,exdomain);
 		this.category.createDom(parentId);
 		this.checksum.createDom(parentId);
 		this.idShort.createDom(parentId);
@@ -981,8 +981,8 @@ class SubmodelElement extends Referable {
 		return jsonData;
 	}
 	createDom(parentId,exdomain){
-		this._Qualifiable.createDom(parentId,exdomain);
-		this._HasSemantics.createDom(parentId,exdomain);
+		//this._Qualifiable.createDom(parentId,exdomain);
+		//this._HasSemantics.createDom(parentId,exdomain);
 		super.createDom(parentId,exdomain);
 	}
 	deserialize(data,parentId,exdomain){
@@ -1157,6 +1157,7 @@ class ReferenceElement extends DataElement{
 			super(extensions,category,idShort,displayName,description,
 					checksum,kind,semanticId,supplementalSemanticIds,
 					qualifiers,embeddedDataSpecifications);
+			this.valueId = new ComplexObject("valueId","Reference");
 			this.value = new ComplexObject("value","Reference");
 			this.modelType = "ReferenceElement";
 	}		
@@ -1182,6 +1183,7 @@ class ReferenceElement extends DataElement{
 				 'afterbegin',
 				 `<div class="temp" id = "`+this.uuid+`">
 				 </div>`);
+		this.valueId.createDom(this.uuid,exdomain);
 		this.value.createDom(parentId,exdomain);
 		super.createDom(parentId,exdomain);
 	}
@@ -1455,8 +1457,8 @@ class Submodel extends Identifiable{
 				 'afterbegin',
 				 `<div class="temp" id = "`+this.uuid+`">
 				 </div>`);
-		this._Qualifiable.createDom(this.uuid,exdomain);
-		this._HasSemantics.createDom(this.uuid,exdomain);
+		//this._Qualifiable.createDom(this.uuid,exdomain);
+		//this._HasSemantics.createDom(this.uuid,exdomain);
 		super.createDom(this.uuid,exdomain);
 	}
 	serialize(){
