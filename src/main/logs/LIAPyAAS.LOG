@@ -3035,3 +3035,1805 @@
 06/26/2023 10:47:34 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
 06/26/2023 10:47:34 PM - PyAASxServer Service Instance - INFO - The Skills are Started
 06/26/2023 10:47:38 PM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+06/27/2023 07:53:11 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 07:53:11 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 07:53:11 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 07:53:11 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 07:53:12 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 07:53:12 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 07:53:12 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 07:53:43 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 07:53:43 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 07:53:43 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 07:53:43 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 07:53:44 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 07:53:44 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 07:53:45 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 07:53:46 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 07:53:50 AM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+06/27/2023 08:07:24 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 08:07:24 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 08:07:24 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 08:07:24 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 08:07:25 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 08:07:25 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 08:07:26 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 08:07:52 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 08:54:02 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 08:54:02 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 08:54:02 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 08:54:02 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 08:54:03 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 08:54:03 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 08:54:04 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 08:54:30 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 08:54:30 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 08:54:30 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 08:54:30 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 08:54:30 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 08:54:30 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 08:54:31 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 08:55:31 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 08:55:31 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 08:55:31 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 08:55:31 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 08:55:32 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 08:55:32 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 08:55:33 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 09:08:13 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 09:08:13 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 09:08:13 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 09:08:13 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 09:08:14 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 09:08:14 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 09:08:15 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 09:10:40 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 09:27:57 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 09:27:57 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 09:27:57 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 09:27:57 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 09:27:58 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 09:27:58 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 09:27:59 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 09:28:14 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 09:33:32 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 09:33:32 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 09:33:32 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 09:33:32 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 09:33:33 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 09:33:33 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 09:33:34 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 09:33:35 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 09:33:35 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 09:33:35 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 09:33:35 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 09:33:35 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 09:33:35 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 09:33:35 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 09:33:35 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 09:33:36 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 09:33:44 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 09:53:11 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 09:53:11 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 09:53:11 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 09:53:11 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 09:53:12 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 09:53:12 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 09:53:14 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 09:53:37 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:07:39 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 10:07:39 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 10:07:39 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 10:07:39 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 10:07:40 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 10:07:40 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 10:07:41 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 10:07:42 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 10:13:09 AM - PyAASxServer Service Instance - INFO - Error at AASMetaModelValidator.valitdateSubmodel Rest'StandardContent_IEC62443-3-3' does not match '^[a-zA-Z][a-zA-Z0-9_]+$'
+
+Failed validating 'pattern' in schema['allOf'][0]['allOf'][0]['allOf'][0]['allOf'][1]['properties']['idShort']:
+    {'maxLength': 128,
+     'pattern': '^[a-zA-Z][a-zA-Z0-9_]+$',
+     'type': 'string'}
+
+On instance['idShort']:
+    'StandardContent_IEC62443-3-3'
+06/27/2023 10:13:22 AM - PyAASxServer Service Instance - INFO - Error at AASMetaModelValidator.valitdateSubmodel Rest'StandardContent_IEC62443-3-3' does not match '^[a-zA-Z][a-zA-Z0-9_]+$'
+
+Failed validating 'pattern' in schema['allOf'][0]['allOf'][0]['allOf'][0]['allOf'][1]['properties']['idShort']:
+    {'maxLength': 128,
+     'pattern': '^[a-zA-Z][a-zA-Z0-9_]+$',
+     'type': 'string'}
+
+On instance['idShort']:
+    'StandardContent_IEC62443-3-3'
+06/27/2023 10:14:33 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 10:14:33 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 10:14:33 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 10:14:33 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 10:14:34 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 10:17:51 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 10:17:51 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 10:17:51 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 10:17:51 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 10:17:52 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 10:17:52 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 10:17:53 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 10:17:55 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 10:18:19 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:31:38 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 10:31:38 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 10:31:38 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 10:31:38 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 10:31:39 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 10:33:03 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:33:05 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 10:52:37 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 10:53:06 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:53:17 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 10:55:41 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 10:56:02 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:56:13 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:59:00 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 10:59:00 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 10:59:00 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 10:59:00 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 10:59:01 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 10:59:13 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 10:59:24 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:04:05 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:04:05 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:04:05 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:04:05 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:04:06 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:04:12 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:04:13 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:04:37 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:04:49 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:06:17 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:06:37 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:06:48 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:21:55 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:21:55 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:21:55 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:21:55 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:21:55 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:21:55 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:21:56 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:22:15 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:24:26 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:24:26 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:24:26 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:24:26 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:24:26 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:24:26 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:24:27 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:24:42 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:24:53 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:27:54 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:28:12 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:28:23 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:30:19 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:30:19 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:30:19 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:30:19 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:30:19 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:30:19 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:30:20 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:30:34 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:30:45 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:35:54 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:35:58 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:35:58 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:35:58 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:35:58 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:35:59 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:36:24 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:36:35 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:40:20 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:40:20 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:40:20 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:40:20 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:40:21 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:40:21 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:40:21 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:40:22 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:40:53 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:41:04 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:43:07 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:43:07 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:43:07 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:43:07 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:43:08 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:43:08 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:43:08 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:43:09 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:43:16 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:43:51 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:44:03 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:49:44 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:49:44 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:49:44 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:49:44 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:49:44 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:49:44 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:49:45 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:50:02 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:50:13 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:53:20 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:53:20 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:53:20 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:53:20 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:53:20 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:53:20 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:53:21 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:56:25 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:56:27 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 11:59:16 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:59:16 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:59:16 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:59:16 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:59:17 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:59:17 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:59:17 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:59:18 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:59:25 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 11:59:25 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 11:59:25 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 11:59:25 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 11:59:26 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 11:59:59 AM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:00:02 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:01:22 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:01:32 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:01:57 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:01:58 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:02:14 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:14:40 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 12:14:40 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 12:14:40 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 12:14:40 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 12:14:41 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 12:15:29 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:15:41 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:16:05 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:16:08 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:16:24 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:17:54 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:18:04 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:18:30 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:18:32 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:18:49 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:35:39 PM - PyAASxServer Service Instance - INFO - Error at AASMetaModelValidator.valitdateSubmodel Rest'StandardContent_IEC62443-3-3' does not match '^[a-zA-Z][a-zA-Z0-9_]+$'
+
+Failed validating 'pattern' in schema['allOf'][0]['allOf'][0]['allOf'][0]['allOf'][1]['properties']['idShort']:
+    {'maxLength': 128,
+     'pattern': '^[a-zA-Z][a-zA-Z0-9_]+$',
+     'type': 'string'}
+
+On instance['idShort']:
+    'StandardContent_IEC62443-3-3'
+06/27/2023 12:37:17 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 12:37:17 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 12:37:17 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 12:37:17 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 12:37:18 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_1.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_2.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_3.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_4.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_5.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_6.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_7.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_8.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_9.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_10.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_11.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_12.Tags.Why'
+06/27/2023 12:37:49 PM - PyAASxServer Service Instance - INFO - Error at deleteSubmodelElem DB'urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443.Provision_13.Tags.Why'
+06/27/2023 12:38:05 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 12:38:18 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 12:38:57 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:39:08 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:39:35 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:39:37 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:39:53 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:44:25 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 12:44:25 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 12:44:25 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 12:44:25 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 12:44:25 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 12:44:25 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 12:44:25 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 12:44:26 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 12:44:29 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 12:44:29 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 12:44:29 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 12:44:29 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 12:44:30 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 12:45:03 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:45:14 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:45:40 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:45:43 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:45:59 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:49:30 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 12:49:30 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 12:49:30 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 12:49:30 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 12:49:30 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 12:49:30 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 12:49:31 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 12:50:43 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:50:54 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 12:56:53 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 12:56:53 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 12:56:53 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 12:56:53 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 12:56:53 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 12:56:53 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 12:56:54 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 12:59:55 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 01:00:06 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:00:41 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:00:41 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:00:41 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:00:41 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:00:43 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:00:43 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:00:44 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:01:03 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:01:14 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:02:54 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:02:54 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:02:54 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:02:54 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:02:55 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:02:55 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:02:56 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:03:07 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:07:11 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:07:11 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:07:11 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:07:11 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:07:11 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:07:11 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:07:12 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:07:13 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:07:25 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:09:19 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:09:29 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:36:33 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:36:33 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:36:33 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:36:33 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:36:35 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:36:35 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:36:35 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:36:36 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:41:21 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:41:21 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:41:21 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:41:21 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:41:22 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:41:22 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:41:23 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:41:24 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:48:47 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:48:47 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:48:47 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:48:47 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:48:49 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:48:49 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:48:50 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:51:47 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:51:58 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:53:48 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:53:48 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:53:48 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:53:48 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:53:53 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:53:53 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:53:58 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:55:12 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:56:21 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:56:21 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:56:21 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:56:21 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:56:23 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:56:23 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:56:24 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:57:18 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:57:18 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:57:18 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:57:18 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:57:20 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:57:20 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:57:21 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:58:11 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:58:29 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:58:29 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:58:29 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:58:29 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:58:33 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:58:33 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:58:39 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:58:40 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 02:58:49 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:59:18 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 02:59:41 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 02:59:41 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 02:59:41 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 02:59:41 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 02:59:45 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 02:59:45 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 02:59:50 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:00:01 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:02:15 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:02:15 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:02:15 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:02:15 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:02:20 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:02:20 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:02:25 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:02:26 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:02:27 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:02:27 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:02:27 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:02:27 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:02:27 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:02:27 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:02:27 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:02:27 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:02:50 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:04:56 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:04:56 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:04:56 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:04:56 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:04:57 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:04:57 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:04:59 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:05:00 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:11:02 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:11:02 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:11:02 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:11:02 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:11:03 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:11:03 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:11:04 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:11:05 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:11:18 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:11:39 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:11:39 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:11:39 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:11:39 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:11:42 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:11:42 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:11:47 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:12:04 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:12:59 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:12:59 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:12:59 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:12:59 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:13:02 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:13:02 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:13:07 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:13:08 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:13:20 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:18:20 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:18:20 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:18:20 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:18:20 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:18:21 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:18:21 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:18:23 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:18:31 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:18:41 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:18:41 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:18:41 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:18:41 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:18:45 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:18:45 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:18:49 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:18:50 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:18:56 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:19:13 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:19:25 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:19:25 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:19:25 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:19:26 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:19:28 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:19:28 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:19:33 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:19:34 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:19:52 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:21:05 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:21:05 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:21:05 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:21:05 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:21:08 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:21:08 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:21:12 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:21:22 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:22:02 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:22:02 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:22:02 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:22:02 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:22:05 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:22:05 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:22:08 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:22:09 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:23:25 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:23:25 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:23:25 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:23:25 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:23:28 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:23:28 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:23:31 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:23:32 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:23:47 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:24:31 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:24:31 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:24:31 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:24:31 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:24:34 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:24:34 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:24:37 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:24:38 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:24:46 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:25:26 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:25:26 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:25:27 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:25:27 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:25:30 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:25:30 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:25:35 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:25:36 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:25:40 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:26:31 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:26:31 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:26:31 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:26:31 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:26:32 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:26:43 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:30:16 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:30:16 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:30:16 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:30:16 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:30:17 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:30:17 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:30:19 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:30:23 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:30:23 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:30:23 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:30:23 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:30:25 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:30:25 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:30:26 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:30:37 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:34:08 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:34:08 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:34:08 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:34:08 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:34:10 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:34:10 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:34:15 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:34:17 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:34:24 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:34:24 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:35:22 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:35:22 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:35:22 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:35:22 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:35:23 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:36:27 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:37:40 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:39:12 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:39:12 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:39:12 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:39:12 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:39:13 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:39:13 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:39:15 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:39:57 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:41:30 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:41:30 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:41:30 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:41:30 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:41:31 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:41:56 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:41:56 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:41:56 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:41:56 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:41:58 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:41:58 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:41:59 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:42:00 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:42:15 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:43:47 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:43:57 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:52:02 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:52:02 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:52:02 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:52:02 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:52:02 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:52:02 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:52:03 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:52:04 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:52:53 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:52:53 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:52:53 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:52:53 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:52:54 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:52:54 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:52:54 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:52:55 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:54:33 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:54:44 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 03:56:48 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 03:56:48 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 03:56:48 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 03:56:48 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 03:56:49 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 03:56:49 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 03:56:50 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 03:56:51 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 03:57:18 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:00:59 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:00:59 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:00:59 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:00:59 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:01:00 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:01:00 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:01:01 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:01:31 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:01:43 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:04:18 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:04:18 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:04:18 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:04:18 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:04:20 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:04:20 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:04:21 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:05:23 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:05:34 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:09:31 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:10:22 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:10:33 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:15:14 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:15:14 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:15:14 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:15:14 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:15:16 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:15:16 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:15:17 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:15:18 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:16:12 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:22:58 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:22:58 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:22:58 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:22:58 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:23:03 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:23:03 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:23:08 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:23:09 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:23:39 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:25:17 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:25:17 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:25:17 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:25:17 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:25:19 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:25:20 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:25:34 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:28:21 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:28:21 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:28:21 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:28:21 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:28:22 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:28:22 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:28:24 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:28:54 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:29:05 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:31:06 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:32:25 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:32:36 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:33:12 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:34:17 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:34:28 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:35:03 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:36:07 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:36:18 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:36:53 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:44:01 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:44:01 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:44:01 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:44:01 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:44:02 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:47:05 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:47:05 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:47:05 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:47:05 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:47:06 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:47:06 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:47:07 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:51:18 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:51:18 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:51:18 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:51:18 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:51:20 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:51:20 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:51:21 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:51:22 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:52:58 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:52:58 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:52:58 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:52:58 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:52:59 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:52:59 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:53:00 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:53:50 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 04:53:50 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 04:53:50 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 04:53:50 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 04:53:51 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 04:53:51 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 04:53:52 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 04:55:03 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:55:14 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 04:55:50 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:00:24 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:00:24 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:00:24 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:00:24 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:00:25 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:00:25 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:00:26 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:00:27 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:00:58 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:01:09 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:08:22 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:08:22 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:08:22 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:08:22 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:08:22 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:08:22 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:08:23 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:10:31 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:11:41 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:11:59 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:21:04 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:21:04 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:21:04 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:21:04 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:21:05 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:21:29 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:24:11 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:24:11 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:24:11 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:24:11 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:24:11 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:24:11 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:24:12 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:24:31 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:27:48 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:27:48 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:27:48 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:27:48 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:27:48 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:27:48 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:27:49 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:29:50 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:29:50 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:29:50 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:29:50 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:29:50 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:29:50 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:29:51 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:31:48 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:31:48 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:31:48 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:31:48 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:31:49 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:31:49 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:31:50 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:31:51 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:31:56 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:31:56 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:31:56 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:31:56 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:31:58 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:31:58 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:31:59 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:32:55 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:34:18 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:34:18 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:34:18 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:34:18 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:34:19 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:34:19 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:34:21 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:34:36 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:36:08 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:36:08 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:36:08 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:36:08 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:36:09 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:36:09 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:36:10 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:36:22 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:36:33 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:40:55 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:40:55 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:40:55 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:40:55 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:40:56 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:40:56 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:40:57 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:40:58 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:41:12 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:41:23 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:43:31 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:43:31 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:43:31 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:43:31 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:43:32 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:43:32 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:43:34 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:43:50 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:44:00 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:46:07 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:46:07 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:46:07 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:46:07 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:46:07 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:46:07 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:46:07 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:46:08 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:46:32 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:47:03 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+06/27/2023 05:47:03 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+06/27/2023 05:47:03 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+06/27/2023 05:47:03 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+06/27/2023 05:47:03 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+06/27/2023 05:47:03 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - The message handler started
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+06/27/2023 05:47:04 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+06/27/2023 05:47:21 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:47:32 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:48:27 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:49:22 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:49:33 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:50:07 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:51:11 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:51:21 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage
+06/27/2023 05:51:56 PM - PyAASxServer Service Instance - INFO - Test1 handleBoradCastMessage

@@ -9,8 +9,9 @@ try:
     from utils.utils import Actor,AState
 except ImportError:
     from main.utils.utils import Actor,AState
-from opcua import ua
+from opcua import ua,Client
 import copy
+import uuid
 
 class checkingSchedule(AState):
     
@@ -18,32 +19,42 @@ class checkingSchedule(AState):
         # Gaurd variables for enabling the transitions
         self.sendingRefuse_Enabled = True
         self.PriceCalculation_Enabled = True
+
+    def opc_access(self,nodeId):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://192.168.1.2:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node(nodeId)).get_value()
+            print(rValue)
+            plc_opcua_Client.disconnect()
+            return rValue
+        except:
+            return rValue 
             
     def asset_access(self):
         try:
-            sMessage_out_data = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_data").href)
-            sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_purpose").href)
-            envWrite = ""
-            if (self.base_class.env == "live"):
-                dv = ua.DataValue(False)
-                envWrite = self.plcHandler.write(self.tdPropertiesList.get_property("xProductionMode").href,dv)
-            elif (self.base_class.env == "cyclic"):
-                dv = ua.DataValue(False)
-                envWrite = self.plcHandler.write(self.tdPropertiesList.get_property("xProductionMode").href,dv)
-            if sMessage_out_data == "error" or sMessage_out_purpose == "error" or envWrite == "error":
+            self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
+            sMessage_out_data = self.opc_access("ns=4;s=|var|HX-CP1H16.Application.PLC_PRG.sMessage_out_data")
+            sMessage_out_purpose = self.opc_access("ns=4;s=|var|HX-CP1H16.Application.PLC_PRG.sMessage_out_purpose")
+            
+            if sMessage_out_data == "error" or sMessage_out_purpose == "error" :
                 self.PriceCalculation_Enabled = False
             else :
                 if sMessage_out_data == "ready" and sMessage_out_purpose == "Inform":
                     self.sendingRefuse_Enabled = False
                 else:
                     self.PriceCalculation_Enabled = False
+        
         except Exception as E:
             self.PriceCalculation_Enabled = False        
             
     
     def actions(self) -> None:
-        #self.asset_access()
-        self.sendingRefuse_Enabled = False
+        self.asset_access()
         
     def transitions(self) -> object:
         if (self.sendingRefuse_Enabled):
@@ -68,12 +79,41 @@ class serviceProvision(AState):
                         for specifierElem in valueELem["value"]:
                             if (specifierElem["idShort"] == specifier):
                                 return specifierElem["value"]
+    def opc_access(self,nodeId):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://192.168.1.2:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node(nodeId)).get_value()
+            plc_opcua_Client.disconnect()
+            return rValue
+        except:
+            return rValue 
+
+    def wopc_access(self,nodeId,value):
+        rValue = "error"
+        try:
+            plc_opcua_Client = Client("opc.tcp://192.168.1.2:4840/")
+            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.session_timeout = 600000
+            plc_opcua_Client.secure_channel_timeout = 600000
+            plc_opcua_Client.connect()
+            rValue = (plc_opcua_Client.get_node(nodeId))
+            (rValue.set_value(value))
+            plc_opcua_Client.disconnect()
+            return rValue
+        except Exception as E:
+            print(str(E))
+            return rValue                 
+
     
     def service_execute(self):       
         cfpMessage = self.retrieve("callForProposal")
         self.plcHandler = self.base_class.pyaas.asset_access_handlers["OPCUA"]
-        self.tdPropertiesList = self.base_class.shellObject.thing_description  
-       
+        
         self.TargetLocation = ""
         self.CurrentLocation = ""
         try:
@@ -86,9 +126,9 @@ class serviceProvision(AState):
                 if (self.CurrentLocation == self.TargetLocation):
                     self.TargetLocation = "Pos 0"
                 self.base_class.skillLogger.info(self.CurrentLocation + " "+ self.TargetLocation)
-                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_purpose").href,ua.DataValue("Process"))
-                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_data_SR").href,ua.DataValue(self.CurrentLocation))
-                self.plcHandler.write(self.tdPropertiesList.get_property("sMessage_in_data_SP").href,ua.DataValue(self.TargetLocation))
+                self.wopc_access("ns=4;s=|var|HX-CP1H16.Application.PLC_PRG.sMessage_in_purpose",ua.DataValue("Process"))
+                self.wopc_access("ns=4;s=|var|HX-CP1H16.Application.PLC_PRG.sMessage_in_data_SR",ua.DataValue(self.CurrentLocation))
+                self.wopc_access("ns=4;s=|var|HX-CP1H16.Application.PLC_PRG.sMessage_in_data_SP",ua.DataValue(self.TargetLocation))
                 
             except Exception as E:
                 print(str(E),"Error Write 1")
@@ -98,8 +138,8 @@ class serviceProvision(AState):
                 pass
             else:
                 while (plcBoool):
-                    self.sMessage_out_data = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_data").href)
-                    self.sMessage_out_purpose = self.plcHandler.read(self.tdPropertiesList.get_property("sMessage_out_purpose").href)
+                    self.sMessage_out_data = self.opc_access("ns=4;s=|var|HX-CP1H16.Application.PLC_PRG.sMessage_out_data")
+                    self.sMessage_out_purpose = self.opc_access("ns=4;s=|var|HX-CP1H16.Application.PLC_PRG.sMessage_out_purpose")
                     if  (self.sMessage_out_data == "end of process" and self.sMessage_out_purpose == "Acknowledge"):
                         plcBoool = False
             i = 0
@@ -123,9 +163,8 @@ class serviceProvision(AState):
            
         
     def actions(self) -> None:
-        #self.service_execute()
-        pass
-    
+        self.service_execute()
+            
     def transitions(self) -> object:
         if (self.sendinPropoposalporvisionConfirm_Enabled):
             return "sendinPropoposalporvisionConfirm"
@@ -148,7 +187,7 @@ class sendingRefuse(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -174,7 +213,7 @@ class sendingNotUnderstood(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -213,13 +252,13 @@ class sendingProposal(AState):
         return self.oSubmodel1
             
     def create_outbound_message(self,msg_type) -> list:
-        callForProposal = self.retrieve("callForProposal")
+        callForProposal = copy.deepcopy(self.retrieve("callForProposal"))
         receiverId = callForProposal["frame"]["sender"]["id"]
         receiverRole = callForProposal["frame"]["sender"]["role"]["name"]
         conV1 = callForProposal["frame"]["conversationId"]
         oMessage_Out = self.create_i40_message(msg_type,conV1,receiverId,receiverRole)
         submodel = self.GetSubmodelById('https://example.com/ids/sm/4494_7040_1122_9311')
-        security = self.GetSubmodelELementByIdshoortPath('urn_TransportProvider:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443', 'ProvisionSet-SAL-C-3')
+        security = self.GetSubmodelELementByIdshoortPath('urn_TransportProvider:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443', 'ProvisionSet-SAL-C')
         transportSubmodel = self.addPropertyElems(callForProposal["interactionElements"][0],submodel)
         oMessage_Out["interactionElements"].append(transportSubmodel)
         oMessage_Out["interactionElements"].append(security)
@@ -250,7 +289,7 @@ class sendinPropoposalporvisionConfirm(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -269,6 +308,8 @@ class WaitForCallForProposal(AState):
             
     
     def actions(self) -> None:
+        self.flush_tape()
+        self.clear_messages()
         if (self.wait_untill_message(1, WaitForCallForProposal.message_in)):
             message = self.receive(WaitForCallForProposal.message_in[0])
             self.save_in_message(message)

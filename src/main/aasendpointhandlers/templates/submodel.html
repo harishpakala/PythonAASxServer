@@ -47,7 +47,7 @@
 	<div class = "row">
 	<div class = "col-1">
 	</div>
-	<div class = "col-4">
+	<div class = "col-5">
 		<div class="accordion" id="SubmodelAccordin">
 			<div class="accordion-item" style = "border: 1px solid black; ">
 				<h2 class="accordion-header" id="submodelHeading" style = "background-color : rgb(0,52,215,0.9)">
@@ -64,7 +64,7 @@
 	</div>
 	<div class = "col-1">
 	</div>
-	<div class="col-5">
+	<div class="col-4">
 		<div class="accordion" id="ElementInformation">
 			<div class="accordion-item" style="border: 1px solid black;">
 				<h2 class="accordion-header" id="headingOne3"
@@ -260,8 +260,8 @@ function setSubmodelElemData(_id,parent,exdomain){
 				elemLi.innerHTML = elemC.idShort.getString();
 			}
 	}
-	if (elemC.modelType == "ReferenceElement" ){
-		elemLi.innerHTML = elemC.idShort.getString() + "->";
+	if (elemC.modelType == "ReferenceElement"){
+		elemLi.innerHTML = elemC.idShort.getString() +"   ->   ";
 	}
 	return elemLi;
 }
@@ -283,8 +283,8 @@ function processCollection(_pidShort,exdomain){
 	var accordinCollpase = createCollapseAccordin(_pidShort,idShort);
 	
 	for (var tId of collectionElem.value){
-		var elemC = linearData1[tId];
 		console.log(tId);
+		var elemC = linearData1[tId];
 		if (elemC.modelType == "SubmodelElementCollection") {
 				var elemLi = document.createElement('li');	
 				elemLi.setAttribute("class","list-group-item");

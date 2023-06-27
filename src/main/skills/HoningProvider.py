@@ -39,7 +39,7 @@ class checkingSchedule(AState):
     def actions(self) -> None:
         try:
             #sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
-            if "self.opc_access()" == "error":
+            if self.opc_access() == "error":
                 self.PriceCalculation_Enabled = False
             else:
                 self.sendingRefuse_Enabled = False
@@ -98,10 +98,9 @@ class serviceProvision(AState):
             self.wopc_access()
             plcBoool = True
             while (plcBoool):
-                time.sleep(20)
                 #sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
-                #if  ((str(self.opc_access())).upper() =="FALSE"):
-                #    plcBoool = False
+                if  ((str(self.opc_access())).upper() =="FALSE"):
+                    plcBoool = False
             self.WaitForCallForProposal_Enabled = False
         except Exception as E:
             self.sendinPropoposalporvisionConfirm_Enabled = False
@@ -128,7 +127,7 @@ class sendingRefuse(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -154,7 +153,7 @@ class sendingNotUnderstood(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -201,7 +200,7 @@ class sendingProposal(AState):
         conV1 = callForProposal["frame"]["conversationId"]
         oMessage_Out = self.create_i40_message(msg_type,conV1,receiverId,receiverRole)
         submodel = self.GetSubmodelById('https://example.com/ids/sm/4084_7040_1122_9091')
-        security = self.GetSubmodelELementByIdshoortPath('urn_HoningProvider:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443', 'ProvisionSet-SAL-C-3')
+        security = self.GetSubmodelELementByIdshoortPath('urn_HoningProvider:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443', 'ProvisionSet-SAL-C')
         transportSubmodel = self.addPropertyElems(callForProposal["interactionElements"][0],submodel)
         oMessage_Out["interactionElements"].append(transportSubmodel)
         oMessage_Out["interactionElements"].append(security)
@@ -232,7 +231,7 @@ class sendinPropoposalporvisionConfirm(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -251,6 +250,8 @@ class WaitForCallForProposal(AState):
             
     
     def actions(self) -> None:
+        self.flush_tape()
+        self.clear_messages()        
         if (self.wait_untill_message(1, WaitForCallForProposal.message_in)):
             message = self.receive(WaitForCallForProposal.message_in[0])
             self.save_in_message(message)
@@ -423,7 +424,7 @@ class waitingforServiceRequesterAnswer(AState):
     
     def actions(self) -> None:
         if (self.wait_untill_message(1, waitingforServiceRequesterAnswer.message_in)):
-            if (self.rcv_msg_count(waitingforServiceRequesterAnswer.message_in[0]) == 0):
+            if (self.rcv_msg_count(waitingforServiceRequesterAnswer.message_in[0]) == 1):
                 message = self.receive(waitingforServiceRequesterAnswer.message_in[0])
                 self.save_in_message(message)
                 self.WaitForCallForProposal_Enabled = False
@@ -438,7 +439,7 @@ class waitingforServiceRequesterAnswer(AState):
         if (self.serviceProvision_Enabled):
             return "serviceProvision"
         
-class BoringProvider(Actor):
+class HoningProvider(Actor):
     '''
     classdocs
     '''
@@ -447,9 +448,9 @@ class BoringProvider(Actor):
         '''
         Constructor
         '''      
-        Actor.__init__(self,"BoringProvider",
+        Actor.__init__(self,"HoningProvider",
                        "www.admin-shell.io/interaction/bidding",
-                       "Boring Provision","WaitForCallForProposal")
+                       "Honing Provision","WaitForCallForProposal")
                         
 
     def start(self):
@@ -458,5 +459,5 @@ class BoringProvider(Actor):
 
 if __name__ == '__main__':
     
-    lm2 = BoringProvider()
+    lm2 = HoningProvider()
     lm2.Start('msgHandler')

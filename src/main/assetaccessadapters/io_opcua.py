@@ -47,7 +47,7 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             PORT = host[1]
             nodeId = (urI.split("opc.tcp://")[1]).split("/")[-1]
             plc_opcua_Client = Client("opc.tcp://" + IP + ":" + PORT + "/", timeout=800000)
-            plc_opcua_Client.description = str(uuid.uuid4())
+            plc_opcua_Client.description = str(datetime.now())
             plc_opcua_Client.session_timeout = 600000
             plc_opcua_Client.secure_channel_timeout = 600000
             plc_opcua_Client.connect()
@@ -56,7 +56,6 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             return rValue
         except Exception as e1:
             try:
-                plc_opcua_Client.disconnect()
                 return "error"
             except Exception as e2:
                 return "error"
@@ -73,11 +72,29 @@ class AsssetEndPointHandler(AsssetEndPointHandler):
             tdProperty = self.td_opcua_client.get_node(nodeId)
             tdProperty.set_value(value)
         except Exception as E:
-            self.td_opcua_client.disconnect()
             return str(E)
         finally:
-            self.td_opcua_client.disconnect()
             return "Success"
+
+    def subscribe(self, uri, endPointSUbHandler):
+        plc_opcua_client = None
+        try:
+            host = uri.split("opc.tcp://")[1].split("/")[0].split(":")
+            ip_address = host[0]
+            port = host[1]
+            node_id = (uri.split("opc.tcp://")[1]).split("/")[-1]
+            plc_opcua_client = Client("opc.tcp://" + ip_address + ":" + port + "/")
+            plc_opcua_client.description = str(uuid.uuid4())
+            plc_opcua_client.connect()
+            node = plc_opcua_client.get_node(node_id)
+            sub = plc_opcua_client.create_subscription(10, endPointSUbHandler)
+            handle = sub.subscribe_data_change([node])
+        except Exception as e1:
+            print(e1)
+            try:
+                plc_opcua_client.disconnect()
+            except Exception as e2:
+                print(e1)
 
 class OPCUASubscriptionHandler:
     """

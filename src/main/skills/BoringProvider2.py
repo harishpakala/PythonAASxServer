@@ -10,6 +10,7 @@ try:
 except ImportError:
     from main.utils.utils import Actor,AState
 from opcua import ua,Client
+import copy
 import time
 import uuid
 
@@ -39,7 +40,7 @@ class checkingSchedule(AState):
     def actions(self) -> None:
         try:
             #sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
-            if "self.opc_access()" == "error":
+            if self.opc_access() == "error":
                 self.PriceCalculation_Enabled = False
             else:
                 self.sendingRefuse_Enabled = False
@@ -69,7 +70,7 @@ class serviceProvision(AState):
             plc_opcua_Client.secure_channel_timeout = 600000
             plc_opcua_Client.connect()
             rValue = (plc_opcua_Client.get_node("ns=4;s=|var|WAGO 750-8203 PFC200 CS 2ETH CAN.Application.PLC_PRG.sPermission")).get_value()
-            print(rValue)
+            
             plc_opcua_Client.disconnect()
             return rValue
         except:
@@ -84,7 +85,7 @@ class serviceProvision(AState):
             plc_opcua_Client.secure_channel_timeout = 600000
             plc_opcua_Client.connect()
             rValue = (plc_opcua_Client.get_node("ns=4;s=|var|WAGO 750-8203 PFC200 CS 2ETH CAN.Application.PLC_PRG.sPermission"))
-            print(rValue.set_value(ua.DataValue(True)))
+            (rValue.set_value(ua.DataValue(True)))
             plc_opcua_Client.disconnect()
             return rValue
         except Exception as E:
@@ -98,10 +99,9 @@ class serviceProvision(AState):
             self.wopc_access()
             plcBoool = True
             while (plcBoool):
-                time.sleep(20)
                 #sPermissionVariable = self.plcHandler.read(self.tdPropertiesList.get_property("sPermission").href)
-                #if  ((str(self.opc_access())).upper() =="FALSE"):
-                #    plcBoool = False
+                if  ((str(self.opc_access())).upper() =="FALSE"):
+                    plcBoool = False
             self.WaitForCallForProposal_Enabled = False
         except Exception as E:
             self.sendinPropoposalporvisionConfirm_Enabled = False
@@ -128,7 +128,7 @@ class sendingRefuse(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -154,7 +154,7 @@ class sendingNotUnderstood(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -179,29 +179,29 @@ class sendingProposal(AState):
                         return sproperty
 
     def addPropertyElems(self,oSubmodel1,iSubmodel1):
-        self.oSubmodel1 = oSubmodel1
-        self.iSubmodel1 = iSubmodel1
+        oSubmodel1 = oSubmodel1
+        iSubmodel1 = iSubmodel1
         i = 0
-        listPrice = self.getPropertyElem(self.iSubmodel1,"listprice")
-        CFP = self.getPropertyElem(self.iSubmodel1,"cfp")
-        workStationLocation = self.getPropertyElem(self.iSubmodel1,"workStationLocation")
-        for submodelELem in self.oSubmodel1["submodelElements"]:
+        listPrice = self.getPropertyElem(iSubmodel1,"listprice")
+        CFP = self.getPropertyElem(iSubmodel1,"cfp")
+        workStationLocation = self.getPropertyElem(iSubmodel1,"workStationLocation")
+        for submodelELem in oSubmodel1["submodelElements"]:
             if submodelELem["idShort"] =="CommercialProperties":
-                self.oSubmodel1["submodelElements"][i]["value"].append(listPrice)
-                self.oSubmodel1["submodelElements"][i]["value"].append(workStationLocation)
-                self.oSubmodel1["submodelElements"][i]["value"].append(CFP)
+                oSubmodel1["submodelElements"][i]["value"].append(listPrice)
+                oSubmodel1["submodelElements"][i]["value"].append(workStationLocation)
+                oSubmodel1["submodelElements"][i]["value"].append(CFP)
                 break
             i = i + 1
-        return self.oSubmodel1
+        return oSubmodel1
             
     def create_outbound_message(self,msg_type) -> list:
-        callForProposal = self.retrieve("callForProposal")
+        callForProposal = copy.deepcopy(self.retrieve("callForProposal"))
         receiverId = callForProposal["frame"]["sender"]["id"]
         receiverRole = callForProposal["frame"]["sender"]["role"]["name"]
         conV1 = callForProposal["frame"]["conversationId"]
         oMessage_Out = self.create_i40_message(msg_type,conV1,receiverId,receiverRole)
         submodel = self.GetSubmodelById('https://example.com/ids/sm/5554_7040_1122_5332')
-        security = self.GetSubmodelELementByIdshoortPath('urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443', 'ProvisionSet-SAL-C-3')
+        security = self.GetSubmodelELementByIdshoortPath('urn_BoringProvider2:IDiS:AG2:Pilot:NormAAS:ID:Submodel:StandardContent:62443', 'ProvisionSet-SAL-C')
         transportSubmodel = self.addPropertyElems(callForProposal["interactionElements"][0],submodel)
         oMessage_Out["interactionElements"].append(transportSubmodel)
         oMessage_Out["interactionElements"].append(security)
@@ -232,7 +232,7 @@ class sendinPropoposalporvisionConfirm(AState):
         #submodel = self.GetSubmodelById('submodelId')
         #oMessage_Out["interactionElements"].append(submodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -251,6 +251,8 @@ class WaitForCallForProposal(AState):
             
     
     def actions(self) -> None:
+        self.flush_tape()
+        self.clear_messages()        
         if (self.wait_untill_message(1, WaitForCallForProposal.message_in)):
             message = self.receive(WaitForCallForProposal.message_in[0])
             self.save_in_message(message)
@@ -423,7 +425,7 @@ class waitingforServiceRequesterAnswer(AState):
     
     def actions(self) -> None:
         if (self.wait_untill_message(1, waitingforServiceRequesterAnswer.message_in)):
-            if (self.rcv_msg_count(waitingforServiceRequesterAnswer.message_in[0]) == 0):
+            if (self.rcv_msg_count(waitingforServiceRequesterAnswer.message_in[0]) == 1):
                 message = self.receive(waitingforServiceRequesterAnswer.message_in[0])
                 self.save_in_message(message)
                 self.WaitForCallForProposal_Enabled = False
