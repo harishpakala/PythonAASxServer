@@ -8,6 +8,26 @@ This repository hosts the source code for RIC architecture,
 :two: All the Python dependencies are specified in the [requirements.txt](https://github.com/harishpakala/PythonAASxServer/blob/master/requirements.txt) <br />
 :three: The LIA OVGU development uses eclipse editor, accordingly eclipse related project files are provided in the repository.
 
+## Configuration
+The source code is associated with a .env file, all the configuration variables are specified in it.
+<pre><code>
+LIA_AAS_RESTAPI_DOMAIN_INTERN=localhost
+LIA_AAS_RESTAPI_DOMAIN_EXTERN=localhost
+LIA_AAS_RESTAPI_PORT_EXTERN=60012
+LIA_AAS_RESTAPI_PORT_INTERN=60012
+LIA_AAS_MQTT_HOST=localhost
+LIA_AAS_MQTT_PORT=1883
+LIA_preferedI40EndPoint=MQTT
+LIA_REGISTRYENDPOINT=http://liabroker.ddns.net:9021/i40commu
+LIA_AAS_PACKAGE=AAS_LIA_Demonstrator.json
+LIA_PUBSUB_LISTNER_HOST=localhost
+LIA_PUBSUB_LISTNER_PORT=4051
+LIA_SECURITY_ENABLED=Y
+LIA_AUTHENTICATION_SERVER=22
+LIA_PATH2SIGNINGKEY=identityserver.test.rsa.pem
+LIA_PATH2AUTHCERT=identityserver.test.rsa.cer
+LIA_NAMESPACE=ovgu.de
+</code></pre>
 ## Running 
 1) The base python program is organized inside the src/main subdirectory.  <br/>
 <strong>python3.9 vws_ric.py</strong> <br/>
