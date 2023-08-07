@@ -7,16 +7,22 @@ This source code may use other Open Source software components (see LICENSE.txt)
 import socket
 
 class I40PacketS(object):
-    PUBLISH = "publish"
-    PUBACK = "puback"
-    SUBSCRIBE = "subscribe"
-    SUBACK = "suback"
-    UNSUBSCRIBE = "unsubscribe"
-    UNSUBACK = "unsuback"
-    CONNECT = "connect"
-    CONNACK = "connack"
-    DISCONNECT  = "disconnect"
-    
+
+    INITIATE = "initiate"
+    ACKNOWLEDGE = "acknowledge"
+    INSERT = "insert"
+    DELETE = "delete"
+    MODIFY = "modify"
+    INSERTACK = "insertack"
+    DELETEACK = "deleteack"
+    MODIFYACK = "modifyack"
+    MONITOR = "monitor"
+    UNMONITOR = "unmonitor"
+    READREQUEST = "readrequest"
+    MONITORACK = "monitorack"
+    READRESPOSE = "readresponse"
+    NOTIFY = "notify"
+    TERMINATE = "terminate"
 
 class SocketConfig(object):
     def __init__(self,host,port,socketname):

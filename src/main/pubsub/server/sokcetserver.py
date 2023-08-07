@@ -55,12 +55,6 @@ try:
 except ImportError:
     from  main.models.i40packet import I40PubSubPacket,I40Packet
 
-try:
-    from utils.utils import AASMetaModelValidator
-except ImportError:
-    from  main.utils.utils import AASMetaModelValidator
-
-
 class SocketSession(object):
     def __init__(self,connectionHandle,clientInfo,sessionname,encodingFormat,headerpacketsize,pyAAS,qos=0):
         self.connectionHandle = connectionHandle

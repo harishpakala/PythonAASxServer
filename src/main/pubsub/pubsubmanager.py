@@ -16,10 +16,10 @@ except ImportError:
     from  src.main.utis import SocketConfig
     
 
-class PubSubManager(object):
-    def __init__(self,pyAAS):
-        self.pyAAS = pyAAS
-        self.listnersConfig = self.pyAAS.listeners_config
+class PubSubManager:
+    def __init__(self,pyaas):
+        self.pyaas = pyaas
+        self.listnersConfig = self.pyaas.listeners_config
         self.listnersSocketConfig = dict()
         
     def configure_listner(self):
