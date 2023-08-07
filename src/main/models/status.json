@@ -8,25 +8,29 @@
           "value": "E",
           "idShort": "Status",
           "modelType": "Property",
-          "kind": "Instance"
+          "kind": "Instance",
+          "valueType" : "xs:string"    
         },
         {
           "value": "",
           "idShort": "Code",
           "modelType": "Property",
-          "kind": "Instance"
+          "kind": "Instance",
+          "valueType" : "xs:string"
         },
         {
           "value": "Error Message",
           "idShort": "Messaage",
           "modelType": "Property",
-          "kind": "Instance"
+          "kind": "Instance",
+          "valueType" : "xs:string"
         },
         {
           "value": "0",
           "idShort": "cfp",
           "modelType": "Property",
-          "kind": "Instance"
+          "kind": "Instance",
+          "valueType" : "xs:string"
         }
       ]
 }

@@ -515,8 +515,8 @@ class DataTypeXSD{
   }
 }
 class RefType{
-	static GlobalReference = new RefType("GlobalReference");
-	static GlobalReference = new RefType("GlobalReference");
+	static ModelReference = new RefType("ExternalReference");
+	static ModelReference  = new RefType("ModelReference");
 	
 	
   constructor(name) {
