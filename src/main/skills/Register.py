@@ -85,7 +85,7 @@ class WaitforNewOrder(AState):
     def initialize(self):
         # Gaurd variables for enabling the transitions
         self.CreateAndSendRegisterMessage_Enabled = True
-            
+        self.flush_tape()
     
     def actions(self) -> None:
         if (self.wait_untill_message(1, WaitforNewOrder.message_in)):
