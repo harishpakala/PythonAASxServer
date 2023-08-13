@@ -45,14 +45,6 @@ class ConfigParser:
                       encoding='utf-8') as json_file_nameplate:
                     self.submodel_template_dict[_fileName.split(".")[0]] = json.load(json_file_nameplate)
 
-            self.pyaas.derAuthCert = open(
-                os.path.join(self.pyaas.repository, self.pyaas.lia_env_variable["LIA_PATH2AUTHCERT"]), "rb").read()
-
-            """
-            with open(os.path.join(self.pyaas.repository, "ass_JsonSchema.crt")) as json_file_aas:
-                self.certificateHandler = json.load(json_file_aas)
-            """
-
             self.aasShell_JsonSchema = deepcopy(self.aasJsonSchema)
             self.aasShell_JsonSchema["allOf"][0]["$ref"] = "#/definitions/AssetAdministrationShell"
 

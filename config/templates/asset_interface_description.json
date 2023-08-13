@@ -45,7 +45,7 @@
                                 "type": "GlobalReference"
                             },
                             "type": "@context",
-                            "valueType": "",
+                            "valueType": "xs:string",
                             "value": "https://www.w3.org/2019/wot/td/v1"
                         }
                     ]
@@ -74,7 +74,7 @@
                                 "type": "GlobalReference"
                             },
                             "type": "security1",
-                            "valueType": "",
+                            "valueType": "xs:string",
                             "value": "nosec_sc"
                         }
                     ]
@@ -119,7 +119,7 @@
                                         "type": "GlobalReference"
                                     },
                                     "type": "scheme",
-                                    "valueType": "",
+                                    "valueType": "xs:string",
                                     "value": "nosec"
                                 }
                             ]
@@ -237,7 +237,7 @@
                                                                 "type": "GlobalReference"
                                                             },
                                                             "type": "op0",
-                                                            "valueType": "",
+                                                            "valueType": "xs:string",
                                                             "value": "readproperty"
                                                         },
                                                         {
@@ -251,7 +251,7 @@
                                                                 "type": "GlobalReference"
                                                             },
                                                             "type": "op1",
-                                                            "valueType": "",
+                                                            "valueType": "xs:string",
                                                             "value": "writeproperty"
                                                         }
                                                     ]
@@ -277,7 +277,7 @@
                                                         "type": "GlobalReference"
                                                     },
                                                     "type": "href",
-                                                    "valueType": "",
+                                                    "valueType": "xs:string",
                                                     "value": ""
                                                 }
                                             ]
@@ -314,7 +314,7 @@
                                         "type": "GlobalReference"
                                     },
                                     "type": "type",
-                                    "valueType": "",
+                                    "valueType": "xs:string",
                                     "value": "integer"
                                 },
                                 {
@@ -328,7 +328,7 @@
                                         "type": "GlobalReference"
                                     },
                                     "type": "readOnly",
-                                    "valueType": "",
+                                    "valueType": "xs:string",
                                     "value": "False"
                                 },
                                 {
@@ -342,7 +342,7 @@
                                         "type": "GlobalReference"
                                     },
                                     "type": "observable",
-                                    "valueType": "",
+                                    "valueType": "xs:string",
                                     "value": "False"
                                 },
                                 {
@@ -356,22 +356,22 @@
                                         "type": "GlobalReference"
                                     },
                                     "type": "updateFrequency",
-                                    "valueType": "",
+                                    "valueType": "xs:string",
                                     "value": "0"
                                 },
                                 {
                                     "type": "unit",
-                                    "valueType": "",
+                                    "valueType": "xs:string",
                                     "value": "%"
                                 },
                                 {
                                     "type": "submodelId",
-                                    "valueType": "",
+                                    "valueType": "xs:string",
                                     "value": ""
                                 },
                                 {
                                     "type": "idShortPath",
-                                    "valueType": "",
+                                    "valueType": "xs:string",
                                     "value": ""
                                 }
                             ]

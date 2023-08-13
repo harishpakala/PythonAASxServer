@@ -98,7 +98,6 @@
     function updateCHartData(config,params)
     {
     	var req = new XMLHttpRequest();
-    	console.log('{{exDomain}}shells/'+params[2]+'/aas/submodels/'+params[0]+'/submodel/submodel-elements/'+params[1]+'/history');
     	req.open('GET', '{{exDomain}}shells/'+params[2]+'/aas/submodels/'+params[0]+'/submodel/submodel-elements/'+params[1]+'/history', true);
     	req.onreadystatechange = function(e) {
             if(req.readyState !== 4) {
@@ -109,7 +108,7 @@
             }
             else {
             	const data = JSON.parse(e.target.responseText);
-
+				console.log(data);
             	while(config.data.labels.length > 0) {
                 	config.data.labels.pop();
                 }

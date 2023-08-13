@@ -589,7 +589,7 @@ class PyAASxServer:
 
     def stop(self) -> None:
         self.scheduler.stop()
-        for module_name, cdrv in self.cdrvs.items():
+        for module_name, cdrv in self.AASendPointHandles.items():
             cdrv.stop()
 
     def shutDown(self) -> None:

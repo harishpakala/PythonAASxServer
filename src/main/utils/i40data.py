@@ -65,9 +65,7 @@ class Generic(object):
                                 }
      
         return {"frame" :frame, "interactionElements": []}
-    
-
-  
+     
     def createHeartBeatMessage(self,assId,count):
         frame = {
                     "semanticProtocol": {

@@ -79,7 +79,7 @@ class AASEndPointHandler(AASEndPointHandler):
             self.pyAAS.serviceLogger.info('Error disconnecting to the server ' + str(e))
 
     def dispatchMessage(self, send_Message): 
-        publishTopic = ""#"AASpillarbox"
+        publishTopic = "AASpillarbox"
         try:
             publishTopic = send_Message["frame"]["receiver"]["id"]
         except:

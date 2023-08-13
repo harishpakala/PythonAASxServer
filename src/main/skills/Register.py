@@ -4,11 +4,6 @@ Author: Harish Kumar Pakala
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 """
-
-try:
-    import queue as Queue
-except ImportError:
-    import Queue as Queue 
 try:
     from utils.utils import Actor,AState
 except ImportError:
@@ -24,9 +19,18 @@ class waitforRegisterAck(AState):
             
     
     def actions(self) -> None:
-        if (self.wait_untill_timeout(10)):
+        if (self.wait_untill_message_timeout(1,100,waitforRegisterAck.message_in)):
             message = self.receive(waitforRegisterAck.message_in[0])
             self.save_in_message(message)
+            self.push("registerack",message)
+            self.notifyOnError_Enabled = False
+        else:
+            status = dict()
+            status["status"] = "E"
+            status["code"] =  "E.1"
+            status["message"] = "No response from the registry"
+            self.push("status",status)
+            self.evaluateRegisterAck_Enabled = False
         
     def transitions(self) -> object:
         if (self.notifyOnError_Enabled):
@@ -56,14 +60,16 @@ class CreateAndSendRegisterMessage(AState):
         self.waitforRegisterAck_Enabled = True
             
     def create_outbound_message(self,msg_type) -> list:
-        receiverId =""
-        receiverRole = ""
-        conV1 = ""
+        order = self.retrieve("Order")
+        receiverId ="AASpillarbox"
+        receiverRole = "RegistryHandler"
+        conV1 = order["frame"]["conversationId"]
+        _descriptor = self.configureDescriptor(self.retrieve("Order")["frame"]["sender"]["id"])
         oMessage_Out = self.create_i40_message(msg_type,conV1,receiverId,receiverRole)
         #submodel = self.GetSubmodelById('submodelId')
-        #oMessage_Out["interactionElements"].append(submodel)
+        oMessage_Out["interactionElements"].append(_descriptor)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
         pass
@@ -84,6 +90,7 @@ class WaitforNewOrder(AState):
     def actions(self) -> None:
         if (self.wait_untill_message(1, WaitforNewOrder.message_in)):
             message = self.receive(WaitforNewOrder.message_in[0])
+            self.push("Order",message)
             self.save_in_message(message)
         
     def transitions(self) -> object:
@@ -99,7 +106,16 @@ class evaluateRegisterAck(AState):
             
     
     def actions(self) -> None:
-        pass
+        status = dict()
+        registerack = self.retrieve("registerack")
+        status["status"] = registerack["interactionElements"][0]["submodelElements"][0]["value"]
+        status["code"] = registerack["interactionElements"][0]["submodelElements"][1]["value"]
+        status["message"] = registerack["interactionElements"][0]["submodelElements"][2]["value"]
+        self.push("status",status)
+        if status["status"] == "S":
+            self.notifyOnError_Enabled = False
+        else:
+            self.notifyonSuccessRegistration_Enabled = False
         
     def transitions(self) -> object:
         if (self.notifyOnError_Enabled):
@@ -129,17 +145,22 @@ class sendCompletionResponse(AState):
         self.WaitforNewOrder_Enabled = True
             
     def create_outbound_message(self,msg_type) -> list:
-        receiverId =""
-        receiverRole = ""
-        conV1 = ""
+        order = self.receive("Order")
+        receiverId = order["frame"]["sender"]["id"]
+        receiverRole = order["frame"]["sender"]["role"]["name"]
+        conV1 = order["frame"]["sender"]["conversationId"]
         oMessage_Out = self.create_i40_message(msg_type,conV1,receiverId,receiverRole)
-        #submodel = self.GetSubmodelById('submodelId')
-        #oMessage_Out["interactionElements"].append(submodel)
+        oMessage_Out["interactionElements"].append(self.statusSubmodel)
         self.save_out_message(oMessage_Out)
-        return oMessage_Out
+        return [oMessage_Out]
     
     def actions(self) -> None:
-        pass
+        self.statusSubmodel = self.getStatusResponseSM()
+        response = self.retrieve("status")
+        self.statusSubmodel["submodelElements"][0]["value"] = response["status"]
+        self.statusSubmodel["submodelElements"][1]["value"] = response["code"]
+        self.statusSubmodel["submodelElements"][2]["value"] = response["message"]
+
         
     def transitions(self) -> object:
         self.send(self.create_outbound_message(sendCompletionResponse.message_out[0]))

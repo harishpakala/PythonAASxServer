@@ -133,10 +133,10 @@ class OPCUASubscription:
             time.sleep(0.1)
             print("New COnnection")
             try:
-                client = Client(url="opc.tcp://localhost:4851")
+                client = Client(url=self.uri_nodeid[0])
                 async with client:
                     subscription = await client.create_subscription(0.1, self.handler)
-                    tnode = (client.get_node("ns=1;i=1023"))
+                    tnode = (client.get_node(self.uri_nodeid[1]))
                     await subscription.subscribe_data_change(tnode)
                     while True:
                         time.sleep(0.1)

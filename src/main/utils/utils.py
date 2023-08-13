@@ -161,20 +161,8 @@ class ProductionStepOrder:
         conversation_id = "RegistrationOrder" + "_" + str(int(conversation_count) + 1)
         self.pyaas.dba.createNewConversation(conversation_id)
         self.pyaas.conversationInteractionList.append(conversation_id)
-    
-        frame_data = {
-            "semanticProtocol": "www.admin-shell.io/interaction/registerOrder",
-            "type": "Order",
-            "messageId": "Order" + "_" + str(int(conversation_count) + 2),
-            "SenderAASID": aas_id,
-            "SenderRolename": "RegistrationOrder",
-            "conversationId": conversation_id,
-            "ReceiverAASID": aas_id,
-            "ReceiverRolename": "Register"
-        }
-
-        frame = self.gen.createFrame(frame_data)
-        i40_message = {"frame": frame, "interactionElements": []}
+        i40_message = self.gen.create_i40_message("Order",conversation_id,aas_id,"Register")
+        
         self.pyaas.msgHandler.putIbMessage(i40_message)
         return conversation_id
 
@@ -184,7 +172,7 @@ class AASDescriptor:
         self.pyaas = pyaas
 
     def get_descriptor_string(self) -> str:
-        ip = str(self.pyaas.lia_env_variable["LIA_AAS_ADMINSHELL_CONNECT_IP"])
+        ip = str(self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"])
         port = str(self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_PORT_EXTERN"])
         return "http://" + ip + ":" + port 
         
@@ -1032,6 +1020,8 @@ class AState:
         except Exception as E:
             return False
 
+    def configureDescriptor(self,_shellId):
+        return self.base_class.pyaas.aasConfigurer.configureDescriptor(_shellId)
     
     def rcv_msg_count(self,msg_type):
         try:

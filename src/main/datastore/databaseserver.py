@@ -1513,11 +1513,12 @@ class AAS_Database_Server(object):
                 if status:
                     _submodels.append(_submodel)
                 else:
+                    print(_submodelid)
                     return _submodel,status,statuscode
                 i = i + 1
             return _submodels,True,200
         except Exception as E:
-            self.pyAAS.serviceLogger.info("Error at putShellSubmodelRef DB" + str(E))
+            self.pyAAS.serviceLogger.info("Error at getSubmodelsbyShell DB" + str(E))
             return  "Internal Server Error", False,500
                 
     def createNewConversation(self,coversationId):

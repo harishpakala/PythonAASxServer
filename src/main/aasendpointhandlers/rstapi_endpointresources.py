@@ -1722,7 +1722,7 @@ class AASWebInterfaceRegister(Resource):
     def post(self,aasIdentifier):
         try:
             aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode() 
-            pso = ProductionStepOrder(self.pyaas)
+            pso = ProductionStepOrder(self.pyaas,aasIdentifier1)
             conversationID = pso.createRegistrationStep(aasIdentifier1)
             flash("New Resgitration  Order with Order ID " + conversationID + " is booked","info")
             return redirect("/shells/"+str(aasIdentifier)+"/registration/webui")   
@@ -1968,7 +1968,7 @@ class AASAssetInterfaceDescription(Resource):
                 aas_shell_uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier1)._id
                 aasHashObject = self.pyaas.aasShellHashDict.__getHashEntry__(aas_shell_uuid)
                 elemObject = aasHashObject.asset_interface_description.get_property(property_Name).elemObject
-                aasHashObject.asset_interface_description.get_property('Temperature').elemObject.history[0].timestamp
+                aasHashObject.asset_interface_description.get_property(property_Name).elemObject.history[0].timestamp
                 returnData[property_Name] = {'label': [(str(dt.timestamp)).split(" ")[1] for dt in elemObject.history][-19:], 'value': [dt.aasElementValue for dt in elemObject.history][-19:]}
                 return returnData
             except Exception as E:

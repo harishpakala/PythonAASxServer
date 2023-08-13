@@ -51,7 +51,7 @@ class AASEndPointHandler(AASEndPointHandler):
         
     def configure(self):
         
-        self.ipaddressComdrv = self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"]
+        self.ipaddressComdrv = self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_INTERN"]
         self.portComdrv = self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_PORT_INTERN"]
         
         drv_rst_app.config['JS_REPOSITORY'] = self.pyaas.js_repository
@@ -70,7 +70,7 @@ class AASEndPointHandler(AASEndPointHandler):
         drv_rst_api.add_resource(AASStaticConfigSource, "/config/<path:filename>",resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AASStaticWebSources, "/web/<string:webtype>/<filename>",resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AASAssetInterfaceDescription, "/shells/<path:aasIdentifier>/aid/webui",resource_class_args=tuple([self.pyaas]))
-       #
+       
         drv_rst_api.add_resource(AASWebInterfaceSearch,"/<path:aasIdentifier>/search",resource_class_args=tuple([self.pyaas]))
         drv_rst_api.add_resource(AASWebInterfaceCFP,"/<path:conversationId>/cfp",resource_class_args=tuple([self.pyaas]))
         # REST API
@@ -153,10 +153,13 @@ class AASEndPointHandler(AASEndPointHandler):
             pass
     
     def run(self):
-        #drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv)
+        if  self.pyaas.lia_env_variable["LIA_SECURITY_ENABLED"] == "Y":
+            self.pyaas.serviceLogger.info(self.pyaas.lia_env_variable["LIA_PATH2AUTHCERT"])
+            drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv,ssl_context=(self.pyaas.lia_env_variable["LIA_PATH2AUTHCERT"], self.pyaas.lia_env_variable["LIA_PATH2SIGNINGKEY"]))
+        else:
+            drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv)
         
-        http_server = WSGIServer((self.ipaddressComdrv, int(self.portComdrv)), drv_rst_app)
-        http_server.serve_forever()
+        
         self.pyAAS.serviceLogger.info("REST API namespaces are started")
     
     def start(self):
@@ -169,7 +172,7 @@ class AASEndPointHandler(AASEndPointHandler):
     def dispatchMessage(self, send_Message): 
         try:
             if (send_Message["frame"]["type"] == "register"):
-                registerURL = self.registryURL + "/api/v1/registry/" + quote(self.pyAAS.AASID, safe='')
+                registerURL = self.registryURL + "/registry/shell-descriptors/" + quote(self.pyAAS.AASID, safe='')
                 registerdata = (json.dumps(send_Message))
                 r = requests.put(url=registerURL, data=registerdata, headers=self.transportHeader)
                 data = json.loads(r.text)
