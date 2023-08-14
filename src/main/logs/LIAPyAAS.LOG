@@ -707,3 +707,85 @@ On instance['submodelElements'][0]['qualifiers'][0]['valueType']:
 08/13/2023 08:06:33 PM - PyAASxServer Service Instance - INFO - The message handler started
 08/13/2023 08:06:33 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
 08/13/2023 08:06:33 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+08/14/2023 10:43:46 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+08/14/2023 10:43:46 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+08/14/2023 10:43:46 AM - PyAASxServer Service Instance - INFO - Error configuring the external variables. 'PyAASxServer' object has no attribute 'pyaas'
+08/14/2023 10:43:46 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+08/14/2023 10:43:46 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+08/14/2023 10:43:46 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+08/14/2023 10:43:47 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - The message handler started
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - The message handler started
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+08/14/2023 10:43:48 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+08/14/2023 10:43:53 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIInvalid base64-encoded string: number of data characters (21) cannot be 1 more than a multiple of 4
+08/14/2023 10:43:53 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIInvalid base64-encoded string: number of data characters (25) cannot be 1 more than a multiple of 4
+08/14/2023 10:43:53 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:43:53 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:43:53 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:43:53 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:43:54 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIInvalid base64-encoded string: number of data characters (25) cannot be 1 more than a multiple of 4
+08/14/2023 10:44:05 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIInvalid base64-encoded string: number of data characters (21) cannot be 1 more than a multiple of 4
+08/14/2023 10:44:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIInvalid base64-encoded string: number of data characters (25) cannot be 1 more than a multiple of 4
+08/14/2023 10:48:55 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+08/14/2023 10:48:55 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+08/14/2023 10:48:55 AM - PyAASxServer Service Instance - INFO - Error configuring the external variables. 'PyAASxServer' object has no attribute 'pyaas'
+08/14/2023 10:48:55 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+08/14/2023 10:48:55 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+08/14/2023 10:48:55 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - The message handler started
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - The message handler started
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+08/14/2023 10:48:56 AM - PyAASxServer Service Instance - INFO - The Skills are Started
+08/14/2023 10:49:05 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIInvalid base64-encoded string: number of data characters (21) cannot be 1 more than a multiple of 4
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIInvalid base64-encoded string: number of data characters (25) cannot be 1 more than a multiple of 4
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:49:06 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:49:07 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:49:07 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIIncorrect padding
+08/14/2023 10:49:07 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST API'utf-8' codec can't decode byte 0x89 in position 1: invalid start byte
+08/14/2023 10:49:07 AM - PyAASxServer Service Instance - INFO - Error at getAssetAdministrationShellById  REST APIInvalid base64-encoded string: number of data characters (25) cannot be 1 more than a multiple of 4
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - External Variables are configured.
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The Asset Access points are configured
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The Database manager is being started
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The message handler started
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - MQTT channels are started
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The message handler started
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+08/14/2023 10:49:45 AM - PyAASxServer Service Instance - INFO - The Skills are Started

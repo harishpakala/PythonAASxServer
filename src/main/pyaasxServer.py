@@ -207,7 +207,7 @@ class PyAASxServer:
             if self.set_external_variables(os.environ):
                 self.extHost = self.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"]
                 self.port = self.lia_env_variable["LIA_AAS_RESTAPI_PORT_INTERN"]
-                if  self.pyaas.lia_env_variable["LIA_SECURITY_ENABLED"] == "Y":
+                if  self.lia_env_variable["LIA_SECURITY_ENABLED"] == "Y":
                     self.exDomain = "https://" + self.extHost + ":" + self.port + "/"
                 else:
                     self.exDomain = "http://" + self.extHost + ":" + self.port + "/"
