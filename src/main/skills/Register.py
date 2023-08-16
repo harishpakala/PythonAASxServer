@@ -5,9 +5,9 @@ This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 This source code may use other Open Source software components (see LICENSE.txt).
 """
 try:
-    from utils.utils import Actor,AState
+    from utils.sip import Actor,AState
 except ImportError:
-    from main.utils.utils import Actor,AState
+    from main.utils.sip import Actor,AState
 
 class waitforRegisterAck(AState):
     message_in =  ["registerack",]       
@@ -16,8 +16,7 @@ class waitforRegisterAck(AState):
         # Gaurd variables for enabling the transitions
         self.notifyOnError_Enabled = True
         self.evaluateRegisterAck_Enabled = True
-            
-    
+        
     def actions(self) -> None:
         if (self.wait_untill_message_timeout(1,100,waitforRegisterAck.message_in)):
             message = self.receive(waitforRegisterAck.message_in[0])

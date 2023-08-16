@@ -141,9 +141,6 @@ class ConfigParser:
         _uuid = self.pyaas.aasHashDict.__getHashEntry__(idShortPath).__getId__()
         return self.pyaas.submodelHashDict.__getHashEntry__(_uuid)
 
-    def getAssetAccessEndPoints(self):
-        return {"OPCUA": ".io_opcua"}
-
     def get_available_skills(self) -> dict:
         skill_names = [f.split(".")[0] for f in os.listdir(self.pyaas.src_skills_repository) if
                        os.path.isfile(os.path.join(self.pyaas.src_skills_repository, f))]

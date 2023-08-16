@@ -146,21 +146,18 @@ class AASEndPointHandler(AASEndPointHandler):
         drv_rst_api.add_resource(AASDocumentationDownloadSubmodel, "/<int:aasId>/document/<path:filename>",resource_class_args=tuple([self.pyaas]))
         #static folder path
         '''
-
-        
-     
+ 
     def update(self, channel):
             pass
     
     def run(self):
         if  self.pyaas.lia_env_variable["LIA_SECURITY_ENABLED"] == "Y":
-            self.pyaas.serviceLogger.info(self.pyaas.lia_env_variable["LIA_PATH2AUTHCERT"])
             drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv,ssl_context=(self.pyaas.lia_env_variable["LIA_PATH2AUTHCERT"], self.pyaas.lia_env_variable["LIA_PATH2SIGNINGKEY"]))
         else:
+            self.pyaas.serviceLogger.info(self.ipaddressComdrv+" "+self.portComdrv)
             drv_rst_app.run(host=self.ipaddressComdrv, port=self.portComdrv)
         
-        
-        self.pyAAS.serviceLogger.info("REST API namespaces are started")
+        self.pyaas.serviceLogger.info("REST API namespaces are started")
     
     def start(self):
         restServerThread = threading.Thread(target=self.run)

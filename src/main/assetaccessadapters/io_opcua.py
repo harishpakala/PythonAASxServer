@@ -1,83 +1,87 @@
-from opcua import Client
 from datetime import datetime
 from asyncua import Client, ua, Node
 import time
-import uuid
+import asyncio
 
 try:
     from utils.utils import HistoryObject
 except ImportError:
     from main.utils.utils import HistoryObject
-try:
-    from abstract.assetendpointhandler import AsssetEndPointHandler
-except ImportError:
-    from main.abstract.assetendpointhandler import AsssetEndPointHandler
 
+class OPCUAEndPointHandler:
 
-class AsssetEndPointHandler(AsssetEndPointHandler):
+    def __init__(self):
+        pass
+        
+    def get_uri_nodeid(self,uri):
+        host = uri.split("opc.tcp://")[1].split("/")[0].split(":")
+        ip_address = host[0]
+        port = host[1]
+        node_id = (uri.split("opc.tcp://")[1]).split("/")[-1]
+        _uri = "opc.tcp://" + ip_address + ":" + port + "/"
+        return [_uri,node_id]
 
-    def __init__(self, pyAAS):
-        self.pyAAS = pyAAS
-
-    def get_opcua_handler(self, uRI):
+    async def get_opcua_handler(self, uRI):
         # apart from the nodeid it should include username and password if any.
         try:
-            plc_opcua_Client = Client(uRI, timeout=800000)
-            plc_opcua_Client.description = str(uuid.uuid4())
-            plc_opcua_Client.session_timeout = 600000
-            plc_opcua_Client.secure_channel_timeout = 600000
-            plc_opcua_Client.connect()
-            return plc_opcua_Client, True
+            uri_nodeid = self.get_uri_nodeid(uRI)
+            client_hadler = Client(url=uri_nodeid[0])
+            async with client_hadler:
+                return client_hadler
         except Exception as E:
-            print(str(E))
-            return None, False
-
-    def close_opcua_handler(self, handler):
+            return None
+        
+    async def close_opcua_handler(self, client_hadler):
         try:
-            handler.disconnect()
+            client_hadler.disconnect()
+            return True
+        except Exception as E:
+            return False
+
+    async def _write(self,uRI,write_value):
+        try:
+            uri_nodeid = self.get_uri_nodeid(uRI)
+            client_hadler = Client(url=uri_nodeid[0])
+            async with client_hadler:
+                _node = client_hadler.get_node(uri_nodeid[1])
+                await _node.write_value(write_value)
+            return True
+        except Exception as E:
+            return False
+
+    async def _write_DataValue(self,uRI,write_value):
+        try:
+            uri_nodeid = self.get_uri_nodeid(uRI)
+            client_hadler = Client(url=uri_nodeid[0])
+            async with client_hadler:
+                _node = client_hadler.get_node(uri_nodeid[1])
+                await _node.set_value(ua.DataValue(write_value))
             return True
         except Exception as E:
             print(str(E))
             return False
 
-    def read(self, urI):
+    async def _read(self,uRI):
         try:
-            host = urI.split("opc.tcp://")[1].split("/")[0].split(":")
-            IP = host[0]
-            PORT = host[1]
-            nodeId = (urI.split("opc.tcp://")[1]).split("/")[-1]
-            plc_opcua_Client = Client("opc.tcp://" + IP + ":" + PORT + "/", timeout=800000)
-            plc_opcua_Client.description = str(uuid.uuid4())
-            plc_opcua_Client.session_timeout = 600000
-            plc_opcua_Client.secure_channel_timeout = 600000
-            plc_opcua_Client.connect()
-            rValue = (plc_opcua_Client.get_node(nodeId)).get_value()
-            plc_opcua_Client.disconnect()
-            return rValue
-        except Exception as e1:
-            try:
-                plc_opcua_Client.disconnect()
-                return "error"
-            except Exception as e2:
-                return "error"
-
-    def write(self, urI, value):
-        try:
-            host = urI.split("opc.tcp://")[1].split("/")[0].split(":")
-            IP = host[0]
-            PORT = host[1]
-            nodeId = urI.split("opc.tcp://")[1].split("/")[1]
-            self.td_opcua_client = Client("opc.tcp://" + IP + ":" + PORT + "/", timeout=600000)
-            self.td_opcua_client.description = str(uuid.uuid1())
-            self.td_opcua_client.connect()
-            tdProperty = self.td_opcua_client.get_node(nodeId)
-            tdProperty.set_value(value)
+            uri_nodeid = self.get_uri_nodeid(uRI)
+            client_hadler = Client(url=uri_nodeid[0])
+            async with client_hadler:
+                _node = client_hadler.get_node(uri_nodeid[1])
+                _node_value = await _node.get_value()
+            return _node_value
         except Exception as E:
-            self.td_opcua_client.disconnect()
-            return str(E)
-        finally:
-            self.td_opcua_client.disconnect()
-            return "Success"
+            return False
+
+    async def _read_data_value(self,uRI):
+        try:
+            uri_nodeid = self.get_uri_nodeid(uRI)
+            client_hadler = Client(url=uri_nodeid[0])
+            async with client_hadler:
+                _node = client_hadler.get_node(uri_nodeid[1])
+                _node_value = await _node.read_data_value()
+            return _node_value
+        except Exception as E:
+            return False
 
 class OPCUASubscriptionHandler:
     """
@@ -112,7 +116,6 @@ class OPCUASubscriptionHandler:
         called for every status change notification from server
         """
         pass
-
 
 class OPCUASubscription:
     def __init__(self,_uri,_handler):
@@ -149,3 +152,7 @@ class OPCUASubscription:
                 pass#await asyncio.sleep(0.1)
 
 
+opcuaeHandler = OPCUAEndPointHandler()
+
+ht = asyncio.run(opcuaeHandler._write("opc.tcp://localhost:4851/ns=1;i=1004","3K650000548506"))
+print(ht)

@@ -307,24 +307,6 @@ class PyAASxServer:
                 "Error configuring the Asset end pointss. " + str(E)
             )
             self.shutDown()
-            
-    def configure_asset_access_adaptors(self) -> None:
-        try:
-            # configure the IOAdapters
-            assetAccessEndPoints = self.aasConfigurer.getAssetAccessEndPoints()
-            for key in assetAccessEndPoints.keys():
-                module = assetAccessEndPoints[key]
-                if module not in sys.modules:
-                    self.assetmodule = import_module("assetaccessadapters" + module)
-                    endPoint0 = self.assetmodule.AsssetEndPointHandler(self)
-                    self.asset_access_handlers[key] = endPoint0
-
-            self.serviceLogger.info("The Asset Access points are configured")
-        except Exception as E:
-            self.serviceLogger.info(
-                "Error configuring the Asset access points. " + str(E)
-            )
-            self.shutDown()
 
     def configure_register_sKill(self) -> None:
         try:
@@ -419,9 +401,6 @@ class PyAASxServer:
             self.serviceLogger.info(
                 "Error while starting the AAS End points. " + str(E)
             )
-
-    def start_asset_end_points(self) -> None:
-        self.serviceLogger.info("The Asset end Points are Started")
 
     def start_msg_handler_thread(self) -> None:
         try:
@@ -558,9 +537,7 @@ class PyAASxServer:
         self.configure_end_points()
         # configure IA Adaptors
         self.configure_asset_end_points()
-        self.configure_asset_access_adaptors()
         # configure Skill
-
         self.configure_available_skills()
         self.configure_skills()
         # configure the scheduler

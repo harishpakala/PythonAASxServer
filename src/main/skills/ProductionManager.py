@@ -6,9 +6,9 @@ This source code may use other Open Source software components (see LICENSE.txt)
 """
 
 try:
-    from utils.utils import Actor,AState
+    from utils.sip import Actor,AState
 except ImportError:
-    from main.utils.utils import Actor,AState
+    from main.utils.sip import Actor,AState
 
 class waitforStepOrderCompletion(AState):
     message_in =  ["OrderStatus",]       
