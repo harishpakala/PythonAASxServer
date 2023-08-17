@@ -390,7 +390,7 @@ class Actor:
         aasShellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uid)
         if aasShellObject.asset_interface_description is not None:
             if propertname in list(aasShellObject.asset_interface_description.properties.keys()):
-                return propertname
+                return aasShellObject.asset_interface_description[propertname]
             else:
                 return None
         else:

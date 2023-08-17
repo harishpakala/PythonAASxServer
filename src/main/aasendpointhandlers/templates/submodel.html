@@ -208,6 +208,7 @@ function parseDataElement(data,_parentId,exdomain){
     var _newId = _parentId +"."+ data["idShort"];
     if (data["modelType"] == "Property"){
 		var _property = new Property();
+		console.log(data);
 		_property.deserialize(data,_parentId,exdomain);
 		linearData1[_newId] = _property;
 	}

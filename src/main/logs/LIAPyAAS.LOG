@@ -1025,3 +1025,72 @@ On instance['submodelElements'][0]['qualifiers'][0]['valueType']:
 08/16/2023 04:25:12 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
 08/16/2023 04:25:12 PM - PyAASxServer Service Instance - INFO - The Skills are Started
 08/16/2023 04:25:16 PM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+08/16/2023 04:27:59 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+08/16/2023 04:27:59 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+08/16/2023 04:27:59 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+08/16/2023 04:27:59 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+08/16/2023 04:27:59 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+08/16/2023 04:27:59 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - The message handler started
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - localhost 60012
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - The message handler started
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+08/16/2023 04:28:04 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+08/16/2023 04:28:09 PM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+08/16/2023 04:29:04 PM - PyAASxServer Service Instance - INFO - Error at PostSubmodelElement_SRI DB'idShort'
+08/16/2023 04:33:51 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+08/16/2023 04:33:51 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+08/16/2023 04:33:51 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+08/16/2023 04:33:51 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+08/16/2023 04:33:51 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+08/16/2023 04:33:51 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - The message handler started
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - localhost 60012
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - The message handler started
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+08/16/2023 04:33:55 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+08/16/2023 04:34:00 PM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+08/16/2023 04:36:33 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+08/16/2023 04:36:33 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+08/16/2023 04:36:33 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+08/16/2023 04:36:33 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+08/16/2023 04:36:33 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+08/16/2023 04:36:33 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - The message handler started
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - localhost 60012
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - The message handler started
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+08/16/2023 04:36:38 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+08/16/2023 04:36:42 PM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+08/16/2023 04:40:55 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+08/16/2023 04:40:55 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+08/16/2023 04:40:55 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+08/16/2023 04:40:55 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+08/16/2023 04:40:55 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+08/16/2023 04:40:55 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - The message handler started
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - PubSub listners are sucessfully started
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - localhost 60012
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - The message handler started
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+08/16/2023 04:40:59 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+08/16/2023 04:41:03 PM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it

@@ -60,6 +60,15 @@
                         }
                     ],
                     "type": "GlobalReference"
+                },
+                {
+                    "type": "GlobalReference",
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "ww.ovgu.de/submodel/Test123"
+                        }
+                    ]
                 }
             ]
         },
@@ -2549,6 +2558,21 @@
             ],
             "modelType": "Submodel",
             "id": "ww.ovgu.de/submodel/4b269db7-b3b7-461d-a98e-9de172112da6"
+        },
+        {
+            "idShort": "Test123",
+            "category": "CONSTANT",
+            "id": "ww.ovgu.de/submodel/Test123",
+            "modelType": "Submodel",
+            "submodelElements": [
+                {
+                    "idShort": "testqqq23",
+                    "category": "CONSTANT",
+                    "value": "22",
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                }
+            ]
         }
     ],
     "conceptDescriptions": [
