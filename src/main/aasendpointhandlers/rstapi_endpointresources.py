@@ -1522,12 +1522,13 @@ class AASWebInterfaceSubmodels(Resource):
             submodelIdentifier = (base64.decodebytes(submodelIdentifier.encode())).decode()
             data,statu1 = self.pyaas.dba.get_aas_information(aasIdentifier1)
             submodelData,status,code = self.pyaas.dba.GetSubmodel(aasIdentifier1,submodelIdentifier)
+            submodelDataJ = json.dumps(submodelData,ensure_ascii=False)
             return  Response(render_template('submodel.html',thumbNail= urllib.parse.quote(data["thumbnail"],safe= ""),
                                                         aasIdentifier=aasIdentifier, exDomain=self.pyaas.exDomain , 
                                                         skillList= data["skillList"],
                                                         aasIdShort = data["idShort"],
                                                         submodelList = data["submodelList"],
-                                                        submodelD = submodelData,
+                                                        submodelD = submodelDataJ,
                                                         submodelId = submodelData["id"],
                                                         submodelName =submodelData["idShort"] ))        
         except Exception as e:
