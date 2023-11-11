@@ -113,8 +113,8 @@ document.getElementById("delete_element1").addEventListener( "click", (evt) => d
 var submodelId = '{{submodelId}}';
 var aasIdentifier = '{{aasIdentifier}}';
 var submodelCollapse = document.getElementById("submodelCollapse");
-var submodelTemp = JSON.parse('{{ submodelD | tojson | safe}}');
-var submodelD = JSON.parse('{{ submodelD | tojson | safe}}');
+var submodelTemp = {{ submodelD | tojson | safe}};
+var submodelD = {{ submodelD | tojson | safe}};
 
 var linearData1 = {};
 var linearData = {};
