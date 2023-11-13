@@ -2515,7 +2515,7 @@
                                     },
                                     "type": "updateFrequency",
                                     "valueType": "xs:string",
-                                    "value": "subscribe"
+                                    "value": "0"
                                 },
                                 {
                                     "type": "unit",
