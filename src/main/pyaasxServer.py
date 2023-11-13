@@ -544,7 +544,7 @@ class PyAASxServer:
         self.scheduler = Scheduler(self)
         self.scheduler.configure()
 
-        self.configureSecurityMeasure()
+        #self.configureSecurityMeasure()
 
     def start(self) -> None:
 
@@ -555,7 +555,7 @@ class PyAASxServer:
         # start the Data Manager
         self.start_data_manager()
         # start the pubsub listners
-        self.startPubsubListners()
+        #self.startPubsubListners()
         # start the communication drivers
         self.start_end_points()
         # start the message handler thread
