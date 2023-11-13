@@ -7,7 +7,7 @@ This source code may use other Open Source software components (see LICENSE.txt)
 try:
     from utils.sip import Actor,AState
 except ImportError:
-    from main.utils.sip import Actor,AState
+    from src.main.utils.sip import Actor,AState
 
 class waitforRegisterAck(AState):
     message_in =  ["registerack",]       
