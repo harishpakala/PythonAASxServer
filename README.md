@@ -59,6 +59,8 @@ The table 2 provides list of rest services the Python AASx Serve rprovides, it a
 |<http://localhost:60012/submodels/{path:submodelIdentifier}/submodel/submodel-elements/{path:idShortPath}/attachment>| ✔️|✔️|❌|❌|
 |<http://localhost:60012/concept-descriptions>| ✔️|❌|❌|✔️|
 |<http://localhost:60012/concept-descriptions/{path:cdIdentifier}>| ✔️|✔️|✔️|❌|
+|<http://localhost:60012/shells>/{path:aasIdentifier}/aas/skills/{path:skillName}/skillName                                        | ❌|❌|❌|✔️|
+
 
 ## Logs
 The python project maintains a logger, all the important aspects regarding its functionality  are captured with logger. The entire log information is stored into .LOG files under the src &gt; main &gt; logs folder.
