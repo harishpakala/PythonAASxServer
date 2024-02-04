@@ -1999,3 +1999,87 @@ class AASAssetInterfaceDescription(Resource):
                 print(str(E))
                 flash(str(E),"error")
                 return redirect("/shells/"+aasIdentifier+"/aid/webui", code=302)
+
+class SkillMaintainer(Resource):
+    def __init__(self,pyaas):
+        self.pyaas = pyaas
+
+    def create_skill_entry_sc(self,skill_details) -> dict:
+        operational_data = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["OperationalData"])
+        sc = operational_data["submodels"][0]["submodelElements"][0]
+        sc["idShort"] = skill_details["SkillName"] 
+        for index,sc_feature in enumerate(sc["value"]):
+            sc["value"][index]["value"] = skill_details[sc_feature["idShort"]]
+        return sc
+    
+    def create_submodel(self,submodel_data) -> bool:
+        try :
+            edm = ExecuteDBModifier(self.pyaas)
+            data,status,statuscode = edm.execute({"data":{"_submodel":submodel_data}, "method": "PostSubmodel",
+                                                                 "instanceId" : str(uuid.uuid1())})
+            return status
+        except Exception as e:
+            return False
+        
+    def save_submodel_ref(self,aasIdentifier,_reference) -> bool:
+        try:
+            edm = ExecuteDBModifier(self.pyaas)
+            data,status,statuscode = edm.execute({"data": {"_shellId":aasIdentifier, "_Reference":_reference}, "method": "PostSubmodelReference",
+                                                             "instanceId" : str(uuid.uuid1())})
+            return status        
+        except Exception as e:
+            return False
+ 
+    def create_operational_data_entry(self,aasIdentifier,semantic_id,skill_details) -> bool:
+        try :
+            data, status = self.pyaas.aasConfigurer.retrieve_submodel_semantic_id(aasIdentifier,semantic_id)
+            if status:
+                data["submodelElements"].append(self.create_skill_entry_sc(skill_details))
+                self.save_submodel(data)
+            else:
+                uuidG = UUIDGenerator()
+                _uuid = uuidG.getnewUUID()
+                submodel_Id = "www.ovgu.de/submodel/OperationaData/"+str(_uuid)
+                operational_data_aas = copy.deepcopy(self.pyaas.aasConfigurer.submodel_template_dict["OperationalData"])
+                operational_data_submodel = operational_data_aas["submodels"][0]
+                operational_data_submodel["submodelElements"].clear()
+                operational_data_submodel["submodelElements"].append(self.create_skill_entry_sc(skill_details))
+                operational_data_submodel["id"] = submodel_Id
+                submodel_Ref = operational_data_aas["assetAdministrationShells"][0]["submodels"][0]
+                submodel_Ref["keys"][0]["value"] = submodel_Id
+                
+                self.create_submodel(operational_data_submodel)
+                self.save_submodel_ref(aasIdentifier, submodel_Ref)
+            return True
+        except Exception as E:
+            return False
+ 
+    def check_for_skill_existence(self,uuid,skill_name) -> bool:
+        try:
+            shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(uuid)
+            if skill_name in shellObject.skills.keys():
+                return False
+            else:
+                return True
+        except Exception as e:
+            return True
+
+    def post(self,aasIdentifier,skillName):
+        try:
+            
+            aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode()
+            skillName1 = (base64.decodebytes(skillName.encode())).decode()
+            _uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier1)._id
+            if self.check_for_skill_existence(_uuid,skillName1):
+                skill_details = self.pyaas.available_skills[skillName1]
+                self.create_operational_data_entry(aasIdentifier1,"www.ovgu.de/submodel/operationaldata",skill_details)
+                self.pyaas.configure_skill_by_id(_uuid,skillName1)
+                self.pyaas.start_skill_by_name(_uuid,skillName1)
+                return make_response("The new skill is succesfully instantiated",201) 
+            else:
+                return make_response("The given skill does not exist",400) 
+        except Exception as e:
+            return make_response("Unexpected Internal Server Error",500) 
+        
+    def delete(self,aasIdentifier,skillName):
+        pass

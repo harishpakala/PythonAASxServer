@@ -49,15 +49,14 @@
 	</div>
 	<div class = "col-4">
 		<div class="accordion" id="SubmodelAccordin">
-			<div class="accordion-item" style = "border: 1px solid black; ">
-				<h2 class="accordion-header" id="submodelHeading" style = "background-color : rgb(0,52,215,0.9)">
-				  <button style = "color :white; font-size : 0.5em;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#submodelCollapse" aria-expanded="true" aria-controls="submodelCollapse">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="submodelHeading" style="background-color : rgb(0,52,215,0.9)">
+				  <button class="accordion-button" style = "color :white; font-size : 0.5em;" data-bs-toggle="collapse" data-bs-target="#submodelCollapse" aria-expanded="true" aria-controls="submodelCollapse">
 					{{submodelName}}
 				  </button>
 				</h2>
-				<div id="submodelCollapse" class="accordion-collapse collapse" aria-labelledby="submodelHeading" data-bs-parent="#SubmodelAccordin">
-				
-				
+				<div id="submodelCollapse" class="accordion-collapse collapse show" aria-labelledby="submodelHeading" data-bs-parent="#SubmodelAccordin" style="border-left:1px solid rgba(0,40,205,1); border-right:1px solid rgba(0,40,205,1); border-bottom:1px solid rgba(0,40,205,1);">
+						
 				</div>			
 			</div>
 		</div>	
@@ -66,11 +65,11 @@
 	</div>
 	<div class="col-5">
 		<div class="accordion" id="ElementInformation">
-			<div class="accordion-item" style="border: 1px solid black;">
+			<div class="accordion-item" style="border-left:1px solid rgba(0,40,205,1); border-right:1px solid rgba(0,40,205,1); border-bottom:1px solid rgba(0,40,205,1);">
 				<h2 class="accordion-header" id="headingOne3"
-					style="background-color: rgb(0, 52, 215, 0.9)">
-					<button style="color: white; font-size : 0.5em;" class="accordion-button"
-						type="button" data-bs-toggle="collapse" data-bs-target="#elem21"
+					style="background-color : rgb(0,52,215,0.9)">
+					<button class="accordion-button" style="color: white; font-size : 0.5em;"
+						data-bs-toggle="collapse" data-bs-target="#elem21"
 						aria-controls="elem21">Element Information</button>
 				</h2>
 				<div id="elem21" class="accordion-collapse"
@@ -108,13 +107,17 @@
   </div>
 </div>
 <script>
+
+
+
+
 document.getElementById("saveSubmodelForm").addEventListener( "click", (evt) => saveSubmodel(evt,'{{submodelId}}','{{aasIdentifier}}'));
 document.getElementById("delete_element1").addEventListener( "click", (evt) => delete_element(evt,'{{submodelId}}','{{aasIdentifier}}'));
 var submodelId = '{{submodelId}}';
 var aasIdentifier = '{{aasIdentifier}}';
 var submodelCollapse = document.getElementById("submodelCollapse");
-var submodelTemp = {{ submodelD | tojson | safe}};
-var submodelD = {{ submodelD | tojson | safe}};
+var submodelTemp = JSON.parse({{ submodelD | tojson | safe}});
+var submodelD = JSON.parse({{ submodelD | tojson | safe}});
 
 var linearData1 = {};
 var linearData = {};
@@ -141,10 +144,12 @@ addSubmodelElements("elem21",'{{exDomain}}');
 function addSubmodelElements(parent,exdomain){
 	if (submodelTemp.hasOwnProperty("submodelElements")){
 		for (var _submodelElement of submodelTemp["submodelElements"]){
-			if (_submodelElement.modelType != "SubmodelElementCollection")
-		        {submodelElements.push(parseDataElement(_submodelElement,submodelId,exdomain))}                    
-		    else
-		        {submodelElements.push(parseSubmodelCollection(_submodelElement,submodelId,exdomain))}
+			if (_submodelElement.modelType != "SubmodelElementCollection" && _submodelElement.modelType != "Entity")
+		        {submodelElements.push(parseDataElement(_submodelElement,submodelId,exdomain));}                    
+		    else if (_submodelElement.modelType == "SubmodelElementCollection" )
+		        {submodelElements.push(parseSubmodelCollection(_submodelElement,submodelId,exdomain));}	
+			else if (_submodelElement.modelType == "Entity" )     
+				{submodelElements.push(parseEntity(_submodelElement,submodelId,exdomain));}		
 		}
 
 		_submodel1.submodelElements.splice(0,submodelTemp["submodelElements"].length);
@@ -153,26 +158,25 @@ function addSubmodelElements(parent,exdomain){
 	for (var elemId of submodelElements){
 		_submodel1.submodelElements.push(elemId);
 	}
-	
 	linearData1[submodelTemp["id"]] = _submodel1;
 	var submodelElems = document.createElement('ul');
 	submodelElems.setAttribute("class","list-group list-group-flush");
 	submodelElems.setAttribute("id","submodelElems");
-
+	
 	for (var tId of _submodel1.submodelElements){
 		var elemC = linearData1[tId];
 		
-		if (elemC.modelType == "SubmodelElementCollection") {
+		if (elemC.modelType == "SubmodelElementCollection" || elemC.modelType == "Entity") {
 				var elemLi = document.createElement('li');	
 				elemLi.setAttribute("class","list-group-item");
 				elemLi.setAttribute("id","li_"+elemC.idShort.getString());
 				elemLi.appendChild(processCollection(elemC.idShort.getString(),exdomain));
-						
 				submodelElems.appendChild(elemLi);
 			}
 		else {
 				let elemChild = setSubmodelElemData(elemC.idShort.getString(),parent,exdomain);
 				submodelElems.appendChild(elemChild);
+				
 			}
 	}
 	submodelCollapse.appendChild(submodelElems);
@@ -187,11 +191,14 @@ function parseSubmodelCollection(submodelColl,_parentId,exdomain){
 	
     if (submodelColl.hasOwnProperty("value")) {
         for (var _submodelElement of submodelColl["value"]){
-            if (_submodelElement["modelType"] != "SubmodelElementCollection"){
-            	collectionElemIds.push(parseDataElement(_submodelElement, _newId,exdomain))
+            if (_submodelElement["modelType"] != "SubmodelElementCollection" && _submodelElement["modelType"] != "Entity"){
+            	collectionElemIds.push(parseDataElement(_submodelElement, _newId,exdomain));
             }
-            else{
-            	collectionElemIds.push(parseSubmodelCollection(_submodelElement,_newId,exdomain))
+            else if (_submodelElement["modelType"] == "Entity"){
+			    collectionElemIds.push(parseEntity(_submodelElement,_newId,exdomain));
+			}
+			else if (_submodelElement["modelType"] == "SubmodelElementCollection"){
+            	collectionElemIds.push(parseSubmodelCollection(_submodelElement,_newId,exdomain));
             }
         }       
         submodelColl["value"].splice(0,submodelColl["value"].length);
@@ -204,17 +211,48 @@ function parseSubmodelCollection(submodelColl,_parentId,exdomain){
     return _newId;
 }
 
+function parseEntity(submodelEntity,_parentId, exdomain){
+    var _newId =_parentId +"."+ submodelEntity["idShort"]
+    var entityElemIds =  []
+
+    var _submodelElementEntity = new Entity();
+    _submodelElementEntity.deserialize(submodelEntity,_parentId,exdomain);
+	
+    if (submodelEntity.hasOwnProperty("statements")) {
+       
+		for (var _submodelElement of submodelEntity["statements"]){
+            if (_submodelElement["modelType"] != "SubmodelElementCollection" && _submodelElement["modelType"] != "Entity"){
+            	entityElemIds.push(parseDataElement(_submodelElement, _newId,exdomain));
+            }
+            else if (_submodelElement["modelType"] == "Entity"){
+			    entityElemIds.push(parseEntity(_submodelElement,_newId,exdomain));
+			}
+			else if (_submodelElement["modelType"] == "SubmodelElementCollection"){
+            	entityElemIds.push(parseSubmodelCollection(_submodelElement,_newId,exdomain));
+            }
+        }       
+        submodelEntity["statements"].splice(0,submodelEntity["statements"].length);
+        for (var _pid of entityElemIds)
+        {
+        	_submodelElementEntity.value.push(_pid);
+        }
+    }
+    linearData1[_newId] = _submodelElementEntity;
+    return _newId;
+   
+}
+
 function parseDataElement(data,_parentId,exdomain){
     var _newId = _parentId +"."+ data["idShort"];
     if (data["modelType"] == "Property"){
 		var _property = new Property();
-		console.log(data);
 		_property.deserialize(data,_parentId,exdomain);
 		linearData1[_newId] = _property;
 	}
     if (data["modelType"] == "File"){
 		var _file = new IFile();
 		_file.value.submodelIdentifier = btoa(submodelId);
+		_file.value.aasIdentifier = aasIdentifier;
    		let splitString = (_newId.split((submodelId+".")));
 		_file.value.idShortPath = splitString[1];
 		_file.deserialize(data,_parentId,exdomain);
@@ -235,6 +273,11 @@ function parseDataElement(data,_parentId,exdomain){
 		_ReferenceElement.deserialize(data,_parentId,exdomain);
 		linearData1[_newId] = _ReferenceElement;
 	}
+		if (data["modelType"] == "RelationshipElement"){
+		var _RelationshipElement = new RelationshipElement();
+		_RelationshipElement.deserialize(data,_parentId,exdomain);
+		linearData1[_newId] = _RelationshipElement;
+	}
 
     return _newId;
 }
@@ -244,7 +287,7 @@ function setSubmodelElemData(_id,parent,exdomain){
 	var elemC = linearData1[submodelId+"."+_id];
 	elemLi.setAttribute("class","list-group-item");
 	elemLi.setAttribute("id","li_"+_id);
-	elemLi.setAttribute("style","font-size : 1em");
+	elemLi.setAttribute("style","font-size : 1.1em");
 	elemLi.setAttribute("onClick","listElemClick('"+_id+"','"+parent+"','"+exdomain+"')");
 	
 	if (elemC.modelType == "Property" || elemC.modelType == "File" ){
@@ -264,70 +307,83 @@ function setSubmodelElemData(_id,parent,exdomain){
 	if (elemC.modelType == "ReferenceElement" ){
 		elemLi.innerHTML = elemC.idShort.getString() + "->";
 	}
+	if (elemC.modelType == "RelationshipElement" ){
+		elemLi.innerHTML = elemC.idShort.getString() + "->";
+	}
 	return elemLi;
 }
 function processCollection(_pidShort,exdomain){
 	var parent = "elem21";
 	var tempId = submodelId+"."+_pidShort;
-	
 	var collectionElem = linearData1[tempId];
 	var idShort = collectionElem.idShort.getString();
-	
+	var modelType = collectionElem.modelType;
+
 	var collectionDiv = document.createElement('div');
 	collectionDiv.setAttribute("class","accordion");
 	collectionDiv.setAttribute("id",_pidShort.replaceAll(".","_"));
-	
-	var accordinDiv = document.createElement('div');
-	accordinDiv.setAttribute("class","accordion-item");
-	accordinDiv.appendChild(creatAccordinHeader(_pidShort,idShort));
-	
+
 	var accordinCollpase = createCollapseAccordin(_pidShort,idShort);
-	
+
 	for (var tId of collectionElem.value){
+		
 		var elemC = linearData1[tId];
-		console.log(tId);
+
 		if (elemC.modelType == "SubmodelElementCollection") {
 				var elemLi = document.createElement('li');	
-				elemLi.setAttribute("class","list-group-item");
-				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString(),exdomain));
+				elemLi.setAttribute("class","list-group-item");			
+				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString(),exdomain));			
 			}
-			else {
+		else if (elemC.modelType == "Entity") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");			
+				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString(),exdomain));			
+			}
+		else {
 				accordinCollpase.appendChild(setSubmodelElemData(_pidShort+"."+elemC.idShort.getString(),parent,exdomain));
 			}
 	}
+	
+	var accordinDiv = document.createElement('div');
+	accordinDiv.setAttribute("class","accordion-item");
+	accordinDiv.appendChild(creatAccordinHeader(_pidShort,idShort, modelType));
+	
+	
 	accordinDiv.appendChild(accordinCollpase);
 	collectionDiv.appendChild(accordinDiv);
 	return collectionDiv	
 }
 
-function creatAccordinHeader(_pidShort,idShort){
+function creatAccordinHeader(_pidShort,idShort, modelType){
 	var h2 = document.createElement('h2');
 	h2.setAttribute("class","accordion-header");
 	h2.setAttribute("id",_pidShort.replaceAll(".","_")+"_Header");
 	h2.setAttribute("style","background-color : rgb(0,52,215,0.9)");
-	h2.appendChild(createAccordinHeaderButton(_pidShort,idShort))
+	h2.appendChild(createAccordinHeaderButton(_pidShort,idShort, modelType))
 	return h2;
 }
 
-function createAccordinHeaderButton(_pidShort,idShort){
+function createAccordinHeaderButton(_pidShort,idShort, modelType){
 	var button = document.createElement('button');
 	button.setAttribute("class","accordion-button collapsed");
-	button.setAttribute("style","color :white;font-size : 0.35em");
+	button.setAttribute("style","color :white;font-size : 0.5em");
 	button.setAttribute("type","button");
 	button.setAttribute("data-bs-toggle","collapse");
 	button.setAttribute("data-bs-target","#"+_pidShort.replaceAll(".","_")+"_Collapse");
 	button.setAttribute("aria-controls",_pidShort.replaceAll(".","_")+"_Collapse");
 	button.setAttribute("onClick","listCollectionClick('"+_pidShort+"')");
-	button.innerHTML = idShort;
+	button.innerHTML = idShort + " ("+modelType+")";
 	return button;
 }
 
-function createCollapseAccordin(_pidShort,idShort){
+function createCollapseAccordin(_pidShort,idShort, colorcode){
 	var CollapseAccordinDiv = document.createElement('div');
 	CollapseAccordinDiv.setAttribute("class","accordion-collapse collapse");
 	CollapseAccordinDiv.setAttribute("id",_pidShort.replaceAll(".","_")+"_Collapse");
 	CollapseAccordinDiv.setAttribute("aria-labelledby",_pidShort.replaceAll(".","_")+"_Header");
 	CollapseAccordinDiv.setAttribute("data-bs-parent","#"+_pidShort.replaceAll(".","_"));
+	CollapseAccordinDiv.setAttribute("style","border:3px dotted; border-color:rgba(30, 130, 76, 1);");
+	
 	return CollapseAccordinDiv; 
 }
 function seperaterRow(minHeight){
@@ -360,10 +416,15 @@ function create_aas_elem(exDomain,form_id,aasIdentifier,submodelId,idShortPath){
 												<div class="col-9">
 													<div class="submodel-form" id = "submodel-form">
 														<select id = "aas_elem_type" name ="aas_elem_type" class="form-select" aria-label="Default select example">
-															<option value="SubmodelElementCollection">SubmodelElementCollection</option>
 															<option value="Property">Property</option>
 															<option value="Range">Range</option>
 															<option value="MultiLanguageProperty">MultiLanguageProperty</option>
+															<option value="Entity">Entity</option>
+															<option value="File">File</option>
+															<option value="ReferenceElement">ReferenceElement</option>
+															<option value="RelationshipElement">RelationshipElement</option>
+															<option value="AnnotatedRelationshipElement">AnnotatedRelationshipElement</option>
+															<option value="SubmodelElementCollection">SubmodelElementCollection</option>
 														</select>
 													</div>
 												</div>
@@ -383,14 +444,26 @@ function listCollectionClick(_id){
 	_parent.innerHTML = "";
 	data.createDom("elem21",'{{exDomain}}');
 	var listGroupItem = document.getElementsByClassName("list-group-item");
-	for (var i = 0; i < listGroupItem.length; i++ ) {
-		listGroupItem[i].style.border = "1px solid rgba(0,0,0,.125)";
+	for (var i = 0; i < (listGroupItem.length-1); i++ ) {
+		listGroupItem[i].style.borderBottom = "1px solid rgba(0,40,205,.125)";
 	}
 	document.getElementById('addAASElementDiv').style.display = "block";
 	create_aas_elem('{{exDomain}}','new_aas_element_form__div','{{aasIdentifier}}',submodelId,_id);
 } 
 
+$(document).ready(function () {
 
+	$('.accordion-header').on('click', function () {
+		$('.accordion-item').removeClass('focus');
+		$(this).closest('.accordion-item').addClass('focus');
+	});
+
+
+	$('.accordion').on('hidden.bs.collapse', function () {
+		$('.accordion-item').removeClass('focus');
+	});
+});
+		
 </script>
 
 {% endblock %}

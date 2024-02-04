@@ -138,6 +138,51 @@
                     "type": "GlobalReference"
                 }
             }
+        },
+        {
+            "administration": {},
+            "assetInformation": {
+                "assetKind": "Instance",
+                "defaultThumbnail": {
+                    "path": "file://aasx/files/robot.png"
+                },
+                "globalAssetId": {
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "sssss"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            },
+            "category": "CONSTANT",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "HannoverMesseDemo"
+                }
+            ],
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "HannoverMesseDemo"
+                }
+            ],
+            "id": "ww.ovgu.de/aas/5d939021-15ef-4739-a009-a461fb47cabe",
+            "idShort": "ServiceRequester4",
+            "modelType": "AssetAdministrationShell",
+            "submodels": [
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "www.ovgu.de/submodel/OperationaData/2a9b3438-8361-4cae-9e7b-1e3edafbe62d"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                }
+            ]
         }
     ],
     "submodels": [
@@ -2573,6 +2618,65 @@
                     "modelType": "Property"
                 }
             ]
+        },
+        {
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "Submodel",
+                        "value": "www.ovgu.de/submodel/operationaldata"
+                    }
+                ],
+                "type": "GlobalReference"
+            },
+            "idShort": "OperationalData",
+            "kind": "Instance",
+            "submodelElements": [
+                {
+                    "idShort": "ServiceRequester",
+                    "value": [
+                        {
+                            "value": "ServiceRequester",
+                            "idShort": "SkillName",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Service Requisition",
+                            "idShort": "SkillService",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "WaitforNewOrder",
+                            "idShort": "InitialState",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "Y",
+                            "idShort": "enabled",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        },
+                        {
+                            "value": "www.admin-shell.io/interaction/bidding",
+                            "idShort": "semanticProtocol",
+                            "kind": "Instance",
+                            "valueType": "xs:string",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "kind": "Instance",
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "Submodel",
+            "id": "www.ovgu.de/submodel/OperationaData/2a9b3438-8361-4cae-9e7b-1e3edafbe62d"
         }
     ],
     "conceptDescriptions": [
