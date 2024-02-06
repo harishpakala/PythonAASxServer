@@ -30,7 +30,7 @@ LIA_NAMESPACE=ovgu.de
 </code></pre>
 ## Running 
 1) The base python program is organized inside the src/main subdirectory.  <br/>
-<strong>python3.9 vws_ric.py</strong> <br/>
+<strong>python3.9 pyaasxServer.py</strong> <br/>
 
 ## AAS Registry Rest API Services
 The table 2 provides list of rest services the Python AASx Serve rprovides, it also lists down the allowed operations for each of the service. The services are as per the guidelines of [AAS Detail Part 2](https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part_2_V1.html). 
