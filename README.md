@@ -1,12 +1,15 @@
-# PythonLIASampleServer
+# PythonAASxServer
 
 ## Dependencies
 
-This repository hosts the source code for RIC architecture, 
+This repository hosts the source code for Python AASx Server, 
 
 :one: The  code is written in Python 3.9 <br />
 :two: All the Python dependencies are specified in the [requirements.txt](https://github.com/harishpakala/PythonAASxServer/blob/master/requirements.txt) <br />
 :three: The LIA OVGU development uses eclipse editor, accordingly eclipse related project files are provided in the repository.
+
+### Installing Dependencies
+<strong>pip3 install -r requirements.txt</strong> <br/>
 
 ## Configuration
 The source code is associated with a .env file, all the configuration variables are specified in it.
@@ -66,7 +69,7 @@ The table 2 provides list of rest services the Python AASx Serve rprovides, it a
 The python project maintains a logger, all the important aspects regarding its functionality  are captured with logger. The entire log information is stored into .LOG files under the src &gt; main &gt; logs folder.
 
 ## Issues
-If you want to request new features or report bug [submit a new issue](https://github.com/admin-shell-io/python-aas-registry/issues/new)
+If you want to request new features or report bug [submit a new issue](https://github.com/harishpakala/PythonAASxServer/issues/new)
 
 ## License
 
