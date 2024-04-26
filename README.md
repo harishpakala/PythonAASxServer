@@ -64,6 +64,206 @@ The table 2 provides list of rest services the Python AASx Serve rprovides, it a
 |<http://localhost:60012/concept-descriptions/{path:cdIdentifier}>| ✔️|✔️|✔️|❌|
 |<http://localhost:60012/shells/{path:aasIdentifier}/aas/skills/{path:skillName}/skill>| ❌|❌|❌|✔️|
 
+## Back Ground 
+### Finite State Machines and the SKills.
+<p align="justify">
+In PythonAASxServer the concept skills represent the behavior of the type 3 AAS. These skills are modelled as Finite State Machines (FSM). The interactions between the skills happens with exchange the [I4.0 Messages](https://github.com/harishpakala/I40_Language_Semantics) <br/>
+   
+<strong>Interaction Protocols </strong> represent structured sequence of messages exchanged between multiple partners / actors to achieve a specified goal (Example : Three-Way Handhake Protocol). An instance / execution of an interaction protocol is associated with a specific conversationID, all the messages wihtin the concersation have the same conversationID within I4.0 frame part. Each skilll in a Interaction Protocol is specific Role Name. There could be multiple skills with same Role Name.<br/>
+
+The Python source-code created by the state machine creator contains a set of classes. Each state represents a specific state and the entire state machine is represensted by anotehr class, that coordinates it's execution. <br/>
+
+Each skill / FSM is associated with a specific queue within in the [PythonAASxServer](https://github.com/harishpakala/PythonAASxServer) framework.<br/>
+
+Transitions between the states are expected due to one of the three event-types a) Inbound Message, b) Internal Trigger c) External Trigger.<br/>
+</p>
+
+## Sample State
+
+```
+class Hello(AState):
+    message_in =  ["Ping",]       
+    
+    def initialize(self):
+        # Gaurd variables for enabling the transitions
+        self.SendAck_Enabled = True 
+            
+    def actions(self) -> None:
+        if (self.wait_untill_timeout(10)):
+            message = self.receive(WaitforHi.message_in[0])
+            self.save_in_message(message)
+        
+    def transitions(self) -> object:
+        if (self.SendAck_Enabled):
+            return "SendAck"
+```
+
+<p align="center">
+A Hello state formatted as per Pyhton AASxServer and the StateMachine creator.
+</p>
+
+* The Hello state inherits the class Abstract class <strong>AState</strong> [source-code](https://github.com/harishpakala/PythonAASxServer/blob/c308300e3e78dbac5cacbbf6c09fc526a4d52eff/src/main/utils/sip.py#L43). <br/>
+* The static variable message_in represents the list of messages that the FSM is expected to receive in the specific state. <br/>
+* This class provides a set of guard conditions reequired for transitions to the next state. All the logic to the be executed within the Hello state needs to be written in the <strong>actions()</strong> method. <br/>
+* The <strong>transitions()</strong> method should not be edited. <br/>
+* For every next state a boolean guard variable will be provided in the constructor of the class, extracted from the JSON file. All the guard variables are defaulted to True. <br/>
+* The developer needs to disable gaurd variable (False) in the <strong>actions()</strong> method, for the state that is not the next one. <br/>
+* The [PythonAASxServer](https://github.com/harishpakala/PythonAASxServer) framework takes care and hide the complete mechanism behind the exchange of I4.0 messages between the skills. <br/>
+
+### Send and Receive Methods 
+
+```
+receive(msg_in)
+```
+<p align="center">
+Returns the first message from the inbound queue of type msg_in, if there is no message the method returns None.
+</p>
+<br/>
+
+```
+receive_all(msg_in)
+```
+
+<p align="center">
+Returns all the messages from the inbound queue of type msg_in, if there is no message the method returns an empty list.
+</p>
+<br/>
+
+### I4.0 Message creation Method  
+
+```
+create_i40_message(msg_out,conversationId,receiverId,receiverRole)
+```
+<p>
+Creates an I4.0 message of type 'msg_out' with a specific 'conversationId'. The senderRole will the SKill that has called this method. The receiverRole is destination skill.
+The combination of receiverId and receiverRole is expected to be unique within the specific interaction. The senderId or the receiverId represents unique Id of the type3 AAS to which the SKill is attached.
+</p>
+<br/>
+
+### Saving the I4.0 messages to the backend Methods
+
+```
+save_in_message(msg)
+```
+<p align="center">
+Copies the contents of an inbound I4.0 messsage to backend.
+</p>
+<br/>
+
+```
+save_out_message(msg_in)
+```
+
+<p align="center">
+Copies the contents of an outbound I4.0 messsage to backend.
+</p>
+<br/>
+
+### AASx Data Access Methods
+
+```
+GetSubmodelById(submodelId)
+```
+
+<p align="center">
+Returns the submodel of the specified submodelId. In case the submodel is not present or any internal error it returns error.
+</p>
+<br/>
+
+```
+GetSubmodelELementByIdshoortPath(submodelId)
+```
+
+<p>
+Returns the submodel-element of the specified submodelId and IdShortPath combination. In case the submodel-element is not present or any internal error it returns error.
+</p>
+<br/>
+
+```
+save_submodel(submodel)
+```
+
+<p align="center">
+The replaces the existing submodel with the new submodel specified. Successful updation will return True, else returns False.
+</p>
+<br/>
+
+
+
+### Predefined guard Methods
+
+```
+wait_untill_timeout(timer)
+```
+<p align="center">
+The Control waits untill a specific number of seconds as assigned to argument to the method.
+</p>
+<br/>
+
+```
+wait_untill_message(message_count,msg_types)
+```
+<p>
+The Control waits untill a specific number of messaages are arrived in the buffer of the message type specified as an argument msg_types (List of strings).
+</p>
+<br/>
+
+```
+wait_untill_message_timeout(message_count,timer,msg_types)
+```
+<p>
+The Control waits untill a specific number of messaages are arrived in the buffer of the message type specified as an argument msg_types (List of strings). However if the timer expires, the control returns.
+</p>
+<br/>
+
+### Data access between states of a FSM
+
+Every FSM skill is provided by tape by the [PythonAASxServer](https://github.com/harishpakala/PythonAASxServer) framework. Each entry in the tape is key value pair.
+
+```
+push(key,value)
+```
+<p>
+Push a data element 'value' to the tape with an associated 'key'.
+</p>
+<br/>
+
+```
+retrieve(key)
+```
+<p>
+Returns the value associated with the specific key.
+</p>
+<br/>
+
+```
+flush()
+```
+<p>
+Clears the tapes, removes all the key,value pairs. Usually it is done afer an iteration of the FSM.
+</p>
+<br/>
+
+
+## Controller class of a FSM AccessProvider
+
+class AccessProvider(Actor):
+    '''
+    classdocs
+    '''
+
+    def __init__(self):
+        '''
+        Constructor
+        '''      
+        Actor.__init__(self,"AccessProvider",
+                       "www.admin-shell.io/interaction/3WayHandshake",
+                       "Access Provision","Start")
+                        
+
+    def start(self):
+        self.run("Start")
+
 
 ## Logs
 The python project maintains a logger, all the important aspects regarding its functionality  are captured with logger. The entire log information is stored into .LOG files under the src &gt; main &gt; logs folder.
