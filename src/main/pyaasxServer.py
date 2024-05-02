@@ -176,8 +176,8 @@ class PyAASxServer:
             self.listHandler_Handler.setFormatter(self.Handler_format)
             self.fileLogger_Handler.setFormatter(self.Handler_format)
 
+            self.serviceLogger.addHandler(self.fileLogger_Handler)
             self.serviceLogger.addHandler(self.commandLogger_handler)
-            self.serviceLogger.addHandler(self.listHandler_Handler)
             self.serviceLogger.addHandler(self.fileLogger_Handler)
 
             self.serviceLogger.info("The service Logger is Configured.")
@@ -282,6 +282,20 @@ class PyAASxServer:
             self.serviceLogger.info("Error configuring the EndPoints. " + str(E))
             self.shutDown()
     
+    def configure_aid_by_id(self,_uuid,aasIdentifier):
+        """
+        """
+        try:
+            _submodel,status = self.aasConfigurer.retrieve_submodel_semantic_id(aasIdentifier,"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Submodel")
+            if status :
+                shellObject = self.aasShellHashDict.__getHashEntry__(_uuid)
+                shellObject.aid = self.aasConfigurer.get_asset_interface_description_aid(_submodel,aasIdentifier,_uuid) 
+        except Exception as E:
+            self.serviceLogger.info(
+                "Error configuring the Asset end point. " + str(E)
+            )
+            self.shutDown()    
+    
     def configure_asset_end_points_by_id(self,_uuid,aasIdentifier) -> None:
         """
         """
@@ -302,6 +316,7 @@ class PyAASxServer:
         try:
             for _uid in self.aasShellHashDict._getKeys():
                 self.configure_asset_end_points_by_id(_uid,self.aasShellHashDict.__getHashEntry__(_uid).aasELement["id"])
+                #self.configure_aid_by_id(_uid,self.aasShellHashDict.__getHashEntry__(_uid).aasELement["id"])
         except Exception as E:
             self.serviceLogger.info(
                 "Error configuring the Asset end pointss. " + str(E)

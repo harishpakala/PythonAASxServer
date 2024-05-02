@@ -1,3 +1,4 @@
+
 function createCollectionAccordins(collectionData)
 {
 	for (elem in collectionData["value"]){

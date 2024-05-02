@@ -112,6 +112,7 @@ class evaluateRegisterAck(AState):
         status["code"] = registerack["interactionElements"][0]["submodelElements"][1]["value"]
         status["message"] = registerack["interactionElements"][0]["submodelElements"][2]["value"]
         self.push("status",status)
+        print(registerack)
         if status["status"] == "S":
             self.notifyOnError_Enabled = False
         else:
@@ -145,10 +146,10 @@ class sendCompletionResponse(AState):
         self.WaitforNewOrder_Enabled = True
             
     def create_outbound_message(self,msg_type) -> list:
-        order = self.receive("Order")
+        order = self.retrieve("Order")
         receiverId = order["frame"]["sender"]["id"]
         receiverRole = order["frame"]["sender"]["role"]["name"]
-        conV1 = order["frame"]["sender"]["conversationId"]
+        conV1 = order["frame"]["conversationId"]
         oMessage_Out = self.create_i40_message(msg_type,conV1,receiverId,receiverRole)
         oMessage_Out["interactionElements"].append(self.statusSubmodel)
         self.save_out_message(oMessage_Out)

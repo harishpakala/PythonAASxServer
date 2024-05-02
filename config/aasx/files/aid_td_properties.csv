@@ -1,2 +1,0 @@
-property_name,type,readOnly,observable,updateFrequency,unit,submodelId,idShortPath,href,requestType
-Temperature1,Float,yes,True,subscribe,Celsius,ww.ovgu.de/submodel/Test1234Submodel,Temperature1,opc.tcp://localhost:4851/ns=1;i=1020,

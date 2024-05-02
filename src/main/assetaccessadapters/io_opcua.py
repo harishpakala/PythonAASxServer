@@ -150,9 +150,3 @@ class OPCUASubscription:
             except Exception as E:
                 print(str(E))
                 pass#await asyncio.sleep(0.1)
-
-
-opcuaeHandler = OPCUAEndPointHandler()
-
-ht = asyncio.run(opcuaeHandler._write("opc.tcp://localhost:4851/ns=1;i=1004","3K650000548506"))
-print(ht)

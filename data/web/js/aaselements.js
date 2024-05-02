@@ -56,7 +56,7 @@ function createNewSubmodel1(event,element_form_id,aasIdentifier){
 	const FD = new FormData();
 	let _key = new Key("Submodel","");
 	let _listObject = new ListObject("temp",_key,"")
-	_ref = new Reference("GlobalReference");
+	_ref = new Reference("ExternalReference");
 	_ref.keys._list.push(_listObject);
 	FD.append("operation_type", "new_submodel");
 	FD.append("_reference",JSON.stringify(_ref.serialize()));

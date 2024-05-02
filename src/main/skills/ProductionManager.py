@@ -183,13 +183,18 @@ class WaitforNewOrder(AState):
     def initialize(self):
         # Gaurd variables for enabling the transitions
         self.retrieveProductionStepSeq_Enabled = True
-            
+        self.WaitforNewOrder_Enabled = True
     
     def actions(self) -> None:
         if (self.wait_untill_message(1, WaitforNewOrder.message_in)):
             message = self.receive(WaitforNewOrder.message_in[0])
             self.save_in_message(message)
-            self.push("ProductionOrder", message)
+            self.push("ProductionOrder",message)
+            print(message["frame"]["sender"]["id"], self.base_class.aasID)
+            if message["frame"]["sender"]["id"] == self.base_class.aasID:
+                self.WaitforNewOrder = False
+            else:
+                self.retrieveProductionStepSeq_Enabled = False
         else:
             self.actions()
         
@@ -197,7 +202,8 @@ class WaitforNewOrder(AState):
         if (self.retrieveProductionStepSeq_Enabled):
             return "retrieveProductionStepSeq"
         
-
+        if (self.WaitforNewOrder_Enabled):
+            return "WaitforNewOrder"
 
 
 class ProductionManager(Actor):

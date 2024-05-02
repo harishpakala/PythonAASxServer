@@ -13,7 +13,8 @@ import os.path
 try:
     from utils.utils import AASDescriptor,AIDProperty,AssetInterfaceDescription
 except ImportError:
-    from src.main.utils.aaslog import AASDescriptor,AIDProperty,AssetInterfaceDescription
+    from src.main.utils import AASDescriptor,AIDProperty,AssetInterfaceDescription
+
 
 enabledState = {"Y": True, "N": False}
 
@@ -62,6 +63,7 @@ class ConfigParser:
 
             with open(os.path.join(self.pyaas.base_dir, "config/status.json"), encoding='utf-8') as statusFile:
                 self.submodel_statusResponse = json.load(statusFile)
+        
             with open(os.path.join(self.pyaas.base_dir, "config/SrSp.json"), encoding='utf-8') as SrSp_Path:
                 self.SrSp = json.load(SrSp_Path)
                 del self.SrSp["temp"]
@@ -182,6 +184,25 @@ class ConfigParser:
 
         return skillDetails
 
+    def get_asset_mapping_configuration(self,submodel,aasIdentifier,_uuid):
+        """
+        Retrieves the Asset Interface Mapping Configuration submodel for the specified aas_id,
+        extract the properties from the submodel and returns the list.
+        """
+        pass
+        #asset_interface_description = AssetInterfaceDescription()
+        #deserializer = Deserialization_AID()
+        #uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier)._id
+        #aasElement = self.pyaas.aasShellHashDict.__getHashEntry__(uuid).getElement()
+        
+    def get_asset_interface_description_aid(self, submodel, aasIdentifier,_uuid) -> dict:
+        """
+            Latets Version
+        """
+        pass
+        #de_seriliaze_aid = Deserialization_AID()
+        #return de_seriliaze_aid.get_asset_interfaces(submodel)
+        
     def get_asset_interface_description(self, submodel, aasIdentifier,_uuid) -> list:
         """
         Retrieves the Asset Interface Description submodel for the specified aas_id,
@@ -228,7 +249,7 @@ class ConfigParser:
             
                     asset_interface_description.add_property(td_property,aid_property["idShort"])
         
-        return asset_interface_description                   
+        return asset_interface_description    
 
     def get_skills(self,aasIdentifier) -> dict:
         submodel,status  = self.retrieve_submodel_semantic_id(aasIdentifier,"www.ovgu.de/submodel/operationaldata")

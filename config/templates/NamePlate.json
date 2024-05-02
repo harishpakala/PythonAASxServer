@@ -9,7 +9,7 @@
                             "value": "https://example.com/ids/sm/6412_8113_1032_9697"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "idShort": "Nameplate",
@@ -20,15 +20,7 @@
                 "defaultThumbnail": {
                     "path": "file://temp/asset.png"
                 },
-                "globalAssetId": {
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": "www.company.com/asset/9746_9342_9937_6241"
-                        }
-                    ],
-                    "type": "GlobalReference"
-                }
+                "globalAssetId": "www.company.com/asset/9746_9342_9937_6241"
             }
         }
     ],
@@ -41,7 +33,7 @@
                         "value": "https://admin-shell.io/zvei/nameplate/1/0/Nameplate"
                     }
                 ],
-                "type": "GlobalReference"
+                "type": "ExternalReference"
             },
             "idShort": "Nameplate",
             "category": "CONSTANT",
@@ -55,7 +47,7 @@
                                 "value": "0173-1#02-AAO677#002"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerName",
                     "category": "PARAMETER",
@@ -76,7 +68,7 @@
                                 "value": "0173-1#02-AAW338#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerProductDesignation",
                     "category": "PARAMETER",
@@ -97,7 +89,7 @@
                                 "value": "0173-1#02-AAQ832#005"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "Address",
                     "category": "VARIABLE",
@@ -110,7 +102,7 @@
                                         "value": "0173-1#02-AAO127#003"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Department",
                             "category": "VARIABLE",
@@ -131,7 +123,7 @@
                                         "value": "0173-1#02-AAO128#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Street",
                             "category": "PARAMETER",
@@ -152,7 +144,7 @@
                                         "value": "0173-1#02-AAO129#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Zipcode",
                             "category": "VARIABLE",
@@ -173,7 +165,7 @@
                                         "value": "0173-1#02-AAO130#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "POBox",
                             "category": "VARIABLE",
@@ -194,7 +186,7 @@
                                         "value": "0173-1#02-AAO131#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "ZipCodeOfPOBox",
                             "category": "VARIABLE",
@@ -215,7 +207,7 @@
                                         "value": "0173-1#02-AAO132#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "CityTown",
                             "category": "VARIABLE",
@@ -236,7 +228,7 @@
                                         "value": "0173-1#02-AAO133#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "StateCounty",
                             "category": "VARIABLE",
@@ -257,7 +249,7 @@
                                         "value": "0173-1#02-AAO134#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "NationalCode",
                             "category": "VARIABLE",
@@ -278,7 +270,7 @@
                                         "value": "0173-1#02-AAO135#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "VATNumber",
                             "category": "VARIABLE",
@@ -299,7 +291,7 @@
                                         "value": "0173-1#02-AAO202#003"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "AddressRemarks",
                             "category": "VARIABLE",
@@ -321,7 +313,7 @@
                                         "value": "0173-1#02-AAQ326#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "AddressOfAdditionalLink",
                             "category": "VARIABLE",
@@ -337,7 +329,7 @@
                                         "value": "0173-1#02-AAQ833#005"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Phone01",
                             "category": "VARIABLE",
@@ -350,7 +342,7 @@
                                                 "value": "0173-1#02-AAO136#002"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "TelephoneNumber",
                                     "category": "VARIABLE",
@@ -372,7 +364,7 @@
                                                 "value": "0173-1#02-AAO137#003"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "TypeOfTelephone",
                                     "category": "VARIABLE",
@@ -392,7 +384,7 @@
                                         "value": "0173-1#02-AAQ834#005"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Fax01",
                             "category": "VARIABLE",
@@ -405,7 +397,7 @@
                                                 "value": "0173-1#02-AAO195#002"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "FaxNumber",
                                     "category": "VARIABLE",
@@ -427,7 +419,7 @@
                                                 "value": "0173-1#02-AAO196#003"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "TypeOfFaxNumber",
                                     "category": "VARIABLE",
@@ -447,7 +439,7 @@
                                         "value": "0173-1#02-AAQ836#005"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Email01",
                             "category": "VARIABLE",
@@ -461,7 +453,7 @@
                                                 "value": "0173-1#02-AAO198#002"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "EmailAddress",
                                     "category": "VARIABLE",
@@ -477,7 +469,7 @@
                                                 "value": "0173-1#02-AAO200#002"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "PublicKey",
                                     "category": "VARIABLE",
@@ -499,7 +491,7 @@
                                                 "value": "0173-1#02-AAO199#003"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "TypeOfEmailAddress",
                                     "category": "VARIABLE",
@@ -515,7 +507,7 @@
                                                 "value": "0173-1#02-AAO201#002"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "TypeOfPublickKey",
                                     "category": "VARIABLE",
@@ -544,7 +536,7 @@
                                 "value": "0173-1#02-AAU731#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerProductFamily",
                     "category": "PARAMETER",
@@ -566,7 +558,7 @@
                                 "value": "0173-1#02-AAM556#002"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SerialNumber",
                     "category": "PARAMETER",
@@ -583,7 +575,7 @@
                                 "value": "0173-1#02-AAP906#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "YearOfConstruction",
                     "category": "PARAMETER",
@@ -599,7 +591,7 @@
                                 "value": "https://admin-shell.io/zvei/nameplate/1/0/Nameplate/Markings"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "Markings",
                     "category": "VARIABLE",
@@ -612,7 +604,7 @@
                                         "value": "https://admin-shell.io/zvei/nameplate/1/0/Nameplate/Markings/Marking"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Marking01",
                             "category": "VARIABLE",
@@ -626,7 +618,7 @@
                                                 "value": "https://admin-shell.io/zvei/nameplate/1/0/Nameplate/Markings/Marking/MarkingName"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "MarkingName",
                                     "category": "VARIABLE",
@@ -635,7 +627,7 @@
                                     "modelType": "Property"
                                 },
                                 {
-                                    "value": "",
+                                    "value": "file://aasx/files/",
                                     "semanticId": {
                                         "keys": [
                                             {
@@ -643,12 +635,12 @@
                                                 "value": "https://admin-shell.io/zvei/nameplate/1/0/Nameplate/Markings/Marking/MarkingFile"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "MarkingFile",
                                     "category": "VARIABLE",
                                     "kind": "Instance",
-                                    "contentType": "",
+                                    "contentType": "application/pdf",
                                     "modelType": "File"
                                 },
                                 {
@@ -660,7 +652,7 @@
                                                 "value": "https://admin-shell.io/zvei/nameplate/1/0/Nameplate/Markings/Marking/MarkingAdditionalText"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "MarkingAdditionalText01",
                                     "category": "VARIABLE",
@@ -684,7 +676,7 @@
                                 "value": "https://admin-shell.io/zvei/nameplate/1/0/Nameplate/AssetSpecificProperties"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "AssetSpecificProperties",
                     "category": "VARIABLE",
@@ -697,7 +689,7 @@
                                         "value": "https://admin-shell.io/zvei/nameplate/1/0/Nameplate/AssetSpecificProperties/GuidelineSpecificProperties"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "GuidelineSpecificProperties01",
                             "category": "VARIABLE",
@@ -711,7 +703,7 @@
                                                 "value": "0173-1#02-AAO856#002"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "GuidelineForConformityDeclaration",
                                     "category": "VARIABLE",
@@ -763,14 +755,14 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Bezeichnung f\u00fcr eine nat\u00fcrliche oder juristische Person, die f\u00fcr die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
+                                "text": "Bezeichnung für eine natürliche oder juristische Person, die für die Auslegung, Herstellung und Verpackung sowie die Etikettierung eines Produkts im Hinblick auf das 'Inverkehrbringen' im eigenen Namen verantwortlich ist"
                             },
                             {
                                 "language": "en",
                                 "text": "legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -779,7 +771,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -791,7 +783,7 @@
                             "value": "0173-1#02-AAO677#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO677#002",
@@ -834,7 +826,7 @@
                                 "text": "Short description of the product (short text)"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -843,7 +835,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -855,7 +847,7 @@
                             "value": "0173-1#02-AAW338#001"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAW338#001",
@@ -895,10 +887,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Adressinformationen zu einem Gesch\u00e4ftspartner"
+                                "text": "Adressinformationen zu einem Geschäftspartner"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -907,7 +899,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -919,7 +911,7 @@
                             "value": "0173-1#02-AAQ832#005"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAQ832#005",
@@ -955,14 +947,14 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "administrative Abteilung einer Organisation, in der ein Gesch\u00e4ftspartner vertreten ist"
+                                "text": "administrative Abteilung einer Organisation, in der ein Geschäftspartner vertreten ist"
                             },
                             {
                                 "language": "en",
                                 "text": "administrative section within an organization where a business partner is located"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -971,7 +963,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -983,7 +975,7 @@
                             "value": "0173-1#02-AAO127#003"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO127#003",
@@ -1005,7 +997,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Stra\u00dfe"
+                                "text": "Straße"
                             }
                         ],
                         "shortName": [
@@ -1023,10 +1015,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Stra\u00dfenname und Hausnummer"
+                                "text": "Straßenname und Hausnummer"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1035,7 +1027,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1047,7 +1039,7 @@
                             "value": "0173-1#02-AAO128#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO128#002",
@@ -1090,7 +1082,7 @@
                                 "text": "Postleitzahl der Anschrift"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1099,7 +1091,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1111,7 +1103,7 @@
                             "value": "0173-1#02-AAO129#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO129#002",
@@ -1154,7 +1146,7 @@
                                 "text": "Nummer des Postfachs"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1163,7 +1155,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1175,7 +1167,7 @@
                             "value": "0173-1#02-AAO130#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO130#002",
@@ -1218,7 +1210,7 @@
                                 "text": "Postleitzahl der Postfachadresse"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1227,7 +1219,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1239,7 +1231,7 @@
                             "value": "0173-1#02-AAO131#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO131#002",
@@ -1282,7 +1274,7 @@
                                 "text": "Ortsangabe"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1291,7 +1283,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1303,7 +1295,7 @@
                             "value": "0173-1#02-AAO132#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO132#002",
@@ -1346,7 +1338,7 @@
                                 "text": "Teil eines Bundesstaats"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1355,7 +1347,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1367,7 +1359,7 @@
                             "value": "0173-1#02-AAO133#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO133#002",
@@ -1389,7 +1381,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "L\u00e4ndercode"
+                                "text": "Ländercode"
                             }
                         ],
                         "shortName": [
@@ -1410,7 +1402,7 @@
                                 "text": "Code eines Landes"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1419,7 +1411,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1431,7 +1423,7 @@
                             "value": "0173-1#02-AAO134#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO134#002",
@@ -1471,10 +1463,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Umsatzsteuer-ID des Gesch\u00e4ftspartners"
+                                "text": "Umsatzsteuer-ID des Geschäftspartners"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1483,7 +1475,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1495,7 +1487,7 @@
                             "value": "0173-1#02-AAO135#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO135#002",
@@ -1535,10 +1527,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "einfacher Text, der Adressinformationen kennzeichnet, bei denen kein Merkmal zur Verf\u00fcgung steht"
+                                "text": "einfacher Text, der Adressinformationen kennzeichnet, bei denen kein Merkmal zur Verfügung steht"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1547,7 +1539,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1559,7 +1551,7 @@
                             "value": "0173-1#02-AAO202#003"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO202#003",
@@ -1581,7 +1573,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "zus\u00e4tzlicher Online-Verweis"
+                                "text": "zusätzlicher Online-Verweis"
                             }
                         ],
                         "shortName": [
@@ -1599,10 +1591,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Angabe einer Web-Adresse, die zus\u00e4tzliche Informationen zum Produkt oder Kontaktdaten enth\u00e4lt"
+                                "text": "Angabe einer Web-Adresse, die zusätzliche Informationen zum Produkt oder Kontaktdaten enthält"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1611,7 +1603,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1623,7 +1615,7 @@
                             "value": "0173-1#02-AAQ326#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAQ326#002",
@@ -1666,7 +1658,7 @@
                                 "text": "Telefonnummer mit Angabe der Art des Anschlusses"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1675,7 +1667,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1687,7 +1679,7 @@
                             "value": "0173-1#02-AAQ833#005"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAQ833#005",
@@ -1727,10 +1719,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "vollst\u00e4ndige Telefonnummer, unter der ein Gesch\u00e4ftspartner erreichbar ist"
+                                "text": "vollständige Telefonnummer, unter der ein Geschäftspartner erreichbar ist"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1739,7 +1731,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1751,7 +1743,7 @@
                             "value": "0173-1#02-AAO136#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO136#002",
@@ -1791,10 +1783,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Charakterisierung einer Telefonnummer bez\u00fcglich ihres Orts oder ihrer Verwendung"
+                                "text": "Charakterisierung einer Telefonnummer bezüglich ihres Orts oder ihrer Verwendung"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1803,7 +1795,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1815,7 +1807,7 @@
                             "value": "0173-1#02-AAO137#003"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO137#003",
@@ -1858,7 +1850,7 @@
                                 "text": "Faxnummer mit Angabe der Art des Anschlusses"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1867,7 +1859,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1879,7 +1871,7 @@
                             "value": "0173-1#02-AAQ834#005"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAQ834#005",
@@ -1919,10 +1911,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "vollst\u00e4ndige Telefonnummer, unter der das Faxger\u00e4t eines Gesch\u00e4ftspartners erreichbar ist"
+                                "text": "vollständige Telefonnummer, unter der das Faxgerät eines Geschäftspartners erreichbar ist"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1931,7 +1923,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -1943,7 +1935,7 @@
                             "value": "0173-1#02-AAO195#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO195#002",
@@ -1983,10 +1975,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Charakterisierung des Fax bez\u00fcglich seines Orts oder Gebrauchs"
+                                "text": "Charakterisierung des Fax bezüglich seines Orts oder Gebrauchs"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -1995,7 +1987,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2007,7 +1999,7 @@
                             "value": "0173-1#02-AAO196#003"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO196#003",
@@ -2047,10 +2039,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "E-Mail-Adresse und Angaben zur Verschl\u00fcsselung"
+                                "text": "E-Mail-Adresse und Angaben zur Verschlüsselung"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2059,7 +2051,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2071,7 +2063,7 @@
                             "value": "0173-1#02-AAQ836#005"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAQ836#005",
@@ -2111,10 +2103,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "E-Mailadresse eines Gesch\u00e4ftspartners"
+                                "text": "E-Mailadresse eines Geschäftspartners"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2123,7 +2115,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2135,7 +2127,7 @@
                             "value": "0173-1#02-AAO198#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO198#002",
@@ -2157,7 +2149,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "\u00f6ffentlicher Schl\u00fcssel"
+                                "text": "öffentlicher Schlüssel"
                             }
                         ],
                         "shortName": [
@@ -2175,10 +2167,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "\u00f6ffentlicher Teil eines unsymmetrischen Schl\u00fcsselpaares zur Unterzeichnung oder Verschl\u00fcsselung von Text oder Meldungen"
+                                "text": "öffentlicher Teil eines unsymmetrischen Schlüsselpaares zur Unterzeichnung oder Verschlüsselung von Text oder Meldungen"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2187,7 +2179,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2199,7 +2191,7 @@
                             "value": "0173-1#02-AAO200#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO200#002",
@@ -2239,10 +2231,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Charakterisierung einer E-Mail-Adresse bez\u00fcglich ihres Orts oder Gebrauchs"
+                                "text": "Charakterisierung einer E-Mail-Adresse bezüglich ihres Orts oder Gebrauchs"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2251,7 +2243,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2263,7 +2255,7 @@
                             "value": "0173-1#02-AAO199#003"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO199#003",
@@ -2285,7 +2277,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Art des \u00f6ffentlichen Schl\u00fcssels"
+                                "text": "Art des öffentlichen Schlüssels"
                             }
                         ],
                         "shortName": [
@@ -2303,10 +2295,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Charakterisierung eines \u00f6ffentlichen Schl\u00fcssels bez\u00fcglich seines Verschl\u00fcsselungsprozesses"
+                                "text": "Charakterisierung eines öffentlichen Schlüssels bezüglich seines Verschlüsselungsprozesses"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2315,7 +2307,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2327,7 +2319,7 @@
                             "value": "0173-1#02-AAO201#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO201#002",
@@ -2370,7 +2362,7 @@
                                 "text": "2nd level of a 3 level manufacturer specific product hierarchy"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2379,7 +2371,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2391,7 +2383,7 @@
                             "value": "0173-1#02-AAU731#001"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAU731#001",
@@ -2431,10 +2423,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "eindeutige Zahlen- und Buchstabenkombination, mit der das Ger\u00e4t nach seiner Herstellung identifiziert ist"
+                                "text": "eindeutige Zahlen- und Buchstabenkombination, mit der das Gerät nach seiner Herstellung identifiziert ist"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2443,7 +2435,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2455,7 +2447,7 @@
                             "value": "0173-1#02-AAM556#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAM556#002",
@@ -2491,14 +2483,14 @@
                         "definition": [
                             {
                                 "language": "de",
-                                "text": "Jahreszahl als Datumsangabe f\u00fcr die Fertigstellung des Objektes"
+                                "text": "Jahreszahl als Datumsangabe für die Fertigstellung des Objektes"
                             },
                             {
                                 "language": "en",
                                 "text": "Year as completion date of object"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2507,7 +2499,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2519,7 +2511,7 @@
                             "value": "0173-1#02-AAP906#001"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAP906#001",
@@ -2559,10 +2551,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Sammlung f\u00fcr Produktkennzeichnungen"
+                                "text": "Sammlung für Produktkennzeichnungen"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2571,7 +2563,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2612,10 +2604,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "erfasst Information \u00fcber die Produktkennzeichnung"
+                                "text": "erfasst Information über die Produktkennzeichnung"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2624,7 +2616,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2665,10 +2657,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Markt\u00fcblicher Name der Produktkennzeichnung"
+                                "text": "Marktüblicher Name der Produktkennzeichnung"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2677,7 +2669,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2721,7 +2713,7 @@
                                 "text": "Datei der Produktkennzeichnung"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2730,7 +2722,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2771,10 +2763,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Zusatztext auf der Produktkennzeichnung als einfacher Text, falls verf\u00fcgbar"
+                                "text": "Zusatztext auf der Produktkennzeichnung als einfacher Text, falls verfügbar"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2783,7 +2775,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2827,7 +2819,7 @@
                                 "text": "Sammlung der Richtlinien-spezifischen Merkmale"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2836,7 +2828,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2880,7 +2872,7 @@
                                 "text": "Asset-spezifische Typenschildinformation, die von weiteren Normen, Standards und Richtlinien gefordert wird"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2889,7 +2881,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2912,7 +2904,7 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Richtlinie der Konformit\u00e4tserkl\u00e4rung"
+                                "text": "Richtlinie der Konformitätserklärung"
                             }
                         ],
                         "shortName": [
@@ -2930,10 +2922,10 @@
                             },
                             {
                                 "language": "de",
-                                "text": "Richtlinie, Vorschrift oder des Gesetzes an Hand der die Konformit\u00e4t ermittelt wurde"
+                                "text": "Richtlinie, Vorschrift oder des Gesetzes an Hand der die Konformität ermittelt wurde"
                             }
                         ],
-                        "modelType": "DataSpecificationIEC61360"
+                        "modelType": "DataSpecificationIec61360"
                     },
                     "dataSpecification": {
                         "keys": [
@@ -2942,7 +2934,7 @@
                                 "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     }
                 }
             ],
@@ -2954,7 +2946,7 @@
                             "value": "0173-1#02-AAO856#002"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "id": "0173-1#02-AAO856#002",

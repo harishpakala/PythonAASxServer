@@ -9,7 +9,7 @@
                             "value": "https://example.com/ids/sm/2150_8113_1032_8482"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "idShort": "Test_Identification",
@@ -21,15 +21,7 @@
                 "defaultThumbnail": {
                     "path": "file://temp/asset.png"
                 },
-                "globalAssetId": {
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": "www.company.com/asset/9746_9342_9937_6241"
-                        }
-                    ],
-                    "type": "GlobalReference"
-                }
+                "globalAssetId": "www.company.com/asset/9746_9342_9937_6241"
             }
         }
     ],
@@ -42,7 +34,7 @@
                         "value": "https://www.hsu-hh.de/aut/aas/identification"
                     }
                 ],
-                "type": "GlobalReference"
+                "type": "ExternalReference"
             },
             "idShort": "Identification",
             "category": "CONSTANT",
@@ -57,7 +49,7 @@
                                 "value": "0173-1#02-AAO677#002"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerName",
                     "category": "PARAMETER",
@@ -74,7 +66,7 @@
                                 "value": "0173-1#02-AAY812#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerId01",
                     "category": "PARAMETER",
@@ -91,7 +83,7 @@
                                 "value": "0173-1#02-AAP796#004"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerIdProvider",
                     "category": "CONSTANT",
@@ -108,7 +100,7 @@
                                 "value": "0173-1#02-AAO676#003"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerTypId",
                     "category": "CONSTANT",
@@ -125,7 +117,7 @@
                                 "value": "0173-1#02-AAW338#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerTypName",
                     "category": "PARAMETER",
@@ -142,7 +134,7 @@
                                 "value": "0173-1#02-AAU734#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturerTypDescription",
                     "category": "PARAMETER",
@@ -159,7 +151,7 @@
                                 "value": "0173-1#02-AAO735#003"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SupplierName",
                     "category": "PARAMETER",
@@ -176,7 +168,7 @@
                                 "value": "0173-1#02-AAY813#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SupplierId",
                     "category": "PARAMETER",
@@ -193,7 +185,7 @@
                                 "value": "www.company.com/ids/cd/7183_0272_7091_7264"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SupplierIdProvider",
                     "category": "PARAMETER",
@@ -210,7 +202,7 @@
                                 "value": "0173-1#02-AAO736#004"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SupplierTypId",
                     "category": "PARAMETER",
@@ -227,7 +219,7 @@
                                 "value": "0173-1#02-AAM551#002"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SupplierTypName",
                     "category": "CONSTANT",
@@ -244,7 +236,7 @@
                                 "value": "0173-1#02-AAU730#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SupplierTypDescription",
                     "category": "PARAMETER",
@@ -261,7 +253,7 @@
                                 "value": "0173-1#02-AAU731#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "TypClass",
                     "category": "PARAMETER",
@@ -278,7 +270,7 @@
                                 "value": "www.company.com/ids/cd/4135_0272_7091_2192"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ClassificationSystem",
                     "category": "PARAMETER",
@@ -295,7 +287,7 @@
                                 "value": "www.company.com/ids/cd/3175_0272_7091_0469"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SecondaryKeyTyp",
                     "category": "CONSTANT",
@@ -304,7 +296,7 @@
                     "modelType": "Property"
                 },
                 {
-                    "value": "",
+                    "value": "file://aasx/files/",
                     "semanticId": {
                         "keys": [
                             {
@@ -312,12 +304,12 @@
                                 "value": "www.company.com/ids/cd/4401_1272_7091_3437"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "TypThumbnail",
                     "category": "PARAMETER",
                     "kind": "Instance",
-                    "contentType": "",
+                    "contentType": "application/pdf",
                     "modelType": "File"
                 },
                 {
@@ -329,7 +321,7 @@
                                 "value": "www.company.com/ids/cd/7373_4082_7091_2893"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "AssetId",
                     "category": "PARAMETER",
@@ -346,7 +338,7 @@
                                 "value": "www.company.com/ids/cd/9544_4082_7091_8596"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "InstanceId",
                     "category": "PARAMETER",
@@ -363,7 +355,7 @@
                                 "value": "0173-1#02-AAQ196#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ChargeId",
                     "category": "PARAMETER",
@@ -380,7 +372,7 @@
                                 "value": "www.company.com/ids/cd/3195_4082_7091_9039"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SecondaryKeyInstance",
                     "category": "PARAMETER",
@@ -397,7 +389,7 @@
                                 "value": "0173-1#02-AAR972#002"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ManufacturingDate",
                     "category": "PARAMETER",
@@ -414,7 +406,7 @@
                                 "value": "www.company.com/ids/cd/4370_5082_7091_1975"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "DeviceRevision",
                     "category": "PARAMETER",
@@ -431,7 +423,7 @@
                                 "value": "www.company.com/ids/cd/2190_5082_7091_3557"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "SoftwareRevision",
                     "category": "PARAMETER",
@@ -448,7 +440,7 @@
                                 "value": "www.company.com/ids/cd/3401_5082_7091_6886"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "HardwareRevision",
                     "category": "PARAMETER",
@@ -457,7 +449,7 @@
                     "modelType": "Property"
                 },
                 {
-                    "value": "",
+                    "value": "file://aasx/files/",
                     "semanticId": {
                         "keys": [
                             {
@@ -465,12 +457,12 @@
                                 "value": "www.company.com/ids/cd/3121_5082_7091_1060"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "QrCode",
                     "category": "PARAMETER",
                     "kind": "Instance",
-                    "contentType": "",
+                    "contentType": "application/pdf",
                     "modelType": "File"
                 },
                 {
@@ -481,7 +473,7 @@
                                 "value": "https://www.hsu-hh.de/aut/aas/contactinfo"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "ContactInfo01",
                     "category": "PARAMETER",
@@ -495,7 +487,7 @@
                                         "value": "0173-1#02-AAO735#003"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Name",
                             "category": "PARAMETER",
@@ -512,7 +504,7 @@
                                         "value": "https://www.hsu-hh.de/aut/aas/role"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Role",
                             "category": "PARAMETER",
@@ -528,7 +520,7 @@
                                         "value": "https://www.hsu-hh.de/aut/aas/physicaladdress"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "PhysicalAddress",
                             "category": "PARAMETER",
@@ -542,7 +534,7 @@
                                                 "value": "0173-1#02-AAO730#001"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "CountryCode",
                                     "category": "PARAMETER",
@@ -559,7 +551,7 @@
                                                 "value": "https://www.hsu-hh.de/aut/aas/street"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "Street",
                                     "category": "PARAMETER",
@@ -576,7 +568,7 @@
                                                 "value": "https://www.hsu-hh.de/aut/aas/postalcode"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "PostalCode",
                                     "category": "PARAMETER",
@@ -593,7 +585,7 @@
                                                 "value": "https://www.hsu-hh.de/aut/aas/city"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "City",
                                     "category": "PARAMETER",
@@ -610,7 +602,7 @@
                                                 "value": "https://www.hsu-hh.de/aut/aas/statecounty"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "StateCounty",
                                     "category": "PARAMETER",
@@ -631,7 +623,7 @@
                                         "value": "https://www.hsu-hh.de/aut/aas/email"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Email",
                             "category": "PARAMETER",
@@ -648,7 +640,7 @@
                                         "value": "0173-1#02-AAO694#001"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "URL",
                             "category": "PARAMETER",
@@ -665,7 +657,7 @@
                                         "value": "https://www.hsu-hh.de/aut/aas/phone"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Phone",
                             "category": "PARAMETER",
@@ -682,7 +674,7 @@
                                         "value": "https://www.hsu-hh.de/aut/aas/fax"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "Fax",
                             "category": "PARAMETER",
@@ -695,7 +687,7 @@
                     "modelType": "SubmodelElementCollection"
                 },
                 {
-                    "value": "",
+                    "value": "file://aasx/files/",
                     "semanticId": {
                         "keys": [
                             {
@@ -703,12 +695,12 @@
                                 "value": "www.company.com/ids/cd/5232_8082_7091_1138"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "CompanyLogo",
                     "category": "PARAMETER",
                     "kind": "Instance",
-                    "contentType": "",
+                    "contentType": "application/pdf",
                     "modelType": "File"
                 },
                 {
@@ -720,7 +712,7 @@
                                 "value": "0173-1#02-AAO694#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "URL",
                     "category": "PARAMETER",

@@ -3,16 +3,15 @@
         {
             "hasDataSpecification": [],
             "submodels": [
-            {
+                {
                     "keys": [
                         {
                             "type": "Submodel",
                             "value": "test123"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
-                
             ],
             "conceptDictionaries": [],
             "idShort": "DLR_MO_DRONE_4",
@@ -30,15 +29,7 @@
                 "defaultThumbnail": {
                     "path": "file://temp/asset.png"
                 },
-                "globalAssetId": {
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": "www.company.com/asset/9746_9342_9937_6241"
-                        }
-                    ],
-                    "type": "GlobalReference"
-                }
+                "globalAssetId": "www.company.com/asset/9746_9342_9937_6241"
             }
         }
     ],
@@ -51,8 +42,8 @@
                         "value": "www.ovgu.de/submodel/operationaldata"
                     }
                 ],
-                "type": "GlobalReference"
-            },        
+                "type": "ExternalReference"
+            },
             "idShort": "OperationalData",
             "kind": "Instance",
             "submodelElements": [

@@ -9,7 +9,7 @@
                             "value": "www.company.com/ids/sm/9746_9342_9937_6241"
                         }
                     ],
-                    "type": "GlobalReference"
+                    "type": "ExternalReference"
                 }
             ],
             "idShort": "ServiceRequesterProductLive",
@@ -20,15 +20,7 @@
                 "defaultThumbnail": {
                     "path": "file://temp/asset.png"
                 },
-                "globalAssetId": {
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": "www.company.com/asset/9746_9342_9937_6241"
-                        }
-                    ],
-                    "type": "GlobalReference"
-                }
+                "globalAssetId": "www.company.com/asset/9746_9342_9937_6241"
             }
         }
     ],
@@ -41,7 +33,7 @@
                         "value": "0173-1#01-AKG243#015"
                     }
                 ],
-                "type": "GlobalReference"
+                "type": "ExternalReference"
             },
             "idShort": "Boring",
             "kind": "Instance",
@@ -57,7 +49,7 @@
                                         "value": "0173-EX-1#01-XIT667#001"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "WorkpieceProperties",
                             "value": [
@@ -70,7 +62,7 @@
                                                 "value": "0173-1#02-AAM562#002"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "MaterialOfWorkpiece",
                                     "kind": "Instance",
@@ -89,7 +81,7 @@
                                                         "value": "0173-1#02-AAI631#007"
                                                     }
                                                 ],
-                                                "type": "GlobalReference"
+                                                "type": "ExternalReference"
                                             },
                                             "idShort": "Height",
                                             "kind": "Instance",
@@ -105,7 +97,7 @@
                                                         "value": "0173-1#02-AAI466#007"
                                                     }
                                                 ],
-                                                "type": "GlobalReference"
+                                                "type": "ExternalReference"
                                             },
                                             "idShort": "Width",
                                             "kind": "Instance",
@@ -121,7 +113,7 @@
                                                         "value": "0173-1#02-AAE432#007"
                                                     }
                                                 ],
-                                                "type": "GlobalReference"
+                                                "type": "ExternalReference"
                                             },
                                             "idShort": "Depth",
                                             "kind": "Instance",
@@ -141,7 +133,7 @@
                                                 "value": "0173-1#02-AAQ184#001"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "ReferencedStandartOfMaterialShortName",
                                     "kind": "Instance",
@@ -157,7 +149,7 @@
                                                 "value": "0173-1#02-AAI990#001"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "TensileStrengthOfMaterial",
                                     "kind": "Instance",
@@ -173,7 +165,7 @@
                                                 "value": "0173-1#07-ABC885#001"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "Hardness",
                                     "kind": "Instance",
@@ -189,7 +181,7 @@
                                                 "value": "0173-1#02-BAB576#001"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "WeightOfWorkpiece",
                                     "kind": "Instance",
@@ -208,7 +200,7 @@
                                         "value": "0173-EX-1#01-XHU299#001"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "FunctionalProperties",
                             "value": [
@@ -221,7 +213,7 @@
                                                 "value": "0173-1#02-AAA026#007"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "drillingDiameter",
                                     "kind": "Instance",
@@ -237,7 +229,7 @@
                                                 "value": "0173-1#02-AAJ214#003"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "drillingDepth",
                                     "kind": "Instance",
@@ -253,7 +245,7 @@
                                                 "value": "0173-1#02-AAO933#001"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "ISOToleranceClass",
                                     "kind": "Instance",
@@ -269,7 +261,7 @@
                                                 "value": "0173-EX-1#02-JKD108#001"
                                             }
                                         ],
-                                        "type": "GlobalReference"
+                                        "type": "ExternalReference"
                                     },
                                     "idShort": "RoughnessAverageOfBore",
                                     "kind": "Instance",
@@ -307,7 +299,7 @@
                                 "value": "0173-EX-1#01-LXV711#001"
                             }
                         ],
-                        "type": "GlobalReference"
+                        "type": "ExternalReference"
                     },
                     "idShort": "CommercialProperties",
                     "value": [
@@ -320,7 +312,7 @@
                                         "value": "0173-1#02-BAF163#002"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "PreferredVenueOfProvision",
                             "kind": "Instance",
@@ -336,7 +328,7 @@
                                         "value": "0173-1#02-AAO738#001"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "deliveryTime",
                             "kind": "Instance",
@@ -349,10 +341,10 @@
                                 "keys": [
                                     {
                                         "type": "GlobalReference",
-                                        "value": ""
+                                        "value": "temp"
                                     }
                                 ],
-                                "type": "GlobalReference"
+                                "type": "ExternalReference"
                             },
                             "idShort": "MaxDistanceToPreferredVenueOfProvision",
                             "kind": "Instance",

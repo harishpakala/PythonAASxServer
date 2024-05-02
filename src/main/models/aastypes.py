@@ -183,9 +183,9 @@ class HasDataSpecification:
     def __init__(self, embeddedDataSpecifications : List[EmbeddedDataSpecification]):
         self.embeddedDataSpecifications = embeddedDataSpecifications
 
-    def serialize_json(self) -> Dict:
+    def serialize_json(self,json_data) -> Dict:
         data = dict()
-        if "embeddedDataSpecifications" in json_data : data["embeddedDataSpecifications"] = [embeddedDataSpecification.serialize_json() for embeddedDataSpecification in self.embeddedDataSpecifications]
+        if "embeddedDataSpecifications" in json_data.keys() : data["embeddedDataSpecifications"] = [embeddedDataSpecification.serialize_json() for embeddedDataSpecification in self.embeddedDataSpecifications]
         return data
 
     @staticmethod
@@ -429,7 +429,6 @@ class SubmodelElement(Referable, HasKind,HasSemantics, Qualifiable, HasDataSpeci
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind : Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
@@ -438,7 +437,6 @@ class SubmodelElement(Referable, HasKind,HasSemantics, Qualifiable, HasDataSpeci
         HasSemantics.__init__(self, semanticId, supplementalSemanticIds)
         Qualifiable.__init__(self, qualifiers)
         HasDataSpecification.__init__(self, embeddedDataSpecifications)
-        self.kind = kind
         self.modelType = ""
 
     def serialize_json(self) -> Dict:
@@ -472,12 +470,11 @@ class DataElement(SubmodelElement):
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None):
-        SubmodelElement.__init__(self, idShort, category, displayName, description, checksum,extensions,kind,
+        SubmodelElement.__init__(self, idShort, category, displayName, description, checksum,extensions,
                                  semanticId, supplementalSemanticIds,qualifiers,embeddedDataSpecifications)
         self.modelType = ""
 
@@ -504,13 +501,12 @@ class Property(DataElement):
                  description : Optional[List[LangString]] = None,
                  checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None,
                  valueId : Optional[Reference] = None):
-        DataElement.__init__(self,idShort, category, displayName, description, checksum,extensions,kind,
+        DataElement.__init__(self,idShort, category, displayName, description, checksum,extensions,
                                  semanticId, supplementalSemanticIds,qualifiers,embeddedDataSpecifications)
         self.valueType = valueType
         self.value = value
@@ -544,12 +540,11 @@ class MultiLanguageProperty(DataElement):
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None):
-        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions, kind,
+        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions,
         semanticId, supplementalSemanticIds, qualifiers, embeddedDataSpecifications)
 
         self.value = value
@@ -586,13 +581,12 @@ class Range(DataElement):
                  description : Optional[List[LangString]] = None,
                  checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None):
-        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions, kind,
-        semanticId, supplementalSemanticIds, qualifiers, embeddedDataSpecifications)
+        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions, 
+                                    semanticId, supplementalSemanticIds, qualifiers, embeddedDataSpecifications)
 
 
         self.valueType = valueType
@@ -630,12 +624,11 @@ class ReferenceElement(DataElement):
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None):
-        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions, kind,
+        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions, 
         semanticId, supplementalSemanticIds, qualifiers, embeddedDataSpecifications)
 
 
@@ -667,12 +660,11 @@ class Blob(DataElement):
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None):
-        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions, kind,
+        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions,
         semanticId, supplementalSemanticIds, qualifiers, embeddedDataSpecifications)
 
         self.value = value
@@ -707,12 +699,11 @@ class File(DataElement):
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None):
-        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions, kind,
+        DataElement.__init__(self, idShort, category, displayName, description, checksum, extensions, 
         semanticId, supplementalSemanticIds, qualifiers, embeddedDataSpecifications)
         self.value = value
         self.contentType = contentType
@@ -744,13 +735,13 @@ class SubmodelElementCollection(SubmodelElement):
                  category : Optional[str] = None,
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
-                 extensions : Optional[List[Extension]] = None,kind: Optional[str] = None,
+                 extensions : Optional[List[Extension]] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None,
                  value : Optional[List[SubmodelElement]] = None):
-        SubmodelElement.__init__(self, idShort, category, displayName, description, checksum,extensions,kind,
+        SubmodelElement.__init__(self, idShort, category, displayName, description, checksum,extensions,
                                  semanticId, supplementalSemanticIds,qualifiers,embeddedDataSpecifications)
         self.value = value
         self.hasDict = HashMap()
@@ -828,12 +819,11 @@ class Capability(SubmodelElement):
                  category : Optional[str] = None, idShort : Optional[str] = None,
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None):
-        SubmodelElement.__init__(self, extensions, category, idShort, displayName, description, checksum,kind,
+        SubmodelElement.__init__(self, extensions, category, idShort, displayName, description, checksum,
                                  semanticId, supplementalSemanticIds,qualifiers,embeddedDataSpecifications)
         self.modelType = "Capability"
 
@@ -847,12 +837,11 @@ class EventElement(SubmodelElement):
                  category : Optional[str] = None, idShort : Optional[str] = None,
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None):
-        SubmodelElement.__init__(self, extensions, category, idShort, displayName, description, checksum,kind,
+        SubmodelElement.__init__(self, extensions, category, idShort, displayName, description, checksum,
                                  semanticId, supplementalSemanticIds,qualifiers,embeddedDataSpecifications)
         
     def serialize_json(self) -> Dict:
@@ -875,13 +864,12 @@ class BasicEventElement(EventElement):
                  displayName : Optional[List[LangString]] = None,
                  description : Optional[List[LangString]] = None,checksum : Optional[str] = None,
                  extensions: Optional[List[Extension]] = None,
-                 kind: Optional[str] = None,
                  semanticId: Optional[Reference] = None,
                  supplementalSemanticIds : Optional[List[Reference]] = None,
                  qualifiers : Optional[List[Qualifier]] = None,
                  embeddedDataSpecifications : List[EmbeddedDataSpecification] = None,
                  ):
-        EventElement.__init__(self, extensions, category, idShort, displayName, description, checksum,kind,
+        EventElement.__init__(self, extensions, category, idShort, displayName, description, checksum,
                                  semanticId, supplementalSemanticIds,qualifiers,embeddedDataSpecifications)
         self.observed = observed
         self.direction = direction
@@ -938,7 +926,7 @@ class AssetKind:
 
 class AssetInformation:
     def __init__(self,assetKind : AssetKind,globalAssetId : Optional[str],
-                 specificAssetId : Optional[List[SpecificAssetID]] = None,
+                 specificAssetId : Optional[List[str]] = None,
                  defaultThumbnail : Optional[Resource] = None):
         self.assetKind = assetKind
         self.globalAssetId = globalAssetId
@@ -1183,14 +1171,3 @@ class Environment:
         if self.conceptDescriptions is not None : data["conceptDescriptions"] = [conceptDescription.serialize_json() for conceptDescription in self.conceptDescriptions]
 
         return data
-
-import json
-
-with open("status2.json", encoding='utf-8') as json_file:
-    json_data = json.load(json_file)
-    _submodel = Submodel.deserialize_json(json_data)
-    _property = Property("xs:string","HelloWorld","Test1")
-    _submodel.add(_property,"TechnicalProperties.WorkpieceProperties.Dimensions")
-    print(json.dumps(_submodel.serialize_json()))
-    print("============")
-    #print(_submodel.hasDict.hashDict.keys())

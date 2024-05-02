@@ -1213,7 +1213,25 @@ class AASWebInterfaceHome(Resource):
             print("Error while retrieving the globalAssetId  @retrieve_aas_information"+ str(e))
             return False, "Error while retrieving the globalAssetId"
 
+        try:
+            assetKind = updateData["AAS-AssetKind"]
+            data["assetKind"] = assetKind
+            
+        except Exception as e:
+            print("Error while retrieving the AssetKind  @retrieve_aas_information"+ str(e))
+            return False, "Error while retrieving the assetKind"
 
+        try:
+            assetType = updateData["AAS-assetType"]
+            data["assetType"] = assetType
+            
+        except Exception as e:
+            print("Error while retrieving the assetType  @retrieve_aas_information"+ str(e))
+            return False, "Error while retrieving the assetType"
+        
+                
+        
+        
         return True, data
     
     def post(self):              
@@ -1249,7 +1267,7 @@ class AASWebInterfaceHome(Resource):
                          "aasIdentifier": base64_string,
                          "shellId": _shell["id"],
                           "idShort": _shell["idShort"],
-                          "thumbnail": urllib.parse.quote(((_shell["assetInformation"]["defaultThumbnail"]["path"]).split("file:/"))[1],safe= "")})  
+                          "thumbnail": urllib.parse.quote(((_shell["assetInformation"]["defaultThumbnail"]["path"])))})  
         except Exception as e:
             self.pyaas.serviceLogger.info("Error at Get AASWebInterfaceHome Rest" + str(e))
         return aasList 
@@ -1307,7 +1325,6 @@ class AASWebInterface(Resource):
             return status
         except Exception as e:
             return False
-        
         
     def save_submodel(self,submodel_data) -> bool:
         try :
@@ -1499,11 +1516,15 @@ class AASWebInterface(Resource):
             if status:
                 available_skills = set(self.pyaas.available_skills.keys()) - set(data["skillList"])
                 rv=   Response(render_template('index.html',thumbNail= urllib.parse.quote(data["thumbnail"],safe= ""),
-                                                        aasIdentifier=aasIdentifier, exDomain=self.pyaas.exDomain , 
+                                                        aasIdentifier=aasIdentifier, 
+                                                        aasIdentifier_Text = aasIdentifier1,
+                                                        assetIdentifier = data["assetIdentifier"],
+                                                        exDomain=self.pyaas.exDomain , 
                                                         skillList= data["skillList"],
                                                         aasIdShort = data["idShort"],
                                                         submodelList = data["submodelList"],
                                                         std_submodels = list(self.pyaas.aasConfigurer.submodel_template_dict.keys()),
+                                                        std_submodels_preexist = data["standardSubmodelList"],
                                                         available_skills = list(available_skills)))
                 return rv
             else:
@@ -1539,12 +1560,29 @@ class AASWebInterfaceProductionManagement(Resource):
     def __init__(self,pyaas):
         self.pyaas = pyaas
 
+    def getPreconfigured_eBOP(self,aasIdentifier):
+        submodelsList = []
+        data,status,code = self.pyaas.dba.GetAllSubmodelsBySemanticId("https://ovgu.de/ids/sm/capabilitysheet")
+        if status:
+            for _submodel in data:
+                data1, status1 ,code1 = self.pyaas.dba.GetSubmodel(aasIdentifier,_submodel["id"])
+                if status1:
+                    dDict = dict()
+                    bString = base64.b64encode(bytes(_submodel["id"],'utf-8'))
+                    base64_string= bString.decode('utf-8')
+                    dDict[_submodel["idShort"]] = base64_string
+                    submodelsList.append(dDict)
+            return submodelsList
+        else:
+            return submodelsList
+        
     def get(self,aasIdentifier):   
         try:
             aasIdentifier1 = (base64.decodebytes(aasIdentifier.encode())).decode()
             data,status1 = self.pyaas.dba.get_aas_information(aasIdentifier1)
             available_skills = set(self.pyaas.available_skills.keys()) - set(data["skillList"])  -set(["ProductionManager","Register"])
             productions_skills = set(data["skillList"]) -set(["ProductionManager","Register"])
+            preConfigured_eBOP = self.getPreconfigured_eBOP(aasIdentifier1)
             rv=   Response(render_template('productionmanager.html',thumbNail= urllib.parse.quote(data["thumbnail"],safe= ""),
                                                         aasIdentifier=aasIdentifier, exDomain=self.pyaas.exDomain , 
                                                         skillList= data["skillList"],
@@ -1553,7 +1591,8 @@ class AASWebInterfaceProductionManagement(Resource):
                                                         available_skills = list(available_skills),
                                                         conversationIdList=data["conversationIdList"],
                                                         productionStepList=data["productionStepList"],
-                                                        productions_skills = productions_skills))
+                                                        productions_skills = productions_skills,
+                                                        preConfigured_eBOP = preConfigured_eBOP))
             return rv  
             
         except Exception as e:
@@ -1566,6 +1605,26 @@ class AASWebInterfaceProductionManagement(Resource):
         if (tag =="home"):
             return redirect('/shells/'+aasIdentifier+"/productionmanager/webui", code=302)
         
+        elif (tag == "create_capability"):
+            try:
+                submodel_id = updateInfo.get("submodel_id")
+                if submodel_id != None :
+                    submodel_id1 =  ((base64.decodebytes((submodel_id).encode())).decode())
+                    _uuid = self.pyaas.aasHashDict.__getHashEntry__(aasIdentifier1)._id
+                    shellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
+                    
+                    _submodel,status1,code = self.pyaas.dba.GetSubmodel(aasIdentifier1,submodel_id1)  
+                    data, status2 = shellObject.add_produtionCapability(_submodel)
+                    if status2:
+                        flash(data,"success")
+                    else:
+                        flash(data,"error")
+                else:
+                    flash("Please add a submodel","error")
+            except Exception as e:
+                flash("Error in adding the production Capability" + str(e),"error")
+            return redirect('/shells/'+aasIdentifier+"/productionmanager/webui", code=302)
+            
         elif (tag == "create"):
             try:
                 skill_name = request.form.get("skill_name")     

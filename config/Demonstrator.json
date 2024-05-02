@@ -38,6 +38,24 @@
                     "keys": [
                         {
                             "type": "Submodel",
+                            "value": "www.example.com/ids/sm/5203_8111_3042_8820"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                },
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "https://ovgu.de/ids/sm/1452_2182_2042_6224"
+                        }
+                    ],
+                    "type": "GlobalReference"
+                },
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
                             "value": "ww.ovgu.de/submodel/905777a9-d67d-4dfd-a5f0-89e3c153f7f2"
                         }
                     ],
@@ -143,19 +161,13 @@
             "administration": {},
             "assetInformation": {
                 "assetKind": "Instance",
+                "assetType": "tmep",
                 "defaultThumbnail": {
                     "path": "file://aasx/files/robot.png"
                 },
-                "globalAssetId": {
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": "sssss"
-                        }
-                    ],
-                    "type": "GlobalReference"
-                }
+                "globalAssetId": "ServiceRequester3/HMD"
             },
+            "globalAssetId": "something_random_8616ee5a",
             "category": "CONSTANT",
             "description": [
                 {
@@ -169,23 +181,1599 @@
                     "text": "HannoverMesseDemo"
                 }
             ],
-            "id": "ww.ovgu.de/aas/5d939021-15ef-4739-a009-a461fb47cabe",
-            "idShort": "ServiceRequester4",
-            "modelType": "AssetAdministrationShell",
-            "submodels": [
-                {
-                    "keys": [
-                        {
-                            "type": "Submodel",
-                            "value": "www.ovgu.de/submodel/OperationaData/2a9b3438-8361-4cae-9e7b-1e3edafbe62d"
-                        }
-                    ],
-                    "type": "GlobalReference"
-                }
-            ]
+            "id": "ww.ovgu.de/aas/bff5aa43-54d5-45fb-9f73-fd113460e3fe",
+            "idShort": "ServiceRequester5",
+            "modelType": "AssetAdministrationShell"
         }
     ],
     "submodels": [
+        {
+            "idShort": "AssetInterfacesDescription",
+            "id": "www.example.com/ids/sm/5203_8111_3042_8820",
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Submodel"
+                    }
+                ]
+            },
+            "submodelElements": [
+                {
+                    "idShort": "interface01",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "An abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description, whereas a virtual entity is the composition of one or more Things."
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Interface"
+                            }
+                        ]
+                    },
+                    "value": [
+                        {
+                            "idShort": "title",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Provides a human-readable title"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://www.w3.org/2019/wot/td#title"
+                                    }
+                                ]
+                            },
+                            "valueType": "xs:string",
+                            "value": "Counter",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "support",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Provides information about the TD maintainer as URI scheme (e.g., mailto [RFC6068], tel [RFC3966], https [RFC9112])."
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://www.w3.org/2019/wot/td#supportContact"
+                                    }
+                                ]
+                            },
+                            "valueType": "xs:string",
+                            "value": "https://github.com/eclipse-thingweb/node-wot/",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "EndpointMetadata",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Provides the metadata of the asset’s endpoint (base, content type that is used for interaction, etc)"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
+                                    }
+                                ]
+                            },
+                            "value": [
+                                {
+                                    "idShort": "base",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Define the base URI that is used for all relative URI references throughout a TD document. In TD instances: all relative URIs are resolved relative to the base URI using the algorithm defined in [RFC3986]."
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://www.w3.org/2019/wot/td#baseURI"
+                                            }
+                                        ]
+                                    },
+                                    "valueType": "xs:string",
+                                    "value": "http://plugfest.thingweb.io:8083",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "securityDefinitions",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Defines the security scheme according to W3C"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://www.w3.org/2019/wot/hypermedia#securityDefinitions"
+                                            }
+                                        ]
+                                    },
+                                    "value": [
+                                        {
+                                            "idShort": "nosec_sc",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Basic Security Definition"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://www.w3.org/2019/wot/security#NoSecurityScheme"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "idShort": "scheme",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "URI of the proxy server this security configuration provides access to. If not given, the corresponding security configuration is for the endpoint."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "nosec",
+                                                    "modelType": "Property"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "security",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
+                                            }
+                                        ]
+                                    },
+                                    "value": [
+                                        {
+                                            "idShort": "security00",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Reference element to security scheme definition"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
+                                                    }
+                                                ]
+                                            },
+                                            "value": {
+                                                "type": "ModelReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "Submodel",
+                                                        "value": "www.example.com/ids/sm/5203_8111_3042_8820"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "interface01"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "EndpointMetadata"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "securityDefinitions"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "nosec_sc"
+                                                    }
+                                                ]
+                                            },
+                                            "modelType": "ReferenceElement"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "ExternalDescriptor",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Provides an place for existing description files (e.g., Thing Description, GSDML, etc,)."
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/ExternalDescriptor"
+                                    }
+                                ]
+                            },
+                            "value": [
+                                {
+                                    "idShort": "fileName",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/externalDescriptorName"
+                                            }
+                                        ]
+                                    },
+                                    "value": "/aasx/files/counter-simple-http_V2_d987d899.json",
+                                    "contentType": "JSONLD",
+                                    "modelType": "File"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "InteractionMetadata",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "An abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description, whereas a virtual entity is the composition of one or more Things."
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/InteractionMetadata"
+                                    }
+                                ]
+                            },
+                            "value": [
+                                {
+                                    "idShort": "properties",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "All Property-based Interaction Affordances of the Thing."
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://www.w3.org/2019/wot/td#hasPropertyAffordance"
+                                            }
+                                        ]
+                                    },
+                                    "value": [
+                                        {
+                                            "idShort": "count",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "An Interaction Affordance that exposes state of the Thing"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "idShort": "key",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Optional element when the idShort of {property_name} cannot be used to reflect the desired property name due to the idShort restrictions"
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "count",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "title",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Provides a human-readable title (e.g., display a text for UI representation) based on a default language."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#title"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "Count",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "observable",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "An indicator that tells that the interaction datapoint can be observed with a, e.g., subscription mechanism by an underlying protocol."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#isObservable"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:boolean",
+                                                    "value": "True",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "forms",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Provides a list of restricted set of values that the asset can provide as datapoint value."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#hasForm"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "value": [
+                                                        {
+                                                            "idShort": "contentType",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": "Indicates the datapoint media type specified by IANA."
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2019/wot/hypermedia#forContentType"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "application/json",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "href",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": "Target IRI relative path or full IRI of assets datapoint.The relative endpoint definition in href is always relative to base defined in EndpointMetadata"
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2019/wot/hypermedia#hasTarget"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "counter/properties/count",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "htv_methodName",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": ""
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2011/http#methodName"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "GET",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "htv_headers",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": " Information for http message header definition"
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2011/http#headers"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "value": [
+                                                                {
+                                                                    "idShort": "htv_header00",
+                                                                    "description": [
+                                                                        {
+                                                                            "language": "en",
+                                                                            "text": " Information for http message header definition"
+                                                                        }
+                                                                    ],
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://www.w3.org/2011/http#headers"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "value": [
+                                                                        {
+                                                                            "idShort": "htv_fieldName",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldName"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "samplefieldName1",
+                                                                            "modelType": "Property"
+                                                                        },
+                                                                        {
+                                                                            "idShort": "htv_fieldValue",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldValue"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "sampleValue1",
+                                                                            "modelType": "Property"
+                                                                        }
+                                                                    ],
+                                                                    "modelType": "SubmodelElementCollection"
+                                                                },
+                                                                {
+                                                                    "idShort": "htv_header01",
+                                                                    "description": [
+                                                                        {
+                                                                            "language": "en",
+                                                                            "text": " Information for http message header definition"
+                                                                        }
+                                                                    ],
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://www.w3.org/2011/http#headers"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "value": [
+                                                                        {
+                                                                            "idShort": "htv_fieldName",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldName"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "samplefieldName2",
+                                                                            "modelType": "Property"
+                                                                        },
+                                                                        {
+                                                                            "idShort": "htv_fieldValue",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldValue"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "sampleValue2",
+                                                                            "modelType": "Property"
+                                                                        }
+                                                                    ],
+                                                                    "modelType": "SubmodelElementCollection"
+                                                                }
+                                                            ],
+                                                            "modelType": "SubmodelElementCollection"
+                                                        }
+                                                    ],
+                                                    "modelType": "SubmodelElementCollection"
+                                                },
+                                                {
+                                                    "idShort": "type",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Assignment of JSON-based data types compatible with JSON Schema (one of boolean, integer, number, string, object, array, or null)."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "integer",
+                                                    "modelType": "Property"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        },
+                                        {
+                                            "idShort": "countAsImage",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "An Interaction Affordance that exposes state of the Thing"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "idShort": "key",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Optional element when the idShort of {property_name} cannot be used to reflect the desired property name due to the idShort restrictions"
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "countAsImage",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "observable",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "An indicator that tells that the interaction datapoint can be observed with a, e.g., subscription mechanism by an underlying protocol."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#isObservable"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:boolean",
+                                                    "value": "False",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "forms",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Provides a list of restricted set of values that the asset can provide as datapoint value."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#hasForm"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "value": [
+                                                        {
+                                                            "idShort": "contentType",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": "Indicates the datapoint media type specified by IANA."
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2019/wot/hypermedia#forContentType"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "image/svg+xml",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "href",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": "Target IRI relative path or full IRI of assets datapoint.The relative endpoint definition in href is always relative to base defined in EndpointMetadata"
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2019/wot/hypermedia#hasTarget"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "counter/properties/countAsImage",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "htv_methodName",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": ""
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2011/http#methodName"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "GET",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "htv_headers",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": " Information for http message header definition"
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2011/http#headers"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "value": [
+                                                                {
+                                                                    "idShort": "htv_header00",
+                                                                    "description": [
+                                                                        {
+                                                                            "language": "en",
+                                                                            "text": " Information for http message header definition"
+                                                                        }
+                                                                    ],
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://www.w3.org/2011/http#headers"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "value": [
+                                                                        {
+                                                                            "idShort": "htv_fieldName",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldName"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "samplefieldName1",
+                                                                            "modelType": "Property"
+                                                                        },
+                                                                        {
+                                                                            "idShort": "htv_fieldValue",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldValue"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "sampleValue1",
+                                                                            "modelType": "Property"
+                                                                        }
+                                                                    ],
+                                                                    "modelType": "SubmodelElementCollection"
+                                                                },
+                                                                {
+                                                                    "idShort": "htv_header01",
+                                                                    "description": [
+                                                                        {
+                                                                            "language": "en",
+                                                                            "text": " Information for http message header definition"
+                                                                        }
+                                                                    ],
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://www.w3.org/2011/http#headers"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "value": [
+                                                                        {
+                                                                            "idShort": "htv_fieldName",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldName"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "samplefieldName2",
+                                                                            "modelType": "Property"
+                                                                        },
+                                                                        {
+                                                                            "idShort": "htv_fieldValue",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldValue"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "sampleValue2",
+                                                                            "modelType": "Property"
+                                                                        }
+                                                                    ],
+                                                                    "modelType": "SubmodelElementCollection"
+                                                                }
+                                                            ],
+                                                            "modelType": "SubmodelElementCollection"
+                                                        }
+                                                    ],
+                                                    "modelType": "SubmodelElementCollection"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        },
+                                        {
+                                            "idShort": "redDotImage",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "An Interaction Affordance that exposes state of the Thing"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "idShort": "key",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Optional element when the idShort of {property_name} cannot be used to reflect the desired property name due to the idShort restrictions"
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "redDotImage",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "observable",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "An indicator that tells that the interaction datapoint can be observed with a, e.g., subscription mechanism by an underlying protocol."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#isObservable"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:boolean",
+                                                    "value": "False",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "forms",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Provides a list of restricted set of values that the asset can provide as datapoint value."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#hasForm"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "value": [
+                                                        {
+                                                            "idShort": "contentType",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": "Indicates the datapoint media type specified by IANA."
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2019/wot/hypermedia#forContentType"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "image/png;base64",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "href",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": "Target IRI relative path or full IRI of assets datapoint.The relative endpoint definition in href is always relative to base defined in EndpointMetadata"
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2019/wot/hypermedia#hasTarget"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "counter/properties/redDotImage",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "htv_methodName",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": ""
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2011/http#methodName"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "GET",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "htv_headers",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": " Information for http message header definition"
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2011/http#headers"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "value": [
+                                                                {
+                                                                    "idShort": "htv_header00",
+                                                                    "description": [
+                                                                        {
+                                                                            "language": "en",
+                                                                            "text": " Information for http message header definition"
+                                                                        }
+                                                                    ],
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://www.w3.org/2011/http#headers"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "value": [
+                                                                        {
+                                                                            "idShort": "htv_fieldName",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldName"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "samplefieldName1",
+                                                                            "modelType": "Property"
+                                                                        },
+                                                                        {
+                                                                            "idShort": "htv_fieldValue",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldValue"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "sampleValue1",
+                                                                            "modelType": "Property"
+                                                                        }
+                                                                    ],
+                                                                    "modelType": "SubmodelElementCollection"
+                                                                },
+                                                                {
+                                                                    "idShort": "htv_header01",
+                                                                    "description": [
+                                                                        {
+                                                                            "language": "en",
+                                                                            "text": " Information for http message header definition"
+                                                                        }
+                                                                    ],
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://www.w3.org/2011/http#headers"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "value": [
+                                                                        {
+                                                                            "idShort": "htv_fieldName",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldName"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "samplefieldName2",
+                                                                            "modelType": "Property"
+                                                                        },
+                                                                        {
+                                                                            "idShort": "htv_fieldValue",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldValue"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "sampleValue2",
+                                                                            "modelType": "Property"
+                                                                        }
+                                                                    ],
+                                                                    "modelType": "SubmodelElementCollection"
+                                                                }
+                                                            ],
+                                                            "modelType": "SubmodelElementCollection"
+                                                        }
+                                                    ],
+                                                    "modelType": "SubmodelElementCollection"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        },
+                                        {
+                                            "idShort": "lastChange",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "An Interaction Affordance that exposes state of the Thing"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "idShort": "key",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Optional element when the idShort of {property_name} cannot be used to reflect the desired property name due to the idShort restrictions"
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "lastChange",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "title",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Provides a human-readable title (e.g., display a text for UI representation) based on a default language."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#title"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "Last change",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "observable",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "An indicator that tells that the interaction datapoint can be observed with a, e.g., subscription mechanism by an underlying protocol."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#isObservable"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:boolean",
+                                                    "value": "True",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "forms",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Provides a list of restricted set of values that the asset can provide as datapoint value."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/2019/wot/td#hasForm"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "value": [
+                                                        {
+                                                            "idShort": "contentType",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": "Indicates the datapoint media type specified by IANA."
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2019/wot/hypermedia#forContentType"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "application/json",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "href",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": "Target IRI relative path or full IRI of assets datapoint.The relative endpoint definition in href is always relative to base defined in EndpointMetadata"
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2019/wot/hypermedia#hasTarget"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "counter/properties/lastChange",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "htv_methodName",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": ""
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2011/http#methodName"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "valueType": "xs:string",
+                                                            "value": "GET",
+                                                            "modelType": "Property"
+                                                        },
+                                                        {
+                                                            "idShort": "htv_headers",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en",
+                                                                    "text": " Information for http message header definition"
+                                                                }
+                                                            ],
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://www.w3.org/2011/http#headers"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "value": [
+                                                                {
+                                                                    "idShort": "htv_header00",
+                                                                    "description": [
+                                                                        {
+                                                                            "language": "en",
+                                                                            "text": " Information for http message header definition"
+                                                                        }
+                                                                    ],
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://www.w3.org/2011/http#headers"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "value": [
+                                                                        {
+                                                                            "idShort": "htv_fieldName",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldName"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "samplefieldName1",
+                                                                            "modelType": "Property"
+                                                                        },
+                                                                        {
+                                                                            "idShort": "htv_fieldValue",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldValue"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "sampleValue1",
+                                                                            "modelType": "Property"
+                                                                        }
+                                                                    ],
+                                                                    "modelType": "SubmodelElementCollection"
+                                                                },
+                                                                {
+                                                                    "idShort": "htv_header01",
+                                                                    "description": [
+                                                                        {
+                                                                            "language": "en",
+                                                                            "text": " Information for http message header definition"
+                                                                        }
+                                                                    ],
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://www.w3.org/2011/http#headers"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "value": [
+                                                                        {
+                                                                            "idShort": "htv_fieldName",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldName"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "samplefieldName2",
+                                                                            "modelType": "Property"
+                                                                        },
+                                                                        {
+                                                                            "idShort": "htv_fieldValue",
+                                                                            "description": [
+                                                                                {
+                                                                                    "language": "en",
+                                                                                    "text": ""
+                                                                                }
+                                                                            ],
+                                                                            "semanticId": {
+                                                                                "type": "ExternalReference",
+                                                                                "keys": [
+                                                                                    {
+                                                                                        "type": "GlobalReference",
+                                                                                        "value": "https://www.w3.org/2011/http#fieldValue"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "valueType": "xs:string",
+                                                                            "value": "sampleValue2",
+                                                                            "modelType": "Property"
+                                                                        }
+                                                                    ],
+                                                                    "modelType": "SubmodelElementCollection"
+                                                                }
+                                                            ],
+                                                            "modelType": "SubmodelElementCollection"
+                                                        }
+                                                    ],
+                                                    "modelType": "SubmodelElementCollection"
+                                                },
+                                                {
+                                                    "idShort": "type",
+                                                    "description": [
+                                                        {
+                                                            "language": "en",
+                                                            "text": "Assignment of JSON-based data types compatible with JSON Schema (one of boolean, integer, number, string, object, array, or null)."
+                                                        }
+                                                    ],
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "string",
+                                                    "modelType": "Property"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "Submodel"
+        },
         {
             "semanticId": {
                 "keys": [
@@ -2618,65 +4206,6 @@
                     "modelType": "Property"
                 }
             ]
-        },
-        {
-            "semanticId": {
-                "keys": [
-                    {
-                        "type": "Submodel",
-                        "value": "www.ovgu.de/submodel/operationaldata"
-                    }
-                ],
-                "type": "GlobalReference"
-            },
-            "idShort": "OperationalData",
-            "kind": "Instance",
-            "submodelElements": [
-                {
-                    "idShort": "ServiceRequester",
-                    "value": [
-                        {
-                            "value": "ServiceRequester",
-                            "idShort": "SkillName",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "Service Requisition",
-                            "idShort": "SkillService",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "WaitforNewOrder",
-                            "idShort": "InitialState",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "Y",
-                            "idShort": "enabled",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        },
-                        {
-                            "value": "www.admin-shell.io/interaction/bidding",
-                            "idShort": "semanticProtocol",
-                            "kind": "Instance",
-                            "valueType": "xs:string",
-                            "modelType": "Property"
-                        }
-                    ],
-                    "kind": "Instance",
-                    "modelType": "SubmodelElementCollection"
-                }
-            ],
-            "modelType": "Submodel",
-            "id": "www.ovgu.de/submodel/OperationaData/2a9b3438-8361-4cae-9e7b-1e3edafbe62d"
         }
     ],
     "conceptDescriptions": [

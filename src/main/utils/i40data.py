@@ -36,12 +36,13 @@ class Generic(object):
     def create_i40_message(self,oMessage,conVID,receiverId="",receiverRole= ""):
         frame = {
                     "semanticProtocol": {
-                    "keys": [
-                        {
-                            "type": "GlobalReference",
-                            "value": self.semanticProtocol, 
-                        }
-                        ]
+                            "keys": [
+                                {
+                                    "type": "GlobalReference",
+                                    "value": self.semanticProtocol, 
+                                }
+                            ],
+                        "type" : "ExternalReference"
                     }, 
                     "type": oMessage,
                     "messageId": oMessage+"_"+str(uuid.uuid4()), 

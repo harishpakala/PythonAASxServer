@@ -1114,16 +1114,17 @@ class AAS_Database_Server(object):
                 hashEntry = self.submodelHashDict.__getHashEntry__(_id)
                 if hashEntry.modelType == "Submodel":
                     _submodelTemp = hashEntry.getElement()
-                    _keys = []
-                    for key in _submodelTemp["semanticId"]["keys"]:
-                        _keys.append(key["value"])
-                    if semanticId in _keys: 
-                        _submodelId = self.aasHashDict.__getkey__(_id)
-                        submodel,status,statuscode = self.getSubmodel(_submodelId)
-                        if status:
-                            _submodels.append(submodel)
-                        else:
-                            return submodel,status,statuscode
+                    if "semanticId" in _submodelTemp.keys():
+                        _keys = []
+                        for key in _submodelTemp["semanticId"]["keys"]:
+                            _keys.append(key["value"])
+                        if semanticId in _keys: 
+                            _submodelId = self.aasHashDict.__getkey__(_id)
+                            submodel,status,statuscode = self.getSubmodel(_submodelId)
+                            if status:
+                                _submodels.append(submodel)
+                            else:
+                                return submodel,status,statuscode
             return _submodels, True,200
         except Exception as E:
             self.pyAAS.serviceLogger.info("Error at GetAllSubmodelsBySemanticId DB" + str(E))
@@ -1658,27 +1659,51 @@ class AAS_Database_Server(object):
             submodelProperetyDict[eachProperty["idShort"]] = self.processEachSubmodelElement(eachProperty)
         return submodelProperetyDict
     
+    def checkIfStandard(self,_suid) -> bool:
+        standard_semantic_ids = ["https://www.hsu-hh.de/aut/aas/nameplate", "http://admin-shell.io/sandbox/SG2/TechnicalData/Submodel/1/1",
+                                "https://admin-shell.io/zvei/nameplate/1/0/Nameplate"]
+        
+        submodel = self.submodelHashDict.__getHashEntry__(_suid).aasELement
+        if "semanticId" in submodel.keys():
+            try:
+                for key in submodel["semanticId"]["keys"]: 
+                    if key["value"] in standard_semantic_ids:
+                        return True
+                return False
+            except Exception as e:
+                return False
+        else: 
+            return False
+        
+            
+        
     def get_aas_information(self,aasIdentifier) -> dict():
         returnDict = dict()
         try:
             uuid = self.aasHashDict.__getHashEntry__(aasIdentifier)._id
             _aasShell = self.aasShellHashDict.__getHashEntry__(uuid)
             submodelList = []
-    
-            for submodelRef in _aasShell.aasELement["submodels"]:
-                try:
+            standardSubmodelList = dict()
+            try:
+                for submodelRef in _aasShell.aasELement["submodels"]:
                     submodelId = submodelRef["keys"][0]["value"]
                     _suid = (self.aasHashDict.__getHashEntry__(submodelId).__getId__())
                     submodelidShort = self.submodelHashDict.__getHashEntry__(_suid).idShort            
                     bString = base64.b64encode(bytes(submodelId,'utf-8'))
                     base64_string= bString.decode('utf-8')
                     submodelList.append({base64_string:submodelidShort})
-                except Exception as E:
-                    print(str(E))
-                    pass
+                    data,status,statuscode =  self.getSubmodel(submodelId)
+                    if self.checkIfStandard(_suid) : standardSubmodelList[submodelidShort] = data 
+                    
+            except Exception as E:
+                print(str(E))
+                pass
+            
             returnDict["submodelList"] = submodelList
+            returnDict["standardSubmodelList"] = standardSubmodelList
             returnDict["skillList"] = list(_aasShell.skills.keys())
-            returnDict["thumbnail"] = ((_aasShell.aasELement["assetInformation"]["defaultThumbnail"]["path"]).split("file:/"))[1]    
+            returnDict["thumbnail"] = ((_aasShell.aasELement["assetInformation"]["defaultThumbnail"]["path"]))
+            returnDict["assetIdentifier"] = ((_aasShell.aasELement["assetInformation"]["globalAssetId"]))
             returnDict["idShort"] = _aasShell.aasELement["idShort"]
             returnDict["aasIndex"] = _aasShell.elementIndex
             returnDict["_aasShell"] = _aasShell

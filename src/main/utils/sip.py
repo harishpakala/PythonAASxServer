@@ -9,7 +9,7 @@ from copy import deepcopy
 from datetime import datetime
 from importlib import import_module
 from inspect import isclass
-from typing import final  
+from typing import final,List
 import asyncio
 import base64
 import copy
@@ -71,7 +71,17 @@ class AState:
             return self.base_class.in_messages[msg_in].pop(0)
         except Exception as E:
             return None
-            
+    
+    def receive_msgtypes_all(self,msg_in : List[str]) -> object:
+        messages = []
+        try:
+            for _type in msg_in:
+                messages.extend(copy.deepcopy(self.base_class.in_messages[_type]))
+                self.base_class.in_messages[_type].clear()
+            return messages
+        except Exception as E:
+            return messages
+    
     def receive_all(self,msg_in) -> list:
         try:
             msgs =  copy.deepcopy(self.base_class.in_messages[msg_in])
@@ -79,7 +89,7 @@ class AState:
             return msgs
         except Exception as E:
             return []
-        
+    
     def log_info(self,log_text):
         self.base_class.skillLogger.info(log_text);
     
@@ -160,7 +170,7 @@ class AState:
     def wait_untill_message_timeout(self,message_count,timer,msg_types) -> bool:
         try:
             i = 1
-            while (self.base_class.get_message_count(msg_types) < message_count) and (i < timer): 
+            while ((self.base_class.get_message_count(msg_types) < message_count) and (i < timer)): 
                 time.sleep(1)
                 i = i + 1
             
@@ -226,6 +236,10 @@ class AState:
     
     def create_transport_conv_id(self,aasId,convsersationId):
         return self.base_class.create_transport_conv_id(aasId,convsersationId)
+
+    def clear_messages(self):
+        self.base_class.clear_messages()
+
         
 class Actor:
     def __init__(self,skillName,semanticProtocol,SkillService,initialState):
@@ -254,7 +268,8 @@ class Actor:
         elems.remove(self.skillName)
         elems.remove("Actor")
         elems.remove("AState")
-        actor_states = [ x for x in elems  if isclass(getattr(skillModule, x))]
+        actor_states1 = [ x for x in elems  if isclass(getattr(skillModule, x))]
+        actor_states = [ x for x in actor_states1 if issubclass(getattr(skillModule, x),AState)]
         for _state in actor_states:
             _skill = import_module("."+self.skillName, package="skills")
             a_state = getattr(_skill, _state)(_state)
@@ -263,12 +278,20 @@ class Actor:
                     if _msg_type is not None:
                         self.in_messages[_msg_type] = []
             except Exception as e:
-                pass
-    
+                pass#print(str(e))
+        
+        
     def get_message_count(self,msg_types):
         try:
-            ed =  sum([len(self.in_messages[x]) for x in msg_types])
+            ed =  sum( [len(self.in_messages[x]) for x in msg_types])
             return ed
+        except Exception as E:
+            return 0
+
+    def clear_messages(self):
+        try:
+            for x in self.in_messages.keys():
+                self.in_messages[x].clear()
         except Exception as E:
             return 0
             
@@ -342,17 +365,15 @@ class Actor:
     def send(self, sendMessage) -> None:
         self.msgHandler.putObMessage(sendMessage)
 
-    
     def receiveMessage(self,inMessage) -> None:
-        try:    
+        try:
             _messageType = str(inMessage['frame']['type'])
             if _messageType in self.in_messages:
                 self.in_messages[_messageType].append(inMessage)
-                print(self.in_messages)
             else:
                 self.in_messages[_messageType] = [inMessage]
         except Exception as E:
-            pass
+            print(str(E))
     
     def get_class_object(self,_state):
         _skill = import_module("."+self.skillName, package="skills")

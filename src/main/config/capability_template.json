@@ -1,0 +1,49 @@
+
+    {
+      "idShort": "ProductionCapabilities",
+      "id": "https://ovgu.de/ids/sm/1452_2182_2042_6224",
+      "kind": "Instance",
+      "semanticId": {
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://ovgu.de/ids/sm/capabilitysheet"
+                    }
+                ],
+                "type": "ModelReference"
+            },
+      "submodelElements": [
+        {
+          "idShort": "Capabilitie01",
+          "value": [
+            {
+              "idShort": "Name",
+              "valueType": "xs:string",
+              "value" : "",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "CapabilityContent",
+              "value": [
+                {
+                  "idShort": "reference01",
+                  "valueType": "xs:string",
+                  "value": "",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "reference02",
+                  "valueType": "xs:string",
+                  "value": "",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+ 

@@ -24,9 +24,24 @@
 						</div>	
 					</div>
 					<div class = "col-10 pm-new-skill-text" >
-						<span>Configure eBoP</span>
+						<span>Configure eBoP </span>
 					</div>
 			</div>						
+			<div class= "row" style = "min-height : 5vh">
+			</div>
+			<div class= "row" style = "padding-top :2vh;">	
+					<div class = "col-2">
+						<div class="std-submodel-add" style = "margin-left : 50%">
+							<img style = "height : 4vh;cursor: pointer;" id = "std-submodel-img" data-bs-toggle="modal" data-bs-target="#stepCreationPreConfigured" data-whatever="@mdo" src="{{exDomain}}web/images/plus_blue.svg">
+							<div class="std-submodel-add-overlay">
+								<img  style = "height : 4vh;cursor: pointer;" id = "std-submodel-img-overlay" data-bs-toggle="modal" data-bs-target="#stepCreationPreConfigured" data-whatever="@mdo" src="{{exDomain}}web/images/plus1.svg">
+							</div>
+						</div>	
+					</div>
+					<div class = "col-10 pm-new-skill-text" >
+						<span>Configure eBoP (Pre-Configured)</span>
+					</div>
+			</div>
 		</div>	
 
 		<div class = "col-6">
@@ -213,6 +228,49 @@
   </div>
 </div>
 
+<div class="modal fade" data-bs-backdrop="static" id="stepCreationPreConfigured" tabindex="-1" aria-labelledby="propertyLabelff" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title">Please Select Pre-Configured e-BOP</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" id = "close_btn_skill" aria-label="Close">
+		</button>
+	  </div>
+	  <div class="modal-body">
+	  	<div class="container">
+	  	<form id = "dataForm" action="/shells/{{aasIdentifier}}/productionmanager/webui" method="post" enctype="multipart/form-data" >
+			<input type="hidden" name="operationType" value="create_capability" id="p3" />
+			<div class="row">
+				<div class = "row">
+					<div class = "col-12">
+						<select name ="submodel_id" class="form-select" >
+					  	{% for entry in preConfigured_eBOP %}
+					  	{% for _sidShort,_sid in entry.items() %}
+							<option value="{{_sid}}">{{_sidShort}}</option>
+						{% endfor %}	 
+						{% endfor %}	
+					</select>
+					</div>
+				</div>
+					
+			</div>	  		
+			<div class="row" style="min-height : 3.5vh"></div>
+			
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-12" align="center">
+							<button class="btn btn-primary" id="btn_newAAS">ADD</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
 
 {% endblock %}
 		 

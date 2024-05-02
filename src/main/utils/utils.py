@@ -27,6 +27,11 @@ try:
 except ImportError:
     from main.utils.aaslog import ServiceLogHandler,LogList
 
+try:
+    from models.aastypes import Submodel,Property,SubmodelElementCollection
+except ImportError:
+    from main.models.aastypes import Submodel,Property,SubmodelElementCollection
+
 
 class Immutable:
     def __setattr__(self, key, value):
@@ -65,6 +70,7 @@ class ExecuteDBModifier(object):
             return "Internal Server Error", False, 500
 
 
+
 class ProductionStepOrder:
     def __init__(self, pyaas,aasIdentifier):
         self.pyaas = pyaas
@@ -95,7 +101,6 @@ class ProductionStepOrder:
         self.pyaas.conversationInteractionList.append(conversation_id)
         aasShellObject.add_conversationId(conversation_id)
         return conversation_id
-
 
     def createNewCFPObject(self):
         for convId in self.conversationIdList:
@@ -151,7 +156,21 @@ class ProductionStepOrder:
         
         self.pyaas.msgHandler.putIbMessage(i40_message)
         return conversation_id
-
+    
+    def createProductionOrder(self,productionStepList):
+        uuidG = UUIDGenerator()
+        _uuid = uuidG.getnewUUID()
+        submodelId = "ww.ovgu.de/submodel/"+str(_uuid)
+        _submodel = Submodel(submodelId)
+        for productionStep in productionStepList:
+            _capability = SubmodelElementCollection("")
+            for info in productionStep:
+                _property = Property("")
+                _property.value = ""
+                _capability.value.append(_property)
+            _submodel.submodelElements.append(_capability)
+        
+        return _submodel.serialize_json()
 
 class AASDescriptor:
     def __init__(self, pyaas):
@@ -202,6 +221,11 @@ class AASDescriptor:
         else:
             aasDescriptor["id"] = None
 
+        if ("idShort" in _aasShell.keys()):
+            aasDescriptor["idShort"] = _aasShell["idShort"]
+        else:
+            aasDescriptor["id"] = None
+
         if ("administration" in _aasShell.keys()):
             aasDescriptor["administration"] = _aasShell["administration"]
 
@@ -218,6 +242,7 @@ class AASDescriptor:
         endpointsList = []
 
         endpointsList.append(self.createndPoint(self.get_descriptor_string()+ "/shells/" +  str(base64.b64encode(aasDescriptor["id"].encode()).decode()), "AAS-1.0"))
+        endpointsList.append(self.createndPoint(self.get_descriptor_string()+ "/shells/" +  str(base64.b64encode(aasDescriptor["id"].encode()).decode()) +"/webui", "AAS-1.0"))
         
         if (self.pyaas.lia_env_variable["LIA_PREFEREDI40ENDPOINT"] == "MQTT"):
             pass
@@ -236,8 +261,8 @@ class AASDescriptor:
             else:
                 sumodelDescriptor["id"] = None
     
-            if ("administration" in _submodel.keys()):
-                sumodelDescriptor["administration"] = _submodel["administration"]
+            #if ("administration" in _submodel.keys()):
+            #    sumodelDescriptor["administration"] = _submodel["administration"]
     
             if ("description" in _submodel.keys()):
                 sumodelDescriptor["description"] = _submodel["description"]    
@@ -246,7 +271,9 @@ class AASDescriptor:
                 sumodelDescriptor["semanticId"] = _submodel["semanticId"]
 
             sumodelDescriptor["endpoints"] = [self.createndPoint(self.get_descriptor_string() + "/submodels/" +
-                                              str(base64.b64encode(sumodelDescriptor["id"].encode()).decode())  + "/submodel", "SUBMODEL-1.0")]
+                                              str(base64.b64encode(sumodelDescriptor["id"].encode()).decode())  + "/submodel", "SUBMODEL-1.0"),
+                                              self.createndPoint(self.get_descriptor_string() + "/submodels/" +
+                                              str(base64.b64encode(sumodelDescriptor["id"].encode()).decode())  + "/submodel/webui", "SUBMODEL-1.0")]
             submodelDescList.append(sumodelDescriptor)
 
         aasDescriptor["submodelDescriptors"] = submodelDescList
@@ -664,6 +691,8 @@ class ShellObject(AASElementObject):
         self.asset_interface_description = None
         self.productionStepList = []
         self.conversationIdList = []
+        self.assetProperties = dict()
+        self.aid = dict()
     
     def get_skill(self,skill_name) -> object:
         return self.skills[skill_name]["SkillHandler"]
@@ -682,6 +711,35 @@ class ShellObject(AASElementObject):
         """
         """        
         return (self.skills[skill_name]["SkillHandler"]).listHandler.loglist.getCotent()
+    
+    def getpreConfiguredProductionSteps(self,submodel):
+        try:
+            for capability in submodel["submodelElements"]:
+                capabilityInfo = []
+                skillName = ""
+                for step in capability["value"]:
+                    if step["idShort"] == "Name":
+                        skillName = step["value"]
+                    elif step["idShort"] == "CapabilityContent":
+                        for info in step["value"]:
+                            capabilityInfo.extend([[info["value"],info["idShort"],""]])
+                self.productionStepList.append({"skill_name":skillName,
+                                        "submodel_id_idSHort_list":capabilityInfo})
+            print(self.productionStepList)
+            return True
+        except Exception as E:
+            return False
+
+    
+    def add_produtionCapability(self,submodel) -> (str,bool):
+        """
+        """
+        try:
+            self.getpreConfiguredProductionSteps(submodel)
+            return "Sucesss", True
+        except Exception as e:
+            return str(e), False
+        
     
     def add_produtionstep(self,skill_name,submodel_id_idSHort_list) -> (str,bool):
         """
@@ -851,6 +909,8 @@ class Generate_AAS_Shell:
         self.thumnail = "file://aasx/files/"+data["file"]
         self.displayName = data["displayName"]
         self.globalAssetId = data["globalAssetId"]
+        self.assetKind = data["assetKind"]
+        self.assetType = data["assetType"]
         
     def create_identification_id(self) -> str:
         """
@@ -868,7 +928,9 @@ class Generate_AAS_Shell:
             shell_data["description"][0]["text"] = self.description
             shell_data["id"] = self.create_identification_id()
             shell_data["displayName"][0]["text"] = self.displayName
-            shell_data["assetInformation"]["globalAssetId"]["keys"][0]["value"] = self.globalAssetId
+            shell_data["assetInformation"]["globalAssetId"] = self.globalAssetId
+            shell_data["assetInformation"]["assetKind"] = self.assetKind
+            shell_data["assetInformation"]["assetType"] = self.assetType
             shell_data["assetInformation"]["defaultThumbnail"]["path"] = self.thumnail
         except Exception as e:
             print("Error @Generate_AAS_Shell execute"+ str(e))

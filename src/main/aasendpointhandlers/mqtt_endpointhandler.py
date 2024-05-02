@@ -105,7 +105,7 @@ class AASEndPointHandler(AASEndPointHandler):
             
     def handleBoradCastMessage(self,jsonMessage):
         if ((jsonMessage["frame"]["conversationId"] not in self.pyAAS.conversationInteractionList)):
-            self.pyAAS.serviceLogger.info("Test1 handleBoradCastMessage")
+            #self.pyAAS.serviceLogger.info("Test1 handleBoradCastMessage")
             self.pyAAS.dba.createNewConversation(jsonMessage["frame"]["conversationId"])
             self.pyAAS.conversationInteractionList.append(jsonMessage["frame"]["conversationId"])
             self.instanceId = str(uuid.uuid1())

@@ -2,19 +2,12 @@
       "administration": {},
       "assetInformation": {
         "assetKind": "Instance",
+        "assetType" : "Random",
         "defaultThumbnail": {
           "path": "file:/path/to/somewhere"
-        },
-        "globalAssetId": {
-          "keys": [
-            {
-              "type": "GlobalReference",
-              "value": "something_random_8616ee5a"
-            }
-          ],
-          "type": "GlobalReference"
         }
-      },
+	   },
+      "globalAssetId": "something_random_8616ee5a",
       "category": "CONSTANT",
       "description": [
         {
@@ -30,7 +23,5 @@
       ],
       "id": "something_random_5656575757",
       "idShort": "Z80",
-      "modelType": "AssetAdministrationShell",
-      "submodels": [
-      ]
+      "modelType": "AssetAdministrationShell"
 }
