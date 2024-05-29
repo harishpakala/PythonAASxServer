@@ -1,0 +1,67 @@
+05/27/2024 01:24:35 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/27/2024 01:24:35 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/27/2024 01:24:35 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/27/2024 01:24:35 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/27/2024 01:24:35 PM - PyAASxServer Service Instance - INFO - Error configuring the data respositories[Errno 2] No such file or directory: 'C:\\Users\\pakala\\Documents\\CSS_Pilot\\PythonAASxServer\\config\\HC20_SR.json'
+05/27/2024 01:24:35 PM - PyAASxServer Service Instance - INFO - Error configuring the AASX parser.
+05/27/2024 01:24:35 PM - PyAASxServer Service Instance - INFO - The Service Logger is shutting down.
+05/27/2024 01:25:03 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/27/2024 01:25:03 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/27/2024 01:25:03 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/27/2024 01:25:03 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/27/2024 01:25:03 PM - PyAASxServer Service Instance - INFO - Error configuring the data respositories[Errno 2] No such file or directory: 'C:\\Users\\pakala\\Documents\\CSS_Pilot\\PythonAASxServer\\config\\HC20_SR.json'
+05/27/2024 01:25:03 PM - PyAASxServer Service Instance - INFO - Error configuring the AASX parser.
+05/27/2024 01:25:03 PM - PyAASxServer Service Instance - INFO - The Service Logger is shutting down.
+05/27/2024 01:26:12 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/27/2024 01:26:12 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/27/2024 01:26:12 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/27/2024 01:26:12 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/27/2024 01:26:12 PM - PyAASxServer Service Instance - INFO - Error configuring the data respositoriesExpecting property name enclosed in double quotes: line 12 column 7 (char 371)
+05/27/2024 01:26:12 PM - PyAASxServer Service Instance - INFO - Error configuring the AASX parser.
+05/27/2024 01:26:12 PM - PyAASxServer Service Instance - INFO - The Service Logger is shutting down.
+05/27/2024 01:26:31 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/27/2024 01:26:31 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/27/2024 01:26:31 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/27/2024 01:26:31 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/27/2024 01:26:31 PM - PyAASxServer Service Instance - INFO - Error configuring the data respositoriesExpecting property name enclosed in double quotes: line 12 column 7 (char 371)
+05/27/2024 01:26:31 PM - PyAASxServer Service Instance - INFO - Error configuring the AASX parser.
+05/27/2024 01:26:31 PM - PyAASxServer Service Instance - INFO - The Service Logger is shutting down.
+05/27/2024 01:27:14 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/27/2024 01:27:14 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/27/2024 01:27:14 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/27/2024 01:27:14 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/27/2024 01:27:14 PM - PyAASxServer Service Instance - INFO - Error configuring the data respositoriesExpecting property name enclosed in double quotes: line 12 column 7 (char 371)
+05/27/2024 01:27:14 PM - PyAASxServer Service Instance - INFO - Error configuring the AASX parser.
+05/27/2024 01:27:14 PM - PyAASxServer Service Instance - INFO - The Service Logger is shutting down.
+05/27/2024 01:27:47 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/27/2024 01:27:47 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/27/2024 01:27:47 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/27/2024 01:27:47 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/27/2024 01:27:48 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+05/27/2024 01:27:48 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - The message handler started
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - localhost 60012
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - The message handler started
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+05/27/2024 01:27:49 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+05/27/2024 01:27:53 PM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it
+05/29/2024 12:04:01 PM - PyAASxServer Service Instance - INFO - The service Logger is Configured.
+05/29/2024 12:04:01 PM - PyAASxServer Service Instance - INFO - Configuring the Service Entities.
+05/29/2024 12:04:01 PM - PyAASxServer Service Instance - INFO - External Variables are configured.
+05/29/2024 12:04:01 PM - PyAASxServer Service Instance - INFO - Configuration Parameters are Set.
+05/29/2024 12:04:04 PM - PyAASxServer Service Instance - INFO - REST API namespaces are configured
+05/29/2024 12:04:04 PM - PyAASxServer Service Instance - INFO - The AAS I40 End Points are configured
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - Starting the Service Entities
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - The Database manager is being started
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - The message handler started
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - MQTT channels are started
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - localhost 60012
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - The AAS end Points are Started
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - The message handler started
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - The Job Scheduler is Started
+05/29/2024 12:04:06 PM - PyAASxServer Service Instance - INFO - The Skills are Started
+05/29/2024 12:04:10 PM - PyAASxServer Service Instance - INFO - Error with the MQTT Subscription[WinError 10061] No connection could be made because the target machine actively refused it

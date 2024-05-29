@@ -1,0 +1,406 @@
+{
+    "assetAdministrationShells": [
+        {
+            "idShort": "ContinuousStirring_SR_AAS",
+            "id": "https://example.com/ids/sm/1121_4160_5042_3342",
+            "assetInformation": {
+                "assetKind": "Instance",
+                "globalAssetId": "https://www.lia.ovgu.de/SR/continuousStirring/product",
+                "defaultThumbnail": {
+                    "path": "file://aasx/files/sr.png"
+                }
+            },
+            "submodels": [
+                {
+                    "type": "ModelReference",
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "https://www.lia.ovgu.de/SR/continuousStirring/AAS/CapabilityDescription"
+                        }
+                    ]
+                }
+            ],
+            "modelType": "AssetAdministrationShell"
+        }
+    ],
+    "submodels": [
+        {
+            "idShort": "CapabilityDescription",
+            "id": "https://www.lia.ovgu.de/SR/continuousStirring/AAS/CapabilityDescription",
+            "kind": "Instance",
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                    }
+                ]
+            },
+            "qualifiers": [],
+            "submodelElements": [
+                {
+                    "idShort": "CapabilitySet",
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"
+                            }
+                        ]
+                    },
+                    "qualifiers": [],
+                    "value": [
+                        {
+                            "idShort": "StirringContinuousContainer",
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [],
+                            "value": [
+                                {
+                                    "idShort": "StirringContinuous",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://www.iat.rwth-aachen.de/capability-ontology#StirringContinuous"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [],
+                                    "modelType": "Capability"
+                                },
+                                {
+                                    "idShort": "PropertySet",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [],
+                                    "value": [
+                                        {
+                                            "idShort": "TimeContainer",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [],
+                                            "value": [
+                                                {
+                                                    "idShort": "SameProperty",
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/idta/CapabilityDescription/SameProperty/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "qualifiers": [],
+                                                    "first": {
+                                                        "type": "ModelReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "Submodel",
+                                                                "value": "https://admin-shell.io/idta/CapabilityDescription/Template/1/0/Submodel"
+                                                            },
+                                                            {
+                                                                "type": "SubmodelElementCollection",
+                                                                "value": "CapabilitySet"
+                                                            },
+                                                            {
+                                                                "type": "SubmodelElementCollection",
+                                                                "value": "CapabilityContainer"
+                                                            },
+                                                            {
+                                                                "type": "SubmodelElementCollection",
+                                                                "value": "PropertySet"
+                                                            },
+                                                            {
+                                                                "type": "SubmodelElementCollection",
+                                                                "value": "PropertyContainer"
+                                                            },
+                                                            {
+                                                                "type": "Property",
+                                                                "value": "Property"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "second": {
+                                                        "type": "ModelReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "Submodel",
+                                                                "value": "https://example.com/ids/sm/5045_4181_1042_1079"
+                                                            },
+                                                            {
+                                                                "type": "Property",
+                                                                "value": "TechnicalProperty"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "modelType": "RelationshipElement"
+                                                },
+                                                {
+                                                    "idShort": "Time",
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://www.iat.rwth-aachen.de/capability-ontology/#RoundsPerMinute"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "qualifiers": [
+                                                        {
+                                                            "kind": "ConceptQualifier",
+                                                            "type": "ExpressionSemantic",
+                                                            "valueType": "xs:string",
+                                                            "value": "REQUIREMENT_0"
+                                                        }
+                                                    ],
+                                                    "valueType": "xs:time",
+                                                    "value": "30",
+                                                    "modelType": "Property"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        },
+                                        {
+                                            "idShort": "RoundsPerMinuteContainer",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [],
+                                            "value": [
+                                                {
+                                                    "idShort": "SameProperty",
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/idta/CapabilityDescription/SameProperty/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "qualifiers": [],
+                                                    "first": {
+                                                        "type": "ModelReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "Submodel",
+                                                                "value": "https://admin-shell.io/idta/CapabilityDescription/Template/1/0/Submodel"
+                                                            },
+                                                            {
+                                                                "type": "SubmodelElementCollection",
+                                                                "value": "CapabilitySet"
+                                                            },
+                                                            {
+                                                                "type": "SubmodelElementCollection",
+                                                                "value": "CapabilityContainer"
+                                                            },
+                                                            {
+                                                                "type": "SubmodelElementCollection",
+                                                                "value": "PropertySet"
+                                                            },
+                                                            {
+                                                                "type": "SubmodelElementCollection",
+                                                                "value": "PropertyContainer"
+                                                            },
+                                                            {
+                                                                "type": "Property",
+                                                                "value": "Property"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "second": {
+                                                        "type": "ModelReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "Submodel",
+                                                                "value": "https://example.com/ids/sm/5045_4181_1042_1079"
+                                                            },
+                                                            {
+                                                                "type": "Property",
+                                                                "value": "TechnicalProperty"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "modelType": "RelationshipElement"
+                                                },
+                                                {
+                                                    "idShort": "RoundsPerMinute",
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "urn:anyValidSemantic"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "qualifiers": [
+                                                        {
+                                                            "kind": "ConceptQualifier",
+                                                            "type": "ExpressionSemantic",
+                                                            "valueType": "xs:string",
+                                                            "value": "REQUIREMENT_0"
+                                                        }
+                                                    ],
+                                                    "valueType": "xs:string",
+                                                    "value": "200",
+                                                    "modelType": "Property"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "CapabilityRelations",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [],
+                                    "value": [],
+                                    "modelType": "SubmodelElementCollection"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "Submodel"
+        },
+        {
+            "idShort": "ServiceDescription",
+            "id": "https://example.com/ids/sm/1121_4160_5042_9283",
+            "submodelElements": [
+                {
+                    "idShort": "CapabilityReference",
+                    "value": {
+                        "type": "ModelReference",
+                        "keys": [
+                            {
+                                "type": "Submodel",
+                                "value": "https://www.lia.ovgu.de/SR/continuousStirring/AAS/CapabilityDescription"
+                            }
+                        ]
+                    },
+                    "modelType": "ReferenceElement"
+                },
+                {
+                    "idShort": "listPrice",
+                    "qualifiers": [
+                        {
+                            "kind": "ConceptQualifier",
+                            "type": "PredicateRelation",
+                            "valueType": "xs:string",
+                            "value": "LESS_EQUAL_4"
+                        },
+                        {
+                            "kind": "ConceptQualifier",
+                            "type": "ExpressionSemantic",
+                            "valueType": "xs:string",
+                            "value": "REQUIREMENT_0"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "10",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "deliveryTime",
+                    "qualifiers": [
+                        {
+                            "kind": "ConceptQualifier",
+                            "type": "PredicateRelation",
+                            "valueType": "xs:string",
+                            "value": "LESS_EQUAL_4"
+                        },
+                        {
+                            "kind": "ConceptQualifier",
+                            "type": "ExpressionSemantic",
+                            "valueType": "xs:string",
+                            "value": "REQUIREMENT_0"
+                        }
+                    ],
+                    "valueType": "xs:time",
+                    "value": "14.05.2024",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "PreferredVenueOfProvision ",
+                    "valueType": "xs:string",
+                    "value": "Magdeburg",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "MaxDistanceToPreferredVenueOfProvision",
+                    "qualifiers": [
+                        {
+                            "kind": "ConceptQualifier",
+                            "type": "PredicateRelation",
+                            "valueType": "xs:string",
+                            "value": "LESS_EQUAL_4"
+                        },
+                        {
+                            "kind": "ConceptQualifier",
+                            "type": "ExpressionSemantic",
+                            "valueType": "xs:string",
+                            "value": "REQUIREMENT_0"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "200",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "ExpectedCarbonFootprint",
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                }
+            ],
+            "modelType": "Submodel"
+        }
+    ],
+    "conceptDescriptions": []
+}

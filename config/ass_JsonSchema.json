@@ -40,7 +40,7 @@
         },
         "text": {
           "type": "string",
-          "minLength": 1,
+          "minLength": 0,
           "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
         }
       },
@@ -60,7 +60,7 @@
               "type": "string",
               "allOf": [
                 {
-                  "minLength": 1,
+                  "minLength": 0,
                   "maxLength": 4
                 },
                 {
@@ -75,7 +75,7 @@
               "type": "string",
               "allOf": [
                 {
-                  "minLength": 1,
+                  "minLength": 0,
                   "maxLength": 4
                 },
                 {
@@ -91,8 +91,8 @@
             },
             "templateId": {
               "type": "string",
-              "minLength": 1,
-              "maxLength": 2000,
+              "minLength": 0,
+              "maxLength": 5000,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             }
           }
@@ -161,8 +161,8 @@
         },
         "globalAssetId": {
           "type": "string",
-          "minLength": 1,
-          "maxLength": 2000,
+          "minLength": 0,
+          "maxLength": 5000,
           "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
         },
         "specificAssetIds": {
@@ -174,8 +174,8 @@
         },
         "assetType": {
           "type": "string",
-          "minLength": 1,
-          "maxLength": 2000,
+          "minLength": 0,
+          "maxLength": 5000,
           "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
         },
         "defaultThumbnail": {
@@ -212,7 +212,7 @@
             },
             "messageTopic": {
               "type": "string",
-              "minLength": 1,
+              "minLength": 0,
               "maxLength": 255,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
@@ -258,7 +258,7 @@
               "type": "string",
               "allOf": [
                 {
-                  "minLength": 1,
+                  "minLength": 0,
                   "maxLength": 100
                 },
                 {
@@ -383,7 +383,7 @@
             },
             "unit": {
               "type": "string",
-              "minLength": 1,
+              "minLength": 0,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "unitId": {
@@ -391,12 +391,12 @@
             },
             "sourceOfDefinition": {
               "type": "string",
-              "minLength": 1,
+              "minLength": 0,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "symbol": {
               "type": "string",
-              "minLength": 1,
+              "minLength": 0,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "dataType": {
@@ -411,7 +411,7 @@
             },
             "valueFormat": {
               "type": "string",
-              "minLength": 1,
+              "minLength": 0,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "valueList": {
@@ -419,8 +419,8 @@
             },
             "value": {
               "type": "string",
-              "minLength": 1,
-              "maxLength": 2000,
+              "minLength": 0,
+              "maxLength": 5000,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "levelType": {
@@ -536,8 +536,8 @@
             },
             "globalAssetId": {
               "type": "string",
-              "minLength": 1,
-              "maxLength": 2000,
+              "minLength": 0,
+              "maxLength": 5000,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "specificAssetIds": {
@@ -610,7 +610,7 @@
         },
         "topic": {
           "type": "string",
-          "minLength": 1,
+          "minLength": 0,
           "maxLength": 255,
           "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
         },
@@ -641,8 +641,7 @@
           "properties": {
             "name": {
               "type": "string",
-              "minLength": 1,
-              "maxLength": 128,
+              "minLength": 0,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "valueType": {
@@ -676,14 +675,8 @@
               "type": "string",
               "allOf": [
                 {
-                  "minLength": 1,
-                  "maxLength": 2000
-                },
-                {
-                  "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
-                },
-                {
-                  "pattern": "^file:(//((localhost|(\\[((([0-9A-Fa-f]{1,4}:){6}([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|::([0-9A-Fa-f]{1,4}:){5}([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|(([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|(([0-9A-Fa-f]{1,4}:){2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|(([0-9A-Fa-f]{1,4}:){3}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}:([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|(([0-9A-Fa-f]{1,4}:){4}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|(([0-9A-Fa-f]{1,4}:){5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){6}[0-9A-Fa-f]{1,4})?::)|[vV][0-9A-Fa-f]+\\.([a-zA-Z0-9\\-._~]|[!$&'()*+,;=]|:)+)\\]|([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])|([a-zA-Z0-9\\-._~]|%[0-9A-Fa-f][0-9A-Fa-f]|[!$&'()*+,;=])*)))?/((([a-zA-Z0-9\\-._~]|%[0-9A-Fa-f][0-9A-Fa-f]|[!$&'()*+,;=]|[:@]))+(/(([a-zA-Z0-9\\-._~]|%[0-9A-Fa-f][0-9A-Fa-f]|[!$&'()*+,;=]|[:@]))*)*)?|/((([a-zA-Z0-9\\-._~]|%[0-9A-Fa-f][0-9A-Fa-f]|[!$&'()*+,;=]|[:@]))+(/(([a-zA-Z0-9\\-._~]|%[0-9A-Fa-f][0-9A-Fa-f]|[!$&'()*+,;=]|[:@]))*)*)?)$"
+                  "minLength": 0,
+                  "maxLength": 5000
                 }
               ]
             },
@@ -691,7 +684,7 @@
               "type": "string",
               "allOf": [
                 {
-                  "minLength": 1,
+                  "minLength": 0,
                   "maxLength": 100
                 },
                 {
@@ -771,8 +764,8 @@
             },
             "id": {
               "type": "string",
-              "minLength": 1,
-              "maxLength": 2000,
+              "minLength": 0,
+              "maxLength": 5000,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             }
           },
@@ -790,8 +783,8 @@
         },
         "value": {
           "type": "string",
-          "minLength": 1,
-          "maxLength": 2000,
+          "minLength": 0,
+          "maxLength": 5000,
           "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
         }
       },
@@ -851,7 +844,6 @@
         {
           "properties": {
             "text": {
-              "maxLength": 128
             }
           }
         }
@@ -879,7 +871,7 @@
         {
           "properties": {
             "text": {
-              "maxLength": 18
+              "maxLength": 50
             }
           }
         }
@@ -1078,8 +1070,7 @@
             },
             "type": {
               "type": "string",
-              "minLength": 1,
-              "maxLength": 128,
+              "minLength": 0,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "valueType": {
@@ -1142,22 +1133,14 @@
           "properties": {
             "category": {
               "type": "string",
-              "minLength": 1,
-              "maxLength": 128,
+              "minLength": 0,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "idShort": {
               "type": "string",
               "allOf": [
                 {
-                  "minLength": 1,
-                  "maxLength": 128
-                },
-                {
-                  "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
-                },
-                {
-                  "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
+                  "minLength": 0
                 }
               ]
             },
@@ -1199,7 +1182,7 @@
           "items": {
             "$ref": "#/definitions/Key"
           },
-          "minItems": 1
+          "minItems": 0
         }
       },
       "required": [
@@ -1283,8 +1266,8 @@
           "type": "string",
           "allOf": [
             {
-              "minLength": 1,
-              "maxLength": 2000
+              "minLength": 0,
+              "maxLength": 5000
             },
             {
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
@@ -1298,7 +1281,7 @@
           "type": "string",
           "allOf": [
             {
-              "minLength": 1,
+              "minLength": 0,
               "maxLength": 100
             },
             {
@@ -1323,13 +1306,13 @@
           "properties": {
             "name": {
               "type": "string",
-              "minLength": 1,
+              "minLength": 0,
               "maxLength": 64,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             "value": {
               "type": "string",
-              "minLength": 1,
+              "minLength": 0,
               "maxLength": 2000,
               "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
@@ -1523,7 +1506,7 @@
       "properties": {
         "value": {
           "type": "string",
-          "minLength": 1,
+          "minLength": 0,
           "maxLength": 2000,
           "pattern": "^([\\t\\n\\r -\ud7ff\ue000-\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
         },
