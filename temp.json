@@ -1,0 +1,426 @@
+{
+    "frame": {
+        "semanticProtocol": {
+            "keys": [
+                {
+                    "type": "GlobalReference",
+                    "value": "www.admin-shell.io/interaction/bidding"
+                }
+            ]
+        },
+        "type": "proposal",
+        "messageId": "proposal_e081dae2-ffef-44c9-99f0-7aec1e5e190f",
+        "sender": {
+            "id": "https://ovgu.de/aas/temp",
+            "role": {
+                "name": "StirringProvider"
+            }
+        },
+        "conversationId": "ProductionOrder_1_1",
+        "replyBy": "",
+        "replyTo": "",
+        "receiver": {
+            "id": "https://example.com/ids/sm/1121_4160_5042_3342",
+            "role": {
+                "name": "StirringRequester"
+            }
+        }
+    },
+    "interactionElements": [
+	{
+                    "idShort": "Offer001",
+                    "value": [
+                        {
+                            "idShort": "TenderCriteria",
+                            "value": [
+                                {
+                                    "idShort": "VenueOfProvision",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-BAF163#002"
+                                            }
+                                        ]
+                                    },
+                                    "valueType": "xs:string",
+                                    "value": "DEU, Magdeburg",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "DeliveryDate",
+                                    "valueType": "xs:string",
+                                    "value": "20.04.2023",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "CO2Limit",
+                                    "valueType": "xs:string",
+                                    "value": "17,87",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "PaymentTerms",
+                                    "valueType": "xs:string",
+                                    "value": "c.a.d.",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "Incoterms",
+                                    "valueType": "xs:string",
+                                    "value": "EXW",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "TotalNumberOfPieces",
+                                    "valueType": "xs:integer",
+                                    "value": "1",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "QuantityCall",
+                                    "value": [
+                                        {
+                                            "idShort": "BatchSize",
+                                            "valueType": "xs:integer",
+                                            "value": "1",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "CallFrequency",
+                                            "valueType": "xs:string",
+                                            "value": "6 weeks",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "PackingGroup",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0112/2///61360_4#ADA060#001"
+                                            }
+                                        ]
+                                    },
+                                    "valueType": "xs:integer",
+                                    "value": "3",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "StorageRegulations",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0112/2///61360_4#ADA059#001"
+                                            }
+                                        ]
+                                    },
+                                    "valueType": "xs:string",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "Price",
+                                    "valueType": "xs:double",
+                                    "value": "99",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "Services",
+                            "value": [
+                                {
+                                    "idShort": "OffererSupplier",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAP794#001"
+                                            }
+                                        ]
+                                    },
+                                    "valueType": "xs:string",
+                                    "value": "Otto-von-Guericke Universität Magdeburg",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "OfferID",
+                                    "valueType": "xs:string",
+                                    "value": "fceaac82-41f6-4e95-b9ef-2827eada91ac",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "IdentifierOfTheSupplier",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAP796#004"
+                                            }
+                                        ]
+                                    },
+                                    "valueType": "xs:integer",
+                                    "value": "6987634123",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "category": "VARIABLE",
+                                    "idShort": "Address",
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "0173-1#02-AAQ832#005"
+                                            }
+                                        ]
+                                    },
+                                    "value": [
+                                        {
+                                            "category": "PARAMETER",
+                                            "idShort": "Street",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAO128#002"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "language": "de",
+                                                    "text": "Universitätsplatz 2"
+                                                }
+                                            ],
+                                            "modelType": "MultiLanguageProperty"
+                                        },
+                                        {
+                                            "category": "PARAMETER",
+                                            "idShort": "Zipcode",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAO129#002"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "language": "de",
+                                                    "text": "39106"
+                                                }
+                                            ],
+                                            "modelType": "MultiLanguageProperty"
+                                        },
+                                        {
+                                            "idShort": "CityTown",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAO132#002"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "language": "de",
+                                                    "text": "Magdeburg"
+                                                }
+                                            ],
+                                            "modelType": "MultiLanguageProperty"
+                                        },
+                                        {
+                                            "category": "PARAMETER",
+                                            "idShort": "StateCounty",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAO133#002"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "language": "de",
+                                                    "text": "Germany"
+                                                }
+                                            ],
+                                            "modelType": "MultiLanguageProperty"
+                                        },
+                                        {
+                                            "idShort": "NationalCode",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAO134#002"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "language": "de",
+                                                    "text": "276"
+                                                }
+                                            ],
+                                            "modelType": "MultiLanguageProperty"
+                                        },
+                                        {
+                                            "category": "VARIABLE",
+                                            "idShort": "Phone01",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAQ833#005"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "category": "VARIABLE",
+                                                    "idShort": "TelephoneNumber",
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "0173-1#02-AAO136#002"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "value": [
+                                                        {
+                                                            "language": "en?",
+                                                            "text": "+493916752920"
+                                                        }
+                                                    ],
+                                                    "modelType": "MultiLanguageProperty"
+                                                },
+                                                {
+                                                    "category": "VARIABLE",
+                                                    "idShort": "TypeOfTelephone",
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "0173-1#02-AAO137#003"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "value": [
+                                                        {
+                                                            "language": "en?",
+                                                            "text": ""
+                                                        }
+                                                    ],
+                                                    "modelType": "MultiLanguageProperty"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        },
+                                        {
+                                            "category": "VARIABLE",
+                                            "idShort": "Email01",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "0173-1#02-AAQ836#005"
+                                                    }
+                                                ]
+                                            },
+                                            "value": [
+                                                {
+                                                    "idShort": "EmailAddress",
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "0173-1#02-AAO198#002"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "value": "info@ovgu.de",
+                                                    "modelType": "Property"
+                                                },
+                                                {
+                                                    "idShort": "TypeOfEmailAddress",
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "0173-1#02-AAO199#003"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "valueType": "xs:string",
+                                                    "modelType": "Property"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementCollection"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "Service0001",
+                                    "value": [
+                                        {
+                                            "idShort": "RefRequestForService",
+                                            "value": {
+                                                "type": "ExternalReference",
+                                                "referredSemanticId": {
+                                                    "type": "ExternalReference",
+                                                    "keys": []
+                                                },
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": ""
+                                                    },
+                                                    {
+                                                        "type": "Submodel",
+                                                        "value": "https://www.iat.rwth-aachen.de/pls-lab/pumping_station/HC20/CapabilityDescription"
+                                                    }
+                                                ]
+                                            },
+                                            "modelType": "ReferenceElement"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+	
+	]
+}

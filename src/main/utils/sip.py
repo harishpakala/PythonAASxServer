@@ -160,11 +160,12 @@ class AState:
             while (self.base_class.get_message_count(msg_types) < message_count): 
                 time.sleep(1)
                 
-            if (self.base_class.get_message_count(msg_types) == message_count):
+            if (self.base_class.get_message_count(msg_types) >= message_count):
                 return True
             else:
                 return False
         except Exception as E:
+            print("================================================================,wait_untill_message, error"+ str(E))
             return False
         
     def wait_untill_message_timeout(self,message_count,timer,msg_types) -> bool:
@@ -306,6 +307,7 @@ class Actor:
     
     def flush_tape(self) -> bool:
         try:
+            print(self.tape,"================================================================ tape cleared",self.skillName)
             self.tape.clear()
             return True
         except:
@@ -373,7 +375,7 @@ class Actor:
             else:
                 self.in_messages[_messageType] = [inMessage]
         except Exception as E:
-            print(str(E))
+            print(str(E),"========================")
     
     def get_class_object(self,_state):
         _skill = import_module("."+self.skillName, package="skills")

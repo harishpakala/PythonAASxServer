@@ -114,8 +114,10 @@ class MessageHandler(object):
                     aasShellObject = self.pyaas.aasShellHashDict.__getHashEntry__(_uuid)
                     for _skillName in list(aasShellObject.skills.keys()):
                         if _skillName not in ["ProductionManager", "Register"]:
-                            jMessageN = copy.deepcopy(jMessage)
-                            aasShellObject.get_skill(_skillName).receiveMessage(jMessage)
+                            senderSkill = jMessage["frame"]["sender"]["role"]["name"]
+                            if  senderSkill != _skillName:
+                                jMessageN = copy.deepcopy(jMessage)
+                                aasShellObject.get_skill(_skillName).receiveMessage(jMessageN)
             except Exception as E:
                 print(E)             
             

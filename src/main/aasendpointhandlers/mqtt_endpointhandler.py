@@ -41,9 +41,6 @@ class AASEndPointHandler(AASEndPointHandler):
             topicsList = []
             for _id in self.pyAAS.aasShellHashDict._getKeys():
                 topicsList.append((self.pyAAS.aasShellHashDict.__getHashEntry__(_id).aasELement["id"],0))
-            print(" #############################################################################snnnnnnnnnnn")
-            print(topicsList)
-            print(" #############################################################################snnnnnnnnnnn")
             self.client.subscribe(topicsList)
             self.client.loop_forever()
         except Exception as E:
@@ -80,18 +77,8 @@ class AASEndPointHandler(AASEndPointHandler):
 
     def dispatchMessage(self, send_Message): 
         publishTopic = "AASpillarbox"
-        try:
-            publishTopic = send_Message["frame"]["receiver"]["id"]
-        except:
-            pass
-        try:
-            if (publishTopic in list(self.pyAAS.aasHashDict._getKeys())):
-                self.msgHandler.putIbMessage(send_Message)
-            else:
-                self.client.publish("AASpillarbox", str(json.dumps(send_Message)))                
-        except Exception as e:
-            self.pyAAS.serviceLogger.info("Unable to publish the message to the mqtt server", str(e))
-            
+        self.client.publish(publishTopic, str(json.dumps(send_Message)))
+        
     def retrieveMessage(self, client, userdata, msg):
         try:
             msg1 = str(msg.payload, "utf-8")
@@ -116,4 +103,4 @@ class AASEndPointHandler(AASEndPointHandler):
                                                            "direction":"inbound",
                                                            "SenderAASID" : "Broadcast",
                                                            "message":jsonMessage})            
-            self.msgHandler.putIbMessage(jsonMessage)
+        self.msgHandler.putIbMessage(jsonMessage)

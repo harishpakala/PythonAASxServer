@@ -179,8 +179,10 @@ class AASDescriptor:
     def get_descriptor_string(self) -> str:
         ip = str(self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_DOMAIN_EXTERN"])
         port = str(self.pyaas.lia_env_variable["LIA_AAS_RESTAPI_PORT_EXTERN"])
-        return "http://" + ip + ":" + port 
-        
+        if  self.pyaas.lia_env_variable["LIA_SECURITY_ENABLED"] == "Y":
+            return "https://" + ip + ":" + port
+        else: 
+            return "http://" + ip + ":" + port
         
     def createSubmodelDescriptorElementSemanticId(self, desc, submodel) -> dict():
         """
@@ -209,6 +211,9 @@ class AASDescriptor:
         },
             "interface": interface
         }
+        if  self.pyaas.lia_env_variable["LIA_SECURITY_ENABLED"] == "Y":
+            endPoint["protocolInformation"]["endpointProtocol"] = "https"
+
         return endPoint
 
     def createDescriptor(self, _shellId):
@@ -272,7 +277,7 @@ class AASDescriptor:
 
             sumodelDescriptor["endpoints"] = [self.createndPoint(self.get_descriptor_string() + "/submodels/" +
                                               str(base64.b64encode(sumodelDescriptor["id"].encode()).decode())  + "/submodel", "SUBMODEL-1.0"),
-                                              self.createndPoint(self.get_descriptor_string() + "/submodels/" +
+                                              self.createndPoint(self.get_descriptor_string() +  "/shells/" +  str(base64.b64encode(aasDescriptor["id"].encode()).decode()) +"/aas/submodels/" +
                                               str(base64.b64encode(sumodelDescriptor["id"].encode()).decode())  + "/submodel/webui", "SUBMODEL-1.0")]
             submodelDescList.append(sumodelDescriptor)
 
