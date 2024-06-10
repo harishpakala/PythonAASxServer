@@ -99,12 +99,33 @@ function getCollectionData(_uuid){
     	if (_elem ["modelType"] == "SubmodelElementCollection"){
     		collectionElem.value[i] = getCollectionData(collectionElem.value[i]);
     	}
+    	else if (_elem ["modelType"] == "AnnotatedRelationshipElement"){
+    		console.log(_elem);
+    		collectionElem.value[i] = getANR(collectionElem.value[i]);
+    	}
     	else {
     		collectionElem.value[i] =_elem
     	}
 	}
 	return collectionElem.serialize();
 }
+function getANR(_uuid){
+	let collectionElem = linearData1[_uuid]
+	for (var i = 0; i < collectionElem.annotations.length; i++ ) {
+		let _elem = (linearData1[collectionElem.annotations[i]]).serialize();
+    	if (_elem ["modelType"] == "SubmodelElementCollection"){
+    		collectionElem.annotations[i] = getCollectionData(collectionElem.annotations[i]);
+    	}
+    	else if (_elem ["modelType"] == "AnnotatedRelationshipElement"){
+    		collectionElem.annotations[i] = getANR(collectionElem.annotations[i]);
+    	}
+    	else {
+    		collectionElem.annotations[i] =_elem
+    	}
+	}
+	return collectionElem.serialize();
+}
+
 function saveSubmodel(event,submodelIdentifier,aasIdentifier){
 	event.stopPropagation();
     event.preventDefault();
@@ -116,11 +137,15 @@ function saveSubmodel(event,submodelIdentifier,aasIdentifier){
     	if (_elem["modelType"] == "SubmodelElementCollection"){
     		_submodel_New["submodelElements"][i] = getCollectionData(_submodel_New["submodelElements"][i]);
     	}
+    	else if (_elem["modelType"] == "AnnotatedRelationshipElement"){
+    		_submodel_New["submodelElements"][i] = getANR(_submodel_New["submodelElements"][i]);
+    	}
     	else {
     		_submodel_New["submodelElements"][i] = _elem;
     	}
     }
     _submodel_New["id"] = submodelIdentifier;
+    console.log(_submodel_New);
     var httpGetRequest = new XMLHttpRequest();
 	httpGetRequest.open('PUT',"/submodels/"+btoa(submodelIdentifier));
 	httpGetRequest.onload = () => {

@@ -1013,6 +1013,101 @@ class DataElement extends SubmodelElement{
 		
 	}
 }
+class RelationshipElement extends SubmodelElement{
+	constructor(extensions,category,idShort,displayName,description,
+			checksum,kind,semanticId,supplementalSemanticIds,
+			qualifiers,embeddedDataSpecifications){
+			super(extensions,category,idShort,displayName,description,
+					checksum,kind,semanticId,supplementalSemanticIds,
+					qualifiers,embeddedDataSpecifications);
+			this.first = new ComplexObject("first","Reference");
+			this.second = new ComplexObject("second","Reference");
+			this.modelType = "RelationshipElement";
+		}
+	serialize(){
+		let jsonData =  super.serialize();
+		if (this.first._object != null) {
+			jsonData["first"] = this.first.serialize();
+		}
+		if (this.second._object != null) {
+			jsonData["second"] = this.second.serialize();
+		}		
+		jsonData["modelType"] = "RelationshipElement";
+		return jsonData;
+	}
+	deserialize(data,parentId,exdomain){
+		super.deserialize(data,parentId,exdomain);
+		if (data.hasOwnProperty("first")){
+			this.first.deserialize(data["first"],parentId,exdomain);
+		}
+		if (data.hasOwnProperty("second")){
+			this.second.deserialize(data["second"],parentId,exdomain);
+		}
+	}
+	createDom(parentId,exdomain){
+		this.uuid = crypto.randomUUID();
+		this.exdomain = exdomain;
+		document.getElementById(parentId).insertAdjacentHTML(
+				 'afterbegin',
+				 `<div class="temp" id = "`+this.uuid+`">
+				 </div>`);
+		this.first.createDom(this.uuid,exdomain);
+		this.second.createDom(this.uuid,exdomain);
+		super.createDom(this.uuid,exdomain);
+	}
+}
+class AnnotatedRelationshipElement extends SubmodelElement{
+	constructor(extensions,category,idShort,displayName,description,
+			checksum,kind,semanticId,supplementalSemanticIds,
+			qualifiers,embeddedDataSpecifications){
+			super(extensions,category,idShort,displayName,description,
+					checksum,kind,semanticId,supplementalSemanticIds,
+					qualifiers,embeddedDataSpecifications);
+			this.first = new ComplexObject("first","Reference");
+			this.second = new ComplexObject("second","Reference");
+			this.modelType = "AnnotatedRelationshipElement";
+			this.annotations = new Array();
+		}
+	serialize(){
+		let jsonData =  super.serialize();
+		if (this.first._object != null) {
+			jsonData["first"] = this.first.serialize();
+		}
+		if (this.second._object != null) {
+			jsonData["second"] = this.second.serialize();
+		}		
+		if (this.annotations != null){
+			if (this.annotations.length > 0 ){
+				jsonData["annotations"] = new Array();
+				for (var elemId of this.annotations){
+					jsonData["annotations"].push(elemId);
+				}
+			}	
+		}
+		jsonData["modelType"] = "AnnotatedRelationshipElement";
+		return jsonData;
+	}
+	deserialize(data,parentId,exdomain){
+		super.deserialize(data,parentId,exdomain);
+		if (data.hasOwnProperty("first")){
+			this.first.deserialize(data["first"],parentId,exdomain);
+		}
+		if (data.hasOwnProperty("second")){
+			this.second.deserialize(data["second"],parentId,exdomain);
+		}
+	}
+	createDom(parentId,exdomain){
+		this.uuid = crypto.randomUUID();
+		this.exdomain = exdomain;
+		document.getElementById(parentId).insertAdjacentHTML(
+				 'afterbegin',
+				 `<div class="temp" id = "`+this.uuid+`">
+				 </div>`);
+		this.first.createDom(this.uuid,exdomain);
+		this.second.createDom(this.uuid,exdomain);
+		super.createDom(this.uuid,exdomain);
+	}
+}
 class Property extends DataElement{
 	constructor(extensions,category,idShort,displayName,description,
 			checksum,kind,semanticId,supplementalSemanticIds,
@@ -1185,8 +1280,8 @@ class ReferenceElement extends DataElement{
 		this.value.createDom(parentId,exdomain);
 		super.createDom(parentId,exdomain);
 	}
-	
 }
+
 class Blob extends DataElement{
 	constructor(extensions,category,idShort,displayName,description,
 			checksum,kind,semanticId,supplementalSemanticIds,
@@ -1197,7 +1292,7 @@ class Blob extends DataElement{
 					checksum,kind,semanticId,supplementalSemanticIds,
 					qualifiers,embeddedDataSpecifications);
 			this.value = value;
-			this.contentType = contentType;
+			this.contentType = new StringObject("contentType");
 	}
 	serialize(){
 		let jsonData =  super.serialize();
@@ -1216,7 +1311,7 @@ class IFile extends DataElement{
 			super(extensions,category,idShort,displayName,description,
 					checksum,kind,semanticId,supplementalSemanticIds,
 					qualifiers,embeddedDataSpecifications);
-			this.contentType = contentType;
+			this.contentType = new StringObject("contentType");
 			this.modelType = "File";
 			this.idShortPath = "";
 			this.submodelIdentifier = ""
@@ -1225,7 +1320,7 @@ class IFile extends DataElement{
 	serialize(){
 		let jsonData =  super.serialize();
 		jsonData["value"] = this.value.text;
-		//jsonData["contentType"] = this.contentType.getSelectedItem();
+		jsonData["contentType"] = this.contentType.text;
 		jsonData["modelType"] = "File";
 		return jsonData;
 	}
@@ -1233,6 +1328,9 @@ class IFile extends DataElement{
 		super.deserialize(data,parentId,exdomain);
 		if (data.hasOwnProperty("value")){
 			this.value.text = data["value"];
+		}
+		if (data.hasOwnProperty("contentType")){
+			this.contentType.text = data["contentType"];
 		}
 	}
 	createDom(parentId,exdomain){
@@ -1258,7 +1356,6 @@ class SubmodelElementCollection extends SubmodelElement{
 				for (var elemId of this.value){
 					jsonData["value"].push(elemId);
 				}
-				
 			}	
 		}
 		jsonData["modelType"] = this.modelType;
@@ -1279,12 +1376,25 @@ class Capability extends SubmodelElement{
 			super(extensions,category,idShort,displayName,description,
 					checksum,kind,semanticId,supplementalSemanticIds,
 					qualifiers,embeddedDataSpecifications);
+			this.modelType = "Capability";
 	}
 	serialize(){
 		let jsonData =  super.serialize();
 		jsonData["modelType"] = "Capability";
 		return jsonData;
-	}			
+	}
+	deserialize(data,parentId,exdomain){
+		super.deserialize(data,parentId,exdomain);
+	}
+	createDom(parentId,exdomain){
+		this.uuid = crypto.randomUUID();
+		this.exdomain = exdomain;
+		document.getElementById(parentId).insertAdjacentHTML(
+				 'afterbegin',
+				 `<div class="temp" id = "`+this.uuid+`">
+				 </div>`);
+		super.createDom(parentId,exdomain);
+	}
 }
 class EventElement extends SubmodelElement{
 	constructor(extensions,category,idShort,displayName,description,

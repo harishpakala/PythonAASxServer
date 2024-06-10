@@ -147,7 +147,9 @@ function addSubmodelElements(parent,exdomain){
 			if (_submodelElement.modelType != "SubmodelElementCollection" && _submodelElement.modelType != "Entity")
 		        {submodelElements.push(parseDataElement(_submodelElement,submodelId,exdomain));}                    
 		    else if (_submodelElement.modelType == "SubmodelElementCollection" )
-		        {submodelElements.push(parseSubmodelCollection(_submodelElement,submodelId,exdomain));}	
+		        {submodelElements.push(parseSubmodelCollection(_submodelElement,submodelId,exdomain));}
+		    else if (_submodelElement.modelType == "AnnotatedRelationshipElement" )
+		        {submodelElements.push(parseAnnotatedRelationshipElement(_submodelElement,submodelId,exdomain));}	
 			else if (_submodelElement.modelType == "Entity" )     
 				{submodelElements.push(parseEntity(_submodelElement,submodelId,exdomain));}		
 		}
@@ -166,11 +168,18 @@ function addSubmodelElements(parent,exdomain){
 	for (var tId of _submodel1.submodelElements){
 		var elemC = linearData1[tId];
 		
-		if (elemC.modelType == "SubmodelElementCollection" || elemC.modelType == "Entity") {
+		if (elemC.modelType == "SubmodelElementCollection" || elemC.modelType == "Entity" ) {
 				var elemLi = document.createElement('li');	
 				elemLi.setAttribute("class","list-group-item");
 				elemLi.setAttribute("id","li_"+elemC.idShort.getString());
 				elemLi.appendChild(processCollection(elemC.idShort.getString(),exdomain));
+				submodelElems.appendChild(elemLi);
+			}
+		else if (elemC.modelType == "AnnotatedRelationshipElement") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");
+				elemLi.setAttribute("id","li_"+elemC.idShort.getString());
+				elemLi.appendChild(processAnr(elemC.idShort.getString(),exdomain));
 				submodelElems.appendChild(elemLi);
 			}
 		else {
@@ -180,6 +189,38 @@ function addSubmodelElements(parent,exdomain){
 			}
 	}
 	submodelCollapse.appendChild(submodelElems);
+}
+function parseAnnotatedRelationshipElement(arElement,_parentId,exdomain){
+    var _newId =_parentId +"."+ arElement["idShort"]
+    var _annotations =  []
+
+    var _AnnotatedRelationshipElement = new AnnotatedRelationshipElement();
+    _AnnotatedRelationshipElement.deserialize(arElement,_parentId,exdomain);
+	
+    if (arElement.hasOwnProperty("annotations")) {
+        for (var _submodelElement of arElement["annotations"]){
+            if (_submodelElement["modelType"] != "SubmodelElementCollection" && _submodelElement["modelType"] != "Entity"){
+            	_annotations.push(parseDataElement(_submodelElement, _newId,exdomain));
+            }
+            else if (_submodelElement["modelType"] == "Entity"){
+			    _annotations.push(parseEntity(_submodelElement,_newId,exdomain));
+			}
+			else if (_submodelElement["modelType"] == "SubmodelElementCollection"){
+            	_annotations.push(parseSubmodelCollection(_submodelElement,_newId,exdomain));
+            }
+            else if (_submodelElement["modelType"] == "AnnotatedRelationshipElement"){
+            	_annotations.push(parseAnnotatedRelationshipElement(_submodelElement,_newId,exdomain));
+            }
+        }       
+        arElement["annotations"].splice(0,arElement["annotations"].length);
+        for (var _pid of _annotations)
+        {
+        	_AnnotatedRelationshipElement.annotations.push(_pid);
+        }
+    }
+    linearData1[_newId] = _AnnotatedRelationshipElement;
+    
+    return _newId;
 }
 
 function parseSubmodelCollection(submodelColl,_parentId,exdomain){
@@ -191,7 +232,7 @@ function parseSubmodelCollection(submodelColl,_parentId,exdomain){
 	
     if (submodelColl.hasOwnProperty("value")) {
         for (var _submodelElement of submodelColl["value"]){
-            if (_submodelElement["modelType"] != "SubmodelElementCollection" && _submodelElement["modelType"] != "Entity"){
+            if (_submodelElement["modelType"] != "SubmodelElementCollection" && _submodelElement["modelType"] != "Entity" && _submodelElement["modelType"] != "AnnotatedRelationshipElement"){
             	collectionElemIds.push(parseDataElement(_submodelElement, _newId,exdomain));
             }
             else if (_submodelElement["modelType"] == "Entity"){
@@ -199,6 +240,9 @@ function parseSubmodelCollection(submodelColl,_parentId,exdomain){
 			}
 			else if (_submodelElement["modelType"] == "SubmodelElementCollection"){
             	collectionElemIds.push(parseSubmodelCollection(_submodelElement,_newId,exdomain));
+            }
+            else if (_submodelElement["modelType"] == "AnnotatedRelationshipElement"){
+            	collectionElemIds.push(parseAnnotatedRelationshipElement(_submodelElement,_newId,exdomain));
             }
         }       
         submodelColl["value"].splice(0,submodelColl["value"].length);
@@ -278,6 +322,21 @@ function parseDataElement(data,_parentId,exdomain){
 		_RelationshipElement.deserialize(data,_parentId,exdomain);
 		linearData1[_newId] = _RelationshipElement;
 	}
+		if (data["modelType"] == "RelationshipElement"){
+		var _RelationshipElement = new RelationshipElement();
+		_RelationshipElement.deserialize(data,_parentId,exdomain);
+		linearData1[_newId] = _RelationshipElement;
+	}
+		if (data["modelType"] == "AnnotatedRelationshipElement"){
+		var _AnnotatedRelationshipElement = new AnnotatedRelationshipElement();
+		_AnnotatedRelationshipElement.deserialize(data,_parentId,exdomain);
+		linearData1[_newId] = _AnnotatedRelationshipElement;
+	}
+		if (data["modelType"] == "Capability"){
+		var _Capability = new Capability();
+		_Capability.deserialize(data,_parentId,exdomain);
+		linearData1[_newId] = _Capability;
+	}
 
     return _newId;
 }
@@ -292,6 +351,9 @@ function setSubmodelElemData(_id,parent,exdomain){
 	
 	if (elemC.modelType == "Property" || elemC.modelType == "File" ){
 		elemLi.innerHTML = elemC.idShort.getString() +"   =   " +elemC.value.getString();
+	}
+	if (elemC.modelType == "Capability"){
+		elemLi.innerHTML = elemC.idShort.getString() ;
 	}
 	if (elemC.modelType == "Range"){
 		elemLi.innerHTML = elemC.idShort.getString() +"   =   " +elemC.min.getString() + ".." +elemC.max.getString();
@@ -328,11 +390,61 @@ function processCollection(_pidShort,exdomain){
 	for (var tId of collectionElem.value){
 		
 		var elemC = linearData1[tId];
-
 		if (elemC.modelType == "SubmodelElementCollection") {
 				var elemLi = document.createElement('li');	
 				elemLi.setAttribute("class","list-group-item");			
 				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString(),exdomain));			
+			}
+		else if (elemC.modelType == "Entity") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");			
+				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString(),exdomain));			
+			}
+			else if (elemC.modelType == "AnnotatedRelationshipElement") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");			
+				accordinCollpase.appendChild(processAnr(_pidShort+"."+elemC.idShort.getString(),exdomain));			
+			}
+		else {
+				accordinCollpase.appendChild(setSubmodelElemData(_pidShort+"."+elemC.idShort.getString(),parent,exdomain));
+			}
+	}
+	
+	var accordinDiv = document.createElement('div');
+	accordinDiv.setAttribute("class","accordion-item");
+	accordinDiv.appendChild(creatAccordinHeader(_pidShort,idShort, modelType));
+	
+	
+	accordinDiv.appendChild(accordinCollpase);
+	collectionDiv.appendChild(accordinDiv);
+	return collectionDiv	
+}
+function processAnr(_pidShort,exdomain){
+	var parent = "elem21";
+	var tempId = submodelId+"."+_pidShort;
+	var collectionElem = linearData1[tempId];
+	var idShort = collectionElem.idShort.getString();
+	var modelType = collectionElem.modelType;
+
+	var collectionDiv = document.createElement('div');
+	collectionDiv.setAttribute("class","accordion");
+	collectionDiv.setAttribute("id",_pidShort.replaceAll(".","_"));
+
+	var accordinCollpase = createCollapseAccordin(_pidShort,idShort);
+
+	for (var tId of collectionElem.annotations){
+		
+		var elemC = linearData1[tId];
+		
+		if (elemC.modelType == "SubmodelElementCollection") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");			
+				accordinCollpase.appendChild(processCollection(_pidShort+"."+elemC.idShort.getString(),exdomain));			
+			}
+		else if (elemC.modelType == "AnnotatedRelationshipElement") {
+				var elemLi = document.createElement('li');	
+				elemLi.setAttribute("class","list-group-item");			
+				accordinCollpase.appendChild(processAnr(_pidShort+"."+elemC.idShort.getString(),exdomain));			
 			}
 		else if (elemC.modelType == "Entity") {
 				var elemLi = document.createElement('li');	
